@@ -1,17 +1,26 @@
 #!/usr/bin/env python3
-"""Actualiza status.json usando titulares recientes obtenidos mediante GDELT.
+"""Actualiza status.json a partir de noticias recientes.
 
-Diseño conservador: solo cambia a ABIERTO/CERRADO con un titular explícito de
-un dominio seleccionado. Ante señales contradictorias o falta de confirmación,
-publica INCIERTO.
+Usa dos vías independientes:
+1. GDELT DOC API.
+2. Google News RSS como respaldo.
+
+La decisión es conservadora: solo publica ABIERTO o CERRADO cuando un titular
+reciente de una fuente seleccionada lo afirma de forma explícita. Si las
+fuentes se contradicen, publica INCIERTO. Si fallan todas las conexiones,
+conserva el último estado publicado en vez de cambiarlo por un error temporal.
 """
 from __future__ import annotations
 
+import email.utils
 import json
 import re
 import sys
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlparse
@@ -25,35 +34,77 @@ TRUSTED_DOMAINS = {
     "apnews.com": "Associated Press",
     "bbc.com": "BBC",
     "bbc.co.uk": "BBC",
-    "aljazeera.com": "Al Jazeera",
     "theguardian.com": "The Guardian",
     "ft.com": "Financial Times",
     "bloomberg.com": "Bloomberg",
     "cnn.com": "CNN",
     "cnbc.com": "CNBC",
     "navy.mil": "U.S. Navy",
-    "imo.org": "IMO"
+    "imo.org": "IMO",
 }
 
-# Se evalúan titulares, no el cuerpo completo, para reducir falsos positivos.
+TRUSTED_SOURCE_NAMES = {
+    "reuters": "Reuters",
+    "associated press": "Associated Press",
+    "the associated press": "Associated Press",
+    "ap news": "Associated Press",
+    "bbc": "BBC",
+    "bbc.com": "BBC",
+    "bbc news": "BBC",
+    "the guardian": "The Guardian",
+    "financial times": "Financial Times",
+    "bloomberg": "Bloomberg",
+    "cnn": "CNN",
+    "cnbc": "CNBC",
+}
+
 CLOSED_PATTERNS = [
-    r"\bstrait of hormuz (?:is |has been |was )?(?:closed|shut|sealed|blocked)\b",
+    r"\bstrait of hormuz (?:is |has been |was |remains |will remain )?(?:closed|shut|sealed|blocked)\b",
     r"\b(?:closes|closed|shuts|shut|blocks|blocked) (?:the )?strait of hormuz\b",
     r"\bclosure of (?:the )?strait of hormuz\b",
 ]
 OPEN_PATTERNS = [
-    r"\bstrait of hormuz (?:is |has been )?(?:open|reopened|re-opened)\b",
+    r"\bstrait of hormuz (?:is |has been |remains )?(?:open|reopened|re-opened)\b",
     r"\b(?:reopens|reopened|re-opens|re-opened) (?:the )?strait of hormuz\b",
     r"\btraffic (?:resumes|resumed) (?:through|in) (?:the )?strait of hormuz\b",
+    r"\bshipping (?:resumes|resumed) (?:through|in) (?:the )?strait of hormuz\b",
 ]
-NEGATIONS = ("could", "might", "may", "threat", "threatens", "warns", "if ", "risk", "fear", "deny", "denies", "not closed")
+
+# Titulares hipotéticos, peticiones políticas o desmentidos no cuentan como
+# confirmación del estado.
+NEGATION_OR_HYPOTHETICAL = [
+    r"\bnot closed\b",
+    r"\bden(?:y|ies|ied|ial)\b",
+    r"\bcould\b",
+    r"\bmight\b",
+    r"\bmay\b",
+    r"\bif\b",
+    r"\brisk\b",
+    r"\bfear(?:s|ed)?\b",
+    r"\bthreat(?:s|ens|ened)?\b",
+    r"\bwarn(?:s|ed|ing)?\b",
+    r"\bdemand(?:s|ed|ing)?\b",
+    r"\burge(?:s|d|ing)?\b",
+    r"\bcall(?:s|ed|ing)? (?:on|for)\b",
+    r"\bwant(?:s|ed|ing)?\b",
+    r"\bask(?:s|ed|ing)?\b",
+    r"\bpledge(?:s|d|ing)?\b",
+    r"\bpromise(?:s|d|ing)?\b",
+    r"\bagree(?:s|d|ment)? to (?:open|reopen|close|shut)\b",
+    r"\bplan(?:s|ned|ning)? to (?:open|reopen|close|shut)\b",
+]
+
+USER_AGENT = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "Chrome/126.0 Safari/537.36 estado-ormuz/2.0"
+)
 
 
 def load_json(path: Path, default: dict) -> dict:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
-    except (FileNotFoundError, json.JSONDecodeError):
-        return default
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return default.copy()
 
 
 def domain_name(url: str) -> tuple[str | None, str | None]:
@@ -64,18 +115,32 @@ def domain_name(url: str) -> tuple[str | None, str | None]:
     return None, None
 
 
+def trusted_source(source_name: str, source_url: str = "") -> str | None:
+    normalized = re.sub(r"\s+", " ", source_name.lower()).strip()
+    if normalized in TRUSTED_SOURCE_NAMES:
+        return TRUSTED_SOURCE_NAMES[normalized]
+    _, outlet = domain_name(source_url)
+    return outlet
+
+
 def parse_date(value: str) -> datetime:
     for fmt in ("%Y%m%dT%H%M%SZ", "%Y%m%d%H%M%S"):
         try:
             return datetime.strptime(value, fmt).replace(tzinfo=timezone.utc)
         except (TypeError, ValueError):
             pass
-    return datetime.min.replace(tzinfo=timezone.utc)
+    try:
+        parsed = email.utils.parsedate_to_datetime(value)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed.astimezone(timezone.utc)
+    except (TypeError, ValueError, OverflowError):
+        return datetime.min.replace(tzinfo=timezone.utc)
 
 
 def classify(title: str) -> str | None:
     text = re.sub(r"\s+", " ", title.lower()).strip()
-    if any(term in text for term in NEGATIONS):
+    if any(re.search(pattern, text) for pattern in NEGATION_OR_HYPOTHETICAL):
         return None
     if any(re.search(pattern, text) for pattern in OPEN_PATTERNS):
         return "ABIERTO"
@@ -84,7 +149,29 @@ def classify(title: str) -> str | None:
     return None
 
 
-def fetch_articles(hours: int) -> list[dict]:
+def request_bytes(url: str, *, accept: str, attempts: int = 3) -> bytes:
+    last_error: Exception | None = None
+    for attempt in range(attempts):
+        request = urllib.request.Request(
+            url,
+            headers={
+                "User-Agent": USER_AGENT,
+                "Accept": accept,
+                "Accept-Language": "en-US,en;q=0.9",
+            },
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=35) as response:
+                return response.read()
+        except (urllib.error.URLError, TimeoutError, OSError) as exc:
+            last_error = exc
+            if attempt + 1 < attempts:
+                time.sleep(2 ** attempt)
+    assert last_error is not None
+    raise last_error
+
+
+def fetch_gdelt(hours: int) -> list[dict]:
     end = datetime.now(timezone.utc)
     start = end - timedelta(hours=hours)
     params = {
@@ -92,69 +179,188 @@ def fetch_articles(hours: int) -> list[dict]:
         "mode": "ArtList",
         "maxrecords": "250",
         "format": "json",
-        "sort": "HybridRel",
+        "sort": "DateDesc",
         "startdatetime": start.strftime("%Y%m%d%H%M%S"),
         "enddatetime": end.strftime("%Y%m%d%H%M%S"),
     }
     url = "https://api.gdeltproject.org/api/v2/doc/doc?" + urllib.parse.urlencode(params)
-    request = urllib.request.Request(url, headers={"User-Agent": "estado-ormuz/1.0"})
-    with urllib.request.urlopen(request, timeout=30) as response:
-        payload = json.load(response)
-    return payload.get("articles", [])
+    raw = request_bytes(url, accept="application/json,text/plain;q=0.9,*/*;q=0.8")
+    payload = json.loads(raw.decode("utf-8-sig"))
+
+    articles: list[dict] = []
+    for item in payload.get("articles", []):
+        url = item.get("url", "")
+        _, outlet = domain_name(url)
+        if not outlet:
+            continue
+        articles.append(
+            {
+                "title": item.get("title", ""),
+                "url": url,
+                "outlet": outlet,
+                "date": parse_date(item.get("seendate", "")),
+                "provider": "GDELT",
+            }
+        )
+    return articles
 
 
-def write_status(status: str, message: str, source_name=None, source_url=None) -> None:
+def google_news_feed_url(query: str) -> str:
+    params = {
+        "q": query,
+        "hl": "en-US",
+        "gl": "US",
+        "ceid": "US:en",
+    }
+    return "https://news.google.com/rss/search?" + urllib.parse.urlencode(params)
+
+
+def fetch_google_news(hours: int) -> list[dict]:
+    # Dos búsquedas separadas mejoran la cobertura y evitan depender de una
+    # única consulta demasiado compleja.
+    days = max(1, (hours + 23) // 24)
+    queries = [
+        f'"Strait of Hormuz" (closed OR shut OR blocked) when:{days}d',
+        f'"Strait of Hormuz" (open OR reopened OR "traffic resumes") when:{days}d',
+    ]
+
+    articles: list[dict] = []
+    errors: list[Exception] = []
+    for query in queries:
+        try:
+            raw = request_bytes(
+                google_news_feed_url(query),
+                accept="application/rss+xml,application/xml,text/xml;q=0.9,*/*;q=0.8",
+            )
+            root = ET.fromstring(raw)
+        except (urllib.error.URLError, TimeoutError, OSError, ET.ParseError) as exc:
+            errors.append(exc)
+            continue
+
+        for item in root.findall("./channel/item"):
+            title = (item.findtext("title") or "").strip()
+            link = (item.findtext("link") or "").strip()
+            published = (item.findtext("pubDate") or "").strip()
+            source_node = item.find("source")
+            source_name = (source_node.text or "").strip() if source_node is not None else ""
+            source_url = source_node.attrib.get("url", "") if source_node is not None else ""
+            outlet = trusted_source(source_name, source_url)
+            if not outlet:
+                continue
+            articles.append(
+                {
+                    "title": title,
+                    "url": link,
+                    "outlet": outlet,
+                    "date": parse_date(published),
+                    "provider": "Google News RSS",
+                }
+            )
+
+    if not articles and len(errors) == len(queries):
+        raise errors[-1]
+    return articles
+
+
+def write_status(
+    status: str,
+    message: str,
+    source_name: str | None = None,
+    source_url: str | None = None,
+    *,
+    previous: dict | None = None,
+    verification_ok: bool = True,
+) -> None:
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
     payload = {
         "status": status,
-        "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+        "checked_at": now,
         "message": message,
         "source_name": source_name,
         "source_url": source_url,
+        "verification_ok": verification_ok,
     }
+    if verification_ok:
+        payload["last_success_at"] = now
+    elif previous:
+        payload["last_success_at"] = previous.get("last_success_at")
     STATUS_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def preserve_previous_after_network_failure(previous: dict, errors: list[str]) -> None:
+    previous_state = previous.get("status")
+    if previous_state not in {"ABIERTO", "CERRADO", "INCIERTO"}:
+        previous_state = "INCIERTO"
+    message = "No se pudo renovar la comprobación; se conserva el último estado publicado."
+    write_status(
+        previous_state,
+        message,
+        previous.get("source_name"),
+        previous.get("source_url"),
+        previous=previous,
+        verification_ok=False,
+    )
+    print("::warning::Fallaron todas las fuentes: " + " | ".join(errors), file=sys.stderr)
+
+
 def main() -> int:
+    previous = load_json(STATUS_FILE, {})
     config = load_json(CONFIG_FILE, {"manual_override": None, "lookback_hours": 72})
     override = config.get("manual_override")
     if override in {"ABIERTO", "CERRADO", "INCIERTO"}:
         write_status(override, "Estado fijado manualmente en config.json.")
         return 0
 
-    try:
-        articles = fetch_articles(int(config.get("lookback_hours", 72)))
-    except Exception as exc:  # Mantiene la web operativa aunque falle la fuente.
-        write_status("INCIERTO", f"No se pudo completar la comprobación automática: {type(exc).__name__}.")
-        print(f"Error consultando GDELT: {exc}", file=sys.stderr)
+    hours = int(config.get("lookback_hours", 72))
+    all_articles: list[dict] = []
+    errors: list[str] = []
+
+    for source_name, fetcher in (
+        ("GDELT", fetch_gdelt),
+        ("Google News RSS", fetch_google_news),
+    ):
+        try:
+            articles = fetcher(hours)
+            all_articles.extend(articles)
+            print(f"{source_name}: {len(articles)} artículos aceptados.")
+        except Exception as exc:  # una fuente puede fallar sin tumbar la otra
+            errors.append(f"{source_name}: {type(exc).__name__}: {exc}")
+            print(f"{source_name} falló: {exc}", file=sys.stderr)
+
+    if not all_articles and len(errors) == 2:
+        preserve_previous_after_network_failure(previous, errors)
         return 0
 
-    signals = []
-    for article in articles:
-        url = article.get("url", "")
-        _, outlet = domain_name(url)
-        if not outlet:
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=hours + 2)
+    seen_titles: set[str] = set()
+    signals: list[dict] = []
+    for article in all_articles:
+        title_key = re.sub(r"\W+", " ", article["title"].lower()).strip()
+        if not title_key or title_key in seen_titles:
             continue
-        title = article.get("title", "")
-        state = classify(title)
+        seen_titles.add(title_key)
+        if article["date"] < cutoff:
+            continue
+        state = classify(article["title"])
         if state:
-            signals.append({
-                "state": state,
-                "title": title,
-                "url": url,
-                "outlet": outlet,
-                "date": parse_date(article.get("seendate", "")),
-            })
+            signals.append({**article, "state": state})
 
     signals.sort(key=lambda item: item["date"], reverse=True)
     if not signals:
-        write_status("INCIERTO", "No hay una confirmación explícita reciente en las fuentes seleccionadas.")
+        write_status(
+            "INCIERTO",
+            "No hay una confirmación explícita reciente en las fuentes seleccionadas.",
+        )
         return 0
 
     newest = signals[0]
     recent_window = newest["date"] - timedelta(hours=12)
     recent_states = {item["state"] for item in signals if item["date"] >= recent_window}
     if len(recent_states) > 1:
-        write_status("INCIERTO", "Las fuentes recientes ofrecen señales contradictorias; se requiere confirmación.")
+        write_status(
+            "INCIERTO",
+            "Las fuentes recientes ofrecen señales contradictorias; se requiere confirmación.",
+        )
         return 0
 
     message = f'Confirmación detectada: “{newest["title"]}”.'
