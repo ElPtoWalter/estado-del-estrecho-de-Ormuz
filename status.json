@@ -5,8 +5,8 @@
   "operational_label_es": "Abierto con restricciones",
   "operational_label_en": "Open with restrictions",
   "confidence": "ALTA",
-  "checked_at": "2026-07-12T15:36:07Z",
-  "last_success_at": "2026-07-12T15:36:07Z",
+  "checked_at": "2026-07-12T16:31:29Z",
+  "last_success_at": "2026-07-12T16:31:29Z",
   "last_change_at": "2026-07-12T14:07:07Z",
   "verification_ok": true,
   "stale": false,
@@ -81,21 +81,21 @@
       "Google News RSS"
     ],
     "providers_failed": [
-      "GDELT: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
     ],
     "scores": {
-      "open": 11.96,
+      "open": 10.2,
       "closed": 0,
-      "declared": 2.4,
-      "risk": 28.215
+      "declared": 0,
+      "risk": 24.94
     },
     "independent_sources": {
-      "open": 4,
+      "open": 3,
       "closed": 0,
-      "declared": 1,
-      "risk": 10
+      "declared": 0,
+      "risk": 8
     },
-    "articles_considered": 45,
-    "signals_considered": 22
+    "articles_considered": 44,
+    "signals_considered": 18
   }
 }
