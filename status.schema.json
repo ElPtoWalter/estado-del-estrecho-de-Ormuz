@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/status.schema.json",
+  "title": "Strait of Hormuz status payload",
+  "type": "object",
+  "required": [
+    "engine_version",
+    "status",
+    "operational_status",
+    "confidence",
+    "checked_at",
+    "verification_ok",
+    "summary_es",
+    "summary_en",
+    "evidence"
+  ],
+  "properties": {
+    "engine_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "enum": [
+        "ABIERTO",
+        "CERRADO",
+        "INCIERTO"
+      ]
+    },
+    "operational_status": {
+      "type": "string"
+    },
+    "operational_label_es": {
+      "type": "string"
+    },
+    "operational_label_en": {
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "ALTA",
+        "MEDIA",
+        "BAJA"
+      ]
+    },
+    "checked_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_success_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "last_change_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "verification_ok": {
+      "type": "boolean"
+    },
+    "stale": {
+      "type": "boolean"
+    },
+    "summary_es": {
+      "type": "string"
+    },
+    "summary_en": {
+      "type": "string"
+    },
+    "last_valid_confirmation": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "diagnostics": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
