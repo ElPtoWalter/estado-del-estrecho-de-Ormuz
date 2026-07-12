@@ -1,34 +1,49 @@
 {
   "engine_version": 3,
-  "status": "INCIERTO",
-  "operational_status": "CLOSURE_DECLARED_UNCONFIRMED",
-  "operational_label_es": "Cierre declarado, no confirmado",
-  "operational_label_en": "Closure declared, not operationally confirmed",
-  "confidence": "BAJA",
-  "checked_at": "2026-07-12T13:21:52Z",
-  "last_success_at": "2026-07-12T13:21:52Z",
-  "last_change_at": "2026-07-12T13:21:52Z",
+  "status": "ABIERTO",
+  "operational_status": "OPEN_RESTRICTED",
+  "operational_label_es": "Abierto con restricciones",
+  "operational_label_en": "Open with restrictions",
+  "confidence": "ALTA",
+  "checked_at": "2026-07-12T14:07:07Z",
+  "last_success_at": "2026-07-12T14:07:07Z",
+  "last_change_at": "2026-07-12T14:07:07Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "Existe una declaración de cierre, pero no hay confirmación suficiente de que todo el tráfico marítimo esté detenido.",
-  "summary_en": "A closure has been declared, but there is not enough confirmation that all maritime traffic has stopped.",
-  "last_valid_confirmation": null,
+  "summary_es": "Hay evidencia reciente de una ruta operativa, pero persisten restricciones, incidentes o un riesgo marítimo elevado.",
+  "summary_en": "Recent evidence indicates an operational route, but restrictions, incidents or elevated maritime risk remain.",
+  "last_valid_confirmation": {
+    "status": "ABIERTO",
+    "at": "2026-07-12T13:30:09Z",
+    "source_name": "Reuters",
+    "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNM04zYVJRb2pfTkwzT0lIUm8wWHpKRkc4WE9TazFxdGQ4RktValc5UXhBbmM3ZGlHaFNBZm5MVDI4a3dDMG8zX2pza3NSb2o5dS1RYVNLUzFhd0wtOFZucWdhcHMzZFgyRWRaNUJUOUJ6VXp2ZEl4NXFmeXFiRWQzZDNQbWFqRDRpVnZXNmNwWmQ0a3RMeDRkTUQ0NkZXUUhZUHc?oc=5",
+    "title": "Trump says Strait of Hormuz open to commercial traffic - Reuters"
+  },
   "evidence": [
+    {
+      "signal": "OPEN_OPERATIONAL",
+      "title": "Trump says Strait of Hormuz open to commercial traffic - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNM04zYVJRb2pfTkwzT0lIUm8wWHpKRkc4WE9TazFxdGQ4RktValc5UXhBbmM3ZGlHaFNBZm5MVDI4a3dDMG8zX2pza3NSb2o5dS1RYVNLUzFhd0wtOFZucWdhcHMzZFgyRWRaNUJUOUJ6VXp2ZEl4NXFmeXFiRWQzZDNQbWFqRDRpVnZXNmNwWmQ0a3RMeDRkTUQ0NkZXUUhZUHc?oc=5",
+      "published_at": "2026-07-12T13:30:09Z",
+      "tier": 4,
+      "official": false
+    },
+    {
+      "signal": "OPEN_OPERATIONAL",
+      "title": "Trump says Strait of Hormuz open to commercial traffic - Internazionale",
+      "source_name": "Oman News Agency",
+      "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOHlxdVB0MFlrZE1kc0cwTnZLeWpEQVZEd3EtckNaUWNWSDZJMVR0R2ZjVDhDajJJLW41cjA1LXdPZkN0Q19Ua2xqbnQ2Zi0wTWFkN2dxSW5mN0FIVkU0emd4SlJ1M1RHM2h1LW1QSzRSbW1VdC1lR1VmOUhHSDNBSzJwYWdNS3dUTzJ4cFg1UVN3b2NCX3VwMmJPTHd3SHVOUm9ERV9mNTVqWUpSVkxJckVXMHlVUVNRdXc?oc=5",
+      "published_at": "2026-07-12T13:29:25Z",
+      "tier": 4,
+      "official": true
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "US attacks Iran over ship being hit in Strait of Hormuz; Tehran responds by hitting Arab states - AP News",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPZWNIZWpPMUROMXlXU0EwT1pjWWUycXFoTjBobEJLM0JpWGhjTWZwN0Q2RkxaY3N6cU9fNXZOT194MWFHYllDYUh4RWdEdmF3NVpGQ2tlOTl4dWI5VzVMWlgycVBYcmtSRDR6UV9lQmtoWkZMUWRvLUYwZXhIQzlGcVVpTGlMZElhRkxkT0pkMXlEZDJmSll0c2JsYkY?oc=5",
       "published_at": "2026-07-12T11:35:00Z",
-      "tier": 4,
-      "official": false
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran expands attacks on Gulf states after US strikes, says Strait of Hormuz closed - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPaWNfWDBGeUlZdnVYdk9zTTBTa05FcHZQZ2NTaE14ZU9SUFRKcDgyamdEaUFjVi1ycHRuaEdaV2cwU3FSWjZqb3BzNXBvMmdobFNvejdtRGo0QUk3emV4alhETFNOcWgyQUg0MnFDVF9mSHRuM3R0Zng3ZnNWUDlqajlyWndRaHk2dkdycXVNdFA0S21RYk5YRElCTVBQZjloVEF2bU5ZTEl6bDFabTdCWWVSdw?oc=5",
-      "published_at": "2026-07-11T23:21:00Z",
       "tier": 4,
       "official": false
     },
@@ -42,7 +57,7 @@
       "official": false
     },
     {
-      "signal": "CLOSURE_DECLARED",
+      "signal": "RISK_RESTRICTION",
       "title": "US launches fresh strikes as Iran closes Strait of Hormuz - BBC",
       "source_name": "BBC",
       "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9mUS1jZDJRamh4djBqc2lHbkdsWXNMT3pISTJVNzhHaXNoR21neG5RS2NYb3NhaGRNOVNhbVVCMzJqdVItbU12TV80Vmx1dU03TjN0SGtuMGY4UQ?oc=5",
@@ -58,15 +73,6 @@
       "published_at": "2026-07-12T00:00:34Z",
       "tier": 3,
       "official": false
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US and Iran exchange strikes as Tehran again says strait of Hormuz is closed - The Guardian",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxObVFCemdsQjB3LVFnX0JwclJ6M2pWOUhTRzZXU1B4VUdUWDlhYWhwZmlOS0E4Q0JjU1FrcEx2Yi1mN2hXT0tHOTJDSnJSNUh0N0VKT3BvYXZ4UDVyVUhJTVJqV1Y4cnN0VlFyRXRMN3JHcTdselNDT0RId3QyelJGd3lUMjVTdURBSmgyY0RRVllKLU81dE8weW9zczVYZnQ0ZnAwc2M5WElUZFhGbHNXajVLRFNRdm0zYTBaWWV4SQ?oc=5",
-      "published_at": "2026-07-12T00:16:00Z",
-      "tier": 3,
-      "official": false
     }
   ],
   "diagnostics": {
@@ -77,18 +83,18 @@
     ],
     "providers_failed": [],
     "scores": {
-      "open": 3.96,
+      "open": 14.46,
       "closed": 0,
       "declared": 2.88,
-      "risk": 23.82
+      "risk": 23.5
     },
     "independent_sources": {
-      "open": 2,
+      "open": 5,
       "closed": 0,
       "declared": 1,
       "risk": 8
     },
-    "articles_considered": 50,
-    "signals_considered": 19
+    "articles_considered": 56,
+    "signals_considered": 21
   }
 }
