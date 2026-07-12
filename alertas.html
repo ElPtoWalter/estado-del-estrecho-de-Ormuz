@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alertas del estado del estrecho de Ormuz</title>
+  <meta name="description" content="Activa notificaciones del navegador, suscríbete al feed Atom o reutiliza la API JSON del estado del estrecho de Ormuz." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#070b12" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="canonical" href="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/alertas.html" />
+  <link rel="alternate" hreflang="es" href="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/alertas.html" />
+  <link rel="alternate" hreflang="en" href="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/en-alerts.html" />
+  <link rel="alternate" hreflang="x-default" href="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/" />
+  <link rel="alternate" type="application/atom+xml" title="Strait of Hormuz status alerts" href="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/feed.xml" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Estado del estrecho de Ormuz" />
+  <meta property="og:title" content="Alertas del estado del estrecho de Ormuz" />
+  <meta property="og:description" content="Activa notificaciones del navegador, suscríbete al feed Atom o reutiliza la API JSON del estado del estrecho de Ormuz." />
+  <meta property="og:url" content="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/alertas.html" />
+  <meta property="og:image" content="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alertas del estado del estrecho de Ormuz" />
+  <meta name="twitter:description" content="Activa notificaciones del navegador, suscríbete al feed Atom o reutiliza la API JSON del estado del estrecho de Ormuz." />
+  <meta name="twitter:image" content="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/social-card.png" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/alertas.html#page",
+  "url": "https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/alertas.html",
+  "name": "Alertas del estado del estrecho de Ormuz",
+  "description": "Activa notificaciones del navegador, suscríbete al feed Atom o reutiliza la API JSON del estado del estrecho de Ormuz.",
+  "inLanguage": "es",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/",
+    "name": "Estado del estrecho de Ormuz"
+  },
+  "about": {
+    "@type": "Place",
+    "name": "Estrecho de Ormuz"
+  }
+}
+  </script>
+</head>
+<body data-page="content">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Estado de Ormuz">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6.5h16v2H4zm2.2 4h11.6l-1.4 7H7.6zM8 4h8l1 2H7z"/></svg></span><span>Estado de Ormuz</span>
+    </a>
+    <div class="nav-wrap">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menú">☰</button>
+      <nav class="site-nav" aria-label="Navegación principal"><a href="index.html">Estado</a><a href="historial.html">Historial</a><a href="metodologia.html">Metodología</a><a href="importancia.html">Importancia</a><a href="alertas.html" aria-current="page">Alertas</a><a href="fuentes.html">Fuentes</a></nav>
+      <a class="language-link" href="en.html" lang="en">EN</a>
+    </div>
+  </div>
+</header>
+<main class="site-main" id="contenido">
+
+<section class="page-header"><span class="eyebrow">Seguimiento</span><h1>Recibe avisos cuando cambie el estado</h1><p>La web ofrece opciones sin registro y sin entregar tu correo electrónico.</p></section>
+<section class="prose-card"><h2>Avisos en el navegador</h2><p>El navegador comprobará <code>status.json</code> cada cinco minutos mientras esta pestaña permanezca abierta. Si cambia el estado público o la interpretación operativa, mostrará una notificación.</p><div class="action-row" style="justify-content:flex-start"><button class="button primary" type="button" data-enable-alerts>Activar avisos</button></div><p class="alert-status" id="alertStatus" role="status" aria-live="polite"></p><div class="callout">No es una notificación push permanente: al ser una web estática, la pestaña debe seguir abierta. Esta opción no instala software ni crea una cuenta.</div></section>
+<section class="prose-card"><h2>Feed Atom / RSS</h2><p>Suscríbete desde Feedly, Inoreader, Thunderbird, NetNewsWire o una automatización como IFTTT. Solo publica cambios significativos, no cada comprobación horaria.</p><div class="code-box"><code>https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/feed.xml</code><button class="button" type="button" data-copy-rss>Copiar</button></div></section>
+<section class="prose-card"><h2>API pública JSON</h2><p>Otros proyectos pueden leer el estado, confianza, evidencias y última confirmación válida desde un archivo estático con CORS compatible con GitHub Pages.</p><div class="code-box"><code>https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/status.json</code><button class="button" type="button" data-copy-api>Copiar</button></div><h3>Alertas del propietario</h3><p>El workflow incluye integración opcional con Telegram y ntfy mediante secretos de GitHub. Cuando se configuran, solo se envía un mensaje si hay un cambio significativo.</p></section>
+<section class="prose-card"><h2>IndexNow automático</h2><p>Cuando cambia el estado, el workflow notifica automáticamente a los buscadores compatibles con IndexNow y les indica las páginas actualizadas. Las comprobaciones sin cambios no generan avisos innecesarios.</p></section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Indicador automatizado y conservador. No sustituye avisos oficiales de navegación, instrucciones de autoridades marítimas ni asesoramiento profesional.</p>
+    <div class="footer-links"><a href="metodologia.html">Metodología</a><a href="privacidad.html">Privacidad</a><a href="status.json">API JSON</a><a href="feed.xml">RSS/Atom</a><a href="https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz" target="_blank" rel="noopener noreferrer">Código en GitHub</a></div>
+  </div>
+</footer>
+<script src="app.js" defer></script>
+</body>
+</html>

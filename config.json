@@ -1,4 +1,16 @@
 {
+  "base_url": "https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/",
   "manual_override": null,
-  "lookback_hours": 72
+  "lookback_hours": 96,
+  "carry_forward_hours": 18,
+  "gdelt_max_records": 250,
+  "article_meta_fetch_limit": 12,
+  "history_max_events": 365,
+  "post_deploy_notification_delay_seconds": 15,
+  "indexnow": {
+    "enabled": true,
+    "endpoint": "https://api.indexnow.org/indexnow",
+    "key": "8ee87f80641eba7927c66d271c9380a5",
+    "key_location": "https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/8ee87f80641eba7927c66d271c9380a5.txt"
+  }
 }
