@@ -4,9 +4,9 @@
   "operational_status": "OPEN_RESTRICTED",
   "operational_label_es": "Abierto con restricciones",
   "operational_label_en": "Open with restrictions",
-  "confidence": "MEDIA",
-  "checked_at": "2026-07-12T18:30:37Z",
-  "last_success_at": "2026-07-12T18:30:37Z",
+  "confidence": "BAJA",
+  "checked_at": "2026-07-12T19:41:41Z",
+  "last_success_at": "2026-07-12T19:41:41Z",
   "last_change_at": "2026-07-12T14:07:07Z",
   "verification_ok": true,
   "stale": false,
@@ -39,15 +39,6 @@
       "official": true
     },
     {
-      "signal": "OPEN_OPERATIONAL",
-      "title": "Trump says Strait of Hormuz open to commercial traffic - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNM04zYVJRb2pfTkwzT0lIUm8wWHpKRkc4WE9TazFxdGQ4RktValc5UXhBbmM3ZGlHaFNBZm5MVDI4a3dDMG8zX2pza3NSb2o5dS1RYVNLUzFhd0wtOFZucWdhcHMzZFgyRWRaNUJUOUJ6VXp2ZEl4NXFmeXFiRWQzZDNQbWFqRDRpVnZXNmNwWmQ0a3RMeDRkTUQ0NkZXUUhZUHc?oc=5",
-      "published_at": "2026-07-12T13:30:09Z",
-      "tier": 4,
-      "official": false
-    },
-    {
       "signal": "RISK_RESTRICTION",
       "title": "US, Iran Trade Strikes While Disputing Status of Hormuz - Bloomberg.com",
       "source_name": "Bloomberg",
@@ -58,19 +49,28 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Iran expands attacks on Gulf states after US strikes, says Strait of Hormuz closed - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPaWNfWDBGeUlZdnVYdk9zTTBTa05FcHZQZ2NTaE14ZU9SUFRKcDgyamdEaUFjVi1ycHRuaEdaV2cwU3FSWjZqb3BzNXBvMmdobFNvejdtRGo0QUk3emV4alhETFNOcWgyQUg0MnFDVF9mSHRuM3R0Zng3ZnNWUDlqajlyWndRaHk2dkdycXVNdFA0S21RYk5YRElCTVBQZjloVEF2bU5ZTEl6bDFabTdCWWVSdw?oc=5",
+      "published_at": "2026-07-11T23:21:00Z",
+      "tier": 4,
+      "official": false
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Concern for renewed war in Iran as US attacks military, civilian targets - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcTZ3YWxEMV9tZGVTaEc5WGxLMGhfUHo0bzI5S0Z6VlN0QlFSMkF4MmtOMGo4d0VKc1dtUmdNT0pITksyTkVydTFLUGRQdW5EWklMMkRpNDBXMFRWc2xFNWY4MWg2Y002MUNNV2dUcGJmZ0pQUFY2UUlwN19nallMQldRMzNIZ2o3cXo0cmFfV0hUU3VuSmZkci1pMkVzVk1CSmlvdnh0S0RTTzZyX0Y4ck9R0gG3AUFVX3lxTE1uZnBLRVRJSjFkR1pQa0JuVlpTMzU5cjdYWE40RHNyc2lxT3VHUmVvMjMxSHFXcm9MaGprSENhdjBOaFRxMENRZFhqLUk4bnpBeUJCQ1FHd3ZWVHVNeTJ3OUlmZW1udUxmUTVKcDMxSjNZZFBjUm9DSmhCLTRpZ1lwaGoweUwzSXR4ODJOWmhudXVlMjdoSkpub2E5OGV1MzdrWEJiamZkVURoTktLZWotUVhKeTNmRQ?oc=5",
-      "published_at": "2026-07-12T17:50:41Z",
+      "published_at": "2026-07-12T17:54:38Z",
       "tier": 2,
       "official": false
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "US and Iran exchange fresh strikes in battle over Strait of Hormuz - Financial Times",
+      "title": "US launches new strikes on Iran in battle over Strait of Hormuz - Financial Times",
       "source_name": "Financial Times",
       "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxONjNqelFxRDJJNUJhZ3Z5SXdZTXppTy1pNkMxdzNyd21yV3FScVFzTDhqZlFwQVRMNUhfS3VDNTdNSHFYNlJrRExtSldWc0JHSXFiYWlsV1U2TDdFdUVMdERGSnUzOU9rVWRjczVuY0thUS1PT3g0UGFYWkxubHdfQXZ3YmU?oc=5",
-      "published_at": "2026-07-12T00:01:40Z",
+      "published_at": "2026-07-12T00:00:34Z",
       "tier": 3,
       "official": false
     }
@@ -78,23 +78,24 @@
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
-      "open": 6.2,
+      "open": 3.6,
       "closed": 0,
       "declared": 0,
-      "risk": 21.175
+      "risk": 19.875
     },
     "independent_sources": {
-      "open": 2,
+      "open": 1,
       "closed": 0,
       "declared": 0,
       "risk": 7
     },
-    "articles_considered": 42,
-    "signals_considered": 15
+    "articles_considered": 43,
+    "signals_considered": 13
   }
 }
