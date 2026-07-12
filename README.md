@@ -1,22 +1,47 @@
 # Estado del estrecho de Ormuz
 
-Web estática para GitHub Pages con actualización automática mediante GitHub Actions.
+Web estática para GitHub Pages con actualización automática y configuración SEO básica.
 
-## Instalación
+## Archivos añadidos para buscadores
 
-1. Sube **todo el contenido** de esta carpeta a la raíz del repositorio, incluida la carpeta oculta `.github`.
-2. En GitHub abre **Settings → Pages**.
-3. En **Build and deployment**, selecciona **Deploy from a branch**, rama `main` y carpeta `/ (root)`.
-4. Abre la pestaña **Actions**, entra en “Actualizar estado de Ormuz” y pulsa **Run workflow** para hacer la primera comprobación.
+- `robots.txt`: permite el rastreo y anuncia el sitemap.
+- `sitemap.xml`: indica la URL principal a Google y Bing.
+- Etiqueta canónica, título y descripción optimizados en `index.html`.
+- Open Graph y Twitter Cards para que el enlace se comparta con una imagen profesional.
+- Datos estructurados Schema.org.
+- Estado actual escrito también directamente en el HTML, además de `status.json`, para que pueda leerse aunque JavaScript tarde en renderizarse.
 
-Después, GitHub ejecutará la comprobación cada hora. Los horarios programados de GitHub Actions pueden sufrir pequeños retrasos.
+## Instalación o actualización
+
+1. Sube **todo el contenido** de esta carpeta a la raíz del repositorio.
+2. Al subir por la web de GitHub, comprueba especialmente que existan:
+   - `.github/workflows/update-status.yml`
+   - `robots.txt`
+   - `sitemap.xml`
+   - `social-card.png`
+3. Sustituye los archivos existentes cuando GitHub lo indique.
+4. Ejecuta una vez **Actions → Actualizar estado de Ormuz → Run workflow**.
+5. Actualiza la página con `Ctrl + F5` cuando termine.
+
+## Google Search Console
+
+Usa una propiedad de prefijo de URL con esta dirección exacta:
+
+`https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/`
+
+Después:
+
+1. Verifica la propiedad con el método que indique Google.
+2. En **Sitemaps**, envía `sitemap.xml`.
+3. En **Inspección de URLs**, pega la página principal y solicita su indexación.
 
 ## Funcionamiento
 
-- `update_status.py` consulta titulares recientes en GDELT.
-- Solo acepta señales explícitas procedentes de una lista limitada de dominios.
-- Actualiza `status.json`, que es leído por `index.html`.
+- `update_status.py` consulta GDELT y Google News RSS.
+- Solo acepta señales explícitas procedentes de fuentes seleccionadas.
+- Actualiza `status.json` y la copia visible en `index.html`.
 - Ante falta de pruebas o contradicciones muestra `INCIERTO`.
+- Si fallan temporalmente todas las conexiones, conserva el último estado publicado.
 
 ## Forzar un estado manualmente
 

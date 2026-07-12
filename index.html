@@ -3,81 +3,251 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Estado actualizado del estrecho de Ormuz." />
-  <title>Estado del estrecho de Ormuz</title>
+
+  <title>¿Está abierto o cerrado el estrecho de Ormuz? Estado actual</title>
+  <meta name="description" content="Consulta si el estrecho de Ormuz está abierto, cerrado o en situación incierta. Estado revisado automáticamente cada hora mediante fuentes informativas recientes." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#070a0f" />
+  <meta name="color-scheme" content="dark" />
+
+  <link rel="canonical" href="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/" />
+  <link rel="alternate" hreflang="es" href="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Estado del estrecho de Ormuz" />
+  <meta property="og:title" content="¿Está abierto o cerrado el estrecho de Ormuz?" />
+  <meta property="og:description" content="Consulta el estado actual del estrecho de Ormuz, revisado automáticamente cada hora." />
+  <meta property="og:url" content="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/" />
+  <meta property="og:image" content="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Estado actualizado del estrecho de Ormuz" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="¿Está abierto o cerrado el estrecho de Ormuz?" />
+  <meta name="twitter:description" content="Estado actual revisado automáticamente cada hora." />
+  <meta name="twitter:image" content="https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/social-card.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/#website",
+        "url": "https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/",
+        "name": "Estado del estrecho de Ormuz",
+        "inLanguage": "es"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/#webpage",
+        "url": "https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/",
+        "name": "¿Está abierto o cerrado el estrecho de Ormuz? Estado actual",
+        "description": "Consulta si el estrecho de Ormuz está abierto, cerrado o en situación incierta. Estado revisado automáticamente cada hora.",
+        "inLanguage": "es",
+        "isPartOf": {
+          "@id": "https://elptowalter.github.io/estado-del-estrecho-de-Ormuz/#website"
+        },
+        "about": {
+          "@type": "Place",
+          "name": "Estrecho de Ormuz"
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
-      --bg: #070a0f; --panel: #101722; --text: #f5f7fa; --muted: #9aa6b8;
-      --closed: #ff4d5f; --open: #32d583; --uncertain: #fdb022;
+      --bg: #070a0f;
+      --panel: #101722;
+      --text: #f5f7fa;
+      --muted: #9aa6b8;
+      --closed: #ff4d5f;
+      --open: #32d583;
+      --uncertain: #fdb022;
     }
+
     * { box-sizing: border-box; }
+
     body {
-      margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 20px;
-      background: radial-gradient(circle at 50% 25%, rgba(255,255,255,.07), transparent 38%), var(--bg);
-      color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(255,255,255,.07), transparent 38%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
     }
+
     main {
-      width: min(92vw, 720px); padding: 54px 28px; text-align: center;
-      background: rgba(16,23,34,.86); border: 1px solid rgba(255,255,255,.08);
-      border-radius: 28px; box-shadow: 0 24px 80px rgba(0,0,0,.4); backdrop-filter: blur(12px);
+      width: min(92vw, 760px);
+      padding: 52px 30px 34px;
+      text-align: center;
+      background: rgba(16,23,34,.88);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.4);
+      backdrop-filter: blur(12px);
     }
-    h1 { margin: 0 0 30px; font-size: clamp(1.2rem,3vw,1.7rem); letter-spacing: -.02em; }
-    .status { display: inline-flex; align-items: center; gap: 14px; font-size: clamp(3.2rem,12vw,6.8rem); font-weight: 850; line-height: 1; letter-spacing: -.06em; }
-    .dot { width: .24em; height: .24em; border-radius: 50%; background: currentColor; box-shadow: 0 0 28px currentColor; animation: pulse 2s infinite; }
-    .open { color: var(--open); } .closed { color: var(--closed); } .uncertain { color: var(--uncertain); }
-    .details { margin: 28px 0 0; color: var(--muted); font-size: .92rem; line-height: 1.6; }
-    .details p { margin: 4px 0; }
-    a { color: inherit; text-underline-offset: 3px; }
-    .badge { display: inline-block; margin-top: 18px; padding: 6px 10px; border: 1px solid rgba(255,255,255,.1); border-radius: 999px; color: var(--muted); font-size: .75rem; }
-    @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.5; transform:scale(.84); } }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.25rem, 3vw, 1.8rem);
+      line-height: 1.25;
+      letter-spacing: -.025em;
+    }
+
+    .intro {
+      max-width: 590px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: .96rem;
+      line-height: 1.55;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-size: clamp(3.2rem, 12vw, 6.8rem);
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+
+    .dot {
+      width: .24em;
+      height: .24em;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 28px currentColor;
+      animation: pulse 2s infinite;
+    }
+
+    .open { color: var(--open); }
+    .closed { color: var(--closed); }
+    .uncertain { color: var(--uncertain); }
+
+    .details {
+      margin: 28px auto 0;
+      max-width: 630px;
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.6;
+    }
+
+    .details p { margin: 5px 0; }
+
+    a {
+      color: inherit;
+      text-underline-offset: 3px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: .75rem;
+    }
+
+    footer {
+      margin-top: 26px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: #7f8b9c;
+      font-size: .76rem;
+      line-height: 1.5;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(.84); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .dot { animation: none; }
+    }
   </style>
 </head>
 <body>
   <main>
-    <h1>ESTRECHO DE ORMUZ</h1>
+    <h1>¿Está abierto o cerrado el estrecho de Ormuz?</h1>
+    <p class="intro">Estado actual del estrecho de Ormuz, revisado automáticamente cada hora.</p>
+
+    <!-- STATUS_SNAPSHOT_START -->
     <div id="status" class="status uncertain" aria-live="polite">
-      <span class="dot" aria-hidden="true"></span><span id="statusText">COMPROBANDO</span>
+      <span class="dot" aria-hidden="true"></span><span id="statusText">INCIERTO</span>
     </div>
     <div class="details">
-      <p id="updated">Cargando última comprobación…</p>
-      <p id="evidence"></p>
+      <p id="updated">Última comprobación: 12 de julio de 2026, 13:15</p>
+      <p id="evidence">Pendiente de la próxima comprobación automática.</p>
       <p id="sourceWrap" hidden><a id="source" target="_blank" rel="noopener noreferrer">Ver fuente</a></p>
     </div>
-    <span class="badge">Actualización automática cada hora</span>
-  </main>
-<script>
-  const labels = { ABIERTO: "ABIERTO", CERRADO: "CERRADO", INCIERTO: "INCIERTO" };
-  const classes = { ABIERTO: "open", CERRADO: "closed", INCIERTO: "uncertain" };
+    <!-- STATUS_SNAPSHOT_END -->
 
-  async function loadStatus() {
-    const statusEl = document.getElementById("status");
-    const statusText = document.getElementById("statusText");
-    const updated = document.getElementById("updated");
-    const evidence = document.getElementById("evidence");
-    const sourceWrap = document.getElementById("sourceWrap");
-    const source = document.getElementById("source");
-    try {
-      const response = await fetch(`status.json?v=${Date.now()}`, { cache: "no-store" });
-      if (!response.ok) throw new Error("No se pudo leer status.json");
-      const data = await response.json();
-      const state = labels[data.status] ? data.status : "INCIERTO";
-      statusText.textContent = labels[state];
-      statusEl.className = `status ${classes[state]}`;
-      updated.textContent = `Última comprobación: ${new Intl.DateTimeFormat("es-ES", { dateStyle:"long", timeStyle:"short", timeZone:"Europe/Madrid" }).format(new Date(data.checked_at))}`;
-      evidence.textContent = data.message || "Sin confirmación concluyente.";
-      if (data.source_url) {
-        source.href = data.source_url;
-        source.textContent = data.source_name ? `Fuente: ${data.source_name}` : "Ver fuente";
-        sourceWrap.hidden = false;
-      } else sourceWrap.hidden = true;
-    } catch (error) {
-      statusText.textContent = "INCIERTO";
-      statusEl.className = "status uncertain";
-      updated.textContent = "No se ha podido consultar la última actualización.";
-      evidence.textContent = "Revisa que status.json esté publicado junto a esta página.";
+    <span class="badge">Actualización automática cada hora</span>
+
+    <footer>
+      Indicador automatizado basado en fuentes informativas recientes. No sustituye a una fuente oficial de navegación marítima.
+    </footer>
+  </main>
+
+  <script>
+    const labels = { ABIERTO: "ABIERTO", CERRADO: "CERRADO", INCIERTO: "INCIERTO" };
+    const classes = { ABIERTO: "open", CERRADO: "closed", INCIERTO: "uncertain" };
+
+    async function loadStatus() {
+      const statusEl = document.getElementById("status");
+      const statusText = document.getElementById("statusText");
+      const updated = document.getElementById("updated");
+      const evidence = document.getElementById("evidence");
+      const sourceWrap = document.getElementById("sourceWrap");
+      const source = document.getElementById("source");
+
+      try {
+        const response = await fetch(`status.json?v=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error("No se pudo leer status.json");
+
+        const data = await response.json();
+        const state = labels[data.status] ? data.status : "INCIERTO";
+        statusText.textContent = labels[state];
+        statusEl.className = `status ${classes[state]}`;
+        updated.textContent = `Última comprobación: ${new Intl.DateTimeFormat("es-ES", {
+          dateStyle: "long",
+          timeStyle: "short",
+          timeZone: "Europe/Madrid"
+        }).format(new Date(data.checked_at))}`;
+        evidence.textContent = data.message || "Sin confirmación concluyente.";
+
+        if (data.source_url) {
+          source.href = data.source_url;
+          source.textContent = data.source_name ? `Fuente: ${data.source_name}` : "Ver fuente";
+          sourceWrap.hidden = false;
+        } else {
+          sourceWrap.hidden = true;
+        }
+      } catch (error) {
+        statusText.textContent = "INCIERTO";
+        statusEl.className = "status uncertain";
+        updated.textContent = "No se ha podido consultar la última actualización.";
+        evidence.textContent = "Revisa que status.json esté publicado junto a esta página.";
+      }
     }
-  }
-  loadStatus();
-</script>
+
+    loadStatus();
+  </script>
 </body>
 </html>

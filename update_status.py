@@ -13,6 +13,7 @@ conserva el último estado publicado en vez de cambiarlo por un error temporal.
 from __future__ import annotations
 
 import email.utils
+import html
 import json
 import re
 import sys
@@ -23,11 +24,13 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent
 STATUS_FILE = ROOT / "status.json"
 CONFIG_FILE = ROOT / "config.json"
+INDEX_FILE = ROOT / "index.html"
 
 TRUSTED_DOMAINS = {
     "reuters.com": "Reuters",
@@ -262,6 +265,70 @@ def fetch_google_news(hours: int) -> list[dict]:
     return articles
 
 
+MONTHS_ES = (
+    "enero", "febrero", "marzo", "abril", "mayo", "junio",
+    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+)
+
+
+def format_checked_at_for_html(value: str) -> str:
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        local = parsed.astimezone(ZoneInfo("Europe/Madrid"))
+        return f"{local.day} de {MONTHS_ES[local.month - 1]} de {local.year}, {local:%H:%M}"
+    except (TypeError, ValueError, OSError, KeyError):
+        return "fecha no disponible"
+
+
+def update_html_snapshot(payload: dict) -> None:
+    # Escribe el estado en el HTML para buscadores y usuarios sin JavaScript.
+    try:
+        document = INDEX_FILE.read_text(encoding="utf-8")
+    except OSError:
+        return
+
+    valid_states = {"ABIERTO", "CERRADO", "INCIERTO"}
+    state = payload.get("status") if payload.get("status") in valid_states else "INCIERTO"
+    css_class = {"ABIERTO": "open", "CERRADO": "closed", "INCIERTO": "uncertain"}[state]
+    checked = html.escape(format_checked_at_for_html(str(payload.get("checked_at", ""))))
+    message = html.escape(str(payload.get("message") or "Sin confirmación concluyente."))
+    source_url = payload.get("source_url")
+    source_name = html.escape(str(payload.get("source_name") or "Ver fuente"))
+
+    if source_url:
+        safe_url = html.escape(str(source_url), quote=True)
+        source_line = (
+            f'      <p id="sourceWrap"><a id="source" href="{safe_url}" '
+            f'target="_blank" rel="noopener noreferrer">Fuente: {source_name}</a></p>'
+        )
+    else:
+        source_line = (
+            '      <p id="sourceWrap" hidden><a id="source" target="_blank" '
+            'rel="noopener noreferrer">Ver fuente</a></p>'
+        )
+
+    snapshot = f'''    <!-- STATUS_SNAPSHOT_START -->
+    <div id="status" class="status {css_class}" aria-live="polite">
+      <span class="dot" aria-hidden="true"></span><span id="statusText">{state}</span>
+    </div>
+    <div class="details">
+      <p id="updated">Última comprobación: {checked}</p>
+      <p id="evidence">{message}</p>
+{source_line}
+    </div>
+    <!-- STATUS_SNAPSHOT_END -->'''
+
+    updated_document, count = re.subn(
+        r"    <!-- STATUS_SNAPSHOT_START -->.*?    <!-- STATUS_SNAPSHOT_END -->",
+        lambda _: snapshot,
+        document,
+        count=1,
+        flags=re.DOTALL,
+    )
+    if count:
+        INDEX_FILE.write_text(updated_document, encoding="utf-8")
+
+
 def write_status(
     status: str,
     message: str,
@@ -285,6 +352,7 @@ def write_status(
     elif previous:
         payload["last_success_at"] = previous.get("last_success_at")
     STATUS_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    update_html_snapshot(payload)
 
 
 def preserve_previous_after_network_failure(previous: dict, errors: list[str]) -> None:
