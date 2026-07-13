@@ -4,9 +4,9 @@
   "operational_status": "OPEN_RESTRICTED",
   "operational_label_es": "Abierto con restricciones",
   "operational_label_en": "Open with restrictions",
-  "confidence": "MEDIA",
-  "checked_at": "2026-07-13T18:57:06Z",
-  "last_success_at": "2026-07-13T18:57:06Z",
+  "confidence": "ALTA",
+  "checked_at": "2026-07-13T20:40:07Z",
+  "last_success_at": "2026-07-13T20:40:07Z",
   "last_change_at": "2026-07-12T14:07:07Z",
   "verification_ok": true,
   "stale": false,
@@ -39,21 +39,21 @@
       "official": false
     },
     {
-      "signal": "RISK_RESTRICTION",
-      "title": "US and Iran Trade Strikes, Dispute Whether Hormuz Is Open - Bloomberg.com",
-      "source_name": "Bloomberg",
-      "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORFgyRS05NHRoNUJpWm44Y1lTT0pNRDhoZmxKc1Jqd0FEYm01UWphWjJBcWtuZXJwYVV0ZXFuU2w1eHRIWXlJV2pzTEpXUzF3bXdMT1BDaURzNUhGMzczOUZfbHRtSWh4cGI1UnRWbHh3OGxNSzNSbWdOdDBBeU11M2g0MHExcGFBVVBlRFZuSno3R29tWE5iTGN6SXZCdGJmbDVFcmJuOENtS0tuZFZKbHJZbw?oc=5",
-      "published_at": "2026-07-13T13:00:25Z",
-      "tier": 3,
-      "official": false
-    },
-    {
       "signal": "OPEN_OPERATIONAL",
       "title": "Trump says Strait of Hormuz open to commercial traffic - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNM04zYVJRb2pfTkwzT0lIUm8wWHpKRkc4WE9TazFxdGQ4RktValc5UXhBbmM3ZGlHaFNBZm5MVDI4a3dDMG8zX2pza3NSb2o5dS1RYVNLUzFhd0wtOFZucWdhcHMzZFgyRWRaNUJUOUJ6VXp2ZEl4NXFmeXFiRWQzZDNQbWFqRDRpVnZXNmNwWmQ0a3RMeDRkTUQ0NkZXUUhZUHc?oc=5",
       "published_at": "2026-07-12T13:30:09Z",
       "tier": 4,
+      "official": false
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US Renews Iran Strikes as Both Sides Dispute Hormuz Status - Bloomberg.com",
+      "source_name": "Bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPR1dsTV95QVROeEhJUVg3WDRheFNJMXY3NlFianE5ZE0xWEFkOTlBS054aFNETWFaOENJN0wybWh5VHlhNkJLYVU2UUg0RnVGSUNSLUFHNnVQRFBuT1N3RkVrWVhGYmd6a2tsT29HSVAwZEhTNHJoQUViY0hXQ2h1Zmg0MXNZRC1zMFVhcXAzdnF2bERvOEJUc1o2R19jWURhRnBza25TZkZvOUpxb2c?oc=5",
+      "published_at": "2026-07-13T03:32:00Z",
+      "tier": 3,
       "official": false
     },
     {
@@ -66,11 +66,11 @@
       "official": false
     },
     {
-      "signal": "RISK_RESTRICTION",
-      "title": "Ship traffic through Hormuz falls as U . S . and Iran fight for control",
-      "source_name": "CNBC",
-      "source_url": "https://www.cnbc.com/2026/07/13/ship-traffic-through-hormuz-falls-as-us-and-iran-fight-for-control.html",
-      "published_at": "2026-07-13T16:29:33Z",
+      "signal": "OPEN_OPERATIONAL",
+      "title": "US keeping the Strait of Hormuz open is 'a massive force problem' - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNU1Q5VjVuZlVoREpvLWRIUE1mTE9ZNFdtTGdFV0k2Ty1QaEZEdUVFYzJFaDRWRTd2Qzk2el9ZV2lzSG43azZUSmFDSlMzS19XUWVEZ092cnQ4NmxHbmNpVHB2U05FZ2ZtRXNqbE5oOWdNMGtfUFNaWkVWTS1SVGl2bndkaW1RY0FGUW9jR3VaMUFBc3Y4c0ZubV91bElNck95UGpDSW9sRE5pZ9IBrwFBVV95cUxQMW9PWTJ3bjBuUVRMOGRuSm5wNlhkUkUwTzR0MTBpY2x4eVdHanhPOGhNYmotblVla0pmWF9FUmpyWjZMLVBZQ3o1ZTdZZ01fXzhWVlIwLXBieFlEYTNQNllVb25YdVh1N1g3blJIQWxuazRYQS1mMU1CMTZUSzFFZGpYbnNsM2RTcTZMTmt3Qjg2UnpYNW5PYmhrUWl2Y0FmLV9DNjlaeTlNQXU1aTlv?oc=5",
+      "published_at": "2026-07-13T20:26:27Z",
       "tier": 2,
       "official": false
     }
@@ -78,23 +78,24 @@
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+    ],
     "scores": {
-      "open": 7.81,
+      "open": 10.21,
       "closed": 0,
       "declared": 0,
-      "risk": 17.66
+      "risk": 16.09
     },
     "independent_sources": {
-      "open": 3,
+      "open": 4,
       "closed": 0,
       "declared": 0,
       "risk": 6
     },
-    "articles_considered": 61,
-    "signals_considered": 17
+    "articles_considered": 50,
+    "signals_considered": 14
   }
 }
