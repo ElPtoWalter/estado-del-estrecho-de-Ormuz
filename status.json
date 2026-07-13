@@ -4,9 +4,9 @@
   "operational_status": "OPEN_RESTRICTED",
   "operational_label_es": "Abierto con restricciones",
   "operational_label_en": "Open with restrictions",
-  "confidence": "MEDIA",
-  "checked_at": "2026-07-13T16:20:26Z",
-  "last_success_at": "2026-07-13T16:20:26Z",
+  "confidence": "BAJA",
+  "checked_at": "2026-07-13T17:32:03Z",
+  "last_success_at": "2026-07-13T17:32:03Z",
   "last_change_at": "2026-07-12T14:07:07Z",
   "verification_ok": true,
   "stale": false,
@@ -57,20 +57,20 @@
       "official": false
     },
     {
-      "signal": "OPEN_OPERATIONAL",
-      "title": "First Thing: US and Iran exchange fire and disagree on whether strait of Hormuz is open - The Guardian",
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil prices leap and stocks fall amid US-Iran strikes over Hormuz - The Guardian",
       "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPTHIwVW4za254bUVjQUdOZTNWZUVya2MtbjRnNDdSMHM2SEJiZWpBRlhCYnk2NTd4WXZqcWg0R2VTaWFzMkZpZWs2dmkzbWt5cFpsV1MzeWhJdUhTQXkyR2lrYlM4MEhIcTZPSERGLTMyZFltOWxMLWNCLXZWRDVjM3J0MHBBN3hhSWc?oc=5",
-      "published_at": "2026-07-13T12:31:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNQXlyeWtGOUl1T05Wa1IzY0ZtNlZzbVJuUjlQaU41V3NHYUJSb0ZoNTAyaWFBMEpuYlk5M0FDWENtSGZTZUk5OUJhMXdYUDVhUm1YZVMwcTdWa01FaVlsTEZmdVhEblUweHlaWEJzdndOY2xRN3dMRDJraWRtRkdEdjdrRjFael8zclZfQVA5LUZ5bFcxTU9UaGdmTzNaaUdueXVMUm1qRGhSdi1GVk42QnQzaDVjZzdXSmZLS3JR?oc=5",
+      "published_at": "2026-07-13T07:18:00Z",
       "tier": 3,
       "official": false
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "U.S. and Iran exchange strikes as Strait of Hormuz standoff escalates - CNBC Africa",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQYXFxUlYxbW9Kb0NCQjAwbzhZQW5rX0RacUtqTGRYSWMzaU1RWi1uZUVNVHhhSEdIWWxtTUtlN0dqSkxBY19IUUtISDdnVXJNa1dFYmdIdkxVQzNhSmN2TjBmcnlfSTBYVlA0QzltUVRxQS12Ul9KVU1oSE9pRUg4c2k5Q2VONXVZZVdsYWhqNktWTFQxYTNJcmhsUlhFRWlhdUZZ?oc=5",
-      "published_at": "2026-07-13T08:12:01Z",
+      "title": "March to July : What different as US - Iran fighting escalates again ? | US - Israel war on Iran News",
+      "source_name": "Al Jazeera",
+      "source_url": "https://www.aljazeera.com/news/2026/7/13/march-to-july-whats-different-as-us-iran-fighting-escalates-again",
+      "published_at": "2026-07-13T15:30:00Z",
       "tier": 2,
       "official": false
     }
@@ -78,24 +78,23 @@
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: URLError: <urlopen error timed out>"
-    ],
+    "providers_failed": [],
     "scores": {
-      "open": 8.1,
+      "open": 5.1,
       "closed": 0,
       "declared": 0,
-      "risk": 21.42
+      "risk": 21.66
     },
     "independent_sources": {
-      "open": 3,
+      "open": 2,
       "closed": 0,
       "declared": 0,
       "risk": 7
     },
-    "articles_considered": 52,
-    "signals_considered": 21
+    "articles_considered": 55,
+    "signals_considered": 19
   }
 }
