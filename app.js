@@ -35,7 +35,11 @@
       historyEvents: "Cambios registrados",
       historyLast: "Último cambio",
       historyCurrent: "Estado actual",
-      none: "Ninguno"
+      none: "Ninguno",
+      provisional: "Estado provisional basado en evidencia indirecta. La última confirmación operativa válida puede ser anterior a esta comprobación.",
+      mapLoading: "Cargando mapa AIS…",
+      mapLoaded: "Mapa AIS cargado.",
+      mapTitle: "Mapa AIS en directo del estrecho de Ormuz"
     },
     en: {
       status: { ABIERTO: "OPEN", CERRADO: "CLOSED", INCIERTO: "UNCERTAIN" },
@@ -63,12 +67,27 @@
       historyEvents: "Recorded changes",
       historyLast: "Last change",
       historyCurrent: "Current status",
-      none: "None"
+      none: "None",
+      provisional: "Provisional status based on indirect evidence. The latest valid operational confirmation may predate this check.",
+      mapLoading: "Loading AIS map…",
+      mapLoaded: "AIS map loaded.",
+      mapTitle: "Live AIS map of the Strait of Hormuz"
     }
   }[lang];
 
   const statusClass = status => ({ ABIERTO: "is-open", CERRADO: "is-closed", INCIERTO: "is-uncertain" }[status] || "is-uncertain");
   const confidenceClass = value => ({ ALTA: "confidence-high", MEDIA: "confidence-medium", BAJA: "confidence-low" }[value] || "confidence-low");
+
+  function displayStatus(data) {
+    if (data.status === "ABIERTO" && data.operational_status === "OPEN_RESTRICTED") {
+      return lang === "es" ? "ABIERTO CON RESTRICCIONES" : "OPEN WITH RESTRICTIONS";
+    }
+    return labels.status[data.status] || labels.status.INCIERTO;
+  }
+
+  function isProvisional(data) {
+    return data.status === "ABIERTO" && data.confidence === "BAJA";
+  }
 
   function formatDate(value) {
     if (!value) return labels.unavailable;
@@ -119,21 +138,32 @@
     const hero = document.getElementById("statusHero");
     if (!hero) return;
     const status = labels.status[data.status] ? data.status : "INCIERTO";
-    hero.classList.remove("is-open", "is-closed", "is-uncertain");
+    hero.classList.remove("is-open", "is-closed", "is-uncertain", "is-provisional");
     hero.classList.add(statusClass(status));
+    if (isProvisional(data)) hero.classList.add("is-provisional");
     hero.dataset.status = status;
+    hero.dataset.confidence = data.confidence || "BAJA";
+    hero.dataset.operationalStatus = data.operational_status || "";
 
     const word = document.getElementById("statusWord");
     const operational = document.getElementById("operationalLabel");
     const summary = document.getElementById("statusSummary");
+    const advisory = document.getElementById("statusAdvisory");
     const checked = document.getElementById("checkedAt");
     const confidence = document.getElementById("confidence");
     const valid = document.getElementById("lastValidAt");
     const evidence = document.getElementById("evidenceList");
 
-    if (word) word.textContent = labels.status[status];
+    if (word) {
+      word.textContent = displayStatus(data);
+      word.classList.toggle("is-long-status", data.status === "ABIERTO" && data.operational_status === "OPEN_RESTRICTED");
+    }
     if (operational) operational.textContent = lang === "es" ? data.operational_label_es : data.operational_label_en;
     if (summary) summary.textContent = lang === "es" ? data.summary_es : data.summary_en;
+    if (advisory) {
+      advisory.hidden = !isProvisional(data);
+      advisory.textContent = isProvisional(data) ? labels.provisional : "";
+    }
     if (checked) checked.textContent = formatDate(data.checked_at);
     if (confidence) {
       confidence.textContent = labels.confidence[data.confidence] || labels.confidence.BAJA;
@@ -316,6 +346,35 @@
     }
   }
 
+
+  function setupLiveMap() {
+    const button = document.querySelector("[data-load-marine-map]");
+    const container = document.getElementById("marineMapContainer");
+    const placeholder = document.getElementById("marineMapPlaceholder");
+    const status = document.getElementById("marineMapStatus");
+    if (!button || !container || !placeholder) return;
+
+    button.addEventListener("click", () => {
+      if (container.querySelector("iframe")) return;
+      button.disabled = true;
+      button.textContent = labels.mapLoading;
+      if (status) status.textContent = labels.mapLoading;
+
+      const iframe = document.createElement("iframe");
+      iframe.className = "traffic-map-frame";
+      iframe.title = labels.mapTitle;
+      iframe.src = "https://www.marinetraffic.com/en/ais/embed/zoom:6/centery:25.8/centerx:57.7/maptype:4/shownames:true/mmsi:0/shipid:0/fleet:/fleet_id:/vtypes:/showmenu:true/remember:false";
+      iframe.loading = "eager";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allowFullscreen = true;
+      iframe.addEventListener("load", () => {
+        placeholder.remove();
+        if (status) status.textContent = labels.mapLoaded;
+      }, { once: true });
+      container.append(iframe);
+    });
+  }
+
   function setupInteractions() {
     const navToggle = document.querySelector(".nav-toggle");
     const nav = document.querySelector(".site-nav");
@@ -329,6 +388,7 @@
     document.querySelectorAll("[data-enable-alerts]").forEach(button => button.addEventListener("click", enableBrowserAlerts));
     document.querySelectorAll("[data-copy-rss]").forEach(button => button.addEventListener("click", () => copyValue(`${BASE}feed.xml`)));
     document.querySelectorAll("[data-copy-api]").forEach(button => button.addEventListener("click", () => copyValue(`${BASE}status.json`)));
+    setupLiveMap();
   }
 
   document.addEventListener("DOMContentLoaded", () => {

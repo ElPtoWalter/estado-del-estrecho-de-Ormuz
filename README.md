@@ -152,3 +152,8 @@ La versión actual no incluye anuncios, cuentas ni analítica propia. Los avisos
 ## Advertencia
 
 Es una herramienta informativa automatizada. No sustituye avisos oficiales de navegación marítima, instrucciones de las autoridades ni asesoramiento profesional.
+
+
+## Mapa AIS visual
+
+La portada incluye un mapa oficial de MarineTraffic cargado solo después de una acción explícita del visitante. Es una señal visual complementaria y no altera automáticamente el estado sin una integración AIS autorizada.

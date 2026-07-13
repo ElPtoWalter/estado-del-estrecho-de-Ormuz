@@ -1097,6 +1097,20 @@ def confidence_css(confidence: str) -> str:
     return {"ALTA": "confidence-high", "MEDIA": "confidence-medium", "BAJA": "confidence-low"}.get(confidence, "confidence-low")
 
 
+def is_provisional(payload: dict[str, Any]) -> bool:
+    return payload.get("status") == "ABIERTO" and payload.get("confidence") == "BAJA"
+
+
+def status_display(payload: dict[str, Any], lang: str) -> str:
+    if payload.get("status") == "ABIERTO" and payload.get("operational_status") == "OPEN_RESTRICTED":
+        return "ABIERTO CON RESTRICCIONES" if lang == "es" else "OPEN WITH RESTRICTIONS"
+    labels = {
+        "es": {"ABIERTO": "ABIERTO", "CERRADO": "CERRADO", "INCIERTO": "INCIERTO"},
+        "en": {"ABIERTO": "OPEN", "CERRADO": "CLOSED", "INCIERTO": "UNCERTAIN"},
+    }
+    return labels[lang].get(payload.get("status"), labels[lang]["INCIERTO"])
+
+
 def evidence_html(payload: dict[str, Any], lang: str) -> str:
     items = payload.get("evidence") or []
     if not items:
@@ -1154,10 +1168,11 @@ def snapshot_html(payload: dict[str, Any], lang: str) -> str:
     else:
         stale_note = ""
     return f'''<!-- STATUS_SNAPSHOT_START -->
-      <div id="statusHero" class="status-hero {status_css(status)}" data-status="{status}">
+      <div id="statusHero" class="status-hero {status_css(status)}{' is-provisional' if is_provisional(payload) else ''}" data-status="{status}" data-confidence="{html.escape(str(payload.get('confidence', 'BAJA')))}" data-operational-status="{html.escape(str(payload.get('operational_status', '')))}">
         <div class="status-kicker"><span class="status-dot" aria-hidden="true"></span><span id="operationalLabel">{html.escape(operational)}</span></div>
-        <div class="status-word" id="statusWord" aria-live="polite">{labels[lang].get(status, labels[lang]["INCIERTO"])}</div>
+        <div class="status-word{' is-long-status' if status == 'ABIERTO' and payload.get('operational_status') == 'OPEN_RESTRICTED' else ''}" id="statusWord" aria-live="polite">{html.escape(status_display(payload, lang))}</div>
         <p class="status-summary" id="statusSummary">{html.escape(str(summary))}</p>
+        <p class="status-advisory" id="statusAdvisory"{' hidden' if not is_provisional(payload) else ''}>{html.escape('Estado provisional basado en evidencia indirecta. La última confirmación operativa válida puede ser anterior a esta comprobación.' if lang == 'es' and is_provisional(payload) else 'Provisional status based on indirect evidence. The latest valid operational confirmation may predate this check.' if is_provisional(payload) else '')}</p>
         {stale_note}
       </div>
       <div class="status-facts">

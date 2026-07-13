@@ -1,0 +1,22 @@
+ACTUALIZACIÓN 3.1 — RADAR AIS Y ESTADO PROVISIONAL
+
+1. En GitHub abre el repositorio y entra en Code.
+2. Pulsa Add file → Upload files.
+3. Sube TODOS los archivos de esta carpeta a la raíz del repositorio.
+   No hay que subir ninguna carpeta .github en esta actualización.
+4. Pulsa Commit changes.
+5. Ve a Actions → Actualizar estado de Ormuz → Run workflow.
+6. Espera a que termine en verde.
+7. Abre la web y pulsa Ctrl + F5.
+
+COMPROBACIONES
+- Si el resultado es ABIERTO + OPEN_RESTRICTED, el texto principal será
+  “ABIERTO CON RESTRICCIONES”.
+- Con confianza baja se mostrará en ámbar y como estado provisional.
+- En la portada aparecerá “Tráfico marítimo AIS en directo”.
+- El mapa de MarineTraffic no se conecta hasta pulsar “Cargar radar marítimo”.
+- Si el mapa no carga por un bloqueador, usa el enlace “Abrir mapa completo”.
+
+IMPORTANTE
+El mapa es una comprobación visual complementaria. No se cuentan buques ni se
+usa el mapa automáticamente para declarar abierto o cerrado el estrecho.

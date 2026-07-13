@@ -1,3 +1,12 @@
+
+## 3.1 · Radar AIS y comunicación provisional
+
+- Mapa AIS oficial de MarineTraffic cargado bajo petición.
+- Aviso de privacidad previo a la carga de contenido externo.
+- Estado principal “ABIERTO CON RESTRICCIONES” cuando corresponde.
+- Tratamiento visual ámbar y aviso explícito para estados abiertos con confianza baja.
+- Documentación AIS añadida a metodología, fuentes y privacidad.
+
 # Changelog
 
 ## 3.0.0 — 2026-07-12
