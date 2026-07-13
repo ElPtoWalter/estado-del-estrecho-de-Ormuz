@@ -4,9 +4,9 @@
   "operational_status": "OPEN_RESTRICTED",
   "operational_label_es": "Abierto con restricciones",
   "operational_label_en": "Open with restrictions",
-  "confidence": "BAJA",
-  "checked_at": "2026-07-13T22:30:34Z",
-  "last_success_at": "2026-07-13T22:30:34Z",
+  "confidence": "MEDIA",
+  "checked_at": "2026-07-13T23:27:29Z",
+  "last_success_at": "2026-07-13T23:27:29Z",
   "last_change_at": "2026-07-12T14:07:07Z",
   "verification_ok": true,
   "stale": false,
@@ -14,33 +14,87 @@
   "summary_en": "Recent evidence indicates an operational route, but restrictions, incidents or elevated maritime risk remain.",
   "last_valid_confirmation": {
     "status": "ABIERTO",
-    "at": "2026-07-13T13:15:30Z",
-    "source_name": "Oman News Agency",
-    "source_url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQa3hmM2tUc3Nmb3lKU3RTaE1vQlNMS0dscFl4amhTQV96ck1sMDhoYjdRa3RFM3c5Y0NiRFBiRW5zUzBOcUNKTmoxOVNVREJtci12Vk5jMDd3UlRvNHpWaHV0dmdLY2xOaWcwTDJfeF9VYko4OG9GM3hRQko2TjU3eExpSmVJblFsbW43M01reHp5SkluUnBvVUVTRjI1WmNQZFV0czJlNWJUZFAyQm11SzV0am9qZ3UxM21TRGxMUERQaXFCRUxaamh6NlQ2QXZr?oc=5",
-    "title": "Europeans condemn Iran as it attacks Gulf states after closing Strait of Hormuz - thenationalnews.com"
+    "at": "2026-07-13T14:32:27Z",
+    "source_name": "IMO",
+    "source_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE85aDhIbUtKb1ZQOWR1M3ljcUFNazZpNGNKSzJOdjVhOG55NGVrZTlPN1FVcGFhSExLOGhMVEtrTmt5OEFzTF9RRmhBR05XUXdpVFpNaWNhMEc5bEc2Mkp4RHJpM09JRDNvY0pDMkVFcmFjM2ZUSlgwaQ?oc=5",
+    "title": "US begins new Iran strikes after Trump says ships will be charged to use the Strait of Hormuz - Baltimore Sun"
   },
-  "evidence": [],
+  "evidence": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US begins new Iran strikes after Trump says ships will be charged to use the Strait of Hormuz - Baltimore Sun",
+      "source_name": "IMO",
+      "source_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE85aDhIbUtKb1ZQOWR1M3ljcUFNazZpNGNKSzJOdjVhOG55NGVrZTlPN1FVcGFhSExLOGhMVEtrTmt5OEFzTF9RRmhBR05XUXdpVFpNaWNhMEc5bEc2Mkp4RHJpM09JRDNvY0pDMkVFcmFjM2ZUSlgwaQ?oc=5",
+      "published_at": "2026-07-13T14:32:27Z",
+      "tier": 5,
+      "official": true
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US begins new Iran strikes after Trump says ships will be charged to use the Strait of Hormuz - AP News",
+      "source_name": "Associated Press",
+      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNQXlDMHpMczFma2paOVJQMzZuZzVNVFZLeS04V0VXUk1zUFBSTGRaelYzaU1fQlg0azEwQ1dQQ2lfV2VmOFBMZ0ZGa0tjSWJGUWVFdDhhUTdCbmpKMy1QRHVOdE5YRnliNmJfVkRKU09zdVhYSm1hQW94MDlUbEp1OXB0ZjIzZlFtYUdZZHBQb2pHT1V5bjZtbVE0QVN3cTg?oc=5",
+      "published_at": "2026-07-13T22:47:00Z",
+      "tier": 4,
+      "official": false
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Trump says US reinstates blockade of Iranian shipping in Strait of Hormuz, orders new US strikes - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMG0wMGZybUNSMnZyOWQzck1Eb0JwcFdfWUVXNlBYbk10c3VveDRrdzVpYVJhNjdwdUdnR1ZMZDhVTXdnWE41M09iZnZwUmJzbEpsX2V0Q2xDWmdHVjZGRkxtRmVsOFU2OWM3aGsyUGljckNVb1F1WlpmMk5GQVE4S0Q4QXJQYlI4V1hZSktORXBZYm1YXzNsQUYwQ2dOSUJtSTJrNmpvR3M5Q2szcXYzWENxeGFIbnRHS0lhaXdnN3FFcnM?oc=5",
+      "published_at": "2026-07-13T06:47:00Z",
+      "tier": 4,
+      "official": false
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US launches third night of strikes on Iran as Trump announces Hormuz blockade - The Guardian",
+      "source_name": "The Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTzk5TkVyaXI1Tl9tMUgxc20zOHBTTVk5M1NyX1lJd3MtYnFfVW9xV2dJR1p2Q1RVb3ZqRkRFRXBCM1N0VVdJTlRLT0R6Z0w0U1FLYlhfMXpFWGxFZ2htTmk1UGlmWEJ5THUwVzAwRWU4NUdxVnQzN2pUOENDbTVOekNfcld6R3RWN1h5US1vVkk1QzgtQUlhWXdaYnNvV3VyOFZuODJLcjAwbl94U2Y1cGN6VEJiM1BDTngwQXdoMzQ?oc=5",
+      "published_at": "2026-07-13T22:49:00Z",
+      "tier": 3,
+      "official": false
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US, Iran exchange attacks around Strait of Hormuz - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPNGVRSUxGa2g1WWtrM2NsRy02Q1NoUjMtR2oxQ2hPS20talhlRXlDZ0pWRFgyVnFnQmVxeUhVTXpQb3hSdFFMeWU0Wklqck8yUmRhZW1fUHI4WEtibjRWdTlPaHJCLUNmWUhXbjltSjBoMTRNTWprRlpRNmVFSDFUU3JKelprTTYtR01mQ3QxSE84NnMzRmYwSzViZ1oxejhvd0VrM1Fub3Y3ZjhyOUdz0gG0AUFVX3lxTE0yUWdleHdLN3dkdURxNkxESFdBMVhZS1dESjlLalg5NDhyT1JXSHl2ekhtSlg5alM5Y3FSaU1CRHZYN3N0dVh5eGhIekJSRzlQU3VzZExXNzJ6cGJyU0NxQmVFYkp2cGJQRWJaVy03bWUwNnIwZi1DV1lSQjhscnEyd2gtYzRTRFRlM25FZGwzZVZZRVEtWk9zX0RJdmVSQUpXNWUxclNzdFRXOXBPR1JsMnJhaA?oc=5",
+      "published_at": "2026-07-13T23:03:45Z",
+      "tier": 2,
+      "official": false
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US Renews Iran Strikes as Both Sides Dispute Hormuz Status - Bloomberg.com",
+      "source_name": "Bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPR1dsTV95QVROeEhJUVg3WDRheFNJMXY3NlFianE5ZE0xWEFkOTlBS054aFNETWFaOENJN0wybWh5VHlhNkJLYVU2UUg0RnVGSUNSLUFHNnVQRFBuT1N3RkVrWVhGYmd6a2tsT29HSVAwZEhTNHJoQUViY0hXQ2h1Zmg0MXNZRC1zMFVhcXAzdnF2bERvOEJUc1o2R19jWURhRnBza25TZkZvOUpxb2c?oc=5",
+      "published_at": "2026-07-13T03:32:00Z",
+      "tier": 3,
+      "official": false
+    }
+  ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT"
+      "GDELT",
+      "Google News RSS"
     ],
-    "providers_failed": [
-      "Google News RSS: HTTPError: HTTP Error 503: Service Unavailable"
-    ],
+    "providers_failed": [],
     "scores": {
-      "open": 0,
+      "open": 9.41,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 22.05
     },
     "independent_sources": {
-      "open": 0,
+      "open": 4,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 7
     },
-    "articles_considered": 5,
-    "signals_considered": 0
+    "articles_considered": 54,
+    "signals_considered": 17
   }
 }
