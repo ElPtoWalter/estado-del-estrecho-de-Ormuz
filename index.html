@@ -18,6 +18,7 @@
 <link href="/feed.xml" rel="alternate" title="Estrecho Ormuz RSS" type="application/rss+xml"/>
 <link href="/styles.css" rel="stylesheet"/>
 <script defer="" src="/app.js"></script>
+<script defer="" src="/evidence-ui.js"></script>
 <meta content="website" property="og:type"/>
 <meta content="Estrecho Ormuz" property="og:site_name"/>
 <meta content="es_ES" property="og:locale"/>
@@ -31,6 +32,13 @@
 <meta content="Monitor independiente del estado operativo del estrecho de Ormuz, con evidencias verificables, tráfico AIS, historial y metodología pública." name="twitter:description"/>
 <meta content="https://estrechoormuz.com/social-card.png" name="twitter:image"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Estrecho de Ormuz hoy: estado, tráfico y riesgo marítimo","description":"Monitor independiente del estado operativo del estrecho de Ormuz, con evidencias verificables, tráfico AIS, historial y metodología pública.","url":"https://estrechoormuz.com/","isPartOf":{"@type":"WebSite","name":"Estrecho Ormuz","url":"https://estrechoormuz.com/"},"inLanguage":"es","mainEntity":{"@type":"Dataset","name":"Estado operativo del estrecho de Ormuz","description":"Clasificación periódica del estado operativo, confianza, evidencias e historial del estrecho de Ormuz.","url":"https://estrechoormuz.com/status.json","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"inLanguage":["es","en"],"creator":{"@type":"Organization","name":"Estrecho Ormuz","url":"https://estrechoormuz.com/sobre.html"}}}</script>
+<style id="ormuz-v8-evidence-style">
+.status-hero.is-loading::after{background:var(--muted);opacity:.10}
+.status-hero.is-loading .status-dot,.status-hero.is-loading .status-word{color:var(--muted)}
+.status-hero.is-loading .status-word{font-size:clamp(2.2rem,6vw,4.8rem);letter-spacing:-.045em}
+.evidence-context-badge{display:inline-flex;align-items:center;margin-top:8px;padding:6px 10px;border:1px solid var(--line-strong);border-radius:999px;color:var(--muted);font-size:.75rem;font-weight:750}
+.evidence-section.is-carried-evidence{border-top:1px solid var(--line)}
+</style>
 </head>
 <body class="home-v4" data-lang="es">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -71,24 +79,45 @@
 <section aria-label="Estado marítimo actual" class="content-section status-section-v4" id="estado-actual">
 <div class="section-heading section-heading-v4"><div><span class="section-index">01</span><div><p class="section-kicker">Situación marítima actual</p><h2>Indicador operativo</h2></div></div><a class="text-link" href="/historial.html">Consultar historial →</a></div>
 <!-- STATUS_SNAPSHOT_START -->
-<article aria-live="polite" class="status-shell">
-<div class="status-hero is-open is-provisional" id="statusHero">
-<div class="status-kicker"><span aria-hidden="true" class="status-dot"></span><span id="operationalLabel">Abierto con restricciones</span></div>
-<div class="status-word is-long-status" id="statusWord">ABIERTO CON RESTRICCIONES</div>
-<p class="status-summary" id="statusSummary">Hay evidencia reciente de una ruta operativa, pero persisten restricciones, incidentes o un riesgo marítimo elevado.</p>
-<p class="status-advisory" id="statusAdvisory">Clasificación prudente basada en confirmaciones recientes y señales independientes.</p>
-</div>
-<div class="status-facts">
-<div><span>Última comprobación</span><strong id="checkedAt">14 jul 2026 · 00:00 UTC</strong></div>
-<div><span>Nivel de confianza</span><strong class="confidence-medium" id="confidence">MEDIA</strong></div>
-<div><span>Última confirmación válida</span><strong id="lastValidAt">Pendiente de actualización</strong></div>
-</div>
-<div class="evidence-section">
-<div class="section-heading"><div><h2>Evidencia utilizada</h2><p>Señales que sustentan la clasificación actual.</p></div><a class="text-link" href="/fuentes.html">Política de fuentes →</a></div>
-<div class="evidence-grid" id="evidenceList"><p class="empty-state">Cargando evidencias verificadas…</p></div>
-</div>
-</article>
-<!-- STATUS_SNAPSHOT_END -->
+      <div class="status-hero is-loading" id="statusHero">
+        <div class="status-kicker"><span class="status-dot" aria-hidden="true"></span><span id="operationalLabel">Consultando estado actual</span></div>
+        <div class="status-word is-long-status" id="statusWord">CONSULTANDO…</div>
+        <p class="status-summary" id="statusSummary">Recuperando la última comprobación y sus evidencias verificadas.</p>
+        <p class="status-advisory" hidden="" id="statusAdvisory"></p>
+        
+      </div>
+      <div class="status-facts">
+        <div><span>Última comprobación</span><strong id="checkedAt">—</strong></div>
+        <div><span>Confianza</span><strong id="confidence">—</strong></div>
+        <div><span>Última confirmación válida</span><strong id="lastValidAt">—</strong></div>
+      </div>
+      <div class="evidence-section">
+        <div class="section-heading">
+          <h2>Evidencias recientes</h2>
+          <p>Se muestran señales independientes y relevantes, no una lista completa de noticias.</p>
+        </div>
+        <div class="evidence-grid" id="evidenceList"><p class="empty-state">Cargando evidencias verificadas…</p></div>
+              <h3><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNWnBwMkRnYlE0eWdLanFlS1JwcWNwQW83YkJMbFJXdzZYRGFiZUtib0UzM1hRVFozX3RCTmwxUVQzV2RvNTU2ZE56RjZOYjRQbzF5SkJ1Y0RTQnktRmg1NjliM2pMcy1kY045dVQ4bk9sYkNDU2N6WTFnNV9NNjZMa21IYkxLX3NmWDF2NXMzUmRtRkN0eGlwRmx6SHdlakU?oc=5" target="_blank" rel="noopener noreferrer">US attacks Iran and Tehran retaliates across the Middle East, threatening a return to all-out war - AP News</a></h3>
+              <p>Associated Press</p>
+            </article>
+<article class="evidence-card">
+              <div class="evidence-meta"><span>Riesgo o restricción · oficial</span><time>14 de julio de 2026, 11:25</time></div>
+              <h3><a href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxNMnpabkpkcndjODB4R1JnWTZ1aDhMb3llYXBPRFQ1bkdQWi1ZUGkzT1ZhdDU2MGFsNFRGSDJVOGtOaHMycWM4VW1iQy1nbzhpdEpHUWk3YkU3M1NFbHpyVnFKcVUxOGtnTkRxcV8xOXZDcXI3dDRMZmhfMjJ6WEFONENNUHlzZlRaR2lCM0dKalphT2xrY1JyVHMzOUlvMmZOaVRRRjYxT0Q5ZDBMbmlLc2xTWjFhOGYtMHEwRG5wZmVZb3U0N3VxdkRmS1k3UlR6c295MUY5N1h2WjhQZTVzckY1MjB4Y3NzSlRKZmV3?oc=5" target="_blank" rel="noopener noreferrer">One seafarer killed, eight injured in attacks on two UAE tankers in Strait of Hormuz — SMI DIGITAL - shipmanagementinternational.com</a></h3>
+              <p>Oman News Agency</p>
+            </article>
+<article class="evidence-card">
+              <div class="evidence-meta"><span>Riesgo o restricción</span><time>14 de julio de 2026, 02:56</time></div>
+              <h3><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNV1NVbmwxanV3R25iWTRkMnNoY3hRblJYYVdDTU9FSGVrbDJkRDlNazBlbGV2MjBUYlNDX09Mcng5Vk9BdGJRSEIyNGdXdzlZOFV4aTh5N0xBSlB4WklnZ2VvUFc2WENOalA4Z1p0djZXVmFzV3RpMklJekp2U1JYbmxVREk4bTFtR19jQ2pJVzJkQU0xWmtsZzhBOHc5UkYtMGtld1RYUE91ZE9nNFQ5MTdvT2xxY2xoVjdzX2JqMG1uYy1IRTJz?oc=5" target="_blank" rel="noopener noreferrer">Iran and US stage new attacks, battle over control of Strait of Hormuz - Reuters</a></h3>
+              <p>Reuters</p>
+            </article>
+<article class="evidence-card">
+              <div class="evidence-meta"><span>Riesgo o restricción</span><time>14 de julio de 2026, 11:17</time></div>
+              <h3><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOdlpWMnZGSmtBOXdCMWhJSUxoMkdJT1hWbjF5ZVlDLTgxUVFYOUtGMmNCLTgzU2pvWm85YTNLaHg3YzFFWkpSbWNhdkRsNzZDcWczLXpNeEVRTXNYSC1WZDZDNlE4UUVyUUVvUjVaMjdfbGtJR3Y1NFVOaW4tOWpCMlFJd0dSeUJhV2huNEMwNmtBd3JEU0NGYW9VaTdFcmI5R1Y0SGxSMEZtRnZHbktkbDFjcw?oc=5" target="_blank" rel="noopener noreferrer">US-Iran Truce Collapses as Attacks Worsen and Blockade Returns - Bloomberg.com</a></h3>
+              <p>Bloomberg</p>
+            </article>
+        </div>
+      </div>
+      <!-- STATUS_SNAPSHOT_END -->
 </section>
 <section aria-labelledby="verification-title" class="verification-board content-section">
 <div class="section-heading section-heading-v4"><div><span class="section-index">02</span><div><p class="section-kicker">Transparencia técnica</p><h2 id="verification-title">Panel de verificación</h2></div></div><span class="system-chip" id="systemStatus"><i class="live-pulse"></i>Sistema operativo</span></div>
