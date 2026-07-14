@@ -22,6 +22,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parent
 STATUS_FILE = ROOT / "status.json"
+SITEMAP_FILE = ROOT / "sitemap.xml"
 HTML_FILES = ((ROOT / "index.html", "es"), (ROOT / "en.html", "en"))
 ARCHIVE_DAYS = 14
 ARCHIVE_LIMIT = 60
@@ -314,14 +315,68 @@ def patch_html(path: Path, lang: str) -> None:
         f'<div class="evidence-grid" id="evidenceList"><p class="empty-state">{loading_evidence}</p></div>',
     )
 
+    archive_href = "/evidencias.html" if lang == "es" else "/en-evidence.html"
+    archive_text = "Ver archivo completo →" if lang == "es" else "View full archive →"
+    evidence_link_pattern = re.compile(
+        r'(<div class=["\']evidence-section["\']>.*?<div class=["\']section-heading["\']>.*?</div>)'
+        r'<a class=["\']text-link["\'][^>]*>.*?</a>',
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    html = evidence_link_pattern.sub(
+        rf'\1<a class="text-link" href="{archive_href}">{archive_text}</a>',
+        html,
+        count=1,
+    )
+
     path.write_text(html, encoding="utf-8")
 
 
+
+def ensure_archive_in_sitemap(checked_at: str | None) -> None:
+    """Mantiene las páginas del archivo en el sitemap aunque el motor lo regenere."""
+    try:
+        xml = SITEMAP_FILE.read_text(encoding="utf-8")
+    except OSError:
+        return
+    date_value = (parse_dt(checked_at) or datetime.now(timezone.utc)).date().isoformat()
+    entries = (
+        (
+            "https://estrechoormuz.com/evidencias.html",
+            "https://estrechoormuz.com/en-evidence.html",
+            "es",
+        ),
+        (
+            "https://estrechoormuz.com/en-evidence.html",
+            "https://estrechoormuz.com/evidencias.html",
+            "en",
+        ),
+    )
+    additions: list[str] = []
+    for loc, alternate, language in entries:
+        if f"<loc>{loc}</loc>" in xml:
+            continue
+        es_url = loc if language == "es" else alternate
+        en_url = loc if language == "en" else alternate
+        additions.append(
+            "  <url>"
+            f"<loc>{loc}</loc><lastmod>{date_value}</lastmod>"
+            "<changefreq>hourly</changefreq><priority>0.85</priority>"
+            f'<xhtml:link rel="alternate" hreflang="es" href="{es_url}"/>'
+            f'<xhtml:link rel="alternate" hreflang="en" href="{en_url}"/>'
+            '<xhtml:link rel="alternate" hreflang="x-default" href="https://estrechoormuz.com/evidencias.html"/>'
+            "</url>"
+        )
+    if additions and "</urlset>" in xml:
+        xml = xml.replace("</urlset>", "\n".join(additions) + "\n</urlset>")
+        SITEMAP_FILE.write_text(xml, encoding="utf-8")
+
+
 def main() -> None:
-    update_status()
+    current = update_status()
+    ensure_archive_in_sitemap(current.get("checked_at"))
     for path, lang in HTML_FILES:
         patch_html(path, lang)
-    print("V8: evidencias conservadas y estado de carga neutral aplicado.")
+    print("V9: evidencias conservadas, archivo público y estado de carga neutral aplicados.")
 
 
 if __name__ == "__main__":

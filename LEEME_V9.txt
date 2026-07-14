@@ -1,0 +1,42 @@
+ESTRECHO ORMUZ V9 — ARCHIVO PÚBLICO DE EVIDENCIAS
+
+QUÉ AÑADE
+- Página pública en español: /evidencias.html
+- Página pública en inglés: /en-evidence.html
+- Archivo dinámico basado en evidence_archive de status.json.
+- Buscador y filtro por fuente.
+- Métricas de última comprobación, conservación, número de evidencias y fuentes.
+- Enlace “Ver archivo completo” en la evidencia de la portada.
+- Inserción automática de ambas páginas en sitemap.xml en cada workflow.
+- Textos más claros para API JSON y RSS dentro de la nueva página.
+
+ARCHIVOS A SUBIR A LA RAÍZ DEL REPOSITORIO
+- evidencias.html
+- en-evidence.html
+- evidence-archive.js
+- styles.css
+- postprocess_evidence.py
+- llms.txt
+
+PASOS
+1. Descomprime el ZIP.
+2. Sube los seis archivos a la raíz del repositorio y acepta las sustituciones.
+3. Commit changes.
+4. Ve a Actions → Actualizar estado de Ormuz → Run workflow.
+5. Cuando termine en verde, abre:
+   https://estrechoormuz.com/evidencias.html
+6. Haz Ctrl+F5 en la portada. El enlace a la derecha de las evidencias debe decir:
+   “Ver archivo completo →”.
+
+NO TOCA
+- La lógica de decisión.
+- Las fuentes ni sus pesos.
+- history.json.
+- El sistema de alertas.
+- El workflow: la V8 ya ejecuta postprocess_evidence.py.
+
+INDEXACIÓN
+Tras comprobarla, solicita una vez la indexación de:
+- https://estrechoormuz.com/evidencias.html
+- https://estrechoormuz.com/en-evidence.html
+El sitemap pasará de 34 a 36 URL cuando se ejecute el workflow.
