@@ -5,8 +5,8 @@
   "operational_label_es": "Abierto con restricciones",
   "operational_label_en": "Open with restrictions",
   "confidence": "MEDIA",
-  "checked_at": "2026-07-14T16:46:55Z",
-  "last_success_at": "2026-07-14T16:46:55Z",
+  "checked_at": "2026-07-14T16:59:59Z",
+  "last_success_at": "2026-07-14T16:59:59Z",
   "last_change_at": "2026-07-12T14:07:07Z",
   "verification_ok": true,
   "stale": false,
@@ -28,7 +28,7 @@
       "published_at": "2026-07-14T16:31:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-14T16:46:55Z"
+      "observed_at": "2026-07-14T16:59:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -38,7 +38,7 @@
       "published_at": "2026-07-14T15:06:17Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-14T16:46:55Z"
+      "observed_at": "2026-07-14T16:59:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -48,7 +48,7 @@
       "published_at": "2026-07-13T22:27:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-14T16:46:55Z"
+      "observed_at": "2026-07-14T16:59:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -58,7 +58,7 @@
       "published_at": "2026-07-14T11:38:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-14T16:46:55Z"
+      "observed_at": "2026-07-14T16:59:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -68,7 +68,7 @@
       "published_at": "2026-07-14T09:17:24Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-14T16:46:55Z"
+      "observed_at": "2026-07-14T16:59:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,17 +78,16 @@
       "published_at": "2026-07-14T04:50:48Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-14T16:46:55Z"
+      "observed_at": "2026-07-14T16:59:59Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 6.175,
       "closed": 0,
@@ -101,8 +100,8 @@
       "declared": 0,
       "risk": 10
     },
-    "articles_considered": 81,
-    "signals_considered": 28,
+    "articles_considered": 89,
+    "signals_considered": 29,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 20,
@@ -126,7 +125,7 @@
       "published_at": "2026-07-14T16:31:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-14T16:46:55Z"
+      "observed_at": "2026-07-14T16:59:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -136,7 +135,7 @@
       "published_at": "2026-07-14T15:06:17Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-14T16:46:55Z"
+      "observed_at": "2026-07-14T16:59:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -226,7 +225,7 @@
       "published_at": "2026-07-14T09:17:24Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-14T16:46:55Z"
+      "observed_at": "2026-07-14T16:59:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -274,7 +273,7 @@
       "published_at": "2026-07-14T04:50:48Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-14T16:46:55Z"
+      "observed_at": "2026-07-14T16:59:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -313,7 +312,7 @@
       "published_at": "2026-07-13T22:27:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-14T16:46:55Z"
+      "observed_at": "2026-07-14T16:59:59Z"
     }
   ]
 }
