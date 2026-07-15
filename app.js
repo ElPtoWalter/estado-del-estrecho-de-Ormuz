@@ -2,31 +2,54 @@
   "use strict";
 
   const lang = document.documentElement.lang === "en" ? "en" : "es";
+
   const BASE = (() => {
     const script = document.currentScript;
-    if (script && script.src) return new URL(".", script.src).href;
+
+    if (script && script.src) {
+      return new URL(".", script.src).href;
+    }
+
     return new URL(".", window.location.href).href;
   })();
 
   const labels = {
     es: {
-      status: { ABIERTO: "ABIERTO", CERRADO: "CERRADO", INCIERTO: "INCIERTO" },
-      confidence: { ALTA: "Alta", MEDIA: "Media", BAJA: "Baja" },
+      status: {
+        ABIERTO: "ABIERTO",
+        CERRADO: "CERRADO",
+        INCIERTO: "INCIERTO"
+      },
+
+      confidence: {
+        ALTA: "Alta",
+        MEDIA: "Media",
+        BAJA: "Baja"
+      },
+
       signals: {
         OPEN_OPERATIONAL: "Tránsito operativo",
         CLOSED_OPERATIONAL: "Interrupción operativa",
         CLOSURE_DECLARED: "Declaración de cierre",
         RISK_RESTRICTION: "Riesgo o restricción"
       },
+
       source: "Fuente",
       official: "oficial",
       lastCheck: "Última comprobación",
       lastValid: "Última confirmación válida",
       unavailable: "No disponible",
       noEvidence: "No hay pruebas públicas suficientes para mostrar.",
-      notificationEnabled: "Avisos activados. Esta pestaña comprobará cambios mientras permanezca abierta.",
-      notificationDenied: "El navegador no ha concedido permiso para mostrar avisos.",
-      notificationUnsupported: "Este navegador no admite notificaciones web.",
+
+      notificationEnabled:
+        "Avisos activados. Esta pestaña comprobará cambios mientras permanezca abierta.",
+
+      notificationDenied:
+        "El navegador no ha concedido permiso para mostrar avisos.",
+
+      notificationUnsupported:
+        "Este navegador no admite notificaciones web.",
+
       copied: "Enlace copiado al portapapeles.",
       copyFailed: "No se pudo copiar automáticamente.",
       changedTitle: "Cambio en el estrecho de Ormuz",
@@ -36,29 +59,60 @@
       historyLast: "Último cambio",
       historyCurrent: "Estado actual",
       none: "Ninguno",
-      provisional: "Estado provisional basado en evidencia indirecta. La última confirmación operativa válida puede ser anterior a esta comprobación.",
+
+      provisional:
+        "Estado provisional basado en evidencia indirecta. La última confirmación operativa válida puede ser anterior a esta comprobación.",
+
       mapLoading: "Cargando mapa AIS…",
       mapLoaded: "Mapa AIS cargado.",
-      mapTitle: "Mapa AIS en directo del estrecho de Ormuz"
+      mapTitle: "Mapa AIS en directo del estrecho de Ormuz",
+
+      systemOperational: "Sistema operativo",
+      systemDegraded: "Verificación degradada",
+      systemStale: "Datos desactualizados",
+
+      freshnessNow: "Ahora mismo",
+      freshnessMinutes: "Hace {value} min",
+      freshnessHours: "Hace {value} h",
+      freshnessDays: "Hace {value} d"
     },
+
     en: {
-      status: { ABIERTO: "OPEN", CERRADO: "CLOSED", INCIERTO: "UNCERTAIN" },
-      confidence: { ALTA: "High", MEDIA: "Medium", BAJA: "Low" },
+      status: {
+        ABIERTO: "OPEN",
+        CERRADO: "CLOSED",
+        INCIERTO: "UNCERTAIN"
+      },
+
+      confidence: {
+        ALTA: "High",
+        MEDIA: "Medium",
+        BAJA: "Low"
+      },
+
       signals: {
         OPEN_OPERATIONAL: "Operational transit",
         CLOSED_OPERATIONAL: "Operational interruption",
         CLOSURE_DECLARED: "Closure declaration",
         RISK_RESTRICTION: "Risk or restriction"
       },
+
       source: "Source",
       official: "official",
       lastCheck: "Last check",
       lastValid: "Last valid confirmation",
       unavailable: "Unavailable",
       noEvidence: "There is not enough public evidence to display.",
-      notificationEnabled: "Alerts enabled. This tab will check for changes while it remains open.",
-      notificationDenied: "The browser did not grant permission to display alerts.",
-      notificationUnsupported: "This browser does not support web notifications.",
+
+      notificationEnabled:
+        "Alerts enabled. This tab will check for changes while it remains open.",
+
+      notificationDenied:
+        "The browser did not grant permission to display alerts.",
+
+      notificationUnsupported:
+        "This browser does not support web notifications.",
+
       copied: "Link copied to the clipboard.",
       copyFailed: "The link could not be copied automatically.",
       changedTitle: "Strait of Hormuz status change",
@@ -68,20 +122,49 @@
       historyLast: "Last change",
       historyCurrent: "Current status",
       none: "None",
-      provisional: "Provisional status based on indirect evidence. The latest valid operational confirmation may predate this check.",
+
+      provisional:
+        "Provisional status based on indirect evidence. The latest valid operational confirmation may predate this check.",
+
       mapLoading: "Loading AIS map…",
       mapLoaded: "AIS map loaded.",
-      mapTitle: "Live AIS map of the Strait of Hormuz"
+      mapTitle: "Live AIS map of the Strait of Hormuz",
+
+      systemOperational: "System operational",
+      systemDegraded: "Verification degraded",
+      systemStale: "Data out of date",
+
+      freshnessNow: "Just now",
+      freshnessMinutes: "{value} min ago",
+      freshnessHours: "{value} h ago",
+      freshnessDays: "{value} d ago"
     }
   }[lang];
 
-  const statusClass = status => ({ ABIERTO: "is-open", CERRADO: "is-closed", INCIERTO: "is-uncertain" }[status] || "is-uncertain");
-  const confidenceClass = value => ({ ALTA: "confidence-high", MEDIA: "confidence-medium", BAJA: "confidence-low" }[value] || "confidence-low");
+  const statusClass = status =>
+    ({
+      ABIERTO: "is-open",
+      CERRADO: "is-closed",
+      INCIERTO: "is-uncertain"
+    })[status] || "is-uncertain";
+
+  const confidenceClass = value =>
+    ({
+      ALTA: "confidence-high",
+      MEDIA: "confidence-medium",
+      BAJA: "confidence-low"
+    })[value] || "confidence-low";
 
   function displayStatus(data) {
-    if (data.status === "ABIERTO" && data.operational_status === "OPEN_RESTRICTED") {
-      return lang === "es" ? "ABIERTO CON RESTRICCIONES" : "OPEN WITH RESTRICTIONS";
+    if (
+      data.status === "ABIERTO" &&
+      data.operational_status === "OPEN_RESTRICTED"
+    ) {
+      return lang === "es"
+        ? "ABIERTO CON RESTRICCIONES"
+        : "OPEN WITH RESTRICTIONS";
     }
+
     return labels.status[data.status] || labels.status.INCIERTO;
   }
 
@@ -90,193 +173,703 @@
   }
 
   function formatDate(value) {
-    if (!value) return labels.unavailable;
+    if (!value) {
+      return labels.unavailable;
+    }
+
     const date = new Date(value);
-    if (Number.isNaN(date.getTime())) return labels.unavailable;
-    return new Intl.DateTimeFormat(lang === "es" ? "es-ES" : "en-GB", {
-      dateStyle: "long",
-      timeStyle: "short",
-      timeZone: lang === "es" ? "Europe/Madrid" : "UTC"
-    }).format(date) + (lang === "en" ? " UTC" : "");
+
+    if (Number.isNaN(date.getTime())) {
+      return labels.unavailable;
+    }
+
+    const formatted = new Intl.DateTimeFormat(
+      lang === "es" ? "es-ES" : "en-GB",
+      {
+        dateStyle: "long",
+        timeStyle: "short",
+        timeZone: lang === "es" ? "Europe/Madrid" : "UTC"
+      }
+    ).format(date);
+
+    return formatted + (lang === "en" ? " UTC" : "");
   }
 
   async function fetchJson(file) {
-    const response = await fetch(`${BASE}${file}?v=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) throw new Error(`${file}: HTTP ${response.status}`);
+    const response = await fetch(
+      `${BASE}${file}?v=${Date.now()}`,
+      {
+        cache: "no-store"
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`${file}: HTTP ${response.status}`);
+    }
+
     return response.json();
   }
 
+  function formatFreshness(value) {
+    if (!value) {
+      return labels.unavailable;
+    }
+
+    const date = new Date(value);
+
+    if (Number.isNaN(date.getTime())) {
+      return labels.unavailable;
+    }
+
+    const elapsedMs = Math.max(
+      0,
+      Date.now() - date.getTime()
+    );
+
+    const elapsedMinutes = Math.floor(
+      elapsedMs / 60000
+    );
+
+    if (elapsedMinutes < 2) {
+      return labels.freshnessNow;
+    }
+
+    if (elapsedMinutes < 60) {
+      return labels.freshnessMinutes.replace(
+        "{value}",
+        String(elapsedMinutes)
+      );
+    }
+
+    const elapsedHours = Math.floor(
+      elapsedMinutes / 60
+    );
+
+    if (elapsedHours < 48) {
+      return labels.freshnessHours.replace(
+        "{value}",
+        String(elapsedHours)
+      );
+    }
+
+    const elapsedDays = Math.floor(
+      elapsedHours / 24
+    );
+
+    return labels.freshnessDays.replace(
+      "{value}",
+      String(elapsedDays)
+    );
+  }
+
+  function renderVerification(data) {
+    const diagnostics =
+      data &&
+      typeof data.diagnostics === "object"
+        ? data.diagnostics
+        : {};
+
+    const providers = document.getElementById(
+      "verificationProviders"
+    );
+
+    const sources = document.getElementById(
+      "verificationSources"
+    );
+
+    const signals = document.getElementById(
+      "verificationSignals"
+    );
+
+    const freshness = document.getElementById(
+      "verificationFreshness"
+    );
+
+    const system = document.getElementById(
+      "systemStatus"
+    );
+
+    const providersOk = Array.isArray(
+      diagnostics.providers_ok
+    )
+      ? diagnostics.providers_ok
+      : [];
+
+    const independentSources =
+      diagnostics.independent_sources &&
+      typeof diagnostics.independent_sources === "object"
+        ? Object.values(
+            diagnostics.independent_sources
+          )
+            .map(value => Number(value))
+            .filter(Number.isFinite)
+        : [];
+
+    /*
+     * No se suman las categorías porque una misma fuente
+     * puede respaldar más de un tipo de señal.
+     */
+    const independentSourceCount =
+      independentSources.length
+        ? Math.max(...independentSources)
+        : null;
+
+    const signalsConsidered = Number(
+      diagnostics.signals_considered
+    );
+
+    if (providers) {
+      providers.textContent = providersOk.length
+        ? String(providersOk.length)
+        : labels.unavailable;
+
+      if (providersOk.length) {
+        providers.title = providersOk.join(", ");
+      }
+    }
+
+    if (sources) {
+      sources.textContent =
+        independentSourceCount !== null
+          ? String(independentSourceCount)
+          : labels.unavailable;
+
+      if (diagnostics.independent_sources) {
+        sources.title = Object.entries(
+          diagnostics.independent_sources
+        )
+          .map(
+            ([key, value]) =>
+              `${key}: ${value}`
+          )
+          .join(" · ");
+      }
+    }
+
+    if (signals) {
+      signals.textContent =
+        Number.isFinite(signalsConsidered)
+          ? String(signalsConsidered)
+          : labels.unavailable;
+    }
+
+    if (freshness) {
+      freshness.textContent = formatFreshness(
+        data.checked_at
+      );
+
+      freshness.title = formatDate(
+        data.checked_at
+      );
+    }
+
+    if (system) {
+      const isStale = Boolean(data.stale);
+
+      const verificationOk =
+        data.verification_ok !== false;
+
+      let text = labels.systemOperational;
+      let stateClass = "is-operational";
+
+      if (!verificationOk) {
+        text = labels.systemDegraded;
+        stateClass = "is-error";
+      } else if (isStale) {
+        text = labels.systemStale;
+        stateClass = "is-warning";
+      }
+
+      system.classList.remove(
+        "is-operational",
+        "is-warning",
+        "is-error"
+      );
+
+      system.classList.add(stateClass);
+
+      system.dataset.state = stateClass.replace(
+        "is-",
+        ""
+      );
+
+      const pulse = document.createElement("i");
+
+      pulse.className = "live-pulse";
+
+      pulse.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      system.replaceChildren(
+        pulse,
+        document.createTextNode(text)
+      );
+    }
+  }
+
   function createEvidenceCard(item) {
-    const article = document.createElement("article");
+    const article = document.createElement(
+      "article"
+    );
+
     article.className = "evidence-card";
 
     const meta = document.createElement("div");
+
     meta.className = "evidence-meta";
-    const signal = document.createElement("span");
-    const official = item.official ? ` · ${labels.official}` : "";
-    signal.textContent = `${labels.signals[item.signal] || item.signal || "Signal"}${official}`;
+
+    const signal = document.createElement(
+      "span"
+    );
+
+    const official = item.official
+      ? ` · ${labels.official}`
+      : "";
+
+    signal.textContent =
+      `${
+        labels.signals[item.signal] ||
+        item.signal ||
+        "Signal"
+      }${official}`;
+
     const time = document.createElement("time");
+
     time.dateTime = item.published_at || "";
-    time.textContent = formatDate(item.published_at);
+
+    time.textContent = formatDate(
+      item.published_at
+    );
+
     meta.append(signal, time);
 
-    const heading = document.createElement("h3");
+    const heading = document.createElement(
+      "h3"
+    );
+
     const link = document.createElement("a");
+
     link.href = item.source_url || "#";
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = item.title || labels.source;
+
+    link.textContent =
+      item.title || labels.source;
+
     heading.append(link);
 
     const source = document.createElement("p");
-    source.textContent = item.source_name || labels.source;
-    article.append(meta, heading, source);
+
+    source.textContent =
+      item.source_name || labels.source;
+
+    article.append(
+      meta,
+      heading,
+      source
+    );
+
     return article;
   }
 
   function renderStatus(data) {
-    const hero = document.getElementById("statusHero");
-    if (!hero) return;
-    const status = labels.status[data.status] ? data.status : "INCIERTO";
-    hero.classList.remove("is-open", "is-closed", "is-uncertain", "is-provisional");
-    hero.classList.add(statusClass(status));
-    if (isProvisional(data)) hero.classList.add("is-provisional");
-    hero.dataset.status = status;
-    hero.dataset.confidence = data.confidence || "BAJA";
-    hero.dataset.operationalStatus = data.operational_status || "";
+    const hero = document.getElementById(
+      "statusHero"
+    );
 
-    const word = document.getElementById("statusWord");
-    const operational = document.getElementById("operationalLabel");
-    const summary = document.getElementById("statusSummary");
-    const advisory = document.getElementById("statusAdvisory");
-    const checked = document.getElementById("checkedAt");
-    const confidence = document.getElementById("confidence");
-    const valid = document.getElementById("lastValidAt");
-    const evidence = document.getElementById("evidenceList");
+    if (!hero) {
+      return;
+    }
+
+    const status = labels.status[data.status]
+      ? data.status
+      : "INCIERTO";
+
+    hero.classList.remove(
+      "is-loading",
+      "is-open",
+      "is-closed",
+      "is-uncertain",
+      "is-provisional"
+    );
+
+    hero.classList.add(
+      statusClass(status)
+    );
+
+    if (isProvisional(data)) {
+      hero.classList.add("is-provisional");
+    }
+
+    hero.dataset.status = status;
+
+    hero.dataset.confidence =
+      data.confidence || "BAJA";
+
+    hero.dataset.operationalStatus =
+      data.operational_status || "";
+
+    const word = document.getElementById(
+      "statusWord"
+    );
+
+    const operational = document.getElementById(
+      "operationalLabel"
+    );
+
+    const summary = document.getElementById(
+      "statusSummary"
+    );
+
+    const advisory = document.getElementById(
+      "statusAdvisory"
+    );
+
+    const checked = document.getElementById(
+      "checkedAt"
+    );
+
+    const confidence = document.getElementById(
+      "confidence"
+    );
+
+    const valid = document.getElementById(
+      "lastValidAt"
+    );
+
+    const evidence = document.getElementById(
+      "evidenceList"
+    );
 
     if (word) {
       word.textContent = displayStatus(data);
-      word.classList.toggle("is-long-status", data.status === "ABIERTO" && data.operational_status === "OPEN_RESTRICTED");
+
+      word.classList.toggle(
+        "is-long-status",
+        data.status === "ABIERTO" &&
+          data.operational_status ===
+            "OPEN_RESTRICTED"
+      );
     }
-    if (operational) operational.textContent = lang === "es" ? data.operational_label_es : data.operational_label_en;
-    if (summary) summary.textContent = lang === "es" ? data.summary_es : data.summary_en;
+
+    if (operational) {
+      operational.textContent =
+        lang === "es"
+          ? data.operational_label_es
+          : data.operational_label_en;
+    }
+
+    if (summary) {
+      summary.textContent =
+        lang === "es"
+          ? data.summary_es
+          : data.summary_en;
+    }
+
     if (advisory) {
       advisory.hidden = !isProvisional(data);
-      advisory.textContent = isProvisional(data) ? labels.provisional : "";
+
+      advisory.textContent = isProvisional(data)
+        ? labels.provisional
+        : "";
     }
-    if (checked) checked.textContent = formatDate(data.checked_at);
+
+    if (checked) {
+      checked.textContent = formatDate(
+        data.checked_at
+      );
+    }
+
     if (confidence) {
-      confidence.textContent = labels.confidence[data.confidence] || labels.confidence.BAJA;
-      confidence.className = confidenceClass(data.confidence);
+      confidence.textContent =
+        labels.confidence[data.confidence] ||
+        labels.confidence.BAJA;
+
+      confidence.className =
+        confidenceClass(data.confidence);
     }
-    if (valid) valid.textContent = data.last_valid_confirmation ? formatDate(data.last_valid_confirmation.at) : labels.unavailable;
+
+    if (valid) {
+      valid.textContent =
+        data.last_valid_confirmation
+          ? formatDate(
+              data.last_valid_confirmation.at
+            )
+          : labels.unavailable;
+    }
+
     if (evidence) {
       evidence.replaceChildren();
-      const items = Array.isArray(data.evidence) ? data.evidence.slice(0, 4) : [];
+
+      const items = Array.isArray(data.evidence)
+        ? data.evidence.slice(0, 4)
+        : [];
+
       if (!items.length) {
-        const empty = document.createElement("p");
+        const empty = document.createElement(
+          "p"
+        );
+
         empty.className = "empty-state";
-        empty.textContent = labels.noEvidence;
+
+        empty.textContent =
+          labels.noEvidence;
+
         evidence.append(empty);
       } else {
-        items.forEach(item => evidence.append(createEvidenceCard(item)));
+        items.forEach(item => {
+          evidence.append(
+            createEvidenceCard(item)
+          );
+        });
       }
     }
+
+    renderVerification(data);
 
     window.ormuzCurrentStatus = data;
   }
 
   function createHistoryItem(event) {
-    const article = document.createElement("article");
-    article.id = event.id || "";
-    article.className = `timeline-item ${statusClass(event.status)}`;
-    const marker = document.createElement("div");
-    marker.className = "timeline-marker";
-    marker.setAttribute("aria-hidden", "true");
+    const article = document.createElement(
+      "article"
+    );
 
-    const content = document.createElement("div");
+    article.id = event.id || "";
+
+    article.className =
+      `timeline-item ${statusClass(
+        event.status
+      )}`;
+
+    const marker = document.createElement(
+      "div"
+    );
+
+    marker.className = "timeline-marker";
+
+    marker.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    const content = document.createElement(
+      "div"
+    );
+
     content.className = "timeline-content";
+
     const head = document.createElement("div");
+
     head.className = "timeline-head";
-    const strong = document.createElement("strong");
-    strong.textContent = labels.status[event.status] || labels.status.INCIERTO;
+
+    const strong = document.createElement(
+      "strong"
+    );
+
+    strong.textContent =
+      labels.status[event.status] ||
+      labels.status.INCIERTO;
+
     const time = document.createElement("time");
+
     time.dateTime = event.at || "";
-    time.textContent = formatDate(event.at);
+
+    time.textContent = formatDate(
+      event.at
+    );
+
     head.append(strong, time);
 
-    const operation = document.createElement("p");
-    operation.className = "timeline-operation";
-    operation.textContent = lang === "es" ? event.operational_label_es : event.operational_label_en;
-    const summary = document.createElement("p");
-    summary.textContent = lang === "es" ? event.summary_es : event.summary_en;
-    content.append(head, operation, summary);
+    const operation = document.createElement(
+      "p"
+    );
 
-    if (event.source_url && event.source_name) {
-      const source = document.createElement("a");
+    operation.className =
+      "timeline-operation";
+
+    operation.textContent =
+      lang === "es"
+        ? event.operational_label_es
+        : event.operational_label_en;
+
+    const summary = document.createElement(
+      "p"
+    );
+
+    summary.textContent =
+      lang === "es"
+        ? event.summary_es
+        : event.summary_en;
+
+    content.append(
+      head,
+      operation,
+      summary
+    );
+
+    if (
+      event.source_url &&
+      event.source_name
+    ) {
+      const source = document.createElement(
+        "a"
+      );
+
       source.href = event.source_url;
       source.target = "_blank";
       source.rel = "noopener noreferrer";
-      source.textContent = `${labels.source}: ${event.source_name}`;
+
+      source.textContent =
+        `${labels.source}: ${event.source_name}`;
+
       content.append(source);
     }
-    article.append(marker, content);
+
+    article.append(
+      marker,
+      content
+    );
+
     return article;
   }
 
   function renderHistory(history, status) {
-    const timeline = document.getElementById("historyTimeline");
+    const timeline = document.getElementById(
+      "historyTimeline"
+    );
+
     if (timeline) {
       timeline.replaceChildren();
-      if (!Array.isArray(history) || !history.length) {
-        const empty = document.createElement("p");
+
+      if (
+        !Array.isArray(history) ||
+        !history.length
+      ) {
+        const empty = document.createElement(
+          "p"
+        );
+
         empty.className = "empty-state";
         empty.textContent = labels.none;
+
         timeline.append(empty);
       } else {
-        history.slice(0, 50).forEach(event => timeline.append(createHistoryItem(event)));
+        history
+          .slice(0, 50)
+          .forEach(event => {
+            timeline.append(
+              createHistoryItem(event)
+            );
+          });
       }
     }
 
-    const eventCount = document.getElementById("historyEventCount");
-    const lastChange = document.getElementById("historyLastChange");
-    const current = document.getElementById("historyCurrentStatus");
-    if (eventCount) eventCount.textContent = Array.isArray(history) ? String(history.length) : "0";
-    if (lastChange) lastChange.textContent = history && history[0] ? formatDate(history[0].at) : labels.none;
-    if (current && status) current.textContent = labels.status[status.status] || labels.status.INCIERTO;
+    const eventCount = document.getElementById(
+      "historyEventCount"
+    );
+
+    const lastChange = document.getElementById(
+      "historyLastChange"
+    );
+
+    const current = document.getElementById(
+      "historyCurrentStatus"
+    );
+
+    if (eventCount) {
+      eventCount.textContent =
+        Array.isArray(history)
+          ? String(history.length)
+          : "0";
+    }
+
+    if (lastChange) {
+      lastChange.textContent =
+        history && history[0]
+          ? formatDate(history[0].at)
+          : labels.none;
+    }
+
+    if (current && status) {
+      current.textContent =
+        labels.status[status.status] ||
+        labels.status.INCIERTO;
+    }
   }
 
   async function loadHome() {
     try {
-      const [status, history] = await Promise.all([fetchJson("status.json"), fetchJson("history.json")]);
+      const [status, history] =
+        await Promise.all([
+          fetchJson("status.json"),
+          fetchJson("history.json")
+        ]);
+
       renderStatus(status);
+
       renderRecentHistory(history);
+
       beginAlertPolling(status);
     } catch (error) {
       console.error(error);
-      const summary = document.getElementById("statusSummary");
-      if (summary) summary.textContent = labels.checkFailed;
+
+      const summary = document.getElementById(
+        "statusSummary"
+      );
+
+      if (summary) {
+        summary.textContent =
+          labels.checkFailed;
+      }
     }
   }
 
   function renderRecentHistory(history) {
-    const container = document.getElementById("recentHistory");
-    if (!container) return;
-    container.replaceChildren();
-    const items = Array.isArray(history) ? history.slice(0, 3) : [];
-    if (!items.length) {
-      const empty = document.createElement("p");
-      empty.className = "empty-state";
-      empty.textContent = labels.none;
-      container.append(empty);
+    const container = document.getElementById(
+      "recentHistory"
+    );
+
+    if (!container) {
       return;
     }
-    items.forEach(event => container.append(createHistoryItem(event)));
+
+    container.replaceChildren();
+
+    const items = Array.isArray(history)
+      ? history.slice(0, 3)
+      : [];
+
+    if (!items.length) {
+      const empty = document.createElement(
+        "p"
+      );
+
+      empty.className = "empty-state";
+      empty.textContent = labels.none;
+
+      container.append(empty);
+
+      return;
+    }
+
+    items.forEach(event => {
+      container.append(
+        createHistoryItem(event)
+      );
+    });
   }
 
   async function loadHistory() {
     try {
-      const [history, status] = await Promise.all([fetchJson("history.json"), fetchJson("status.json")]);
+      const [history, status] =
+        await Promise.all([
+          fetchJson("history.json"),
+          fetchJson("status.json")
+        ]);
+
       renderHistory(history, status);
     } catch (error) {
       console.error(error);
@@ -284,117 +877,359 @@
   }
 
   function setAlertMessage(message) {
-    const output = document.getElementById("alertStatus");
-    if (output) output.textContent = message;
+    const output = document.getElementById(
+      "alertStatus"
+    );
+
+    if (output) {
+      output.textContent = message;
+    }
   }
 
   async function enableBrowserAlerts() {
     if (!("Notification" in window)) {
-      setAlertMessage(labels.notificationUnsupported);
+      setAlertMessage(
+        labels.notificationUnsupported
+      );
+
       return;
     }
-    const permission = await Notification.requestPermission();
+
+    const permission =
+      await Notification.requestPermission();
+
     if (permission !== "granted") {
-      setAlertMessage(labels.notificationDenied);
+      setAlertMessage(
+        labels.notificationDenied
+      );
+
       return;
     }
-    localStorage.setItem("ormuz-browser-alerts", "enabled");
-    const status = window.ormuzCurrentStatus;
+
+    localStorage.setItem(
+      "ormuz-browser-alerts",
+      "enabled"
+    );
+
+    const status =
+      window.ormuzCurrentStatus;
+
     if (status) {
-      localStorage.setItem("ormuz-alert-last-key", `${status.status}|${status.operational_status}|${status.last_change_at || ""}`);
+      localStorage.setItem(
+        "ormuz-alert-last-key",
+        `${status.status}|${status.operational_status}|${status.last_change_at || ""}`
+      );
     }
-    setAlertMessage(labels.notificationEnabled);
+
+    setAlertMessage(
+      labels.notificationEnabled
+    );
   }
 
   function beginAlertPolling(initialStatus) {
-    if (localStorage.getItem("ormuz-browser-alerts") !== "enabled" || !("Notification" in window)) return;
-    const initialKey = `${initialStatus.status}|${initialStatus.operational_status}|${initialStatus.last_change_at || ""}`;
-    if (!localStorage.getItem("ormuz-alert-last-key")) localStorage.setItem("ormuz-alert-last-key", initialKey);
-    window.setInterval(async () => {
-      try {
-        const latest = await fetchJson("status.json");
-        const latestKey = `${latest.status}|${latest.operational_status}|${latest.last_change_at || ""}`;
-        const previousKey = localStorage.getItem("ormuz-alert-last-key");
-        if (previousKey && latestKey !== previousKey && Notification.permission === "granted") {
-          const summary = lang === "es" ? latest.summary_es : latest.summary_en;
-          const body = labels.changedBody
-            .replace("{status}", labels.status[latest.status] || labels.status.INCIERTO)
-            .replace("{summary}", summary || "");
-          new Notification(labels.changedTitle, { body, icon: `${BASE}apple-touch-icon.png`, tag: "ormuz-status" });
+    if (
+      localStorage.getItem(
+        "ormuz-browser-alerts"
+      ) !== "enabled" ||
+      !("Notification" in window)
+    ) {
+      return;
+    }
+
+    const initialKey =
+      `${initialStatus.status}|${initialStatus.operational_status}|${initialStatus.last_change_at || ""}`;
+
+    if (
+      !localStorage.getItem(
+        "ormuz-alert-last-key"
+      )
+    ) {
+      localStorage.setItem(
+        "ormuz-alert-last-key",
+        initialKey
+      );
+    }
+
+    window.setInterval(
+      async () => {
+        try {
+          const latest =
+            await fetchJson("status.json");
+
+          const latestKey =
+            `${latest.status}|${latest.operational_status}|${latest.last_change_at || ""}`;
+
+          const previousKey =
+            localStorage.getItem(
+              "ormuz-alert-last-key"
+            );
+
+          if (
+            previousKey &&
+            latestKey !== previousKey &&
+            Notification.permission ===
+              "granted"
+          ) {
+            const summary =
+              lang === "es"
+                ? latest.summary_es
+                : latest.summary_en;
+
+            const body = labels.changedBody
+              .replace(
+                "{status}",
+                labels.status[
+                  latest.status
+                ] ||
+                  labels.status.INCIERTO
+              )
+              .replace(
+                "{summary}",
+                summary || ""
+              );
+
+            new Notification(
+              labels.changedTitle,
+              {
+                body,
+                icon:
+                  `${BASE}apple-touch-icon.png`,
+                tag: "ormuz-status"
+              }
+            );
+          }
+
+          localStorage.setItem(
+            "ormuz-alert-last-key",
+            latestKey
+          );
+        } catch (error) {
+          console.debug(
+            "Alert polling failed",
+            error
+          );
         }
-        localStorage.setItem("ormuz-alert-last-key", latestKey);
-      } catch (error) {
-        console.debug("Alert polling failed", error);
-      }
-    }, 5 * 60 * 1000);
+      },
+      5 * 60 * 1000
+    );
   }
 
   async function copyValue(value) {
     try {
-      await navigator.clipboard.writeText(value);
+      await navigator.clipboard.writeText(
+        value
+      );
+
       setAlertMessage(labels.copied);
     } catch (error) {
-      const textarea = document.createElement("textarea");
+      const textarea =
+        document.createElement(
+          "textarea"
+        );
+
       textarea.value = value;
-      textarea.style.position = "fixed";
+
+      textarea.style.position =
+        "fixed";
+
       textarea.style.opacity = "0";
+
       document.body.append(textarea);
+
       textarea.select();
-      const ok = document.execCommand("copy");
+
+      const ok =
+        document.execCommand("copy");
+
       textarea.remove();
-      setAlertMessage(ok ? labels.copied : labels.copyFailed);
+
+      setAlertMessage(
+        ok
+          ? labels.copied
+          : labels.copyFailed
+      );
     }
   }
 
-
   function setupLiveMap() {
-    const button = document.querySelector("[data-load-marine-map]");
-    const container = document.getElementById("marineMapContainer");
-    const placeholder = document.getElementById("marineMapPlaceholder");
-    const status = document.getElementById("marineMapStatus");
-    if (!button || !container || !placeholder) return;
+    const button = document.querySelector(
+      "[data-load-marine-map]"
+    );
 
-    button.addEventListener("click", () => {
-      if (container.querySelector("iframe")) return;
-      button.disabled = true;
-      button.textContent = labels.mapLoading;
-      if (status) status.textContent = labels.mapLoading;
+    const container = document.getElementById(
+      "marineMapContainer"
+    );
 
-      const iframe = document.createElement("iframe");
-      iframe.className = "traffic-map-frame";
-      iframe.title = labels.mapTitle;
-      iframe.src = "https://www.marinetraffic.com/en/ais/embed/zoom:6/centery:25.8/centerx:57.7/maptype:4/shownames:true/mmsi:0/shipid:0/fleet:/fleet_id:/vtypes:/showmenu:true/remember:false";
-      iframe.loading = "eager";
-      iframe.referrerPolicy = "strict-origin-when-cross-origin";
-      iframe.allowFullscreen = true;
-      iframe.addEventListener("load", () => {
-        placeholder.remove();
-        if (status) status.textContent = labels.mapLoaded;
-      }, { once: true });
-      container.append(iframe);
-    });
+    const placeholder =
+      document.getElementById(
+        "marineMapPlaceholder"
+      );
+
+    const status = document.getElementById(
+      "marineMapStatus"
+    );
+
+    if (
+      !button ||
+      !container ||
+      !placeholder
+    ) {
+      return;
+    }
+
+    button.addEventListener(
+      "click",
+      () => {
+        if (
+          container.querySelector("iframe")
+        ) {
+          return;
+        }
+
+        button.disabled = true;
+
+        button.textContent =
+          labels.mapLoading;
+
+        if (status) {
+          status.textContent =
+            labels.mapLoading;
+        }
+
+        const iframe =
+          document.createElement("iframe");
+
+        iframe.className =
+          "traffic-map-frame";
+
+        iframe.title =
+          labels.mapTitle;
+
+        iframe.src =
+          "https://www.marinetraffic.com/en/ais/embed/zoom:6/centery:25.8/centerx:57.7/maptype:4/shownames:true/mmsi:0/shipid:0/fleet:/fleet_id:/vtypes:/showmenu:true/remember:false";
+
+        iframe.loading = "eager";
+
+        iframe.referrerPolicy =
+          "strict-origin-when-cross-origin";
+
+        iframe.allowFullscreen = true;
+
+        iframe.addEventListener(
+          "load",
+          () => {
+            placeholder.remove();
+
+            if (status) {
+              status.textContent =
+                labels.mapLoaded;
+            }
+          },
+          {
+            once: true
+          }
+        );
+
+        container.append(iframe);
+      }
+    );
   }
 
   function setupInteractions() {
-    const navToggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".site-nav");
+    const navToggle =
+      document.querySelector(
+        ".nav-toggle"
+      );
+
+    const nav =
+      document.querySelector(
+        ".site-nav"
+      );
+
     if (navToggle && nav) {
-      navToggle.addEventListener("click", () => {
-        const open = nav.classList.toggle("is-open");
-        navToggle.setAttribute("aria-expanded", String(open));
-      });
+      navToggle.addEventListener(
+        "click",
+        () => {
+          const open =
+            nav.classList.toggle(
+              "is-open"
+            );
+
+          navToggle.setAttribute(
+            "aria-expanded",
+            String(open)
+          );
+        }
+      );
     }
 
-    document.querySelectorAll("[data-enable-alerts]").forEach(button => button.addEventListener("click", enableBrowserAlerts));
-    document.querySelectorAll("[data-copy-rss]").forEach(button => button.addEventListener("click", () => copyValue(`${BASE}feed.xml`)));
-    document.querySelectorAll("[data-copy-api]").forEach(button => button.addEventListener("click", () => copyValue(`${BASE}status.json`)));
+    document
+      .querySelectorAll(
+        "[data-enable-alerts], #enableAlerts"
+      )
+      .forEach(button => {
+        button.addEventListener(
+          "click",
+          enableBrowserAlerts
+        );
+      });
+
+    document
+      .querySelectorAll(
+        "[data-copy-rss]"
+      )
+      .forEach(button => {
+        button.addEventListener(
+          "click",
+          () =>
+            copyValue(
+              `${BASE}feed.xml`
+            )
+        );
+      });
+
+    document
+      .querySelectorAll(
+        "[data-copy-api]"
+      )
+      .forEach(button => {
+        button.addEventListener(
+          "click",
+          () =>
+            copyValue(
+              `${BASE}status.json`
+            )
+        );
+      });
+
     setupLiveMap();
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    setupInteractions();
-    const page = document.body.dataset.page;
-    if (page === "home") loadHome();
-    if (page === "history") loadHistory();
-  });
+  document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+      setupInteractions();
+
+      const page =
+        document.body.dataset.page;
+
+      if (
+        page === "home" ||
+        document.getElementById(
+          "statusHero"
+        )
+      ) {
+        loadHome();
+      }
+
+      if (
+        page === "history" ||
+        document.getElementById(
+          "historyTimeline"
+        )
+      ) {
+        loadHistory();
+      }
+    }
+  );
 })();
