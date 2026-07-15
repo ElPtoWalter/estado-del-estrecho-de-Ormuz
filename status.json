@@ -5,8 +5,8 @@
   "operational_label_es": "Abierto con restricciones",
   "operational_label_en": "Open with restrictions",
   "confidence": "MEDIA",
-  "checked_at": "2026-07-15T04:31:41Z",
-  "last_success_at": "2026-07-15T04:31:41Z",
+  "checked_at": "2026-07-15T06:37:36Z",
+  "last_success_at": "2026-07-15T06:37:36Z",
   "last_change_at": "2026-07-12T14:07:07Z",
   "verification_ok": true,
   "stale": false,
@@ -28,7 +28,7 @@
       "published_at": "2026-07-15T03:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-15T04:31:41Z"
+      "observed_at": "2026-07-15T06:37:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -38,7 +38,7 @@
       "published_at": "2026-07-14T18:45:21Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-15T04:31:41Z"
+      "observed_at": "2026-07-15T06:37:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -48,7 +48,7 @@
       "published_at": "2026-07-14T06:36:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-15T04:31:41Z"
+      "observed_at": "2026-07-15T06:37:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -58,17 +58,17 @@
       "published_at": "2026-07-14T23:59:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-15T04:31:41Z"
+      "observed_at": "2026-07-15T06:37:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "US reimposes blockade on Iranian ports, launches more strikes - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOOWlaMW1EUnFyd3hkSlFveHAzZXpVR0pMLUJsSVJGLV9ISTVqMEFFd0lfTlFwUUFULTVYYXZfWkp2Y2Rla1NrTzRabXBCWW5BYzJNY0hmYjdaX09SdHV3NVFmd29EYjJvRjE1ZEtSZE9JcnYzSGFpNi1kUTZJME9wdWFHcHBlY2F5cUZiMmVzRUcyUURSSEJQU1psVjN6cUtNNWd3NF9LdnbSAa4BQVVfeXFMTklTZUlQR04yUzZEOFlQaHBDNkdPamFrbDRsNzZFMjdobzlBLWdXWUNXR3dwVDd1TjY0NTE4LVJwYWhiWTB4eFp3X3UzdnduQnl1TUdIdExQaXVkclRMT2dmUzk5UVdOQ3ZRNWhWY3o0Q3VUcmRhY1NiemVKZzVxaDJ5ODR3dGhBcGFBX2pXZE1McGpqZ19idVZLV25xWmJ1c0R0UkthU3pVQUxOeWtn?oc=5",
-      "published_at": "2026-07-14T23:05:19Z",
+      "title": "Oil prices today : brent , WTI , Hormuz blockade",
+      "source_name": "CNBC",
+      "source_url": "https://www.cnbc.com/2026/07/15/oil-prices-today-brent-wti-hormuz-blockade.html",
+      "published_at": "2026-07-15T02:57:30Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-15T04:31:41Z"
+      "observed_at": "2026-07-15T06:37:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,34 +78,33 @@
       "published_at": "2026-07-14T04:50:48Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-15T04:31:41Z"
+      "observed_at": "2026-07-15T06:37:36Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 7.355,
       "closed": 0,
       "declared": 0,
-      "risk": 23.65
+      "risk": 21.39
     },
     "independent_sources": {
       "open": 4,
       "closed": 0,
       "declared": 0,
-      "risk": 9
+      "risk": 8
     },
-    "articles_considered": 81,
-    "signals_considered": 28,
+    "articles_considered": 82,
+    "signals_considered": 29,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
-    "evidence_archive_size": 34,
+    "evidence_archive_size": 35,
     "evidence_archive_days": 14
   },
   "evidence_context": {
@@ -126,7 +125,17 @@
       "published_at": "2026-07-15T03:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-15T04:31:41Z"
+      "observed_at": "2026-07-15T06:37:36Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil prices today : brent , WTI , Hormuz blockade",
+      "source_name": "CNBC",
+      "source_url": "https://www.cnbc.com/2026/07/15/oil-prices-today-brent-wti-hormuz-blockade.html",
+      "published_at": "2026-07-15T02:57:30Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-07-15T06:37:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -156,7 +165,7 @@
       "published_at": "2026-07-14T23:59:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-15T04:31:41Z"
+      "observed_at": "2026-07-15T06:37:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -216,7 +225,7 @@
       "published_at": "2026-07-14T18:45:21Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-15T04:31:41Z"
+      "observed_at": "2026-07-15T06:37:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -375,7 +384,7 @@
       "published_at": "2026-07-14T06:36:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-15T04:31:41Z"
+      "observed_at": "2026-07-15T06:37:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -404,7 +413,7 @@
       "published_at": "2026-07-14T04:50:48Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-15T04:31:41Z"
+      "observed_at": "2026-07-15T06:37:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
