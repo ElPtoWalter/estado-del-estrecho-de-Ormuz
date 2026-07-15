@@ -5,8 +5,8 @@
   "operational_label_es": "Abierto con restricciones",
   "operational_label_en": "Open with restrictions",
   "confidence": "MEDIA",
-  "checked_at": "2026-07-14T23:26:55Z",
-  "last_success_at": "2026-07-14T23:26:55Z",
+  "checked_at": "2026-07-15T00:53:38Z",
+  "last_success_at": "2026-07-15T00:53:38Z",
   "last_change_at": "2026-07-12T14:07:07Z",
   "verification_ok": true,
   "stale": false,
@@ -14,7 +14,7 @@
   "summary_en": "Recent evidence indicates an operational route, but restrictions, incidents or elevated maritime risk remain.",
   "last_valid_confirmation": {
     "status": "ABIERTO",
-    "at": "2026-07-14T22:54:00Z",
+    "at": "2026-07-15T00:36:00Z",
     "source_name": "Associated Press",
     "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWnBwMkRnYlE0eWdLanFlS1JwcWNwQW83YkJMbFJXdzZYRGFiZUtib0UzM1hRVFozX3RCTmwxUVQzV2RvNTU2ZE56RjZOYjRQbzF5SkJ1Y0RTQnktRmg1NjliM2pMcy1kY045dVQ4bk9sYkNDU2N6WTFnNV9NNjZMa21IYkxLX3NmWDF2NXMzUmRtRkN0eGlwRmx6SHdlakU?oc=5",
     "title": "US restores blockade on Iran after its attacks on ships in the Strait of Hormuz - AP News"
@@ -25,10 +25,10 @@
       "title": "US restores blockade on Iran after its attacks on ships in the Strait of Hormuz - AP News",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWnBwMkRnYlE0eWdLanFlS1JwcWNwQW83YkJMbFJXdzZYRGFiZUtib0UzM1hRVFozX3RCTmwxUVQzV2RvNTU2ZE56RjZOYjRQbzF5SkJ1Y0RTQnktRmg1NjliM2pMcy1kY045dVQ4bk9sYkNDU2N6WTFnNV9NNjZMa21IYkxLX3NmWDF2NXMzUmRtRkN0eGlwRmx6SHdlakU?oc=5",
-      "published_at": "2026-07-14T22:54:00Z",
+      "published_at": "2026-07-15T00:36:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-14T23:26:55Z"
+      "observed_at": "2026-07-15T00:53:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -38,7 +38,7 @@
       "published_at": "2026-07-14T15:06:17Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-14T23:26:55Z"
+      "observed_at": "2026-07-15T00:53:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -48,17 +48,17 @@
       "published_at": "2026-07-14T01:01:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-14T23:26:55Z"
+      "observed_at": "2026-07-15T00:53:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "US launches third night of strikes on Iran as Trump announces Hormuz blockade - The Guardian",
+      "title": "Trump again threatens to strike Iran power plants amid impasse over strait of Hormuz | US - Israel war on Iran",
       "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTzk5TkVyaXI1Tl9tMUgxc20zOHBTTVk5M1NyX1lJd3MtYnFfVW9xV2dJR1p2Q1RVb3ZqRkRFRXBCM1N0VVdJTlRLT0R6Z0w0U1FLYlhfMXpFWGxFZ2htTmk1UGlmWEJ5THUwVzAwRWU4NUdxVnQzN2pUOENDbTVOekNfcld6R3RWN1h5US1vVkk1QzgtQUlhWXdaYnNvV3VyOFZuODJLcjAwbl94U2Y1cGN6VEJiM1BDTngwQXdoMzQ?oc=5",
-      "published_at": "2026-07-14T06:33:03Z",
+      "source_url": "https://www.theguardian.com/world/2026/jul/15/trump-iran-power-plants-strike-threat-strait-of-hormuz",
+      "published_at": "2026-07-14T23:59:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-14T23:26:55Z"
+      "observed_at": "2026-07-15T00:53:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -68,7 +68,7 @@
       "published_at": "2026-07-14T19:34:42Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-14T23:26:55Z"
+      "observed_at": "2026-07-15T00:53:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,39 +78,38 @@
       "published_at": "2026-07-14T23:03:45Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-14T23:26:55Z"
+      "observed_at": "2026-07-15T00:53:38Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
-      "open": 6.175,
+      "open": 7.355,
       "closed": 0,
       "declared": 0,
-      "risk": 24.25
+      "risk": 23.9
     },
     "independent_sources": {
-      "open": 3,
+      "open": 4,
       "closed": 0,
       "declared": 0,
       "risk": 9
     },
-    "articles_considered": 83,
-    "signals_considered": 26,
+    "articles_considered": 87,
+    "signals_considered": 27,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
-    "evidence_archive_size": 29,
+    "evidence_archive_size": 30,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-14T23:03:45Z",
+    "as_of": "2026-07-15T00:36:00Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -120,23 +119,33 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "US restores blockade on Iran after its attacks on ships in the Strait of Hormuz - AP News",
+      "source_name": "Associated Press",
+      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWnBwMkRnYlE0eWdLanFlS1JwcWNwQW83YkJMbFJXdzZYRGFiZUtib0UzM1hRVFozX3RCTmwxUVQzV2RvNTU2ZE56RjZOYjRQbzF5SkJ1Y0RTQnktRmg1NjliM2pMcy1kY045dVQ4bk9sYkNDU2N6WTFnNV9NNjZMa21IYkxLX3NmWDF2NXMzUmRtRkN0eGlwRmx6SHdlakU?oc=5",
+      "published_at": "2026-07-15T00:36:00Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-07-15T00:53:38Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Trump again threatens to strike Iran power plants amid impasse over strait of Hormuz | US - Israel war on Iran",
+      "source_name": "The Guardian",
+      "source_url": "https://www.theguardian.com/world/2026/jul/15/trump-iran-power-plants-strike-threat-strait-of-hormuz",
+      "published_at": "2026-07-14T23:59:12Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-15T00:53:38Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "US reimposes blockade on Iranian ports, launches more strikes - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOOWlaMW1EUnFyd3hkSlFveHAzZXpVR0pMLUJsSVJGLV9ISTVqMEFFd0lfTlFwUUFULTVYYXZfWkp2Y2Rla1NrTzRabXBCWW5BYzJNY0hmYjdaX09SdHV3NVFmd29EYjJvRjE1ZEtSZE9JcnYzSGFpNi1kUTZJME9wdWFHcHBlY2F5cUZiMmVzRUcyUURSSEJQU1psVjN6cUtNNWd3NF9LdnbSAa4BQVVfeXFMTklTZUlQR04yUzZEOFlQaHBDNkdPamFrbDRsNzZFMjdobzlBLWdXWUNXR3dwVDd1TjY0NTE4LVJwYWhiWTB4eFp3X3UzdnduQnl1TUdIdExQaXVkclRMT2dmUzk5UVdOQ3ZRNWhWY3o0Q3VUcmRhY1NiemVKZzVxaDJ5ODR3dGhBcGFBX2pXZE1McGpqZ19idVZLV25xWmJ1c0R0UkthU3pVQUxOeWtn?oc=5",
       "published_at": "2026-07-14T23:03:45Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-14T23:26:55Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US restores blockade on Iran after its attacks on ships in the Strait of Hormuz - AP News",
-      "source_name": "Associated Press",
-      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWnBwMkRnYlE0eWdLanFlS1JwcWNwQW83YkJMbFJXdzZYRGFiZUtib0UzM1hRVFozX3RCTmwxUVQzV2RvNTU2ZE56RjZOYjRQbzF5SkJ1Y0RTQnktRmg1NjliM2pMcy1kY045dVQ4bk9sYkNDU2N6WTFnNV9NNjZMa21IYkxLX3NmWDF2NXMzUmRtRkN0eGlwRmx6SHdlakU?oc=5",
-      "published_at": "2026-07-14T22:54:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-07-14T23:26:55Z"
+      "observed_at": "2026-07-15T00:53:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -166,7 +175,7 @@
       "published_at": "2026-07-14T19:34:42Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-14T23:26:55Z"
+      "observed_at": "2026-07-15T00:53:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -206,7 +215,7 @@
       "published_at": "2026-07-14T15:06:17Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-14T23:26:55Z"
+      "observed_at": "2026-07-15T00:53:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
