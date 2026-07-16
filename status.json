@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-16T18:42:43Z",
-  "last_success_at": "2026-07-16T18:42:43Z",
+  "checked_at": "2026-07-16T20:29:00Z",
+  "last_success_at": "2026-07-16T20:29:00Z",
   "last_change_at": "2026-07-16T15:18:25Z",
   "verification_ok": true,
   "stale": false,
@@ -22,23 +22,23 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran and US step up attacks, though release of American may signal path to climbdown - Reuters",
+      "title": "Iran and US step up attacks, release of American in dispute - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbGxQSEpXZmFYRldBSGhRcTZWZlBvbUFOZFJDeVoxdXVZczVtY2w1TlhqSnhFaGxsSWlINnBKbDZhNi1mT0Q1anJRTjM0Z0toaVg3QXhMcmkyZlBQRTZ1cVZvbmhZSmU4WDU4NGdnN3FJZGRzbnYzdm0zQUVxWjNUZ1dTZHlwMTA0VTNhbUg0UHVxZmFLUlVtSmVfeHZCb0tfWEE?oc=5",
-      "published_at": "2026-07-16T17:53:38Z",
+      "published_at": "2026-07-16T19:48:46Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T18:42:43Z"
+      "observed_at": "2026-07-16T20:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "India Bars Seafarers From Strait of Hormuz Voyages After Attacks - Bloomberg.com",
+      "title": "US Launches New Strikes on Iran as Hormuz Traffic Slumps - Bloomberg.com",
       "source_name": "Bloomberg",
-      "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQZUpDQXV2eDBhOHZ1bF9yMXF5d1F6VVg1UzMxbXl3Vmd6WXg5cmJTdFduR2pLZVlEamNmaXFfMTdFSlp5OHY3U1QwNmxtMWxCY2VVNVMwS0Jnd0JuMmk1dTJsSnExSzFnS3Bnel9iQVVxMW5DM25fOU5yd3l4aWlUb0hxTFdhRXJoYmwza1dNLXYxWXlaRkNKVmFJUjE4VEpZTUhFNjQ4Q0JHX0d4emVOSUtiQ1ZxZw?oc=5",
-      "published_at": "2026-07-16T06:44:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVVhCLTFHeXp3YmtOeWFYVE1xcHBsMnRQT3QxRmtLZFYxZVRRalo0WGpGUlF4RF8tV3ZaSW9CdjR3VEpDUGlNSDVsYXJZV3hSSVZSV3U5NEhKYmxWY2U1NVF0QUFHeGVOdm5PZnlPYTEtM1NkMUFrT0t1T0J0cThtM3lKZm40aGdJMUI3bk5RZVVVSDZyN1dqNnJQMWJYOTZxSmZNb0JGaTZDN0lkSEtJbjZJUlk0Zw?oc=5",
+      "published_at": "2026-07-16T18:34:15Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T18:42:43Z"
+      "observed_at": "2026-07-16T20:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -48,7 +48,7 @@
       "published_at": "2026-07-16T04:06:11Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T18:42:43Z"
+      "observed_at": "2026-07-16T20:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -58,7 +58,7 @@
       "published_at": "2026-07-16T11:47:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T18:42:43Z"
+      "observed_at": "2026-07-16T20:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -68,7 +68,7 @@
       "published_at": "2026-07-16T14:42:39Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-16T18:42:43Z"
+      "observed_at": "2026-07-16T20:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,21 +78,22 @@
       "published_at": "2026-07-15T03:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T18:42:43Z"
+      "observed_at": "2026-07-16T20:29:00Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 3.455,
       "closed": 0,
       "declared": 0,
-      "risk": 20.545
+      "risk": 20.865
     },
     "independent_sources": {
       "open": 3,
@@ -100,8 +101,8 @@
       "declared": 0,
       "risk": 8
     },
-    "articles_considered": 81,
-    "signals_considered": 26,
+    "articles_considered": 86,
+    "signals_considered": 29,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -109,7 +110,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-16T17:53:38Z",
+    "as_of": "2026-07-16T19:48:46Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -117,6 +118,26 @@
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran and US step up attacks, release of American in dispute - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbGxQSEpXZmFYRldBSGhRcTZWZlBvbUFOZFJDeVoxdXVZczVtY2w1TlhqSnhFaGxsSWlINnBKbDZhNi1mT0Q1anJRTjM0Z0toaVg3QXhMcmkyZlBQRTZ1cVZvbmhZSmU4WDU4NGdnN3FJZGRzbnYzdm0zQUVxWjNUZ1dTZHlwMTA0VTNhbUg0UHVxZmFLUlVtSmVfeHZCb0tfWEE?oc=5",
+      "published_at": "2026-07-16T19:48:46Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-07-16T20:29:00Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US Launches New Strikes on Iran as Hormuz Traffic Slumps - Bloomberg.com",
+      "source_name": "Bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVVhCLTFHeXp3YmtOeWFYVE1xcHBsMnRQT3QxRmtLZFYxZVRRalo0WGpGUlF4RF8tV3ZaSW9CdjR3VEpDUGlNSDVsYXJZV3hSSVZSV3U5NEhKYmxWY2U1NVF0QUFHeGVOdm5PZnlPYTEtM1NkMUFrT0t1T0J0cThtM3lKZm40aGdJMUI3bk5RZVVVSDZyN1dqNnJQMWJYOTZxSmZNb0JGaTZDN0lkSEtJbjZJUlk0Zw?oc=5",
+      "published_at": "2026-07-16T18:34:15Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-16T20:29:00Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Iran and US step up attacks, though release of American may signal path to climbdown - Reuters",
@@ -145,7 +166,7 @@
       "published_at": "2026-07-16T14:42:39Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-16T18:42:43Z"
+      "observed_at": "2026-07-16T20:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -225,7 +246,7 @@
       "published_at": "2026-07-16T04:06:11Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T18:42:43Z"
+      "observed_at": "2026-07-16T20:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -435,7 +456,7 @@
       "published_at": "2026-07-15T03:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T18:42:43Z"
+      "observed_at": "2026-07-16T20:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -696,25 +717,6 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-07-14T16:59:59Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil prices rise around 3 % after Middle East strikes ; China exports surge on back of AI boom – business live | Business",
-      "source_name": "The Guardian",
-      "source_url": "https://www.theguardian.com/business/live/2026/jul/14/oil-prices-rise-2-middle-east-strikes-chinas-exports-surge-ai-boom-live-updates",
-      "published_at": "2026-07-14T08:38:18Z",
-      "tier": 3,
-      "official": false
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Trump resumes Iran port blockade and threatens strikes on energy targets - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNV1NVbmwxanV3R25iWTRkMnNoY3hRblJYYVdDTU9FSGVrbDJkRDlNazBlbGV2MjBUYlNDX09Mcng5Vk9BdGJRSEIyNGdXdzlZOFV4aTh5N0xBSlB4WklnZ2VvUFc2WENOalA4Z1p0djZXVmFzV3RpMklJekp2U1JYbmxVREk4bTFtR19jQ2pJVzJkQU0xWmtsZzhBOHc5UkYtMGtld1RYUE91ZE9nNFQ5MTdvT2xxY2xoVjdzX2JqMG1uYy1IRTJz?oc=5",
-      "published_at": "2026-07-14T06:36:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-07-15T11:11:30Z"
     }
   ]
 }
