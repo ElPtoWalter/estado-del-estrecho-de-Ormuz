@@ -1,17 +1,17 @@
 {
   "engine_version": 3,
-  "status": "ABIERTO",
-  "operational_status": "OPEN_RESTRICTED",
-  "operational_label_es": "Abierto con restricciones",
-  "operational_label_en": "Open with restrictions",
-  "confidence": "BAJA",
-  "checked_at": "2026-07-16T13:04:04Z",
-  "last_success_at": "2026-07-16T13:04:04Z",
-  "last_change_at": "2026-07-12T14:07:07Z",
+  "status": "INCIERTO",
+  "operational_status": "HIGH_RISK_UNCONFIRMED",
+  "operational_label_es": "Riesgo elevado, estado no confirmado",
+  "operational_label_en": "High risk, status unconfirmed",
+  "confidence": "ALTA",
+  "checked_at": "2026-07-16T15:18:25Z",
+  "last_success_at": "2026-07-16T15:18:25Z",
+  "last_change_at": "2026-07-16T15:18:25Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "Hay evidencia reciente de una ruta operativa, pero persisten restricciones, incidentes o un riesgo marítimo elevado.",
-  "summary_en": "Recent evidence indicates an operational route, but restrictions, incidents or elevated maritime risk remain.",
+  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
   "last_valid_confirmation": {
     "status": "ABIERTO",
     "at": "2026-07-15T20:14:51Z",
@@ -22,33 +22,23 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters",
+      "title": "Iran, US step up attacks, though release of American may signal path to climbdown - Reuters",
       "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxON3J1czdNcVRwRXNPa0cwMXJ3VWR4Wld0eWF4Z3FNV2dTOElFZUFTMUg3cjZKTUJNOU9VNXl1OEN3S1Y4RjBHUWl0bWlqcHhnMF8tNVRkWDBYTmd2dloxSVhaV1hxcjlyVVhIcHVGUXAtdEItUW9YSTcwdDF2YjZCQXRBV05Zc2J5NlVyanYxV1IwRnBuWjlYMXVxWmdIQ0wzenNaOTZVZDYzOGhGZ0g3YUhjM3QydDl1SXdzNEtpbFJTa0V4QVNOdEtTVmVOZDg?oc=5",
-      "published_at": "2026-07-15T20:14:51Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbGxQSEpXZmFYRldBSGhRcTZWZlBvbUFOZFJDeVoxdXVZczVtY2w1TlhqSnhFaGxsSWlINnBKbDZhNi1mT0Q1anJRTjM0Z0toaVg3QXhMcmkyZlBQRTZ1cVZvbmhZSmU4WDU4NGdnN3FJZGRzbnYzdm0zQUVxWjNUZ1dTZHlwMTA0VTNhbUg0UHVxZmFLUlVtSmVfeHZCb0tfWEE?oc=5",
+      "published_at": "2026-07-16T14:15:29Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T13:04:04Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US reimposes its blockade on Iran after Tehran's attacks on ships in the Strait of Hormuz - AP News",
-      "source_name": "Associated Press",
-      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWnBwMkRnYlE0eWdLanFlS1JwcWNwQW83YkJMbFJXdzZYRGFiZUtib0UzM1hRVFozX3RCTmwxUVQzV2RvNTU2ZE56RjZOYjRQbzF5SkJ1Y0RTQnktRmg1NjliM2pMcy1kY045dVQ4bk9sYkNDU2N6WTFnNV9NNjZMa21IYkxLX3NmWDF2NXMzUmRtRkN0eGlwRmx6SHdlakU?oc=5",
-      "published_at": "2026-07-15T03:16:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-07-16T13:04:04Z"
+      "observed_at": "2026-07-16T15:18:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
       "title": "US intensifies attacks on Iran as Tehran hits back at Gulf states - The Guardian",
       "source_name": "The Guardian",
       "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOQnE5emhOTUNjSG1mN1d5dHdVZXpfYmVBU1FqTGI5clZ2X1J1VWVfMFZBZ1B5YW9RaE9IWXp1T29xcHVJTkhYc2VGeWRVd3l2ejQ0dVpWLVhhcGNkU2FfUjRvNkF1Q0xUbVQzZ1paWktiQUY2ZXNOUG9jNzBpQ2ZQcmdlR2V4N3VTcDlxRENCcG1iQXVyQjhXYzV1LXEyX3JrV3FQZHRPcjVxZU1kRGgzcg?oc=5",
-      "published_at": "2026-07-16T11:57:00Z",
+      "published_at": "2026-07-16T14:45:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T13:04:04Z"
+      "observed_at": "2026-07-16T15:18:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -58,7 +48,7 @@
       "published_at": "2026-07-16T06:44:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T13:04:04Z"
+      "observed_at": "2026-07-16T15:18:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -68,17 +58,27 @@
       "published_at": "2026-07-16T04:06:11Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T13:04:04Z"
+      "observed_at": "2026-07-16T15:18:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran warns U.S. of Hormuz 'red line,' says it will retaliate to Trump's strike threats - CNBC",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPVF9GR0xENjZiT1Q5LVZld1MteHZKSElsblY1X3VfRUFnVGJodEUzc05uSENkZnFrZm5vMkJlTzZhcHkwYU1oUHhpNFZYd09vZHdZQmNsY1JkV1ZGdnd6T0JvMFdibWpPcmFpTUkzRzQ2SWdHbEpKdExTckw1ck1ETWZFOWQ4blpmTTUzVFpXZl9ENnludHFwOUFmWERac1ZTeEl3ZC130gGrAUFVX3lxTE4xdFdiWkl2NG1qc0syaS1ybE1KYTJxT09ITFFROTVheHkzM3diY0RZQVJqRW8zc3hGeXdRWHg2ejg1MnkwXzlQZGVWV1plWTN5UEltVDB6WFJLbU1iWTFSd1VfVHZJWjNUYXRJVlJqY0w0YURCRU1qUlhRUHl4aU5iSmMyR19tNE02d29INTZzam1MTUwzRXFFeEVxWDVTYnJSWkVkdkJTUHFOOA?oc=5",
-      "published_at": "2026-07-16T08:53:35Z",
+      "title": "US launches new attacks on Iran as Tehran targets Gulf sites - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNYzNEU1NFdUVxNlNwT0tZWUxqYzdtUFByelc5RVlkNEZ5UDhCNjd5NE1BMU8yLUFBWlBHY2VCbFprRmpyTU1tZUlaaDlscmoyOVFLallnclNQZ2xJMTZxdkxlaWozdW9uUjJFY010QzdyV190UGRfQ3p4UC1jLVF2elJ4ZFY0T21wMUxMclNZNE14R3Z2VXRadERiWVRidV9abnBz0gGoAUFVX3lxTE9iXzVJakdIWGJhQkhXVjBPOXdES1NlVkZHNmxuR3BkcjRkWEY4dU5qd0dBRFlYcEZ6VVRJcWtwUlZNYmhjYVYtSGpjYlNXN3J1Vk51bXdRWUlLOVNWampMeHoxRlNub3ZjOVZRRWVJRURIX01FWl80VWUxT3lmREs1TFoxaHBNY2tkcTllRTVzQzFHSzhEVVlHaUpFdEhqOWFxVzVnWGtyTA?oc=5",
+      "published_at": "2026-07-16T14:42:39Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-16T13:04:04Z"
+      "observed_at": "2026-07-16T15:18:25Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US reimposes its blockade on Iran after Tehran's attacks on ships in the Strait of Hormuz - AP News",
+      "source_name": "Associated Press",
+      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWnBwMkRnYlE0eWdLanFlS1JwcWNwQW83YkJMbFJXdzZYRGFiZUtib0UzM1hRVFozX3RCTmwxUVQzV2RvNTU2ZE56RjZOYjRQbzF5SkJ1Y0RTQnktRmg1NjliM2pMcy1kY045dVQ4bk9sYkNDU2N6WTFnNV9NNjZMa21IYkxLX3NmWDF2NXMzUmRtRkN0eGlwRmx6SHdlakU?oc=5",
+      "published_at": "2026-07-15T03:16:00Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-07-16T15:18:25Z"
     }
   ],
   "diagnostics": {
@@ -89,19 +89,19 @@
     ],
     "providers_failed": [],
     "scores": {
-      "open": 3.84,
+      "open": 2.44,
       "closed": 0,
       "declared": 0,
-      "risk": 23.48
+      "risk": 21.955
     },
     "independent_sources": {
-      "open": 3,
+      "open": 2,
       "closed": 0,
       "declared": 0,
       "risk": 9
     },
-    "articles_considered": 81,
-    "signals_considered": 28,
+    "articles_considered": 79,
+    "signals_considered": 26,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -109,7 +109,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-16T11:57:00Z",
+    "as_of": "2026-07-16T14:45:00Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -122,10 +122,30 @@
       "title": "US intensifies attacks on Iran as Tehran hits back at Gulf states - The Guardian",
       "source_name": "The Guardian",
       "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOQnE5emhOTUNjSG1mN1d5dHdVZXpfYmVBU1FqTGI5clZ2X1J1VWVfMFZBZ1B5YW9RaE9IWXp1T29xcHVJTkhYc2VGeWRVd3l2ejQ0dVpWLVhhcGNkU2FfUjRvNkF1Q0xUbVQzZ1paWktiQUY2ZXNOUG9jNzBpQ2ZQcmdlR2V4N3VTcDlxRENCcG1iQXVyQjhXYzV1LXEyX3JrV3FQZHRPcjVxZU1kRGgzcg?oc=5",
-      "published_at": "2026-07-16T11:57:00Z",
+      "published_at": "2026-07-16T14:45:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T13:04:04Z"
+      "observed_at": "2026-07-16T15:18:25Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US launches new attacks on Iran as Tehran targets Gulf sites - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNYzNEU1NFdUVxNlNwT0tZWUxqYzdtUFByelc5RVlkNEZ5UDhCNjd5NE1BMU8yLUFBWlBHY2VCbFprRmpyTU1tZUlaaDlscmoyOVFLallnclNQZ2xJMTZxdkxlaWozdW9uUjJFY010QzdyV190UGRfQ3p4UC1jLVF2elJ4ZFY0T21wMUxMclNZNE14R3Z2VXRadERiWVRidV9abnBz0gGoAUFVX3lxTE9iXzVJakdIWGJhQkhXVjBPOXdES1NlVkZHNmxuR3BkcjRkWEY4dU5qd0dBRFlYcEZ6VVRJcWtwUlZNYmhjYVYtSGpjYlNXN3J1Vk51bXdRWUlLOVNWampMeHoxRlNub3ZjOVZRRWVJRURIX01FWl80VWUxT3lmREs1TFoxaHBNY2tkcTllRTVzQzFHSzhEVVlHaUpFdEhqOWFxVzVnWGtyTA?oc=5",
+      "published_at": "2026-07-16T14:42:39Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-07-16T15:18:25Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran, US step up attacks, though release of American may signal path to climbdown - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbGxQSEpXZmFYRldBSGhRcTZWZlBvbUFOZFJDeVoxdXVZczVtY2w1TlhqSnhFaGxsSWlINnBKbDZhNi1mT0Q1anJRTjM0Z0toaVg3QXhMcmkyZlBQRTZ1cVZvbmhZSmU4WDU4NGdnN3FJZGRzbnYzdm0zQUVxWjNUZ1dTZHlwMTA0VTNhbUg0UHVxZmFLUlVtSmVfeHZCb0tfWEE?oc=5",
+      "published_at": "2026-07-16T14:15:29Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-07-16T15:18:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -136,16 +156,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-16T13:04:04Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US launches new attacks on Iran as Tehran targets Gulf sites - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNYzNEU1NFdUVxNlNwT0tZWUxqYzdtUFByelc5RVlkNEZ5UDhCNjd5NE1BMU8yLUFBWlBHY2VCbFprRmpyTU1tZUlaaDlscmoyOVFLallnclNQZ2xJMTZxdkxlaWozdW9uUjJFY010QzdyV190UGRfQ3p4UC1jLVF2elJ4ZFY0T21wMUxMclNZNE14R3Z2VXRadERiWVRidV9abnBz0gGoAUFVX3lxTE9iXzVJakdIWGJhQkhXVjBPOXdES1NlVkZHNmxuR3BkcjRkWEY4dU5qd0dBRFlYcEZ6VVRJcWtwUlZNYmhjYVYtSGpjYlNXN3J1Vk51bXdRWUlLOVNWampMeHoxRlNub3ZjOVZRRWVJRURIX01FWl80VWUxT3lmREs1TFoxaHBNY2tkcTllRTVzQzFHSzhEVVlHaUpFdEhqOWFxVzVnWGtyTA?oc=5",
-      "published_at": "2026-07-16T08:33:44Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-07-16T09:36:46Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -175,7 +185,7 @@
       "published_at": "2026-07-16T06:44:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T13:04:04Z"
+      "observed_at": "2026-07-16T15:18:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -205,7 +215,7 @@
       "published_at": "2026-07-16T04:06:11Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T13:04:04Z"
+      "observed_at": "2026-07-16T15:18:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -415,7 +425,7 @@
       "published_at": "2026-07-15T03:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T13:04:04Z"
+      "observed_at": "2026-07-16T15:18:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -704,16 +714,6 @@
       "published_at": "2026-07-14T06:36:00Z",
       "tier": 4,
       "official": false
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US launches third night of strikes on Iran as Trump announces Hormuz blockade - The Guardian",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTzk5TkVyaXI1Tl9tMUgxc20zOHBTTVk5M1NyX1lJd3MtYnFfVW9xV2dJR1p2Q1RVb3ZqRkRFRXBCM1N0VVdJTlRLT0R6Z0w0U1FLYlhfMXpFWGxFZ2htTmk1UGlmWEJ5THUwVzAwRWU4NUdxVnQzN2pUOENDbTVOekNfcld6R3RWN1h5US1vVkk1QzgtQUlhWXdaYnNvV3VyOFZuODJLcjAwbl94U2Y1cGN6VEJiM1BDTngwQXdoMzQ?oc=5",
-      "published_at": "2026-07-14T06:33:03Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-14T23:26:55Z"
     }
   ]
 }
