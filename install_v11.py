@@ -32,27 +32,46 @@ def ensure_assets_and_nav(path:Path)->None:
     if anchor in text and label not in text:text=text.replace(anchor,addition,1)
     stable_write(path,text)
 
+
+def remove_panel_links(text: str) -> str:
+    """Elimina cualquier enlace o botón público hacia panel-x.html."""
+    import re
+    patterns = [
+        r'\s*<a\b[^>]*href=["\']/panel-x\.html["\'][^>]*>.*?</a>',
+        r'\s*<a\b[^>]*href=["\']https://estrechoormuz\.com/panel-x\.html["\'][^>]*>.*?</a>',
+    ]
+    for pattern in patterns:
+        text = re.sub(pattern, "", text, flags=re.IGNORECASE | re.DOTALL)
+    return text
+
 def patch_home(path:Path,is_en:bool)->None:
     text=path.read_text(encoding="utf-8")
-    if "V11_DAILY_BRIEF_TEASER" in text:return
+    cleaned=remove_panel_links(text)
+
+    if "V11_DAILY_BRIEF_TEASER" in cleaned:
+        stable_write(path,cleaned)
+        return
+
     block='''<!-- V11_DAILY_BRIEF_TEASER -->
 <section class="content-section v11-panel">
   <span class="section-kicker">Daily operational briefing</span>
   <h2>A concise daily brief, generated from the verified status</h2>
   <p>Status, material changes, selected evidence and the next signals to watch, without turning every headline into an alert.</p>
-  <div class="hero-actions"><a class="button primary" href="/en-daily-brief.html">Open daily brief</a><a class="button" href="/panel-x.html">Editorial X panel</a></div>
+  <div class="hero-actions"><a class="button primary" href="/en-daily-brief.html">Open daily brief</a></div>
 </section>
 ''' if is_en else '''<!-- V11_DAILY_BRIEF_TEASER -->
 <section class="content-section v11-panel">
   <span class="section-kicker">Informe operativo diario</span>
   <h2>Un parte conciso generado desde el estado verificado</h2>
   <p>Situación, cambios materiales, evidencias seleccionadas y próximas señales a vigilar, sin convertir cada titular en una alerta.</p>
-  <div class="hero-actions"><a class="button primary" href="/parte-diario.html">Abrir parte diario</a><a class="button" href="/panel-x.html">Panel editorial de X</a></div>
+  <div class="hero-actions"><a class="button primary" href="/parte-diario.html">Abrir parte diario</a></div>
 </section>
 '''
     for token in ('<section aria-labelledby="faq-title"','<section class="content-section sponsor-band">','</main>'):
-        if token in text:
-            stable_write(path,text.replace(token,block+token,1));return
+        if token in cleaned:
+            stable_write(path,cleaned.replace(token,block+token,1))
+            return
+    stable_write(path,cleaned)
 
 def patch_article(path:Path,is_en:bool)->None:
     text=path.read_text(encoding="utf-8")
@@ -82,11 +101,14 @@ def update_sitemap()->None:
         blocks.append(f"  <url>\n    <loc>{absolute}</loc>\n    <lastmod>2026-07-17</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{priority}</priority>\n  </url>\n")
     if blocks and "</urlset>" in text:stable_write(path,text.replace("</urlset>","".join(blocks)+"</urlset>",1))
 
+
 def update_text_files()->None:
     robots=ROOT/"robots.txt"
     if robots.exists():
-        text=robots.read_text(encoding="utf-8")
-        if "Disallow: /panel-x.html" not in text:stable_write(robots,text.rstrip()+"\nDisallow: /panel-x.html\n")
+        lines=robots.read_text(encoding="utf-8").splitlines()
+        lines=[line for line in lines if line.strip()!="Disallow: /panel-x.html"]
+        stable_write(robots,"\n".join(lines).rstrip()+"\n")
+
     llms=ROOT/"llms.txt"
     if llms.exists():
         text=llms.read_text(encoding="utf-8")
@@ -99,8 +121,34 @@ def update_text_files()->None:
 - España y Europa: https://estrechoormuz.com/como-afecta-ormuz-espana-europa.html
 ''')
 
+def remove_panel_page()->None:
+    """Elimina la antigua herramienta pública. social-drafts.json se conserva."""
+    panel=ROOT/"panel-x.html"
+    if panel.exists():
+        panel.unlink()
+
+    sitemap=ROOT/"sitemap.xml"
+    if sitemap.exists():
+        import re
+        text=sitemap.read_text(encoding="utf-8")
+        text=re.sub(
+            r'\s*<url>\s*<loc>https://estrechoormuz\.com/panel-x\.html</loc>.*?</url>',
+            "",
+            text,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+        stable_write(sitemap,text)
+
 def main()->int:
-    for path in ROOT.glob("*.html"):ensure_assets_and_nav(path)
+    remove_panel_page()
+
+    for path in ROOT.glob("*.html"):
+        ensure_assets_and_nav(path)
+        text=path.read_text(encoding="utf-8")
+        cleaned=remove_panel_links(text)
+        if cleaned!=text:
+            stable_write(path,cleaned)
+
     for name in ("index.html","en.html"):
         path=ROOT/name
         if path.exists():patch_home(path,name=="en.html")
@@ -110,8 +158,10 @@ def main()->int:
     for name in ARTICLES_EN:
         path=ROOT/name
         if path.exists():patch_article(path,True)
-    update_sitemap();update_text_files()
-    print("V11 instalada de forma idempotente.")
+
+    update_sitemap()
+    update_text_files()
+    print("V11.1 instalada: panel editorial de X eliminado; borradores internos conservados.")
     return 0
 
 if __name__=="__main__":
