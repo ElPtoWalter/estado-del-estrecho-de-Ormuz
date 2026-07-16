@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-16T23:28:27Z",
-  "last_success_at": "2026-07-16T23:28:27Z",
+  "checked_at": "2026-07-16T23:47:25Z",
+  "last_success_at": "2026-07-16T23:47:25Z",
   "last_change_at": "2026-07-16T15:18:25Z",
   "verification_ok": true,
   "stale": false,
@@ -28,7 +28,7 @@
       "published_at": "2026-07-16T22:09:06Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T23:28:27Z"
+      "observed_at": "2026-07-16T23:47:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -38,17 +38,7 @@
       "published_at": "2026-07-16T21:55:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T23:28:27Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Blasts reported in Iran as US launches new wave of strikes",
-      "source_name": "BBC",
-      "source_url": "https://www.bbc.co.uk/news/articles/c151gdjwd10o",
-      "published_at": "2026-07-16T22:15:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-16T23:28:27Z"
+      "observed_at": "2026-07-16T23:47:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -58,7 +48,7 @@
       "published_at": "2026-07-16T18:34:15Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T23:28:27Z"
+      "observed_at": "2026-07-16T23:47:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -68,7 +58,7 @@
       "published_at": "2026-07-16T11:47:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T23:28:27Z"
+      "observed_at": "2026-07-16T23:47:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,30 +68,41 @@
       "published_at": "2026-07-16T21:02:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-16T23:28:27Z"
+      "observed_at": "2026-07-16T23:47:25Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "IMO chief reacts to Iranian attack on tankers in Hormuz - thenationalnews.com",
+      "source_name": "Oman News Agency",
+      "source_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNLXdJQTlqU0d0b3A3X2tHcUpYX0d3X3VOS2lMU3JMeXowaGZCWjBBQ240R01NRjhET2cxME5hU1UzLU5QNHl3NW9yR3ZaWXNLZVR0LVVRMUJ3LWZQbEFRX2NZYnpndGtnVS02Ukx6OVBTREduS0tYZFBzZG80X2pSdVlXZEl1SGxFWEFRZE1OWHhrOFF6b0dHM3g1V2ZqYzg5dDJZU1N3?oc=5",
+      "published_at": "2026-07-14T18:45:21Z",
+      "tier": 4,
+      "official": true,
+      "observed_at": "2026-07-16T23:47:25Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 1.855,
       "closed": 0,
       "declared": 0,
-      "risk": 22.985
+      "risk": 19.785
     },
     "independent_sources": {
       "open": 2,
       "closed": 0,
       "declared": 0,
-      "risk": 8
+      "risk": 7
     },
-    "articles_considered": 87,
-    "signals_considered": 29,
+    "articles_considered": 80,
+    "signals_considered": 27,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -109,7 +110,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-16T22:15:00Z",
+    "as_of": "2026-07-16T22:09:06Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -135,7 +136,7 @@
       "published_at": "2026-07-16T22:09:06Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T23:28:27Z"
+      "observed_at": "2026-07-16T23:47:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -145,7 +146,7 @@
       "published_at": "2026-07-16T21:55:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T23:28:27Z"
+      "observed_at": "2026-07-16T23:47:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -165,7 +166,7 @@
       "published_at": "2026-07-16T18:34:15Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T23:28:27Z"
+      "observed_at": "2026-07-16T23:47:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -605,7 +606,7 @@
       "published_at": "2026-07-14T18:45:21Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-16T22:32:45Z"
+      "observed_at": "2026-07-16T23:47:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
