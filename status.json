@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-16T15:18:25Z",
-  "last_success_at": "2026-07-16T15:18:25Z",
+  "checked_at": "2026-07-16T16:50:33Z",
+  "last_success_at": "2026-07-16T16:50:33Z",
   "last_change_at": "2026-07-16T15:18:25Z",
   "verification_ok": true,
   "stale": false,
@@ -28,7 +28,7 @@
       "published_at": "2026-07-16T14:15:29Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T15:18:25Z"
+      "observed_at": "2026-07-16T16:50:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -38,7 +38,7 @@
       "published_at": "2026-07-16T14:45:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T15:18:25Z"
+      "observed_at": "2026-07-16T16:50:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -48,7 +48,7 @@
       "published_at": "2026-07-16T06:44:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T15:18:25Z"
+      "observed_at": "2026-07-16T16:50:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -58,7 +58,7 @@
       "published_at": "2026-07-16T04:06:11Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T15:18:25Z"
+      "observed_at": "2026-07-16T16:50:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -68,7 +68,7 @@
       "published_at": "2026-07-16T14:42:39Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-16T15:18:25Z"
+      "observed_at": "2026-07-16T16:50:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,30 +78,31 @@
       "published_at": "2026-07-15T03:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T15:18:25Z"
+      "observed_at": "2026-07-16T16:50:33Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
-      "open": 2.44,
+      "open": 3.455,
       "closed": 0,
       "declared": 0,
       "risk": 21.955
     },
     "independent_sources": {
-      "open": 2,
+      "open": 3,
       "closed": 0,
       "declared": 0,
       "risk": 9
     },
     "articles_considered": 79,
-    "signals_considered": 26,
+    "signals_considered": 27,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -125,7 +126,7 @@
       "published_at": "2026-07-16T14:45:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T15:18:25Z"
+      "observed_at": "2026-07-16T16:50:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -135,7 +136,7 @@
       "published_at": "2026-07-16T14:42:39Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-16T15:18:25Z"
+      "observed_at": "2026-07-16T16:50:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -145,7 +146,7 @@
       "published_at": "2026-07-16T14:15:29Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T15:18:25Z"
+      "observed_at": "2026-07-16T16:50:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -185,7 +186,7 @@
       "published_at": "2026-07-16T06:44:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T15:18:25Z"
+      "observed_at": "2026-07-16T16:50:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -215,7 +216,7 @@
       "published_at": "2026-07-16T04:06:11Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-16T15:18:25Z"
+      "observed_at": "2026-07-16T16:50:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -425,7 +426,7 @@
       "published_at": "2026-07-15T03:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-16T15:18:25Z"
+      "observed_at": "2026-07-16T16:50:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
