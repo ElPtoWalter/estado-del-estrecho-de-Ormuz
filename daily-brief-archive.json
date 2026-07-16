@@ -1,0 +1,41 @@
+[
+  {
+    "schema_version": 1,
+    "date": "2026-07-17",
+    "generated_at": "2026-07-17T00:00:00Z",
+    "source_checked_at": null,
+    "status": "INCIERTO",
+    "status_label_es": "PENDIENTE DE PRIMERA EJECUCIÓN",
+    "status_label_en": "AWAITING FIRST RUN",
+    "operational_status": "INITIALISING",
+    "operational_label_es": "Pendiente de sincronizar con status.json",
+    "operational_label_en": "Waiting to synchronise with status.json",
+    "confidence": "BAJA",
+    "confidence_label": {
+      "es": "Baja",
+      "en": "Low"
+    },
+    "verification_ok": false,
+    "stale": true,
+    "summary_es": "El workflow sustituirá este contenido durante su primera ejecución.",
+    "summary_en": "The workflow will replace this content during its first run.",
+    "change_es": "Primera línea base pendiente.",
+    "change_en": "First baseline pending.",
+    "risks_es": [
+      "No utilizar este estado inicial como confirmación operativa."
+    ],
+    "risks_en": [
+      "Do not use this initial state as operational confirmation."
+    ],
+    "watchlist_es": [
+      "Ejecutar manualmente el workflow tras subir el paquete."
+    ],
+    "watchlist_en": [
+      "Run the workflow manually after uploading the package."
+    ],
+    "evidence": [],
+    "last_valid_confirmation": null,
+    "publish_recommended": false,
+    "material_hash": "initial-placeholder"
+  }
+]
