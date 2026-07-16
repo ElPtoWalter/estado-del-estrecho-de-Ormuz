@@ -2,40 +2,93 @@
   {
     "schema_version": 1,
     "date": "2026-07-17",
-    "generated_at": "2026-07-17T00:00:00Z",
-    "source_checked_at": null,
+    "generated_at": "2026-07-16T23:27:17Z",
+    "source_checked_at": "2026-07-16T23:26:59Z",
     "status": "INCIERTO",
-    "status_label_es": "PENDIENTE DE PRIMERA EJECUCIÓN",
-    "status_label_en": "AWAITING FIRST RUN",
-    "operational_status": "INITIALISING",
-    "operational_label_es": "Pendiente de sincronizar con status.json",
-    "operational_label_en": "Waiting to synchronise with status.json",
-    "confidence": "BAJA",
+    "status_label_es": "INCIERTO",
+    "status_label_en": "UNCERTAIN",
+    "operational_status": "HIGH_RISK_UNCONFIRMED",
+    "operational_label_es": "Riesgo elevado, estado no confirmado",
+    "operational_label_en": "High risk, status unconfirmed",
+    "confidence": "ALTA",
     "confidence_label": {
-      "es": "Baja",
-      "en": "Low"
+      "es": "Alta",
+      "en": "High"
     },
-    "verification_ok": false,
-    "stale": true,
-    "summary_es": "El workflow sustituirá este contenido durante su primera ejecución.",
-    "summary_en": "The workflow will replace this content during its first run.",
-    "change_es": "Primera línea base pendiente.",
-    "change_en": "First baseline pending.",
+    "verification_ok": true,
+    "stale": false,
+    "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+    "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+    "change_es": "Primera línea base del parte diario; no implica por sí sola una novedad publicable.",
+    "change_en": "First daily-brief baseline; this does not by itself represent a publishable change.",
     "risks_es": [
-      "No utilizar este estado inicial como confirmación operativa."
+      "El riesgo es elevado y no puede confirmarse de forma fiable si el paso está abierto o cerrado.",
+      "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
     ],
     "risks_en": [
-      "Do not use this initial state as operational confirmation."
+      "Risk is high and it cannot be reliably confirmed whether the passage is open or closed.",
+      "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
     ],
     "watchlist_es": [
-      "Ejecutar manualmente el workflow tras subir el paquete."
+      "Avisos marítimos oficiales y confirmaciones operativas independientes.",
+      "Trayectorias completas de buques y continuidad real de los cruces, no puntos AIS aislados.",
+      "Cambios en restricciones, seguros, escoltas, puertos y disponibilidad de tripulaciones."
     ],
     "watchlist_en": [
-      "Run the workflow manually after uploading the package."
+      "Official maritime notices and independent operational confirmations.",
+      "Completed vessel tracks and actual continuity of crossings, not isolated AIS points.",
+      "Changes in restrictions, insurance, escorts, ports and crew availability."
     ],
-    "evidence": [],
-    "last_valid_confirmation": null,
+    "evidence": [
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Blasts reported in Iran as US launches new wave of strikes",
+        "source_name": "BBC",
+        "source_url": "https://www.bbc.co.uk/news/articles/c151gdjwd10o",
+        "published_at": "2026-07-16T22:15:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Iran and US step up attacks, release of American in dispute - Reuters",
+        "source_name": "Reuters",
+        "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbGxQSEpXZmFYRldBSGhRcTZWZlBvbUFOZFJDeVoxdXVZczVtY2w1TlhqSnhFaGxsSWlINnBKbDZhNi1mT0Q1anJRTjM0Z0toaVg3QXhMcmkyZlBQRTZ1cVZvbmhZSmU4WDU4NGdnN3FJZGRzbnYzdm0zQUVxWjNUZ1dTZHlwMTA0VTNhbUg0UHVxZmFLUlVtSmVfeHZCb0tfWEE?oc=5",
+        "published_at": "2026-07-16T22:09:06Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US expands attacks on Iran, which calls Strait of Hormuz a 'red line' as it retaliates - AP News",
+        "source_name": "Associated Press",
+        "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOYXFnZWtOU1NXb01HY2FxbTBsUmJqNDlaa3NORmpyZ0pYVzhSVFZkaUNYTjczY0E1YjhpR1F1OGRoT3dJNnVTMjVuUGJyamVCckJwMi1WY0hJR2NyVGQ0ZDdzbF9LMzgteGZDRGtMd0ZQV211YWF3cHpYLWdhTXZjTXVhTG1zRkRmR3Q1NVdQRWNEb2xhZU0zRTFodmM4ZXc?oc=5",
+        "published_at": "2026-07-16T21:55:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US mounts sixth straight night of attacks as Iran warns of wider war - Al Jazeera",
+        "source_name": "Al Jazeera",
+        "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZGFiQkZGcXRqQjFIbDdzVEVxUGV1dWR0WnlMb0JPanluS1pqckNsZXFkQmxvRHMzLTQwUVlJZ2laRDNmMGJRZEQ1N2d1S1N1dWFMdFdnRGQwT2ZBeEExVTFtd2F3SWdRSWNDNG95bU1NZlpsX2xLWmtFRjV4T1BiZlQ4SmJRVks2bGdmMnRKbHNoN3pyOUhKV1ZBcnFmb080TGNfSTc3UWFvd0Q1Q2fSAbMBQVVfeXFMTUNQS2ZSbGg0cVFyT2VCVTN4YWJrNnEtajdiSTVMN3k5MU1rRGRubTFic1YxR3gteUlBWko3MXlJb1V5WHNSYTlSdHNOVmYtTHF5NDF3WVNud24tX3duamlfYWYzZGJ5bC13QmQ4SlYwMmc0SnBoRnpXTjdpTHlTanJWU3VGNFg5d0VBN2pMTEk0Y3FZSXdIOXQwdTdPcWptTk9kU1FTR0g4aWd2OGNHaXNNaTg?oc=5",
+        "published_at": "2026-07-16T21:02:35Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US Launches New Strikes on Iran as Hormuz Traffic Slumps - Bloomberg.com",
+        "source_name": "Bloomberg",
+        "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVVhCLTFHeXp3YmtOeWFYVE1xcHBsMnRQT3QxRmtLZFYxZVRRalo0WGpGUlF4RF8tV3ZaSW9CdjR3VEpDUGlNSDVsYXJZV3hSSVZSV3U5NEhKYmxWY2U1NVF0QUFHeGVOdm5PZnlPYTEtM1NkMUFrT0t1T0J0cThtM3lKZm40aGdJMUI3bk5RZVVVSDZyN1dqNnJQMWJYOTZxSmZNb0JGaTZDN0lkSEtJbjZJUlk0Zw?oc=5",
+        "published_at": "2026-07-16T18:34:15Z",
+        "official": false
+      }
+    ],
+    "last_valid_confirmation": {
+      "status": "ABIERTO",
+      "at": "2026-07-15T20:14:51Z",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxON3J1czdNcVRwRXNPa0cwMXJ3VWR4Wld0eWF4Z3FNV2dTOElFZUFTMUg3cjZKTUJNOU9VNXl1OEN3S1Y4RjBHUWl0bWlqcHhnMF8tNVRkWDBYTmd2dloxSVhaV1hxcjlyVVhIcHVGUXAtdEItUW9YSTcwdDF2YjZCQXRBV05Zc2J5NlVyanYxV1IwRnBuWjlYMXVxWmdIQ0wzenNaOTZVZDYzOGhGZ0g3YUhjM3QydDl1SXdzNEtpbFJTa0V4QVNOdEtTVmVOZDg?oc=5",
+      "title": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters"
+    },
     "publish_recommended": false,
-    "material_hash": "initial-placeholder"
+    "material_hash": "00c77fa983c97d51"
   }
 ]
