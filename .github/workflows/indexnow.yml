@@ -1,0 +1,250 @@
+name: IndexNow
+
+on:
+  # Permite ejecutarlo manualmente desde Actions.
+  workflow_dispatch:
+
+  # Se ejecuta automáticamente después de publicar GitHub Pages.
+  workflow_run:
+    workflows:
+      - pages build and deployment
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-estrechoormuz
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    name: Notificar cambios a IndexNow
+
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 2
+
+      - name: Enviar URLs a IndexNow
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          python3 <<'PYTHON'
+          from __future__ import annotations
+
+          import json
+          import os
+          import subprocess
+          import urllib.error
+          import urllib.request
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+
+          BASE_URL = "https://estrechoormuz.com"
+          HOST = "estrechoormuz.com"
+
+          INDEXNOW_KEY = "8ee87f80641eba7927c66d271c9380a5"
+
+          KEY_LOCATION = (
+              "https://estrechoormuz.com/"
+              "8ee87f80641eba7927c66d271c9380a5.txt"
+          )
+
+          ENDPOINT = "https://api.indexnow.org/indexnow"
+          SITEMAP = Path("sitemap.xml")
+
+
+          def read_sitemap() -> list[str]:
+              """Obtiene todas las URL públicas incluidas en sitemap.xml."""
+
+              if not SITEMAP.exists():
+                  raise FileNotFoundError(
+                      "No se encuentra sitemap.xml en la raíz."
+                  )
+
+              root = ET.parse(SITEMAP).getroot()
+              urls: set[str] = set()
+
+              for element in root.iter():
+                  if not element.tag.endswith("loc"):
+                      continue
+
+                  if not element.text:
+                      continue
+
+                  url = element.text.strip()
+
+                  if url.startswith(BASE_URL):
+                      urls.add(url)
+
+              return sorted(urls)
+
+
+          def changed_files() -> list[str]:
+              """Obtiene los archivos modificados en el último commit."""
+
+              try:
+                  output = subprocess.check_output(
+                      [
+                          "git",
+                          "diff",
+                          "--name-only",
+                          "HEAD^",
+                          "HEAD",
+                      ],
+                      text=True,
+                  )
+              except subprocess.CalledProcessError:
+                  return []
+
+              return [
+                  line.strip()
+                  for line in output.splitlines()
+                  if line.strip()
+              ]
+
+
+          def changed_urls() -> list[str]:
+              """Convierte los archivos modificados en URL públicas."""
+
+              files = changed_files()
+
+              if not files:
+                  return read_sitemap()
+
+              urls: set[str] = set()
+
+              for file_name in files:
+                  normalized = file_name.replace("\\", "/")
+
+                  if normalized == "index.html":
+                      urls.add(f"{BASE_URL}/")
+                      continue
+
+                  if normalized.endswith(".html"):
+                      urls.add(f"{BASE_URL}/{normalized}")
+                      continue
+
+                  if normalized == "sitemap.xml":
+                      urls.update(read_sitemap())
+                      continue
+
+                  if normalized in {
+                      "status.json",
+                      "history.json",
+                      "feed.xml",
+                  }:
+                      urls.update(
+                          {
+                              f"{BASE_URL}/",
+                              f"{BASE_URL}/en.html",
+                              f"{BASE_URL}/historial.html",
+                              f"{BASE_URL}/en-history.html",
+                              f"{BASE_URL}/evidencias.html",
+                              f"{BASE_URL}/en-evidence.html",
+                          }
+                      )
+
+              return sorted(urls)
+
+
+          event_name = os.environ.get(
+              "EVENT_NAME",
+              "workflow_dispatch",
+          )
+
+          if event_name == "workflow_dispatch":
+              urls = read_sitemap()
+              mode = "envío manual completo"
+          else:
+              urls = changed_urls()
+              mode = "envío automático de cambios"
+
+          urls = sorted(
+              {
+                  url
+                  for url in urls
+                  if url.startswith(BASE_URL)
+              }
+          )
+
+          if not urls:
+              print("No hay URL que notificar.")
+              raise SystemExit(0)
+
+          payload = {
+              "host": HOST,
+              "key": INDEXNOW_KEY,
+              "keyLocation": KEY_LOCATION,
+              "urlList": urls,
+          }
+
+          request = urllib.request.Request(
+              ENDPOINT,
+              data=json.dumps(payload).encode("utf-8"),
+              headers={
+                  "Content-Type": (
+                      "application/json; charset=utf-8"
+                  ),
+                  "Accept": "application/json,text/plain,*/*",
+                  "User-Agent": (
+                      "EstrechoOrmuz-IndexNow/1.0"
+                  ),
+              },
+              method="POST",
+          )
+
+          print(f"Modo: {mode}")
+          print(f"URL preparadas: {len(urls)}")
+
+          for url in urls:
+              print(f"  - {url}")
+
+          try:
+              with urllib.request.urlopen(
+                  request,
+                  timeout=30,
+              ) as response:
+                  body = response.read().decode(
+                      "utf-8",
+                      errors="replace",
+                  )
+
+                  print(
+                      f"IndexNow respondió HTTP "
+                      f"{response.status}"
+                  )
+
+                  if body:
+                      print(body)
+
+                  if response.status not in (200, 202):
+                      raise RuntimeError(
+                          "Respuesta inesperada de IndexNow."
+                      )
+
+          except urllib.error.HTTPError as error:
+              body = error.read().decode(
+                  "utf-8",
+                  errors="replace",
+              )
+
+              print(
+                  f"IndexNow devolvió HTTP "
+                  f"{error.code}: {body}"
+              )
+
+              raise
+          PYTHON
