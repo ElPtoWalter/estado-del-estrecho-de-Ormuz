@@ -1,6 +1,10 @@
+
+
+
 #!/usr/bin/env python3
-# Estrecho Ormuz · Instalador V11.2
+# Estrecho Ormuz · Instalador V11.3 · AdSense
 # Integra el Parte diario y los 7 análisis en las portadas ES/EN.
+# Añade el código de Google AdSense a todas las páginas y crea ads.txt.
 # Es idempotente: puede ejecutarse cada hora sin duplicar bloques.
 
 from __future__ import annotations
@@ -9,6 +13,15 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+
+ADSENSE_CLIENT = "ca-pub-1713078636060241"
+ADSENSE_PUBLISHER = "pub-1713078636060241"
+ADSENSE_SCRIPT = f'''<!-- ADSENSE_V11_3_START -->
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_CLIENT}"
+  crossorigin="anonymous"></script>
+<!-- ADSENSE_V11_3_END -->'''
+
 
 NEW_URLS = [
     ("parte-diario.html", "daily", "0.95"),
@@ -203,6 +216,32 @@ def remove_panel_links(text: str) -> str:
     for pattern in patterns:
         text = re.sub(pattern, "", text, flags=re.I | re.S)
     return text
+
+
+def ensure_adsense_code(text: str) -> str:
+    """Añade el código oficial de AdSense una sola vez dentro de <head>."""
+    if re.search(r'pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js', text, re.I):
+        return text
+
+    meta = f'<meta name="google-adsense-account" content="{ADSENSE_CLIENT}">'
+    additions = ADSENSE_SCRIPT
+    if not re.search(r'<meta\b[^>]*name=["\']google-adsense-account["\']', text, re.I):
+        additions = meta + "\n" + additions
+
+    if re.search(r'</head>', text, re.I):
+        return re.sub(r'</head>', additions + "\n</head>", text, count=1, flags=re.I)
+    return text
+
+
+def ensure_ads_txt() -> None:
+    """Crea o completa ads.txt en la raíz sin borrar otros vendedores existentes."""
+    path = ROOT / "ads.txt"
+    required = f"google.com, {ADSENSE_PUBLISHER}, DIRECT, f08c47fec0942fa0"
+    current = path.read_text(encoding="utf-8") if path.exists() else ""
+    lines = [line.rstrip() for line in current.splitlines() if line.strip()]
+    if required not in lines:
+        lines.append(required)
+    stable_write(path, "\n".join(lines).rstrip() + "\n")
 
 
 def ensure_css_link(text: str) -> str:
@@ -414,12 +453,14 @@ def remove_panel_page() -> None:
 
 def main() -> int:
     remove_panel_page()
+    ensure_ads_txt()
     patch_styles()
 
     for path in ROOT.glob("*.html"):
         text = path.read_text(encoding="utf-8")
         english = is_english(text)
         text = remove_panel_links(text)
+        text = ensure_adsense_code(text)
         text = ensure_css_link(text)
         text = patch_main_navigation(text, english)
         text = patch_footer(text, english)
@@ -442,10 +483,9 @@ def main() -> int:
 
     update_sitemap()
     update_text_files()
-    print("V11.2 instalada: Parte diario y 7 análisis integrados en ambas portadas.")
+    print("V11.3 instalada: contenido integrado, AdSense añadido a los HTML y ads.txt preparado.")
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
