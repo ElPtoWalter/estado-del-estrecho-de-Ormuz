@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-17T22:25:07Z",
-  "last_success_at": "2026-07-17T22:25:07Z",
+  "checked_at": "2026-07-17T23:28:20Z",
+  "last_success_at": "2026-07-17T23:28:20Z",
   "last_change_at": "2026-07-16T15:18:25Z",
   "verification_ok": true,
   "stale": false,
@@ -28,7 +28,7 @@
       "published_at": "2026-07-17T12:37:53Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-17T22:25:07Z"
+      "observed_at": "2026-07-17T23:28:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -38,7 +38,7 @@
       "published_at": "2026-07-17T06:31:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-17T22:25:07Z"
+      "observed_at": "2026-07-17T23:28:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -48,17 +48,17 @@
       "published_at": "2026-07-17T21:09:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-17T22:25:07Z"
+      "observed_at": "2026-07-17T23:28:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Oil tankers face worst case scenario in Hormuz , maritime risk CEO says",
+      "title": "Oil tankers face 'worst case scenario' in Hormuz as Iran steps up attacks on ships, maritime risk CEO says - CNBC",
       "source_name": "CNBC",
-      "source_url": "https://www.cnbc.com/2026/07/17/iran-war-oil-tanker-strait-hormuz-traffic-attacks-trump.html",
+      "source_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPc2ZkclBjdExUQmlrZURuWWltMFBvUmFEN3VVSkZDT0Y0ckZUZXRCU2pFV2NKeWUtek5IQ3Z5dUVkQzFOSHczUFVDT19fc0FBTUZWNGVRZUJVY216Rk05RkwyVklqTXlxTzZVczIyYjZINlRTZVpmVmFyRkVzcHpfallaeDRWR2tNeVVvdDZBYkttRjFUNHI00gGcAUFVX3lxTFBtUFFBeloxLXJKUXdIWkJTSHBoWERCNkV3WlN4OWFuaWIxQWJlWnBjcVYyUng0VDdkc21rMk90czUzdnd2ekJEOVUwbWFTLU9ja25LTDRteEJpaXhXVnVHTWFFZXlLNWlvODRIRUxlYW0zcWFwSzBxSWJSSUFYQnFQSFRKMy1kN1JTZ09GcE1WRnZlczV5ZVlxd2FweQ?oc=5",
       "published_at": "2026-07-17T18:20:37Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-17T22:25:07Z"
+      "observed_at": "2026-07-17T23:28:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -68,7 +68,7 @@
       "published_at": "2026-07-15T03:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-17T22:25:07Z"
+      "observed_at": "2026-07-17T23:28:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,16 +78,17 @@
       "published_at": "2026-07-17T08:15:02Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-17T22:25:07Z"
+      "observed_at": "2026-07-17T23:28:20Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -100,7 +101,7 @@
       "declared": 0,
       "risk": 9
     },
-    "articles_considered": 86,
+    "articles_considered": 82,
     "signals_considered": 26,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
@@ -125,7 +126,7 @@
       "published_at": "2026-07-17T21:09:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-17T22:25:07Z"
+      "observed_at": "2026-07-17T23:28:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -139,6 +140,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Oil tankers face 'worst case scenario' in Hormuz as Iran steps up attacks on ships, maritime risk CEO says - CNBC",
+      "source_name": "CNBC",
+      "source_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPc2ZkclBjdExUQmlrZURuWWltMFBvUmFEN3VVSkZDT0Y0ckZUZXRCU2pFV2NKeWUtek5IQ3Z5dUVkQzFOSHczUFVDT19fc0FBTUZWNGVRZUJVY216Rk05RkwyVklqTXlxTzZVczIyYjZINlRTZVpmVmFyRkVzcHpfallaeDRWR2tNeVVvdDZBYkttRjFUNHI00gGcAUFVX3lxTFBtUFFBeloxLXJKUXdIWkJTSHBoWERCNkV3WlN4OWFuaWIxQWJlWnBjcVYyUng0VDdkc21rMk90czUzdnd2ekJEOVUwbWFTLU9ja25LTDRteEJpaXhXVnVHTWFFZXlLNWlvODRIRUxlYW0zcWFwSzBxSWJSSUFYQnFQSFRKMy1kN1JTZ09GcE1WRnZlczV5ZVlxd2FweQ?oc=5",
+      "published_at": "2026-07-17T18:20:37Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-07-17T23:28:20Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Oil tankers face worst case scenario in Hormuz , maritime risk CEO says",
       "source_name": "CNBC",
       "source_url": "https://www.cnbc.com/2026/07/17/iran-war-oil-tanker-strait-hormuz-traffic-attacks-trump.html",
@@ -146,16 +157,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-17T22:25:07Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil tankers face 'worst case scenario' in Hormuz as Iran steps up attacks on ships, maritime risk CEO says - CNBC",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPc2ZkclBjdExUQmlrZURuWWltMFBvUmFEN3VVSkZDT0Y0ckZUZXRCU2pFV2NKeWUtek5IQ3Z5dUVkQzFOSHczUFVDT19fc0FBTUZWNGVRZUJVY216Rk05RkwyVklqTXlxTzZVczIyYjZINlRTZVpmVmFyRkVzcHpfallaeDRWR2tNeVVvdDZBYkttRjFUNHI00gGcAUFVX3lxTFBtUFFBeloxLXJKUXdIWkJTSHBoWERCNkV3WlN4OWFuaWIxQWJlWnBjcVYyUng0VDdkc21rMk90czUzdnd2ekJEOVUwbWFTLU9ja25LTDRteEJpaXhXVnVHTWFFZXlLNWlvODRIRUxlYW0zcWFwSzBxSWJSSUFYQnFQSFRKMy1kN1JTZ09GcE1WRnZlczV5ZVlxd2FweQ?oc=5",
-      "published_at": "2026-07-17T18:20:37Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-07-17T19:42:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -175,7 +176,7 @@
       "published_at": "2026-07-17T12:37:53Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-17T22:25:07Z"
+      "observed_at": "2026-07-17T23:28:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -205,7 +206,7 @@
       "published_at": "2026-07-17T08:15:02Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-17T22:25:07Z"
+      "observed_at": "2026-07-17T23:28:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -645,7 +646,7 @@
       "published_at": "2026-07-15T03:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-17T22:25:07Z"
+      "observed_at": "2026-07-17T23:28:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
