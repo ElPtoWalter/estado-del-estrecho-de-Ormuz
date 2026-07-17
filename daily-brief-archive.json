@@ -1,6 +1,98 @@
 [
   {
     "schema_version": 1,
+    "date": "2026-07-18",
+    "generated_at": "2026-07-17T22:25:28Z",
+    "source_checked_at": "2026-07-17T22:25:07Z",
+    "status": "INCIERTO",
+    "status_label_es": "INCIERTO",
+    "status_label_en": "UNCERTAIN",
+    "operational_status": "HIGH_RISK_UNCONFIRMED",
+    "operational_label_es": "Riesgo elevado, estado no confirmado",
+    "operational_label_en": "High risk, status unconfirmed",
+    "confidence": "ALTA",
+    "confidence_label": {
+      "es": "Alta",
+      "en": "High"
+    },
+    "verification_ok": true,
+    "stale": false,
+    "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+    "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
+    "risks_es": [
+      "El riesgo es elevado y no puede confirmarse de forma fiable si el paso está abierto o cerrado.",
+      "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+    ],
+    "risks_en": [
+      "Risk is high and it cannot be reliably confirmed whether the passage is open or closed.",
+      "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
+    ],
+    "watchlist_es": [
+      "Avisos marítimos oficiales y confirmaciones operativas independientes.",
+      "Trayectorias completas de buques y continuidad real de los cruces, no puntos AIS aislados.",
+      "Cambios en restricciones, seguros, escoltas, puertos y disponibilidad de tripulaciones."
+    ],
+    "watchlist_en": [
+      "Official maritime notices and independent operational confirmations.",
+      "Completed vessel tracks and actual continuity of crossings, not isolated AIS points.",
+      "Changes in restrictions, insurance, escorts, ports and crew availability."
+    ],
+    "evidence": [
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US launches seventh night of Iran strikes as Hormuz conflict escalates - The Guardian",
+        "source_name": "The Guardian",
+        "source_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZWdkZ2pNRC02RjFSUVZndnBjejNoY1dUdkI4RXRRdDhvbl9QR1pXRk5TcHBwamltYjhHc3ROeW1ILXk4cldYVjE3Skh1bnRTc0UySWEzRkExNTMtbW82Tm1YaUJXZWQtcWFxUDdQeEprTDFreW9iTVNsMUNmV3BJSmhueXdoYnRJbk5UbVZmbVp5djI1UVhrT3BxSWdOY1NOMmQzc0xWZUo3RnJyWkJoSDN3a3pUbUE?oc=5",
+        "published_at": "2026-07-17T21:09:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Oil tankers face worst case scenario in Hormuz , maritime risk CEO says",
+        "source_name": "CNBC",
+        "source_url": "https://www.cnbc.com/2026/07/17/iran-war-oil-tanker-strait-hormuz-traffic-attacks-trump.html",
+        "published_at": "2026-07-17T18:20:37Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US launches sixth straight night of Iran strikes, targets bridges and infrastructure - National Desk",
+        "source_name": "Oman News Agency",
+        "source_url": "https://news.google.com/rss/articles/CBMi4AJBVV95cUxQN0puUHlzVjBnOHh4SnRWU3E1RHZhM0FrOEY4emJMNVFGcDNQTjdibEZOVjlLVXExM0c0b0JQeFgtNFFaQ0lnWHZUVlRsRUMxNTBvaTVDbm1Rb0QwTlFIQkRDeEVabEFlZnlXTWFGb1N6Qkh0MlFzckVVbUFxU3l0TUh4ODNFZ2twdlc5TWlJeUk0Z01OT3FCTVpKNVJVSlRHSG1VSC1SUzJ6NkF6eGtDRmpPYVpCZUtTVW1XTzI1ekN5b3J0Vm9JRER3MExjNDhDeTV3aW1IdVFfVFlOSUxCbHM4aU9qVHFqSkNRMDhwbkZlVGxJLUFmV2xvOFJHcHRwODBubkQ0cnpLQnFBVldPVVB4cnVQeEZRaVVpSW1NMFZaLUtIeVdtVkhQNERmYl9kVFBNNjdaRjI5NXY4ZE9DbnZYc3pHdWY4WVlNNWJwRW5acHJ3NW9RTmE0a3h0dXds?oc=5",
+        "published_at": "2026-07-17T12:37:53Z",
+        "official": true
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US attacks southern Iran, as Tehran hits Gulf countries: What's the latest? - Al Jazeera",
+        "source_name": "Al Jazeera",
+        "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUTFnRml2MU4ya1M2Z3lhU3FoaFRNbE56LVA2VzVnMlVsd2lTUllEa3BzTWdHUEktRkxmbGlTeDZ6U2h0eFJObWdGZW9iS21SaWRhaDlrQUVLN0FsY19jX2JmaFdYckd4aXljQWVQMm4xNWZaZklVNG9McDkwbTBGVnc4Znp4azY3VW01QjkyYnNpRTFfSEc3SkoxM0ZJRjdhUmhtSWZGN3l2alo5UFZrZ01R0gG3AUFVX3lxTFBoS1ZZaWFWcjlZSHI1Y3dqT21LMmd2VVZWcjNaSzUzLWJmRm10RndvUGRWZnN6UUdqci0waE1ydXlIVEZHZXJuMEVaTlFfQlh2TnA3TmZpdE1hTmJGRjNoZEQwc3E3U0E3Sm52RXBRU1A4U05DcElaQVh2RC1xS2VfdGlma2pHTmZ0TktjckhyaVpESDNmaDZFanlveTdGTWlRdGZTWEtOeHFJX2pWc3R0cjhoRm1Zcw?oc=5",
+        "published_at": "2026-07-17T08:15:02Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Strait of Hormuz transits drop as US and Iran escalate attacks across Gulf - Reuters",
+        "source_name": "Reuters",
+        "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOTVQyMmFIM0hOUXlUZjI0ZE1HNGRxWVVXS08yYmpuQkM5MXZ3YkMtLUhNWnZaejFRa3E2N0ltUzJuN1dtaWlRZDJpdFRBclIwRHlrNjRLbE9EYzlCQnNWZENmRk5XWmVFN3o0ZDBXaGh5R09rN2lWTHBBcFBFUzlWTzRaY3UySkZqR0g5VzNVUGY3MUZwc3k3R09ielFjZ21hVHV2bHRuUHl6V3YzcHdBZnFLdjhkY0M2Mmc?oc=5",
+        "published_at": "2026-07-17T06:31:00Z",
+        "official": false
+      }
+    ],
+    "last_valid_confirmation": {
+      "status": "ABIERTO",
+      "at": "2026-07-15T20:14:51Z",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxON3J1czdNcVRwRXNPa0cwMXJ3VWR4Wld0eWF4Z3FNV2dTOElFZUFTMUg3cjZKTUJNOU9VNXl1OEN3S1Y4RjBHUWl0bWlqcHhnMF8tNVRkWDBYTmd2dloxSVhaV1hxcjlyVVhIcHVGUXAtdEItUW9YSTcwdDF2YjZCQXRBV05Zc2J5NlVyanYxV1IwRnBuWjlYMXVxWmdIQ0wzenNaOTZVZDYzOGhGZ0g3YUhjM3QydDl1SXdzNEtpbFJTa0V4QVNOdEtTVmVOZDg?oc=5",
+      "title": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters"
+    },
+    "publish_recommended": false,
+    "material_hash": "6d68e88a2c7abefc"
+  },
+  {
+    "schema_version": 1,
     "date": "2026-07-17",
     "generated_at": "2026-07-17T21:24:51Z",
     "source_checked_at": "2026-07-17T21:24:09Z",
