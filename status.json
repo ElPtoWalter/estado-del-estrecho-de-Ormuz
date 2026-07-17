@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-17T18:36:35Z",
-  "last_success_at": "2026-07-17T18:36:35Z",
+  "checked_at": "2026-07-17T19:42:41Z",
+  "last_success_at": "2026-07-17T19:42:41Z",
   "last_change_at": "2026-07-16T15:18:25Z",
   "verification_ok": true,
   "stale": false,
@@ -28,7 +28,7 @@
       "published_at": "2026-07-17T12:37:53Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-17T18:36:35Z"
+      "observed_at": "2026-07-17T19:42:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -38,7 +38,17 @@
       "published_at": "2026-07-17T06:31:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-17T18:36:35Z"
+      "observed_at": "2026-07-17T19:42:41Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US denies Iranian claims it hit civilian infrastructure in latest strikes - BBC",
+      "source_name": "BBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBGS2EteFNKR1VrbVVwZ0kwRkpWaVdCTFhwNWtISThhYnFnYzRPNTRCYWpaa3FGdDYzUWJmcmZfN1VhQWNuM2pSZ2l3WGVkTW1BeHM3b3ZkWW5UQQ?oc=5",
+      "published_at": "2026-07-17T18:33:12Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-17T19:42:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -48,17 +58,7 @@
       "published_at": "2026-07-17T17:41:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-17T18:36:35Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US Launches New Strikes on Iran as Hormuz Traffic Slumps - Bloomberg.com",
-      "source_name": "Bloomberg",
-      "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVVhCLTFHeXp3YmtOeWFYVE1xcHBsMnRQT3QxRmtLZFYxZVRRalo0WGpGUlF4RF8tV3ZaSW9CdjR3VEpDUGlNSDVsYXJZV3hSSVZSV3U5NEhKYmxWY2U1NVF0QUFHeGVOdm5PZnlPYTEtM1NkMUFrT0t1T0J0cThtM3lKZm40aGdJMUI3bk5RZVVVSDZyN1dqNnJQMWJYOTZxSmZNb0JGaTZDN0lkSEtJbjZJUlk0Zw?oc=5",
-      "published_at": "2026-07-17T02:13:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-17T18:36:35Z"
+      "observed_at": "2026-07-17T19:42:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -68,7 +68,7 @@
       "published_at": "2026-07-17T18:20:37Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-17T18:36:35Z"
+      "observed_at": "2026-07-17T19:42:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,21 +78,22 @@
       "published_at": "2026-07-15T03:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-17T18:36:35Z"
+      "observed_at": "2026-07-17T19:42:41Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0.84,
       "closed": 0,
       "declared": 0,
-      "risk": 22.57
+      "risk": 23.13
     },
     "independent_sources": {
       "open": 1,
@@ -101,7 +102,7 @@
       "risk": 9
     },
     "articles_considered": 82,
-    "signals_considered": 28,
+    "signals_considered": 27,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -109,7 +110,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-17T18:20:37Z",
+    "as_of": "2026-07-17T18:33:12Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -119,13 +120,23 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "US denies Iranian claims it hit civilian infrastructure in latest strikes - BBC",
+      "source_name": "BBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBGS2EteFNKR1VrbVVwZ0kwRkpWaVdCTFhwNWtISThhYnFnYzRPNTRCYWpaa3FGdDYzUWJmcmZfN1VhQWNuM2pSZ2l3WGVkTW1BeHM3b3ZkWW5UQQ?oc=5",
+      "published_at": "2026-07-17T18:33:12Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-17T19:42:41Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Oil tankers face 'worst case scenario' in Hormuz as Iran steps up attacks on ships, maritime risk CEO says - CNBC",
       "source_name": "CNBC",
       "source_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPc2ZkclBjdExUQmlrZURuWWltMFBvUmFEN3VVSkZDT0Y0ckZUZXRCU2pFV2NKeWUtek5IQ3Z5dUVkQzFOSHczUFVDT19fc0FBTUZWNGVRZUJVY216Rk05RkwyVklqTXlxTzZVczIyYjZINlRTZVpmVmFyRkVzcHpfallaeDRWR2tNeVVvdDZBYkttRjFUNHI00gGcAUFVX3lxTFBtUFFBeloxLXJKUXdIWkJTSHBoWERCNkV3WlN4OWFuaWIxQWJlWnBjcVYyUng0VDdkc21rMk90czUzdnd2ekJEOVUwbWFTLU9ja25LTDRteEJpaXhXVnVHTWFFZXlLNWlvODRIRUxlYW0zcWFwSzBxSWJSSUFYQnFQSFRKMy1kN1JTZ09GcE1WRnZlczV5ZVlxd2FweQ?oc=5",
       "published_at": "2026-07-17T18:20:37Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-17T18:36:35Z"
+      "observed_at": "2026-07-17T19:42:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -135,7 +146,7 @@
       "published_at": "2026-07-17T17:41:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-17T18:36:35Z"
+      "observed_at": "2026-07-17T19:42:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -145,7 +156,7 @@
       "published_at": "2026-07-17T12:37:53Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-17T18:36:35Z"
+      "observed_at": "2026-07-17T19:42:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -615,7 +626,7 @@
       "published_at": "2026-07-15T03:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-17T18:36:35Z"
+      "observed_at": "2026-07-17T19:42:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -706,16 +717,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-14T22:32:47Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "U.S. strikes Iran before Hormuz Strait blockade restarts - CNBC",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNbGlHVWpkLVhPbnhGM3BmSGtjenBoWEFZYVg1bk54TXpZWlIyMUlFQTVrTXUtT2Y5andmNTNkbnlmbi1idS1VcGI2UHZMOENLbWRhOWhRUW1oVkIxeURCUXNOLThSU3U3WFFSaVdUVEZNOEJWa19KSXFabEpxcjJPS3VjbWVLR3l1dk1lV9IBkgFBVV95cUxPTXNKMEZTUTczSXlSbnpscjE5S3RnWWdZeGw5VDQ0XzZqZjZWTEVqTzdrbjhzWGo1eW81ZE95OGVCTnM5NUprNFMybnNwdTlOeHlOd3VJeFZPM0c3aTJOWjltQzdsM0ZHMW5qR01hMFJ4V0NBX1RZZkJUYXpSbTgteWVIVWVISjQ2SVdvdi1fcFhIdw?oc=5",
-      "published_at": "2026-07-14T19:34:42Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-07-15T00:53:38Z"
     }
   ]
 }
