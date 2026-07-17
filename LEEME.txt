@@ -1,0 +1,23 @@
+SUBIDA DIRECTA — SIN INSTALADOR
+
+Sube todos estos archivos a la raíz del repositorio manteniendo la carpeta
+.well-known. GitHub sustituirá las seis páginas legales y añadirá los archivos
+de privacidad y seguridad.
+
+Archivos:
+- privacidad.html
+- cookies.html
+- publicidad.html
+- en-privacy.html
+- en-cookies.html
+- en-advertising.html
+- adsense-legal.css
+- privacy-controls.js
+- ads.txt
+- security.txt
+- .well-known/security.txt
+
+Después espera a que Pages termine en verde y comprueba las URL.
+
+No subas build_public.py ni deploy-private-pages.yml durante la revisión de
+AdSense. Esos archivos son para la migración posterior a repositorio privado.
