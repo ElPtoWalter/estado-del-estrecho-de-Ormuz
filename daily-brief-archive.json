@@ -1,6 +1,98 @@
 [
   {
     "schema_version": 1,
+    "date": "2026-07-20",
+    "generated_at": "2026-07-19T22:28:18Z",
+    "source_checked_at": "2026-07-19T22:28:02Z",
+    "status": "ABIERTO",
+    "status_label_es": "ABIERTO CON RESTRICCIONES",
+    "status_label_en": "OPEN WITH RESTRICTIONS",
+    "operational_status": "OPEN_RESTRICTED",
+    "operational_label_es": "Abierto con restricciones",
+    "operational_label_en": "Open with restrictions",
+    "confidence": "ALTA",
+    "confidence_label": {
+      "es": "Alta",
+      "en": "High"
+    },
+    "verification_ok": true,
+    "stale": false,
+    "summary_es": "Hay evidencia reciente de una ruta operativa, pero persisten restricciones, incidentes o un riesgo marítimo elevado.",
+    "summary_en": "Recent evidence indicates an operational route, but restrictions, incidents or elevated maritime risk remain.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
+    "risks_es": [
+      "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
+      "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+    ],
+    "risks_en": [
+      "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
+      "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
+    ],
+    "watchlist_es": [
+      "Avisos marítimos oficiales y confirmaciones operativas independientes.",
+      "Trayectorias completas de buques y continuidad real de los cruces, no puntos AIS aislados.",
+      "Cambios en restricciones, seguros, escoltas, puertos y disponibilidad de tripulaciones."
+    ],
+    "watchlist_en": [
+      "Official maritime notices and independent operational confirmations.",
+      "Completed vessel tracks and actual continuity of crossings, not isolated AIS points.",
+      "Changes in restrictions, insurance, escorts, ports and crew availability."
+    ],
+    "evidence": [
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US soldier killed and one injured after Iranian attack in Iraq - BBC",
+        "source_name": "BBC",
+        "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE93Vk9uZmtHc3J2T3I5VUZjMlVlU0lQTmFnNEg5aVdhU1p2Z1luNTZsandpY3Q3VWxyUVVFWDNrZ2FYTVRUOWxaYU53cU45RWd6bC0zeUdKTzNidw?oc=5",
+        "published_at": "2026-07-19T19:45:12Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Israel threatens full force response if Iran fires missiles towards it | Iran",
+        "source_name": "The Guardian",
+        "source_url": "https://www.theguardian.com/world/2026/jul/19/israel-threatens-full-force-response-iran-fires-missiles",
+        "published_at": "2026-07-19T17:30:32Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Iran attacks US Gulf allies, causing a fire at Kuwait power plant - Al Jazeera",
+        "source_name": "Al Jazeera",
+        "source_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVkZ5QXo1N2hOeXZuODFkalM2aVg4bjNlX0p4UHRzM0FLb3VBbzBKeFRGeVZCdENGMEFKRndFXzdTaDFTazgtczZnZDRBZWRHQjdHTjg3MHF1MjF3blhaM0pINlhCeGxPZkJDVTBYTkkyY0FPQjFpZEp0N3RzRFNSMkJBMFRxV3NCcmZpc256X0I1MlRUelMtc0g1RdIBoAFBVV95cUxQbkZxaDI5R0M0elRWcEpiTjhNeXJnQ0NJSW9VNFhTQ2MydlF1M2c0azUxbThYcksyZDMxYkZhcG40VGwySDh1VXdoS29sT1RNdEpLSnZfMTA3QmpweW1NYlhRVmVieWQ2YU1zbzl6TWJ5d0k1S3VHLTBRYUdzMkdyYTdkdDJOWFlWM1VHcVdmSFF6NmlLXzFCb0FwVXJhTEdD?oc=5",
+        "published_at": "2026-07-19T16:15:22Z",
+        "official": false
+      },
+      {
+        "signal": "OPEN_OPERATIONAL",
+        "title": "Why Can't Donald Trump Keep the Strait of Hormuz Open? - The National Interest",
+        "source_name": "Oman News Agency",
+        "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPX0NlaGdFVWtiYkYzekR4aXg1Y3JVWmM4WXZxNFhrMUVTZFZURm9oeXJMMzRPYVVlRVg1X2JuaWVlc25ieXhRQXZoYk8zSHZLNzk1c0RCYWcyQVpqczdackd5U0pqV01rNG54dmQ0YWNuMm1yLWVIZU8tV3c3d01MUDNnaXVmVzZPUlp2WUl0bXdEdkUzbU5vemlzUk9Odw?oc=5",
+        "published_at": "2026-07-19T16:05:07Z",
+        "official": true
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US strikes Iran after American troops killed in Jordan - Financial Times",
+        "source_name": "Financial Times",
+        "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSGx2cW15RkxnSjdfTzEtZV9ydGctRGRLeGlNQ0JsYS1RVTNVSkxfdkM5WHl5LVhWMXk5SnFMbFpxN0VPMC13Vm1OemdWLTBUcE5NM203REVhYzFUQWhTMzBNRVRUM2pmckNkbUZGMXpJaEpYdGJqTy1wNjVnbllHZmdaOVI?oc=5",
+        "published_at": "2026-07-19T09:13:30Z",
+        "official": false
+      }
+    ],
+    "last_valid_confirmation": {
+      "status": "ABIERTO",
+      "at": "2026-07-19T16:05:07Z",
+      "source_name": "Oman News Agency",
+      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPX0NlaGdFVWtiYkYzekR4aXg1Y3JVWmM4WXZxNFhrMUVTZFZURm9oeXJMMzRPYVVlRVg1X2JuaWVlc25ieXhRQXZoYk8zSHZLNzk1c0RCYWcyQVpqczdackd5U0pqV01rNG54dmQ0YWNuMm1yLWVIZU8tV3c3d01MUDNnaXVmVzZPUlp2WUl0bXdEdkUzbU5vemlzUk9Odw?oc=5",
+      "title": "Why Can't Donald Trump Keep the Strait of Hormuz Open? - The National Interest"
+    },
+    "publish_recommended": false,
+    "material_hash": "355c7b3976931719"
+  },
+  {
+    "schema_version": 1,
     "date": "2026-07-19",
     "generated_at": "2026-07-19T21:28:10Z",
     "source_checked_at": "2026-07-19T21:27:30Z",
