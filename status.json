@@ -1,25 +1,35 @@
 {
   "engine_version": 3,
-  "status": "INCIERTO",
-  "operational_status": "HIGH_RISK_UNCONFIRMED",
-  "operational_label_es": "Riesgo elevado, estado no confirmado",
-  "operational_label_en": "High risk, status unconfirmed",
+  "status": "ABIERTO",
+  "operational_status": "OPEN_RESTRICTED",
+  "operational_label_es": "Abierto con restricciones",
+  "operational_label_en": "Open with restrictions",
   "confidence": "ALTA",
-  "checked_at": "2026-07-19T15:32:37Z",
-  "last_success_at": "2026-07-19T15:32:37Z",
-  "last_change_at": "2026-07-16T15:18:25Z",
+  "checked_at": "2026-07-19T16:28:51Z",
+  "last_success_at": "2026-07-19T16:28:51Z",
+  "last_change_at": "2026-07-19T16:28:51Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
-  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+  "summary_es": "Hay evidencia reciente de una ruta operativa, pero persisten restricciones, incidentes o un riesgo marítimo elevado.",
+  "summary_en": "Recent evidence indicates an operational route, but restrictions, incidents or elevated maritime risk remain.",
   "last_valid_confirmation": {
     "status": "ABIERTO",
-    "at": "2026-07-15T20:14:51Z",
-    "source_name": "Reuters",
-    "source_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxON3J1czdNcVRwRXNPa0cwMXJ3VWR4Wld0eWF4Z3FNV2dTOElFZUFTMUg3cjZKTUJNOU9VNXl1OEN3S1Y4RjBHUWl0bWlqcHhnMF8tNVRkWDBYTmd2dloxSVhaV1hxcjlyVVhIcHVGUXAtdEItUW9YSTcwdDF2YjZCQXRBV05Zc2J5NlVyanYxV1IwRnBuWjlYMXVxWmdIQ0wzenNaOTZVZDYzOGhGZ0g3YUhjM3QydDl1SXdzNEtpbFJTa0V4QVNOdEtTVmVOZDg?oc=5",
-    "title": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters"
+    "at": "2026-07-19T16:05:07Z",
+    "source_name": "Oman News Agency",
+    "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPX0NlaGdFVWtiYkYzekR4aXg1Y3JVWmM4WXZxNFhrMUVTZFZURm9oeXJMMzRPYVVlRVg1X2JuaWVlc25ieXhRQXZoYk8zSHZLNzk1c0RCYWcyQVpqczdackd5U0pqV01rNG54dmQ0YWNuMm1yLWVIZU8tV3c3d01MUDNnaXVmVzZPUlp2WUl0bXdEdkUzbU5vemlzUk9Odw?oc=5",
+    "title": "Why Can't Donald Trump Keep the Strait of Hormuz Open? - The National Interest"
   },
   "evidence": [
+    {
+      "signal": "OPEN_OPERATIONAL",
+      "title": "Why Can't Donald Trump Keep the Strait of Hormuz Open? - The National Interest",
+      "source_name": "Oman News Agency",
+      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPX0NlaGdFVWtiYkYzekR4aXg1Y3JVWmM4WXZxNFhrMUVTZFZURm9oeXJMMzRPYVVlRVg1X2JuaWVlc25ieXhRQXZoYk8zSHZLNzk1c0RCYWcyQVpqczdackd5U0pqV01rNG54dmQ0YWNuMm1yLWVIZU8tV3c3d01MUDNnaXVmVzZPUlp2WUl0bXdEdkUzbU5vemlzUk9Odw?oc=5",
+      "published_at": "2026-07-19T16:05:07Z",
+      "tier": 4,
+      "official": true,
+      "observed_at": "2026-07-19T16:28:51Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "US renews strikes on Iran after two military personnel killed by Iranian attack - Reuters",
@@ -28,7 +38,7 @@
       "published_at": "2026-07-18T23:21:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-19T15:32:37Z"
+      "observed_at": "2026-07-19T16:28:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -38,7 +48,7 @@
       "published_at": "2026-07-19T09:13:30Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-19T15:32:37Z"
+      "observed_at": "2026-07-19T16:28:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -48,7 +58,7 @@
       "published_at": "2026-07-19T00:18:47Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-19T15:32:37Z"
+      "observed_at": "2026-07-19T16:28:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -58,17 +68,7 @@
       "published_at": "2026-07-19T09:47:28Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-19T15:32:37Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Two US troops killed and one missing in Jordan after Iranian attacks - The Guardian",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcU9EZm52ekUycVNuTEhRUk84ZXdGYVlaaXN5R3lKbGdmVzBRVHlZT0o2WVhKd29DeGNpZ3Zld1dZSm1RWjBjYXZjMmxINkgyODZkMjlhQTJmNEg1d1JFZmlFLUxicXNBVFp4cFM3OUdrQk5YSDI5bTFNNjhkVE5FazVKY25fOFJpNFN1RmczOHFTV1N4d2R5OGI4MmRFWUZYNUpSbUdpRUNVY3JZYm9xcXV4QXNxaUUtM2c?oc=5",
-      "published_at": "2026-07-18T16:24:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-19T15:32:37Z"
+      "observed_at": "2026-07-19T16:28:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,7 +78,7 @@
       "published_at": "2026-07-19T08:52:58Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-19T15:32:37Z"
+      "observed_at": "2026-07-19T16:28:51Z"
     }
   ],
   "diagnostics": {
@@ -87,21 +87,21 @@
       "Google News RSS"
     ],
     "providers_failed": [
-      "GDELT: URLError: <urlopen error timed out>"
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
     ],
     "scores": {
-      "open": 0,
+      "open": 4.0,
       "closed": 0,
       "declared": 0,
-      "risk": 17.955
+      "risk": 17.125
     },
     "independent_sources": {
-      "open": 0,
+      "open": 1,
       "closed": 0,
       "declared": 0,
       "risk": 7
     },
-    "articles_considered": 61,
+    "articles_considered": 62,
     "signals_considered": 22,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
@@ -110,7 +110,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-19T09:47:28Z",
+    "as_of": "2026-07-19T16:05:07Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -118,6 +118,16 @@
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "OPEN_OPERATIONAL",
+      "title": "Why Can't Donald Trump Keep the Strait of Hormuz Open? - The National Interest",
+      "source_name": "Oman News Agency",
+      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPX0NlaGdFVWtiYkYzekR4aXg1Y3JVWmM4WXZxNFhrMUVTZFZURm9oeXJMMzRPYVVlRVg1X2JuaWVlc25ieXhRQXZoYk8zSHZLNzk1c0RCYWcyQVpqczdackd5U0pqV01rNG54dmQ0YWNuMm1yLWVIZU8tV3c3d01MUDNnaXVmVzZPUlp2WUl0bXdEdkUzbU5vemlzUk9Odw?oc=5",
+      "published_at": "2026-07-19T16:05:07Z",
+      "tier": 4,
+      "official": true,
+      "observed_at": "2026-07-19T16:28:51Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Middle East crisis live : US launches new round of airstrikes to swiftly punish Iran after American troops killed | US - Israel war on Iran",
@@ -156,7 +166,7 @@
       "published_at": "2026-07-19T09:47:28Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-19T15:32:37Z"
+      "observed_at": "2026-07-19T16:28:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -166,7 +176,7 @@
       "published_at": "2026-07-19T09:13:30Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-19T15:32:37Z"
+      "observed_at": "2026-07-19T16:28:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -186,7 +196,7 @@
       "published_at": "2026-07-19T08:52:58Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-19T15:32:37Z"
+      "observed_at": "2026-07-19T16:28:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -226,7 +236,7 @@
       "published_at": "2026-07-19T00:18:47Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-19T15:32:37Z"
+      "observed_at": "2026-07-19T16:28:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -246,7 +256,7 @@
       "published_at": "2026-07-18T23:21:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-19T15:32:37Z"
+      "observed_at": "2026-07-19T16:28:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -707,16 +717,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-16T13:04:04Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil Steadies After Gains as Hormuz Ship Attacks Threaten Supply - Bloomberg.com",
-      "source_name": "Bloomberg",
-      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNT2k2VUNRTnc2eWx2LW40VG44SjFxdHFOZ2tpUkUtbjU4aGR3MXk3SG5JTFNaY2NzUHF4angycUVVV2VtQk14M1BpcGdDdDVMOTNjSVlzRUF3cnRkTTFWUlFtMDF5Q1JGNEdoa0l0aEVtaHJfblFhUFFSSExsQ2o2Ry1oSW5yVy1aQTRtcUxPMDg1SVRNdnFtMkJrM2lYTnM?oc=5",
-      "published_at": "2026-07-16T06:45:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-16T07:36:55Z"
     }
   ]
 }

@@ -2,14 +2,14 @@
   {
     "schema_version": 1,
     "date": "2026-07-19",
-    "generated_at": "2026-07-19T15:33:56Z",
-    "source_checked_at": "2026-07-19T15:32:37Z",
-    "status": "INCIERTO",
-    "status_label_es": "INCIERTO",
-    "status_label_en": "UNCERTAIN",
-    "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "operational_label_es": "Riesgo elevado, estado no confirmado",
-    "operational_label_en": "High risk, status unconfirmed",
+    "generated_at": "2026-07-19T16:29:27Z",
+    "source_checked_at": "2026-07-19T16:28:51Z",
+    "status": "ABIERTO",
+    "status_label_es": "ABIERTO CON RESTRICCIONES",
+    "status_label_en": "OPEN WITH RESTRICTIONS",
+    "operational_status": "OPEN_RESTRICTED",
+    "operational_label_es": "Abierto con restricciones",
+    "operational_label_en": "Open with restrictions",
     "confidence": "ALTA",
     "confidence_label": {
       "es": "Alta",
@@ -17,16 +17,16 @@
     },
     "verification_ok": true,
     "stale": false,
-    "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
-    "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
-    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
-    "change_en": "No material change in classification since the previous brief.",
+    "summary_es": "Hay evidencia reciente de una ruta operativa, pero persisten restricciones, incidentes o un riesgo marítimo elevado.",
+    "summary_en": "Recent evidence indicates an operational route, but restrictions, incidents or elevated maritime risk remain.",
+    "change_es": "El indicador cambia de «Riesgo elevado, estado no confirmado» a «Abierto con restricciones».",
+    "change_en": "The indicator changes from “High risk, status unconfirmed” to “Open with restrictions”.",
     "risks_es": [
-      "El riesgo es elevado y no puede confirmarse de forma fiable si el paso está abierto o cerrado.",
+      "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
       "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
     ],
     "risks_en": [
-      "Risk is high and it cannot be reliably confirmed whether the passage is open or closed.",
+      "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
       "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
     ],
     "watchlist_es": [
@@ -40,6 +40,14 @@
       "Changes in restrictions, insurance, escorts, ports and crew availability."
     ],
     "evidence": [
+      {
+        "signal": "OPEN_OPERATIONAL",
+        "title": "Why Can't Donald Trump Keep the Strait of Hormuz Open? - The National Interest",
+        "source_name": "Oman News Agency",
+        "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPX0NlaGdFVWtiYkYzekR4aXg1Y3JVWmM4WXZxNFhrMUVTZFZURm9oeXJMMzRPYVVlRVg1X2JuaWVlc25ieXhRQXZoYk8zSHZLNzk1c0RCYWcyQVpqczdackd5U0pqV01rNG54dmQ0YWNuMm1yLWVIZU8tV3c3d01MUDNnaXVmVzZPUlp2WUl0bXdEdkUzbU5vemlzUk9Odw?oc=5",
+        "published_at": "2026-07-19T16:05:07Z",
+        "official": true
+      },
       {
         "signal": "RISK_RESTRICTION",
         "title": "U.S. says it targeted Iranian forces after attacks that killed two American service members - CNBC",
@@ -71,25 +79,17 @@
         "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9GSmY1MHcwblY5Y0NWNTJmOUotLUJ6bV92cXVHUXhMeWtNUWhFLVBORDlzM2F1QXlxakU5RGZOOURvRGVRM0hEeDBLTE5YejZ1M202a1ViTGtSZw?oc=5",
         "published_at": "2026-07-19T00:18:47Z",
         "official": false
-      },
-      {
-        "signal": "RISK_RESTRICTION",
-        "title": "US renews strikes on Iran after two military personnel killed by Iranian attack - Reuters",
-        "source_name": "Reuters",
-        "source_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPcmZSOG9seXNyMUFGTW1NMF9XWUVNYUZLczBFRWFTTDZZYnRjX081R3pnUzl6NTFVM053aG50T09hb2pMSlFxTGV6T2V0ZEZaRUFtNjVTSk01MWFrb05KcHdVdHZHMktERXlFVEdKTGFrTlo0cl9SY0hjb0dpb01rMDh6Z2l5MFoyWGI2VjA3cGx1UTN1T1RqU0RCeHVLdVlWUEJIU0dHaFl2SEpKN1AySUlMeUJPQVBtWUtPY1BHUUw5bGZxTEpCRQ?oc=5",
-        "published_at": "2026-07-18T23:21:00Z",
-        "official": false
       }
     ],
     "last_valid_confirmation": {
       "status": "ABIERTO",
-      "at": "2026-07-15T20:14:51Z",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxON3J1czdNcVRwRXNPa0cwMXJ3VWR4Wld0eWF4Z3FNV2dTOElFZUFTMUg3cjZKTUJNOU9VNXl1OEN3S1Y4RjBHUWl0bWlqcHhnMF8tNVRkWDBYTmd2dloxSVhaV1hxcjlyVVhIcHVGUXAtdEItUW9YSTcwdDF2YjZCQXRBV05Zc2J5NlVyanYxV1IwRnBuWjlYMXVxWmdIQ0wzenNaOTZVZDYzOGhGZ0g3YUhjM3QydDl1SXdzNEtpbFJTa0V4QVNOdEtTVmVOZDg?oc=5",
-      "title": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters"
+      "at": "2026-07-19T16:05:07Z",
+      "source_name": "Oman News Agency",
+      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPX0NlaGdFVWtiYkYzekR4aXg1Y3JVWmM4WXZxNFhrMUVTZFZURm9oeXJMMzRPYVVlRVg1X2JuaWVlc25ieXhRQXZoYk8zSHZLNzk1c0RCYWcyQVpqczdackd5U0pqV01rNG54dmQ0YWNuMm1yLWVIZU8tV3c3d01MUDNnaXVmVzZPUlp2WUl0bXdEdkUzbU5vemlzUk9Odw?oc=5",
+      "title": "Why Can't Donald Trump Keep the Strait of Hormuz Open? - The National Interest"
     },
-    "publish_recommended": false,
-    "material_hash": "6f6692804dac1a2c"
+    "publish_recommended": true,
+    "material_hash": "a65d974709646320"
   },
   {
     "schema_version": 1,
