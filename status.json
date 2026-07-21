@@ -1,44 +1,44 @@
 {
   "engine_version": 3,
-  "status": "INCIERTO",
-  "operational_status": "HIGH_RISK_UNCONFIRMED",
-  "operational_label_es": "Riesgo elevado, estado no confirmado",
-  "operational_label_en": "High risk, status unconfirmed",
+  "status": "ABIERTO",
+  "operational_status": "OPEN_RESTRICTED",
+  "operational_label_es": "Abierto con restricciones",
+  "operational_label_en": "Open with restrictions",
   "confidence": "ALTA",
-  "checked_at": "2026-07-21T20:46:38Z",
-  "last_success_at": "2026-07-21T20:46:38Z",
-  "last_change_at": "2026-07-21T20:46:38Z",
+  "checked_at": "2026-07-21T22:29:00Z",
+  "last_success_at": "2026-07-21T22:29:00Z",
+  "last_change_at": "2026-07-21T22:29:00Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
-  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+  "summary_es": "Hay evidencia reciente de una ruta operativa, pero persisten restricciones, incidentes o un riesgo marítimo elevado.",
+  "summary_en": "Recent evidence indicates an operational route, but restrictions, incidents or elevated maritime risk remain.",
   "last_valid_confirmation": {
     "status": "ABIERTO",
-    "at": "2026-07-21T02:28:00Z",
-    "source_name": "Reuters",
-    "source_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZFNJNnRSVFd3TWVJMmtSMU9tcjNzLTZybXpmMkFxTm5Wb0VkMHVabm5qWVlyWWNabW85OXZsRVJ5YXhpa2xFOC1ZUlBrSTNwTE9tM2JTU2thdkJGOE9FY1gxb3A2dmhzQ241dE1VVjU3LWtpWnNweFJmNHB5d0pORlFtSWZrd1JsUFpDWXBPZl9YSzdVdUhzSzUyNFpSRXNOYkhvV0NaZko2NC1rUVM0X2xJOGN3MHB5bDdvQTFJcG0wR3dIWjZJSG5JN2xfMDQ?oc=5",
-    "title": "Tanker crew abandons vessel after reported projectile strike in Strait of Hormuz, UKMTO says - Reuters"
+    "at": "2026-07-21T22:09:45Z",
+    "source_name": "Oman News Agency",
+    "source_url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPUlRCQ2hSbms4V0ZEYm1mWGF4aWNvZlgwWVhUZm9CTGtwWFRSMEdINGdJUkxsR1NYNkZCRFFfWXp2OXBFZ0JwWGNCblJZN19vRndlUlgwS2N2SXRmczVKeVE5dXJBcldxTDRJTDVqaU82NWo4NEtxeHUzZTdTNUpKUXdoaS1uWjdHZVBfZHlGUngwb040OTI4eklkb0FhczhDQ3c2akZ4QjBSNFZxQUU1TUFqejhkcTI5YkNSLUZpMG1XRHJocXk5MWotU0toakQtMXFkQlBPVGV5OWUzbnBBVXdXX0V5MXRoQ2JPWjJIWXZnRFJabnpv?oc=5",
+    "title": "CENTCOM Keeps Insisting the Strait of Hormuz Is Open — but the Latest Shipping Data Shows Traffic Has Collapsed by Ninety Percent - National Security Journal"
   },
   "evidence": [
+    {
+      "signal": "OPEN_OPERATIONAL",
+      "title": "CENTCOM Keeps Insisting the Strait of Hormuz Is Open — but the Latest Shipping Data Shows Traffic Has Collapsed by Ninety Percent - National Security Journal",
+      "source_name": "Oman News Agency",
+      "source_url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPUlRCQ2hSbms4V0ZEYm1mWGF4aWNvZlgwWVhUZm9CTGtwWFRSMEdINGdJUkxsR1NYNkZCRFFfWXp2OXBFZ0JwWGNCblJZN19vRndlUlgwS2N2SXRmczVKeVE5dXJBcldxTDRJTDVqaU82NWo4NEtxeHUzZTdTNUpKUXdoaS1uWjdHZVBfZHlGUngwb040OTI4eklkb0FhczhDQ3c2akZ4QjBSNFZxQUU1TUFqejhkcTI5YkNSLUZpMG1XRHJocXk5MWotU0toakQtMXFkQlBPVGV5OWUzbnBBVXdXX0V5MXRoQ2JPWjJIWXZnRFJabnpv?oc=5",
+      "published_at": "2026-07-21T22:09:45Z",
+      "tier": 4,
+      "official": true,
+      "observed_at": "2026-07-21T22:29:00Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Attacks between US and Iran across Mideast overshadow efforts to keep diplomacy alive - AP News",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPR3ByTjM2MjQxUW43TEtOc0JJNXpDYmNxdDNYRlNXMk0yZUNlYnMwVXlrZUxyMlF3UlZjMk9IOFpzVjl6TzI3Q0JPQ0hkazlZSDFHeWpHYTN1RVp0QjNYQTlYX3g4TlVBZmlEV0VIT1ZXaG1nUTFnYnRGTGhDOFZrWFVWc1B4LUI3Q0JhQjlvMkgyTk1HU09UcG9TNDN4M0E?oc=5",
-      "published_at": "2026-07-21T17:04:00Z",
+      "published_at": "2026-07-21T20:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-21T20:46:38Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran war latest: Iranian strikes damage power and desalination units in Kuwait - thenationalnews.com",
-      "source_name": "Oman News Agency",
-      "source_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOEZIS3c5Q3NJM3RPQmo5R1BMVTFROWFBVHY3elFqUDFhZnVSQTdoeDlidDBpUWUtckZ3Q1JHVXY1NWFpVU1oRTV6UjEyZ2k3M3pIRkhvblVQUWJPaUExZ0dXWFA1VXVkUUNCajdDa0lVN19ZazRNeVFzeVI2cnhqSXRnQzVpb3RzRV9qQ1p4SUFlQQ?oc=5",
-      "published_at": "2026-07-21T15:02:38Z",
-      "tier": 4,
-      "official": true,
-      "observed_at": "2026-07-21T20:46:38Z"
+      "observed_at": "2026-07-21T22:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -48,7 +48,17 @@
       "published_at": "2026-07-21T02:28:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-21T20:46:38Z"
+      "observed_at": "2026-07-21T22:29:00Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Houthis threaten to attack shipping tankers if they use Saudi Arabian ports on Red Sea - The Guardian",
+      "source_name": "The Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNWlhzVUE0TXI4UWVwNDdteTZKaXJDcWU3bG9sVjRQZHYwTE90N1hIMDNxT2lheUtyUUhTUm1Cb19kcHpxNHAyTHBpcm1nQ1RBSTJ0SnpiZ3llNWJGdERSRjlXUUVDdDNwVWd6RzFWc0VWMDc0Uk92eS1WVXFMUFBKaF9rNFZja1hDQnpfSEUtMVc0RWFZOVMtTW9qWUdGMjFtZWRsS3B5cHhuSElZaUdWSVVab0c?oc=5",
+      "published_at": "2026-07-21T20:56:00Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-21T22:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -58,42 +68,31 @@
       "published_at": "2026-07-21T16:10:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-21T20:46:38Z"
+      "observed_at": "2026-07-21T22:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Houthis threaten to attack shipping tankers if they use Saudi Arabian ports on Red Sea - The Guardian",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNWlhzVUE0TXI4UWVwNDdteTZKaXJDcWU3bG9sVjRQZHYwTE90N1hIMDNxT2lheUtyUUhTUm1Cb19kcHpxNHAyTHBpcm1nQ1RBSTJ0SnpiZ3llNWJGdERSRjlXUUVDdDNwVWd6RzFWc0VWMDc0Uk92eS1WVXFMUFBKaF9rNFZja1hDQnpfSEUtMVc0RWFZOVMtTW9qWUdGMjFtZWRsS3B5cHhuSElZaUdWSVVab0c?oc=5",
-      "published_at": "2026-07-21T20:18:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-21T20:46:38Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "U.S. strikes Iran and Houthis threaten Saudi Arabia shipping as mediators push 10-day ceasefire - CNBC",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBCR25xNkpjVTVydW1EeU1OdUNxT29yYzR2a0NXTUxTTGNZWFlvZHN2NDlGRDVfSlBvSXVHS2xvOHNqdmZNWmJ1czN2cy1aVlpWanU2Tk04Xy15RXY3M3licDNOR1d4NDJGZC1tY3lEak9xcFdDNzlvNNIBfkFVX3lxTE9pTHRsSHNZSEw5R1llanY3VzVxOU1jMW9hajY1SU15TDJYa1dPMnZKRlluNzZsSEFianZiNko5VUFESVZEaU4tTmJYU3hDMDB1X0NEekhNUjBqbDNsdFhpVHgyeFRNaGdxRDExYTFBeHJMcVpzUHhzbjVWZEhMQQ?oc=5",
-      "published_at": "2026-07-21T08:45:09Z",
+      "title": "Can mediators broker a truce between the US and Iran ?",
+      "source_name": "Al Jazeera",
+      "source_url": "https://www.aljazeera.com/news/2026/7/21/can-mediators-broker-a-truce-between-the-us-and-iran",
+      "published_at": "2026-07-21T20:45:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-21T20:46:38Z"
+      "observed_at": "2026-07-21T22:29:00Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
-      "open": 2.2,
+      "open": 4.0,
       "closed": 0,
       "declared": 0,
-      "risk": 24.02
+      "risk": 23.54
     },
     "independent_sources": {
       "open": 1,
@@ -101,8 +100,8 @@
       "declared": 0,
       "risk": 8
     },
-    "articles_considered": 52,
-    "signals_considered": 22,
+    "articles_considered": 58,
+    "signals_considered": 23,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -110,7 +109,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-21T20:18:00Z",
+    "as_of": "2026-07-21T22:09:45Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -119,24 +118,44 @@
   },
   "evidence_archive": [
     {
+      "signal": "OPEN_OPERATIONAL",
+      "title": "CENTCOM Keeps Insisting the Strait of Hormuz Is Open — but the Latest Shipping Data Shows Traffic Has Collapsed by Ninety Percent - National Security Journal",
+      "source_name": "Oman News Agency",
+      "source_url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPUlRCQ2hSbms4V0ZEYm1mWGF4aWNvZlgwWVhUZm9CTGtwWFRSMEdINGdJUkxsR1NYNkZCRFFfWXp2OXBFZ0JwWGNCblJZN19vRndlUlgwS2N2SXRmczVKeVE5dXJBcldxTDRJTDVqaU82NWo4NEtxeHUzZTdTNUpKUXdoaS1uWjdHZVBfZHlGUngwb040OTI4eklkb0FhczhDQ3c2akZ4QjBSNFZxQUU1TUFqejhkcTI5YkNSLUZpMG1XRHJocXk5MWotU0toakQtMXFkQlBPVGV5OWUzbnBBVXdXX0V5MXRoQ2JPWjJIWXZnRFJabnpv?oc=5",
+      "published_at": "2026-07-21T22:09:45Z",
+      "tier": 4,
+      "official": true,
+      "observed_at": "2026-07-21T22:29:00Z"
+    },
+    {
       "signal": "RISK_RESTRICTION",
       "title": "Houthis threaten to attack shipping tankers if they use Saudi Arabian ports on Red Sea - The Guardian",
       "source_name": "The Guardian",
       "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNWlhzVUE0TXI4UWVwNDdteTZKaXJDcWU3bG9sVjRQZHYwTE90N1hIMDNxT2lheUtyUUhTUm1Cb19kcHpxNHAyTHBpcm1nQ1RBSTJ0SnpiZ3llNWJGdERSRjlXUUVDdDNwVWd6RzFWc0VWMDc0Uk92eS1WVXFMUFBKaF9rNFZja1hDQnpfSEUtMVc0RWFZOVMtTW9qWUdGMjFtZWRsS3B5cHhuSElZaUdWSVVab0c?oc=5",
-      "published_at": "2026-07-21T20:18:00Z",
+      "published_at": "2026-07-21T20:56:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-21T20:46:38Z"
+      "observed_at": "2026-07-21T22:29:00Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Can mediators broker a truce between the US and Iran ?",
+      "source_name": "Al Jazeera",
+      "source_url": "https://www.aljazeera.com/news/2026/7/21/can-mediators-broker-a-truce-between-the-us-and-iran",
+      "published_at": "2026-07-21T20:45:00Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-07-21T22:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Attacks between US and Iran across Mideast overshadow efforts to keep diplomacy alive - AP News",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPR3ByTjM2MjQxUW43TEtOc0JJNXpDYmNxdDNYRlNXMk0yZUNlYnMwVXlrZUxyMlF3UlZjMk9IOFpzVjl6TzI3Q0JPQ0hkazlZSDFHeWpHYTN1RVp0QjNYQTlYX3g4TlVBZmlEV0VIT1ZXaG1nUTFnYnRGTGhDOFZrWFVWc1B4LUI3Q0JhQjlvMkgyTk1HU09UcG9TNDN4M0E?oc=5",
-      "published_at": "2026-07-21T17:04:00Z",
+      "published_at": "2026-07-21T20:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-21T20:46:38Z"
+      "observed_at": "2026-07-21T22:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -146,7 +165,7 @@
       "published_at": "2026-07-21T16:10:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-21T20:46:38Z"
+      "observed_at": "2026-07-21T22:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -236,7 +255,7 @@
       "published_at": "2026-07-21T02:28:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-21T20:46:38Z"
+      "observed_at": "2026-07-21T22:29:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -697,26 +716,6 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-07-18T22:26:05Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Two US troops killed and one missing in Jordan after Iranian attacks - The Guardian",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcU9EZm52ekUycVNuTEhRUk84ZXdGYVlaaXN5R3lKbGdmVzBRVHlZT0o2WVhKd29DeGNpZ3Zld1dZSm1RWjBjYXZjMmxINkgyODZkMjlhQTJmNEg1d1JFZmlFLUxicXNBVFp4cFM3OUdrQk5YSDI5bTFNNjhkVE5FazVKY25fOFJpNFN1RmczOHFTV1N4d2R5OGI4MmRFWUZYNUpSbUdpRUNVY3JZYm9xcXV4QXNxaUUtM2c?oc=5",
-      "published_at": "2026-07-18T16:24:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-19T23:31:47Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran suggests MoU 'suspended' amid reports 50 killed in US strikes in July - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQSk10ZEFwTXRSZS12YXVYU0RhQnJ3eXJFTlVtc2FyRDlpUTdCWl9peDJpMGYzSHdGa0RPSkpQVUYxWnV6b2R4ZFowMER2N21GYkw1dl9SNzVZdjI0bTdTZWpBV2FVMzJzMFlrSTduOW1PbmhqNkFTaGJ4MmFxQVJwcnhwNUVIb21lSzM0STctdWR4MFk2M0hxam1TeTJGOThuNm1GMlhFZkYycHlLZ2JDWtIBtgFBVV95cUxPekM3c1pKVzhKMEZDNXJieE9ydE1IMU5XZHJBYXUzUFA0YVR2RnctUTdST0U2dG94RGZwakRHOUlPYjE2anFQdU10U3cxa3I3NFhPSko1bGRrRFlSc2syTGFnRDZxLUdYSkk4NE95VU1Ga2dwR2lGeUVkSUFBTXVQWldqbFl0V1Z2NVhvSl9PQnYxNC13dHJPNEl5dWpzbm1pdng3MzhHQXpmcmE4cktVX3JPNDBwUQ?oc=5",
-      "published_at": "2026-07-18T16:16:21Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-07-18T18:31:45Z"
     }
   ]
 }
