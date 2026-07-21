@@ -5,8 +5,8 @@
   "operational_label_es": "Abierto con restricciones",
   "operational_label_en": "Open with restrictions",
   "confidence": "BAJA",
-  "checked_at": "2026-07-21T10:39:19Z",
-  "last_success_at": "2026-07-21T10:39:19Z",
+  "checked_at": "2026-07-21T12:57:21Z",
+  "last_success_at": "2026-07-21T12:57:21Z",
   "last_change_at": "2026-07-19T16:28:51Z",
   "verification_ok": true,
   "stale": false,
@@ -28,7 +28,7 @@
       "published_at": "2026-07-21T02:28:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-21T10:39:19Z"
+      "observed_at": "2026-07-21T12:57:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -38,7 +38,17 @@
       "published_at": "2026-07-21T04:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-21T10:39:19Z"
+      "observed_at": "2026-07-21T12:57:21Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil prices rise nearly 2% on fresh attacks by U.S. and Iran - BNN Bloomberg",
+      "source_name": "Bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRUxBVk1GMllfLUhHZnhGNjdIMWgtdGJrLTdDZmUyQ1pycDcwdDJJcFpvQ011NkduMmFBTXJ3c0ZnU3ZMcVFCLV9HajNneW1KTzhreWFBYUFVNURQY244X3RMZm9lVXZhUGlWal9zcWVWQkRhY2FKLXdmRVU3dzlUZVdFVG9Kb1dXb3AxeFRJd3V2UFdTRWZ3Yy1DbEhJRGtNZmt1MU0xZzNIUDIz?oc=5",
+      "published_at": "2026-07-21T12:36:51Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-21T12:57:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -48,7 +58,7 @@
       "published_at": "2026-07-20T08:32:56Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-21T10:39:19Z"
+      "observed_at": "2026-07-21T12:57:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -58,7 +68,7 @@
       "published_at": "2026-07-20T21:09:31Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-21T10:39:19Z"
+      "observed_at": "2026-07-21T12:57:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -68,32 +78,21 @@
       "published_at": "2026-07-20T23:42:29Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-21T10:39:19Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "U.S. strikes Iran and Houthis threaten Saudi Arabia shipping as mediators push 10-day ceasefire - CNBC",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9pTHRsSHNZSEw5R1llanY3VzVxOU1jMW9hajY1SU15TDJYa1dPMnZKRlluNzZsSEFianZiNko5VUFESVZEaU4tTmJYU3hDMDB1X0NEekhNUjBqbDNsdFhpVHgyeFRNaGdxRDExYTFBeHJMcVpzUHhzbjVWZEhMQdIBfkFVX3lxTE9pTHRsSHNZSEw5R1llanY3VzVxOU1jMW9hajY1SU15TDJYa1dPMnZKRlluNzZsSEFianZiNko5VUFESVZEaU4tTmJYU3hDMDB1X0NEekhNUjBqbDNsdFhpVHgyeFRNaGdxRDExYTFBeHJMcVpzUHhzbjVWZEhMQQ?oc=5",
-      "published_at": "2026-07-21T08:45:09Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-07-21T10:39:19Z"
+      "observed_at": "2026-07-21T12:57:21Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 2.2,
       "closed": 0,
       "declared": 0,
-      "risk": 25.01
+      "risk": 25.81
     },
     "independent_sources": {
       "open": 1,
@@ -101,8 +100,8 @@
       "declared": 0,
       "risk": 9
     },
-    "articles_considered": 53,
-    "signals_considered": 22,
+    "articles_considered": 61,
+    "signals_considered": 24,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -110,7 +109,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-21T08:45:09Z",
+    "as_of": "2026-07-21T12:36:51Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -118,6 +117,16 @@
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil prices rise nearly 2% on fresh attacks by U.S. and Iran - BNN Bloomberg",
+      "source_name": "Bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRUxBVk1GMllfLUhHZnhGNjdIMWgtdGJrLTdDZmUyQ1pycDcwdDJJcFpvQ011NkduMmFBTXJ3c0ZnU3ZMcVFCLV9HajNneW1KTzhreWFBYUFVNURQY244X3RMZm9lVXZhUGlWal9zcWVWQkRhY2FKLXdmRVU3dzlUZVdFVG9Kb1dXb3AxeFRJd3V2UFdTRWZ3Yy1DbEhJRGtNZmt1MU0xZzNIUDIz?oc=5",
+      "published_at": "2026-07-21T12:36:51Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-21T12:57:21Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "U.S. strikes Iran and Houthis threaten Saudi Arabia shipping as mediators push 10-day ceasefire - CNBC",
@@ -136,7 +145,7 @@
       "published_at": "2026-07-21T04:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-21T10:39:19Z"
+      "observed_at": "2026-07-21T12:57:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -156,7 +165,7 @@
       "published_at": "2026-07-21T02:28:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-21T10:39:19Z"
+      "observed_at": "2026-07-21T12:57:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -196,7 +205,7 @@
       "published_at": "2026-07-20T23:42:29Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-21T10:39:19Z"
+      "observed_at": "2026-07-21T12:57:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -256,7 +265,7 @@
       "published_at": "2026-07-20T08:32:56Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-21T10:39:19Z"
+      "observed_at": "2026-07-21T12:57:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -707,16 +716,6 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-07-18T18:31:45Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US launches seventh night of Iran strikes as Hormuz conflict escalates - The Guardian",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZWdkZ2pNRC02RjFSUVZndnBjejNoY1dUdkI4RXRRdDhvbl9QR1pXRk5TcHBwamltYjhHc3ROeW1ILXk4cldYVjE3Skh1bnRTc0UySWEzRkExNTMtbW82Tm1YaUJXZWQtcWFxUDdQeEprTDFreW9iTVNsMUNmV3BJSmhueXdoYnRJbk5UbVZmbVp5djI1UVhrT3BxSWdOY1NOMmQzc0xWZUo3RnJyWkJoSDN3a3pUbUE?oc=5",
-      "published_at": "2026-07-18T03:19:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-18T06:30:05Z"
     }
   ]
 }
