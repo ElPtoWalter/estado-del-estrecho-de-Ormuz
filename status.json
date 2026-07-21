@@ -1,17 +1,17 @@
 {
   "engine_version": 3,
-  "status": "ABIERTO",
-  "operational_status": "OPEN_RESTRICTED",
-  "operational_label_es": "Abierto con restricciones",
-  "operational_label_en": "Open with restrictions",
-  "confidence": "BAJA",
-  "checked_at": "2026-07-21T18:51:00Z",
-  "last_success_at": "2026-07-21T18:51:00Z",
-  "last_change_at": "2026-07-19T16:28:51Z",
+  "status": "INCIERTO",
+  "operational_status": "HIGH_RISK_UNCONFIRMED",
+  "operational_label_es": "Riesgo elevado, estado no confirmado",
+  "operational_label_en": "High risk, status unconfirmed",
+  "confidence": "ALTA",
+  "checked_at": "2026-07-21T20:46:38Z",
+  "last_success_at": "2026-07-21T20:46:38Z",
+  "last_change_at": "2026-07-21T20:46:38Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "Hay evidencia reciente de una ruta operativa, pero persisten restricciones, incidentes o un riesgo marítimo elevado.",
-  "summary_en": "Recent evidence indicates an operational route, but restrictions, incidents or elevated maritime risk remain.",
+  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
   "last_valid_confirmation": {
     "status": "ABIERTO",
     "at": "2026-07-21T02:28:00Z",
@@ -22,23 +22,13 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Tanker crew abandons vessel after reported projectile strike in Strait of Hormuz, UKMTO says - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZFNJNnRSVFd3TWVJMmtSMU9tcjNzLTZybXpmMkFxTm5Wb0VkMHVabm5qWVlyWWNabW85OXZsRVJ5YXhpa2xFOC1ZUlBrSTNwTE9tM2JTU2thdkJGOE9FY1gxb3A2dmhzQ241dE1VVjU3LWtpWnNweFJmNHB5d0pORlFtSWZrd1JsUFpDWXBPZl9YSzdVdUhzSzUyNFpSRXNOYkhvV0NaZko2NC1rUVM0X2xJOGN3MHB5bDdvQTFJcG0wR3dIWjZJSG5JN2xfMDQ?oc=5",
-      "published_at": "2026-07-21T02:28:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-07-21T18:51:00Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
       "title": "Attacks between US and Iran across Mideast overshadow efforts to keep diplomacy alive - AP News",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPR3ByTjM2MjQxUW43TEtOc0JJNXpDYmNxdDNYRlNXMk0yZUNlYnMwVXlrZUxyMlF3UlZjMk9IOFpzVjl6TzI3Q0JPQ0hkazlZSDFHeWpHYTN1RVp0QjNYQTlYX3g4TlVBZmlEV0VIT1ZXaG1nUTFnYnRGTGhDOFZrWFVWc1B4LUI3Q0JhQjlvMkgyTk1HU09UcG9TNDN4M0E?oc=5",
-      "published_at": "2026-07-21T16:00:00Z",
+      "published_at": "2026-07-21T17:04:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-21T18:51:00Z"
+      "observed_at": "2026-07-21T20:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -48,7 +38,17 @@
       "published_at": "2026-07-21T15:02:38Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-21T18:51:00Z"
+      "observed_at": "2026-07-21T20:46:38Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Tanker crew abandons vessel after reported projectile strike in Strait of Hormuz, UKMTO says - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZFNJNnRSVFd3TWVJMmtSMU9tcjNzLTZybXpmMkFxTm5Wb0VkMHVabm5qWVlyWWNabW85OXZsRVJ5YXhpa2xFOC1ZUlBrSTNwTE9tM2JTU2thdkJGOE9FY1gxb3A2dmhzQ241dE1VVjU3LWtpWnNweFJmNHB5d0pORlFtSWZrd1JsUFpDWXBPZl9YSzdVdUhzSzUyNFpSRXNOYkhvV0NaZko2NC1rUVM0X2xJOGN3MHB5bDdvQTFJcG0wR3dIWjZJSG5JN2xfMDQ?oc=5",
+      "published_at": "2026-07-21T02:28:00Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-07-21T20:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -58,7 +58,17 @@
       "published_at": "2026-07-21T16:10:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-21T18:51:00Z"
+      "observed_at": "2026-07-21T20:46:38Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Houthis threaten to attack shipping tankers if they use Saudi Arabian ports on Red Sea - The Guardian",
+      "source_name": "The Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNWlhzVUE0TXI4UWVwNDdteTZKaXJDcWU3bG9sVjRQZHYwTE90N1hIMDNxT2lheUtyUUhTUm1Cb19kcHpxNHAyTHBpcm1nQ1RBSTJ0SnpiZ3llNWJGdERSRjlXUUVDdDNwVWd6RzFWc0VWMDc0Uk92eS1WVXFMUFBKaF9rNFZja1hDQnpfSEUtMVc0RWFZOVMtTW9qWUdGMjFtZWRsS3B5cHhuSElZaUdWSVVab0c?oc=5",
+      "published_at": "2026-07-21T20:18:00Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-21T20:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -68,39 +78,30 @@
       "published_at": "2026-07-21T08:45:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-21T18:51:00Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US-Israel-Iran War Latest LIVE News: Fresh Maritime Security Scare as Tanker Is Hit by Unknown Projectile in Strait of Hormuz – Check Top Highlights - The Sunday Guardian",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxQeW1fT2N6VHUwbjAybWlhcW4zZDB0anU1NkNBMTJfTUUxMFJIT2RxRzRudHJ3Zi1WcmY5S2lWMUhZYThPVC1zemx4aDN3RGNhZW1vZW03QWpqNGJXelAyMm04QjlTb0htMkswNG1qakVzaExzdzhXWGdxSWVwLWJWZ1pDNEVoRktWdEpDSmd6SkpacXVxakdKNndsSDZtUUZLYjhUNUcyV3JDWGxQTWt5bmVIem5CT1V2M3RsTGN3cGFyZ2pXM3lyR2lwQU5DaTZLNDc5SFpiSDg3bmpFRGlwX3BsNkZYLWJzU21FcjJOQ24xZjNYSVY3MUFlLVJlRHB0Q1pvcEdFcmE4cHdPWlU5azRJdUQwUFZTOEHSAZ8CQVVfeXFMUGtsZmMzZFgxd1JJY25VYUxzbTNBcHljVGIwRjZveTNYd2xJckxIZWNUMlp4STlTQ3ZpV2Fac3M5ZFNaUUc0TVprTk1UczRGR09XX0VoYTUyTXEzZndsSjAtSDBrdVF0dDZZbXRHeE1GeTJpMEpMUzJ0LThxbnhsMS04RzBpYlhvTXZEUVczZUFoNng4U2JaY3gzT19MTjFQa3pSY0RWZ0R3dWtlZ3lRTHdIZGFOelFzX2plTzZNb285OHpMMjZnUEttT2t6UVQ0XzRFSVQ5SXJQQWZvb0M1MFdUVmVCSy1HUmRXRkd6eE03eHA0bDJORndMb0txRDFFbXM1ZmRoRnI2SldMYkd1TEl1cUJuZV9sQlFNNGNFczQ?oc=5",
-      "published_at": "2026-07-20T23:42:29Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-21T18:51:00Z"
+      "observed_at": "2026-07-21T20:46:38Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 2.2,
       "closed": 0,
       "declared": 0,
-      "risk": 25.165
+      "risk": 24.02
     },
     "independent_sources": {
       "open": 1,
       "closed": 0,
       "declared": 0,
-      "risk": 9
+      "risk": 8
     },
-    "articles_considered": 58,
+    "articles_considered": 52,
     "signals_considered": 22,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
@@ -109,7 +110,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-21T16:10:56Z",
+    "as_of": "2026-07-21T20:18:00Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -119,23 +120,33 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "US launches fresh strikes on Iran, as Trump warns of retaliation for deaths of soldiers - BBC",
-      "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5jVzBxZlFoajhFYjBpOXBiTG9HQjhqa2x0UU5zSTNFNEhRRVA3SndCa0REY2hCWjI5NmFjSEJGYUplbDcwX0JxYVRmR1ZYZXV4RW1JTlRadmxfQQ?oc=5",
-      "published_at": "2026-07-21T16:10:56Z",
+      "title": "Houthis threaten to attack shipping tankers if they use Saudi Arabian ports on Red Sea - The Guardian",
+      "source_name": "The Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNWlhzVUE0TXI4UWVwNDdteTZKaXJDcWU3bG9sVjRQZHYwTE90N1hIMDNxT2lheUtyUUhTUm1Cb19kcHpxNHAyTHBpcm1nQ1RBSTJ0SnpiZ3llNWJGdERSRjlXUUVDdDNwVWd6RzFWc0VWMDc0Uk92eS1WVXFMUFBKaF9rNFZja1hDQnpfSEUtMVc0RWFZOVMtTW9qWUdGMjFtZWRsS3B5cHhuSElZaUdWSVVab0c?oc=5",
+      "published_at": "2026-07-21T20:18:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-21T18:51:00Z"
+      "observed_at": "2026-07-21T20:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Attacks between US and Iran across Mideast overshadow efforts to keep diplomacy alive - AP News",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPR3ByTjM2MjQxUW43TEtOc0JJNXpDYmNxdDNYRlNXMk0yZUNlYnMwVXlrZUxyMlF3UlZjMk9IOFpzVjl6TzI3Q0JPQ0hkazlZSDFHeWpHYTN1RVp0QjNYQTlYX3g4TlVBZmlEV0VIT1ZXaG1nUTFnYnRGTGhDOFZrWFVWc1B4LUI3Q0JhQjlvMkgyTk1HU09UcG9TNDN4M0E?oc=5",
-      "published_at": "2026-07-21T16:00:00Z",
+      "published_at": "2026-07-21T17:04:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-21T18:51:00Z"
+      "observed_at": "2026-07-21T20:46:38Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US launches fresh strikes on Iran, as Trump warns of retaliation for deaths of soldiers - BBC",
+      "source_name": "BBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5jVzBxZlFoajhFYjBpOXBiTG9HQjhqa2x0UU5zSTNFNEhRRVA3SndCa0REY2hCWjI5NmFjSEJGYUplbDcwX0JxYVRmR1ZYZXV4RW1JTlRadmxfQQ?oc=5",
+      "published_at": "2026-07-21T16:10:56Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-21T20:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -145,7 +156,7 @@
       "published_at": "2026-07-21T15:02:38Z",
       "tier": 4,
       "official": true,
-      "observed_at": "2026-07-21T18:51:00Z"
+      "observed_at": "2026-07-21T20:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -195,7 +206,7 @@
       "published_at": "2026-07-21T08:45:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-21T18:51:00Z"
+      "observed_at": "2026-07-21T20:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -225,7 +236,7 @@
       "published_at": "2026-07-21T02:28:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-21T18:51:00Z"
+      "observed_at": "2026-07-21T20:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -706,16 +717,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-18T18:31:45Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US and Iran trade strikes over Strait of Hormuz. Kuwait suffers infrastructure damage - AP News",
-      "source_name": "Associated Press",
-      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQbS1jN0tZcUtrbk9GU3RKeUxqTHM1Qk5DUDF1VDBVOUVqaVp4QV8xWGhEMmtFV3JRRDc1SXlxalZwcElvUlBXQk13R1NPdW91eUFNRF9UT3JRM3ZHTC03a2ZaZmg0Z2tJdXdCRjVMUml0eWtTSWFLU2U5WGxIMHBNSG1hb2dTS3VLak0zVXdZdHhKY1duRml2MW9Ea0xxVlU?oc=5",
-      "published_at": "2026-07-18T12:52:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-07-18T16:52:01Z"
     }
   ]
 }
