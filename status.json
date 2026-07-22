@@ -5,8 +5,8 @@
   "operational_label_es": "Abierto con restricciones",
   "operational_label_en": "Open with restrictions",
   "confidence": "ALTA",
-  "checked_at": "2026-07-22T16:09:48Z",
-  "last_success_at": "2026-07-22T16:09:48Z",
+  "checked_at": "2026-07-22T16:57:32Z",
+  "last_success_at": "2026-07-22T16:57:32Z",
   "last_change_at": "2026-07-21T22:29:00Z",
   "verification_ok": true,
   "stale": false,
@@ -30,7 +30,7 @@
       "published_at": "2026-07-22T00:15:00Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-22T16:09:48Z"
+      "observed_at": "2026-07-22T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -40,7 +40,7 @@
       "published_at": "2026-07-22T15:09:11Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-22T16:09:48Z"
+      "observed_at": "2026-07-22T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -50,7 +50,7 @@
       "published_at": "2026-07-22T14:00:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-22T16:09:48Z"
+      "observed_at": "2026-07-22T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -60,7 +60,7 @@
       "published_at": "2026-07-22T00:57:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-22T16:09:48Z"
+      "observed_at": "2026-07-22T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -70,7 +70,7 @@
       "published_at": "2026-07-22T10:15:03Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-22T16:09:48Z"
+      "observed_at": "2026-07-22T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -80,22 +80,21 @@
       "published_at": "2026-07-22T13:33:34Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-22T16:09:48Z"
+      "observed_at": "2026-07-22T16:57:32Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 3.0,
       "closed": 0,
       "declared": 0,
-      "risk": 25.615
+      "risk": 25.295
     },
     "independent_sources": {
       "open": 1,
@@ -103,8 +102,8 @@
       "declared": 0,
       "risk": 8
     },
-    "articles_considered": 55,
-    "signals_considered": 25,
+    "articles_considered": 56,
+    "signals_considered": 24,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -128,6 +127,16 @@
       "published_at": "2026-07-22T15:09:11Z",
       "tier": 2,
       "official": false,
+      "observed_at": "2026-07-22T16:57:32Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Trump threatens to strike Tehran in event of Hormuz attacks - thenationalnews.com",
+      "source_name": "The National",
+      "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNYWlSeGNwNnhhcjJvcjg5VDc0S0ZYaUZwak84SGtMM3poNFJUajFiWGE1YUJrU3dLUEd1MklTR3RQY0l2ZU94Mzg5cVMzV3h0SkNyNDN5Q0xRQ3ItWHNleFRyZTBKb2N5M0VCVTJ4YzZ0bHZNaXh2Y3A3ZFFVR2Zya2c0bG8?oc=5",
+      "published_at": "2026-07-22T15:09:11Z",
+      "tier": 2,
+      "official": false,
       "observed_at": "2026-07-22T16:09:48Z"
     },
     {
@@ -138,7 +147,7 @@
       "published_at": "2026-07-22T14:00:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-22T16:09:48Z"
+      "observed_at": "2026-07-22T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -148,7 +157,7 @@
       "published_at": "2026-07-22T13:33:34Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-22T16:09:48Z"
+      "observed_at": "2026-07-22T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -178,7 +187,7 @@
       "published_at": "2026-07-22T10:15:03Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-22T16:09:48Z"
+      "observed_at": "2026-07-22T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -248,7 +257,7 @@
       "published_at": "2026-07-22T00:57:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-22T16:09:48Z"
+      "observed_at": "2026-07-22T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -258,7 +267,7 @@
       "published_at": "2026-07-22T00:15:00Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-22T16:09:48Z"
+      "observed_at": "2026-07-22T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -709,16 +718,6 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-07-19T14:04:50Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US launches new Iran strikes after two soldiers killed: What's the latest? - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQV2w4YnV1MkVuT1NrQlNGY2V5eU5RMlhyQUtTUTdpTTRjWWMxd0p5ZDEyNVR6S2tBS21mMW5zTXZxblBXN1pKUEFvNnlEU1hycUJ3Q1pCeXVQWE1ieVRMUkQ2WXdaem03QzFTWTBhRDlsR3hnaGt2TWtmU1hZSU5SUDNfbTZzaDltaXRHSHJfbHdicHRuTVhNNXJ0VTFLdUdCaTJiVFYtU19XcEpLODJRNnJ30gG3AUFVX3lxTE9hX3lOVmk5ZW9lckFQMlJWU0tRcWMwMXBSSVJodEtYcDZHNkxuVGFqQW5weWN5NjhoOHBrRkRLbjVvZVkyRWJUcXNwMUZzSDhjQy1Nblc5a0gwbmprcm1yREhzaGx5VUpGelUwRHI0OTNBRUdBUzJKdE91SzI1VTAwSl9qLXVoc3RxZFg3MlFtcnhNY3FkVTVMc2VjMWRWeWtYY3FiLU1RbG5QOWwzV1ZRVy10b1JDcw?oc=5",
-      "published_at": "2026-07-19T08:52:58Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-07-19T16:28:51Z"
     }
   ]
 }
