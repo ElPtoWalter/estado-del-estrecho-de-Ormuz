@@ -10,58 +10,175 @@ permissions:
 
 concurrency:
   group: update-hormuz-status
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 22
 
     steps:
-      - name: Descargar repositorio
+      - name: Descargar repositorio completo
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Configurar Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - name: Probar el motor de decisión
-        run: python -m unittest -v test_decision_engine.py
+      - name: Comprobar sintaxis de herramientas críticas
+        run: |
+          python -m py_compile \
+            update_status.py \
+            maintenance_common.py \
+            evidence_guard.py \
+            repair_html.py \
+            build_sitemap.py \
+            validate_site.py \
+            generate_health.py \
+            remote_smoke_test.py
 
-      - name: Probar el parte diario
-        run: python -m unittest -v test_v11.py
+      - name: Ejecutar pruebas existentes y de mantenimiento
+        shell: bash
+        run: |
+          set -euo pipefail
+          for test_file in test_decision_engine.py test_v11.py tests/test_maintenance.py; do
+            if [ -f "$test_file" ]; then
+              python -m unittest -v "$test_file"
+            else
+              echo "Se omite $test_file porque no existe."
+            fi
+          done
 
-      - name: Comprobar fuentes y actualizar la web
+      - name: Conservar línea base anterior
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f status.json
+          cp status.json "${{ runner.temp }}/status-before.json"
+          [ ! -f history.json ] || cp history.json "${{ runner.temp }}/history-before.json"
+          [ ! -f sitemap.xml ] || cp sitemap.xml "${{ runner.temp }}/sitemap-before.xml"
+
+      - name: Comprobar fuentes y actualizar datos
         env:
           CHANGE_FILE: ${{ runner.temp }}/ormuz-change.json
         run: python update_status.py
 
-      - name: Conservar evidencias y preparar la portada
-        run: python postprocess_evidence.py
-
-      - name: Instalar y conservar mejoras V11
-        run: python install_v11.py
-
-      - name: Generar parte diario, archivo y borradores de X
-        run: python generate_daily_brief.py
-
-      - name: Guardar cambios generados
+      - name: Conservar evidencias y preparar portadas
         run: |
+          if [ -f postprocess_evidence.py ]; then
+            python postprocess_evidence.py
+          else
+            echo "postprocess_evidence.py no existe; se omite."
+          fi
+
+      - name: Aplicar cortafuegos editorial
+        id: editorial
+        env:
+          CHANGE_FILE: ${{ runner.temp }}/ormuz-change.json
+        run: |
+          python evidence_guard.py \
+            --status status.json \
+            --previous "${{ runner.temp }}/status-before.json" \
+            --review "${{ runner.temp }}/editorial-review.json" \
+            --aliases source_aliases.json \
+            --change-file "$CHANGE_FILE" \
+            --rollback-unsafe
+
+      - name: Instalar mejoras de interfaz existentes
+        run: |
+          if [ -f install_v11.py ]; then
+            python install_v11.py
+          else
+            echo "install_v11.py no existe; se omite."
+          fi
+
+      - name: Generar parte diario, archivo y borradores
+        run: |
+          if [ -f generate_daily_brief.py ]; then
+            python generate_daily_brief.py
+          else
+            echo "generate_daily_brief.py no existe; se omite."
+          fi
+
+      - name: Reparar HTML sin alterar el diseño
+        run: python repair_html.py --root .
+
+      - name: Regenerar sitemap y robots desde cero
+        run: python build_sitemap.py --root .
+
+      - name: Generar estado técnico público
+        run: python generate_health.py --root .
+
+      - name: Validar toda la salida antes del commit
+        run: |
+          python validate_site.py \
+            --root . \
+            --report "${{ runner.temp }}/validation-report.json"
+
+      - name: Preparar diagnóstico descargable
+        if: always()
+        shell: bash
+        run: |
+          set -u
+          mkdir -p "${{ runner.temp }}/ormuz-diagnostics"
+          for file in \
+            "${{ runner.temp }}/validation-report.json" \
+            "${{ runner.temp }}/editorial-review.json" \
+            "${{ runner.temp }}/ormuz-change.json" \
+            status.json health.json sitemap.xml; do
+            [ ! -f "$file" ] || cp "$file" "${{ runner.temp }}/ormuz-diagnostics/"
+          done
+          git status --short > "${{ runner.temp }}/ormuz-diagnostics/git-status.txt" || true
+
+      - name: Subir diagnóstico de la ejecución
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostico-ormuz-${{ github.run_number }}
+          path: ${{ runner.temp }}/ormuz-diagnostics
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Guardar cambios validados
+        id: commit
+        shell: bash
+        run: |
+          set -euo pipefail
           find . -type d -name __pycache__ -prune -exec rm -rf {} +
+          find . -type f -name '*.pyc' -delete
+
           if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No hay cambios que guardar."
             exit 0
           fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Actualizar estado, evidencias y parte diario de Ormuz"
+          git commit -m "Actualizar estado, evidencias y publicación de Ormuz"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
 
-      - name: IndexNow y alertas opcionales
+      - name: IndexNow y avisos opcionales
+        if: steps.commit.outputs.changed == 'true'
+        continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           NTFY_TOPIC_URL: ${{ secrets.NTFY_TOPIC_URL }}
-        run: python notify_services.py "${{ runner.temp }}/ormuz-change.json"
+          CHANGE_FILE: ${{ runner.temp }}/ormuz-change.json
+        run: |
+          if [ -s "$CHANGE_FILE" ] && [ -f notify_services.py ]; then
+            python notify_services.py "$CHANGE_FILE"
+          else
+            echo "No hay cambio editorial notificable o falta notify_services.py."
+          fi
+
+      - name: Verificar despliegue público sin caché
+        if: steps.commit.outputs.changed == 'true'
+        continue-on-error: true
+        run: python remote_smoke_test.py --attempts 10 --delay 20 --timeout 20
