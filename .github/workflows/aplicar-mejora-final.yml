@@ -1,4 +1,4 @@
-name: Aplicar mejora final Ormuz V3
+name: Aplicar mejora final Ormuz V3.1
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: patch-hormuz-v3
+  group: patch-hormuz-v31
   cancel-in-progress: false
 
 jobs:
@@ -35,20 +35,17 @@ jobs:
           git diff --check
           git status --short
 
-      - name: Retirar instalador temporal
-        run: |
-          rm -f aplicar_mejora_final_ormuz.py
-          rm -f .github/workflows/aplicar-mejora-final.yml
-
-      - name: Guardar mejora final
+      - name: Guardar únicamente los archivos del motor
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
+
+          git add             update_status.py             evidence_guard.py             source_aliases.json             test_decision_engine.py             tests/test_final_guard.py
+
           if git diff --cached --quiet; then
             echo "La mejora ya estaba aplicada."
           else
-            git commit -m "Refuerza atribución y validación editorial V3"
+            git commit -m "Refuerza atribución y validación editorial V3.1"
             git push
           fi
 
