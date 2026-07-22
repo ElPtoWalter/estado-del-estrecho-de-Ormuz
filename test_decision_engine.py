@@ -171,6 +171,22 @@ class DecisionEngineTests(unittest.TestCase):
         self.assertEqual(payload["operational_status"], "OPEN_RESTRICTED")
         self.assertEqual(payload["confidence"], "ALTA")
 
+# ORMUZ_V3_FINAL_TESTS_IMPORTED
+# Keep the final guard regressions inside the test module already executed by
+# the normal hourly workflow, without modifying its YAML file.
+import importlib.util as _ormuz_importlib_util
+from pathlib import Path as _OrmuzPath
+
+_ormuz_test_path = _OrmuzPath(__file__).resolve().parent / "tests" / "test_final_guard.py"
+_ormuz_spec = _ormuz_importlib_util.spec_from_file_location(
+    "_ormuz_final_guard_tests",
+    _ormuz_test_path,
+)
+if _ormuz_spec is None or _ormuz_spec.loader is None:
+    raise RuntimeError("No se pudo cargar tests/test_final_guard.py")
+_ormuz_module = _ormuz_importlib_util.module_from_spec(_ormuz_spec)
+_ormuz_spec.loader.exec_module(_ormuz_module)
+FinalEditorialGuardTests = _ormuz_module.FinalEditorialGuardTests
 
 if __name__ == "__main__":
     unittest.main()

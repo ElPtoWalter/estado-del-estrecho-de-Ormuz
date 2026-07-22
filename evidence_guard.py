@@ -83,12 +83,20 @@ def recent_enough(item: dict[str, Any], checked_at: Any, hours: int = 48) -> boo
     return checked - timedelta(hours=hours) <= published <= checked + timedelta(hours=2)
 
 
+GUARD_ANALYTICAL_RE = re.compile(
+    r"(?:\bkeeps?\s+insisting\b|\binsists?\b|\bclaims?\b|\bargues?\b|"
+    r"\bopinion\b|\banalysis\b|\bexplainer\b|"
+    r"\bopen\b.{0,55}\bbut\b|\bclosed\b.{0,55}\bbut\b)",
+    re.I,
+)
+
+
 def direct_evidence(item: dict[str, Any], desired_status: str, checked_at: Any) -> tuple[bool, str]:
     title = normalized_space(item.get("title"))
     if not title:
         return False, "sin título"
-    if QUESTIONABLE_RE.search(title):
-        return False, "titular hipotético, interrogativo o analítico"
+    if QUESTIONABLE_RE.search(title) or GUARD_ANALYTICAL_RE.search(title):
+        return False, "titular hipotético, interrogativo, analítico o controvertido"
     if not recent_enough(item, checked_at):
         return False, "evidencia demasiado antigua o sin fecha fiable"
     signal = normalized_key(item.get("signal")).upper()
@@ -111,6 +119,7 @@ def direct_evidence(item: dict[str, Any], desired_status: str, checked_at: Any) 
     if tier < 3:
         return False, "fuente por debajo del umbral de reputación"
     return True, "evidencia operativa explícita"
+
 
 
 def support_transition(payload: dict[str, Any], desired_status: str) -> tuple[bool, list[dict[str, Any]], list[str]]:
@@ -200,7 +209,48 @@ def safe_previous_classification(current: dict[str, Any], previous: dict[str, An
     current["confidence"] = previous_conf if previous_conf in VALID_CONFIDENCE else "BAJA"
 
 
+def downgrade_to_uncertain(current: dict[str, Any], reasons: list[str]) -> None:
+    signals = {normalized_key(item.get("signal")).upper() for item in iter_evidence(current)}
+    if "CLOSURE_DECLARED" in signals:
+        operational = "CLOSURE_DECLARED_UNCONFIRMED"
+        summary_es = "Existe una declaración de cierre, pero no una confirmación operativa suficiente."
+        summary_en = "A closure has been declared, but there is no sufficient operational confirmation."
+    elif "RISK_RESTRICTION" in signals:
+        operational = "HIGH_RISK_UNCONFIRMED"
+        summary_es = "Las fuentes describen riesgo o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado."
+        summary_en = "Sources describe risk or restrictions, but do not reliably confirm whether the passage is open or closed."
+    else:
+        operational = "NO_RECENT_CONFIRMATION"
+        summary_es = "No se ha encontrado una confirmación operativa reciente y suficientemente sólida."
+        summary_en = "No sufficiently strong and recent operational confirmation has been found."
+    labels = {
+        "CLOSURE_DECLARED_UNCONFIRMED": ("Cierre declarado, no confirmado", "Closure declared, not operationally confirmed"),
+        "HIGH_RISK_UNCONFIRMED": ("Riesgo elevado, estado no confirmado", "High risk, status unconfirmed"),
+        "NO_RECENT_CONFIRMATION": ("Sin confirmación reciente", "No recent confirmation"),
+    }
+    current["status"] = "INCIERTO"
+    current["operational_status"] = operational
+    current["operational_label_es"], current["operational_label_en"] = labels[operational]
+    current["confidence"] = "BAJA"
+    current["summary_es"] = summary_es
+    current["summary_en"] = summary_en
+    current["last_change_at"] = iso_z(utc_now())
+    current["last_valid_confirmation"] = None
+    current["editorial_review_required"] = True
+
+
+def copy_previous_public_state(current: dict[str, Any], previous: dict[str, Any]) -> None:
+    for key in (
+        "status", "operational_status", "operational_label_es", "operational_label_en",
+        "confidence", "summary_es", "summary_en", "last_change_at",
+        "last_valid_confirmation", "evidence",
+    ):
+        if key in previous:
+            current[key] = previous[key]
+
+
 def main() -> int:
+    # ORMUZ_V3_FINAL_GUARD: ABIERTO/CERRADO se revalida en cada ciclo.
     parser = argparse.ArgumentParser()
     parser.add_argument("--status", type=Path, default=Path("status.json"))
     parser.add_argument("--previous", type=Path, required=True)
@@ -217,12 +267,7 @@ def main() -> int:
     if not isinstance(current, dict) or not isinstance(previous, dict):
         print("ERROR: status actual o anterior no es un objeto JSON válido.")
         return 2
-
-    for key, allowed in (
-        ("status", VALID_STATUS),
-        ("operational_status", VALID_OPERATIONAL),
-        ("confidence", VALID_CONFIDENCE),
-    ):
+    for key, allowed in (("status", VALID_STATUS), ("operational_status", VALID_OPERATIONAL), ("confidence", VALID_CONFIDENCE)):
         if current.get(key) not in allowed:
             print(f"ERROR: {key} contiene un valor no permitido: {current.get(key)!r}")
             return 2
@@ -230,57 +275,69 @@ def main() -> int:
     notes = normalize_sources(current, args.aliases)
     changed_state = status_tuple(current) != status_tuple(previous)
     desired = str(current.get("status"))
-    supported, supporting, reasons = support_transition(current, desired) if changed_state else (True, [], [])
-    review_required = changed_state and not supported
+    supported, supporting, reasons = support_transition(current, desired)
+    needs_review = desired in {"ABIERTO", "CERRADO"} and not supported
 
-    if review_required:
+    if needs_review:
         candidate = {
             "status": current.get("status"),
             "operational_status": current.get("operational_status"),
             "confidence": current.get("confidence"),
             "last_change_at": current.get("last_change_at"),
         }
-        previous_public = {
-            "status": previous.get("status"),
-            "operational_status": previous.get("operational_status"),
-            "confidence": previous.get("confidence"),
-            "last_change_at": previous.get("last_change_at"),
-        }
-        report = {
-            "version": 2,
-            "generated_at": iso_z(utc_now()),
-            "decision": "BLOCKED_AND_ROLLED_BACK" if not args.fail_unsafe else "BLOCKED",
-            "candidate": candidate,
-            "preserved_public_classification": previous_public,
-            "reasons": reasons[:20],
-            "source_normalizations": notes[:30],
-            "supporting_evidence": supporting[:6],
-        }
-        atomic_write_json(args.review, report)
-
+        candidate_evidence = list(iter_evidence(current))[:8]
+        previous_status = str(previous.get("status") or "")
+        previous_supported, _, previous_reasons = support_transition(previous, previous_status)
+        can_restore_previous = changed_state and previous_status in VALID_STATUS and previous_supported
         restored: list[str] = []
-        if not args.fail_unsafe:
+        if can_restore_previous and not args.fail_unsafe:
             if not args.no_restore_generated:
                 restored = restore_stateful_files(args.status.resolve().parent)
-            safe_previous_classification(current, previous)
-            current["editorial_review_required"] = True
-            current["candidate_classification"] = candidate
-            diagnostics = current.setdefault("diagnostics", {})
-            if not isinstance(diagnostics, dict):
-                diagnostics = {}
-                current["diagnostics"] = diagnostics
-            diagnostics["editorial_guard"] = {
-                "blocked": True,
-                "checked_at": iso_z(utc_now()),
-                "reasons": reasons[:8],
-                "restored_files": restored,
-            }
-            atomic_write_json(args.status, current, compact=False)
-            if args.change_file and args.change_file.exists():
-                args.change_file.unlink(missing_ok=True)
-            print("AVISO: transición no respaldada; se restauró la clasificación pública anterior.")
-            for reason in reasons[:8]:
-                print(f"  - {reason}")
+            copy_previous_public_state(current, previous)
+            decision = "BLOCKED_AND_ROLLED_BACK"
+            message = "AVISO: transición no respaldada; se restauró una clasificación anterior respaldada."
+        else:
+            downgrade_to_uncertain(current, reasons)
+            decision = "DOWNGRADED_TO_UNCERTAIN"
+            message = "AVISO: la clasificación vigente no tiene respaldo operativo suficiente; se rebajó a INCIERTO."
+
+        current["editorial_review_required"] = True
+        current["candidate_classification"] = candidate
+        diagnostics = current.setdefault("diagnostics", {})
+        if not isinstance(diagnostics, dict):
+            diagnostics = {}
+            current["diagnostics"] = diagnostics
+        diagnostics["editorial_guard"] = {
+            "blocked": True,
+            "decision": decision,
+            "checked_at": iso_z(utc_now()),
+            "reasons": reasons[:8],
+            "previous_reasons": previous_reasons[:5],
+            "restored_files": restored,
+        }
+        report = {
+            "version": 3,
+            "generated_at": iso_z(utc_now()),
+            "decision": decision,
+            "candidate": candidate,
+            "published_classification": {
+                "status": current.get("status"),
+                "operational_status": current.get("operational_status"),
+                "confidence": current.get("confidence"),
+            },
+            "reasons": reasons[:20],
+            "previous_reasons": previous_reasons[:10],
+            "source_normalizations": notes[:30],
+            "supporting_evidence": supporting[:6],
+            "candidate_evidence": candidate_evidence,
+        }
+        atomic_write_json(args.review, report)
+        atomic_write_json(args.status, current, compact=False)
+        if args.change_file and args.change_file.exists():
+            args.change_file.unlink(missing_ok=True)
+        print(message)
+        for reason in reasons[:8]:
+            print(f" - {reason}")
         write_github_output(True, len(notes))
         return 1 if args.fail_unsafe else 0
 
@@ -297,9 +354,12 @@ def main() -> int:
         print(f"Fuentes normalizadas de forma conservadora: {len(notes)}")
     if changed_state:
         print(f"Transición {status_tuple(previous)} → {status_tuple(current)} respaldada editorialmente.")
+    elif desired in {"ABIERTO", "CERRADO"}:
+        print("Clasificación vigente revalidada con evidencia operativa suficiente.")
     else:
-        print("Sin cambio de clasificación; metadatos revisados.")
+        print("Estado conservador revisado.")
     return 0
+
 
 
 if __name__ == "__main__":

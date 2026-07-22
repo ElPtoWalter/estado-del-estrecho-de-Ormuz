@@ -1,45 +1,167 @@
 {
   "version": 2,
   "official_publishers": {
-    "ukmto": {"name": "UKMTO", "tier": 5},
-    "uk maritime trade operations": {"name": "UKMTO", "tier": 5},
-    "international maritime organization": {"name": "IMO", "tier": 5},
-    "imo": {"name": "IMO", "tier": 5},
-    "u.s. marad": {"name": "U.S. MARAD", "tier": 5},
-    "us marad": {"name": "U.S. MARAD", "tier": 5},
-    "marad": {"name": "U.S. MARAD", "tier": 5},
-    "jmic": {"name": "JMIC", "tier": 5},
-    "joint maritime information center": {"name": "JMIC", "tier": 5},
-    "u.s. centcom": {"name": "U.S. CENTCOM", "tier": 5},
-    "us centcom": {"name": "U.S. CENTCOM", "tier": 5},
-    "centcom": {"name": "U.S. CENTCOM", "tier": 5},
-    "u.s. navy": {"name": "U.S. Navy", "tier": 5},
-    "us navy": {"name": "U.S. Navy", "tier": 5},
-    "oman news agency": {"name": "Oman News Agency", "tier": 4},
-    "ona": {"name": "Oman News Agency", "tier": 4}
+    "ukmto": {
+      "name": "UKMTO",
+      "tier": 5
+    },
+    "uk maritime trade operations": {
+      "name": "UKMTO",
+      "tier": 5
+    },
+    "international maritime organization": {
+      "name": "IMO",
+      "tier": 5
+    },
+    "imo": {
+      "name": "IMO",
+      "tier": 5
+    },
+    "u.s. marad": {
+      "name": "U.S. MARAD",
+      "tier": 5
+    },
+    "us marad": {
+      "name": "U.S. MARAD",
+      "tier": 5
+    },
+    "marad": {
+      "name": "U.S. MARAD",
+      "tier": 5
+    },
+    "jmic": {
+      "name": "JMIC",
+      "tier": 5
+    },
+    "joint maritime information center": {
+      "name": "JMIC",
+      "tier": 5
+    },
+    "u.s. centcom": {
+      "name": "U.S. CENTCOM",
+      "tier": 5
+    },
+    "us centcom": {
+      "name": "U.S. CENTCOM",
+      "tier": 5
+    },
+    "centcom": {
+      "name": "U.S. CENTCOM",
+      "tier": 5
+    },
+    "u.s. navy": {
+      "name": "U.S. Navy",
+      "tier": 5
+    },
+    "us navy": {
+      "name": "U.S. Navy",
+      "tier": 5
+    },
+    "oman news agency": {
+      "name": "Oman News Agency",
+      "tier": 4
+    },
+    "ona": {
+      "name": "Oman News Agency",
+      "tier": 4
+    }
   },
   "publishers": {
-    "reuters": {"name": "Reuters", "tier": 4},
-    "associated press": {"name": "Associated Press", "tier": 4},
-    "the associated press": {"name": "Associated Press", "tier": 4},
-    "ap news": {"name": "Associated Press", "tier": 4},
-    "bbc": {"name": "BBC", "tier": 3},
-    "bbc news": {"name": "BBC", "tier": 3},
-    "financial times": {"name": "Financial Times", "tier": 3},
-    "bloomberg": {"name": "Bloomberg", "tier": 3},
-    "bloomberg.com": {"name": "Bloomberg", "tier": 3},
-    "bnn bloomberg": {"name": "Bloomberg", "tier": 3},
-    "the guardian": {"name": "The Guardian", "tier": 3},
-    "guardian": {"name": "The Guardian", "tier": 3},
-    "the sunday guardian": {"name": "The Sunday Guardian", "tier": 2},
-    "sunday guardian": {"name": "The Sunday Guardian", "tier": 2},
-    "the national": {"name": "The National", "tier": 2},
-    "thenationalnews.com": {"name": "The National", "tier": 2},
-    "the national interest": {"name": "The National Interest", "tier": 2},
-    "israel national news": {"name": "Israel National News", "tier": 2},
-    "cnn": {"name": "CNN", "tier": 2},
-    "cnbc": {"name": "CNBC", "tier": 2},
-    "al jazeera": {"name": "Al Jazeera", "tier": 2},
-    "euronews": {"name": "Euronews", "tier": 2}
+    "reuters": {
+      "name": "Reuters",
+      "tier": 4
+    },
+    "associated press": {
+      "name": "Associated Press",
+      "tier": 4
+    },
+    "the associated press": {
+      "name": "Associated Press",
+      "tier": 4
+    },
+    "ap news": {
+      "name": "Associated Press",
+      "tier": 4
+    },
+    "bbc": {
+      "name": "BBC",
+      "tier": 3
+    },
+    "bbc news": {
+      "name": "BBC",
+      "tier": 3
+    },
+    "financial times": {
+      "name": "Financial Times",
+      "tier": 3
+    },
+    "bloomberg": {
+      "name": "Bloomberg",
+      "tier": 3
+    },
+    "bloomberg.com": {
+      "name": "Bloomberg",
+      "tier": 3
+    },
+    "bnn bloomberg": {
+      "name": "Bloomberg",
+      "tier": 3
+    },
+    "the guardian": {
+      "name": "The Guardian",
+      "tier": 3
+    },
+    "guardian": {
+      "name": "The Guardian",
+      "tier": 3
+    },
+    "the sunday guardian": {
+      "name": "The Sunday Guardian",
+      "tier": 2
+    },
+    "sunday guardian": {
+      "name": "The Sunday Guardian",
+      "tier": 2
+    },
+    "the national": {
+      "name": "The National",
+      "tier": 2
+    },
+    "thenationalnews.com": {
+      "name": "The National",
+      "tier": 2
+    },
+    "the national interest": {
+      "name": "The National Interest",
+      "tier": 2
+    },
+    "israel national news": {
+      "name": "Israel National News",
+      "tier": 2
+    },
+    "cnn": {
+      "name": "CNN",
+      "tier": 2
+    },
+    "cnbc": {
+      "name": "CNBC",
+      "tier": 2
+    },
+    "al jazeera": {
+      "name": "Al Jazeera",
+      "tier": 2
+    },
+    "euronews": {
+      "name": "Euronews",
+      "tier": 2
+    },
+    "national security journal": {
+      "name": "National Security Journal",
+      "tier": 2
+    },
+    "nationalsecurityjournal.org": {
+      "name": "National Security Journal",
+      "tier": 2
+    }
   }
 }

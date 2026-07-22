@@ -131,6 +131,14 @@ SOURCE_PROFILES = (
     SourceProfile("cnbc", "CNBC", 2, 2.5, ("cnbc.com",), ("cnbc",)),
     SourceProfile("aljazeera", "Al Jazeera", 2, 2.4, ("aljazeera.com",), ("al jazeera",)),
     SourceProfile("euronews", "Euronews", 2, 2.2, ("euronews.com",), ("euronews",)),
+    SourceProfile(
+        "national_security_journal",
+        "National Security Journal",
+        2,
+        2.1,
+        ("nationalsecurityjournal.org",),
+        ("national security journal",),
+    ),
 )
 
 PROFILE_BY_ALIAS: dict[str, SourceProfile] = {}
@@ -276,7 +284,12 @@ def normalized_key(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", normalize_text(value).lower()).strip()
 
 
-def source_profile(source_name: str = "", source_url: str = "", article_url: str = "") -> SourceProfile | None:
+def source_profile(
+    source_name: str = "",
+    source_url: str = "",
+    article_url: str = "",
+) -> SourceProfile | None:
+    # ORMUZ_V3_FINAL_GUARD: evita que "ona" coincida dentro de "national".
     for url in (source_url, article_url):
         host = urlparse(url).netloc.lower().removeprefix("www.")
         if not host:
@@ -284,13 +297,27 @@ def source_profile(source_name: str = "", source_url: str = "", article_url: str
         for profile in SOURCE_PROFILES:
             if any(host == domain or host.endswith("." + domain) for domain in profile.domains):
                 return profile
+
     normalized = normalized_key(source_name)
-    if normalized in PROFILE_BY_ALIAS:
-        return PROFILE_BY_ALIAS[normalized]
+    if not normalized:
+        return None
+
     for alias, profile in PROFILE_BY_ALIAS.items():
-        if alias and alias in normalized:
+        if normalized_key(alias) == normalized:
+            return profile
+
+    padded = f" {normalized} "
+    aliases = sorted(
+        PROFILE_BY_ALIAS.items(),
+        key=lambda pair: len(normalized_key(pair[0])),
+        reverse=True,
+    )
+    for alias, profile in aliases:
+        alias_key = normalized_key(alias)
+        if alias_key and f" {alias_key} " in padded:
             return profile
     return None
+
 
 
 def request_bytes(url: str, *, accept: str, attempts: int = 3, timeout: int = 30, max_bytes: int = 2_000_000) -> bytes:
@@ -611,36 +638,65 @@ def contains_official_attribution(text: str) -> bool:
     return any(term in padded for term in OFFICIAL_ATTRIBUTIONS)
 
 
-def classify_text(title: str, description: str = "") -> set[str]:
-    text = normalize_text(f"{title}. {description}").lower()
-    signals: set[str] = set()
-    hypothetical = any(re.search(pattern, text) for pattern in HYPOTHETICAL_PATTERNS)
+ANALYTICAL_HEADLINE_RE = re.compile(
+    r"(?:\?|\bwhy\b|\bhow\b|\bwhat\b|\bwhether\b|"
+    r"\bkeeps?\s+insisting\b|\binsists?\b|\bclaims?\b|\bargues?\b|"
+    r"\bopinion\b|\banalysis\b|\bexplainer\b|"
+    r"\bopen\b.{0,55}\bbut\b|\bclosed\b.{0,55}\bbut\b)",
+    re.I,
+)
 
-    if any(re.search(pattern, text) for pattern in OPEN_PATTERNS):
+
+def headline_is_non_operational(title: str) -> bool:
+    cleaned = normalize_text(title)
+    if not cleaned:
+        return False
+    if ANALYTICAL_HEADLINE_RE.search(cleaned):
+        return True
+    return bool(
+        re.match(
+            r"^(?:why|how|what|when|where|who|which|can|could|would|will|"
+            r"is|are|was|were|do|does|did|should|may|might)\b",
+            cleaned,
+            re.I,
+        )
+    )
+
+
+def classify_text(title: str, description: str = "") -> set[str]:
+    # ORMUZ_V3_FINAL_GUARD: preguntas/análisis no confirman apertura o cierre.
+    title_text = normalize_text(title)
+    description_text = normalize_text(description)
+    combined = normalize_text(f"{title_text}. {description_text}").lower()
+    operational_text = description_text.lower() if headline_is_non_operational(title_text) else combined
+
+    signals: set[str] = set()
+    hypothetical = any(re.search(pattern, combined) for pattern in HYPOTHETICAL_PATTERNS)
+
+    if operational_text and any(re.search(pattern, operational_text) for pattern in OPEN_PATTERNS):
         signals.add("OPEN_OPERATIONAL")
-    if any(re.search(pattern, text) for pattern in CLOSED_OPERATIONAL_PATTERNS):
+    if operational_text and any(re.search(pattern, operational_text) for pattern in CLOSED_OPERATIONAL_PATTERNS):
         signals.add("CLOSED_OPERATIONAL")
-    if any(re.search(pattern, text) for pattern in DECLARATION_PATTERNS) and not hypothetical:
+    if any(re.search(pattern, combined) for pattern in DECLARATION_PATTERNS) and not hypothetical:
         signals.add("CLOSURE_DECLARED")
-    if any(re.search(pattern, text) for pattern in RISK_PATTERNS):
+    if any(re.search(pattern, combined) for pattern in RISK_PATTERNS) or re.search(
+        r"\b(?:traffic|transits?|shipping)\s+(?:has\s+)?(?:collapsed|fallen|dropped|declined|slowed)\b|"
+        r"\b(?:ships?|vessels?|tankers?)\s+(?:are\s+)?(?:waiting|holding|diverted|rerouted|avoiding)\b|"
+        r"\bwar[- ]risk\s+(?:premium|premiums|insurance|rates?)\b",
+        combined,
+        re.I,
+    ):
         signals.add("RISK_RESTRICTION")
 
-    # Un titular genérico como "Iran closes..." es una declaración política,
-    # no una confirmación de que todo el tráfico se haya detenido.
     if "CLOSURE_DECLARED" in signals and "CLOSED_OPERATIONAL" in signals:
         strong_operational_terms = (
-            "closed to shipping",
-            "traffic halted",
-            "traffic stopped",
-            "no vessels",
-            "no safe transit",
-            "passage blocked",
-            "impassable",
+            "closed to shipping", "traffic halted", "traffic stopped",
+            "no vessels", "no safe transit", "passage blocked", "impassable",
         )
-        if not any(term in text for term in strong_operational_terms):
+        if not any(term in operational_text for term in strong_operational_terms):
             signals.discard("CLOSED_OPERATIONAL")
-
     return signals
+
 
 
 def deduplicate_articles(articles: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -742,14 +798,66 @@ def newest_time(items: list[dict[str, Any]]) -> datetime:
     return max((parse_datetime(item["published_at"]) for item in items), default=datetime.min.replace(tzinfo=timezone.utc))
 
 
+def expected_confirmation_signal(status: str) -> str | None:
+    return {"ABIERTO": "OPEN_OPERATIONAL", "CERRADO": "CLOSED_OPERATIONAL"}.get(status)
+
+
+def confirmation_matches_status(confirmation: dict[str, Any] | None, status: str) -> bool:
+    if not isinstance(confirmation, dict):
+        return False
+    expected = expected_confirmation_signal(status)
+    if not expected:
+        return False
+    stored_status = confirmation.get("status")
+    if stored_status and stored_status != status:
+        return False
+    title = normalize_text(str(confirmation.get("title") or ""))
+    description = normalize_text(str(confirmation.get("description") or ""))
+    if not title and not description:
+        return False
+    stored_signal = normalize_text(str(confirmation.get("signal") or "")).upper()
+    signals = {stored_signal} if stored_signal else classify_text(title, description)
+    if expected not in signals:
+        return False
+    if headline_is_non_operational(title) and not description:
+        return False
+    profile = source_profile(
+        source_name=str(confirmation.get("source_name") or ""),
+        source_url=str(confirmation.get("source_url") or ""),
+        article_url=str(confirmation.get("source_url") or ""),
+    )
+    if profile is None:
+        return False
+    if bool(confirmation.get("official")) and not profile.official:
+        return False
+    return True
+
+
+def confirmation_supports_status(
+    confirmation: dict[str, Any] | None,
+    status: str,
+    now: datetime,
+    carry_hours: int,
+) -> bool:
+    if not confirmation_matches_status(confirmation, status):
+        return False
+    assert isinstance(confirmation, dict)
+    at = parse_datetime(confirmation.get("at"))
+    minimum = datetime.min.replace(tzinfo=timezone.utc)
+    if at <= minimum or at > now + timedelta(hours=2):
+        return False
+    return now - at <= timedelta(hours=carry_hours)
+
+
 def previous_is_carryable(previous: dict[str, Any], now: datetime, carry_hours: int) -> bool:
+    # ORMUZ_V3_FINAL_GUARD: solo se arrastra una confirmación operativa real.
     if previous.get("engine_version") != ENGINE_VERSION:
         return False
-    if previous.get("status") not in {"ABIERTO", "CERRADO"}:
+    status = str(previous.get("status") or "")
+    if status not in {"ABIERTO", "CERRADO"}:
         return False
-    last_valid = previous.get("last_valid_confirmation") or {}
-    at = parse_datetime(last_valid.get("at"))
-    return at > datetime.min.replace(tzinfo=timezone.utc) and now - at <= timedelta(hours=carry_hours)
+    return confirmation_supports_status(previous.get("last_valid_confirmation"), status, now, carry_hours)
+
 
 
 def decision_summaries(status: str, operational: str) -> tuple[str, str]:
@@ -949,6 +1057,7 @@ def finalize_payload(
     verification_ok: bool,
     diagnostics: dict[str, Any],
 ) -> dict[str, Any]:
+    # ORMUZ_V3_FINAL_GUARD: una señal de riesgo nunca sustituye la última confirmación válida.
     if status not in VALID_STATUS:
         status = "INCIERTO"
     if operational not in VALID_OPERATIONAL:
@@ -957,22 +1066,44 @@ def finalize_payload(
         confidence = "BAJA"
 
     now_iso = iso_z(now)
-    meaningful_changed = (
-        previous.get("status") != status
-        or previous.get("operational_status") != operational
-    )
+    meaningful_changed = previous.get("status") != status or previous.get("operational_status") != operational
     last_change_at = now_iso if meaningful_changed else previous.get("last_change_at", now_iso)
 
-    last_valid = previous.get("last_valid_confirmation") if isinstance(previous.get("last_valid_confirmation"), dict) else None
-    if status in {"ABIERTO", "CERRADO"} and evidence:
-        main = evidence[0]
+    prior = previous.get("last_valid_confirmation") if isinstance(previous.get("last_valid_confirmation"), dict) else None
+    last_valid = prior
+    expected = expected_confirmation_signal(status)
+    matching = [
+        item for item in evidence
+        if expected
+        and str(item.get("signal") or "").upper() == expected
+        and not headline_is_non_operational(str(item.get("title") or ""))
+    ]
+
+    if status in {"ABIERTO", "CERRADO"} and matching:
+        main = sorted(
+            matching,
+            key=lambda item: (float(item.get("score", 0.0)), parse_datetime(item.get("published_at"))),
+            reverse=True,
+        )[0]
         last_valid = {
             "status": status,
+            "signal": expected,
             "at": main.get("published_at") or now_iso,
             "source_name": main.get("source_name"),
+            "source_id": main.get("source_id"),
             "source_url": main.get("source_url"),
             "title": main.get("title"),
+            "description": main.get("description", ""),
+            "tier": main.get("tier"),
+            "official": bool(main.get("official", False)),
         }
+    elif status in {"ABIERTO", "CERRADO"}:
+        if not confirmation_matches_status(prior, status):
+            last_valid = None
+    elif isinstance(prior, dict):
+        prior_status = str(prior.get("status") or "")
+        if not confirmation_matches_status(prior, prior_status):
+            last_valid = None
 
     last_success_at = now_iso if verification_ok else previous.get("last_success_at")
     stale = not verification_ok
@@ -997,6 +1128,7 @@ def finalize_payload(
         "evidence": clean_public_evidence(evidence),
         "diagnostics": diagnostics,
     }
+
 
 
 def network_failure_payload(previous: dict[str, Any], now: datetime, errors: list[str]) -> dict[str, Any]:
