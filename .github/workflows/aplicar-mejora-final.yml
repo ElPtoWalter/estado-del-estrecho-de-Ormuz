@@ -1,0 +1,58 @@
+name: Aplicar mejora final Ormuz V3
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: patch-hormuz-v3
+  cancel-in-progress: false
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+
+    steps:
+      - name: Descargar repositorio completo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Aplicar parche seguro y ejecutar pruebas
+        run: python aplicar_mejora_final_ormuz.py --apply
+
+      - name: Comprobar el diff
+        run: |
+          git diff --check
+          git status --short
+
+      - name: Retirar instalador temporal
+        run: |
+          rm -f aplicar_mejora_final_ormuz.py
+          rm -f .github/workflows/aplicar-mejora-final.yml
+
+      - name: Guardar mejora final
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "La mejora ya estaba aplicada."
+          else
+            git commit -m "Refuerza atribución y validación editorial V3"
+            git push
+          fi
+
+      - name: Lanzar comprobación completa de Ormuz
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-status.yml --ref main
