@@ -1,0 +1,63 @@
+name: Instalar Ormuz Growth V4
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: install-ormuz-growth-v4
+  cancel-in-progress: false
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Descargar repositorio completo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Instalar Growth V4
+        run: python install_growth_v4.py --apply
+
+      - name: Comprobar cambios
+        run: |
+          git diff --check
+          git status --short
+
+      - name: Guardar archivos de crecimiento
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            index.html en.html analisis.html en-analysis.html \
+            media-kit.html en-media-kit.html llms.txt sitemap.xml robots.txt \
+            growth-v4.css widget.js embed.js social-studio.js \
+            widget.html en-widget.html embed.html en-embed.html social-studio.html \
+            puede-estar-abierto-ormuz-aunque-caiga-trafico.html \
+            en-can-hormuz-be-open-while-traffic-collapses.html \
+            quien-controla-estrecho-ormuz-derecho-paso.html \
+            en-who-controls-strait-of-hormuz-transit-passage.html \
+            seguros-maritimos-primas-guerra-ormuz.html \
+            en-marine-insurance-war-risk-premiums-hormuz.html \
+            growth-v4-manifest.json install_growth_v4.py growth_v4_payload.zip README_GROWTH_V4.md
+          if git diff --cached --quiet; then
+            echo "Growth V4 ya estaba instalado."
+          else
+            git commit -m "Añade widget, estudio social y Growth V4"
+            git push
+          fi
+
+      - name: Lanzar comprobación completa
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-status.yml --ref main
