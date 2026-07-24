@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-24T14:21:56Z",
-  "last_success_at": "2026-07-24T14:21:56Z",
+  "checked_at": "2026-07-24T15:56:53Z",
+  "last_success_at": "2026-07-24T15:56:53Z",
   "last_change_at": "2026-07-22T17:51:46Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-07-24T04:43:49Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-24T14:21:56Z"
+      "observed_at": "2026-07-24T15:56:53Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-07-24T04:00:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-24T14:21:56Z"
+      "observed_at": "2026-07-24T15:56:53Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,17 @@
       "published_at": "2026-07-24T03:26:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-24T14:21:56Z"
+      "observed_at": "2026-07-24T15:56:53Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Middle East crisis latest : US carries out strikes across Iran as Tehran targets American bases in region",
+      "source_name": "The Guardian",
+      "source_url": "https://www.theguardian.com/world/live/2026/jul/24/us-iran-donald-trump-iraq-bahrain-kuwait-jordan-latest-news-updates",
+      "published_at": "2026-07-24T15:56:20Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-24T15:56:53Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +62,7 @@
       "published_at": "2026-07-24T09:20:07Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-24T14:21:56Z"
+      "observed_at": "2026-07-24T15:56:53Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,41 +72,30 @@
       "published_at": "2026-07-24T09:17:03Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-24T14:21:56Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "How Houthis' Red Sea Attacks Worsen Oil Shock - Bloomberg.com",
-      "source_name": "Bloomberg",
-      "source_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUHFTQTRUOTR5cnFhWVRLYzl0aEpndDJ0V2pmbTZub1hzT0h4N0lBcnJTUkFxLU1NWGR3dThmS3hKd3FTRTgwRkdKUGlJMF9jQkZqaWlWalB1SjQ0SXNYaE1kUlgzLWZFVXFOc3Q0NGo5MG9DN0VkYlBtc2d5bjNZR3Q4VGx5VlNabGlBV3NmVkJESU96bVZiR1hoWQ?oc=5",
-      "published_at": "2026-07-23T18:58:09Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-24T14:21:56Z"
+      "observed_at": "2026-07-24T15:56:53Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 21.91
+      "risk": 20.835
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 8
+      "risk": 7
     },
-    "articles_considered": 63,
-    "signals_considered": 30,
+    "articles_considered": 69,
+    "signals_considered": 29,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -104,7 +103,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-24T09:20:07Z",
+    "as_of": "2026-07-24T15:56:20Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -114,13 +113,23 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Middle East crisis latest : US carries out strikes across Iran as Tehran targets American bases in region",
+      "source_name": "The Guardian",
+      "source_url": "https://www.theguardian.com/world/live/2026/jul/24/us-iran-donald-trump-iraq-bahrain-kuwait-jordan-latest-news-updates",
+      "published_at": "2026-07-24T15:56:20Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-24T15:56:53Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "US and Iran trade more strikes in Gulf as fears of escalation mount - BBC",
       "source_name": "BBC",
       "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBjUnVoSV82cTc3bXdyQWsybzFVMXl1SDZCaDUwU0NNaUw4TE85cnBGai1ycUxyUTlBM1c1YXpvNXA1bFczV2M3R2pJZjBYMTZ1Vm54LUNZb3BhQQ?oc=5",
       "published_at": "2026-07-24T09:20:07Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-24T14:21:56Z"
+      "observed_at": "2026-07-24T15:56:53Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -130,7 +139,7 @@
       "published_at": "2026-07-24T09:17:03Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-24T14:21:56Z"
+      "observed_at": "2026-07-24T15:56:53Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -170,7 +179,7 @@
       "published_at": "2026-07-24T04:43:49Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-24T14:21:56Z"
+      "observed_at": "2026-07-24T15:56:53Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -180,7 +189,7 @@
       "published_at": "2026-07-24T04:00:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-24T14:21:56Z"
+      "observed_at": "2026-07-24T15:56:53Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -190,7 +199,7 @@
       "published_at": "2026-07-24T03:26:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-24T14:21:56Z"
+      "observed_at": "2026-07-24T15:56:53Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -701,16 +710,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-21T23:31:48Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Another tanker attacked in Strait of Hormuz as US strikes Iran for 10th consecutive night - AP News",
-      "source_name": "Associated Press",
-      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQajNHTE9aUmxpa2RIMy1jNjZ4RmgzZlk2OXE3ZXBtRzdxaUpnQldzeUtxaHh6Z3VTQzZMUGNtZ1oxNE5lQzZwLVhnX3BTZWk1OVBVT1ZiNFFtMnoyRDhHbFBnV0pFdTdNcnBKdWVuT0RidVJoWXFCYkdlNDE2V1hmZ1VhUlZhLXExZTZjOHo1YmRYMm5ra1U4RE9DU29CMVU?oc=5",
-      "published_at": "2026-07-21T04:30:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-07-21T12:57:21Z"
     }
   ]
 }
