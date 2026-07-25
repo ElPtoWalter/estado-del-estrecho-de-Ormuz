@@ -1,6 +1,92 @@
 [
   {
     "schema_version": 1,
+    "date": "2026-07-26",
+    "generated_at": "2026-07-25T22:29:49Z",
+    "source_checked_at": "2026-07-25T22:29:13Z",
+    "status": "INCIERTO",
+    "status_label_es": "INCIERTO",
+    "status_label_en": "UNCERTAIN",
+    "operational_status": "HIGH_RISK_UNCONFIRMED",
+    "operational_label_es": "Riesgo elevado, estado no confirmado",
+    "operational_label_en": "High risk, status unconfirmed",
+    "confidence": "ALTA",
+    "confidence_label": {
+      "es": "Alta",
+      "en": "High"
+    },
+    "verification_ok": true,
+    "stale": false,
+    "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+    "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
+    "risks_es": [
+      "El riesgo es elevado y no puede confirmarse de forma fiable si el paso está abierto o cerrado.",
+      "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+    ],
+    "risks_en": [
+      "Risk is high and it cannot be reliably confirmed whether the passage is open or closed.",
+      "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
+    ],
+    "watchlist_es": [
+      "Avisos marítimos oficiales y confirmaciones operativas independientes.",
+      "Trayectorias completas de buques y continuidad real de los cruces, no puntos AIS aislados.",
+      "Cambios en restricciones, seguros, escoltas, puertos y disponibilidad de tripulaciones."
+    ],
+    "watchlist_en": [
+      "Official maritime notices and independent operational confirmations.",
+      "Completed vessel tracks and actual continuity of crossings, not isolated AIS points.",
+      "Changes in restrictions, insurance, escorts, ports and crew availability."
+    ],
+    "evidence": [
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Bridges and infrastructure hit as US struck deeper inside Iran - AP News",
+        "source_name": "Associated Press",
+        "source_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQ0ZCeFZOaU1KWFIyaUQyMk1WdFdEbDRNaUJBSlpvcUFqSVRUVmRUV19ndXdqZElDeGtTSlNRUXZXYV84WXI0RjB5YlhXMXNJampLTGJKQzJLYnlienItemZMdHBDckZ3c1lCbVpMLTU3cGNXSnBlZ0RmNUpyUHozNlVwaF9OcjZqbGw5ZXByXzZNdw?oc=5",
+        "published_at": "2026-07-25T10:30:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Iran-backed Houthis claim missile attack on Saudi Arabia as regional tensions escalate - The Guardian",
+        "source_name": "The Guardian",
+        "source_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxONGtzUUVWZzk5bHlYMW50bFg3QW94RFZwbXN6ZEY4eVVTVG5pdlRjd2F1V3gySEd3NVZVbHpFbVExQ2ZjMVBVcS1WMUduM3lSNWkxRzVJWGt3Q0huTW51SmdYQTYtY3RJYXVLUnpKUkZLb3c0aHpYQk9SSUNVLXhzQnY4TTFYOE1vbVQwS0h3clplUkpKenY0WVJpUkU?oc=5",
+        "published_at": "2026-07-25T02:43:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Oil shipments are under attack on multiple fronts as fighting escalates in Red Sea, Hormuz and Black Sea - CNBC",
+        "source_name": "CNBC",
+        "source_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOYnZkSnE3cjdkVWpBWnVkQi1qUndVbHZkb2Q3amhCWEdibTlJNVRzcEt5OUNnQTd3QnBfUjlwV2Q5SVJ4cTlVelpQLXpva0l6allVSDVEOTRJc2I5R2ZJclk5Ukc1VzhkQ2hNQkdNeVllaEZMWlJ6d25KelM0RURFdFhjcGQ1ZkpkeDVia0Jn0gGTAUFVX3lxTE16dkxjTHEtc0Yzc1lhYkw5aEVVMG9aYlczbnFrSS1lY3EyNWpPSWw4bVpGMlQ0cGdOVnFNYjJUTHg3cW1VMkFZaHJHUl9uMEJVZlhOY1Bqc0FHQ3JHTUxjLW1jWEZqX0F3YWZ3clJyU2l2RDNQOXBHVXhwa3dscDFyaDVHUXdWN2xYV3dUNE5JTVg4Yw?oc=5",
+        "published_at": "2026-07-24T18:47:41Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US and Iran trade more strikes in Gulf as fears of escalation mount - BBC",
+        "source_name": "BBC",
+        "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBjUnVoSV82cTc3bXdyQWsybzFVMXl1SDZCaDUwU0NNaUw4TE85cnBGai1ycUxyUTlBM1c1YXpvNXA1bFczV2M3R2pJZjBYMTZ1Vm54LUNZb3BhQQ?oc=5",
+        "published_at": "2026-07-24T18:13:02Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "U.S. Concludes 13th Night of Strikes on Iranian Military Targets - centcom.mil",
+        "source_name": "U.S. CENTCOM",
+        "source_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOVS1CM2pSUG1ZUkt3TEc0b3pxVFEtYmtZUHZCeGdhamFVV2dROXVtM0l5VlZiUFBYVWlMalZNOURfTUtaTUo5Tk5ZVnVKbTZRaUhpUFVQV3N3a213UGd1ZFVTbk91Y3dFZzNQNlhfZ3RJcjd3bzlCRVZkTVB1SzNoTDZ1YW5DTk9SNTlrMWhEQTFJd1pLSXVQdGpsZ0RWdmtjYlpnQ0xOZ2NmVkViQmZiN0lWeHN3eUVfTzVWbmNDZDB0Q0U?oc=5",
+        "published_at": "2026-07-24T04:43:49Z",
+        "official": true
+      }
+    ],
+    "last_valid_confirmation": null,
+    "publish_recommended": false,
+    "material_hash": "960e1b9f7ae47c2c"
+  },
+  {
+    "schema_version": 1,
     "date": "2026-07-25",
     "generated_at": "2026-07-25T14:13:00Z",
     "source_checked_at": "2026-07-25T21:27:34Z",
