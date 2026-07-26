@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-26T20:31:31Z",
-  "last_success_at": "2026-07-26T20:31:31Z",
+  "checked_at": "2026-07-26T21:29:17Z",
+  "last_success_at": "2026-07-26T21:29:17Z",
   "last_change_at": "2026-07-22T17:51:46Z",
   "verification_ok": true,
   "stale": false,
@@ -16,23 +16,23 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "After Trump calls off bombing, Iran signals it will halt strikes as long as US does - Reuters",
+      "title": "Iran says it will halt strikes as long as US bombing pause holds - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQT2hvLTRwU3J1WVZCTlA0WFVNRmhXdDVkTWhwQkdDTFZzbEVpYmRBUUppcjJudFY2M3JpQ3lzT0I0SkM4VFlmSk8xb0RuX192WjQ2dE9nbjJkUFFMTHFyZDh2c1ktdDJpSmtmdXJPYW5wNXRuM1hsQ0RqYkE4X3d1aDZ1SkpUM3ltc0h2NFNZbmpvZFhYa0ZJTlEyR0JkdDZvYWRUYXBRZE41YkVEdjV4VEZVb0hSSUxOQlFwT1U4X1FfNjJrbmhaSVkyT0w0Zw?oc=5",
-      "published_at": "2026-07-26T18:07:19Z",
+      "published_at": "2026-07-26T20:42:58Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-26T20:31:31Z"
+      "observed_at": "2026-07-26T21:29:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Trump paused attacks on Iran to make space for talks, US ambassador says - BBC",
       "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1zVTQxSmFNa25kWWJmYnJWd2VEOUhsTEZhMzAzYk5ybS0yeE5ZdXBKdGhlMHg4VGlSbzlWaDR2Rkw2QkxGWDNEX1lhcFA2MmxrUVhuUUI4clJ4SHc?oc=5",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1yajhrWmo5YjBuaUNBdG5WS0c1RmFNVEMtck1kT3dDMjVrSmhENkVTOTB4c0hWYXVqRUV4WVBNeVVzeTJJV0JRd2tOcXY1OXo1b0VSLUdyR0lUaksx?oc=5",
       "published_at": "2026-07-26T18:04:53Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-26T20:31:31Z"
+      "observed_at": "2026-07-26T21:29:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-07-25T10:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-26T20:31:31Z"
+      "observed_at": "2026-07-26T21:29:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +52,7 @@
       "published_at": "2026-07-24T04:43:49Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-26T20:31:31Z"
+      "observed_at": "2026-07-26T21:29:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,7 +62,7 @@
       "published_at": "2026-07-26T11:16:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-26T20:31:31Z"
+      "observed_at": "2026-07-26T21:29:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -72,17 +72,16 @@
       "published_at": "2026-07-23T18:46:47Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-26T20:31:31Z"
+      "observed_at": "2026-07-26T21:29:17Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -95,8 +94,8 @@
       "declared": 0,
       "risk": 8
     },
-    "articles_considered": 49,
-    "signals_considered": 23,
+    "articles_considered": 50,
+    "signals_considered": 22,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -104,7 +103,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-26T18:07:19Z",
+    "as_of": "2026-07-26T20:42:58Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -112,6 +111,16 @@
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran says it will halt strikes as long as US bombing pause holds - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQT2hvLTRwU3J1WVZCTlA0WFVNRmhXdDVkTWhwQkdDTFZzbEVpYmRBUUppcjJudFY2M3JpQ3lzT0I0SkM4VFlmSk8xb0RuX192WjQ2dE9nbjJkUFFMTHFyZDh2c1ktdDJpSmtmdXJPYW5wNXRuM1hsQ0RqYkE4X3d1aDZ1SkpUM3ltc0h2NFNZbmpvZFhYa0ZJTlEyR0JkdDZvYWRUYXBRZE41YkVEdjV4VEZVb0hSSUxOQlFwT1U4X1FfNjJrbmhaSVkyT0w0Zw?oc=5",
+      "published_at": "2026-07-26T20:42:58Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-07-26T21:29:17Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "After Trump calls off bombing, Iran signals it will halt strikes as long as US does - Reuters",
@@ -126,11 +135,11 @@
       "signal": "RISK_RESTRICTION",
       "title": "Trump paused attacks on Iran to make space for talks, US ambassador says - BBC",
       "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1zVTQxSmFNa25kWWJmYnJWd2VEOUhsTEZhMzAzYk5ybS0yeE5ZdXBKdGhlMHg4VGlSbzlWaDR2Rkw2QkxGWDNEX1lhcFA2MmxrUVhuUUI4clJ4SHc?oc=5",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1yajhrWmo5YjBuaUNBdG5WS0c1RmFNVEMtck1kT3dDMjVrSmhENkVTOTB4c0hWYXVqRUV4WVBNeVVzeTJJV0JRd2tOcXY1OXo1b0VSLUdyR0lUaksx?oc=5",
       "published_at": "2026-07-26T18:04:53Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-26T20:31:31Z"
+      "observed_at": "2026-07-26T21:29:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -150,7 +159,7 @@
       "published_at": "2026-07-26T11:16:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-26T20:31:31Z"
+      "observed_at": "2026-07-26T21:29:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -180,7 +189,7 @@
       "published_at": "2026-07-25T10:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-26T20:31:31Z"
+      "observed_at": "2026-07-26T21:29:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -330,7 +339,7 @@
       "published_at": "2026-07-24T04:43:49Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-26T20:31:31Z"
+      "observed_at": "2026-07-26T21:29:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -430,7 +439,7 @@
       "published_at": "2026-07-23T18:46:47Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-26T20:31:31Z"
+      "observed_at": "2026-07-26T21:29:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -701,16 +710,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-22T13:04:34Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US military completes 11th night of strikes on Iran as attacks overshadow diplomacy - AP News",
-      "source_name": "Associated Press",
-      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPR3ByTjM2MjQxUW43TEtOc0JJNXpDYmNxdDNYRlNXMk0yZUNlYnMwVXlrZUxyMlF3UlZjMk9IOFpzVjl6TzI3Q0JPQ0hkazlZSDFHeWpHYTN1RVp0QjNYQTlYX3g4TlVBZmlEV0VIT1ZXaG1nUTFnYnRGTGhDOFZrWFVWc1B4LUI3Q0JhQjlvMkgyTk1HU09UcG9TNDN4M0E?oc=5",
-      "published_at": "2026-07-22T05:47:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-07-24T07:55:23Z"
     }
   ]
 }
