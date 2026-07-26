@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-26T05:02:26Z",
-  "last_success_at": "2026-07-26T05:02:26Z",
+  "checked_at": "2026-07-26T07:55:47Z",
+  "last_success_at": "2026-07-26T07:55:47Z",
   "last_change_at": "2026-07-22T17:51:46Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,17 @@
       "published_at": "2026-07-25T10:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-26T05:02:26Z"
+      "observed_at": "2026-07-26T07:55:47Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Statement on recent attacks on ships in the Red Sea - International Maritime Organization (IMO)",
+      "source_name": "IMO",
+      "source_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNbmNLNm5OaE5hYS1fSlhHVEo3bFVBV2gyUENpUHNVcGJDd0NHeVREZDdreDd3VGd1LVZWVzFuZmxkVHZMaVJ0VnkwSXhQeGZQZ2FEMmJLSHQ5RklYVFZJbnVQR09EYUFpWmFRNWF2WGd2bjlleW4tbVFiMHB6cVUzaWRQdUtCV3A2ZlI2MTNhNzQ2TklVbktta3pNM3FPbzByaHVZUDln?oc=5",
+      "published_at": "2026-07-23T18:46:47Z",
+      "tier": 5,
+      "official": true,
+      "observed_at": "2026-07-26T07:55:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,17 +42,17 @@
       "published_at": "2026-07-24T04:43:49Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-26T05:02:26Z"
+      "observed_at": "2026-07-26T07:55:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "US and Iran trade more strikes in Gulf as fears of escalation mount - BBC",
-      "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBjUnVoSV82cTc3bXdyQWsybzFVMXl1SDZCaDUwU0NNaUw4TE85cnBGai1ycUxyUTlBM1c1YXpvNXA1bFczV2M3R2pJZjBYMTZ1Vm54LUNZb3BhQQ?oc=5",
-      "published_at": "2026-07-24T18:13:02Z",
-      "tier": 3,
+      "title": "Vance , Caine raised concerns about escalating war in Iran , sources say as US pauses consecutive nights of strikes",
+      "source_name": "CNN",
+      "source_url": "https://www.cnn.com/2026/07/25/politics/us-iran-strikes-operation",
+      "published_at": "2026-07-26T01:36:21Z",
+      "tier": 2,
       "official": false,
-      "observed_at": "2026-07-26T05:02:26Z"
+      "observed_at": "2026-07-26T07:55:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +62,7 @@
       "published_at": "2026-07-24T04:00:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-26T05:02:26Z"
+      "observed_at": "2026-07-26T07:55:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,38 +72,27 @@
       "published_at": "2026-07-25T02:43:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-26T05:02:26Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil shipments are under attack on multiple fronts as fighting escalates in Red Sea, Hormuz and Black Sea - CNBC",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOYnZkSnE3cjdkVWpBWnVkQi1qUndVbHZkb2Q3amhCWEdibTlJNVRzcEt5OUNnQTd3QnBfUjlwV2Q5SVJ4cTlVelpQLXpva0l6allVSDVEOTRJc2I5R2ZJclk5Ukc1VzhkQ2hNQkdNeVllaEZMWlJ6d25KelM0RURFdFhjcGQ1ZkpkeDVia0Jn0gGTAUFVX3lxTE16dkxjTHEtc0Yzc1lhYkw5aEVVMG9aYlczbnFrSS1lY3EyNWpPSWw4bVpGMlQ0cGdOVnFNYjJUTHg3cW1VMkFZaHJHUl9uMEJVZlhOY1Bqc0FHQ3JHTUxjLW1jWEZqX0F3YWZ3clJyU2l2RDNQOXBHVXhwa3dscDFyaDVHUXdWN2xYV3dUNE5JTVg4Yw?oc=5",
-      "published_at": "2026-07-24T18:47:41Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-07-26T05:02:26Z"
+      "observed_at": "2026-07-26T07:55:47Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 16.09
+      "risk": 19.47
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 7
+      "risk": 9
     },
     "articles_considered": 49,
     "signals_considered": 22,
@@ -104,7 +103,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-25T10:30:00Z",
+    "as_of": "2026-07-26T01:36:21Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -114,13 +113,23 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Vance , Caine raised concerns about escalating war in Iran , sources say as US pauses consecutive nights of strikes",
+      "source_name": "CNN",
+      "source_url": "https://www.cnn.com/2026/07/25/politics/us-iran-strikes-operation",
+      "published_at": "2026-07-26T01:36:21Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-07-26T07:55:47Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Bridges and infrastructure hit as US struck deeper inside Iran - AP News",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQ0ZCeFZOaU1KWFIyaUQyMk1WdFdEbDRNaUJBSlpvcUFqSVRUVmRUV19ndXdqZElDeGtTSlNRUXZXYV84WXI0RjB5YlhXMXNJampLTGJKQzJLYnlienItemZMdHBDckZ3c1lCbVpMLTU3cGNXSnBlZ0RmNUpyUHozNlVwaF9OcjZqbGw5ZXByXzZNdw?oc=5",
       "published_at": "2026-07-25T10:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-26T05:02:26Z"
+      "observed_at": "2026-07-26T07:55:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -140,7 +149,7 @@
       "published_at": "2026-07-25T02:43:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-26T05:02:26Z"
+      "observed_at": "2026-07-26T07:55:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -270,7 +279,7 @@
       "published_at": "2026-07-24T04:43:49Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-26T05:02:26Z"
+      "observed_at": "2026-07-26T07:55:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -280,7 +289,7 @@
       "published_at": "2026-07-24T04:00:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-26T05:02:26Z"
+      "observed_at": "2026-07-26T07:55:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -351,6 +360,16 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-07-24T14:21:56Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Statement on recent attacks on ships in the Red Sea - International Maritime Organization (IMO)",
+      "source_name": "IMO",
+      "source_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNbmNLNm5OaE5hYS1fSlhHVEo3bFVBV2gyUENpUHNVcGJDd0NHeVREZDdreDd3VGd1LVZWVzFuZmxkVHZMaVJ0VnkwSXhQeGZQZ2FEMmJLSHQ5RklYVFZJbnVQR09EYUFpWmFRNWF2WGd2bjlleW4tbVFiMHB6cVUzaWRQdUtCV3A2ZlI2MTNhNzQ2TklVbktta3pNM3FPbzByaHVZUDln?oc=5",
+      "published_at": "2026-07-23T18:46:47Z",
+      "tier": 5,
+      "official": true,
+      "observed_at": "2026-07-26T07:55:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -691,26 +710,6 @@
       "tier": 5,
       "official": true,
       "observed_at": "2026-07-24T07:55:23Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Explosions in Iran as US launches new strikes - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOVG9iYmRIcFFxcEZhd1dOd1VXdFlmRFozbWFuMWR1YVptOG03UUk2VkdhcEdLN29PUENuSUZMeDNNNVdHb1FEcGF6RVFPU1NabWx2QWRWcEFqQm5FQ2t4YUhlODAtOFo4dVhUUGZnZW1RNWRtUGVTNE5PTkZjTGNlbWJqejJCajV6VWl3NXV2SdIBlAFBVV95cUxOX1J5QUlCV1Y1aXAycjhJT3gtMFVQZDAtdE1JT0FpSlEtNlJzN2JfaTFCMDR6UGZMcEk0bVdFZ2VsejlhRlhiWnpsdVQ3WTVmOHZOSllmY192Z1VvSzgwWUlDOWY2MGhZbkF6Q2lhemFnRXU4dUNBdUFfdWNVc2dPVmhmckJDM1BIbVR2eVFrejQ2NWZF?oc=5",
-      "published_at": "2026-07-21T23:57:17Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-07-22T00:58:45Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "CENTCOM Keeps Insisting the Strait of Hormuz Is Open — but the Latest Shipping Data Shows Traffic Has Collapsed by Ninety Percent - National Security Journal",
-      "source_name": "National Security Journal",
-      "source_url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPUlRCQ2hSbms4V0ZEYm1mWGF4aWNvZlgwWVhUZm9CTGtwWFRSMEdINGdJUkxsR1NYNkZCRFFfWXp2OXBFZ0JwWGNCblJZN19vRndlUlgwS2N2SXRmczVKeVE5dXJBcldxTDRJTDVqaU82NWo4NEtxeHUzZTdTNUpKUXdoaS1uWjdHZVBfZHlGUngwb040OTI4eklkb0FhczhDQ3c2akZ4QjBSNFZxQUU1TUFqejhkcTI5YkNSLUZpMG1XRHJocXk5MWotU0toakQtMXFkQlBPVGV5OWUzbnBBVXdXX0V5MXRoQ2JPWjJIWXZnRFJabnpv?oc=5",
-      "published_at": "2026-07-21T22:09:45Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-07-22T23:34:38Z"
     }
   ]
 }
