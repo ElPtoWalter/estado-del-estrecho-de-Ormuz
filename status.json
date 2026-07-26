@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-26T15:42:17Z",
-  "last_success_at": "2026-07-26T15:42:17Z",
+  "checked_at": "2026-07-26T17:35:33Z",
+  "last_success_at": "2026-07-26T17:35:33Z",
   "last_change_at": "2026-07-22T17:51:46Z",
   "verification_ok": true,
   "stale": false,
@@ -22,17 +22,7 @@
       "published_at": "2026-07-25T10:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-26T15:42:17Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US pauses attacks on Iran for a second day as peace talks continue",
-      "source_name": "The Guardian",
-      "source_url": "https://www.theguardian.com/world/2026/jul/26/us-pauses-trump-netanyahu-attacks-on-iran-talks-hormuz",
-      "published_at": "2026-07-26T14:50:53Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-26T15:42:17Z"
+      "observed_at": "2026-07-26T17:35:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +32,7 @@
       "published_at": "2026-07-23T18:46:47Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-26T15:42:17Z"
+      "observed_at": "2026-07-26T17:35:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,17 +42,27 @@
       "published_at": "2026-07-24T04:43:49Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-26T15:42:17Z"
+      "observed_at": "2026-07-26T17:35:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Houthis fire on Saudi oil sites; no US strike on Iran for first time in two weeks - Reuters",
+      "title": "US pauses attacks on Iran for a second day as peace talks continue - The Guardian",
+      "source_name": "The Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOSXpRZUVKLWdPbXlybXhsRDdrOG9nLUMtVGg2RkFhdHF3SGxTZndLTDJ6M2xKaDRWd1JJY3VjMVd5bnMyUjhFT2JIbF8tY3lfM2tncUl5bjJTWlI2UjBpR3VlN2ZwbTc2cXRaNXJyZUJwbHN2OFI4cGw4djRJcHhNV0ZfNHNOaEpSdXl3cXdSM1RqRFhYV241NHRoRjVTd2tsRFE?oc=5",
+      "published_at": "2026-07-26T11:16:00Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-26T17:35:33Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Trump vows to punish Iran for Houthi attacks in Red Sea; oil surges over $100 - Reuters",
       "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQNFdZY1R2bFRCTk51X1E2U2dLZUphMDA2MVlUaGRzOEJXRXc5Vl9ObDNaVE9FNnU4eTV6TXBjYjRyR2xZekJYeGY2VHNrYW9hSjhpSjQ0aVJEdXBkSk9Ja2NXRjZjQng3Rkp1eFBHMlVwQ2paZUlVRnZUN0l3OThQRlZVLTJDanZHREpMTjFNVm9odWl5alZwRUpDbUhwSWRWeHc?oc=5",
-      "published_at": "2026-07-24T04:00:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOck9rMklSSHp1Z0E2UmlqZUJHSWNxRXNSZGtZd1JTOFdSbUE2amI3RHFmaUNuSS1nU1NzaThJdVIwVzZFcXVIaXNjU3lrSVYtaDF5THNwWkpqUHVwTEFsWklsbnp4ZllTMndIYWhRM0RZa09qaTNiVXVCNmh5a2p6MnBidG1kWkJSUVJnb1RuOXdUcU5MRDVxbzJmcDE2UWZsaVZYRDdCdHlYcG1kUTdKT093ZXI4b3VkWjZNRzdDUDIwWEFWMHRia2FIY3dIdw?oc=5",
+      "published_at": "2026-07-24T01:22:43Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-26T15:42:17Z"
+      "observed_at": "2026-07-26T17:35:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -72,21 +72,22 @@
       "published_at": "2026-07-24T18:13:02Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-26T15:42:17Z"
+      "observed_at": "2026-07-26T17:35:33Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 17.945
+      "risk": 17.655
     },
     "independent_sources": {
       "open": 0,
@@ -94,8 +95,8 @@
       "declared": 0,
       "risk": 8
     },
-    "articles_considered": 53,
-    "signals_considered": 19,
+    "articles_considered": 42,
+    "signals_considered": 18,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -103,7 +104,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-26T14:50:53Z",
+    "as_of": "2026-07-26T11:16:00Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -123,6 +124,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "US pauses attacks on Iran for a second day as peace talks continue - The Guardian",
+      "source_name": "The Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOSXpRZUVKLWdPbXlybXhsRDdrOG9nLUMtVGg2RkFhdHF3SGxTZndLTDJ6M2xKaDRWd1JJY3VjMVd5bnMyUjhFT2JIbF8tY3lfM2tncUl5bjJTWlI2UjBpR3VlN2ZwbTc2cXRaNXJyZUJwbHN2OFI4cGw4djRJcHhNV0ZfNHNOaEpSdXl3cXdSM1RqRFhYV241NHRoRjVTd2tsRFE?oc=5",
+      "published_at": "2026-07-26T11:16:00Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-26T17:35:33Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Vance , Caine raised concerns about escalating war in Iran , sources say as US pauses consecutive nights of strikes",
       "source_name": "CNN",
       "source_url": "https://www.cnn.com/2026/07/25/politics/us-iran-strikes-operation",
@@ -139,7 +150,7 @@
       "published_at": "2026-07-25T10:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-26T15:42:17Z"
+      "observed_at": "2026-07-26T17:35:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -209,7 +220,7 @@
       "published_at": "2026-07-24T18:13:02Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-26T15:42:17Z"
+      "observed_at": "2026-07-26T17:35:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -289,7 +300,7 @@
       "published_at": "2026-07-24T04:43:49Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-26T15:42:17Z"
+      "observed_at": "2026-07-26T17:35:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -320,6 +331,16 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-24T10:34:41Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Trump vows to punish Iran for Houthi attacks in Red Sea; oil surges over $100 - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOck9rMklSSHp1Z0E2UmlqZUJHSWNxRXNSZGtZd1JTOFdSbUE2amI3RHFmaUNuSS1nU1NzaThJdVIwVzZFcXVIaXNjU3lrSVYtaDF5THNwWkpqUHVwTEFsWklsbnp4ZllTMndIYWhRM0RZa09qaTNiVXVCNmh5a2p6MnBidG1kWkJSUVJnb1RuOXdUcU5MRDVxbzJmcDE2UWZsaVZYRDdCdHlYcG1kUTdKT093ZXI4b3VkWjZNRzdDUDIwWEFWMHRia2FIY3dIdw?oc=5",
+      "published_at": "2026-07-24T01:22:43Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-07-26T17:35:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -379,7 +400,7 @@
       "published_at": "2026-07-23T18:46:47Z",
       "tier": 5,
       "official": true,
-      "observed_at": "2026-07-26T15:42:17Z"
+      "observed_at": "2026-07-26T17:35:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -460,16 +481,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-23T10:40:43Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Trump vows to punish Iran for Houthi attacks in Red Sea; oil surges over $100 - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOck9rMklSSHp1Z0E2UmlqZUJHSWNxRXNSZGtZd1JTOFdSbUE2amI3RHFmaUNuSS1nU1NzaThJdVIwVzZFcXVIaXNjU3lrSVYtaDF5THNwWkpqUHVwTEFsWklsbnp4ZllTMndIYWhRM0RZa09qaTNiVXVCNmh5a2p6MnBidG1kWkJSUVJnb1RuOXdUcU5MRDVxbzJmcDE2UWZsaVZYRDdCdHlYcG1kUTdKT093ZXI4b3VkWjZNRzdDUDIwWEFWMHRia2FIY3dIdw?oc=5",
-      "published_at": "2026-07-23T04:15:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-07-24T12:04:12Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -700,16 +711,6 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-07-22T07:55:41Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US military says its latest strikes on Iran have ended, marking 11th successive night of attacks - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNdjdfcnFmNzMwSTFCYWFYRXZzOGtwSlpwM2ljMXh5QU5LZXFGTnJyUER0UDhyYnl2S2FjS1dPMzZ2S3gyRHBhQk9yV3RWOHRDS3pmYUVLWldkdHhvZWFFM08tWDNreUtrelJETjlRQVdLd09LRlRRNWF4YlB3YzVZT0xrdDJyVHNWN0NKcE4xdjFQVF85dWNGV3pSSHRyS0QtTGRGR1pFUkNjcjg?oc=5",
-      "published_at": "2026-07-22T00:57:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-07-22T23:34:38Z"
     }
   ]
 }
