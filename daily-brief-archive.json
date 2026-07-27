@@ -2,31 +2,31 @@
   {
     "schema_version": 1,
     "date": "2026-07-27",
-    "generated_at": "2026-07-26T23:33:50Z",
-    "source_checked_at": "2026-07-26T23:31:27Z",
+    "generated_at": "2026-07-27T01:11:59Z",
+    "source_checked_at": "2026-07-27T01:11:18Z",
     "status": "INCIERTO",
     "status_label_es": "INCIERTO",
     "status_label_en": "UNCERTAIN",
-    "operational_status": "NO_RECENT_CONFIRMATION",
-    "operational_label_es": "Sin confirmación reciente",
-    "operational_label_en": "No recent confirmation",
-    "confidence": "BAJA",
+    "operational_status": "HIGH_RISK_UNCONFIRMED",
+    "operational_label_es": "Riesgo elevado, estado no confirmado",
+    "operational_label_en": "High risk, status unconfirmed",
+    "confidence": "ALTA",
     "confidence_label": {
-      "es": "Baja",
-      "en": "Low"
+      "es": "Alta",
+      "en": "High"
     },
     "verification_ok": true,
     "stale": false,
-    "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
-    "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
-    "change_es": "El indicador cambia de «Riesgo elevado, estado no confirmado» a «Sin confirmación reciente».",
-    "change_en": "The indicator changes from “High risk, status unconfirmed” to “No recent confirmation”.",
+    "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+    "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
     "risks_es": [
-      "El estado requiere interpretación prudente.",
+      "El riesgo es elevado y no puede confirmarse de forma fiable si el paso está abierto o cerrado.",
       "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
     ],
     "risks_en": [
-      "The status requires cautious interpretation.",
+      "Risk is high and it cannot be reliably confirmed whether the passage is open or closed.",
       "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
     ],
     "watchlist_es": [
@@ -42,10 +42,18 @@
     "evidence": [
       {
         "signal": "RISK_RESTRICTION",
+        "title": "Khamenei ties US-Iran peace deal to Israel ending attacks on Lebanon - Al Jazeera",
+        "source_name": "Al Jazeera",
+        "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdlZIaGtLT0ItbHVjQ0xEWFoyU2I5anhKZHp2QlZhVW1kWTRuOXRBMy1uQlc3a29vTVRTT21vMXZ3dTQ3UTkyVFZSNElnNzQ2VjZDWERjSEQ2bTFDOUpGMkVsOEozVkN0Nm9TVVphV1U5Yll1UEx1cXRsWFBKLU1xMUl1T2lUX3NqVkI1dXBaY2k3cWJiRmRRdkdQVTRacU5hTExkbndBWHQ0VGfSAbABQVVfeXFMUEVoS2VuR3pBZ1YyVzlYTTIyU0Z4eGFfSEhGd2Y0M3lMQ3ZUUFFndDVZUHh5cGhYRUU5enpINl9ha3FHclJuc3dVSkRFWXdFSXNuZjVoZU9qV0FMYjRYcjZIenBFLWRIczhIeEVIalFqLUNjR0Rscm5wMGlramFQZGJXZWRSVDdtcW9la2xxZEhlSGFvRmlYdTVybDY2MTI4Q2tLTmc4TG12TmtyczlZejM?oc=5",
+        "published_at": "2026-07-26T23:56:13Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
         "title": "Iran says it will halt strikes as long as US bombing pause holds - Reuters",
         "source_name": "Reuters",
         "source_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQT2hvLTRwU3J1WVZCTlA0WFVNRmhXdDVkTWhwQkdDTFZzbEVpYmRBUUppcjJudFY2M3JpQ3lzT0I0SkM4VFlmSk8xb0RuX192WjQ2dE9nbjJkUFFMTHFyZDh2c1ktdDJpSmtmdXJPYW5wNXRuM1hsQ0RqYkE4X3d1aDZ1SkpUM3ltc0h2NFNZbmpvZFhYa0ZJTlEyR0JkdDZvYWRUYXBRZE41YkVEdjV4VEZVb0hSSUxOQlFwT1U4X1FfNjJrbmhaSVkyT0w0Zw?oc=5",
-        "published_at": "2026-07-26T21:53:06Z",
+        "published_at": "2026-07-26T22:26:07Z",
         "official": false
       },
       {
@@ -71,19 +79,11 @@
         "source_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQ0ZCeFZOaU1KWFIyaUQyMk1WdFdEbDRNaUJBSlpvcUFqSVRUVmRUV19ndXdqZElDeGtTSlNRUXZXYV84WXI0RjB5YlhXMXNJampLTGJKQzJLYnlienItemZMdHBDckZ3c1lCbVpMLTU3cGNXSnBlZ0RmNUpyUHozNlVwaF9OcjZqbGw5ZXByXzZNdw?oc=5",
         "published_at": "2026-07-25T10:30:00Z",
         "official": false
-      },
-      {
-        "signal": "RISK_RESTRICTION",
-        "title": "U.S. Concludes 13th Night of Strikes on Iranian Military Targets - centcom.mil",
-        "source_name": "U.S. CENTCOM",
-        "source_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOVS1CM2pSUG1ZUkt3TEc0b3pxVFEtYmtZUHZCeGdhamFVV2dROXVtM0l5VlZiUFBYVWlMalZNOURfTUtaTUo5Tk5ZVnVKbTZRaUhpUFVQV3N3a213UGd1ZFVTbk91Y3dFZzNQNlhfZ3RJcjd3bzlCRVZkTVB1SzNoTDZ1YW5DTk9SNTlrMWhEQTFJd1pLSXVQdGpsZ0RWdmtjYlpnQ0xOZ2NmVkViQmZiN0lWeHN3eUVfTzVWbmNDZDB0Q0U?oc=5",
-        "published_at": "2026-07-24T04:43:49Z",
-        "official": true
       }
     ],
     "last_valid_confirmation": null,
-    "publish_recommended": true,
-    "material_hash": "b4fc3c8cc82d8982"
+    "publish_recommended": false,
+    "material_hash": "e4c9a778109804f0"
   },
   {
     "schema_version": 1,
