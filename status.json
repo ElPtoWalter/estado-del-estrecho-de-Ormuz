@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-27T23:36:59Z",
-  "last_success_at": "2026-07-27T23:36:59Z",
+  "checked_at": "2026-07-28T01:00:02Z",
+  "last_success_at": "2026-07-28T01:00:02Z",
   "last_change_at": "2026-07-27T01:11:18Z",
   "verification_ok": true,
   "stale": false,
@@ -22,17 +22,7 @@
       "published_at": "2026-07-27T19:52:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-27T23:36:59Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Trump says Iran war talks taking place during lull in strikes",
-      "source_name": "BBC",
-      "source_url": "https://www.bbc.co.uk/news/articles/c62xn4vzmnpo",
-      "published_at": "2026-07-27T21:30:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-27T23:36:59Z"
+      "observed_at": "2026-07-28T01:00:02Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +32,7 @@
       "published_at": "2026-07-26T22:11:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-27T23:36:59Z"
+      "observed_at": "2026-07-28T01:00:02Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +42,17 @@
       "published_at": "2026-07-27T17:24:50Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-27T23:36:59Z"
+      "observed_at": "2026-07-28T01:00:02Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil price dives as US and Iran pause attacks - BBC",
+      "source_name": "BBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE44NU94OERKeEJnNnNXcUpvQlZRdlY4NzFkcTVEc1pMTW5lcW9wcTc3Y2xKUWgzMUhuczA3c0swQzhpOEc4QjN0Q01FOTZ4c1lBM1ItbWZ5MmZ0UQ?oc=5",
+      "published_at": "2026-07-27T15:08:37Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-28T01:00:02Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,7 +62,7 @@
       "published_at": "2026-07-27T08:36:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-27T23:36:59Z"
+      "observed_at": "2026-07-28T01:00:02Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -72,21 +72,22 @@
       "published_at": "2026-07-27T03:54:44Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-27T23:36:59Z"
+      "observed_at": "2026-07-28T01:00:02Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 20.045
+      "risk": 19.725
     },
     "independent_sources": {
       "open": 0,
@@ -94,8 +95,8 @@
       "declared": 0,
       "risk": 8
     },
-    "articles_considered": 52,
-    "signals_considered": 23,
+    "articles_considered": 47,
+    "signals_considered": 21,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -103,7 +104,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-27T21:30:00Z",
+    "as_of": "2026-07-27T19:52:00Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -129,7 +130,7 @@
       "published_at": "2026-07-27T19:52:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-27T23:36:59Z"
+      "observed_at": "2026-07-28T01:00:02Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -139,7 +140,7 @@
       "published_at": "2026-07-27T17:24:50Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-27T23:36:59Z"
+      "observed_at": "2026-07-28T01:00:02Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -159,7 +160,7 @@
       "published_at": "2026-07-27T15:08:37Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-27T21:42:18Z"
+      "observed_at": "2026-07-28T01:00:02Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -179,7 +180,7 @@
       "published_at": "2026-07-27T08:36:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-27T23:36:59Z"
+      "observed_at": "2026-07-28T01:00:02Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -199,7 +200,7 @@
       "published_at": "2026-07-27T03:54:44Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-27T23:36:59Z"
+      "observed_at": "2026-07-28T01:00:02Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -249,7 +250,7 @@
       "published_at": "2026-07-26T22:11:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-27T23:36:59Z"
+      "observed_at": "2026-07-28T01:00:02Z"
     },
     {
       "signal": "RISK_RESTRICTION",
