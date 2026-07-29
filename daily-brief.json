@@ -1,31 +1,31 @@
 {
   "schema_version": 1,
   "date": "2026-07-30",
-  "generated_at": "2026-07-29T22:31:48Z",
-  "source_checked_at": "2026-07-29T22:31:01Z",
+  "generated_at": "2026-07-29T23:36:15Z",
+  "source_checked_at": "2026-07-29T23:33:41Z",
   "status": "INCIERTO",
   "status_label_es": "INCIERTO",
   "status_label_en": "UNCERTAIN",
-  "operational_status": "HIGH_RISK_UNCONFIRMED",
-  "operational_label_es": "Riesgo elevado, estado no confirmado",
-  "operational_label_en": "High risk, status unconfirmed",
-  "confidence": "ALTA",
+  "operational_status": "NO_RECENT_CONFIRMATION",
+  "operational_label_es": "Sin confirmación reciente",
+  "operational_label_en": "No recent confirmation",
+  "confidence": "BAJA",
   "confidence_label": {
-    "es": "Alta",
-    "en": "High"
+    "es": "Baja",
+    "en": "Low"
   },
   "verification_ok": true,
   "stale": false,
-  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
-  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
-  "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
-  "change_en": "No material change in classification since the previous brief.",
+  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
+  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
+  "change_es": "El indicador cambia de «Riesgo elevado, estado no confirmado» a «Sin confirmación reciente».",
+  "change_en": "The indicator changes from “High risk, status unconfirmed” to “No recent confirmation”.",
   "risks_es": [
-    "El riesgo es elevado y no puede confirmarse de forma fiable si el paso está abierto o cerrado.",
+    "El estado requiere interpretación prudente.",
     "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
   ],
   "risks_en": [
-    "Risk is high and it cannot be reliably confirmed whether the passage is open or closed.",
+    "The status requires cautious interpretation.",
     "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
   ],
   "watchlist_es": [
@@ -81,6 +81,6 @@
     }
   ],
   "last_valid_confirmation": null,
-  "publish_recommended": false,
-  "material_hash": "de86ed0e1077477b"
+  "publish_recommended": true,
+  "material_hash": "6c5f540c03c88e26"
 }
