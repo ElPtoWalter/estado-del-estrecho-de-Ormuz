@@ -1,31 +1,31 @@
 {
   "schema_version": 1,
   "date": "2026-07-30",
-  "generated_at": "2026-07-29T23:36:15Z",
-  "source_checked_at": "2026-07-29T23:33:41Z",
+  "generated_at": "2026-07-30T00:57:07Z",
+  "source_checked_at": "2026-07-30T00:56:21Z",
   "status": "INCIERTO",
   "status_label_es": "INCIERTO",
   "status_label_en": "UNCERTAIN",
-  "operational_status": "NO_RECENT_CONFIRMATION",
-  "operational_label_es": "Sin confirmación reciente",
-  "operational_label_en": "No recent confirmation",
-  "confidence": "BAJA",
+  "operational_status": "HIGH_RISK_UNCONFIRMED",
+  "operational_label_es": "Riesgo elevado, estado no confirmado",
+  "operational_label_en": "High risk, status unconfirmed",
+  "confidence": "ALTA",
   "confidence_label": {
-    "es": "Baja",
-    "en": "Low"
+    "es": "Alta",
+    "en": "High"
   },
   "verification_ok": true,
   "stale": false,
-  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
-  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
-  "change_es": "El indicador cambia de «Riesgo elevado, estado no confirmado» a «Sin confirmación reciente».",
-  "change_en": "The indicator changes from “High risk, status unconfirmed” to “No recent confirmation”.",
+  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+  "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+  "change_en": "No material change in classification since the previous brief.",
   "risks_es": [
-    "El estado requiere interpretación prudente.",
+    "El riesgo es elevado y no puede confirmarse de forma fiable si el paso está abierto o cerrado.",
     "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
   ],
   "risks_en": [
-    "The status requires cautious interpretation.",
+    "Risk is high and it cannot be reliably confirmed whether the passage is open or closed.",
     "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
   ],
   "watchlist_es": [
@@ -41,10 +41,18 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran pushes back against US as regional attacks heat up - Al Jazeera",
+      "title": "Saudi Arabia seeks international coalition against Houthis in Red Sea",
       "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPVUF2bnZ4SlNDMXk1UXBmZElvSlRsZ3BYcjc5ZG1FbE0yZS01eEZLcmFibGpGbTBLWWhuZllhaThfbGh0YXZKQzF0WUl2akdDaUVXNmU1QnpfVVBmNG1JVl9UTndVLWp0ZUxTOGVCZlg3VjZEU2JrNnJFdkdmcEMxX0xmUEtoLVN0MGpqUjBuX193cnJycVFhb0lNay3SAaIBQVVfeXFMTjhhRVlqVDl6UjAteENodEU4cjdPQkxFenZycWRyaWVxTmI0ZEhfUm1ycHhfYXBDTkxObnNpcGcyVEE5VWZxYzhBdTdLNDdzUkV4WjlON3B1SlhxX0U3SlpqMU5PQzhWMEVKdFpsbTR3T1V3Um5wZkZmUFNnY2FiRkdIbGhtcEgzU3hNTFhUTkYyeHVVcmlVd2FxVEprTExqSnBR?oc=5",
-      "published_at": "2026-07-29T17:48:31Z",
+      "source_url": "https://www.aljazeera.com/news/2026/7/29/saudi-arabia-seeks-international-coalition-against-houthis-in-red-sea",
+      "published_at": "2026-07-30T00:15:00Z",
+      "official": false
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran launches renewed missile attacks as US and Saudis strike Tehran-backed militias in Iraq - AP News",
+      "source_name": "Associated Press",
+      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcFZvamthZTNrZ0JiSDZZMVJBNW02Y1JiQUlvUlAwN1RRODcyUWNydUtZbGxpVVdhZElfTERINDh6ZURJZll3M25weWk4UVFPczliQWZ0MkRUc09VTTQ0X1BMVDBDa0hMdzE0TjBlYmI3UkJpYl9KZDFYMTFsZ05jNnd0Zm9wUHEwTlJObUEycG1BNTVqVTVQWjl5NnJqdEE?oc=5",
+      "published_at": "2026-07-29T22:29:00Z",
       "official": false
     },
     {
@@ -53,14 +61,6 @@
       "source_name": "The Guardian",
       "source_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPUnhldC1JdU5femNoX1VfRUkycHJIWE00Q1hqR1dhV2tpX0JWbm9pMmJjWUdod2Jib01KRjhzNTRNUU5tQ0UxZkN3eTZhcl9pVFJtYzUxRUQwcVNjWk8tb21BS2t0c0drM1hGRU9TMUlLWGtpb2RrNmFhS3ZoYVEweHZaNjM5SE0?oc=5",
       "published_at": "2026-07-29T00:12:00Z",
-      "official": false
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Mediators see progress in efforts to halt Iran war as drone attacks rattle region - AP News",
-      "source_name": "Associated Press",
-      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQa2M1am9JRVdmbUE2TTF1ZG5ya1dXNjVjdWUtVngzX09jamxQNk1idEJoNDBCY2Y2dlpURUpYb1Q3WTY0Qk84ZEd5V0FYaHVHakFGbmtKbEhOTy0xYmdLUnZIN3JlcS1yWXZTbnVTYlBlcVg5NUx2eGZFT0VmM0FhQkZYS2pZZHJJMlp4SmtVZkpKTmZwOTZOM2g1S3FtMGhYdWc?oc=5",
-      "published_at": "2026-07-28T01:41:00Z",
       "official": false
     },
     {
@@ -81,6 +81,6 @@
     }
   ],
   "last_valid_confirmation": null,
-  "publish_recommended": true,
-  "material_hash": "6c5f540c03c88e26"
+  "publish_recommended": false,
+  "material_hash": "5aad8c1edb3dc1ae"
 }
