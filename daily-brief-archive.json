@@ -1,6 +1,92 @@
 [
   {
     "schema_version": 1,
+    "date": "2026-07-31",
+    "generated_at": "2026-07-30T22:38:54Z",
+    "source_checked_at": "2026-07-30T22:38:36Z",
+    "status": "INCIERTO",
+    "status_label_es": "INCIERTO",
+    "status_label_en": "UNCERTAIN",
+    "operational_status": "HIGH_RISK_UNCONFIRMED",
+    "operational_label_es": "Riesgo elevado, estado no confirmado",
+    "operational_label_en": "High risk, status unconfirmed",
+    "confidence": "ALTA",
+    "confidence_label": {
+      "es": "Alta",
+      "en": "High"
+    },
+    "verification_ok": true,
+    "stale": false,
+    "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+    "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
+    "risks_es": [
+      "El riesgo es elevado y no puede confirmarse de forma fiable si el paso está abierto o cerrado.",
+      "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+    ],
+    "risks_en": [
+      "Risk is high and it cannot be reliably confirmed whether the passage is open or closed.",
+      "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
+    ],
+    "watchlist_es": [
+      "Avisos marítimos oficiales y confirmaciones operativas independientes.",
+      "Trayectorias completas de buques y continuidad real de los cruces, no puntos AIS aislados.",
+      "Cambios en restricciones, seguros, escoltas, puertos y disponibilidad de tripulaciones."
+    ],
+    "watchlist_en": [
+      "Official maritime notices and independent operational confirmations.",
+      "Completed vessel tracks and actual continuity of crossings, not isolated AIS points.",
+      "Changes in restrictions, insurance, escorts, ports and crew availability."
+    ],
+    "evidence": [
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US Senate rejects bid to rein in Trump authority over Iran war | US Senate",
+        "source_name": "The Guardian",
+        "source_url": "https://www.theguardian.com/us-news/2026/jul/30/donald-trump-senate-iran-war-power",
+        "published_at": "2026-07-30T19:29:15Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US launches 'heavy wave' of new attacks on Iran - Al Jazeera",
+        "source_name": "Al Jazeera",
+        "source_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZUJwNER6Z1d6T0p5aVBwUnpZM2JUQWFxR2pSdVB4cVhCVGZkRDBvcVV4WDMwS0hEUDhpNTdWaEszeURRc1otQnJ3Z0toUlF3bThfN1Zvam5EYlItMU5JVU0yalYyT0RFS29Ycl9WSXZzUnpkQ004SmRfMFR3SUZRdmg0a3FBckd0LVhFMlNB0gGTAUFVX3lxTE1id1NxcERIelVSWk9aamxvSE1tQ3duZkY5VFRPVm5hQzd4bEp6MENxeXNjRlhIczlvbG1ZQ19HeHJxY2JNOE5LVHVqMGhYeGhGa3Z6QjZnNjhQcjRBcHNXeVRObXN4a2l6WUtxcUpTalNYSEdRR3k5dEJKN3lFZjEwcFFzLVFzZkx1NXJsMFByQnJWZw?oc=5",
+        "published_at": "2026-07-30T13:07:32Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US launches 'heavy' strikes on Iran after attempted attack on American troops - BBC",
+        "source_name": "BBC",
+        "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBTU0lxSXpCeTVrS1JXemlVdmNyZ2NjaDhpWFhCY2hwa2pmdk5yblB4M2FBN3cwQU9RTWJCRTJCTDFGaHZEZC1ENUEwdGFCLUhrY1VrZU1GVHhOZw?oc=5",
+        "published_at": "2026-07-30T10:49:14Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Drone strike near Suez Canal in Egypt raises new security threat in widening war - Reuters",
+        "source_name": "Reuters",
+        "source_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNUjlxdTM1SnYtZ3Bzei1qLUpRXzlYanVpb1MwNnRuQjY2NmkzZHNTeEl5cGljWGE5VDQ5ZHF0djVzVnV5OEprZWdlWUpPMV9fanYyN1N5cHdhbkxBZC1fZTlHWmpRMG8zdlRZV0hLSW9nTHU0S3JDZU44WWVHbnhWZVhRTVJ1Z0RaM25nR09fTFNTMUR2SVNkVXdlVHpDZHRmMXlJdDN3?oc=5",
+        "published_at": "2026-07-30T06:30:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US launches strikes on Iranian targets a day after it foiled missile attack on American forces - AP News",
+        "source_name": "Associated Press",
+        "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcFZvamthZTNrZ0JiSDZZMVJBNW02Y1JiQUlvUlAwN1RRODcyUWNydUtZbGxpVVdhZElfTERINDh6ZURJZll3M25weWk4UVFPczliQWZ0MkRUc09VTTQ0X1BMVDBDa0hMdzE0TjBlYmI3UkJpYl9KZDFYMTFsZ05jNnd0Zm9wUHEwTlJObUEycG1BNTVqVTVQWjl5NnJqdEE?oc=5",
+        "published_at": "2026-07-30T03:47:00Z",
+        "official": false
+      }
+    ],
+    "last_valid_confirmation": null,
+    "publish_recommended": false,
+    "material_hash": "ba52af748c51a356"
+  },
+  {
+    "schema_version": 1,
     "date": "2026-07-30",
     "generated_at": "2026-07-30T20:44:37Z",
     "source_checked_at": "2026-07-30T20:44:00Z",

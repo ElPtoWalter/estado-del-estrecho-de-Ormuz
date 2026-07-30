@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-30T20:44:00Z",
-  "last_success_at": "2026-07-30T20:44:00Z",
+  "checked_at": "2026-07-30T22:38:36Z",
+  "last_success_at": "2026-07-30T22:38:36Z",
   "last_change_at": "2026-07-30T00:56:21Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-07-30T06:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-30T20:44:00Z"
+      "observed_at": "2026-07-30T22:38:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,17 @@
       "published_at": "2026-07-30T03:47:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-30T20:44:00Z"
+      "observed_at": "2026-07-30T22:38:36Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US Senate rejects bid to rein in Trump authority over Iran war | US Senate",
+      "source_name": "The Guardian",
+      "source_url": "https://www.theguardian.com/us-news/2026/jul/30/donald-trump-senate-iran-war-power",
+      "published_at": "2026-07-30T19:29:15Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-30T22:38:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +52,7 @@
       "published_at": "2026-07-30T10:49:14Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-30T20:44:00Z"
+      "observed_at": "2026-07-30T22:38:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +62,7 @@
       "published_at": "2026-07-30T13:07:32Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-30T20:44:00Z"
+      "observed_at": "2026-07-30T22:38:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,32 +72,21 @@
       "published_at": "2026-07-30T00:46:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-30T20:44:00Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US joins forces with Saudis to strike Tehran-backed militias in Iraq - theguardian.com",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPUnhldC1JdU5femNoX1VfRUkycHJIWE00Q1hqR1dhV2tpX0JWbm9pMmJjWUdod2Jib01KRjhzNTRNUU5tQ0UxZkN3eTZhcl9pVFJtYzUxRUQwcVNjWk8tb21BS2t0c0drM1hGRU9TMUlLWGtpb2RrNmFhS3ZoYVEweHZaNjM5SE0?oc=5",
-      "published_at": "2026-07-29T00:12:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-30T20:44:00Z"
+      "observed_at": "2026-07-30T22:38:36Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 16.83
+      "risk": 17.535
     },
     "independent_sources": {
       "open": 0,
@@ -95,8 +94,8 @@
       "declared": 0,
       "risk": 7
     },
-    "articles_considered": 48,
-    "signals_considered": 20,
+    "articles_considered": 50,
+    "signals_considered": 21,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -104,7 +103,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-30T13:07:32Z",
+    "as_of": "2026-07-30T19:29:15Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -114,13 +113,23 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "US Senate rejects bid to rein in Trump authority over Iran war | US Senate",
+      "source_name": "The Guardian",
+      "source_url": "https://www.theguardian.com/us-news/2026/jul/30/donald-trump-senate-iran-war-power",
+      "published_at": "2026-07-30T19:29:15Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-30T22:38:36Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "US launches 'heavy wave' of new attacks on Iran - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZUJwNER6Z1d6T0p5aVBwUnpZM2JUQWFxR2pSdVB4cVhCVGZkRDBvcVV4WDMwS0hEUDhpNTdWaEszeURRc1otQnJ3Z0toUlF3bThfN1Zvam5EYlItMU5JVU0yalYyT0RFS29Ycl9WSXZzUnpkQ004SmRfMFR3SUZRdmg0a3FBckd0LVhFMlNB0gGTAUFVX3lxTE1id1NxcERIelVSWk9aamxvSE1tQ3duZkY5VFRPVm5hQzd4bEp6MENxeXNjRlhIczlvbG1ZQ19HeHJxY2JNOE5LVHVqMGhYeGhGa3Z6QjZnNjhQcjRBcHNXeVRObXN4a2l6WUtxcUpTalNYSEdRR3k5dEJKN3lFZjEwcFFzLVFzZkx1NXJsMFByQnJWZw?oc=5",
       "published_at": "2026-07-30T13:07:32Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-30T20:44:00Z"
+      "observed_at": "2026-07-30T22:38:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -140,7 +149,7 @@
       "published_at": "2026-07-30T10:49:14Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-30T20:44:00Z"
+      "observed_at": "2026-07-30T22:38:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -170,7 +179,7 @@
       "published_at": "2026-07-30T06:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-30T20:44:00Z"
+      "observed_at": "2026-07-30T22:38:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -200,7 +209,7 @@
       "published_at": "2026-07-30T03:47:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-30T20:44:00Z"
+      "observed_at": "2026-07-30T22:38:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -220,7 +229,7 @@
       "published_at": "2026-07-30T00:46:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-30T20:44:00Z"
+      "observed_at": "2026-07-30T22:38:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -701,16 +710,6 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-07-26T20:31:31Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Trump paused attacks on Iran to make space for talks, US ambassador says - BBC",
-      "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1yajhrWmo5YjBuaUNBdG5WS0c1RmFNVEMtck1kT3dDMjVrSmhENkVTOTB4c0hWYXVqRUV4WVBNeVVzeTJJV0JRd2tOcXY1OXo1b0VSLUdyR0lUaksx?oc=5",
-      "published_at": "2026-07-26T18:04:53Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-27T08:56:15Z"
     }
   ]
 }
