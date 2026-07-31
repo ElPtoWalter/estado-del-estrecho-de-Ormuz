@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-31T05:04:43Z",
-  "last_success_at": "2026-07-31T05:04:43Z",
+  "checked_at": "2026-07-31T08:17:48Z",
+  "last_success_at": "2026-07-31T08:17:48Z",
   "last_change_at": "2026-07-30T00:56:21Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,27 @@
       "published_at": "2026-07-30T03:47:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-31T05:04:43Z"
+      "observed_at": "2026-07-31T08:17:48Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Middle East crisis live : Trump claims Gaza deal reached ; Iran targets US bases in Kuwait",
+      "source_name": "The Guardian",
+      "source_url": "https://www.theguardian.com/world/live/2026/jul/31/us-iran-war-live-updates-trump-claims-gaza-hamas-deal-middle-east-crisis-latest-news",
+      "published_at": "2026-07-31T08:05:34Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-31T08:17:48Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil price : Strait of Hormuz crude flows recover , Trump Iran tariff push",
+      "source_name": "CNBC",
+      "source_url": "https://www.cnbc.com/2026/07/31/oil-prices-today-brent-wti-hormuz-trump-iran-.html",
+      "published_at": "2026-07-31T04:10:47Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-07-31T08:17:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +52,7 @@
       "published_at": "2026-07-30T10:49:14Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-31T05:04:43Z"
+      "observed_at": "2026-07-31T08:17:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +62,7 @@
       "published_at": "2026-07-29T03:29:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-31T05:04:43Z"
+      "observed_at": "2026-07-31T08:17:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,42 +72,21 @@
       "published_at": "2026-07-30T13:07:32Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-31T05:04:43Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran says it will 'punish the aggressor today' after 'heavy wave' of U.S. strikes - cnbc.com",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9XNEQtTmI4b05ld1AyOTdUWUFTQ2ZRN2N0a1NOa25VeUN3VzhKMGpCMGprYktVek1rOVhXWTlkR2l0Y3hYNFNjdkkwV2NQRWN4S0NkVEIyTmZQMnZycHlJb2hlbHRpaFhZRjdka016X25CaFp0TGJVbmhB0gF_QVVfeXFMTTZOb1R6MDkyQXpaZmtHbHZQM05kUjJTZHBpMWsxNzRraWFReE0tOXptdkFyWE51eVctZUdTaDFiU0p6cWU4eTZXRi1XMXktOFdRbm9hNzFIOEwzd3RRXzNVM203SHYxMklMbXdXdkNHcnNLQmpwclVNZHVOYlBrdw?oc=5",
-      "published_at": "2026-07-30T00:46:00Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-07-31T05:04:43Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US joins forces with Saudis to strike Tehran-backed militias in Iraq - The Guardian",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPUnhldC1JdU5femNoX1VfRUkycHJIWE00Q1hqR1dhV2tpX0JWbm9pMmJjWUdod2Jib01KRjhzNTRNUU5tQ0UxZkN3eTZhcl9pVFJtYzUxRUQwcVNjWk8tb21BS2t0c0drM1hGRU9TMUlLWGtpb2RrNmFhS3ZoYVEweHZaNjM5SE0?oc=5",
-      "published_at": "2026-07-29T00:12:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-31T05:04:43Z"
+      "observed_at": "2026-07-31T08:17:48Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 14.35
+      "risk": 15.92
     },
     "independent_sources": {
       "open": 0,
@@ -95,7 +94,7 @@
       "declared": 0,
       "risk": 7
     },
-    "articles_considered": 47,
+    "articles_considered": 45,
     "signals_considered": 19,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
@@ -104,7 +103,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-07-30T13:07:32Z",
+    "as_of": "2026-07-31T08:05:34Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -112,6 +111,26 @@
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Middle East crisis live : Trump claims Gaza deal reached ; Iran targets US bases in Kuwait",
+      "source_name": "The Guardian",
+      "source_url": "https://www.theguardian.com/world/live/2026/jul/31/us-iran-war-live-updates-trump-claims-gaza-hamas-deal-middle-east-crisis-latest-news",
+      "published_at": "2026-07-31T08:05:34Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-31T08:17:48Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil price : Strait of Hormuz crude flows recover , Trump Iran tariff push",
+      "source_name": "CNBC",
+      "source_url": "https://www.cnbc.com/2026/07/31/oil-prices-today-brent-wti-hormuz-trump-iran-.html",
+      "published_at": "2026-07-31T04:10:47Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-07-31T08:17:48Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "US Senate rejects bid to rein in Trump authority over Iran war | US Senate",
@@ -130,7 +149,7 @@
       "published_at": "2026-07-30T13:07:32Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-31T05:04:43Z"
+      "observed_at": "2026-07-31T08:17:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -150,7 +169,7 @@
       "published_at": "2026-07-30T10:49:14Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-31T05:04:43Z"
+      "observed_at": "2026-07-31T08:17:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -210,7 +229,7 @@
       "published_at": "2026-07-30T03:47:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-31T05:04:43Z"
+      "observed_at": "2026-07-31T08:17:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -410,7 +429,7 @@
       "published_at": "2026-07-29T03:29:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-31T05:04:43Z"
+      "observed_at": "2026-07-31T08:17:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -691,26 +710,6 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-07-27T12:43:06Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran says it will halt strikes as long as US bombing pause holds - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQT2hvLTRwU3J1WVZCTlA0WFVNRmhXdDVkTWhwQkdDTFZzbEVpYmRBUUppcjJudFY2M3JpQ3lzT0I0SkM4VFlmSk8xb0RuX192WjQ2dE9nbjJkUFFMTHFyZDh2c1ktdDJpSmtmdXJPYW5wNXRuM1hsQ0RqYkE4X3d1aDZ1SkpUM3ltc0h2NFNZbmpvZFhYa0ZJTlEyR0JkdDZvYWRUYXBRZE41YkVEdjV4VEZVb0hSSUxOQlFwT1U4X1FfNjJrbmhaSVkyT0w0Zw?oc=5",
-      "published_at": "2026-07-26T22:26:07Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-07-27T01:11:18Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil prices settle at lowest in over a week, as US pauses attacks on Iran - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZXVDd2dEeUdKdzZkTFduSnE1cGp0S2YtaGwyNTRxekczRW5TdGdtM3JGTFFtYlNiSzNsTVFmTzlYZ0ttZmtJdGtjU3g4U0FPUnFPenFkaWp3ZENtbzFGVFdtUk11TzRSbzg3dmZvWVFqRHZDR3FBZEpxR2dSZEUwU0w3d0pRUkVHd3dWZXg3Yk95SjdMbUZxdDEyTDlaRHdFN3JXLQ?oc=5",
-      "published_at": "2026-07-26T22:11:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-07-28T01:00:02Z"
     }
   ]
 }
