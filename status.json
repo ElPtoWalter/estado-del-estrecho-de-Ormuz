@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-07-31T21:41:11Z",
-  "last_success_at": "2026-07-31T21:41:11Z",
+  "checked_at": "2026-07-31T23:33:10Z",
+  "last_success_at": "2026-07-31T23:33:10Z",
   "last_change_at": "2026-07-30T00:56:21Z",
   "verification_ok": true,
   "stale": false,
@@ -22,17 +22,7 @@
       "published_at": "2026-07-31T14:11:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-31T21:41:11Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US launches 'heavy' strikes on Iran after attempted attack on American troops - BBC",
-      "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBTU0lxSXpCeTVrS1JXemlVdmNyZ2NjaDhpWFhCY2hwa2pmdk5yblB4M2FBN3cwQU9RTWJCRTJCTDFGaHZEZC1ENUEwdGFCLUhrY1VrZU1GVHhOZw?oc=5",
-      "published_at": "2026-07-30T10:49:14Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-31T21:41:11Z"
+      "observed_at": "2026-07-31T23:33:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +32,7 @@
       "published_at": "2026-07-31T06:44:06Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-31T21:41:11Z"
+      "observed_at": "2026-07-31T23:33:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +42,7 @@
       "published_at": "2026-07-30T03:47:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-31T21:41:11Z"
+      "observed_at": "2026-07-31T23:33:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,31 +52,42 @@
       "published_at": "2026-07-29T03:29:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-31T21:41:11Z"
+      "observed_at": "2026-07-31T23:33:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "US launches 'heavy wave' of new attacks on Iran - Al Jazeera",
+      "title": "US launches 'heavy wave' of new attacks on Iran - aljazeera.com",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZUJwNER6Z1d6T0p5aVBwUnpZM2JUQWFxR2pSdVB4cVhCVGZkRDBvcVV4WDMwS0hEUDhpNTdWaEszeURRc1otQnJ3Z0toUlF3bThfN1Zvam5EYlItMU5JVU0yalYyT0RFS29Ycl9WSXZzUnpkQ004SmRfMFR3SUZRdmg0a3FBckd0LVhFMlNB0gGTAUFVX3lxTE1id1NxcERIelVSWk9aamxvSE1tQ3duZkY5VFRPVm5hQzd4bEp6MENxeXNjRlhIczlvbG1ZQ19HeHJxY2JNOE5LVHVqMGhYeGhGa3Z6QjZnNjhQcjRBcHNXeVRObXN4a2l6WUtxcUpTalNYSEdRR3k5dEJKN3lFZjEwcFFzLVFzZkx1NXJsMFByQnJWZw?oc=5",
       "published_at": "2026-07-30T13:07:32Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-31T21:41:11Z"
+      "observed_at": "2026-07-31T23:33:10Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US launches 'heavy' strikes on Iran after attempted attack on American troops - BBC",
+      "source_name": "BBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBTU0lxSXpCeTVrS1JXemlVdmNyZ2NjaDhpWFhCY2hwa2pmdk5yblB4M2FBN3cwQU9RTWJCRTJCTDFGaHZEZC1ENUEwdGFCLUhrY1VrZU1GVHhOZw?oc=5",
+      "published_at": "2026-07-30T10:49:14Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-07-31T23:33:10Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 2.1,
       "closed": 0,
       "declared": 0,
-      "risk": 13.46
+      "risk": 12.82
     },
     "independent_sources": {
       "open": 1,
@@ -94,8 +95,8 @@
       "declared": 0,
       "risk": 6
     },
-    "articles_considered": 46,
-    "signals_considered": 16,
+    "articles_considered": 42,
+    "signals_considered": 15,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -139,7 +140,7 @@
       "published_at": "2026-07-31T06:44:06Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-07-31T21:41:11Z"
+      "observed_at": "2026-07-31T23:33:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -163,6 +164,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "US launches 'heavy wave' of new attacks on Iran - aljazeera.com",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZUJwNER6Z1d6T0p5aVBwUnpZM2JUQWFxR2pSdVB4cVhCVGZkRDBvcVV4WDMwS0hEUDhpNTdWaEszeURRc1otQnJ3Z0toUlF3bThfN1Zvam5EYlItMU5JVU0yalYyT0RFS29Ycl9WSXZzUnpkQ004SmRfMFR3SUZRdmg0a3FBckd0LVhFMlNB0gGTAUFVX3lxTE1id1NxcERIelVSWk9aamxvSE1tQ3duZkY5VFRPVm5hQzd4bEp6MENxeXNjRlhIczlvbG1ZQ19HeHJxY2JNOE5LVHVqMGhYeGhGa3Z6QjZnNjhQcjRBcHNXeVRObXN4a2l6WUtxcUpTalNYSEdRR3k5dEJKN3lFZjEwcFFzLVFzZkx1NXJsMFByQnJWZw?oc=5",
+      "published_at": "2026-07-30T13:07:32Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-07-31T23:33:10Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "US launches 'heavy wave' of new attacks on Iran - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZUJwNER6Z1d6T0p5aVBwUnpZM2JUQWFxR2pSdVB4cVhCVGZkRDBvcVV4WDMwS0hEUDhpNTdWaEszeURRc1otQnJ3Z0toUlF3bThfN1Zvam5EYlItMU5JVU0yalYyT0RFS29Ycl9WSXZzUnpkQ004SmRfMFR3SUZRdmg0a3FBckd0LVhFMlNB0gGTAUFVX3lxTE1id1NxcERIelVSWk9aamxvSE1tQ3duZkY5VFRPVm5hQzd4bEp6MENxeXNjRlhIczlvbG1ZQ19HeHJxY2JNOE5LVHVqMGhYeGhGa3Z6QjZnNjhQcjRBcHNXeVRObXN4a2l6WUtxcUpTalNYSEdRR3k5dEJKN3lFZjEwcFFzLVFzZkx1NXJsMFByQnJWZw?oc=5",
@@ -173,23 +184,13 @@
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "US launches 'heavy wave' of new attacks on Iran - aljazeera.com",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZUJwNER6Z1d6T0p5aVBwUnpZM2JUQWFxR2pSdVB4cVhCVGZkRDBvcVV4WDMwS0hEUDhpNTdWaEszeURRc1otQnJ3Z0toUlF3bThfN1Zvam5EYlItMU5JVU0yalYyT0RFS29Ycl9WSXZzUnpkQ004SmRfMFR3SUZRdmg0a3FBckd0LVhFMlNB0gGTAUFVX3lxTE1id1NxcERIelVSWk9aamxvSE1tQ3duZkY5VFRPVm5hQzd4bEp6MENxeXNjRlhIczlvbG1ZQ19HeHJxY2JNOE5LVHVqMGhYeGhGa3Z6QjZnNjhQcjRBcHNXeVRObXN4a2l6WUtxcUpTalNYSEdRR3k5dEJKN3lFZjEwcFFzLVFzZkx1NXJsMFByQnJWZw?oc=5",
-      "published_at": "2026-07-30T13:07:32Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-07-31T01:07:15Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
       "title": "US launches 'heavy' strikes on Iran after attempted attack on American troops - BBC",
       "source_name": "BBC",
       "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBTU0lxSXpCeTVrS1JXemlVdmNyZ2NjaDhpWFhCY2hwa2pmdk5yblB4M2FBN3cwQU9RTWJCRTJCTDFGaHZEZC1ENUEwdGFCLUhrY1VrZU1GVHhOZw?oc=5",
       "published_at": "2026-07-30T10:49:14Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-07-31T21:41:11Z"
+      "observed_at": "2026-07-31T23:33:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -249,7 +250,7 @@
       "published_at": "2026-07-30T03:47:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-07-31T21:41:11Z"
+      "observed_at": "2026-07-31T23:33:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
