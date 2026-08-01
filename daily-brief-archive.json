@@ -2,32 +2,32 @@
   {
     "schema_version": 1,
     "date": "2026-08-01",
-    "generated_at": "2026-08-01T14:10:03Z",
-    "source_checked_at": "2026-08-01T14:07:55Z",
+    "generated_at": "2026-08-01T15:39:27Z",
+    "source_checked_at": "2026-08-01T15:38:49Z",
     "status": "INCIERTO",
     "status_label_es": "INCIERTO",
     "status_label_en": "UNCERTAIN",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "operational_label_es": "Riesgo elevado, estado no confirmado",
     "operational_label_en": "High risk, status unconfirmed",
-    "confidence": "MEDIA",
+    "confidence": "ALTA",
     "confidence_label": {
-      "es": "Media",
-      "en": "Medium"
+      "es": "Alta",
+      "en": "High"
     },
     "verification_ok": true,
     "stale": false,
     "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
     "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
-    "change_es": "El indicador cambia de «Riesgo elevado, estado no confirmado» a «Riesgo elevado, estado no confirmado».",
-    "change_en": "The indicator changes from “High risk, status unconfirmed” to “High risk, status unconfirmed”.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
     "risks_es": [
       "El riesgo es elevado y no puede confirmarse de forma fiable si el paso está abierto o cerrado.",
-      "El ciclo contiene 2 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+      "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
     ],
     "risks_en": [
       "Risk is high and it cannot be reliably confirmed whether the passage is open or closed.",
-      "The cycle contains 2 highlighted evidence items; quantity does not replace independence or quality."
+      "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
     ],
     "watchlist_es": [
       "Avisos marítimos oficiales y confirmaciones operativas independientes.",
@@ -42,24 +42,48 @@
     "evidence": [
       {
         "signal": "RISK_RESTRICTION",
-        "title": "Tankers near Oman come under fire as Iran threatens shipping routes",
-        "source_name": "CNBC",
-        "source_url": "https://www.cnbc.com/2026/08/01/tankers-near-oman-come-under-fire.html",
-        "published_at": "2026-08-01T10:10:40Z",
+        "title": "Iran warns against 'fire of war' amid US strike threats on energy sites - Al Jazeera",
+        "source_name": "Al Jazeera",
+        "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdnVGdzU1TEZxRHNxVDc4SUJXMTViU1hYZkpXeXNnRlBvT29EdU16alJOajByWVI0WV9GU0pRY0twdWF1VGFsSklOc3BXd2ptQUFKMUJEcVREWVVFb1R4N3N1Y0pWdGlfZURLZElvaXpTdERVN2JLZmJ6TmhjU21ZZzhnQlZNeGhUUXlDdkpzeTBsU2FrRDhYMWE5VWhJb2hkaFpSYW9yVFkzWnJORFE?oc=5",
+        "published_at": "2026-08-01T12:52:54Z",
         "official": false
       },
       {
         "signal": "RISK_RESTRICTION",
-        "title": "The US war on Iran is spinning out of control | Mohamad Bazzi",
-        "source_name": "The Guardian",
-        "source_url": "https://www.theguardian.com/commentisfree/2026/aug/01/us-iran-war-trump-recession",
-        "published_at": "2026-08-01T09:00:49Z",
+        "title": "US Israel Iran War Latest News: UKMTO Reports Two Maritime Incidents Near Oman, Tanker Hit by Unknown Projectile - The Sunday Guardian",
+        "source_name": "The Sunday Guardian",
+        "source_url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPd004Q2hDb3JlZlBOTDNrRHN1WFpGYjJCTFhrcTBfR1dsbUVaT2poT0dSYmw2bHItMmlWZ2NucXpOa1RDQ01GUzdYZlNOOVZkX1dCUUxvVVdpbVA0VmhPNTM1V09GbmdLR01QNWFQQU5ub1haemhvZENvQ01obElmMDNtZlJIcHI2NGg0djdkN0ZWSWYwZmUxQkNDSDdib1ZocWVSVThoU2Z0b0h4dmNRdGE1MFEzelBGcGwweHlTN3VObjJJU0pxTUtGd3c5WVRxYkppVC1ucEo4NHhXbE1yUEJrTHRvdTVLQnNQdUMwZHXSAfABQVVfeXFMT3dNOENoQ29yZWZQTkwza0RzdVhaRmIyQkxYa3EwX0dXbG1FWk9qaE9HUmJsNmxyLTJpVmdjbnF6TmtUQ0NNRlM3WGZTTjlWZF9XQlFMb1VXaW1QNFZoTzUzNVdPRm5nS0dNUDVhUEFObm9YWnpob2RDb0NNaGxJZjAzbWZSSHByNjRoNHY3ZDdGVklmMGZlMUJDQ0g3Ym9WaHFlUlU4aFNmdG9IeHZjUXRhNTBRM3pQRnBsMHh5Uzd1Tm4ySVNKcU1LRnd3OVlUcWJKaVQtbnBKODR4V2xNclBCa0x0b3U1S0JzUHVDMGR1?oc=5",
+        "published_at": "2026-08-01T08:50:31Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Two reported attacks on tankers near Strait of Hormuz - Euronews",
+        "source_name": "Euronews",
+        "source_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOZ2RYVG5ZbFN6RF9HQ0J2M1cyaHJXdHlNeXcyZk1JeWFkRy1qSXZxNkhFdGczNDZHZDdCQVNoYWxWZXRGNWhVcWJ5T2xPc1RDNURkRG1aRUJDMUcxZlJBQ28wX3FhaWxPalNyRXRBWmVRcnZCeDFIZHpvNmU0M2dmS01Idk1YYURqMnN6X2FaWlpoTFE?oc=5",
+        "published_at": "2026-08-01T08:48:48Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Iran targets strategic U.S. assets in Kuwait, Bahrain after Egypt drone attack - CNBC",
+        "source_name": "CNBC",
+        "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1X0hXbllmbC1VM0U3V05GQ2VfTW5qVHlVYnlGbFFnOVZHWnpaX2toX2k4WmkwRnpFUzRzSHBpMDloWVUtWEFnX05pY1cwMm9IREtHa1FqSGRlTy1vOHM3ZENnanV3dE80R01aNjRB0gFzQVVfeXFMTzVaTkpwZndUQ3pUc0EzVy1uemk4WklPbGdSS3FrZ2N3Y3ZGUlpLTmNXVVl0WjlyLWNTbXRyV25xZTM1LVZzT0ZQM3RRMUNxWU0ydEI2SGdyVmQ5N0M2eG5VaU40eDVqQTVXNldyWTV1Zjljdw?oc=5",
+        "published_at": "2026-07-31T06:44:06Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US launches strikes on Iranian targets a day after it foiled missile attack on American forces - AP News",
+        "source_name": "Associated Press",
+        "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcFZvamthZTNrZ0JiSDZZMVJBNW02Y1JiQUlvUlAwN1RRODcyUWNydUtZbGxpVVdhZElfTERINDh6ZURJZll3M25weWk4UVFPczliQWZ0MkRUc09VTTQ0X1BMVDBDa0hMdzE0TjBlYmI3UkJpYl9KZDFYMTFsZ05jNnd0Zm9wUHEwTlJObUEycG1BNTVqVTVQWjl5NnJqdEE?oc=5",
+        "published_at": "2026-07-30T03:47:00Z",
         "official": false
       }
     ],
     "last_valid_confirmation": null,
-    "publish_recommended": true,
-    "material_hash": "dcf56e46d2d99859"
+    "publish_recommended": false,
+    "material_hash": "886b4891e0b51754"
   },
   {
     "schema_version": 1,
