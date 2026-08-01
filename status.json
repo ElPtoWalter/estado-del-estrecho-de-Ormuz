@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-08-01T15:38:49Z",
-  "last_success_at": "2026-08-01T15:38:49Z",
+  "checked_at": "2026-08-01T17:33:23Z",
+  "last_success_at": "2026-08-01T17:33:23Z",
   "last_change_at": "2026-07-30T00:56:21Z",
   "verification_ok": true,
   "stale": false,
@@ -22,17 +22,17 @@
       "published_at": "2026-08-01T08:50:31Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-01T15:38:49Z"
+      "observed_at": "2026-08-01T17:33:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran warns against 'fire of war' amid US strike threats on energy sites - Al Jazeera",
+      "title": "Iran warns against flames of war amid US strike threats on energy sites | US - Israel war on Iran News",
       "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdnVGdzU1TEZxRHNxVDc4SUJXMTViU1hYZkpXeXNnRlBvT29EdU16alJOajByWVI0WV9GU0pRY0twdWF1VGFsSklOc3BXd2ptQUFKMUJEcVREWVVFb1R4N3N1Y0pWdGlfZURLZElvaXpTdERVN2JLZmJ6TmhjU21ZZzhnQlZNeGhUUXlDdkpzeTBsU2FrRDhYMWE5VWhJb2hkaFpSYW9yVFkzWnJORFE?oc=5",
-      "published_at": "2026-08-01T12:52:54Z",
+      "source_url": "https://www.aljazeera.com/news/2026/8/1/iran-warns-against-fire-of-war-amid-us-strike-threats-on-energy-sites",
+      "published_at": "2026-08-01T14:15:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-01T15:38:49Z"
+      "observed_at": "2026-08-01T17:33:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-07-30T03:47:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-01T15:38:49Z"
+      "observed_at": "2026-08-01T17:33:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +52,7 @@
       "published_at": "2026-07-29T23:34:01Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-01T15:38:49Z"
+      "observed_at": "2026-08-01T17:33:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,7 +62,7 @@
       "published_at": "2026-08-01T08:48:48Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-01T15:38:49Z"
+      "observed_at": "2026-08-01T17:33:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -72,17 +72,16 @@
       "published_at": "2026-07-31T06:44:06Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-01T15:38:49Z"
+      "observed_at": "2026-08-01T17:33:23Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 1.575,
       "closed": 0,
@@ -95,7 +94,7 @@
       "declared": 0,
       "risk": 7
     },
-    "articles_considered": 46,
+    "articles_considered": 49,
     "signals_considered": 17,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
@@ -104,7 +103,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-01T12:52:54Z",
+    "as_of": "2026-08-01T14:15:00Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -112,6 +111,16 @@
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran warns against flames of war amid US strike threats on energy sites | US - Israel war on Iran News",
+      "source_name": "Al Jazeera",
+      "source_url": "https://www.aljazeera.com/news/2026/8/1/iran-warns-against-fire-of-war-amid-us-strike-threats-on-energy-sites",
+      "published_at": "2026-08-01T14:15:00Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-01T17:33:23Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Iran warns against 'fire of war' amid US strike threats on energy sites - Al Jazeera",
@@ -150,7 +159,7 @@
       "published_at": "2026-08-01T08:50:31Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-01T15:38:49Z"
+      "observed_at": "2026-08-01T17:33:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -160,7 +169,7 @@
       "published_at": "2026-08-01T08:50:31Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-01T11:44:24Z"
+      "observed_at": "2026-08-01T15:38:49Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -170,7 +179,7 @@
       "published_at": "2026-08-01T08:48:48Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-01T15:38:49Z"
+      "observed_at": "2026-08-01T17:33:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -230,7 +239,7 @@
       "published_at": "2026-07-31T06:44:06Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-01T15:38:49Z"
+      "observed_at": "2026-08-01T17:33:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -350,7 +359,7 @@
       "published_at": "2026-07-30T03:47:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-01T15:38:49Z"
+      "observed_at": "2026-08-01T17:33:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -420,7 +429,7 @@
       "published_at": "2026-07-29T23:34:01Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-01T15:38:49Z"
+      "observed_at": "2026-08-01T17:33:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -701,16 +710,6 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-07-28T13:13:00Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil at one-week low as US and Iran pause attack; supply tension underpins - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSklqTGZRSVh1M0h3RXpnQWVxSFhReTZHdGZtakI4Skh5NGVuZnplUUVYRzRldjVmX2Mzald4bnJFNklGNnZ0QkRTeWhqb29OR2xzb0JVWkFTUEc4QTZBMDV4bU5TOWlMb2RQNE5EeVRuaXJvZE94azM3cnZEd25tTjNTNU9uZ2dVcnZOQnh3eVE4bmIxR0RTZk1Zb3pSNnlrYXdlQWJXOWxJLWs?oc=5",
-      "published_at": "2026-07-28T01:02:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-07-28T08:01:41Z"
     }
   ]
 }
