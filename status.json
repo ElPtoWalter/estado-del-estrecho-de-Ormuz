@@ -1,17 +1,17 @@
 {
   "engine_version": 3,
   "status": "INCIERTO",
-  "operational_status": "HIGH_RISK_UNCONFIRMED",
-  "operational_label_es": "Riesgo elevado, estado no confirmado",
-  "operational_label_en": "High risk, status unconfirmed",
-  "confidence": "ALTA",
-  "checked_at": "2026-08-02T17:34:59Z",
-  "last_success_at": "2026-08-02T17:34:59Z",
-  "last_change_at": "2026-07-30T00:56:21Z",
+  "operational_status": "NO_RECENT_CONFIRMATION",
+  "operational_label_es": "Sin confirmación reciente",
+  "operational_label_en": "No recent confirmation",
+  "confidence": "BAJA",
+  "checked_at": "2026-08-02T18:34:41Z",
+  "last_success_at": "2026-08-02T18:34:41Z",
+  "last_change_at": "2026-08-02T18:34:41Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
-  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
+  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
   "last_valid_confirmation": null,
   "evidence": [
     {
@@ -77,38 +77,39 @@
   ],
   "diagnostics": {
     "providers_ok": [
-      "Official maritime web search",
-      "GDELT",
-      "Google News RSS"
+      "Official maritime web search"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests",
+      "Google News RSS: HTTPError: HTTP Error 503: Service Unavailable"
+    ],
     "scores": {
-      "open": 1.155,
+      "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 13.87
+      "risk": 0
     },
     "independent_sources": {
-      "open": 1,
+      "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 7
+      "risk": 0
     },
-    "articles_considered": 48,
-    "signals_considered": 17,
-    "current_cycle_evidence": 6,
-    "evidence_display_mode": "current",
-    "evidence_archive_size": 60,
+    "articles_considered": 0,
+    "signals_considered": 0,
+    "current_cycle_evidence": 0,
+    "evidence_display_mode": "carried",
+    "evidence_archive_size": 59,
     "evidence_archive_days": 14
   },
   "evidence_context": {
-    "mode": "current",
+    "mode": "carried",
     "as_of": "2026-08-02T14:15:46Z",
-    "current_cycle_count": 6,
-    "heading_es": "Evidencias de esta comprobación",
-    "heading_en": "Evidence from this check",
-    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
-    "description_en": "Publishable signals found during the latest verification cycle."
+    "current_cycle_count": 0,
+    "heading_es": "Últimas evidencias disponibles",
+    "heading_en": "Latest available evidence",
+    "description_es": "La comprobación más reciente no aportó nuevas evidencias publicables. Estas señales proceden de ciclos anteriores y se muestran con su fecha real.",
+    "description_en": "The latest check produced no new publishable evidence. These signals come from earlier cycles and retain their actual publication dates."
   },
   "evidence_archive": [
     {
@@ -230,16 +231,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-02T17:34:59Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US Israel Iran War Latest News: UKMTO Reports Two Maritime Incidents Near Oman, Tanker Hit by Unknown Projectile - The Sunday Guardian",
-      "source_name": "The Sunday Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPd004Q2hDb3JlZlBOTDNrRHN1WFpGYjJCTFhrcTBfR1dsbUVaT2poT0dSYmw2bHItMmlWZ2NucXpOa1RDQ01GUzdYZlNOOVZkX1dCUUxvVVdpbVA0VmhPNTM1V09GbmdLR01QNWFQQU5ub1haemhvZENvQ01obElmMDNtZlJIcHI2NGg0djdkN0ZWSWYwZmUxQkNDSDdib1ZocWVSVThoU2Z0b0h4dmNRdGE1MFEzelBGcGwweHlTN3VObjJJU0pxTUtGd3c5WVRxYkppVC1ucEo4NHhXbE1yUEJrTHRvdTVLQnNQdUMwZHXSAfABQVVfeXFMT3dNOENoQ29yZWZQTkwza0RzdVhaRmIyQkxYa3EwX0dXbG1FWk9qaE9HUmJsNmxyLTJpVmdjbnF6TmtUQ0NNRlM3WGZTTjlWZF9XQlFMb1VXaW1QNFZoTzUzNVdPRm5nS0dNUDVhUEFObm9YWnpob2RDb0NNaGxJZjAzbWZSSHByNjRoNHY3ZDdGVklmMGZlMUJDQ0g3Ym9WaHFlUlU4aFNmdG9IeHZjUXRhNTBRM3pQRnBsMHh5Uzd1Tm4ySVNKcU1LRnd3OVlUcWJKaVQtbnBKODR4V2xNclBCa0x0b3U1S0JzUHVDMGR1?oc=5",
-      "published_at": "2026-08-01T08:50:31Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-02T15:40:18Z"
     },
     {
       "signal": "RISK_RESTRICTION",
