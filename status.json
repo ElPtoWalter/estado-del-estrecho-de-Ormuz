@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-08-02T10:16:07Z",
-  "last_success_at": "2026-08-02T10:16:07Z",
+  "checked_at": "2026-08-02T11:43:08Z",
+  "last_success_at": "2026-08-02T11:43:08Z",
   "last_change_at": "2026-07-30T00:56:21Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-01T22:33:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-02T10:16:07Z"
+      "observed_at": "2026-08-02T11:43:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-01T08:50:31Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-02T10:16:07Z"
+      "observed_at": "2026-08-02T11:43:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,17 +42,7 @@
       "published_at": "2026-08-02T09:54:16Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-02T10:16:07Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US launches 'heavy' strikes on Iran after attempted attack on American troops - BBC",
-      "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBTU0lxSXpCeTVrS1JXemlVdmNyZ2NjaDhpWFhCY2hwa2pmdk5yblB4M2FBN3cwQU9RTWJCRTJCTDFGaHZEZC1ENUEwdGFCLUhrY1VrZU1GVHhOZw?oc=5",
-      "published_at": "2026-07-30T10:49:14Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-08-02T10:16:07Z"
+      "observed_at": "2026-08-02T11:43:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,31 +52,42 @@
       "published_at": "2026-08-01T08:48:48Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-02T10:16:07Z"
+      "observed_at": "2026-08-02T11:43:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "US launches strikes on Iranian targets a day after it foiled missile attack on American forces - AP News",
+      "title": "US launches strikes on Iranian targets a day after it foiled missile attack on American forces - apnews.com",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcFZvamthZTNrZ0JiSDZZMVJBNW02Y1JiQUlvUlAwN1RRODcyUWNydUtZbGxpVVdhZElfTERINDh6ZURJZll3M25weWk4UVFPczliQWZ0MkRUc09VTTQ0X1BMVDBDa0hMdzE0TjBlYmI3UkJpYl9KZDFYMTFsZ05jNnd0Zm9wUHEwTlJObUEycG1BNTVqVTVQWjl5NnJqdEE?oc=5",
       "published_at": "2026-07-30T03:47:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-02T10:16:07Z"
+      "observed_at": "2026-08-02T11:43:08Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran targets strategic U.S. assets in Kuwait, Bahrain after Egypt drone attack - CNBC",
+      "source_name": "CNBC",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1X0hXbllmbC1VM0U3V05GQ2VfTW5qVHlVYnlGbFFnOVZHWnpaX2toX2k4WmkwRnpFUzRzSHBpMDloWVUtWEFnX05pY1cwMm9IREtHa1FqSGRlTy1vOHM3ZENnanV3dE80R01aNjRB0gFzQVVfeXFMTzVaTkpwZndUQ3pUc0EzVy1uemk4WklPbGdSS3FrZ2N3Y3ZGUlpLTmNXVVl0WjlyLWNTbXRyV25xZTM1LVZzT0ZQM3RRMUNxWU0ydEI2SGdyVmQ5N0M2eG5VaU40eDVqQTVXNldyWTV1Zjljdw?oc=5",
+      "published_at": "2026-07-31T06:44:06Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-02T11:43:08Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 1.155,
       "closed": 0,
       "declared": 0,
-      "risk": 15.11
+      "risk": 14.47
     },
     "independent_sources": {
       "open": 1,
@@ -94,8 +95,8 @@
       "declared": 0,
       "risk": 7
     },
-    "articles_considered": 38,
-    "signals_considered": 16,
+    "articles_considered": 37,
+    "signals_considered": 15,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -119,7 +120,7 @@
       "published_at": "2026-08-02T09:54:16Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-02T10:16:07Z"
+      "observed_at": "2026-08-02T11:43:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -139,7 +140,7 @@
       "published_at": "2026-08-01T22:33:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-02T10:16:07Z"
+      "observed_at": "2026-08-02T11:43:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -219,7 +220,7 @@
       "published_at": "2026-08-01T08:50:31Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-02T10:16:07Z"
+      "observed_at": "2026-08-02T11:43:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -229,7 +230,7 @@
       "published_at": "2026-08-01T08:50:31Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-02T07:50:29Z"
+      "observed_at": "2026-08-02T10:16:07Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -239,7 +240,7 @@
       "published_at": "2026-08-01T08:48:48Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-02T10:16:07Z"
+      "observed_at": "2026-08-02T11:43:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -299,7 +300,7 @@
       "published_at": "2026-07-31T06:44:06Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-01T18:32:15Z"
+      "observed_at": "2026-08-02T11:43:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -413,6 +414,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "US launches strikes on Iranian targets a day after it foiled missile attack on American forces - apnews.com",
+      "source_name": "Associated Press",
+      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcFZvamthZTNrZ0JiSDZZMVJBNW02Y1JiQUlvUlAwN1RRODcyUWNydUtZbGxpVVdhZElfTERINDh6ZURJZll3M25weWk4UVFPczliQWZ0MkRUc09VTTQ0X1BMVDBDa0hMdzE0TjBlYmI3UkJpYl9KZDFYMTFsZ05jNnd0Zm9wUHEwTlJObUEycG1BNTVqVTVQWjl5NnJqdEE?oc=5",
+      "published_at": "2026-07-30T03:47:00Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-08-02T11:43:08Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "US launches strikes on Iranian targets a day after it foiled missile attack on American forces - AP News",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcFZvamthZTNrZ0JiSDZZMVJBNW02Y1JiQUlvUlAwN1RRODcyUWNydUtZbGxpVVdhZElfTERINDh6ZURJZll3M25weWk4UVFPczliQWZ0MkRUc09VTTQ0X1BMVDBDa0hMdzE0TjBlYmI3UkJpYl9KZDFYMTFsZ05jNnd0Zm9wUHEwTlJObUEycG1BNTVqVTVQWjl5NnJqdEE?oc=5",
@@ -420,16 +431,6 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-08-02T10:16:07Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US launches strikes on Iranian targets a day after it foiled missile attack on American forces - apnews.com",
-      "source_name": "Associated Press",
-      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcFZvamthZTNrZ0JiSDZZMVJBNW02Y1JiQUlvUlAwN1RRODcyUWNydUtZbGxpVVdhZElfTERINDh6ZURJZll3M25weWk4UVFPczliQWZ0MkRUc09VTTQ0X1BMVDBDa0hMdzE0TjBlYmI3UkJpYl9KZDFYMTFsZ05jNnd0Zm9wUHEwTlJObUEycG1BNTVqVTVQWjl5NnJqdEE?oc=5",
-      "published_at": "2026-07-30T03:47:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-08-02T01:08:34Z"
     },
     {
       "signal": "RISK_RESTRICTION",
