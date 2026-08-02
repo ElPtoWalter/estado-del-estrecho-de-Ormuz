@@ -1,28 +1,28 @@
 {
   "engine_version": 3,
   "status": "INCIERTO",
-  "operational_status": "NO_RECENT_CONFIRMATION",
-  "operational_label_es": "Sin confirmación reciente",
-  "operational_label_en": "No recent confirmation",
-  "confidence": "BAJA",
-  "checked_at": "2026-08-02T18:34:41Z",
-  "last_success_at": "2026-08-02T18:34:41Z",
-  "last_change_at": "2026-08-02T18:34:41Z",
+  "operational_status": "HIGH_RISK_UNCONFIRMED",
+  "operational_label_es": "Riesgo elevado, estado no confirmado",
+  "operational_label_en": "High risk, status unconfirmed",
+  "confidence": "ALTA",
+  "checked_at": "2026-08-02T19:46:38Z",
+  "last_success_at": "2026-08-02T19:46:38Z",
+  "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
-  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
+  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
   "last_valid_confirmation": null,
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Trump says he will hold off on fresh Iran attack in hope of quick deal - Reuters",
+      "title": "Trump says US will hold off on fresh Iran attack in hope of quick deal - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOQnFCZlNtaWNsWjNfQzZYSUltNnlianRRMlRsUmVqWFNEWlEwWERhVmp5dVdSazcwNmo4bTNzQjNwcW1rS1pYSFRzUXZvUkF5dEFRYzY4T3Q4UUF0ZVBFLXlxVzA5YnRXZTliVWN0M2ZlcV9WVEw4ZjZqblVxOFJ6N2JmX1FMSk5HUXdLWWpOM2l1SWI3b0E2NHB5UU5rLUFRbjRXUEZ6ajZ1VUt1N0JIdURWT1VNbkVHX2UxUVU1b1lFTzY4aFNaOEJ5TTJJdw?oc=5",
       "published_at": "2026-08-01T22:33:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-02T17:34:59Z"
+      "observed_at": "2026-08-02T19:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,17 +32,27 @@
       "published_at": "2026-08-01T08:50:31Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-02T17:34:59Z"
+      "observed_at": "2026-08-02T19:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - Al Jazeera",
+      "title": "Saudi Crown Prince MBS urges Trump to prioritise dialogue in US - Iran war | US - Israel war on Iran News",
       "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUWJRMGhCUTV1M3RUVzBvR3dIeEJQNmtYQlZMNXpuNTFEZGZqMmJhMU1ZMWhDNVhGNm11VHVqUGZkZDRqak5jQzljSHQ5cDBoUTV6akVtZ1Aycm9lTHlwbVhFcGdXQVM5a1NtSEhDMncxWWYyWGJvMndKMktwMmJiVVV1ZzkybV93Z3ZnbVR5S2hBWFZYQk83VmNPN2Z1M0JSWUNuaVJvMEHSAa4BQVVfeXFMT2g3SWN5WGJFOXAyTFQxSE1xTmtBNWMxeGRIY2hpSV9kUnFZaGVaTVhqMUctN3V1MTViNWtwdjNMTWZxSHM4WDR1OFZLOGpqaFo4Q19Jc0dHUnlBd3E1NkY3NzJ3RDNWanhNS2dzNGo1MFhKS21pZ3VxdkV3SElfSmlQNUJrdmxiX0NjaXJTOXo0MTNJV3UtLWpnNURQSDY4ZTZvcmtPYjN4cDJtVlZB?oc=5",
-      "published_at": "2026-08-02T14:15:46Z",
+      "source_url": "https://www.aljazeera.com/news/2026/8/2/saudi-crown-prince-mbs-urges-trump-to-prioritise-dialogue-in-us-iran-war",
+      "published_at": "2026-08-02T18:00:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-02T17:34:59Z"
+      "observed_at": "2026-08-02T19:46:38Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Trump cancels planned attack on Iran, saying he reached an agreement over the 'perimeters of a deal' - CNBC",
+      "source_name": "CNBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNlJNSEJDbTFqdDBHa182OVo1X3hId1pwMG5kSE1DU2liRDRLMzhIVkkxbURMVFE3NDdyeDNKM3lCNURfQ1pvZGZmaU1jWGNCUkxvdUhIbXdnVEN4OHpoc25GMUpLNDdYWVBzeTJnc2YwWEIyMGhUcDdKXzNhbmI5U2FrQWpRY1N4dHNnUGV6dU9VaVdtdE5jdjNUQ2c4eEVDR1hjR0ZRNWHSAa4BQVVfeXFMT2hGWndFZkV5eE9RRTVkX1RnTDZRc3R5MnRQWmhwUFNSNFNMX1RIcHRwaXdQWFlMMjhydWNNSGtUa3g0YW9PNS1YLXM1OW9RYkxWUjA0THB2V0pUTFl2b29nYXdxLVRLNVBLU3JLUWlOeUZ1dWFjMy02WWVON2pTQWtsdTNSN01mSzZLT2RNRUkzSER1SXlCUlRIV2lYaEtFNlA1WW1nNWVlY2Vfa2F3?oc=5",
+      "published_at": "2026-08-02T07:47:37Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-02T19:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +62,7 @@
       "published_at": "2026-08-01T08:48:48Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-02T17:34:59Z"
+      "observed_at": "2026-08-02T19:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,56 +72,55 @@
       "published_at": "2026-07-30T03:47:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-02T17:34:59Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran targets strategic U.S. assets in Kuwait, Bahrain after Egypt drone attack - CNBC",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1X0hXbllmbC1VM0U3V05GQ2VfTW5qVHlVYnlGbFFnOVZHWnpaX2toX2k4WmkwRnpFUzRzSHBpMDloWVUtWEFnX05pY1cwMm9IREtHa1FqSGRlTy1vOHM3ZENnanV3dE80R01aNjRB0gFzQVVfeXFMTzVaTkpwZndUQ3pUc0EzVy1uemk4WklPbGdSS3FrZ2N3Y3ZGUlpLTmNXVVl0WjlyLWNTbXRyV25xZTM1LVZzT0ZQM3RRMUNxWU0ydEI2SGdyVmQ5N0M2eG5VaU40eDVqQTVXNldyWTV1Zjljdw?oc=5",
-      "published_at": "2026-07-31T06:44:06Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-02T17:34:59Z"
+      "observed_at": "2026-08-02T19:46:38Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
-      "Official maritime web search"
+      "Official maritime web search",
+      "GDELT",
+      "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests",
-      "Google News RSS: HTTPError: HTTP Error 503: Service Unavailable"
-    ],
+    "providers_failed": [],
     "scores": {
-      "open": 0,
+      "open": 1.155,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 14.745
     },
     "independent_sources": {
-      "open": 0,
+      "open": 1,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 7
     },
-    "articles_considered": 0,
-    "signals_considered": 0,
-    "current_cycle_evidence": 0,
-    "evidence_display_mode": "carried",
-    "evidence_archive_size": 59,
+    "articles_considered": 48,
+    "signals_considered": 18,
+    "current_cycle_evidence": 6,
+    "evidence_display_mode": "current",
+    "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
-    "mode": "carried",
-    "as_of": "2026-08-02T14:15:46Z",
-    "current_cycle_count": 0,
-    "heading_es": "Últimas evidencias disponibles",
-    "heading_en": "Latest available evidence",
-    "description_es": "La comprobación más reciente no aportó nuevas evidencias publicables. Estas señales proceden de ciclos anteriores y se muestran con su fecha real.",
-    "description_en": "The latest check produced no new publishable evidence. These signals come from earlier cycles and retain their actual publication dates."
+    "mode": "current",
+    "as_of": "2026-08-02T18:00:00Z",
+    "current_cycle_count": 6,
+    "heading_es": "Evidencias de esta comprobación",
+    "heading_en": "Evidence from this check",
+    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
+    "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Saudi Crown Prince MBS urges Trump to prioritise dialogue in US - Iran war | US - Israel war on Iran News",
+      "source_name": "Al Jazeera",
+      "source_url": "https://www.aljazeera.com/news/2026/8/2/saudi-crown-prince-mbs-urges-trump-to-prioritise-dialogue-in-us-iran-war",
+      "published_at": "2026-08-02T18:00:00Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-02T19:46:38Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - Al Jazeera",
@@ -134,6 +143,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Trump cancels planned attack on Iran, saying he reached an agreement over the 'perimeters of a deal' - CNBC",
+      "source_name": "CNBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNlJNSEJDbTFqdDBHa182OVo1X3hId1pwMG5kSE1DU2liRDRLMzhIVkkxbURMVFE3NDdyeDNKM3lCNURfQ1pvZGZmaU1jWGNCUkxvdUhIbXdnVEN4OHpoc25GMUpLNDdYWVBzeTJnc2YwWEIyMGhUcDdKXzNhbmI5U2FrQWpRY1N4dHNnUGV6dU9VaVdtdE5jdjNUQ2c4eEVDR1hjR0ZRNWHSAa4BQVVfeXFMT2hGWndFZkV5eE9RRTVkX1RnTDZRc3R5MnRQWmhwUFNSNFNMX1RIcHRwaXdQWFlMMjhydWNNSGtUa3g0YW9PNS1YLXM1OW9RYkxWUjA0THB2V0pUTFl2b29nYXdxLVRLNVBLU3JLUWlOeUZ1dWFjMy02WWVON2pTQWtsdTNSN01mSzZLT2RNRUkzSER1SXlCUlRIV2lYaEtFNlA1WW1nNWVlY2Vfa2F3?oc=5",
+      "published_at": "2026-08-02T07:47:37Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-02T19:46:38Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Trump says he is cancelling strikes on Iran subject to rapidly making deal",
       "source_name": "BBC",
       "source_url": "https://www.bbc.co.uk/news/articles/cjwx74qgld2o",
@@ -141,6 +160,16 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-08-02T04:57:57Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Trump says US will hold off on fresh Iran attack in hope of quick deal - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOQnFCZlNtaWNsWjNfQzZYSUltNnlianRRMlRsUmVqWFNEWlEwWERhVmp5dVdSazcwNmo4bTNzQjNwcW1rS1pYSFRzUXZvUkF5dEFRYzY4T3Q4UUF0ZVBFLXlxVzA5YnRXZTliVWN0M2ZlcV9WVEw4ZjZqblVxOFJ6N2JmX1FMSk5HUXdLWWpOM2l1SWI3b0E2NHB5UU5rLUFRbjRXUEZ6ajZ1VUt1N0JIdURWT1VNbkVHX2UxUVU1b1lFTzY4aFNaOEJ5TTJJdw?oc=5",
+      "published_at": "2026-08-01T22:33:00Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-08-02T19:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -230,6 +259,16 @@
       "published_at": "2026-08-01T08:50:31Z",
       "tier": 2,
       "official": false,
+      "observed_at": "2026-08-02T19:46:38Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US Israel Iran War Latest News: UKMTO Reports Two Maritime Incidents Near Oman, Tanker Hit by Unknown Projectile - The Sunday Guardian",
+      "source_name": "The Sunday Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPd004Q2hDb3JlZlBOTDNrRHN1WFpGYjJCTFhrcTBfR1dsbUVaT2poT0dSYmw2bHItMmlWZ2NucXpOa1RDQ01GUzdYZlNOOVZkX1dCUUxvVVdpbVA0VmhPNTM1V09GbmdLR01QNWFQQU5ub1haemhvZENvQ01obElmMDNtZlJIcHI2NGg0djdkN0ZWSWYwZmUxQkNDSDdib1ZocWVSVThoU2Z0b0h4dmNRdGE1MFEzelBGcGwweHlTN3VObjJJU0pxTUtGd3c5WVRxYkppVC1ucEo4NHhXbE1yUEJrTHRvdTVLQnNQdUMwZHXSAfABQVVfeXFMT3dNOENoQ29yZWZQTkwza0RzdVhaRmIyQkxYa3EwX0dXbG1FWk9qaE9HUmJsNmxyLTJpVmdjbnF6TmtUQ0NNRlM3WGZTTjlWZF9XQlFMb1VXaW1QNFZoTzUzNVdPRm5nS0dNUDVhUEFObm9YWnpob2RDb0NNaGxJZjAzbWZSSHByNjRoNHY3ZDdGVklmMGZlMUJDQ0g3Ym9WaHFlUlU4aFNmdG9IeHZjUXRhNTBRM3pQRnBsMHh5Uzd1Tm4ySVNKcU1LRnd3OVlUcWJKaVQtbnBKODR4V2xNclBCa0x0b3U1S0JzUHVDMGR1?oc=5",
+      "published_at": "2026-08-01T08:50:31Z",
+      "tier": 2,
+      "official": false,
       "observed_at": "2026-08-02T17:34:59Z"
     },
     {
@@ -240,7 +279,7 @@
       "published_at": "2026-08-01T08:48:48Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-02T17:34:59Z"
+      "observed_at": "2026-08-02T19:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -430,7 +469,7 @@
       "published_at": "2026-07-30T03:47:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-02T17:34:59Z"
+      "observed_at": "2026-08-02T19:46:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -671,36 +710,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-29T08:07:16Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US joins forces with Saudis to strike Tehran-backed militias in Iraq - The Guardian",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPUnhldC1JdU5femNoX1VfRUkycHJIWE00Q1hqR1dhV2tpX0JWbm9pMmJjWUdod2Jib01KRjhzNTRNUU5tQ0UxZkN3eTZhcl9pVFJtYzUxRUQwcVNjWk8tb21BS2t0c0drM1hGRU9TMUlLWGtpb2RrNmFhS3ZoYVEweHZaNjM5SE0?oc=5",
-      "published_at": "2026-07-29T00:12:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-31T13:16:10Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US joins forces with Saudis to strike Tehran-backed militias in Iraq - theguardian.com",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPUnhldC1JdU5femNoX1VfRUkycHJIWE00Q1hqR1dhV2tpX0JWbm9pMmJjWUdod2Jib01KRjhzNTRNUU5tQ0UxZkN3eTZhcl9pVFJtYzUxRUQwcVNjWk8tb21BS2t0c0drM1hGRU9TMUlLWGtpb2RrNmFhS3ZoYVEweHZaNjM5SE0?oc=5",
-      "published_at": "2026-07-29T00:12:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-30T20:44:00Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US thwarts 'surprise' Iran missile attack, and joins forces with Saudis to hit targets in Iraq - The Guardian",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPUnhldC1JdU5femNoX1VfRUkycHJIWE00Q1hqR1dhV2tpX0JWbm9pMmJjWUdod2Jib01KRjhzNTRNUU5tQ0UxZkN3eTZhcl9pVFJtYzUxRUQwcVNjWk8tb21BS2t0c0drM1hGRU9TMUlLWGtpb2RrNmFhS3ZoYVEweHZaNjM5SE0?oc=5",
-      "published_at": "2026-07-29T00:12:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-07-29T04:50:35Z"
     }
   ]
 }
