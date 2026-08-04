@@ -1,0 +1,61 @@
+name: Preparar segunda revisión AdSense V5
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: adsense-readiness-v5
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Aplicar preparación AdSense y validar
+        run: python prepare_adsense_retry_v5.py --apply
+
+      - name: Comprobar cambios
+        run: |
+          git diff --check
+          git status --short
+          cat adsense-readiness-report.json
+
+      - name: Guardar preparación
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add \
+            install_v11.py \
+            adsense_prerender.py \
+            adsense-readiness-report.json \
+            sitemap.xml \
+            ./*.html
+
+          if git diff --cached --quiet; then
+            echo "La preparación ya estaba aplicada."
+          else
+            git commit -m "Prepara la segunda revisión de AdSense"
+            git push
+          fi
+
+      - name: Ejecutar actualización completa
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-status.yml --ref main
