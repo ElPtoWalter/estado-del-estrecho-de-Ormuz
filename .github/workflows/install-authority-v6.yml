@@ -1,0 +1,48 @@
+name: Instalar Ormuz Authority V6
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: hormuz-authority-v6
+  cancel-in-progress: false
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar repositorio completo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Instalar Authority V6 y validar
+        run: python install_authority_v6.py
+      - name: Comprobar diff e informe
+        run: |
+          git diff --check
+          cat authority-v6-readiness.json
+          git status --short
+      - name: Guardar Authority V6
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Authority V6 ya estaba instalada."
+          else
+            git commit -m "Publica investigación original y transparencia Authority V6"
+            git push
+          fi
+      - name: Lanzar actualización completa
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-status.yml --ref main
