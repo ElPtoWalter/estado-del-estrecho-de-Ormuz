@@ -515,6 +515,12 @@ def main() -> int:
     ensure_ads_txt()
     patch_styles()
 
+    try:
+        from build_authority_report import build_reports
+        build_reports(ROOT)
+    except Exception as exc:
+        print(f"AVISO: informe Authority V6 no generado: {exc}")
+
     for path in ROOT.glob("*.html"):
         text = path.read_text(encoding="utf-8")
         english = is_english(text)
