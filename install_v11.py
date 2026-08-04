@@ -215,19 +215,81 @@ def remove_panel_links(text: str) -> str:
     return text
 
 
-def ensure_adsense_code(text: str) -> str:
-    """Añade el código oficial de AdSense una sola vez dentro de <head>."""
-    if re.search(r'pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js', text, re.I):
+def ensure_adsense_code(text: str, filename: str = "") -> str:
+    # ADSENSE_READINESS_V5:
+    # Keep ads only on editorial/content-rich pages. Tools, legal pages,
+    # archives and utility screens do not load Google ads.
+    monetizable_exact = {
+        "index.html", "en.html",
+        "analisis.html", "en-analysis.html",
+        "parte-diario.html", "en-daily-brief.html",
+        "importancia.html", "en-importance.html",
+        "metodologia.html", "en-methodology.html",
+        "fuentes.html", "en-sources.html",
+        "sobre.html", "en-about.html",
+    }
+    excluded = {
+        "404.html",
+        "alertas.html", "en-alerts.html",
+        "aviso-legal.html", "en-legal.html",
+        "privacidad.html", "en-privacy.html",
+        "cookies.html", "en-cookies.html",
+        "contacto.html", "en-contact.html",
+        "publicidad.html", "en-advertising.html",
+        "media-kit.html", "en-media-kit.html",
+        "historial.html", "en-history.html",
+        "evidencias.html", "en-evidence.html",
+        "embed.html", "en-embed.html",
+        "widget.html", "en-widget.html",
+        "social-studio.html", "en-social-studio.html",
+    }
+
+    text = re.sub(
+        r'\s*<!-- ADSENSE_V11_3_START -->.*?<!-- ADSENSE_V11_3_END -->\s*',
+        "\n",
+        text,
+        flags=re.I | re.S,
+    )
+    text = re.sub(
+        r'\s*<script\b[^>]*src=["\'][^"\']*pagead2\.googlesyndication\.com/'
+        r'pagead/js/adsbygoogle\.js[^"\']*["\'][^>]*>\s*</script>\s*',
+        "\n",
+        text,
+        flags=re.I | re.S,
+    )
+    text = re.sub(
+        r'\s*<meta\b[^>]*name=["\']google-adsense-account["\'][^>]*>\s*',
+        "\n",
+        text,
+        flags=re.I | re.S,
+    )
+
+    article_schema = bool(
+        re.search(
+            r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>'
+            r'.*?"@type"\s*:\s*"(?:Article|NewsArticle|AnalysisNewsArticle)"',
+            text,
+            re.I | re.S,
+        )
+    )
+    allowed = filename not in excluded and (
+        filename in monetizable_exact or article_schema
+    )
+    if not allowed:
         return text
 
     meta = f'<meta name="google-adsense-account" content="{ADSENSE_CLIENT}">'
-    additions = ADSENSE_SCRIPT
-    if not re.search(r'<meta\b[^>]*name=["\']google-adsense-account["\']', text, re.I):
-        additions = meta + "\n" + additions
-
+    additions = meta + "\n" + ADSENSE_SCRIPT
     if re.search(r'</head>', text, re.I):
-        return re.sub(r'</head>', additions + "\n</head>", text, count=1, flags=re.I)
+        return re.sub(
+            r'</head>',
+            additions + "\n</head>",
+            text,
+            count=1,
+            flags=re.I,
+        )
     return text
+
 
 
 def ensure_ads_txt() -> None:
@@ -457,7 +519,7 @@ def main() -> int:
         text = path.read_text(encoding="utf-8")
         english = is_english(text)
         text = remove_panel_links(text)
-        text = ensure_adsense_code(text)
+        text = ensure_adsense_code(text, path.name)
         text = ensure_css_link(text)
         text = patch_main_navigation(text, english)
         text = patch_footer(text, english)
@@ -478,6 +540,11 @@ def main() -> int:
         if path.exists():
             patch_article(path, True)
 
+    try:
+        from adsense_prerender import prerender_all
+        prerender_all(ROOT)
+    except Exception as exc:
+        print(f"AVISO: prerender AdSense no aplicado: {exc}")
     update_sitemap()
     update_text_files()
     print("V11.3 instalada: contenido integrado, AdSense añadido a los HTML y ads.txt preparado.")
