@@ -1,6 +1,84 @@
 [
   {
     "schema_version": 1,
+    "date": "2026-08-06",
+    "generated_at": "2026-08-05T23:31:13Z",
+    "source_checked_at": "2026-08-05T23:30:50Z",
+    "status": "INCIERTO",
+    "status_label_es": "INCIERTO",
+    "status_label_en": "UNCERTAIN",
+    "operational_status": "HIGH_RISK_UNCONFIRMED",
+    "operational_label_es": "Riesgo elevado, estado no confirmado",
+    "operational_label_en": "High risk, status unconfirmed",
+    "confidence": "MEDIA",
+    "confidence_label": {
+      "es": "Media",
+      "en": "Medium"
+    },
+    "verification_ok": true,
+    "stale": false,
+    "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+    "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
+    "risks_es": [
+      "El riesgo es elevado y no puede confirmarse de forma fiable si el paso está abierto o cerrado.",
+      "El ciclo contiene 4 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+    ],
+    "risks_en": [
+      "Risk is high and it cannot be reliably confirmed whether the passage is open or closed.",
+      "The cycle contains 4 highlighted evidence items; quantity does not replace independence or quality."
+    ],
+    "watchlist_es": [
+      "Avisos marítimos oficiales y confirmaciones operativas independientes.",
+      "Trayectorias completas de buques y continuidad real de los cruces, no puntos AIS aislados.",
+      "Cambios en restricciones, seguros, escoltas, puertos y disponibilidad de tripulaciones."
+    ],
+    "watchlist_en": [
+      "Official maritime notices and independent operational confirmations.",
+      "Completed vessel tracks and actual continuity of crossings, not isolated AIS points.",
+      "Changes in restrictions, insurance, escorts, ports and crew availability."
+    ],
+    "evidence": [
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Watch Iran Weighs Allowing Europe to Clear Mines in Hormuz - Bloomberg.com",
+        "source_name": "Bloomberg",
+        "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZnZkVWRfdGd2LUdtVFJGbjJQUDlYdHFTUzBqVXcyZ1RkVGpWWkZibll0UkJRd2pjWlI2MnVDelp5d0p5ZVN4Y21UNmw1c2dWZWR2azIxZmFfcHl0bDFmWHREOTlsNzBkSFRhcWREX2h1cC1HY2VwRXNVV05WVmJndTZ5RzJ1Q1JGV2lRMWdOaXN1N1V6OTQtUG9KMGVyLXluUTRkNVRUOWh5bDA?oc=5",
+        "published_at": "2026-08-05T00:00:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Projectile sinks Indian-flagged ship off Yemen coast - BBC",
+        "source_name": "BBC",
+        "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBjVnRsOEdHZTg2XzhnM1Nub2w2RHVLdEdUc3RfTkh4aHBzTUxicWZsSFlZMXctcC1zaTRfdVg3VEZEQmJVUXV4TWZ6UlVWOEZ2M3ZHLTVtNklUZw?oc=5",
+        "published_at": "2026-08-04T21:24:50Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US-Israel-Iran War Latest News: Tanker Reports Hearing Explosion in Strait of Hormuz, UKMTO Issues Security Alert; Fresh Fears Grip Key Oil Route - The Sunday Guardian",
+        "source_name": "The Sunday Guardian",
+        "source_url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNTGJ3aFFSSF9YaGtvZ0xrLU8yUWl3NlFuanlFbE1LZzJwOWVNdGZXX3FEcXdoc1pWVk1tU0IybU5XVjhHTDB6OUlyN21QTm1IYnlPWDh6c244NUFPbGdwXzFXaUlZZzBmSHVidDVOelpySlRIREtkNHdRZVhNTHR6V3NNVmk4MWFXdDFXWlhRSXlWeWt6OVZFTUl3Q2JYUzhMU2lQall0cVMtVEJKcFdtR0puMnNEdnU0aXh3RmtfTFdUazFPWkdFR0pLT3diMU4yY3l3OEdZTmx5TE5ldklKeFg5UE1HQVZtX2lXa012U2xlLWdtMkxzQkhRS0FMN051ajBZQ1l2RG56N1dZenlCalhYUGYxQdIBmwJBVV95cUxOMkg3eXJOMTR2a2JMTkV5LS1fOXlZcEprQTk0Qk1PbmkwVkhNM1Jsdk8xdWVTY2pMdkp3SXJsN0tCUGZVb0pkWXpRVXhEaHZPeDJaZDB6ZlZxakNab1ZFakI5S3RZYVZIN0RWdlZtYzA2UWpvOG1xUnFmWUt1YkdsQkFiblBsMlFMQWVtVnNPTnc3OXk3aTdkRlFsR0VycGpsa0ZiLXFsSFM1cUs4bFhrOXBoRnkwY05ubDFzVS00LU1DME94VUowVFh5VG9Jd2xaX2Y0NnhNX09HXzVpUjdfcWJnUGxaa2RKN05xMUhQNEkxSS13dEJRTHFRLXJrZTBuV2NoeTFTcFJXVmp2WHJRQXlkV3lPZUNDVFhV?oc=5",
+        "published_at": "2026-08-03T02:12:41Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - Al Jazeera",
+        "source_name": "Al Jazeera",
+        "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUWJRMGhCUTV1M3RUVzBvR3dIeEJQNmtYQlZMNXpuNTFEZGZqMmJhMU1ZMWhDNVhGNm11VHVqUGZkZDRqak5jQzljSHQ5cDBoUTV6akVtZ1Aycm9lTHlwbVhFcGdXQVM5a1NtSEhDMncxWWYyWGJvMndKMktwMmJiVVV1ZzkybV93Z3ZnbVR5S2hBWFZYQk83VmNPN2Z1M0JSWUNuaVJvMEHSAa4BQVVfeXFMT2g3SWN5WGJFOXAyTFQxSE1xTmtBNWMxeGRIY2hpSV9kUnFZaGVaTVhqMUctN3V1MTViNWtwdjNMTWZxSHM4WDR1OFZLOGpqaFo4Q19Jc0dHUnlBd3E1NkY3NzJ3RDNWanhNS2dzNGo1MFhKS21pZ3VxdkV3SElfSmlQNUJrdmxiX0NjaXJTOXo0MTNJV3UtLWpnNURQSDY4ZTZvcmtPYjN4cDJtVlZB?oc=5",
+        "published_at": "2026-08-02T14:15:46Z",
+        "official": false
+      }
+    ],
+    "last_valid_confirmation": null,
+    "publish_recommended": false,
+    "material_hash": "520cfb6d178fb1b0"
+  },
+  {
+    "schema_version": 1,
     "date": "2026-08-05",
     "generated_at": "2026-08-05T21:51:01Z",
     "source_checked_at": "2026-08-05T21:50:20Z",
