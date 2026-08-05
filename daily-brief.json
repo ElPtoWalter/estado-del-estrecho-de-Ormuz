@@ -1,32 +1,32 @@
 {
   "schema_version": 1,
   "date": "2026-08-05",
-  "generated_at": "2026-08-05T13:13:28Z",
-  "source_checked_at": "2026-08-05T13:13:09Z",
+  "generated_at": "2026-08-05T15:41:14Z",
+  "source_checked_at": "2026-08-05T15:40:28Z",
   "status": "INCIERTO",
   "status_label_es": "INCIERTO",
   "status_label_en": "UNCERTAIN",
   "operational_status": "HIGH_RISK_UNCONFIRMED",
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
-  "confidence": "MEDIA",
+  "confidence": "ALTA",
   "confidence_label": {
-    "es": "Media",
-    "en": "Medium"
+    "es": "Alta",
+    "en": "High"
   },
   "verification_ok": true,
   "stale": false,
   "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
   "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
-  "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
-  "change_en": "No material change in classification since the previous brief.",
+  "change_es": "El indicador cambia de «Riesgo elevado, estado no confirmado» a «Riesgo elevado, estado no confirmado».",
+  "change_en": "The indicator changes from “High risk, status unconfirmed” to “High risk, status unconfirmed”.",
   "risks_es": [
     "El riesgo es elevado y no puede confirmarse de forma fiable si el paso está abierto o cerrado.",
-    "El ciclo contiene 4 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+    "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
   ],
   "risks_en": [
     "Risk is high and it cannot be reliably confirmed whether the passage is open or closed.",
-    "The cycle contains 4 highlighted evidence items; quantity does not replace independence or quality."
+    "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
   ],
   "watchlist_es": [
     "Avisos marítimos oficiales y confirmaciones operativas independientes.",
@@ -57,6 +57,14 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Oil prices drop 7% to three-week low after Trump cancels attack on Iran - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOVnBOaGh1VXBaaGQwVmloSzlPcmg5aFdQeENKS3JtNi1wQTZlQTRBUm02ODRrYkNVZkNDREwtTTdMeUhlNV94QjctaFhpMWhTWVVJaF9xeVhWdEdKZXBMbFA4alVQaDBXbnMzczBqRnVBUlVrVUJJTFhLQjdpSU9SV2lHV1FQd0hvOEs0QkZwLVZfUDhtSkVGUU02T2tPeDFXaU5SaWRtUWt3cjhE?oc=5",
+      "published_at": "2026-08-03T18:38:40Z",
+      "official": false
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "US-Israel-Iran War Latest News: Tanker Reports Hearing Explosion in Strait of Hormuz, UKMTO Issues Security Alert; Fresh Fears Grip Key Oil Route - The Sunday Guardian",
       "source_name": "The Sunday Guardian",
       "source_url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOMkg3eXJOMTR2a2JMTkV5LS1fOXlZcEprQTk0Qk1PbmkwVkhNM1Jsdk8xdWVTY2pMdkp3SXJsN0tCUGZVb0pkWXpRVXhEaHZPeDJaZDB6ZlZxakNab1ZFakI5S3RZYVZIN0RWdlZtYzA2UWpvOG1xUnFmWUt1YkdsQkFiblBsMlFMQWVtVnNPTnc3OXk3aTdkRlFsR0VycGpsa0ZiLXFsSFM1cUs4bFhrOXBoRnkwY05ubDFzVS00LU1DME94VUowVFh5VG9Jd2xaX2Y0NnhNX09HXzVpUjdfcWJnUGxaa2RKN05xMUhQNEkxSS13dEJRTHFRLXJrZTBuV2NoeTFTcFJXVmp2WHJRQXlkV3lPZUNDVFhV0gGbAkFVX3lxTE4ySDd5ck4xNHZrYkxORXktLV85eVlwSmtBOTRCTU9uaTBWSE0zUmx2TzF1ZVNjakx2SndJcmw3S0JQZlVvSmRZelFVeERodk94MlpkMHpmVnFqQ1pvVkVqQjlLdFlhVkg3RFZ2Vm1jMDZRam84bXFScWZZS3ViR2xCQWJuUGwyUUxBZW1Wc09Odzc5eTdpN2RGUWxHRXJwamxrRmItcWxIUzVxSzhsWGs5cGhGeTBjTm5sMXNVLTQtTUMwT3hVSjBUWHlUb0l3bFpfZjQ2eE1fT0dfNWlSN19xYmdQbFprZEo3TnExSFA0STFJLXd0QlFMcVEtcmtlMG5XY2h5MVNwUldWanZYclFBeWRXeU9lQ0NUWFU?oc=5",
@@ -65,7 +73,7 @@
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - Al Jazeera",
+      "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - aljazeera.com",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUWJRMGhCUTV1M3RUVzBvR3dIeEJQNmtYQlZMNXpuNTFEZGZqMmJhMU1ZMWhDNVhGNm11VHVqUGZkZDRqak5jQzljSHQ5cDBoUTV6akVtZ1Aycm9lTHlwbVhFcGdXQVM5a1NtSEhDMncxWWYyWGJvMndKMktwMmJiVVV1ZzkybV93Z3ZnbVR5S2hBWFZYQk83VmNPN2Z1M0JSWUNuaVJvMEHSAa4BQVVfeXFMT2g3SWN5WGJFOXAyTFQxSE1xTmtBNWMxeGRIY2hpSV9kUnFZaGVaTVhqMUctN3V1MTViNWtwdjNMTWZxSHM4WDR1OFZLOGpqaFo4Q19Jc0dHUnlBd3E1NkY3NzJ3RDNWanhNS2dzNGo1MFhKS21pZ3VxdkV3SElfSmlQNUJrdmxiX0NjaXJTOXo0MTNJV3UtLWpnNURQSDY4ZTZvcmtPYjN4cDJtVlZB?oc=5",
       "published_at": "2026-08-02T14:15:46Z",
@@ -73,6 +81,6 @@
     }
   ],
   "last_valid_confirmation": null,
-  "publish_recommended": false,
-  "material_hash": "b5acdbbc2eaec809"
+  "publish_recommended": true,
+  "material_hash": "a50730b49419e49e"
 }
