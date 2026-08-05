@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-08-05T15:40:28Z",
-  "last_success_at": "2026-08-05T15:40:28Z",
+  "checked_at": "2026-08-05T18:07:10Z",
+  "last_success_at": "2026-08-05T18:07:10Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-05T05:14:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-05T15:40:28Z"
+      "observed_at": "2026-08-05T18:07:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-04T21:24:50Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-05T15:40:28Z"
+      "observed_at": "2026-08-05T18:07:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-08-03T18:38:40Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-05T15:40:28Z"
+      "observed_at": "2026-08-05T18:07:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,51 +52,42 @@
       "published_at": "2026-08-03T02:16:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-05T15:40:28Z"
+      "observed_at": "2026-08-05T18:07:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Trump cancels planned attack on Iran, saying he reached an agreement over the 'perimeters of a deal' - cnbc.com",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNlJNSEJDbTFqdDBHa182OVo1X3hId1pwMG5kSE1DU2liRDRLMzhIVkkxbURMVFE3NDdyeDNKM3lCNURfQ1pvZGZmaU1jWGNCUkxvdUhIbXdnVEN4OHpoc25GMUpLNDdYWVBzeTJnc2YwWEIyMGhUcDdKXzNhbmI5U2FrQWpRY1N4dHNnUGV6dU9VaVdtdE5jdjNUQ2c4eEVDR1hjR0ZRNWHSAa4BQVVfeXFMT2hGWndFZkV5eE9RRTVkX1RnTDZRc3R5MnRQWmhwUFNSNFNMX1RIcHRwaXdQWFlMMjhydWNNSGtUa3g0YW9PNS1YLXM1OW9RYkxWUjA0THB2V0pUTFl2b29nYXdxLVRLNVBLU3JLUWlOeUZ1dWFjMy02WWVON2pTQWtsdTNSN01mSzZLT2RNRUkzSER1SXlCUlRIV2lYaEtFNlA1WW1nNWVlY2Vfa2F3?oc=5",
-      "published_at": "2026-08-02T07:47:37Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-05T15:40:28Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - aljazeera.com",
+      "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUWJRMGhCUTV1M3RUVzBvR3dIeEJQNmtYQlZMNXpuNTFEZGZqMmJhMU1ZMWhDNVhGNm11VHVqUGZkZDRqak5jQzljSHQ5cDBoUTV6akVtZ1Aycm9lTHlwbVhFcGdXQVM5a1NtSEhDMncxWWYyWGJvMndKMktwMmJiVVV1ZzkybV93Z3ZnbVR5S2hBWFZYQk83VmNPN2Z1M0JSWUNuaVJvMEHSAa4BQVVfeXFMT2g3SWN5WGJFOXAyTFQxSE1xTmtBNWMxeGRIY2hpSV9kUnFZaGVaTVhqMUctN3V1MTViNWtwdjNMTWZxSHM4WDR1OFZLOGpqaFo4Q19Jc0dHUnlBd3E1NkY3NzJ3RDNWanhNS2dzNGo1MFhKS21pZ3VxdkV3SElfSmlQNUJrdmxiX0NjaXJTOXo0MTNJV3UtLWpnNURQSDY4ZTZvcmtPYjN4cDJtVlZB?oc=5",
       "published_at": "2026-08-02T14:15:46Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-05T15:40:28Z"
+      "observed_at": "2026-08-05T18:07:10Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 11.34
+      "risk": 10.465
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 6
+      "risk": 5
     },
-    "articles_considered": 54,
-    "signals_considered": 11,
-    "current_cycle_evidence": 6,
+    "articles_considered": 50,
+    "signals_considered": 10,
+    "current_cycle_evidence": 5,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
@@ -104,7 +95,7 @@
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-08-05T05:14:56Z",
-    "current_cycle_count": 6,
+    "current_cycle_count": 5,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -119,7 +110,7 @@
       "published_at": "2026-08-05T05:14:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-05T15:40:28Z"
+      "observed_at": "2026-08-05T18:07:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -129,7 +120,7 @@
       "published_at": "2026-08-04T21:24:50Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-05T15:40:28Z"
+      "observed_at": "2026-08-05T18:07:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -189,7 +180,7 @@
       "published_at": "2026-08-03T18:38:40Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-05T15:40:28Z"
+      "observed_at": "2026-08-05T18:07:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -239,7 +230,7 @@
       "published_at": "2026-08-03T02:16:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-05T15:40:28Z"
+      "observed_at": "2026-08-05T18:07:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -249,7 +240,7 @@
       "published_at": "2026-08-03T02:16:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-05T13:13:09Z"
+      "observed_at": "2026-08-05T15:40:28Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -303,6 +294,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUWJRMGhCUTV1M3RUVzBvR3dIeEJQNmtYQlZMNXpuNTFEZGZqMmJhMU1ZMWhDNVhGNm11VHVqUGZkZDRqak5jQzljSHQ5cDBoUTV6akVtZ1Aycm9lTHlwbVhFcGdXQVM5a1NtSEhDMncxWWYyWGJvMndKMktwMmJiVVV1ZzkybV93Z3ZnbVR5S2hBWFZYQk83VmNPN2Z1M0JSWUNuaVJvMEHSAa4BQVVfeXFMT2g3SWN5WGJFOXAyTFQxSE1xTmtBNWMxeGRIY2hpSV9kUnFZaGVaTVhqMUctN3V1MTViNWtwdjNMTWZxSHM4WDR1OFZLOGpqaFo4Q19Jc0dHUnlBd3E1NkY3NzJ3RDNWanhNS2dzNGo1MFhKS21pZ3VxdkV3SElfSmlQNUJrdmxiX0NjaXJTOXo0MTNJV3UtLWpnNURQSDY4ZTZvcmtPYjN4cDJtVlZB?oc=5",
+      "published_at": "2026-08-02T14:15:46Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-05T18:07:10Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - aljazeera.com",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUWJRMGhCUTV1M3RUVzBvR3dIeEJQNmtYQlZMNXpuNTFEZGZqMmJhMU1ZMWhDNVhGNm11VHVqUGZkZDRqak5jQzljSHQ5cDBoUTV6akVtZ1Aycm9lTHlwbVhFcGdXQVM5a1NtSEhDMncxWWYyWGJvMndKMktwMmJiVVV1ZzkybV93Z3ZnbVR5S2hBWFZYQk83VmNPN2Z1M0JSWUNuaVJvMEHSAa4BQVVfeXFMT2g3SWN5WGJFOXAyTFQxSE1xTmtBNWMxeGRIY2hpSV9kUnFZaGVaTVhqMUctN3V1MTViNWtwdjNMTWZxSHM4WDR1OFZLOGpqaFo4Q19Jc0dHUnlBd3E1NkY3NzJ3RDNWanhNS2dzNGo1MFhKS21pZ3VxdkV3SElfSmlQNUJrdmxiX0NjaXJTOXo0MTNJV3UtLWpnNURQSDY4ZTZvcmtPYjN4cDJtVlZB?oc=5",
@@ -310,16 +311,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-05T15:40:28Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUWJRMGhCUTV1M3RUVzBvR3dIeEJQNmtYQlZMNXpuNTFEZGZqMmJhMU1ZMWhDNVhGNm11VHVqUGZkZDRqak5jQzljSHQ5cDBoUTV6akVtZ1Aycm9lTHlwbVhFcGdXQVM5a1NtSEhDMncxWWYyWGJvMndKMktwMmJiVVV1ZzkybV93Z3ZnbVR5S2hBWFZYQk83VmNPN2Z1M0JSWUNuaVJvMEHSAa4BQVVfeXFMT2g3SWN5WGJFOXAyTFQxSE1xTmtBNWMxeGRIY2hpSV9kUnFZaGVaTVhqMUctN3V1MTViNWtwdjNMTWZxSHM4WDR1OFZLOGpqaFo4Q19Jc0dHUnlBd3E1NkY3NzJ3RDNWanhNS2dzNGo1MFhKS21pZ3VxdkV3SElfSmlQNUJrdmxiX0NjaXJTOXo0MTNJV3UtLWpnNURQSDY4ZTZvcmtPYjN4cDJtVlZB?oc=5",
-      "published_at": "2026-08-02T14:15:46Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-05T13:13:09Z"
     },
     {
       "signal": "RISK_RESTRICTION",
