@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-04T22:37:52Z",
-  "last_success_at": "2026-08-04T22:37:52Z",
+  "checked_at": "2026-08-05T00:56:44Z",
+  "last_success_at": "2026-08-05T00:56:44Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-04T21:24:50Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-04T22:37:52Z"
+      "observed_at": "2026-08-05T00:56:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,41 +32,52 @@
       "published_at": "2026-08-04T15:38:51Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-04T22:37:52Z"
+      "observed_at": "2026-08-05T00:56:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - Al Jazeera",
+      "title": "US-Israel-Iran War Latest News: Tanker Reports Hearing Explosion in Strait of Hormuz, UKMTO Issues Security Alert; Fresh Fears Grip Key Oil Route - The Sunday Guardian",
+      "source_name": "The Sunday Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOMkg3eXJOMTR2a2JMTkV5LS1fOXlZcEprQTk0Qk1PbmkwVkhNM1Jsdk8xdWVTY2pMdkp3SXJsN0tCUGZVb0pkWXpRVXhEaHZPeDJaZDB6ZlZxakNab1ZFakI5S3RZYVZIN0RWdlZtYzA2UWpvOG1xUnFmWUt1YkdsQkFiblBsMlFMQWVtVnNPTnc3OXk3aTdkRlFsR0VycGpsa0ZiLXFsSFM1cUs4bFhrOXBoRnkwY05ubDFzVS00LU1DME94VUowVFh5VG9Jd2xaX2Y0NnhNX09HXzVpUjdfcWJnUGxaa2RKN05xMUhQNEkxSS13dEJRTHFRLXJrZTBuV2NoeTFTcFJXVmp2WHJRQXlkV3lPZUNDVFhV0gGbAkFVX3lxTE4ySDd5ck4xNHZrYkxORXktLV85eVlwSmtBOTRCTU9uaTBWSE0zUmx2TzF1ZVNjakx2SndJcmw3S0JQZlVvSmRZelFVeERodk94MlpkMHpmVnFqQ1pvVkVqQjlLdFlhVkg3RFZ2Vm1jMDZRam84bXFScWZZS3ViR2xCQWJuUGwyUUxBZW1Wc09Odzc5eTdpN2RGUWxHRXJwamxrRmItcWxIUzVxSzhsWGs5cGhGeTBjTm5sMXNVLTQtTUMwT3hVSjBUWHlUb0l3bFpfZjQ2eE1fT0dfNWlSN19xYmdQbFprZEo3TnExSFA0STFJLXd0QlFMcVEtcmtlMG5XY2h5MVNwUldWanZYclFBeWRXeU9lQ0NUWFU?oc=5",
+      "published_at": "2026-08-03T02:16:09Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-05T00:56:44Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - aljazeera.com",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUWJRMGhCUTV1M3RUVzBvR3dIeEJQNmtYQlZMNXpuNTFEZGZqMmJhMU1ZMWhDNVhGNm11VHVqUGZkZDRqak5jQzljSHQ5cDBoUTV6akVtZ1Aycm9lTHlwbVhFcGdXQVM5a1NtSEhDMncxWWYyWGJvMndKMktwMmJiVVV1ZzkybV93Z3ZnbVR5S2hBWFZYQk83VmNPN2Z1M0JSWUNuaVJvMEHSAa4BQVVfeXFMT2g3SWN5WGJFOXAyTFQxSE1xTmtBNWMxeGRIY2hpSV9kUnFZaGVaTVhqMUctN3V1MTViNWtwdjNMTWZxSHM4WDR1OFZLOGpqaFo4Q19Jc0dHUnlBd3E1NkY3NzJ3RDNWanhNS2dzNGo1MFhKS21pZ3VxdkV3SElfSmlQNUJrdmxiX0NjaXJTOXo0MTNJV3UtLWpnNURQSDY4ZTZvcmtPYjN4cDJtVlZB?oc=5",
       "published_at": "2026-08-02T14:15:46Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-04T22:37:52Z"
+      "observed_at": "2026-08-05T00:56:44Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 7.4
+      "risk": 9.545
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 3
+      "risk": 4
     },
-    "articles_considered": 39,
-    "signals_considered": 5,
-    "current_cycle_evidence": 3,
+    "articles_considered": 38,
+    "signals_considered": 8,
+    "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
@@ -74,7 +85,7 @@
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-08-04T21:24:50Z",
-    "current_cycle_count": 3,
+    "current_cycle_count": 4,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -89,7 +100,7 @@
       "published_at": "2026-08-04T21:24:50Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-04T22:37:52Z"
+      "observed_at": "2026-08-05T00:56:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -99,7 +110,7 @@
       "published_at": "2026-08-04T15:38:51Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-04T22:37:52Z"
+      "observed_at": "2026-08-05T00:56:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -179,6 +190,16 @@
       "published_at": "2026-08-03T02:16:09Z",
       "tier": 2,
       "official": false,
+      "observed_at": "2026-08-05T00:56:44Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US-Israel-Iran War Latest News: Tanker Reports Hearing Explosion in Strait of Hormuz, UKMTO Issues Security Alert; Fresh Fears Grip Key Oil Route - The Sunday Guardian",
+      "source_name": "The Sunday Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOMkg3eXJOMTR2a2JMTkV5LS1fOXlZcEprQTk0Qk1PbmkwVkhNM1Jsdk8xdWVTY2pMdkp3SXJsN0tCUGZVb0pkWXpRVXhEaHZPeDJaZDB6ZlZxakNab1ZFakI5S3RZYVZIN0RWdlZtYzA2UWpvOG1xUnFmWUt1YkdsQkFiblBsMlFMQWVtVnNPTnc3OXk3aTdkRlFsR0VycGpsa0ZiLXFsSFM1cUs4bFhrOXBoRnkwY05ubDFzVS00LU1DME94VUowVFh5VG9Jd2xaX2Y0NnhNX09HXzVpUjdfcWJnUGxaa2RKN05xMUhQNEkxSS13dEJRTHFRLXJrZTBuV2NoeTFTcFJXVmp2WHJRQXlkV3lPZUNDVFhV0gGbAkFVX3lxTE4ySDd5ck4xNHZrYkxORXktLV85eVlwSmtBOTRCTU9uaTBWSE0zUmx2TzF1ZVNjakx2SndJcmw3S0JQZlVvSmRZelFVeERodk94MlpkMHpmVnFqQ1pvVkVqQjlLdFlhVkg3RFZ2Vm1jMDZRam84bXFScWZZS3ViR2xCQWJuUGwyUUxBZW1Wc09Odzc5eTdpN2RGUWxHRXJwamxrRmItcWxIUzVxSzhsWGs5cGhGeTBjTm5sMXNVLTQtTUMwT3hVSjBUWHlUb0l3bFpfZjQ2eE1fT0dfNWlSN19xYmdQbFprZEo3TnExSFA0STFJLXd0QlFMcVEtcmtlMG5XY2h5MVNwUldWanZYclFBeWRXeU9lQ0NUWFU?oc=5",
+      "published_at": "2026-08-03T02:16:09Z",
+      "tier": 2,
+      "official": false,
       "observed_at": "2026-08-04T20:51:59Z"
     },
     {
@@ -243,6 +264,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - aljazeera.com",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUWJRMGhCUTV1M3RUVzBvR3dIeEJQNmtYQlZMNXpuNTFEZGZqMmJhMU1ZMWhDNVhGNm11VHVqUGZkZDRqak5jQzljSHQ5cDBoUTV6akVtZ1Aycm9lTHlwbVhFcGdXQVM5a1NtSEhDMncxWWYyWGJvMndKMktwMmJiVVV1ZzkybV93Z3ZnbVR5S2hBWFZYQk83VmNPN2Z1M0JSWUNuaVJvMEHSAa4BQVVfeXFMT2g3SWN5WGJFOXAyTFQxSE1xTmtBNWMxeGRIY2hpSV9kUnFZaGVaTVhqMUctN3V1MTViNWtwdjNMTWZxSHM4WDR1OFZLOGpqaFo4Q19Jc0dHUnlBd3E1NkY3NzJ3RDNWanhNS2dzNGo1MFhKS21pZ3VxdkV3SElfSmlQNUJrdmxiX0NjaXJTOXo0MTNJV3UtLWpnNURQSDY4ZTZvcmtPYjN4cDJtVlZB?oc=5",
+      "published_at": "2026-08-02T14:15:46Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-05T00:56:44Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUWJRMGhCUTV1M3RUVzBvR3dIeEJQNmtYQlZMNXpuNTFEZGZqMmJhMU1ZMWhDNVhGNm11VHVqUGZkZDRqak5jQzljSHQ5cDBoUTV6akVtZ1Aycm9lTHlwbVhFcGdXQVM5a1NtSEhDMncxWWYyWGJvMndKMktwMmJiVVV1ZzkybV93Z3ZnbVR5S2hBWFZYQk83VmNPN2Z1M0JSWUNuaVJvMEHSAa4BQVVfeXFMT2g3SWN5WGJFOXAyTFQxSE1xTmtBNWMxeGRIY2hpSV9kUnFZaGVaTVhqMUctN3V1MTViNWtwdjNMTWZxSHM4WDR1OFZLOGpqaFo4Q19Jc0dHUnlBd3E1NkY3NzJ3RDNWanhNS2dzNGo1MFhKS21pZ3VxdkV3SElfSmlQNUJrdmxiX0NjaXJTOXo0MTNJV3UtLWpnNURQSDY4ZTZvcmtPYjN4cDJtVlZB?oc=5",
@@ -250,16 +281,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-04T22:37:52Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - aljazeera.com",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUWJRMGhCUTV1M3RUVzBvR3dIeEJQNmtYQlZMNXpuNTFEZGZqMmJhMU1ZMWhDNVhGNm11VHVqUGZkZDRqak5jQzljSHQ5cDBoUTV6akVtZ1Aycm9lTHlwbVhFcGdXQVM5a1NtSEhDMncxWWYyWGJvMndKMktwMmJiVVV1ZzkybV93Z3ZnbVR5S2hBWFZYQk83VmNPN2Z1M0JSWUNuaVJvMEHSAa4BQVVfeXFMT2g3SWN5WGJFOXAyTFQxSE1xTmtBNWMxeGRIY2hpSV9kUnFZaGVaTVhqMUctN3V1MTViNWtwdjNMTWZxSHM4WDR1OFZLOGpqaFo4Q19Jc0dHUnlBd3E1NkY3NzJ3RDNWanhNS2dzNGo1MFhKS21pZ3VxdkV3SElfSmlQNUJrdmxiX0NjaXJTOXo0MTNJV3UtLWpnNURQSDY4ZTZvcmtPYjN4cDJtVlZB?oc=5",
-      "published_at": "2026-08-02T14:15:46Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-03T20:14:03Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -670,16 +691,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-30T00:56:21Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US strikes Iran as widening war engulfs more countries - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNcFJoOXIwZmxCNHBjd05nc3dlYjNXXzd1NzdyQldTOVQ4S3NjZnNDRWdqdG1WUFRUS2tRSkJJTEhQYjJWa1FraklySUtoamVybzBfbUR4aUItanFrRG1hMDZJTzlSQ3lrS25SLUo4QzR0RVQxdmFSVUFaUFpHYWV0cmdnVURNVHJ1QzBzM0pIRTMwUmVFZmxwVVpyTklTallXU2ZLOGl3TDJ1U3VnRzd3bmZnQjVfcUw2a1pWSGdFOTNlUXFa?oc=5",
-      "published_at": "2026-07-29T23:34:01Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-08-02T01:08:34Z"
     }
   ]
 }
