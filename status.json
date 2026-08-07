@@ -4,9 +4,9 @@
   "operational_status": "HIGH_RISK_UNCONFIRMED",
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
-  "confidence": "ALTA",
-  "checked_at": "2026-08-07T17:25:51Z",
-  "last_success_at": "2026-08-07T17:25:51Z",
+  "confidence": "MEDIA",
+  "checked_at": "2026-08-07T18:24:33Z",
+  "last_success_at": "2026-08-07T18:24:33Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -22,27 +22,17 @@
       "published_at": "2026-08-07T15:07:38Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-07T17:25:51Z"
+      "observed_at": "2026-08-07T18:24:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Saudi Arabia , Turkey and Pakistan sign defence agreement",
-      "source_name": "BBC",
-      "source_url": "https://www.bbc.co.uk/news/articles/c30418m4mj4o",
-      "published_at": "2026-08-07T14:30:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-08-07T17:25:51Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran Seeks Hormuz Shipping Restrictions - Bloomberg.com",
+      "title": "Iran Seeks Hormuz Shipping Restrictions - bloomberg.com",
       "source_name": "Bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeEd0U3JRZnRidTE3cmthcjNCU2EydlAzd2ZIY0ZxVUkxUWxTMmRzZWNfOU8xY0ctU0dIS2R0amE2QzltbU1OMV9CNGk3NmI3RWM5WExfQ3RfZGFtb1N5RmhyWTluLXpqMGd5S0ZMdkUwU2c5NTZtaTBNTGxFdDAyc3hCdmpUbFhkb2JBNHNnenRsbUNhYW96RQ?oc=5",
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-07T17:25:51Z"
+      "observed_at": "2026-08-07T18:24:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,31 +42,32 @@
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-07T17:25:51Z"
+      "observed_at": "2026-08-07T18:24:33Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 12.225
+      "risk": 9.025
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 4
+      "risk": 3
     },
-    "articles_considered": 54,
-    "signals_considered": 7,
-    "current_cycle_evidence": 4,
+    "articles_considered": 48,
+    "signals_considered": 6,
+    "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
@@ -84,7 +75,7 @@
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-08-07T15:07:38Z",
-    "current_cycle_count": 4,
+    "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -99,7 +90,7 @@
       "published_at": "2026-08-07T15:07:38Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-07T17:25:51Z"
+      "observed_at": "2026-08-07T18:24:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -113,13 +104,13 @@
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran Seeks Hormuz Shipping Restrictions - Bloomberg.com",
+      "title": "Iran Seeks Hormuz Shipping Restrictions - bloomberg.com",
       "source_name": "Bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeEd0U3JRZnRidTE3cmthcjNCU2EydlAzd2ZIY0ZxVUkxUWxTMmRzZWNfOU8xY0ctU0dIS2R0amE2QzltbU1OMV9CNGk3NmI3RWM5WExfQ3RfZGFtb1N5RmhyWTluLXpqMGd5S0ZMdkUwU2c5NTZtaTBNTGxFdDAyc3hCdmpUbFhkb2JBNHNnenRsbUNhYW96RQ?oc=5",
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-07T17:25:51Z"
+      "observed_at": "2026-08-07T18:24:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -159,7 +150,7 @@
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-07T17:25:51Z"
+      "observed_at": "2026-08-07T18:24:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -694,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-07T17:26:29Z",
+    "generated_at": "2026-08-07T18:25:13Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -731,18 +722,18 @@
       "closure": 0,
       "traffic_reduction": 19.37,
       "access_restriction": 32.2,
-      "risk": 50.085
+      "risk": 49.685
     },
     "source_counts": {
       "passage": 10,
       "closure": 0,
-      "primary_sources": 4
+      "primary_sources": 3
     },
     "latest_confirmed_transit_at": "2026-08-07T14:30:32Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
-      "confidence": "ALTA"
+      "confidence": "MEDIA"
     },
     "evidence": [
       {
@@ -806,21 +797,6 @@
         "kind_label_en": "Confirmed transit"
       },
       {
-        "kind": "RISK_SEVERE",
-        "title": "Possible Strait of Hormuz deal, a large attack in Yemen and other Mideast news - AP News",
-        "source": "AP News",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd1R4TEFIQVkxS1I2SDdWVUZfalVNQXk2VnNDc1FHUnNYU0xRY3ExT0JiLUp6cDl2N2ZYLUl3UHFlbFUzY2F0MU9iVW9ZRTBTYTIxUWd1RXh0dnY4ZTJPT1Q3cTNFNi1ja2lTVnNsZmZPd09SMFFFMjBUNVJPZWxLVlR6OG9fYk1Cc3Byc3JUY3lTYlhqV2xjRl9RVkFDRnU4Vmx2WkV6R19fcjlHYVZWOQ?oc=5",
-        "published_at": "2026-08-06T23:31:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
         "kind": "ACCESS_RESTRICTED",
         "title": "Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz - Reuters",
         "source": "Reuters",
@@ -864,10 +840,25 @@
         "effective_weight": 3.6,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Oil settles up $3 as Iran reviews bill to ban US, Israeli vessels from Hormuz - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTmw0WV9PeEJVU0pBczd6UzhWSjdUMlQ2aDhwUGxDbWdvc3hMakw5d3h3Q2wxMXNRakctZjRlTW8wNi1PNnU2eDY0anYxakZYSkZBSVN6SUhJOEF4aW1HSTVnUWREc3k2dFBvUEl0azM4TXFoV1I1S1pJRVlVUm1SakpIeVFqM0wxS2gtMDFvc3ktZ05QYjc3VXRtSHdsNk9hLWUwb3VxTzBFcVhBeUx3Zm82Zw?oc=5",
+        "published_at": "2026-08-06T01:07:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.6,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
       }
     ],
     "diagnostics": {
-      "signals_considered": 83,
+      "signals_considered": 86,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
