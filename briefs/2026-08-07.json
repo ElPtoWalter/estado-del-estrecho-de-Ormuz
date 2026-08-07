@@ -1,31 +1,31 @@
 {
   "schema_version": 1,
   "date": "2026-08-07",
-  "generated_at": "2026-08-07T12:12:23Z",
-  "source_checked_at": "2026-08-07T12:11:42Z",
-  "status": "INCIERTO",
-  "status_label_es": "INCIERTO",
-  "status_label_en": "UNCERTAIN",
-  "operational_status": "HIGH_RISK_UNCONFIRMED",
-  "operational_label_es": "Riesgo elevado, estado no confirmado",
-  "operational_label_en": "High risk, status unconfirmed",
-  "confidence": "MEDIA",
+  "generated_at": "2026-08-07T12:22:29Z",
+  "source_checked_at": "2026-08-07T12:22:26Z",
+  "status": "ABIERTO",
+  "status_label_es": "ABIERTO CON RESTRICCIONES",
+  "status_label_en": "OPEN WITH RESTRICTIONS",
+  "operational_status": "OPEN_RESTRICTED",
+  "operational_label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
+  "operational_label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
+  "confidence": "ALTA",
   "confidence_label": {
-    "es": "Media",
-    "en": "Medium"
+    "es": "Alta",
+    "en": "High"
   },
   "verification_ok": true,
   "stale": false,
-  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
-  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
-  "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
-  "change_en": "No material change in classification since the previous brief.",
+  "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+  "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+  "change_es": "El indicador cambia de «Riesgo elevado, estado no confirmado» a «ABIERTO · TRÁNSITO MUY RESTRINGIDO».",
+  "change_en": "The indicator changes from “High risk, status unconfirmed” to “OPEN · SEVERELY RESTRICTED TRANSIT”.",
   "risks_es": [
-    "El riesgo es elevado y no puede confirmarse de forma fiable si el paso está abierto o cerrado.",
+    "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
     "El ciclo contiene 2 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
   ],
   "risks_en": [
-    "Risk is high and it cannot be reliably confirmed whether the passage is open or closed.",
+    "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
     "The cycle contains 2 highlighted evidence items; quantity does not replace independence or quality."
   ],
   "watchlist_es": [
@@ -41,7 +41,7 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran Seeks Hormuz Shipping Restrictions - bloomberg.com",
+      "title": "Iran Seeks Hormuz Shipping Restrictions - Bloomberg.com",
       "source_name": "Bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeEd0U3JRZnRidTE3cmthcjNCU2EydlAzd2ZIY0ZxVUkxUWxTMmRzZWNfOU8xY0ctU0dIS2R0amE2QzltbU1OMV9CNGk3NmI3RWM5WExfQ3RfZGFtb1N5RmhyWTluLXpqMGd5S0ZMdkUwU2c5NTZtaTBNTGxFdDAyc3hCdmpUbFhkb2JBNHNnenRsbUNhYW96RQ?oc=5",
       "published_at": "2026-08-07T06:04:00Z",
@@ -57,6 +57,6 @@
     }
   ],
   "last_valid_confirmation": null,
-  "publish_recommended": false,
-  "material_hash": "c3c4e45080cb252c"
+  "publish_recommended": true,
+  "material_hash": "aaf811cffa948348"
 }
