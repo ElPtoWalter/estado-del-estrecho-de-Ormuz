@@ -1,0 +1,90 @@
+name: Instalar Operational Intelligence V7
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: install-operational-intelligence-v7
+  cancel-in-progress: false
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Descargar repositorio completo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Instalar Operational Intelligence V7
+        run: python install_operational_intelligence_v7.py --apply
+
+      - name: Ejecutar pruebas V7
+        run: python -m unittest -v test_operational_intelligence_v7.py
+
+      - name: Comprobar diagnóstico inicial
+        run: |
+          cat operational-v7-readiness.json
+          python - <<'PY'
+          import json
+          data=json.load(open('operational-v7-readiness.json',encoding='utf-8'))
+          if not data.get('ready'):
+              raise SystemExit('Operational Intelligence V7 no está listo.')
+          print('Diagnóstico inicial:', data['initial_assessment']['label_es'])
+          print('Confianza:', data['initial_assessment']['confidence'])
+          PY
+
+      - name: Comprobar diff
+        run: |
+          git diff --check
+          git status --short
+
+      - name: Guardar Operational Intelligence V7
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add \
+            install_v11.py \
+            generate_daily_brief.py \
+            widget.js \
+            social-studio.js \
+            index.html \
+            en.html \
+            llms.txt \
+            sitemap.xml \
+            status.json \
+            daily-brief.json \
+            operational_intelligence_v7.py \
+            operational-intelligence-seed.json \
+            operational-intelligence.json \
+            operational-intelligence-history.json \
+            operational-v7.js \
+            operational-v7.css \
+            metodo-inteligencia-operativa.html \
+            en-operational-intelligence-method.html \
+            test_operational_intelligence_v7.py \
+            operational-v7-readiness.json
+
+          if git diff --cached --quiet; then
+            echo "Operational Intelligence V7 ya estaba aplicada."
+          else
+            git commit -m "Añade Operational Intelligence V7"
+            git push
+          fi
+
+      - name: Lanzar actualización completa de Ormuz
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-status.yml --ref main
