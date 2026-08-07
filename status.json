@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-07T13:52:01Z",
-  "last_success_at": "2026-08-07T13:52:01Z",
+  "checked_at": "2026-08-07T15:27:27Z",
+  "last_success_at": "2026-08-07T15:27:27Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -16,23 +16,13 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Saudi military says Houthi attacks left 11 civilians, including a child, injured near Yemen border - AP News",
-      "source_name": "Associated Press",
-      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZlNlTi0tMTdEYTJ4Zy1xU1JmQ0w3TFRtOW80d3ZuU2dtc0FwUE5pUmJwN19EQWlIdzVQTHpOVmR3RlJMSzRHNnE2Tm5KaDg3eGNjUzF0R1RtT2Q2c3Fsd0pHRWtoN2NaRXZyMGMwZmdBX1dTMUNjempFdm5XNTBxTGt1XzNsd3E0Rk5HRlB2WnNTWUF6ei12eWhYY3UyZw?oc=5",
-      "published_at": "2026-08-07T00:31:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-08-07T13:52:01Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US-Israel-Iran War Latest News: 'This Time It Was More Than a Threat,' Trump Says US Was Ready to Strike Iran if Needed – UKMTO Reports Tanker Explosion in Strait of Hormuz - The Sunday Guardian",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxNVTVuZ3JkR2VQbEdOcDZqQlVmMGx5OGhITWhicFhaY2lZSERMWGE2aFhKRTRseG1WYmc3VXAtRmRaWFcxRnc2WmkxRWxaaXI1YVhtVHBiU3VMTU1pSWtVNDlnRy1wZE1CTHd0STNWd3lMaVlqZTVPUnU2WlNnT3A0aExHQktXWVM5MDNOYlZtNGlRdnZEZnNlWFVkRWVDS0IwRC1iQ1Y1UjlZUV9lY2xPTjBkVTVRak1SbWVuWUxMd2NISFJSbElBZVJwdmRYMV9iRzRtbFhwWXlSdkhKTldiMWRLVTkyUlZEWjFMLUpWUjhsZTZNQzJZSGc2LVJLQUhlZlJ2VEIwTy14V0Y1WVQydWZoZmFpc1gxSWMweGFPNVB6NE5tQUIwajYyWG5RellxZS1RUGtR0gG7AkFVX3lxTE5WVGRnZ1g0TlhvZ1NiLTBIMFZkRGdOY2E4YXJYU2FTTlNKanNidi1Tb2FBTFVxeUV0alJqUE80bzVGOVNGOGIwM0xYRm9UN0h5YnI1MjZxeXQ0VFZVUjdERFlYNFZKcWFMeGtqUkd4aF9tQnBtc294RFJXa19vS0dxOGZILTBjT2NJbThBQlQ4OG95TjRORzZVMUxCX0hpaDBlb1RNZ2VhVDFycFZ3emJXeWkxZmEyQ0hfMDBWRmljRl94WG1GQ1hKekVSU3NaTVBoMXNqVC11R25PaGQwT1pMWFhXQjVLc0xaNlY0YWo5dDdRcGZaSUh0MTY4ay1qMXMtcVgza0RCTnpPLXJHbV9yaFZHSm9OeEZPOGlqeXFRUGhNeXFDWDZIRzdmaERqZ1NXNkRiNzRuQVpuMA?oc=5",
-      "published_at": "2026-08-06T03:45:12Z",
+      "title": "Saudi Arabia , Turkey and Pakistan sign defence agreement",
+      "source_name": "BBC",
+      "source_url": "https://www.bbc.co.uk/news/articles/c30418m4mj4o",
+      "published_at": "2026-08-07T14:30:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-07T13:52:01Z"
+      "observed_at": "2026-08-07T15:27:27Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,40 +32,39 @@
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-07T13:52:01Z"
+      "observed_at": "2026-08-07T15:27:27Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 9.405
+      "risk": 6.08
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 3
+      "risk": 2
     },
-    "articles_considered": 50,
-    "signals_considered": 6,
-    "current_cycle_evidence": 3,
+    "articles_considered": 52,
+    "signals_considered": 5,
+    "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-07T06:04:00Z",
-    "current_cycle_count": 3,
+    "as_of": "2026-08-07T14:30:00Z",
+    "current_cycle_count": 2,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -84,13 +73,23 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Saudi Arabia , Turkey and Pakistan sign defence agreement",
+      "source_name": "BBC",
+      "source_url": "https://www.bbc.co.uk/news/articles/c30418m4mj4o",
+      "published_at": "2026-08-07T14:30:00Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-08-07T15:27:27Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Iran Seeks Hormuz Shipping Restrictions - Bloomberg.com",
       "source_name": "Bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeEd0U3JRZnRidTE3cmthcjNCU2EydlAzd2ZIY0ZxVUkxUWxTMmRzZWNfOU8xY0ctU0dIS2R0amE2QzltbU1OMV9CNGk3NmI3RWM5WExfQ3RfZGFtb1N5RmhyWTluLXpqMGd5S0ZMdkUwU2c5NTZtaTBNTGxFdDAyc3hCdmpUbFhkb2JBNHNnenRsbUNhYW96RQ?oc=5",
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-07T13:52:01Z"
+      "observed_at": "2026-08-07T15:27:27Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -671,21 +670,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-30T04:38:50Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US launches strikes on Iranian targets a day after it foiled missile attack on American forces - AP News",
-      "source_name": "Associated Press",
-      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcFZvamthZTNrZ0JiSDZZMVJBNW02Y1JiQUlvUlAwN1RRODcyUWNydUtZbGxpVVdhZElfTERINDh6ZURJZll3M25weWk4UVFPczliQWZ0MkRUc09VTTQ0X1BMVDBDa0hMdzE0TjBlYmI3UkJpYl9KZDFYMTFsZ05jNnd0Zm9wUHEwTlJObUEycG1BNTVqVTVQWjl5NnJqdEE?oc=5",
-      "published_at": "2026-07-30T03:47:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-08-03T01:08:13Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-07T13:52:42Z",
+    "generated_at": "2026-08-07T15:27:52Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -718,18 +707,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 38.847,
+      "passage": 42.591,
       "closure": 0,
-      "traffic_reduction": 20.52,
-      "access_restriction": 33.72,
-      "risk": 40.865
+      "traffic_reduction": 19.37,
+      "access_restriction": 33.32,
+      "risk": 34.365
     },
     "source_counts": {
-      "passage": 10,
+      "passage": 12,
       "closure": 0,
       "primary_sources": 5
     },
-    "latest_confirmed_transit_at": "2026-08-07T08:39:42Z",
+    "latest_confirmed_transit_at": "2026-08-07T14:30:32Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -768,8 +757,8 @@
       },
       {
         "kind": "TRANSIT_CONFIRMED",
-        "title": "Vessel traffic through Hormuz dwindles this week as markets watch Iran-Oman talks - Reuters",
-        "source": "Reuters",
+        "title": "Vessel traffic through Hormuz dwindles this week as markets watch Iran-Oman talks - reuters.com",
+        "source": "reuters.com",
         "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPYjdYbS1fZXZGWktSZkVpMk4temZNOUY1cEFsQUxTRXRNQnJUai1lY2xTMDE5dmFMZjUyUzZQclRyQUJuVTFVXzB6RGtpeXlFeU8xZjNiVWp4dVVNTkVWcVhCVEpsVVdTa1lsZEVfVUlSWHBlMjh0UDNYdkpjS3BHVjA2MUUtSXU0OTNEZ1lCUW9iYkliLUxSN2JSTTlFbEktaGRTb2UzcUxNMjlaZGtQSmt1S1FWYzlvdlkwdDM3WjY0dHZTRU9VWFFB?oc=5",
         "published_at": "2026-08-07T04:33:00Z",
         "tier": 4,
@@ -783,13 +772,13 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Saudi military says Houthi attacks left 11 civilians, including a child, injured near Yemen border - AP News",
-        "source": "Associated Press",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZlNlTi0tMTdEYTJ4Zy1xU1JmQ0w3TFRtOW80d3ZuU2dtc0FwUE5pUmJwN19EQWlIdzVQTHpOVmR3RlJMSzRHNnE2Tm5KaDg3eGNjUzF0R1RtT2Q2c3Fsd0pHRWtoN2NaRXZyMGMwZmdBX1dTMUNjempFdm5XNTBxTGt1XzNsd3E0Rk5HRlB2WnNTWUF6ei12eWhYY3UyZw?oc=5",
-        "published_at": "2026-08-07T00:31:00Z",
+        "title": "Possible Strait of Hormuz deal, a large attack in Yemen and other Mideast news - AP News",
+        "source": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd1R4TEFIQVkxS1I2SDdWVUZfalVNQXk2VnNDc1FHUnNYU0xRY3ExT0JiLUp6cDl2N2ZYLUl3UHFlbFUzY2F0MU9iVW9ZRTBTYTIxUWd1RXh0dnY4ZTJPT1Q3cTNFNi1ja2lTVnNsZmZPd09SMFFFMjBUNVJPZWxLVlR6OG9fYk1Cc3Byc3JUY3lTYlhqV2xjRl9RVkFDRnU4Vmx2WkV6R19fcjlHYVZWOQ?oc=5",
+        "published_at": "2026-08-06T23:31:00Z",
         "tier": 4,
         "weight": 4.0,
-        "provider": "legacy-engine",
+        "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 4.0,
@@ -798,8 +787,8 @@
       },
       {
         "kind": "ACCESS_RESTRICTED",
-        "title": "Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz - Reuters",
-        "source": "Reuters",
+        "title": "Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz - reuters.com",
+        "source": "reuters.com",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVWd6ZjFIZXZHQ2JsNi1UdXBvS1JIUm0xYWtjaDQ1UXVOczhzTzZLNEY0ZTRtb1l5N2lrY09ERHFySlMyakJJNndhRUx5M0FabFZ5TllJZWZPU05na2VqMkRVckJ2VndLdUlFUGd1NklHQlN6V1VJUzRxS09jUmtVVWhMTGRuVlN3YzctZjhBWVI2UUZkQkJqZ0NvdF9uQ1I0RGtCNVNORThqQQ?oc=5",
         "published_at": "2026-08-06T19:30:42Z",
         "tier": 4,
@@ -822,7 +811,7 @@
         "provider": "seed-primary",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 4.0,
+        "effective_weight": 3.6,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
       },
@@ -842,23 +831,23 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "RISK_SEVERE",
-        "title": "Possible Strait of Hormuz deal, a large attack in Yemen and other Mideast news - AP News",
-        "source": "AP News",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd1R4TEFIQVkxS1I2SDdWVUZfalVNQXk2VnNDc1FHUnNYU0xRY3ExT0JiLUp6cDl2N2ZYLUl3UHFlbFUzY2F0MU9iVW9ZRTBTYTIxUWd1RXh0dnY4ZTJPT1Q3cTNFNi1ja2lTVnNsZmZPd09SMFFFMjBUNVJPZWxLVlR6OG9fYk1Cc3Byc3JUY3lTYlhqV2xjRl9RVkFDRnU4Vmx2WkV6R19fcjlHYVZWOQ?oc=5",
-        "published_at": "2026-08-06T09:06:53Z",
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Oil settles up $3 as Iran reviews bill to ban US, Israeli vessels from Hormuz - reuters.com",
+        "source": "reuters.com",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTmw0WV9PeEJVU0pBczd6UzhWSjdUMlQ2aDhwUGxDbWdvc3hMakw5d3h3Q2wxMXNRakctZjRlTW8wNi1PNnU2eDY0anYxakZYSkZBSVN6SUhJOEF4aW1HSTVnUWREc3k2dFBvUEl0azM4TXFoV1I1S1pJRVlVUm1SakpIeVFqM0wxS2gtMDFvc3ktZ05QYjc3VXRtSHdsNk9hLWUwb3VxTzBFcVhBeUx3Zm82Zw?oc=5",
+        "published_at": "2026-08-06T01:07:00Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 3.6,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
       }
     ],
     "diagnostics": {
-      "signals_considered": 77,
+      "signals_considered": 75,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
