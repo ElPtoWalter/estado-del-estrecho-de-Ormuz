@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-07T12:21:54Z",
-  "last_success_at": "2026-08-07T12:21:54Z",
+  "checked_at": "2026-08-07T13:52:01Z",
+  "last_success_at": "2026-08-07T13:52:01Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,23 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Saudi military says Houthi attacks left 11 civilians, including a child, injured near Yemen border - AP News",
+      "source_name": "Associated Press",
+      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZlNlTi0tMTdEYTJ4Zy1xU1JmQ0w3TFRtOW80d3ZuU2dtc0FwUE5pUmJwN19EQWlIdzVQTHpOVmR3RlJMSzRHNnE2Tm5KaDg3eGNjUzF0R1RtT2Q2c3Fsd0pHRWtoN2NaRXZyMGMwZmdBX1dTMUNjempFdm5XNTBxTGt1XzNsd3E0Rk5HRlB2WnNTWUF6ei12eWhYY3UyZw?oc=5",
+      "published_at": "2026-08-07T00:31:00Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-08-07T13:52:01Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "US-Israel-Iran War Latest News: 'This Time It Was More Than a Threat,' Trump Says US Was Ready to Strike Iran if Needed – UKMTO Reports Tanker Explosion in Strait of Hormuz - The Sunday Guardian",
       "source_name": "The Guardian",
       "source_url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxNVTVuZ3JkR2VQbEdOcDZqQlVmMGx5OGhITWhicFhaY2lZSERMWGE2aFhKRTRseG1WYmc3VXAtRmRaWFcxRnc2WmkxRWxaaXI1YVhtVHBiU3VMTU1pSWtVNDlnRy1wZE1CTHd0STNWd3lMaVlqZTVPUnU2WlNnT3A0aExHQktXWVM5MDNOYlZtNGlRdnZEZnNlWFVkRWVDS0IwRC1iQ1Y1UjlZUV9lY2xPTjBkVTVRak1SbWVuWUxMd2NISFJSbElBZVJwdmRYMV9iRzRtbFhwWXlSdkhKTldiMWRLVTkyUlZEWjFMLUpWUjhsZTZNQzJZSGc2LVJLQUhlZlJ2VEIwTy14V0Y1WVQydWZoZmFpc1gxSWMweGFPNVB6NE5tQUIwajYyWG5RellxZS1RUGtR0gG7AkFVX3lxTE5WVGRnZ1g0TlhvZ1NiLTBIMFZkRGdOY2E4YXJYU2FTTlNKanNidi1Tb2FBTFVxeUV0alJqUE80bzVGOVNGOGIwM0xYRm9UN0h5YnI1MjZxeXQ0VFZVUjdERFlYNFZKcWFMeGtqUkd4aF9tQnBtc294RFJXa19vS0dxOGZILTBjT2NJbThBQlQ4OG95TjRORzZVMUxCX0hpaDBlb1RNZ2VhVDFycFZ3emJXeWkxZmEyQ0hfMDBWRmljRl94WG1GQ1hKekVSU3NaTVBoMXNqVC11R25PaGQwT1pMWFhXQjVLc0xaNlY0YWo5dDdRcGZaSUh0MTY4ay1qMXMtcVgza0RCTnpPLXJHbV9yaFZHSm9OeEZPOGlqeXFRUGhNeXFDWDZIRzdmaERqZ1NXNkRiNzRuQVpuMA?oc=5",
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-07T12:21:54Z"
+      "observed_at": "2026-08-07T13:52:01Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,31 +42,32 @@
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-07T12:21:54Z"
+      "observed_at": "2026-08-07T13:52:01Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5.805
+      "risk": 9.405
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 2
+      "risk": 3
     },
-    "articles_considered": 57,
-    "signals_considered": 5,
-    "current_cycle_evidence": 2,
+    "articles_considered": 50,
+    "signals_considered": 6,
+    "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
@@ -64,7 +75,7 @@
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-08-07T06:04:00Z",
-    "current_cycle_count": 2,
+    "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -79,7 +90,7 @@
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-07T12:21:54Z"
+      "observed_at": "2026-08-07T13:52:01Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -99,7 +110,7 @@
       "published_at": "2026-08-07T00:31:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-07T11:24:41Z"
+      "observed_at": "2026-08-07T13:52:01Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -119,7 +130,7 @@
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-07T12:21:54Z"
+      "observed_at": "2026-08-07T13:52:01Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -674,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-07T12:22:26Z",
+    "generated_at": "2026-08-07T13:52:42Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -710,13 +721,13 @@
       "passage": 38.847,
       "closure": 0,
       "traffic_reduction": 20.52,
-      "access_restriction": 35.48,
-      "risk": 36.965
+      "access_restriction": 33.72,
+      "risk": 40.865
     },
     "source_counts": {
       "passage": 10,
       "closure": 0,
-      "primary_sources": 4
+      "primary_sources": 5
     },
     "latest_confirmed_transit_at": "2026-08-07T08:39:42Z",
     "legacy_engine": {
@@ -771,6 +782,36 @@
         "kind_label_en": "Confirmed transit"
       },
       {
+        "kind": "RISK_SEVERE",
+        "title": "Saudi military says Houthi attacks left 11 civilians, including a child, injured near Yemen border - AP News",
+        "source": "Associated Press",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZlNlTi0tMTdEYTJ4Zy1xU1JmQ0w3TFRtOW80d3ZuU2dtc0FwUE5pUmJwN19EQWlIdzVQTHpOVmR3RlJMSzRHNnE2Tm5KaDg3eGNjUzF0R1RtT2Q2c3Fsd0pHRWtoN2NaRXZyMGMwZmdBX1dTMUNjempFdm5XNTBxTGt1XzNsd3E0Rk5HRlB2WnNTWUF6ei12eWhYY3UyZw?oc=5",
+        "published_at": "2026-08-07T00:31:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVWd6ZjFIZXZHQ2JsNi1UdXBvS1JIUm0xYWtjaDQ1UXVOczhzTzZLNEY0ZTRtb1l5N2lrY09ERHFySlMyakJJNndhRUx5M0FabFZ5TllJZWZPU05na2VqMkRVckJ2VndLdUlFUGd1NklHQlN6V1VJUzRxS09jUmtVVWhMTGRuVlN3YzctZjhBWVI2UUZkQkJqZ0NvdF9uQ1I0RGtCNVNORThqQQ?oc=5",
+        "published_at": "2026-08-06T19:30:42Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
+      },
+      {
         "kind": "ACCESS_RESTRICTED",
         "title": "Reuters: proposed passage regime includes Iranian control, fees and insurance/sanctions complications",
         "source": "Reuters",
@@ -814,40 +855,10 @@
         "effective_weight": 3.6,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Oil settles up $3 as Iran reviews bill to ban US, Israeli vessels from Hormuz - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTmw0WV9PeEJVU0pBczd6UzhWSjdUMlQ2aDhwUGxDbWdvc3hMakw5d3h3Q2wxMXNRakctZjRlTW8wNi1PNnU2eDY0anYxakZYSkZBSVN6SUhJOEF4aW1HSTVnUWREc3k2dFBvUEl0azM4TXFoV1I1S1pJRVlVUm1SakpIeVFqM0wxS2gtMDFvc3ktZ05QYjc3VXRtSHdsNk9hLWUwb3VxTzBFcVhBeUx3Zm82Zw?oc=5",
-        "published_at": "2026-08-06T01:07:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 3.6,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
-      },
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVWd6ZjFIZXZHQ2JsNi1UdXBvS1JIUm0xYWtjaDQ1UXVOczhzTzZLNEY0ZTRtb1l5N2lrY09ERHFySlMyakJJNndhRUx5M0FabFZ5TllJZWZPU05na2VqMkRVckJ2VndLdUlFUGd1NklHQlN6V1VJUzRxS09jUmtVVWhMTGRuVlN3YzctZjhBWVI2UUZkQkJqZ0NvdF9uQ1I0RGtCNVNORThqQQ?oc=5",
-        "published_at": "2026-08-06T00:51:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 3.6,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
       }
     ],
     "diagnostics": {
-      "signals_considered": 78,
+      "signals_considered": 77,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
