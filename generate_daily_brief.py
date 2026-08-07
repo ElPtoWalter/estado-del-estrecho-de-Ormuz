@@ -120,8 +120,34 @@ def build_feed(items: list[dict[str, Any]], updated: str) -> str:
 </feed>
 """
 
+def apply_operational_intelligence(data: dict[str, Any]) -> dict[str, Any]:
+    """Use V7 public assessment for the human-facing daily brief only."""
+    if not isinstance(data, dict):
+        return data
+    oi = data.get("operational_intelligence")
+    if not isinstance(oi, dict) or not oi.get("state"):
+        return data
+    output = dict(data)
+    family = oi.get("family")
+    output["status"] = "ABIERTO" if family == "OPEN" else "CERRADO" if family == "CLOSED" else "INCIERTO"
+    state = str(oi.get("state") or "")
+    output["operational_status"] = (
+        "OPEN_NORMAL" if state == "OPEN_NORMAL"
+        else "OPEN_RESTRICTED" if family == "OPEN"
+        else "CLOSED_CONFIRMED" if family == "CLOSED"
+        else "HIGH_RISK_UNCONFIRMED"
+    )
+    output["operational_label_es"] = oi.get("label_es") or output.get("operational_label_es")
+    output["operational_label_en"] = oi.get("label_en") or output.get("operational_label_en")
+    output["summary_es"] = oi.get("summary_es") or output.get("summary_es")
+    output["summary_en"] = oi.get("summary_en") or output.get("summary_en")
+    output["confidence"] = oi.get("confidence") or output.get("confidence")
+    output["checked_at"] = oi.get("generated_at") or output.get("checked_at")
+    return output
+
 def main() -> int:
     status=load_json("status.json",{})
+    status=apply_operational_intelligence(status)
     if not isinstance(status,dict) or not status.get("status"):
         raise SystemExit("status.json no contiene un estado válido.")
     now=datetime.now(timezone.utc)

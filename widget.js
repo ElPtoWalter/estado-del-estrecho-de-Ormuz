@@ -20,13 +20,16 @@
   fetch('/status.json?widget=' + Date.now(), {cache:'no-store'})
     .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
     .then(data => {
-      const status = data.status || 'INCIERTO';
-      const operational = lang === 'en' ? data.operational_label_en : data.operational_label_es;
+      // OPERATIONAL_INTELLIGENCE_V7_WIDGET
+      const oi = data.operational_intelligence;
+      const status = oi && oi.state ? (oi.family === 'OPEN' ? 'ABIERTO' : oi.family === 'CLOSED' ? 'CERRADO' : 'INCIERTO') : (data.status || 'INCIERTO');
+      const operational = oi && oi.state ? (lang === 'en' ? oi.label_en : oi.label_es) : (lang === 'en' ? data.operational_label_en : data.operational_label_es);
       $('[data-state]').textContent = operational || labels[status === 'ABIERTO' ? 'open' : status === 'CERRADO' ? 'closed' : 'uncertain'];
       $('[data-state]').classList.add(status === 'ABIERTO' ? 'g4-status-open' : status === 'CERRADO' ? 'g4-status-closed' : 'g4-status-uncertain');
-      $('[data-summary]').textContent = lang === 'en' ? data.summary_en : data.summary_es;
-      $('[data-confidence]').textContent = data.confidence || '—';
-      const date = data.checked_at ? new Date(data.checked_at) : null;
+      $('[data-summary]').textContent = oi && oi.state ? (lang === 'en' ? oi.summary_en : oi.summary_es) : (lang === 'en' ? data.summary_en : data.summary_es);
+      $('[data-confidence]').textContent = (oi && oi.state ? oi.confidence : data.confidence) || '—';
+      const effectiveCheckedAt = oi && oi.state ? (oi.generated_at || data.checked_at) : data.checked_at;
+      const date = effectiveCheckedAt ? new Date(effectiveCheckedAt) : null;
       $('[data-updated]').textContent = date && !Number.isNaN(date.valueOf()) ? new Intl.DateTimeFormat(lang === 'en' ? 'en-GB':'es-ES',{dateStyle:'short',timeStyle:'short'}).format(date) : '—';
     })
     .catch(() => { $('[data-state]').textContent = labels.uncertain; $('[data-summary]').textContent = lang === 'en' ? 'Live data is temporarily unavailable.' : 'Los datos en directo no están disponibles temporalmente.'; });

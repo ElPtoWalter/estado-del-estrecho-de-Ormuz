@@ -551,6 +551,13 @@ def main() -> int:
         prerender_all(ROOT)
     except Exception as exc:
         print(f"AVISO: prerender AdSense no aplicado: {exc}")
+    # OPERATIONAL_INTELLIGENCE_V7_HOOK
+    try:
+        import operational_intelligence_v7
+        operational_intelligence_v7.run(ROOT)
+    except Exception as exc:
+        print(f"AVISO: Operational Intelligence V7 no aplicado: {exc}")
+
     update_sitemap()
     update_text_files()
     print("V11.3 instalada: contenido integrado, AdSense añadido a los HTML y ads.txt preparado.")

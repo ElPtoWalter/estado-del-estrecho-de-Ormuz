@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-07T11:20:00Z",
+  "expires_at": "2026-08-11T23:59:59Z",
+  "note": "Initial primary-source bridge for V7. Ignored automatically after expiry.",
+  "signals": [
+    {
+      "kind": "TRANSIT_CONFIRMED",
+      "title": "JMIC: vessels were transiting eastbound and westbound through the Strait of Hormuz; commercial traffic remains reduced",
+      "source": "JMIC / UKMTO",
+      "url": "https://www.ukmto.org/-/media/ukmto/products/update-080-jmic-advisory-note-04-august.pdf",
+      "published_at": "2026-08-04T12:00:00Z",
+      "tier": 5,
+      "details": "Update 080 reports vessels transiting in both directions and reduced commercial traffic.",
+      "weight_multiplier": 1.15
+    },
+    {
+      "kind": "TRAFFIC_SEVERELY_REDUCED",
+      "title": "JMIC: Strait of Hormuz commercial traffic remains at reduced levels with single-digit tanker numbers",
+      "source": "JMIC / UKMTO",
+      "url": "https://www.ukmto.org/-/media/ukmto/products/update-080-jmic-advisory-note-04-august.pdf",
+      "published_at": "2026-08-04T12:00:00Z",
+      "tier": 5,
+      "details": "JMIC reports commercial traffic at reduced levels and single-digit tanker numbers in both directions; its 30-transit figure covers U.S.-facilitated transits only and is not treated as total traffic.",
+      "weight_multiplier": 1.1
+    },
+    {
+      "kind": "NEUTRAL_TRANSIT_PERMITTED",
+      "title": "JMIC: neutral transit remains permitted while checks, naval presence and routing pressure continue",
+      "source": "JMIC / UKMTO",
+      "url": "https://www.ukmto.org/-/media/ukmto/products/update-080-jmic-advisory-note-04-august.pdf",
+      "published_at": "2026-08-04T12:00:00Z",
+      "tier": 5
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "JMIC threat level for the Strait of Hormuz remains SEVERE",
+      "source": "JMIC / UKMTO",
+      "url": "https://www.ukmto.org/-/media/ukmto/products/update-080-jmic-advisory-note-04-august.pdf",
+      "published_at": "2026-08-04T12:00:00Z",
+      "tier": 5,
+      "weight_multiplier": 1.15
+    },
+    {
+      "kind": "TRANSIT_CONFIRMED",
+      "title": "Reuters/Kpler: six vessels transited the Strait of Hormuz on Monday, five entries and one exit",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/middle-east/shipping-traffic-key-gulf-waterways-little-changed-uncertain-peace-talks-2026-08-04/",
+      "published_at": "2026-08-04T02:14:00Z",
+      "tier": 4,
+      "details": "Reuters cites Kpler shipping data."
+    },
+    {
+      "kind": "TRAFFIC_SEVERELY_REDUCED",
+      "title": "Reuters: Hormuz traffic remained largely slow and far below normal levels",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/middle-east/shipping-traffic-key-gulf-waterways-little-changed-uncertain-peace-talks-2026-08-04/",
+      "published_at": "2026-08-04T02:14:00Z",
+      "tier": 4
+    },
+    {
+      "kind": "TRANSIT_CONFIRMED",
+      "title": "Reuters: 33 vessels transited Hormuz from Monday to Thursday; four transited on Thursday",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/energy/vessel-traffic-through-hormuz-dwindles-this-week-markets-watch-iran-oman-talks-2026-08-07/",
+      "published_at": "2026-08-07T08:00:00Z",
+      "tier": 4,
+      "details": "Reuters reports continued physical transits on 7 August despite very thin traffic.",
+      "weight_multiplier": 1.15
+    },
+    {
+      "kind": "TRAFFIC_SEVERELY_REDUCED",
+      "title": "Reuters: only 33 vessels crossed from Monday to Thursday versus 50 in the same period a week earlier",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/energy/vessel-traffic-through-hormuz-dwindles-this-week-markets-watch-iran-oman-talks-2026-08-07/",
+      "published_at": "2026-08-07T08:00:00Z",
+      "tier": 4,
+      "details": "Reuters reports 33 transits Monday-Thursday versus 50 in the same period a week earlier; this is used qualitatively, not as a direct ratio to the JMIC baseline."
+    },
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "Reuters: proposed passage regime includes Iranian control, fees and insurance/sanctions complications",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/middle-east/proposed-hormuz-passage-deal-not-feasible-shipping-industry-sources-say-2026-08-06/",
+      "published_at": "2026-08-06T14:50:00Z",
+      "tier": 4
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Lloyd's List: Hormuz shipping risk will remain extreme while attacks and routing constraints continue",
+      "source": "Lloyd's List",
+      "url": "https://www.lloydslist.com/LL1158122/Hormuz-deal-nears-as-Iran-and-Oman-agree-shipping-route",
+      "published_at": "2026-08-06T12:00:00Z",
+      "tier": 4
+    }
+  ]
+}

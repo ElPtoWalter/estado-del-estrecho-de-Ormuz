@@ -1,0 +1,43 @@
+{
+  "version": 7,
+  "ready": true,
+  "initial_assessment": {
+    "state": "OPEN_SEVERELY_RESTRICTED",
+    "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
+    "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
+    "confidence": "ALTA",
+    "dimensions": {
+      "passage": "PASSAGE_CONFIRMED",
+      "traffic": "SEVERELY_REDUCED",
+      "access": "SELECTIVE",
+      "risk": "EXTREME",
+      "legal": "DISPUTED"
+    },
+    "source_counts": {
+      "passage": 2,
+      "closure": 0,
+      "primary_sources": 3
+    }
+  },
+  "legacy_engine_replaced": false,
+  "legacy_engine_preserved": true,
+  "patched": [
+    "install_v11.py",
+    "widget.js",
+    "social-studio.js",
+    "generate_daily_brief.py",
+    "index.html",
+    "en.html",
+    "llms.txt"
+  ],
+  "payload_files": [
+    "operational_intelligence_v7.py",
+    "operational-intelligence-seed.json",
+    "operational-v7.js",
+    "operational-v7.css",
+    "metodo-inteligencia-operativa.html",
+    "en-operational-intelligence-method.html",
+    "test_operational_intelligence_v7.py"
+  ],
+  "warnings": []
+}

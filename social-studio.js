@@ -26,7 +26,17 @@
     const summary=en?statusData.summary_en:statusData.summary_es;
     textBox.value=en?`Strait of Hormuz status: ${label || status}.\n\n${summary}\n\nVerified evidence, history and public methodology:\n${url}\n\n#Hormuz #Shipping #Energy #Geopolitics`:`Estado del estrecho de Ormuz: ${label || status}.\n\n${summary}\n\nEvidencias verificadas, historial y metodología pública:\n${url}\n\n#Ormuz #Energía #TransporteMarítimo #Geopolítica`;
   }
-  fetch('/status.json?studio='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(d=>{statusData=d;render();});
+  fetch('/status.json?studio='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(d=>{
+    // OPERATIONAL_INTELLIGENCE_V7_SOCIAL
+    const oi=d.operational_intelligence;
+    if(oi&&oi.state){
+      d.status=oi.family==='OPEN'?'ABIERTO':oi.family==='CLOSED'?'CERRADO':'INCIERTO';
+      d.operational_label_es=oi.label_es;d.operational_label_en=oi.label_en;
+      d.summary_es=oi.summary_es;d.summary_en=oi.summary_en;
+      d.confidence=oi.confidence;d.checked_at=oi.generated_at||d.checked_at;
+    }
+    statusData=d;render();
+  });
   langSelect.addEventListener('change',render);
   document.querySelector('[data-download-card]')?.addEventListener('click',()=>{const a=document.createElement('a');a.download=`ormuz-status-${langSelect.value}.png`;a.href=canvas.toDataURL('image/png');a.click();});
   document.querySelector('[data-copy-post]')?.addEventListener('click',async e=>{await navigator.clipboard.writeText(textBox.value);const old=e.currentTarget.textContent;e.currentTarget.textContent=langSelect.value==='en'?'Copied':'Copiado';setTimeout(()=>e.currentTarget.textContent=old,1400);});
