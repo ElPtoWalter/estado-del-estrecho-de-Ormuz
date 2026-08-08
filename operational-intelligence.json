@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-08T03:52:31Z",
+  "generated_at": "2026-08-08T05:22:10Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,11 +33,11 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 32.971,
+    "passage": 32.45,
     "closure": 0,
-    "traffic_reduction": 18.31,
-    "access_restriction": 29.54,
-    "risk": 47.305
+    "traffic_reduction": 17.91,
+    "access_restriction": 29.02,
+    "risk": 40.105
   },
   "source_counts": {
     "passage": 9,
@@ -107,9 +107,24 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
+    },
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "Oil settles up $3 as Iran reviews bill to ban US, Israeli vessels from Hormuz - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTmw0WV9PeEJVU0pBczd6UzhWSjdUMlQ2aDhwUGxDbWdvc3hMakw5d3h3Q2wxMXNRakctZjRlTW8wNi1PNnU2eDY0anYxakZYSkZBSVN6SUhJOEF4aW1HSTVnUWREc3k2dFBvUEl0azM4TXFoV1I1S1pJRVlVUm1SakpIeVFqM0wxS2gtMDFvc3ktZ05QYjc3VXRtSHdsNk9hLWUwb3VxTzBFcVhBeUx3Zm82Zw?oc=5",
+      "published_at": "2026-08-06T19:37:26Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.6,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
     },
     {
       "kind": "RISK_SEVERE",
@@ -155,25 +170,10 @@
       "effective_weight": 3.6,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "JMIC: vessels were transiting eastbound and westbound through the Strait of Hormuz; commercial traffic remains reduced",
-      "source": "JMIC / UKMTO",
-      "url": "https://www.ukmto.org/-/media/ukmto/products/update-080-jmic-advisory-note-04-august.pdf",
-      "published_at": "2026-08-04T12:00:00Z",
-      "tier": 5,
-      "weight": 5.75,
-      "provider": "seed-primary",
-      "details": "Update 080 reports vessels transiting in both directions and reduced commercial traffic.",
-      "traffic_ratio": null,
-      "effective_weight": 3.565,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
     }
   ],
   "diagnostics": {
-    "signals_considered": 82,
+    "signals_considered": 75,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
