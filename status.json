@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-08T19:09:23Z",
-  "last_success_at": "2026-08-08T19:09:23Z",
+  "checked_at": "2026-08-08T19:56:18Z",
+  "last_success_at": "2026-08-08T19:56:18Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -22,17 +22,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-08T19:09:23Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "UAE says Iran targeted ADNOC tanker in Strait of Hormuz , no casualties",
-      "source_name": "Al Jazeera",
-      "source_url": "https://www.aljazeera.com/news/2026/8/8/uae-says-iran-targeted-adnoc-tanker-in-hormuz-no-casualties-2",
-      "published_at": "2026-08-08T17:00:00Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-08T19:09:23Z"
+      "observed_at": "2026-08-08T19:56:18Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +32,7 @@
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T19:09:23Z"
+      "observed_at": "2026-08-08T19:56:18Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,39 +42,40 @@
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T19:09:23Z"
+      "observed_at": "2026-08-08T19:56:18Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 9.905
+      "risk": 7.505
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 4
+      "risk": 3
     },
-    "articles_considered": 53,
-    "signals_considered": 4,
-    "current_cycle_evidence": 4,
+    "articles_considered": 50,
+    "signals_considered": 3,
+    "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-08T17:00:00Z",
-    "current_cycle_count": 4,
+    "as_of": "2026-08-08T11:46:57Z",
+    "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -119,7 +110,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-08T19:09:23Z"
+      "observed_at": "2026-08-08T19:56:18Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -179,7 +170,7 @@
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T19:09:23Z"
+      "observed_at": "2026-08-08T19:56:18Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -219,7 +210,7 @@
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T19:09:23Z"
+      "observed_at": "2026-08-08T19:56:18Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -694,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-08T19:10:10Z",
+    "generated_at": "2026-08-08T19:56:51Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -730,7 +721,7 @@
       "passage": 26.555,
       "closure": 0,
       "traffic_reduction": 14.95,
-      "access_restriction": 18.6,
+      "access_restriction": 17.54,
       "risk": 56.795
     },
     "source_counts": {
@@ -738,7 +729,7 @@
       "closure": 0,
       "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-08-08T16:51:53Z",
+    "latest_confirmed_transit_at": "2026-08-08T18:31:18Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -816,7 +807,7 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.6,
+        "effective_weight": 3.12,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
       },
@@ -831,7 +822,7 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.6,
+        "effective_weight": 3.12,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
       },
