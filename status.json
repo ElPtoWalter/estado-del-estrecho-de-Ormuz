@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-08T17:59:26Z",
-  "last_success_at": "2026-08-08T17:59:26Z",
+  "checked_at": "2026-08-08T19:09:23Z",
+  "last_success_at": "2026-08-08T19:09:23Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -22,17 +22,17 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-08T17:59:26Z"
+      "observed_at": "2026-08-08T19:09:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran Seeks Hormuz Shipping Restrictions - Bloomberg.com",
-      "source_name": "Bloomberg",
-      "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeEd0U3JRZnRidTE3cmthcjNCU2EydlAzd2ZIY0ZxVUkxUWxTMmRzZWNfOU8xY0ctU0dIS2R0amE2QzltbU1OMV9CNGk3NmI3RWM5WExfQ3RfZGFtb1N5RmhyWTluLXpqMGd5S0ZMdkUwU2c5NTZtaTBNTGxFdDAyc3hCdmpUbFhkb2JBNHNnenRsbUNhYW96RQ?oc=5",
-      "published_at": "2026-08-07T06:04:00Z",
-      "tier": 3,
+      "title": "UAE says Iran targeted ADNOC tanker in Strait of Hormuz , no casualties",
+      "source_name": "Al Jazeera",
+      "source_url": "https://www.aljazeera.com/news/2026/8/8/uae-says-iran-targeted-adnoc-tanker-in-hormuz-no-casualties-2",
+      "published_at": "2026-08-08T17:00:00Z",
+      "tier": 2,
       "official": false,
-      "observed_at": "2026-08-08T17:59:26Z"
+      "observed_at": "2026-08-08T19:09:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,46 +42,65 @@
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T17:59:26Z"
+      "observed_at": "2026-08-08T19:09:23Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran Seeks Hormuz Shipping Restrictions - Bloomberg.com",
+      "source_name": "Bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeEd0U3JRZnRidTE3cmthcjNCU2EydlAzd2ZIY0ZxVUkxUWxTMmRzZWNfOU8xY0ctU0dIS2R0amE2QzltbU1OMV9CNGk3NmI3RWM5WExfQ3RfZGFtb1N5RmhyWTluLXpqMGd5S0ZMdkUwU2c5NTZtaTBNTGxFdDAyc3hCdmpUbFhkb2JBNHNnenRsbUNhYW96RQ?oc=5",
+      "published_at": "2026-08-07T06:04:00Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-08-08T19:09:23Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 8.145
+      "risk": 9.905
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 3
+      "risk": 4
     },
-    "articles_considered": 45,
-    "signals_considered": 3,
-    "current_cycle_evidence": 3,
+    "articles_considered": 53,
+    "signals_considered": 4,
+    "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-08T11:46:57Z",
-    "current_cycle_count": 3,
+    "as_of": "2026-08-08T17:00:00Z",
+    "current_cycle_count": 4,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "UAE says Iran targeted ADNOC tanker in Strait of Hormuz , no casualties",
+      "source_name": "Al Jazeera",
+      "source_url": "https://www.aljazeera.com/news/2026/8/8/uae-says-iran-targeted-adnoc-tanker-in-hormuz-no-casualties-2",
+      "published_at": "2026-08-08T17:00:00Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-08T19:09:23Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "US-Iran War LIVE updates: UAE state media says missile attacks ADNOC vessel - CNBC TV18",
@@ -100,7 +119,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-08T17:59:26Z"
+      "observed_at": "2026-08-08T19:09:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -160,7 +179,7 @@
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T17:59:26Z"
+      "observed_at": "2026-08-08T19:09:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -200,7 +219,7 @@
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T17:59:26Z"
+      "observed_at": "2026-08-08T19:09:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -671,21 +690,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-07-31T23:33:10Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US launches 'heavy' strikes on Iran after attempted attack on American troops - BBC",
-      "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBTU0lxSXpCeTVrS1JXemlVdmNyZ2NjaDhpWFhCY2hwa2pmdk5yblB4M2FBN3cwQU9RTWJCRTJCTDFGaHZEZC1ENUEwdGFCLUhrY1VrZU1GVHhOZw?oc=5",
-      "published_at": "2026-07-30T10:49:14Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-08-03T08:49:00Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-08T17:59:57Z",
+    "generated_at": "2026-08-08T19:10:10Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -718,18 +727,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 23.98,
+      "passage": 26.555,
       "closure": 0,
       "traffic_reduction": 14.95,
-      "access_restriction": 17.6,
-      "risk": 59.195
+      "access_restriction": 18.6,
+      "risk": 56.795
     },
     "source_counts": {
-      "passage": 7,
+      "passage": 9,
       "closure": 0,
-      "primary_sources": 4
+      "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-08-08T13:56:57Z",
+    "latest_confirmed_transit_at": "2026-08-08T16:51:53Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -797,21 +806,6 @@
         "kind_label_en": "Confirmed transit"
       },
       {
-        "kind": "RISK_SEVERE",
-        "title": "Possible Strait of Hormuz deal, a large attack in Yemen and other Mideast news - AP News",
-        "source": "AP News",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd1R4TEFIQVkxS1I2SDdWVUZfalVNQXk2VnNDc1FHUnNYU0xRY3ExT0JiLUp6cDl2N2ZYLUl3UHFlbFUzY2F0MU9iVW9ZRTBTYTIxUWd1RXh0dnY4ZTJPT1Q3cTNFNi1ja2lTVnNsZmZPd09SMFFFMjBUNVJPZWxLVlR6OG9fYk1Cc3Byc3JUY3lTYlhqV2xjRl9RVkFDRnU4Vmx2WkV6R19fcjlHYVZWOQ?oc=5",
-        "published_at": "2026-08-06T23:31:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 3.6,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
         "kind": "ACCESS_RESTRICTED",
         "title": "Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz - Reuters",
         "source": "Reuters",
@@ -855,10 +849,25 @@
         "effective_weight": 3.12,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Lloyd's List: Hormuz shipping risk will remain extreme while attacks and routing constraints continue",
+        "source": "Lloyd's List",
+        "url": "https://www.lloydslist.com/LL1158122/Hormuz-deal-nears-as-Iran-and-Oman-agree-shipping-route",
+        "published_at": "2026-08-06T12:00:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "seed-primary",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.12,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 81,
+      "signals_considered": 85,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
