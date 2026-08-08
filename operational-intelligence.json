@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-08T17:04:34Z",
+  "generated_at": "2026-08-08T17:59:57Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -15,36 +15,36 @@
     "traffic": "SEVERELY_REDUCED",
     "access": "SELECTIVE",
     "risk": "EXTREME",
-    "legal": "DISPUTED"
+    "legal": "CLOSURE_CLAIMED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Muy reducido",
     "access": "Selectivo / condicionado",
     "risk": "Extremo",
-    "legal": "Régimen disputado"
+    "legal": "Cierre declarado por una parte"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Severely reduced",
     "access": "Selective / conditional",
     "risk": "Extreme",
-    "legal": "Disputed regime"
+    "legal": "Closure claimed by one party"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 24.994,
+    "passage": 23.98,
     "closure": 0,
-    "traffic_reduction": 15.73,
-    "access_restriction": 20.3,
-    "risk": 50.755
+    "traffic_reduction": 14.95,
+    "access_restriction": 17.6,
+    "risk": 59.195
   },
   "source_counts": {
-    "passage": 8,
+    "passage": 7,
     "closure": 0,
     "primary_sources": 4
   },
-  "latest_confirmed_transit_at": "2026-08-08T11:28:27Z",
+  "latest_confirmed_transit_at": "2026-08-08T13:56:57Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 74,
+    "signals_considered": 81,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
