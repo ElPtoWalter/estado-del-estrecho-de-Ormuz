@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-08T02:29:13Z",
-  "last_success_at": "2026-08-08T02:29:13Z",
+  "checked_at": "2026-08-08T03:51:51Z",
+  "last_success_at": "2026-08-08T03:51:51Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -16,23 +16,23 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "ADNOC says attacks on vessels, staff significantly impacting operations - reuters.com",
+      "title": "ADNOC says attacks on vessels, staff significantly impacting operations - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZFZ2Y0RPOWN5S0dKcGVuQTgweVRpcHJfS1RMeFNXWjJHTkxjQU9oR3NhSGhGekVndEg5aS1QS1Jadm9ZUGU2QVdIa3pGY0VXa0dmZE9EOEZZLWd5Z194SEZNcXF6eWRjbUdkSWxfWVJXdkt4Y1I2UGJNZ0NpQ2NkZTJhREd4YzB2MlExUjdJRnFPZUZ1UFdfUF9jVXg2OHlfVHVSYW1zd0ZPaC1qTTRpaTNoV040WVFrZF8xRTV3?oc=5",
       "published_at": "2026-08-07T15:07:38Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-08T02:29:13Z"
+      "observed_at": "2026-08-08T03:51:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran Seeks Hormuz Shipping Restrictions - Bloomberg.com",
+      "title": "Iran Seeks Hormuz Shipping Restrictions - bloomberg.com",
       "source_name": "Bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeEd0U3JRZnRidTE3cmthcjNCU2EydlAzd2ZIY0ZxVUkxUWxTMmRzZWNfOU8xY0ctU0dIS2R0amE2QzltbU1OMV9CNGk3NmI3RWM5WExfQ3RfZGFtb1N5RmhyWTluLXpqMGd5S0ZMdkUwU2c5NTZtaTBNTGxFdDAyc3hCdmpUbFhkb2JBNHNnenRsbUNhYW96RQ?oc=5",
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T02:29:13Z"
+      "observed_at": "2026-08-08T03:51:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,16 +42,17 @@
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T02:29:13Z"
+      "observed_at": "2026-08-08T03:51:51Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -64,7 +65,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 51,
+    "articles_considered": 48,
     "signals_considered": 6,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -83,6 +84,16 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "ADNOC says attacks on vessels, staff significantly impacting operations - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZFZ2Y0RPOWN5S0dKcGVuQTgweVRpcHJfS1RMeFNXWjJHTkxjQU9oR3NhSGhGekVndEg5aS1QS1Jadm9ZUGU2QVdIa3pGY0VXa0dmZE9EOEZZLWd5Z194SEZNcXF6eWRjbUdkSWxfWVJXdkt4Y1I2UGJNZ0NpQ2NkZTJhREd4YzB2MlExUjdJRnFPZUZ1UFdfUF9jVXg2OHlfVHVSYW1zd0ZPaC1qTTRpaTNoV040WVFrZF8xRTV3?oc=5",
+      "published_at": "2026-08-07T15:07:38Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-08-08T03:51:51Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "ADNOC says attacks on vessels, staff significantly impacting operations - reuters.com",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZFZ2Y0RPOWN5S0dKcGVuQTgweVRpcHJfS1RMeFNXWjJHTkxjQU9oR3NhSGhGekVndEg5aS1QS1Jadm9ZUGU2QVdIa3pGY0VXa0dmZE9EOEZZLWd5Z194SEZNcXF6eWRjbUdkSWxfWVJXdkt4Y1I2UGJNZ0NpQ2NkZTJhREd4YzB2MlExUjdJRnFPZUZ1UFdfUF9jVXg2OHlfVHVSYW1zd0ZPaC1qTTRpaTNoV040WVFrZF8xRTV3?oc=5",
@@ -90,16 +101,6 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-08-08T02:29:13Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "ADNOC says attacks on vessels, staff significantly impacting operations - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZFZ2Y0RPOWN5S0dKcGVuQTgweVRpcHJfS1RMeFNXWjJHTkxjQU9oR3NhSGhGekVndEg5aS1QS1Jadm9ZUGU2QVdIa3pGY0VXa0dmZE9EOEZZLWd5Z194SEZNcXF6eWRjbUdkSWxfWVJXdkt4Y1I2UGJNZ0NpQ2NkZTJhREd4YzB2MlExUjdJRnFPZUZ1UFdfUF9jVXg2OHlfVHVSYW1zd0ZPaC1qTTRpaTNoV040WVFrZF8xRTV3?oc=5",
-      "published_at": "2026-08-07T15:07:38Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-08-08T00:01:11Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -113,13 +114,13 @@
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran Seeks Hormuz Shipping Restrictions - Bloomberg.com",
+      "title": "Iran Seeks Hormuz Shipping Restrictions - bloomberg.com",
       "source_name": "Bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeEd0U3JRZnRidTE3cmthcjNCU2EydlAzd2ZIY0ZxVUkxUWxTMmRzZWNfOU8xY0ctU0dIS2R0amE2QzltbU1OMV9CNGk3NmI3RWM5WExfQ3RfZGFtb1N5RmhyWTluLXpqMGd5S0ZMdkUwU2c5NTZtaTBNTGxFdDAyc3hCdmpUbFhkb2JBNHNnenRsbUNhYW96RQ?oc=5",
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T02:29:13Z"
+      "observed_at": "2026-08-08T03:51:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -159,7 +160,7 @@
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T02:29:13Z"
+      "observed_at": "2026-08-08T03:51:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -684,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-08T02:29:47Z",
+    "generated_at": "2026-08-08T03:52:31Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -717,18 +718,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 37.674,
+      "passage": 32.971,
       "closure": 0,
-      "traffic_reduction": 17.41,
-      "access_restriction": 31.22,
-      "risk": 49.985
+      "traffic_reduction": 18.31,
+      "access_restriction": 29.54,
+      "risk": 47.305
     },
     "source_counts": {
-      "passage": 12,
+      "passage": 9,
       "closure": 0,
-      "primary_sources": 4
+      "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-08-07T14:30:32Z",
+    "latest_confirmed_transit_at": "2026-08-07T08:00:00Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -752,7 +753,7 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "ADNOC says attacks on vessels, staff significantly impacting operations - reuters.com",
+        "title": "ADNOC says attacks on vessels, staff significantly impacting operations - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZFZ2Y0RPOWN5S0dKcGVuQTgweVRpcHJfS1RMeFNXWjJHTkxjQU9oR3NhSGhGekVndEg5aS1QS1Jadm9ZUGU2QVdIa3pGY0VXa0dmZE9EOEZZLWd5Z194SEZNcXF6eWRjbUdkSWxfWVJXdkt4Y1I2UGJNZ0NpQ2NkZTJhREd4YzB2MlExUjdJRnFPZUZ1UFdfUF9jVXg2OHlfVHVSYW1zd0ZPaC1qTTRpaTNoV040WVFrZF8xRTV3?oc=5",
         "published_at": "2026-08-07T15:07:38Z",
@@ -782,10 +783,10 @@
       },
       {
         "kind": "TRANSIT_CONFIRMED",
-        "title": "Vessel traffic through Hormuz dwindles this week as markets watch Iran-Oman talks - reuters.com",
-        "source": "reuters.com",
+        "title": "Vessel traffic through Hormuz dwindles this week as markets watch Iran-Oman talks - Reuters",
+        "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPYjdYbS1fZXZGWktSZkVpMk4temZNOUY1cEFsQUxTRXRNQnJUai1lY2xTMDE5dmFMZjUyUzZQclRyQUJuVTFVXzB6RGtpeXlFeU8xZjNiVWp4dVVNTkVWcVhCVEpsVVdTa1lsZEVfVUlSWHBlMjh0UDNYdkpjS3BHVjA2MUUtSXU0OTNEZ1lCUW9iYkliLUxSN2JSTTlFbEktaGRTb2UzcUxNMjlaZGtQSmt1S1FWYzlvdlkwdDM3WjY0dHZTRU9VWFFB?oc=5",
-        "published_at": "2026-08-07T04:41:15Z",
+        "published_at": "2026-08-07T04:33:00Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "Google News RSS",
