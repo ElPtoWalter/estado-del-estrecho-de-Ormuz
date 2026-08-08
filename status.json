@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-08-08T14:07:42Z",
-  "last_success_at": "2026-08-08T14:07:42Z",
+  "checked_at": "2026-08-08T14:59:56Z",
+  "last_success_at": "2026-08-08T14:59:56Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,13 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "UAE says Iran attacked ADNOC vessel with missile in Strait of Hormuz - reuters.com",
+      "title": "UAE says Iran attacked ADNOC vessel with missile in Strait of Hormuz - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQajV4Uk9FTWd2WFJTWWVSZS1pdkl4OGFERFdzeExaYy1udkYxWGdXYWxRdHUwd2kwLVRtRTdhRkdVdUZuNXZ3U09EQUR3OXUwUzVtZmZZeWZkWmlkTThUTDBYNVBjbE9IWVBQZnhhcHBfcFVnZTc0NG1uMk54dElXNkhzQUFZR3VkRW5QZkthVjdfdTJOaXR6YWxiZmtfdzJROGg3bWFuOVhuV2ZkTDNLNkg4d18?oc=5",
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-08T14:07:42Z"
+      "observed_at": "2026-08-08T14:59:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-08T12:15:49Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-08T14:07:42Z"
+      "observed_at": "2026-08-08T14:59:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T14:07:42Z"
+      "observed_at": "2026-08-08T14:59:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,16 +52,17 @@
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T14:07:42Z"
+      "observed_at": "2026-08-08T14:59:56Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -74,8 +75,8 @@
       "declared": 0,
       "risk": 4
     },
-    "articles_considered": 52,
-    "signals_considered": 7,
+    "articles_considered": 50,
+    "signals_considered": 6,
     "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -99,7 +100,17 @@
       "published_at": "2026-08-08T12:15:49Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-08T14:07:42Z"
+      "observed_at": "2026-08-08T14:59:56Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "UAE says Iran attacked ADNOC vessel with missile in Strait of Hormuz - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQajV4Uk9FTWd2WFJTWWVSZS1pdkl4OGFERFdzeExaYy1udkYxWGdXYWxRdHUwd2kwLVRtRTdhRkdVdUZuNXZ3U09EQUR3OXUwUzVtZmZZeWZkWmlkTThUTDBYNVBjbE9IWVBQZnhhcHBfcFVnZTc0NG1uMk54dElXNkhzQUFZR3VkRW5QZkthVjdfdTJOaXR6YWxiZmtfdzJROGg3bWFuOVhuV2ZkTDNLNkg4d18?oc=5",
+      "published_at": "2026-08-08T11:46:57Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-08-08T14:59:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -110,16 +121,6 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-08-08T14:07:42Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "UAE says Iran attacked ADNOC vessel with missile in Strait of Hormuz - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQajV4Uk9FTWd2WFJTWWVSZS1pdkl4OGFERFdzeExaYy1udkYxWGdXYWxRdHUwd2kwLVRtRTdhRkdVdUZuNXZ3U09EQUR3OXUwUzVtZmZZeWZkWmlkTThUTDBYNVBjbE9IWVBQZnhhcHBfcFVnZTc0NG1uMk54dElXNkhzQUFZR3VkRW5QZkthVjdfdTJOaXR6YWxiZmtfdzJROGg3bWFuOVhuV2ZkTDNLNkg4d18?oc=5",
-      "published_at": "2026-08-08T11:46:57Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-08-08T13:28:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -169,7 +170,7 @@
       "published_at": "2026-08-07T06:04:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T14:07:42Z"
+      "observed_at": "2026-08-08T14:59:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -209,7 +210,7 @@
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-08T14:07:42Z"
+      "observed_at": "2026-08-08T14:59:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -694,7 +695,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-08T14:08:01Z",
+    "generated_at": "2026-08-08T15:00:45Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -727,16 +728,16 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 26.593,
+      "passage": 26.541,
       "closure": 0,
-      "traffic_reduction": 14.65,
-      "access_restriction": 26.16,
-      "risk": 59.455
+      "traffic_reduction": 17.41,
+      "access_restriction": 23.1,
+      "risk": 56.775
     },
     "source_counts": {
-      "passage": 9,
+      "passage": 8,
       "closure": 0,
-      "primary_sources": 5
+      "primary_sources": 4
     },
     "latest_confirmed_transit_at": "2026-08-08T11:28:27Z",
     "legacy_engine": {
@@ -762,8 +763,8 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "ADNOC says attacks on vessels, staff significantly impacting operations - reuters.com",
-        "source": "reuters.com",
+        "title": "ADNOC says attacks on vessels, staff significantly impacting operations - Reuters",
+        "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZFZ2Y0RPOWN5S0dKcGVuQTgweVRpcHJfS1RMeFNXWjJHTkxjQU9oR3NhSGhGekVndEg5aS1QS1Jadm9ZUGU2QVdIa3pGY0VXa0dmZE9EOEZZLWd5Z194SEZNcXF6eWRjbUdkSWxfWVJXdkt4Y1I2UGJNZ0NpQ2NkZTJhREd4YzB2MlExUjdJRnFPZUZ1UFdfUF9jVXg2OHlfVHVSYW1zd0ZPaC1qTTRpaTNoV040WVFrZF8xRTV3?oc=5",
         "published_at": "2026-08-07T15:07:38Z",
         "tier": 4,
@@ -792,10 +793,10 @@
       },
       {
         "kind": "TRANSIT_CONFIRMED",
-        "title": "Vessel traffic through Hormuz dwindles this week as markets watch Iran-Oman talks - reuters.com",
-        "source": "reuters.com",
+        "title": "Vessel traffic through Hormuz dwindles this week as markets watch Iran-Oman talks - Reuters",
+        "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPYjdYbS1fZXZGWktSZkVpMk4temZNOUY1cEFsQUxTRXRNQnJUai1lY2xTMDE5dmFMZjUyUzZQclRyQUJuVTFVXzB6RGtpeXlFeU8xZjNiVWp4dVVNTkVWcVhCVEpsVVdTa1lsZEVfVUlSWHBlMjh0UDNYdkpjS3BHVjA2MUUtSXU0OTNEZ1lCUW9iYkliLUxSN2JSTTlFbEktaGRTb2UzcUxNMjlaZGtQSmt1S1FWYzlvdlkwdDM3WjY0dHZTRU9VWFFB?oc=5",
-        "published_at": "2026-08-07T04:33:00Z",
+        "published_at": "2026-08-07T04:41:15Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "Google News RSS",
@@ -822,8 +823,8 @@
       },
       {
         "kind": "ACCESS_RESTRICTED",
-        "title": "Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz - reuters.com",
-        "source": "reuters.com",
+        "title": "Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz - Reuters",
+        "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVWd6ZjFIZXZHQ2JsNi1UdXBvS1JIUm0xYWtjaDQ1UXVOczhzTzZLNEY0ZTRtb1l5N2lrY09ERHFySlMyakJJNndhRUx5M0FabFZ5TllJZWZPU05na2VqMkRVckJ2VndLdUlFUGd1NklHQlN6V1VJUzRxS09jUmtVVWhMTGRuVlN3YzctZjhBWVI2UUZkQkJqZ0NvdF9uQ1I0RGtCNVNORThqQQ?oc=5",
         "published_at": "2026-08-06T19:44:58Z",
         "tier": 4,
@@ -837,8 +838,8 @@
       },
       {
         "kind": "ACCESS_RESTRICTED",
-        "title": "Oil settles up $3 as Iran reviews bill to ban US, Israeli vessels from Hormuz - reuters.com",
-        "source": "reuters.com",
+        "title": "Oil settles up $3 as Iran reviews bill to ban US, Israeli vessels from Hormuz - Reuters",
+        "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTmw0WV9PeEJVU0pBczd6UzhWSjdUMlQ2aDhwUGxDbWdvc3hMakw5d3h3Q2wxMXNRakctZjRlTW8wNi1PNnU2eDY0anYxakZYSkZBSVN6SUhJOEF4aW1HSTVnUWREc3k2dFBvUEl0azM4TXFoV1I1S1pJRVlVUm1SakpIeVFqM0wxS2gtMDFvc3ktZ05QYjc3VXRtSHdsNk9hLWUwb3VxTzBFcVhBeUx3Zm82Zw?oc=5",
         "published_at": "2026-08-06T19:37:26Z",
         "tier": 4,
@@ -867,7 +868,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 84,
+      "signals_considered": 83,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
