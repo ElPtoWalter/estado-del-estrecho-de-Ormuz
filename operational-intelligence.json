@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-09T15:03:21Z",
+  "generated_at": "2026-08-09T16:00:03Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,39 +33,24 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 11.933,
+    "passage": 10.633,
     "closure": 0,
     "traffic_reduction": 6.24,
     "access_restriction": 15.94,
-    "risk": 50.04
+    "risk": 43.56
   },
   "source_counts": {
-    "passage": 5,
+    "passage": 4,
     "closure": 0,
     "primary_sources": 3
   },
-  "latest_confirmed_transit_at": "2026-08-08T16:51:53Z",
+  "latest_confirmed_transit_at": "2026-08-07T08:00:00Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "MEDIA"
   },
   "evidence": [
-    {
-      "kind": "RISK_SEVERE",
-      "title": "ADNOC says attacks on vessels, staff significantly impacting operations - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZFZ2Y0RPOWN5S0dKcGVuQTgweVRpcHJfS1RMeFNXWjJHTkxjQU9oR3NhSGhGekVndEg5aS1QS1Jadm9ZUGU2QVdIa3pGY0VXa0dmZE9EOEZZLWd5Z194SEZNcXF6eWRjbUdkSWxfWVJXdkt4Y1I2UGJNZ0NpQ2NkZTJhREd4YzB2MlExUjdJRnFPZUZ1UFdfUF9jVXg2OHlfVHVSYW1zd0ZPaC1qTTRpaTNoV040WVFrZF8xRTV3?oc=5",
-      "published_at": "2026-08-07T15:07:38Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.6,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
     {
       "kind": "TRANSIT_CONFIRMED",
       "title": "Reuters: 33 vessels transited Hormuz from Monday to Thursday; four transited on Thursday",
@@ -80,6 +65,21 @@
       "effective_weight": 3.588,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "ADNOC says attacks on vessels, staff significantly impacting operations - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZFZ2Y0RPOWN5S0dKcGVuQTgweVRpcHJfS1RMeFNXWjJHTkxjQU9oR3NhSGhGekVndEg5aS1QS1Jadm9ZUGU2QVdIa3pGY0VXa0dmZE9EOEZZLWd5Z194SEZNcXF6eWRjbUdkSWxfWVJXdkt4Y1I2UGJNZ0NpQ2NkZTJhREd4YzB2MlExUjdJRnFPZUZ1UFdfUF9jVXg2OHlfVHVSYW1zd0ZPaC1qTTRpaTNoV040WVFrZF8xRTV3?oc=5",
+      "published_at": "2026-08-07T15:07:38Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.12,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     },
     {
       "kind": "TRAFFIC_SEVERELY_REDUCED",
@@ -161,7 +161,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-09T15:03:21Z",
+      "published_at": "2026-08-09T16:00:03Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 71,
+    "signals_considered": 70,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
