@@ -1,13 +1,13 @@
 {
   "version": 7,
-  "generated_at": "2026-08-09T11:58:00Z",
+  "generated_at": "2026-08-09T13:32:52Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
   "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
   "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
   "operational_label_en": "Physical passage exists, but flows are severely degraded",
-  "confidence": "ALTA",
+  "confidence": "MEDIA",
   "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
   "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "dimensions": {
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 21.098,
+    "passage": 13.753,
     "closure": 0,
-    "traffic_reduction": 8.55,
-    "access_restriction": 17.58,
-    "risk": 50.515
+    "traffic_reduction": 6.24,
+    "access_restriction": 16.58,
+    "risk": 47.36
   },
   "source_counts": {
-    "passage": 10,
+    "passage": 7,
     "closure": 0,
-    "primary_sources": 4
+    "primary_sources": 3
   },
-  "latest_confirmed_transit_at": "2026-08-08T18:31:18Z",
+  "latest_confirmed_transit_at": "2026-08-08T16:51:53Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 75,
+    "signals_considered": 71,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
