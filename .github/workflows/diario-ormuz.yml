@@ -1,0 +1,84 @@
+name: El Diario de Ormuz
+
+on:
+  schedule:
+    # 07:50 Europe/Madrid. Dos slots UTC cubren CET y CEST;
+    # el propio generador ejecuta solo la ventana local correcta y una vez al día.
+    - cron: "50 5 * * *"
+    - cron: "50 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: diario-ormuz
+  cancel-in-progress: false
+
+jobs:
+  newsroom:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Validar redacción automática
+        run: |
+          python -m py_compile generate_daily_journal.py test_daily_journal_v8.py
+          python -m unittest -v test_daily_journal_v8.py
+
+      - name: Redactar edición de la mañana
+        run: python generate_daily_journal.py --scheduled
+
+      - name: Regenerar sitemap
+        run: python build_sitemap.py --root .
+
+      - name: Validar publicación completa
+        run: python validate_site.py --root . --report "${{ runner.temp }}/diario-validation.json"
+
+      - name: Guardar edición
+        id: commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
+          find . -type f -name '*.pyc' -delete
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No hay una nueva edición que guardar."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            diario.html \
+            en-diary.html \
+            diario \
+            diary \
+            journal-data \
+            journal-latest.json \
+            journal-archive.json \
+            journal-state.json \
+            journal-health.json \
+            journal-social-draft.json \
+            diario-feed.xml \
+            index.html \
+            en.html \
+            sitemap.xml \
+            robots.txt
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No hay cambios editoriales que guardar."
+          else
+            git commit -m "Publicar El Diario de Ormuz"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
