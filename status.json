@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-09T14:08:54Z",
-  "last_success_at": "2026-08-09T14:08:54Z",
+  "checked_at": "2026-08-09T15:02:38Z",
+  "last_success_at": "2026-08-09T15:02:38Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -22,31 +22,32 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-09T14:08:54Z"
+      "observed_at": "2026-08-09T15:02:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Yemen Houthis claim responsibility for attack on Saudi oil refinery | Houthis",
+      "title": "US-Israel-Iran War Latest News: 'This Time It Was More Than a Threat,' Trump Says US Was Ready to Strike Iran if Needed – UKMTO Reports Tanker Explosion in Strait of Hormuz - The Sunday Guardian",
       "source_name": "The Guardian",
-      "source_url": "https://www.theguardian.com/world/2026/aug/09/yemen-houthis-saudi-oil-refinery-defence-pact-iran-strait-of-hormuz",
-      "published_at": "2026-08-09T12:29:39Z",
+      "source_url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxNVTVuZ3JkR2VQbEdOcDZqQlVmMGx5OGhITWhicFhaY2lZSERMWGE2aFhKRTRseG1WYmc3VXAtRmRaWFcxRnc2WmkxRWxaaXI1YVhtVHBiU3VMTU1pSWtVNDlnRy1wZE1CTHd0STNWd3lMaVlqZTVPUnU2WlNnT3A0aExHQktXWVM5MDNOYlZtNGlRdnZEZnNlWFVkRWVDS0IwRC1iQ1Y1UjlZUV9lY2xPTjBkVTVRak1SbWVuWUxMd2NISFJSbElBZVJwdmRYMV9iRzRtbFhwWXlSdkhKTldiMWRLVTkyUlZEWjFMLUpWUjhsZTZNQzJZSGc2LVJLQUhlZlJ2VEIwTy14V0Y1WVQydWZoZmFpc1gxSWMweGFPNVB6NE5tQUIwajYyWG5RellxZS1RUGtR0gG7AkFVX3lxTE5WVGRnZ1g0TlhvZ1NiLTBIMFZkRGdOY2E4YXJYU2FTTlNKanNidi1Tb2FBTFVxeUV0alJqUE80bzVGOVNGOGIwM0xYRm9UN0h5YnI1MjZxeXQ0VFZVUjdERFlYNFZKcWFMeGtqUkd4aF9tQnBtc294RFJXa19vS0dxOGZILTBjT2NJbThBQlQ4OG95TjRORzZVMUxCX0hpaDBlb1RNZ2VhVDFycFZ3emJXeWkxZmEyQ0hfMDBWRmljRl94WG1GQ1hKekVSU3NaTVBoMXNqVC11R25PaGQwT1pMWFhXQjVLc0xaNlY0YWo5dDdRcGZaSUh0MTY4ay1qMXMtcVgza0RCTnpPLXJHbV9yaFZHSm9OeEZPOGlqeXFRUGhNeXFDWDZIRzdmaERqZ1NXNkRiNzRuQVpuMA?oc=5",
+      "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-09T14:08:54Z"
+      "observed_at": "2026-08-09T15:02:38Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5.9
+      "risk": 4.365
     },
     "independent_sources": {
       "open": 0,
@@ -54,8 +55,8 @@
       "declared": 0,
       "risk": 2
     },
-    "articles_considered": 48,
-    "signals_considered": 4,
+    "articles_considered": 46,
+    "signals_considered": 3,
     "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -63,7 +64,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-09T12:29:39Z",
+    "as_of": "2026-08-08T11:46:57Z",
     "current_cycle_count": 2,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -109,7 +110,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-09T14:08:54Z"
+      "observed_at": "2026-08-09T15:02:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -209,7 +210,7 @@
       "published_at": "2026-08-06T03:45:12Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-09T13:32:09Z"
+      "observed_at": "2026-08-09T15:02:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -674,7 +675,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-09T14:09:10Z",
+    "generated_at": "2026-08-09T15:03:21Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -707,14 +708,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 12.739,
+      "passage": 11.933,
       "closure": 0,
       "traffic_reduction": 6.24,
-      "access_restriction": 16.58,
-      "risk": 49.5
+      "access_restriction": 15.94,
+      "risk": 50.04
     },
     "source_counts": {
-      "passage": 6,
+      "passage": 5,
       "closure": 0,
       "primary_sources": 3
     },
@@ -831,23 +832,23 @@
         "kind_label_en": "Restricted access"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Reuters: proposed passage regime includes Iranian control, fees and insurance/sanctions complications",
-        "source": "Reuters",
-        "url": "https://www.reuters.com/world/middle-east/proposed-hormuz-passage-deal-not-feasible-shipping-industry-sources-say-2026-08-06/",
-        "published_at": "2026-08-06T14:50:00Z",
+        "kind": "RISK_SEVERE",
+        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+        "source": "Lloyd's List",
+        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+        "published_at": "2026-08-09T15:03:21Z",
         "tier": 4,
-        "weight": 4.0,
-        "provider": "seed-primary",
+        "weight": 3.0,
+        "provider": "Lloyd's List hot topic",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.12,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
+        "effective_weight": 3.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 70,
+      "signals_considered": 71,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
