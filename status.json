@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-09T13:32:09Z",
-  "last_success_at": "2026-08-09T13:32:09Z",
+  "checked_at": "2026-08-09T14:08:54Z",
+  "last_success_at": "2026-08-09T14:08:54Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -22,32 +22,31 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-09T13:32:09Z"
+      "observed_at": "2026-08-09T14:08:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "US-Israel-Iran War Latest News: 'This Time It Was More Than a Threat,' Trump Says US Was Ready to Strike Iran if Needed – UKMTO Reports Tanker Explosion in Strait of Hormuz - The Sunday Guardian",
+      "title": "Yemen Houthis claim responsibility for attack on Saudi oil refinery | Houthis",
       "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxNVTVuZ3JkR2VQbEdOcDZqQlVmMGx5OGhITWhicFhaY2lZSERMWGE2aFhKRTRseG1WYmc3VXAtRmRaWFcxRnc2WmkxRWxaaXI1YVhtVHBiU3VMTU1pSWtVNDlnRy1wZE1CTHd0STNWd3lMaVlqZTVPUnU2WlNnT3A0aExHQktXWVM5MDNOYlZtNGlRdnZEZnNlWFVkRWVDS0IwRC1iQ1Y1UjlZUV9lY2xPTjBkVTVRak1SbWVuWUxMd2NISFJSbElBZVJwdmRYMV9iRzRtbFhwWXlSdkhKTldiMWRLVTkyUlZEWjFMLUpWUjhsZTZNQzJZSGc2LVJLQUhlZlJ2VEIwTy14V0Y1WVQydWZoZmFpc1gxSWMweGFPNVB6NE5tQUIwajYyWG5RellxZS1RUGtR0gG7AkFVX3lxTE5WVGRnZ1g0TlhvZ1NiLTBIMFZkRGdOY2E4YXJYU2FTTlNKanNidi1Tb2FBTFVxeUV0alJqUE80bzVGOVNGOGIwM0xYRm9UN0h5YnI1MjZxeXQ0VFZVUjdERFlYNFZKcWFMeGtqUkd4aF9tQnBtc294RFJXa19vS0dxOGZILTBjT2NJbThBQlQ4OG95TjRORzZVMUxCX0hpaDBlb1RNZ2VhVDFycFZ3emJXeWkxZmEyQ0hfMDBWRmljRl94WG1GQ1hKekVSU3NaTVBoMXNqVC11R25PaGQwT1pMWFhXQjVLc0xaNlY0YWo5dDdRcGZaSUh0MTY4ay1qMXMtcVgza0RCTnpPLXJHbV9yaFZHSm9OeEZPOGlqeXFRUGhNeXFDWDZIRzdmaERqZ1NXNkRiNzRuQVpuMA?oc=5",
-      "published_at": "2026-08-06T03:45:12Z",
+      "source_url": "https://www.theguardian.com/world/2026/aug/09/yemen-houthis-saudi-oil-refinery-defence-pact-iran-strait-of-hormuz",
+      "published_at": "2026-08-09T12:29:39Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-09T13:32:09Z"
+      "observed_at": "2026-08-09T14:08:54Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 4.365
+      "risk": 5.9
     },
     "independent_sources": {
       "open": 0,
@@ -55,8 +54,8 @@
       "declared": 0,
       "risk": 2
     },
-    "articles_considered": 43,
-    "signals_considered": 3,
+    "articles_considered": 48,
+    "signals_considered": 4,
     "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -64,7 +63,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-08T11:46:57Z",
+    "as_of": "2026-08-09T12:29:39Z",
     "current_cycle_count": 2,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -72,6 +71,16 @@
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Yemen Houthis claim responsibility for attack on Saudi oil refinery | Houthis",
+      "source_name": "The Guardian",
+      "source_url": "https://www.theguardian.com/world/2026/aug/09/yemen-houthis-saudi-oil-refinery-defence-pact-iran-strait-of-hormuz",
+      "published_at": "2026-08-09T12:29:39Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-08-09T14:08:54Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "UAE says Iran targeted ADNOC tanker in Strait of Hormuz , no casualties",
@@ -100,7 +109,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-09T13:32:09Z"
+      "observed_at": "2026-08-09T14:08:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -661,21 +670,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-01T04:57:46Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US launches 'heavy wave' of new attacks on Iran - aljazeera.com",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZUJwNER6Z1d6T0p5aVBwUnpZM2JUQWFxR2pSdVB4cVhCVGZkRDBvcVV4WDMwS0hEUDhpNTdWaEszeURRc1otQnJ3Z0toUlF3bThfN1Zvam5EYlItMU5JVU0yalYyT0RFS29Ycl9WSXZzUnpkQ004SmRfMFR3SUZRdmg0a3FBckd0LVhFMlNB0gGTAUFVX3lxTE1id1NxcERIelVSWk9aamxvSE1tQ3duZkY5VFRPVm5hQzd4bEp6MENxeXNjRlhIczlvbG1ZQ19HeHJxY2JNOE5LVHVqMGhYeGhGa3Z6QjZnNjhQcjRBcHNXeVRObXN4a2l6WUtxcUpTalNYSEdRR3k5dEJKN3lFZjEwcFFzLVFzZkx1NXJsMFByQnJWZw?oc=5",
-      "published_at": "2026-07-30T13:07:32Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-07-31T23:33:10Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-09T13:32:52Z",
+    "generated_at": "2026-08-09T14:09:10Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -708,14 +707,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 13.753,
+      "passage": 12.739,
       "closure": 0,
       "traffic_reduction": 6.24,
       "access_restriction": 16.58,
-      "risk": 47.36
+      "risk": 49.5
     },
     "source_counts": {
-      "passage": 7,
+      "passage": 6,
       "closure": 0,
       "primary_sources": 3
     },
@@ -776,7 +775,7 @@
         "title": "Vessel traffic through Hormuz dwindles this week as markets watch Iran-Oman talks - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPYjdYbS1fZXZGWktSZkVpMk4temZNOUY1cEFsQUxTRXRNQnJUai1lY2xTMDE5dmFMZjUyUzZQclRyQUJuVTFVXzB6RGtpeXlFeU8xZjNiVWp4dVVNTkVWcVhCVEpsVVdTa1lsZEVfVUlSWHBlMjh0UDNYdkpjS3BHVjA2MUUtSXU0OTNEZ1lCUW9iYkliLUxSN2JSTTlFbEktaGRTb2UzcUxNMjlaZGtQSmt1S1FWYzlvdlkwdDM3WjY0dHZTRU9VWFFB?oc=5",
-        "published_at": "2026-08-07T04:41:15Z",
+        "published_at": "2026-08-07T04:33:00Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "Google News RSS",
@@ -848,7 +847,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 71,
+      "signals_considered": 70,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
