@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-09T18:01:42Z",
+  "generated_at": "2026-08-09T19:13:39Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,24 +33,39 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 9.995,
+    "passage": 9.932,
     "closure": 0,
     "traffic_reduction": 6.24,
-    "access_restriction": 15.94,
-    "risk": 39.6
+    "access_restriction": 15.84,
+    "risk": 52.08
   },
   "source_counts": {
     "passage": 3,
     "closure": 0,
-    "primary_sources": 3
+    "primary_sources": 4
   },
   "latest_confirmed_transit_at": "2026-08-07T08:00:00Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "confidence": "MEDIA"
+    "confidence": "ALTA"
   },
   "evidence": [
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Houthis claim attacks on Saudi oil facility and Yemeni port, and other Mideast news - AP News",
+      "source": "Associated Press",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPV2psZVVzWDFLUWxaM0N2dTlwTXpyQUhLVXRUNzFMZ1hoWVpQQk1iUXlZQWNFRTJKeFRZSFdfOWZCU0VxenBzOExCUXJDZm9DM3FCMmpOYXc5Y1dkSHpPOUdUTDFYN09mc0d0NmV4ZEtDWEhuVDdMcjN3QWdpcmlXUy1KcGRXd1NuSmt6ZTNMX0hTanNQZF9DelRIMFQxUHJ3UUJEb3FhM3QzMFRrNnZ5ZW9n?oc=5",
+      "published_at": "2026-08-09T16:33:00Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
     {
       "kind": "TRANSIT_CONFIRMED",
       "title": "Reuters: 33 vessels transited Hormuz from Monday to Thursday; four transited on Thursday",
@@ -155,25 +170,10 @@
       "effective_weight": 3.12,
       "kind_label_es": "Acceso restringido",
       "kind_label_en": "Restricted access"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
-      "source": "Lloyd's List",
-      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-09T18:01:42Z",
-      "tier": 4,
-      "weight": 3.0,
-      "provider": "Lloyd's List hot topic",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 65,
+    "signals_considered": 70,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
