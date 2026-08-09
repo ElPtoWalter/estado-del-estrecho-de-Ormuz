@@ -2,8 +2,8 @@
   {
     "schema_version": 1,
     "date": "2026-08-09",
-    "generated_at": "2026-08-09T15:03:24Z",
-    "source_checked_at": "2026-08-09T17:06:15Z",
+    "generated_at": "2026-08-09T18:01:45Z",
+    "source_checked_at": "2026-08-09T18:01:42Z",
     "status": "ABIERTO",
     "status_label_es": "ABIERTO CON RESTRICCIONES",
     "status_label_en": "OPEN WITH RESTRICTIONS",
@@ -23,11 +23,11 @@
     "change_en": "The indicator changes from “OPEN · SEVERELY RESTRICTED TRANSIT” to “OPEN · SEVERELY RESTRICTED TRANSIT”.",
     "risks_es": [
       "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
-      "El ciclo contiene 2 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+      "El ciclo contiene 3 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
     ],
     "risks_en": [
       "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
-      "The cycle contains 2 highlighted evidence items; quantity does not replace independence or quality."
+      "The cycle contains 3 highlighted evidence items; quantity does not replace independence or quality."
     ],
     "watchlist_es": [
       "Avisos marítimos oficiales y confirmaciones operativas independientes.",
@@ -42,24 +42,32 @@
     "evidence": [
       {
         "signal": "RISK_RESTRICTION",
+        "title": "Iran-aligned Houthis claim they attacked oil refinery in Saudi Arabia - The Guardian",
+        "source_name": "The Guardian",
+        "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxONUczZGxpN3lGb084MkNINGQtY1FfSDNZM1NpZk9La2xSbVB5VkpuMEVJTm03X0JpWElISU11Q1JaM1lTOHkzZGRYUl9DVWNCbnJCVXlCMzlXRjNkbGU0UUJwODF3dHU5OGFJNFFBMi1razRnQ0FEVzZXR1dsbHVqaE13dTRQRmlkZ0NfWEppa0lxeTlUeVNOWTM3Z2JmM1pPNUpXbkVTSUFzZWRfUmhiOS11TQ?oc=5",
+        "published_at": "2026-08-09T12:29:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Iran denies any direct talks with U.S. on opening Strait of Hormuz as Houthis claim attack on Saudi refinery - CNBC",
+        "source_name": "CNBC",
+        "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQazZuYlhScWdna0IzWTBUSzQzbG0tVFVHU2VyeFZmTDdVRmNvRS1uR24yamI0R2U0X0ZlX2dLMEYxMGRtclFXbEhNaVpYRDAzRGNqRDNaS01pQllHbWtGa3lSN2FXZVhWMVdFZGlsdFBZc2Y3REdHakF4SEVKNHFnVlF4Wm13eU9hQ2IzRFVncEZqemJhUVNCMVV2eGhHUdIBowFBVV95cUxOWXpUWkE5VlRXTG1NMFdBRTZjVGVDc0FlbUU4SGs0bmIxVno3VmpqdHNUa2N5ZGhHcHlMWmVxUmgwZE1vVTh1N2NLSVFDV3dPdS1Rdmk0TzMybk91OHFHV1FjSXR6bTV0WDBmWjVZTmI4ZmRNVlJnUzVxZjRVQUtZLUI5NGU4amQ4UVhSUGl5eERUOVo2UUU4VUY3bXEtYmFhNVVj?oc=5",
+        "published_at": "2026-08-09T11:23:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
         "title": "UAE says Iran attacked ADNOC vessel with missile in Strait of Hormuz - Reuters",
         "source_name": "Reuters",
         "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQajV4Uk9FTWd2WFJTWWVSZS1pdkl4OGFERFdzeExaYy1udkYxWGdXYWxRdHUwd2kwLVRtRTdhRkdVdUZuNXZ3U09EQUR3OXUwUzVtZmZZeWZkWmlkTThUTDBYNVBjbE9IWVBQZnhhcHBfcFVnZTc0NG1uMk54dElXNkhzQUFZR3VkRW5QZkthVjdfdTJOaXR6YWxiZmtfdzJROGg3bWFuOVhuV2ZkTDNLNkg4d18?oc=5",
         "published_at": "2026-08-08T11:46:57Z",
         "official": false
-      },
-      {
-        "signal": "RISK_RESTRICTION",
-        "title": "US-Israel-Iran War Latest News: 'This Time It Was More Than a Threat,' Trump Says US Was Ready to Strike Iran if Needed – UKMTO Reports Tanker Explosion in Strait of Hormuz - The Sunday Guardian",
-        "source_name": "The Guardian",
-        "source_url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxNVTVuZ3JkR2VQbEdOcDZqQlVmMGx5OGhITWhicFhaY2lZSERMWGE2aFhKRTRseG1WYmc3VXAtRmRaWFcxRnc2WmkxRWxaaXI1YVhtVHBiU3VMTU1pSWtVNDlnRy1wZE1CTHd0STNWd3lMaVlqZTVPUnU2WlNnT3A0aExHQktXWVM5MDNOYlZtNGlRdnZEZnNlWFVkRWVDS0IwRC1iQ1Y1UjlZUV9lY2xPTjBkVTVRak1SbWVuWUxMd2NISFJSbElBZVJwdmRYMV9iRzRtbFhwWXlSdkhKTldiMWRLVTkyUlZEWjFMLUpWUjhsZTZNQzJZSGc2LVJLQUhlZlJ2VEIwTy14V0Y1WVQydWZoZmFpc1gxSWMweGFPNVB6NE5tQUIwajYyWG5RellxZS1RUGtR0gG7AkFVX3lxTE5WVGRnZ1g0TlhvZ1NiLTBIMFZkRGdOY2E4YXJYU2FTTlNKanNidi1Tb2FBTFVxeUV0alJqUE80bzVGOVNGOGIwM0xYRm9UN0h5YnI1MjZxeXQ0VFZVUjdERFlYNFZKcWFMeGtqUkd4aF9tQnBtc294RFJXa19vS0dxOGZILTBjT2NJbThBQlQ4OG95TjRORzZVMUxCX0hpaDBlb1RNZ2VhVDFycFZ3emJXeWkxZmEyQ0hfMDBWRmljRl94WG1GQ1hKekVSU3NaTVBoMXNqVC11R25PaGQwT1pMWFhXQjVLc0xaNlY0YWo5dDdRcGZaSUh0MTY4ay1qMXMtcVgza0RCTnpPLXJHbV9yaFZHSm9OeEZPOGlqeXFRUGhNeXFDWDZIRzdmaERqZ1NXNkRiNzRuQVpuMA?oc=5",
-        "published_at": "2026-08-06T03:45:12Z",
-        "official": false
       }
     ],
     "last_valid_confirmation": null,
     "publish_recommended": true,
-    "material_hash": "1496a4fd8d20326a"
+    "material_hash": "96cd814e0f75455d"
   },
   {
     "schema_version": 1,
