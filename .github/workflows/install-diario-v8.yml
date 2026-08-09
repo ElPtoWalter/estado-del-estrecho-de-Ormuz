@@ -1,0 +1,78 @@
+name: Instalar El Diario de Ormuz V8
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: install-diario-v8
+  cancel-in-progress: false
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar repositorio completo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Instalar y validar El Diario de Ormuz
+        run: python install_diario_v8.py --apply
+
+      - name: Revisar salida
+        run: |
+          git diff --check
+          cat diario-v8-readiness.json
+          cat journal-health.json
+          git status --short
+
+      - name: Guardar V8
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            generate_daily_journal.py \
+            diario-v8.css \
+            test_daily_journal_v8.py \
+            diario.html \
+            en-diary.html \
+            diario \
+            diary \
+            journal-data \
+            journal-latest.json \
+            journal-archive.json \
+            journal-state.json \
+            journal-health.json \
+            journal-social-draft.json \
+            diario-feed.xml \
+            diario-v8-readiness.json \
+            diario-v8-validation.json \
+            index.html \
+            en.html \
+            analisis.html \
+            en-analysis.html \
+            llms.txt \
+            sitemap.xml \
+            robots.txt
+          if git diff --cached --quiet; then
+            echo "El Diario V8 ya estaba instalado."
+          else
+            git commit -m "Instala El Diario de Ormuz V8"
+            git push
+          fi
+
+      - name: Lanzar una edición de comprobación
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run diario-ormuz.yml --ref main || true
