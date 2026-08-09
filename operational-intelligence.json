@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-09T08:19:25Z",
+  "generated_at": "2026-08-09T09:20:02Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -35,20 +35,20 @@
   "scores": {
     "passage": 21.098,
     "closure": 0,
-    "traffic_reduction": 9.45,
+    "traffic_reduction": 8.55,
     "access_restriction": 16.86,
-    "risk": 48.815
+    "risk": 43.835
   },
   "source_counts": {
     "passage": 10,
     "closure": 0,
-    "primary_sources": 4
+    "primary_sources": 3
   },
   "latest_confirmed_transit_at": "2026-08-08T18:31:18Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "confidence": "MEDIA"
+    "confidence": "BAJA"
   },
   "evidence": [
     {
@@ -112,21 +112,6 @@
       "kind_label_en": "Confirmed transit"
     },
     {
-      "kind": "RISK_SEVERE",
-      "title": "Possible Strait of Hormuz deal, a large attack in Yemen and other Mideast news - AP News",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd1R4TEFIQVkxS1I2SDdWVUZfalVNQXk2VnNDc1FHUnNYU0xRY3ExT0JiLUp6cDl2N2ZYLUl3UHFlbFUzY2F0MU9iVW9ZRTBTYTIxUWd1RXh0dnY4ZTJPT1Q3cTNFNi1ja2lTVnNsZmZPd09SMFFFMjBUNVJPZWxLVlR6OG9fYk1Cc3Byc3JUY3lTYlhqV2xjRl9RVkFDRnU4Vmx2WkV6R19fcjlHYVZWOQ?oc=5",
-      "published_at": "2026-08-06T23:31:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.12,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
       "kind": "ACCESS_RESTRICTED",
       "title": "Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz - Reuters",
       "source": "Reuters",
@@ -170,10 +155,25 @@
       "effective_weight": 3.12,
       "kind_label_es": "Acceso restringido",
       "kind_label_en": "Restricted access"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Lloyd's List: Hormuz shipping risk will remain extreme while attacks and routing constraints continue",
+      "source": "Lloyd's List",
+      "url": "https://www.lloydslist.com/LL1158122/Hormuz-deal-nears-as-Iran-and-Oman-agree-shipping-route",
+      "published_at": "2026-08-06T12:00:00Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "seed-primary",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.12,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 73,
+    "signals_considered": 70,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
