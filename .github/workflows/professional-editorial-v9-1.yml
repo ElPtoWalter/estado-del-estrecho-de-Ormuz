@@ -1,0 +1,75 @@
+name: Professionalizar Diario V9.1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: professional-editorial-v9-1
+  cancel-in-progress: false
+
+jobs:
+  editorial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Aplicar presentación editorial profesional
+        run: python fix_professional_editorial_v9_1.py
+
+      - name: Validar generador del Diario
+        run: |
+          python -m py_compile generate_daily_journal.py
+          python -m unittest -v test_daily_journal_v8.py
+
+      - name: Regenerar edición de hoy
+        run: python generate_daily_journal.py --force
+
+      - name: Regenerar sitemap
+        run: python build_sitemap.py --root .
+
+      - name: Validar publicación
+        run: |
+          python validate_site.py --root . --report "${{ runner.temp }}/professional-v9-1-validation.json"
+          ! grep -R -n -E \
+            'Redacción automatizada|Automated newsroom|El texto se genera automáticamente|The text is generated automatically|Puntuación de novedad|Novelty score|Cómo se ha escrito esta edición|How this edition was produced|Crónica diaria automática|Daily automated' \
+            diario.html en-diary.html diario diary index.html en.html
+
+      - name: Guardar cambios
+        run: |
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
+          find . -type f -name '*.pyc' -delete
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add \
+            generate_daily_journal.py \
+            fix_professional_editorial_v9_1.py \
+            .github/workflows/diario-ormuz.yml \
+            diario.html \
+            en-diary.html \
+            diario \
+            diary \
+            index.html \
+            en.html \
+            sitemap.xml
+
+          if git diff --cached --quiet; then
+            echo "La presentación profesional ya estaba aplicada."
+          else
+            git commit -m "Professionaliza la firma y metodología pública del Diario"
+            git push
+          fi
