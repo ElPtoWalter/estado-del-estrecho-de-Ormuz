@@ -1,0 +1,84 @@
+name: Professional Surface V9.3
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: professional-surface-v9-3
+  cancel-in-progress: false
+
+jobs:
+  hardening:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Corregir generadores y superficie pública
+        run: python fix_professional_surface_v9_3.py
+
+      - name: Validar Python y Diario
+        run: |
+          python -m py_compile generate_daily_journal.py
+          python -m py_compile install_v11.py
+          python -m unittest -v test_daily_journal_v8.py
+
+      - name: Regenerar edición de hoy
+        run: python generate_daily_journal.py --force
+
+      - name: Limpieza final tras regenerar
+        run: python fix_professional_surface_v9_3.py --clean-only
+
+      - name: Regenerar sitemap
+        run: python build_sitemap.py --root .
+
+      - name: Validar sitio
+        run: python validate_site.py --root . --report "${{ runner.temp }}/professional-v9-3-validation.json"
+
+      - name: Construir superficie pública segura
+        run: python build_public_site.py
+
+      - name: Confirmar que no se publica el motor
+        run: |
+          test ! -e _site/status.json
+          test ! -e _site/history.json
+          test ! -e _site/config.json
+          test ! -e _site/update_status.py
+          test ! -e _site/operational-intelligence.json
+          test ! -e _site/.github
+
+      - name: Auditoría final
+        run: |
+          ! grep -R -n -E \
+            'status\.json|history\.json|config\.json|operational-intelligence\.json|journal-state\.json|journal-health\.json|Redacción automatizada|Automated newsroom|El texto se genera automáticamente|The text is generated automatically|Puntuación de novedad|Novelty score|Crónica diaria automática|Daily automated|API pública|Public API|social-studio\.html' \
+            index.html en.html diario.html en-diary.html diario diary _site
+
+      - name: Guardar cambios
+        run: |
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
+          find . -type f -name '*.pyc' -delete
+          rm -rf _site
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            fix_professional_surface_v9_3.py \
+            generate_daily_journal.py \
+            install_v11.py \
+            index.html en.html diario.html en-diary.html diario diary sitemap.xml
+          if git diff --cached --quiet; then
+            echo "V9.3 ya estaba aplicada."
+          else
+            git commit -m "Cierra endpoints públicos y profesionaliza la superficie"
+            git push
+          fi
