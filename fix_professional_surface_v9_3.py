@@ -223,6 +223,8 @@ def clean_home(text: str, lang: str) -> str:
         ("Technical transparency", "Editorial verification"),
         ("Registro auditable", "Evolución documentada"),
         ("Auditable record", "Documented evolution"),
+        ("Crónica diaria automática y trazable", "Crónica diaria · fuentes verificables"),
+        ("Daily automated, traceable briefing", "Daily briefing · verifiable sources"),
     ):
         text = text.replace(old, new)
 
