@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-10T02:53:36Z",
-  "last_success_at": "2026-08-10T02:53:36Z",
+  "checked_at": "2026-08-10T05:07:05Z",
+  "last_success_at": "2026-08-10T05:07:05Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-09T12:29:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-10T02:53:36Z"
+      "observed_at": "2026-08-10T05:07:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-09T11:23:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-10T02:53:36Z"
+      "observed_at": "2026-08-10T05:07:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,16 +42,17 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-10T02:53:36Z"
+      "observed_at": "2026-08-10T05:07:05Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -64,8 +65,8 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 54,
-    "signals_considered": 5,
+    "articles_considered": 51,
+    "signals_considered": 4,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -109,7 +110,7 @@
       "published_at": "2026-08-09T12:29:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-10T02:53:36Z"
+      "observed_at": "2026-08-10T05:07:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -119,7 +120,7 @@
       "published_at": "2026-08-09T11:23:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-10T02:53:36Z"
+      "observed_at": "2026-08-10T05:07:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -149,7 +150,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-10T02:53:36Z"
+      "observed_at": "2026-08-10T05:07:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -684,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-10T02:54:18Z",
+    "generated_at": "2026-08-10T05:07:46Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -717,16 +718,16 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 11.232,
+      "passage": 10.4,
       "closure": 0,
-      "traffic_reduction": 6.24,
-      "access_restriction": 14.38,
-      "risk": 34.58
+      "traffic_reduction": 6.6,
+      "access_restriction": 16.6,
+      "risk": 35.32
     },
     "source_counts": {
       "passage": 4,
       "closure": 0,
-      "primary_sources": 2
+      "primary_sources": 3
     },
     "latest_confirmed_transit_at": "2026-08-10T00:55:41Z",
     "legacy_engine": {
@@ -781,6 +782,21 @@
         "kind_label_en": "Severely reduced traffic"
       },
       {
+        "kind": "RISK_SEVERE",
+        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+        "source": "Lloyd's List",
+        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+        "published_at": "2026-08-10T05:07:46Z",
+        "tier": 4,
+        "weight": 3.0,
+        "provider": "Lloyd's List hot topic",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
         "kind": "TRANSIT_CONFIRMED",
         "title": "Vessel traffic through Hormuz dwindles this week as markets watch Iran-Oman talks - Reuters",
         "source": "Reuters",
@@ -791,22 +807,22 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.12,
+        "effective_weight": 2.48,
         "kind_label_es": "Tránsito confirmado",
         "kind_label_en": "Confirmed transit"
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
-        "source": "Lloyd's List",
-        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-10T02:54:18Z",
+        "title": "Possible Strait of Hormuz deal, a large attack in Yemen and other Mideast news - AP News",
+        "source": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd1R4TEFIQVkxS1I2SDdWVUZfalVNQXk2VnNDc1FHUnNYU0xRY3ExT0JiLUp6cDl2N2ZYLUl3UHFlbFUzY2F0MU9iVW9ZRTBTYTIxUWd1RXh0dnY4ZTJPT1Q3cTNFNi1ja2lTVnNsZmZPd09SMFFFMjBUNVJPZWxLVlR6OG9fYk1Cc3Byc3JUY3lTYlhqV2xjRl9RVkFDRnU4Vmx2WkV6R19fcjlHYVZWOQ?oc=5",
+        "published_at": "2026-08-06T23:31:00Z",
         "tier": 4,
-        "weight": 3.0,
-        "provider": "Lloyd's List hot topic",
+        "weight": 4.0,
+        "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.0,
+        "effective_weight": 2.48,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -839,25 +855,10 @@
         "effective_weight": 2.48,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
-      },
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Reuters: proposed passage regime includes Iranian control, fees and insurance/sanctions complications",
-        "source": "Reuters",
-        "url": "https://www.reuters.com/world/middle-east/proposed-hormuz-passage-deal-not-feasible-shipping-industry-sources-say-2026-08-06/",
-        "published_at": "2026-08-06T14:50:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "seed-primary",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 2.48,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
       }
     ],
     "diagnostics": {
-      "signals_considered": 64,
+      "signals_considered": 66,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
