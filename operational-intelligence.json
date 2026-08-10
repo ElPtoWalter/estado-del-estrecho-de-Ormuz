@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-09T23:02:13Z",
+  "generated_at": "2026-08-10T00:00:53Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -37,7 +37,7 @@
     "closure": 0,
     "traffic_reduction": 6.24,
     "access_restriction": 15.16,
-    "risk": 34.38
+    "risk": 33.64
   },
   "source_counts": {
     "passage": 2,
@@ -113,6 +113,21 @@
     },
     {
       "kind": "RISK_SEVERE",
+      "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+      "source": "Lloyd's List",
+      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+      "published_at": "2026-08-10T00:00:53Z",
+      "tier": 4,
+      "weight": 3.0,
+      "provider": "Lloyd's List hot topic",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
       "title": "Possible Strait of Hormuz deal, a large attack in Yemen and other Mideast news - AP News",
       "source": "AP News",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd1R4TEFIQVkxS1I2SDdWVUZfalVNQXk2VnNDc1FHUnNYU0xRY3ExT0JiLUp6cDl2N2ZYLUl3UHFlbFUzY2F0MU9iVW9ZRTBTYTIxUWd1RXh0dnY4ZTJPT1Q3cTNFNi1ja2lTVnNsZmZPd09SMFFFMjBUNVJPZWxLVlR6OG9fYk1Cc3Byc3JUY3lTYlhqV2xjRl9RVkFDRnU4Vmx2WkV6R19fcjlHYVZWOQ?oc=5",
@@ -122,22 +137,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.12,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
-      "source": "Lloyd's List",
-      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-09T23:02:13Z",
-      "tier": 4,
-      "weight": 3.0,
-      "provider": "Lloyd's List hot topic",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.0,
+      "effective_weight": 2.48,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 60,
+    "signals_considered": 61,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
