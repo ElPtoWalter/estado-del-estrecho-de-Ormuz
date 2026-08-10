@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-10T22:09:14Z",
-  "last_success_at": "2026-08-10T22:09:14Z",
+  "checked_at": "2026-08-10T23:08:19Z",
+  "last_success_at": "2026-08-10T23:08:19Z",
   "last_change_at": "2026-08-02T19:46:38Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-10T22:09:14Z"
+      "observed_at": "2026-08-10T23:08:19Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-09T12:29:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-10T22:09:14Z"
+      "observed_at": "2026-08-10T23:08:19Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,16 +42,17 @@
       "published_at": "2026-08-09T11:23:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-10T22:09:14Z"
+      "observed_at": "2026-08-10T23:08:19Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -64,7 +65,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 55,
+    "articles_considered": 44,
     "signals_considered": 4,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -129,7 +130,7 @@
       "published_at": "2026-08-09T12:29:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-10T22:09:14Z"
+      "observed_at": "2026-08-10T23:08:19Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -139,7 +140,7 @@
       "published_at": "2026-08-09T11:23:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-10T22:09:14Z"
+      "observed_at": "2026-08-10T23:08:19Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -169,7 +170,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-10T22:09:14Z"
+      "observed_at": "2026-08-10T23:08:19Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -684,14 +685,14 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-10T22:09:58Z",
+    "generated_at": "2026-08-10T23:08:59Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
     "operational_label_en": "Physical passage exists, but flows are severely degraded",
-    "confidence": "MEDIA",
+    "confidence": "ALTA",
     "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
     "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
     "dimensions": {
@@ -717,18 +718,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 12.769,
+      "passage": 19.269,
       "closure": 0,
       "traffic_reduction": 5.96,
       "access_restriction": 9.68,
-      "risk": 25.0
+      "risk": 26.78
     },
     "source_counts": {
-      "passage": 6,
+      "passage": 7,
       "closure": 0,
-      "primary_sources": 3
+      "primary_sources": 4
     },
-    "latest_confirmed_transit_at": "2026-08-10T13:59:59Z",
+    "latest_confirmed_transit_at": "2026-08-10T19:55:21Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -736,11 +737,26 @@
     },
     "evidence": [
       {
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Trump says U.S. controls 100% of traffic through Strait of Hormuz - De Último Minuto",
+        "source": "De Último Minuto",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYU04NG1TQlhXOUdvOGxNVW04aWhMWE83UUdrRlJiTnpjeWY3M0J6Q1B0ZUxKN2ZsZVdjMXBzaFNYVHFtdU9Jc2ZOR2hSTEE5WEV5SE5Ub2VnUTIyVTVXV3VfNlVFNzYzM3RxZDBJeVN1Wk5YYXNtSkJuc0tNY0NtM3ZtaGQ0dy1kT1F0ZF9Id0p3cDhuVEdpZWd0S0RBQl9CSG9QY1ZjWjJpOTAw?oc=5",
+        "published_at": "2026-08-10T19:55:21Z",
+        "tier": 5,
+        "weight": 5.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 5.0,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
+      },
+      {
         "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-10T22:09:58Z",
+        "published_at": "2026-08-10T23:08:59Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -839,25 +855,10 @@
         "effective_weight": 1.68,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Lloyd's List: Hormuz shipping risk will remain extreme while attacks and routing constraints continue",
-        "source": "Lloyd's List",
-        "url": "https://www.lloydslist.com/LL1158122/Hormuz-deal-nears-as-Iran-and-Oman-agree-shipping-route",
-        "published_at": "2026-08-06T12:00:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "seed-primary",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.68,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 53,
+      "signals_considered": 56,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
