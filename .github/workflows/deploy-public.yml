@@ -1,0 +1,57 @@
+name: Publicar superficie segura
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: secure-pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v6
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Construir superficie pública
+        run: python build_public_site.py
+
+      - name: Comprobar que no se publica código ni datos internos
+        run: |
+          test ! -e _site/status.json
+          test ! -e _site/history.json
+          test ! -e _site/update_status.py
+          test ! -e _site/config.json
+          test ! -e _site/.github
+
+      - name: Preparar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir artefacto público
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4
