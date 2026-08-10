@@ -119,43 +119,11 @@ html[lang="en"] .home-analysis-card-v11.is-new .home-analysis-label::before{cont
 '''
 
 BRIEF_ES = r'''<!-- HOME_V11_BRIEF_START -->
-<section aria-labelledby="daily-brief-title" class="content-section home-brief-v11">
-  <div>
-    <span class="section-kicker">Parte operativo diario</span>
-    <h2 id="daily-brief-title">La situación esencial, actualizada automáticamente</h2>
-    <p>Una síntesis del estado verificado, los cambios materiales, las evidencias destacadas y las señales que conviene vigilar, sin convertir cada titular en una alerta.</p>
-    <ul class="home-brief-points">
-      <li>Estado operativo y nivel de confianza.</li>
-      <li>Cambios frente al parte anterior.</li>
-      <li>Evidencias seleccionadas y próximas señales.</li>
-    </ul>
-  </div>
-  <aside class="home-brief-action-v11">
-    <strong>Actualización automática</strong>
-    <p>La página se regenera desde <code>status.json</code> y conserva un archivo diario auditable.</p>
-    <a class="button primary" href="/parte-diario.html">Abrir parte diario</a>
-  </aside>
-</section>
+<section aria-labelledby="daily-brief-title" class="content-section home-brief-v11"><div><span class="section-kicker">Parte operativo diario</span><h2 id="daily-brief-title">La situación esencial, bajo seguimiento continuo</h2><p>Una síntesis del estado verificado, los cambios materiales, las evidencias destacadas y las señales que conviene vigilar.</p><ul class="home-brief-points"><li>Estado operativo y nivel de confianza.</li><li>Cambios frente al parte anterior.</li><li>Evidencias seleccionadas y próximas señales.</li></ul></div><aside class="home-brief-action-v11"><strong>Seguimiento editorial continuo</strong><p>La edición reúne el diagnóstico vigente, las evidencias seleccionadas y el contexto necesario para interpretar cada cambio.</p><a class="button primary" href="/parte-diario.html">Abrir parte diario</a></aside></section>
 <!-- HOME_V11_BRIEF_END -->'''
 
 BRIEF_EN = r'''<!-- HOME_V11_BRIEF_START -->
-<section aria-labelledby="daily-brief-title" class="content-section home-brief-v11">
-  <div>
-    <span class="section-kicker">Daily operational brief</span>
-    <h2 id="daily-brief-title">The essential situation, updated automatically</h2>
-    <p>A concise view of verified status, material changes, highlighted evidence and the signals worth watching, without turning every headline into an alert.</p>
-    <ul class="home-brief-points">
-      <li>Operational status and confidence level.</li>
-      <li>Changes from the previous brief.</li>
-      <li>Selected evidence and next signals.</li>
-    </ul>
-  </div>
-  <aside class="home-brief-action-v11">
-    <strong>Automatic update</strong>
-    <p>The page is regenerated from <code>status.json</code> and retains an auditable daily archive.</p>
-    <a class="button primary" href="/en-daily-brief.html">Open daily brief</a>
-  </aside>
-</section>
+<section aria-labelledby="daily-brief-title" class="content-section home-brief-v11"><div><span class="section-kicker">Daily operational brief</span><h2 id="daily-brief-title">The essential situation, under continuous monitoring</h2><p>A concise view of verified status, material changes, highlighted evidence and the signals worth watching.</p><ul class="home-brief-points"><li>Operational status and confidence level.</li><li>Changes from the previous brief.</li><li>Selected evidence and next signals.</li></ul></div><aside class="home-brief-action-v11"><strong>Continuous editorial monitoring</strong><p>The edition brings together the current assessment, selected evidence and the context needed to interpret each change.</p><a class="button primary" href="/en-daily-brief.html">Open daily brief</a></aside></section>
 <!-- HOME_V11_BRIEF_END -->'''
 
 ANALYSIS_ES = r'''<!-- HOME_V11_ANALYSIS_START -->

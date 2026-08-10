@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""El Diario de Ormuz · generador editorial automático V8.
+"""El Diario de Ormuz · sistema editorial V8.
 
 Objetivo
 --------
@@ -595,14 +595,14 @@ def change_paragraph(
     state_changed = current_fp.get("v7_state") != previous_fp.get("v7_state") or current_fp.get("legacy_status") != previous_fp.get("legacy_status")
     if lang == "es":
         if state_changed:
-            return "La principal diferencia frente a la edición anterior está en la propia clasificación operativa: el balance de evidencias ha desplazado el diagnóstico. La web registra el cambio y conserva la edición previa para poder auditarlo."
+            return "La principal diferencia frente a la edición anterior está en la propia clasificación operativa: el balance de evidencias ha desplazado el diagnóstico. La hemeroteca conserva la edición previa para documentar la evolución."
         if changed:
             labels = {"passage":"paso físico", "traffic":"tráfico", "access":"acceso", "risk":"riesgo", "legal":"marco político/legal"}
             return "El estado general no cambia, pero sí lo hacen algunas dimensiones: " + ", ".join(labels[x] for x in changed) + ". Esto evita tratar como idénticas dos jornadas que comparten etiqueta pero no condiciones operativas."
-        return "Frente a la edición anterior no aparece un cambio material en la clasificación. La continuidad, sin embargo, no equivale a normalidad: el sistema mantiene separados el nivel de tráfico, las restricciones y el riesgo."
+        return "Frente a la edición anterior no aparece un cambio material en la clasificación. La continuidad, sin embargo, no equivale a normalidad: la evaluación mantiene separados el nivel de tráfico, las restricciones y el riesgo."
     else:
         if state_changed:
-            return "The main difference from the previous edition is the operational classification itself: the balance of evidence has shifted the assessment. The site records the change and preserves the previous edition for auditability."
+            return "The main difference from the previous edition is the operational classification itself: the balance of evidence has shifted the assessment. The archive preserves the previous edition to document the evolution."
         if changed:
             labels = {"passage":"physical passage", "traffic":"traffic", "access":"access", "risk":"risk", "legal":"political/legal framework"}
             return "The headline state is unchanged, but some dimensions have moved: " + ", ".join(labels[x] for x in changed) + ". This prevents two days with the same label from being treated as operationally identical."
@@ -765,14 +765,14 @@ def render_page(
     sources_html = make_sources(news, lang)
     topics = ["maritime", "security", "diplomacy", "energy", "insurance"]
     date_text = date_label(local_dt, lang)
-    byline = "Redacción automatizada con control de consistencia" if lang == "es" else "Automated newsroom with consistency checks"
+    byline = "Equipo editorial de Estrecho Ormuz" if lang == "es" else "Estrecho Ormuz Editorial Team"
     read_time = "Lectura: 6–8 min" if lang == "es" else "Reading time: 6–8 min"
     kicker = "EL DIARIO DE ORMUZ" if lang == "es" else "HORMUZ DAILY"
     edition = "Edición de la mañana" if lang == "es" else "Morning edition"
     archive_note = (
-        "Edición archivada por cambio material" if lang == "es" else "Archived because of material change"
+        "Edición de hemeroteca" if lang == "es" else "Archive edition"
     ) if archive else (
-        "Edición viva · se actualiza una vez al día" if lang == "es" else "Live edition · updated once a day"
+        "Edición diaria · seguimiento continuo" if lang == "es" else "Daily edition · continuous monitoring"
     )
 
     dim_labels = dimensions(operational, lang)
@@ -804,15 +804,23 @@ def render_page(
         )
 
     watch_html = "".join(f"<li>{safe(item)}</li>" for item in watch)
-    reason_html = "".join(f"<li>{safe(item)}</li>" for item in material_reasons)
-    quality_note = (
-        "Esta edición alcanza el umbral para archivo permanente."
-        if lang == "es" and material_score_value >= MATERIAL_THRESHOLD
-        else "Esta edición no crea una nueva URL histórica: se actualiza la portada del diario para evitar contenido repetitivo."
+    reason_html = (
+        "<li>La edición incorpora novedades suficientes para formar parte de la hemeroteca.</li>"
+        if material_score_value >= MATERIAL_THRESHOLD and lang == "es"
+        else "<li>La edición diaria se mantiene actualizada sin crear una entrada histórica redundante.</li>"
         if lang == "es"
-        else "This edition reaches the threshold for permanent archiving."
+        else "<li>This edition contains sufficient new information to form part of the permanent archive.</li>"
         if material_score_value >= MATERIAL_THRESHOLD
-        else "This edition does not create a new historical URL: the live diary is updated instead, avoiding repetitive content."
+        else "<li>The daily edition remains updated without creating a redundant historical entry.</li>"
+    )
+    quality_note = (
+        "Esta edición forma parte de la hemeroteca porque incorpora novedades materiales suficientes."
+        if lang == "es" and material_score_value >= MATERIAL_THRESHOLD
+        else "La edición diaria se actualiza sin añadir una entrada redundante a la hemeroteca."
+        if lang == "es"
+        else "This edition forms part of the archive because it contains sufficient material developments."
+        if material_score_value >= MATERIAL_THRESHOLD
+        else "The daily edition is updated without adding a redundant entry to the archive."
     )
     description = summary or lead[:220]
     schema = structured_data(title, description, canonical, iso_z(local_dt.astimezone(timezone.utc)), lang, archive)
@@ -866,8 +874,8 @@ def render_page(
 <section class="journal-section journal-change"><h2>{'Qué ha cambiado desde ayer' if lang == 'es' else 'What changed since yesterday'}</h2><p>{safe(change)}</p></section>
 {sections}
 <section class="journal-section journal-watch"><h2>{'Qué vigilar en las próximas 24 horas' if lang == 'es' else 'What to watch over the next 24 hours'}</h2><ul>{watch_html}</ul></section>
-<section class="journal-section journal-sources"><div class="journal-section-title"><div><span>{'Trazabilidad' if lang == 'es' else 'Traceability'}</span><h2>{'Fuentes y noticias consultadas' if lang == 'es' else 'Sources and news reviewed'}</h2></div></div><ul>{sources_html}</ul></section>
-<section class="journal-method-note"><h2>{'Cómo se ha escrito esta edición' if lang == 'es' else 'How this edition was produced'}</h2><p>{'El texto se genera automáticamente a partir de status.json, Operational Intelligence cuando está disponible y noticias recientes de fuentes seleccionadas. Las reglas separan hechos operativos de opinión, preguntas y declaraciones políticas. No se inventan citas ni se atribuyen hechos que no puedan sostenerse con los datos enlazados.' if lang == 'es' else 'The text is generated automatically from status.json, Operational Intelligence when available, and recent news from selected sources. Rules separate operational facts from opinion, questions and political statements. Quotes are not invented and claims are not attributed beyond what the linked data can support.'}</p><p>{safe(quality_note)}</p><details><summary>{'Por qué se archivó o no esta edición' if lang == 'es' else 'Why this edition was or was not archived'}</summary><p>{'Puntuación de novedad' if lang == 'es' else 'Novelty score'}: <strong>{material_score_value}</strong> / {MATERIAL_THRESHOLD}.</p><ul>{reason_html or '<li>Continuidad sin novedad material suficiente.</li>'}</ul></details></section>
+<section class="journal-section journal-sources"><div class="journal-section-title"><div><span>{'Fuentes verificables' if lang == 'es' else 'Verifiable sources'}</span><h2>{'Fuentes y noticias consultadas' if lang == 'es' else 'Sources and news reviewed'}</h2></div></div><ul>{sources_html}</ul></section>
+<section class="journal-method-note"><h2>{'Criterios editoriales de esta edición' if lang == 'es' else 'Editorial standards for this edition'}</h2><p>{safe('Esta edición ha sido preparada por el Equipo editorial de Estrecho Ormuz a partir de fuentes marítimas, energéticas y periodísticas contrastadas, junto con los datos propios del observatorio. La redacción distingue hechos operativos, declaraciones, interpretación y señales de mercado. Las fuentes utilizadas se enlazan para facilitar su comprobación.' if lang == 'es' else "This edition has been prepared by the Estrecho Ormuz Editorial Team using cross-checked maritime, energy and journalistic sources together with the observatory's own data. The editorial process distinguishes operational facts, statements, interpretation and market signals. Sources are linked so readers can verify the underlying information.")}</p><p>{safe(quality_note)}</p><details><summary>{'Criterio de hemeroteca' if lang == 'es' else 'Archive criteria'}</summary><ul>{reason_html}</ul></details></section>
 </article>
 </main>
 <footer class="journal-footer"><p>© 2026 Estrecho Ormuz · {'Proyecto independiente · No constituye asesoramiento marítimo, financiero ni de seguridad.' if lang == 'es' else 'Independent project · Not maritime, financial or security advice.'}</p></footer>
@@ -882,7 +890,7 @@ def archive_page(items: list[dict[str, Any]], lang: str) -> str:
         title = item.get("title_es" if es else "title_en")
         summary = item.get("summary_es" if es else "summary_en")
         cards.append(
-            f'<article class="journal-archive-card"><time>{safe(item.get("date"))}</time><h2><a href="{safe(url)}">{safe(title)}</a></h2><p>{safe(summary)}</p><span>{"Novedad" if es else "Novelty"}: {safe(item.get("material_score"))}</span></article>'
+            f'<article class="journal-archive-card"><time>{safe(item.get("date"))}</time><h2><a href="{safe(url)}">{safe(title)}</a></h2><p>{safe(summary)}</p><span>{"Edición archivada" if es else "Archive edition"}</span></article>'
         )
     canonical = f"{BASE_URL}/{'diario/' if es else 'diary/'}"
     alt = f"{BASE_URL}/{'diary/' if es else 'diario/'}"
@@ -907,7 +915,7 @@ def patch_home_teaser(path: Path, lang: str, edition: dict[str, Any]) -> None:
     summary = edition.get("summary_es" if es else "summary_en") or ""
     block = f'''<!-- JOURNAL_V8_HOME_START -->
 <section class="content-section journal-home-v8" aria-labelledby="journal-home-title">
-  <div><span class="section-kicker">{'EL DIARIO DE ORMUZ' if es else 'HORMUZ DAILY'}</span><h2 id="journal-home-title">{safe(title)}</h2><p>{safe(summary)}</p><div class="journal-home-meta"><span>{safe(edition.get('date'))}</span><span>{'Crónica diaria automática y trazable' if es else 'Daily automated, traceable briefing'}</span></div></div>
+  <div><span class="section-kicker">{'EL DIARIO DE ORMUZ' if es else 'HORMUZ DAILY'}</span><h2 id="journal-home-title">{safe(title)}</h2><p>{safe(summary)}</p><div class="journal-home-meta"><span>{safe(edition.get('date'))}</span><span>{'Crónica diaria · fuentes verificables' if es else 'Daily briefing · verifiable sources'}</span></div></div>
   <aside><strong>{'Edición de hoy' if es else 'Today’s edition'}</strong><p>{'Noticias, tráfico, seguridad, diplomacia, energía y qué vigilar durante las próximas 24 horas.' if es else 'News, traffic, security, diplomacy, energy and what to watch over the next 24 hours.'}</p><a class="button primary" href="{'/diario.html' if es else '/en-diary.html'}">{'Leer la crónica completa' if es else 'Read the full edition'}</a><a class="text-link" href="{'/diario/' if es else '/diary/'}">{'Ver hemeroteca →' if es else 'Open archive →'}</a></aside>
 </section>
 <!-- JOURNAL_V8_HOME_END -->'''
