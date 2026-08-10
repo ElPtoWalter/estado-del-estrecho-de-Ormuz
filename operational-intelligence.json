@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-10T08:59:15Z",
+  "generated_at": "2026-08-10T10:45:29Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,11 +33,11 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 10.105,
+    "passage": 10.169,
     "closure": 0,
-    "traffic_reduction": 4.96,
-    "access_restriction": 18.36,
-    "risk": 33.44
+    "traffic_reduction": 6.96,
+    "access_restriction": 18.84,
+    "risk": 33.14
   },
   "source_counts": {
     "passage": 4,
@@ -51,6 +51,21 @@
     "confidence": "MEDIA"
   },
   "evidence": [
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "The Week in Charts: Red Sea shipping stabilises after July’s Houthi blockade shock | War, disruption and rerouting fail to derail container demand - Lloyd's List",
+      "source": "Lloyd's List",
+      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxOSzA3ckd1aW92cjRBSkxFcUVZaEVINy1ENFk4QWtGTkxNV0RYdXdDN016d05CSkNWZVFmYmZSZTVuTXd5b0tlQjBZSWJLZUhXT0dkWjFKSldGSG9WcFF5ay1rSGFFWkxsQ2JlaEZsUmdmYWktY3VuWmFBUHE5cjZnblBfWFFMUTE1bERDNXZFNkdvUGVTUHo1ZnA1YjY3SlFrSkdpWVRxbmxWdHByczZnNnhUMUl1dGw5elZOUnZiSkViQmZpeURMWUhqQ2FPZEhkMDRaUkJRRE1yek1EeEU3TlhWSHZWQlRZY3lpTXU5cVlLclA0SGI2cnpDUVVVaEhHaHhoLUZnTmZRN2s?oc=5",
+      "published_at": "2026-08-10T09:54:15Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
+    },
     {
       "kind": "RISK_SEVERE",
       "title": "ADNOC says attacks on vessels, staff significantly impacting operations - Reuters",
@@ -71,7 +86,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-10T08:59:15Z",
+      "published_at": "2026-08-10T10:45:29Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -155,25 +170,10 @@
       "effective_weight": 2.48,
       "kind_label_es": "Acceso restringido",
       "kind_label_en": "Restricted access"
-    },
-    {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "Oil settles up $3 as Iran reviews bill to ban US, Israeli vessels from Hormuz - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTmw0WV9PeEJVU0pBczd6UzhWSjdUMlQ2aDhwUGxDbWdvc3hMakw5d3h3Q2wxMXNRakctZjRlTW8wNi1PNnU2eDY0anYxakZYSkZBSVN6SUhJOEF4aW1HSTVnUWREc3k2dFBvUEl0azM4TXFoV1I1S1pJRVlVUm1SakpIeVFqM0wxS2gtMDFvc3ktZ05QYjc3VXRtSHdsNk9hLWUwb3VxTzBFcVhBeUx3Zm82Zw?oc=5",
-      "published_at": "2026-08-06T19:37:26Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 2.48,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
     }
   ],
   "diagnostics": {
-    "signals_considered": 63,
+    "signals_considered": 62,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
