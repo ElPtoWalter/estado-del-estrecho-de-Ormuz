@@ -14,6 +14,7 @@ jobs:
   hardening:
     runs-on: ubuntu-latest
     timeout-minutes: 18
+
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v6
@@ -25,13 +26,14 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Corregir generadores y superficie pública
+      - name: Corregir generadores y superficie principal
         run: python fix_professional_surface_v9_3.py
 
       - name: Validar Python y Diario
         run: |
           python -m py_compile generate_daily_journal.py
           python -m py_compile install_v11.py
+          python -m py_compile build_public_site.py
           python -m unittest -v test_daily_journal_v8.py
 
       - name: Regenerar edición de hoy
@@ -40,45 +42,89 @@ jobs:
       - name: Limpieza final tras regenerar
         run: python fix_professional_surface_v9_3.py --clean-only
 
-      - name: Regenerar sitemap
+      - name: Regenerar sitemap fuente
         run: python build_sitemap.py --root .
 
-      - name: Validar sitio
+      - name: Validar sitio fuente
         run: python validate_site.py --root . --report "${{ runner.temp }}/professional-v9-3-validation.json"
 
       - name: Construir superficie pública segura
         run: python build_public_site.py
 
-      - name: Confirmar que no se publica el motor
+      - name: Confirmar aislamiento del motor
         run: |
           test ! -e _site/status.json
           test ! -e _site/history.json
           test ! -e _site/config.json
           test ! -e _site/update_status.py
           test ! -e _site/operational-intelligence.json
+          test ! -e _site/social-studio.js
+          test ! -e _site/widget.js
           test ! -e _site/.github
+          test ! -e _site/_redirects
 
-      - name: Auditoría final
+      - name: Auditoría final del contenido publicado
         run: |
-          ! grep -R -n -E \
-            'status\.json|history\.json|config\.json|operational-intelligence\.json|journal-state\.json|journal-health\.json|Redacción automatizada|Automated newsroom|El texto se genera automáticamente|The text is generated automatically|Puntuación de novedad|Novelty score|Crónica diaria automática|Daily automated|API pública|Public API|social-studio\.html' \
-            index.html en.html diario.html en-diary.html diario diary _site
+          python - <<'PY'
+          from pathlib import Path
+          root = Path("_site")
+          forbidden = (
+              "status.json", "history.json", "config.json",
+              "operational-intelligence.json", "journal-state.json",
+              "journal-health.json", "Redacción automatizada",
+              "Automated newsroom", "El texto se genera automáticamente",
+              "The text is generated automatically", "Puntuación de novedad",
+              "Novelty score", "Crónica diaria automática", "Daily automated",
+              "API pública", "Public API", "JSON API", "API JSON",
+              "social-studio.html", "raw.githubusercontent.com/ElPtoWalter",
+              "github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz",
+          )
+          errors = []
+          for p in root.rglob("*"):
+              if not p.is_file() or p.name == "_headers":
+                  continue
+              if p.suffix.lower() not in {".html", ".js", ".css", ".xml", ".txt"}:
+                  continue
+              body = p.read_text(encoding="utf-8", errors="ignore").lower()
+              for token in forbidden:
+                  if token.lower() in body:
+                      errors.append(f"{p}: {token}")
+          if errors:
+              raise SystemExit("FUGAS EN BUILD PUBLICO:\n" + "\n".join(errors))
+          print("Auditoría final OK: no hay endpoints ni lenguaje técnico interno en _site.")
+          PY
 
-      - name: Guardar cambios
+      - name: Comprobar cambios
+        run: |
+          git diff --check
+          git status --short
+
+      - name: Guardar V9.3
         run: |
           find . -type d -name __pycache__ -prune -exec rm -rf {} +
           find . -type f -name '*.pyc' -delete
           rm -rf _site
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add \
+            build_public_site.py \
             fix_professional_surface_v9_3.py \
             generate_daily_journal.py \
             install_v11.py \
-            index.html en.html diario.html en-diary.html diario diary sitemap.xml
+            .github/workflows/professional-surface-v9-3.yml \
+            index.html \
+            en.html \
+            diario.html \
+            en-diary.html \
+            diario \
+            diary \
+            sitemap.xml
+
           if git diff --cached --quiet; then
             echo "V9.3 ya estaba aplicada."
           else
-            git commit -m "Cierra endpoints públicos y profesionaliza la superficie"
+            git commit -m "Aísla definitivamente la superficie pública del motor"
             git push
           fi
