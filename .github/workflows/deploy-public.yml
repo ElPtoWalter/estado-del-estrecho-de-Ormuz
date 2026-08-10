@@ -3,7 +3,15 @@ name: Publicar superficie segura
 on:
   push:
     branches: [main]
+
   workflow_dispatch:
+
+  workflow_run:
+    workflows:
+      - "Actualizar estado de Ormuz"
+      - "El Diario de Ormuz"
+    types:
+      - completed
 
 permissions:
   contents: read
@@ -16,7 +24,9 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v6
@@ -35,7 +45,11 @@ jobs:
           test ! -e _site/history.json
           test ! -e _site/update_status.py
           test ! -e _site/config.json
+          test ! -e _site/operational-intelligence.json
+          test ! -e _site/social-studio.js
+          test ! -e _site/widget.js
           test ! -e _site/.github
+          test ! -e _site/_redirects
 
       - name: Preparar GitHub Pages
         uses: actions/configure-pages@v5
@@ -46,11 +60,12 @@ jobs:
           path: _site
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
+
     steps:
       - name: Publicar
         id: deployment
