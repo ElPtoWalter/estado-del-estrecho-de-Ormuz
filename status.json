@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-11T17:30:33Z",
-  "last_success_at": "2026-08-11T17:30:33Z",
+  "checked_at": "2026-08-11T18:27:01Z",
+  "last_success_at": "2026-08-11T18:27:01Z",
   "last_change_at": "2026-08-11T11:23:22Z",
   "verification_ok": true,
   "stale": false,
@@ -16,23 +16,23 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Pakistan says US and Iran close to 'some sort' of deal despite attacks on shipping - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVzI4ZllHeXZmVDVJVE40M0w5NkYtdkFzM0RyYlZvY1pXbEJoc1d4RHNvVWxTem1kMEhGNUxmc0tZZmZ2ZkpZamtDNkd6bjRTVXhCVEF6dGhOSXltR0RQc3RPc0RFUzctZ00xRjAzX0hwNy1oYlU0a0dMYU9iUjdqYXZ4ZWM5YXhBMUhEREduYVo2QkVsT2ktQ19NaFNpUF85TmhFcnF1REktbFZfRklXb0EtbzZsLUZ1Vk53TFRR?oc=5",
-      "published_at": "2026-08-11T15:34:45Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-08-11T17:30:33Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
       "title": "Iran-aligned Houthis claim they attacked oil refinery in Saudi Arabia - The Guardian",
       "source_name": "The Guardian",
       "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxONUczZGxpN3lGb084MkNINGQtY1FfSDNZM1NpZk9La2xSbVB5VkpuMEVJTm03X0JpWElISU11Q1JaM1lTOHkzZGRYUl9DVWNCbnJCVXlCMzlXRjNkbGU0UUJwODF3dHU5OGFJNFFBMi1razRnQ0FEVzZXR1dsbHVqaE13dTRQRmlkZ0NfWEppa0lxeTlUeVNOWTM3Z2JmM1pPNUpXbkVTSUFzZWRfUmhiOS11TQ?oc=5",
       "published_at": "2026-08-09T12:29:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-11T17:30:33Z"
+      "observed_at": "2026-08-11T18:27:01Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "UAE says Iran attacked ADNOC vessel with missile in Strait of Hormuz - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQajV4Uk9FTWd2WFJTWWVSZS1pdkl4OGFERFdzeExaYy1udkYxWGdXYWxRdHUwd2kwLVRtRTdhRkdVdUZuNXZ3U09EQUR3OXUwUzVtZmZZeWZkWmlkTThUTDBYNVBjbE9IWVBQZnhhcHBfcFVnZTc0NG1uMk54dElXNkhzQUFZR3VkRW5QZkthVjdfdTJOaXR6YWxiZmtfdzJROGg3bWFuOVhuV2ZkTDNLNkg4d18?oc=5",
+      "published_at": "2026-08-08T11:46:57Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-08-11T18:27:01Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,22 +42,21 @@
       "published_at": "2026-08-09T11:23:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-11T17:30:33Z"
+      "observed_at": "2026-08-11T18:27:01Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 6.97
+      "risk": 4.37
     },
     "independent_sources": {
       "open": 0,
@@ -65,8 +64,8 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 54,
-    "signals_considered": 4,
+    "articles_considered": 61,
+    "signals_considered": 3,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -74,7 +73,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-11T15:34:45Z",
+    "as_of": "2026-08-09T12:29:00Z",
     "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -140,7 +139,7 @@
       "published_at": "2026-08-09T12:29:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-11T17:30:33Z"
+      "observed_at": "2026-08-11T18:27:01Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -150,7 +149,7 @@
       "published_at": "2026-08-09T11:23:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-11T17:30:33Z"
+      "observed_at": "2026-08-11T18:27:01Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -180,7 +179,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-11T13:58:17Z"
+      "observed_at": "2026-08-11T18:27:01Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -685,7 +684,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-11T17:31:39Z",
+    "generated_at": "2026-08-11T18:28:03Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -721,13 +720,13 @@
       "passage": 11.925,
       "closure": 0,
       "traffic_reduction": 7.68,
-      "access_restriction": 10.22,
-      "risk": 37.96
+      "access_restriction": 11.22,
+      "risk": 31.8
     },
     "source_counts": {
       "passage": 9,
       "closure": 0,
-      "primary_sources": 3
+      "primary_sources": 2
     },
     "latest_confirmed_transit_at": "2026-08-11T14:12:00Z",
     "legacy_engine": {
@@ -736,21 +735,6 @@
       "confidence": "MEDIA"
     },
     "evidence": [
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Pakistan says US and Iran close to 'some sort' of deal despite attacks on shipping - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVzI4ZllHeXZmVDVJVE40M0w5NkYtdkFzM0RyYlZvY1pXbEJoc1d4RHNvVWxTem1kMEhGNUxmc0tZZmZ2ZkpZamtDNkd6bjRTVXhCVEF6dGhOSXltR0RQc3RPc0RFUzctZ00xRjAzX0hwNy1oYlU0a0dMYU9iUjdqYXZ4ZWM5YXhBMUhEREduYVo2QkVsT2ktQ19NaFNpUF85TmhFcnF1REktbFZfRklXb0EtbzZsLUZ1Vk53TFRR?oc=5",
-        "published_at": "2026-08-11T15:34:45Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
       {
         "kind": "TRAFFIC_REDUCED",
         "title": "Gulf stocks fall on fading prospects of US-Iran deal - Reuters",
@@ -783,25 +767,10 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Trump says U.S. has mine-swept 'entire' Strait of Hormuz, claims strait is open - Yonhap News Agency",
-        "source": "Yonhap News Agency",
-        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9YS3FQRVhTOUJhUW9PQXFWOEY4Q2YxeG5zS3FNS1QtWFgxaTZoVHR5R1BEZTVoaXoxdnpNcjRGNHp4SkMxOEtXbkZaeTRRNDZDV0JZaFZ4c2tYQQ?oc=5",
-        "published_at": "2026-08-10T21:14:31Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-11T17:31:39Z",
+        "published_at": "2026-08-11T18:28:03Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -828,8 +797,8 @@
       },
       {
         "kind": "TRAFFIC_NORMAL",
-        "title": "Why Restoring Normal Traffic to the Strait of Hormuz Is Proving So Difficult - bloomberg.com",
-        "source": "bloomberg.com",
+        "title": "Why Restoring Normal Traffic to the Strait of Hormuz Is Proving So Difficult - Bloomberg.com",
+        "source": "Bloomberg.com",
         "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNX09IOFNfMHBEYjAtWWdZYVgya3hGQmRnZUliQ0ozSVA5RTVnOVYyeEd6US02SU1JMXBHWUxSUzNuem9NbFBYNzduSk5ETzliSjBLaTR1Snl1QkZmdVdHRG5mRGotNXhPQXVMWDVwSDlZMlBIUm83bWZuWmJlSE1SMEhjb01YMFRLVmNvbDU3WFR5ejE1b2pZMHpnU1NEUG13Y3dUTktTc0ZTNjRsVWJ1REl2NGhlWURuNEd4WDJVemhRdU9N?oc=5",
         "published_at": "2026-08-11T11:09:13Z",
         "tier": 3,
@@ -855,6 +824,36 @@
         "effective_weight": 1.932,
         "kind_label_es": "Tránsito confirmado",
         "kind_label_en": "Confirmed transit"
+      },
+      {
+        "kind": "TRAFFIC_SEVERELY_REDUCED",
+        "title": "Reuters: only 33 vessels crossed from Monday to Thursday versus 50 in the same period a week earlier",
+        "source": "Reuters",
+        "url": "https://www.reuters.com/business/energy/vessel-traffic-through-hormuz-dwindles-this-week-markets-watch-iran-oman-talks-2026-08-07/",
+        "published_at": "2026-08-07T08:00:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "seed-primary",
+        "details": "Reuters reports 33 transits Monday-Thursday versus 50 in the same period a week earlier; this is used qualitatively, not as a direct ratio to the JMIC baseline.",
+        "traffic_ratio": null,
+        "effective_weight": 1.68,
+        "kind_label_es": "Tráfico muy reducido",
+        "kind_label_en": "Severely reduced traffic"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Pakistan says US and Iran close to 'some sort' of deal despite attacks on shipping - Yahoo News UK",
+        "source": "Yahoo News UK",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9kVXBfaEdGUWFUdFFNWUN4Y05qT0UzRFc1My1aMlFDR1VfMndIUG9nSXBSUjhKUEdwM2VxT0F2RGdLTk5wcmxWWGhYdVdLbXl0a092alVkQUl3MWhDUkRqdTNvY21VMnNWTFotMklrN2Y1R0dnNzBR?oc=5",
+        "published_at": "2026-08-11T15:26:28Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
