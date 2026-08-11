@@ -1,17 +1,17 @@
 {
   "engine_version": 3,
   "status": "INCIERTO",
-  "operational_status": "NO_RECENT_CONFIRMATION",
-  "operational_label_es": "Sin confirmación reciente",
-  "operational_label_en": "No recent confirmation",
-  "confidence": "BAJA",
-  "checked_at": "2026-08-11T10:26:32Z",
-  "last_success_at": "2026-08-11T10:26:32Z",
-  "last_change_at": "2026-08-11T10:26:32Z",
+  "operational_status": "HIGH_RISK_UNCONFIRMED",
+  "operational_label_es": "Riesgo elevado, estado no confirmado",
+  "operational_label_en": "High risk, status unconfirmed",
+  "confidence": "MEDIA",
+  "checked_at": "2026-08-11T11:23:22Z",
+  "last_success_at": "2026-08-11T11:23:22Z",
+  "last_change_at": "2026-08-11T11:23:22Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
-  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
+  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
   "last_valid_confirmation": null,
   "evidence": [
     {
@@ -22,7 +22,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-11T09:32:56Z"
+      "observed_at": "2026-08-11T11:23:22Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-09T12:29:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-11T09:32:56Z"
+      "observed_at": "2026-08-11T11:23:22Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,44 +42,43 @@
       "published_at": "2026-08-09T11:23:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-11T09:32:56Z"
+      "observed_at": "2026-08-11T11:23:22Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
-      "Official maritime web search"
+      "Official maritime web search",
+      "GDELT",
+      "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests",
-      "Google News RSS: HTTPError: HTTP Error 503: Service Unavailable"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 5.17
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 3
     },
-    "articles_considered": 0,
-    "signals_considered": 0,
-    "current_cycle_evidence": 0,
-    "evidence_display_mode": "carried",
+    "articles_considered": 54,
+    "signals_considered": 4,
+    "current_cycle_evidence": 3,
+    "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
-    "mode": "carried",
+    "mode": "current",
     "as_of": "2026-08-09T12:29:00Z",
-    "current_cycle_count": 0,
-    "heading_es": "Últimas evidencias disponibles",
-    "heading_en": "Latest available evidence",
-    "description_es": "La comprobación más reciente no aportó nuevas evidencias publicables. Estas señales proceden de ciclos anteriores y se muestran con su fecha real.",
-    "description_en": "The latest check produced no new publishable evidence. These signals come from earlier cycles and retain their actual publication dates."
+    "current_cycle_count": 3,
+    "heading_es": "Evidencias de esta comprobación",
+    "heading_en": "Evidence from this check",
+    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
+    "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
     {
@@ -130,7 +129,7 @@
       "published_at": "2026-08-09T12:29:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-11T09:32:56Z"
+      "observed_at": "2026-08-11T11:23:22Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -140,7 +139,7 @@
       "published_at": "2026-08-09T11:23:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-11T09:32:56Z"
+      "observed_at": "2026-08-11T11:23:22Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -170,7 +169,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-11T09:32:56Z"
+      "observed_at": "2026-08-11T11:23:22Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -685,16 +684,16 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-11T10:28:51Z",
+    "generated_at": "2026-08-11T11:23:42Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
     "operational_label_en": "Physical passage exists, but flows are severely degraded",
-    "confidence": "BAJA",
-    "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
-    "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
+    "confidence": "MEDIA",
+    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
@@ -718,16 +717,16 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 16.085,
+      "passage": 8.155,
       "closure": 0,
-      "traffic_reduction": 6.68,
+      "traffic_reduction": 8.68,
       "access_restriction": 9.48,
-      "risk": 27.04
+      "risk": 25.46
     },
     "source_counts": {
-      "passage": 8,
+      "passage": 6,
       "closure": 0,
-      "primary_sources": 3
+      "primary_sources": 2
     },
     "latest_confirmed_transit_at": "2026-08-11T07:54:28Z",
     "legacy_engine": {
@@ -736,21 +735,6 @@
       "confidence": "MEDIA"
     },
     "evidence": [
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Trump says U.S. controls 100% of traffic through Strait of Hormuz - De Último Minuto",
-        "source": "De Último Minuto",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYU04NG1TQlhXOUdvOGxNVW04aWhMWE83UUdrRlJiTnpjeWY3M0J6Q1B0ZUxKN2ZsZVdjMXBzaFNYVHFtdU9Jc2ZOR2hSTEE5WEV5SE5Ub2VnUTIyVTVXV3VfNlVFNzYzM3RxZDBJeVN1Wk5YYXNtSkJuc0tNY0NtM3ZtaGQ0dy1kT1F0ZF9Id0p3cDhuVEdpZWd0S0RBQl9CSG9QY1ZjWjJpOTAw?oc=5",
-        "published_at": "2026-08-10T19:55:21Z",
-        "tier": 5,
-        "weight": 5.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 5.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
-      },
       {
         "kind": "TRAFFIC_REDUCED",
         "title": "Gulf stocks fall on fading prospects of US-Iran deal - Reuters",
@@ -771,7 +755,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-11T09:33:40Z",
+        "published_at": "2026-08-11T11:23:42Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -780,6 +764,21 @@
         "effective_weight": 3.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "TRAFFIC_NORMAL",
+        "title": "Why Restoring Normal Traffic to the Strait of Hormuz Is Proving So Difficult - Bloomberg.com",
+        "source": "Bloomberg.com",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNX09IOFNfMHBEYjAtWWdZYVgya3hGQmRnZUliQ0ozSVA5RTVnOVYyeEd6US02SU1JMXBHWUxSUzNuem9NbFBYNzduSk5ETzliSjBLaTR1Snl1QkZmdVdHRG5mRGotNXhPQXVMWDVwSDlZMlBIUm83bWZuWmJlSE1SMEhjb01YMFRLVmNvbDU3WFR5ejE1b2pZMHpnU1NEUG13Y3dUTktTc0ZTNjRsVWJ1REl2NGhlWURuNEd4WDJVemhRdU9N?oc=5",
+        "published_at": "2026-08-11T11:09:13Z",
+        "tier": 3,
+        "weight": 3.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.0,
+        "kind_label_es": "Tráfico próximo a normalidad",
+        "kind_label_en": "Traffic near normal"
       },
       {
         "kind": "RISK_SEVERE",
@@ -858,18 +857,12 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 12,
-      "provider_errors": [
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable"
-      ],
+      "signals_considered": 57,
+      "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-    },
-    "carried_forward": true
+    }
   }
 }
