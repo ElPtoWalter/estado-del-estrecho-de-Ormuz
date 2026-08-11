@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-11T07:47:09Z",
-  "last_success_at": "2026-08-11T07:47:09Z",
+  "checked_at": "2026-08-11T09:32:56Z",
+  "last_success_at": "2026-08-11T09:32:56Z",
   "last_change_at": "2026-08-11T02:36:01Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-11T07:47:09Z"
+      "observed_at": "2026-08-11T09:32:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-09T12:29:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-11T07:47:09Z"
+      "observed_at": "2026-08-11T09:32:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-08-09T11:23:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-11T07:47:09Z"
+      "observed_at": "2026-08-11T09:32:56Z"
     }
   ],
   "diagnostics": {
@@ -130,7 +130,7 @@
       "published_at": "2026-08-09T12:29:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-11T07:47:09Z"
+      "observed_at": "2026-08-11T09:32:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -140,7 +140,7 @@
       "published_at": "2026-08-09T11:23:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-11T07:47:09Z"
+      "observed_at": "2026-08-11T09:32:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -170,7 +170,7 @@
       "published_at": "2026-08-08T11:46:57Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-11T07:47:09Z"
+      "observed_at": "2026-08-11T09:32:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -685,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-11T07:47:53Z",
+    "generated_at": "2026-08-11T09:33:40Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -718,18 +718,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 15.981,
+      "passage": 16.085,
       "closure": 0,
-      "traffic_reduction": 3.48,
-      "access_restriction": 10.58,
-      "risk": 23.24
+      "traffic_reduction": 6.68,
+      "access_restriction": 9.48,
+      "risk": 27.04
     },
     "source_counts": {
-      "passage": 7,
+      "passage": 8,
       "closure": 0,
       "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-08-11T06:22:07Z",
+    "latest_confirmed_transit_at": "2026-08-11T07:54:28Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -752,11 +752,26 @@
         "kind_label_en": "Confirmed transit"
       },
       {
+        "kind": "TRAFFIC_REDUCED",
+        "title": "Gulf stocks fall on fading prospects of US-Iran deal - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWE51WXltVHpwZ1NDajBwY2hiNmo1N2hocHpnb2VSaHJ4SFoweUJOTkd4Y0h3djdlbVhCSnZnQ2MxUHdNWDN0dGRERlFLcTF4blVQZjFjZ29LWmFGaEthaXEzQnNuQTJHdl9SQ1p1MExiSE9aZWtNbWFBRFR2STlwemZCSndOTEN3UnZESFRoSWlNa1VLVXBnLUlyaENoT3lEQkE?oc=5",
+        "published_at": "2026-08-11T08:45:55Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Tráfico reducido",
+        "kind_label_en": "Reduced traffic"
+      },
+      {
         "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-11T07:47:53Z",
+        "published_at": "2026-08-11T09:33:40Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -765,21 +780,6 @@
         "effective_weight": 3.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Reuters: 33 vessels transited Hormuz from Monday to Thursday; four transited on Thursday",
-        "source": "Reuters",
-        "url": "https://www.reuters.com/business/energy/vessel-traffic-through-hormuz-dwindles-this-week-markets-watch-iran-oman-talks-2026-08-07/",
-        "published_at": "2026-08-07T08:00:00Z",
-        "tier": 4,
-        "weight": 4.6,
-        "provider": "seed-primary",
-        "details": "Reuters reports continued physical transits on 7 August despite very thin traffic.",
-        "traffic_ratio": null,
-        "effective_weight": 2.852,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
       },
       {
         "kind": "RISK_SEVERE",
@@ -797,6 +797,21 @@
         "kind_label_en": "Severe risk"
       },
       {
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Reuters: 33 vessels transited Hormuz from Monday to Thursday; four transited on Thursday",
+        "source": "Reuters",
+        "url": "https://www.reuters.com/business/energy/vessel-traffic-through-hormuz-dwindles-this-week-markets-watch-iran-oman-talks-2026-08-07/",
+        "published_at": "2026-08-07T08:00:00Z",
+        "tier": 4,
+        "weight": 4.6,
+        "provider": "seed-primary",
+        "details": "Reuters reports continued physical transits on 7 August despite very thin traffic.",
+        "traffic_ratio": null,
+        "effective_weight": 1.932,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
+      },
+      {
         "kind": "TRAFFIC_SEVERELY_REDUCED",
         "title": "Reuters: only 33 vessels crossed from Monday to Thursday versus 50 in the same period a week earlier",
         "source": "Reuters",
@@ -807,7 +822,7 @@
         "provider": "seed-primary",
         "details": "Reuters reports 33 transits Monday-Thursday versus 50 in the same period a week earlier; this is used qualitatively, not as a direct ratio to the JMIC baseline.",
         "traffic_ratio": null,
-        "effective_weight": 2.48,
+        "effective_weight": 1.68,
         "kind_label_es": "Tráfico muy reducido",
         "kind_label_en": "Severely reduced traffic"
       },
@@ -840,25 +855,10 @@
         "effective_weight": 1.68,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Shipping traffic through Strait of Hormuz falls to just six vessels on Monday - profit.pakistantoday.com.pk",
-        "source": "profit.pakistantoday.com.pk",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNOGJMdnd5LTloZUdveVF3Z0oxLUhuTmI5WUllYk53S0N0ZGNZdG8wV0RLRXBFY3gyZk83V1Jld1BWQzIxUkxRckNMMVVlOWJQZnpVS2JoRVhsRXFuRG1ib3UtMTRIal81YjE0M25FNVhEZGxJSlpRMGF4cFJsSGRyazFzSEtEMnhzNlJQQ2pSakZSTlBYS3AwdEYtdmZyV2ozY0o5M1djVW1mOWxVem45THhlWjBvY1ZubUJkRkszbldjUQ?oc=5",
-        "published_at": "2026-08-11T06:22:07Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
       }
     ],
     "diagnostics": {
-      "signals_considered": 53,
+      "signals_considered": 57,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
