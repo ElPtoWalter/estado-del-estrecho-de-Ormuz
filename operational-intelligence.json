@@ -1,13 +1,13 @@
 {
   "version": 7,
-  "generated_at": "2026-08-11T18:28:03Z",
+  "generated_at": "2026-08-11T19:38:09Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
   "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
   "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
   "operational_label_en": "Physical passage exists, but flows are severely degraded",
-  "confidence": "MEDIA",
+  "confidence": "ALTA",
   "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
   "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "dimensions": {
@@ -33,16 +33,16 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 11.925,
+    "passage": 10.052,
     "closure": 0,
-    "traffic_reduction": 7.68,
-    "access_restriction": 11.22,
-    "risk": 31.8
+    "traffic_reduction": 6.68,
+    "access_restriction": 12.22,
+    "risk": 36.28
   },
   "source_counts": {
-    "passage": 9,
+    "passage": 7,
     "closure": 0,
-    "primary_sources": 2
+    "primary_sources": 3
   },
   "latest_confirmed_transit_at": "2026-08-11T14:12:00Z",
   "legacy_engine": {
@@ -51,6 +51,21 @@
     "confidence": "MEDIA"
   },
   "evidence": [
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Strait of Hormuz attack puts fragile ceasefire to the test - foxbaltimore.com",
+      "source": "foxbaltimore.com",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNTno2M3BYeW9vNW9VREZIXzQ0cGpyRW51NWFKek9CaWJsZ3pJbFMtTkNiZmZxY0kycDVYVXFvRU42eGhEcUc1aC1VR0lSNmhjWG5Mek9GOUlBWEFVTWEtcTJ1WE9FbmJQdnQzSng5UHFHVlRrQXVtdFJlMEUyNXFTcHZFYTl1bkNIUHQtYTdTcUxld2NmdWZvUXRxTzRyam05WEhPTGoxam0yNkNNallPU29UdFFYRXV3ZkNHT3A0UnlWZkxicU1UcW5hdDNiS3NzWkYzUFRYOS1CQTJ6Nm9xaGNZekJQeVRVMXNpcDlRRzFvMXFn?oc=5",
+      "published_at": "2026-08-11T10:03:43Z",
+      "tier": 5,
+      "weight": 5.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 5.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
     {
       "kind": "TRAFFIC_REDUCED",
       "title": "Gulf stocks fall on fading prospects of US-Iran deal - Reuters",
@@ -86,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-11T18:28:03Z",
+      "published_at": "2026-08-11T19:38:09Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -98,7 +113,7 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Houthis reportedly kill four in first deadly attack since start of Iran war - BBC",
+      "title": "Houthis reportedly kill six in first deadly attack since start of Iran war - BBC",
       "source": "BBC",
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9oTzN2MlZweVB5NFpNM1BJOHh3NWRCbktlT3RDYmdtdVpZVTFTbk5ObXYxejFYem8yYzlTbGxVNDVKMmlRTUxqbXFyZi1XU18tWmdNSkpGOW1MSkxG?oc=5",
       "published_at": "2026-08-11T13:35:57Z",
@@ -155,25 +170,10 @@
       "effective_weight": 1.68,
       "kind_label_es": "Tráfico muy reducido",
       "kind_label_en": "Severely reduced traffic"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Pakistan says US and Iran close to 'some sort' of deal despite attacks on shipping - Yahoo News UK",
-      "source": "Yahoo News UK",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9kVXBfaEdGUWFUdFFNWUN4Y05qT0UzRFc1My1aMlFDR1VfMndIUG9nSXBSUjhKUEdwM2VxT0F2RGdLTk5wcmxWWGhYdVdLbXl0a092alVkQUl3MWhDUkRqdTNvY21VMnNWTFotMklrN2Y1R0dnNzBR?oc=5",
-      "published_at": "2026-08-11T15:26:28Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 67,
+    "signals_considered": 64,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
