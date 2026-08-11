@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-11T22:20:52Z",
+  "generated_at": "2026-08-11T23:20:46Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -36,13 +36,13 @@
     "passage": 10.052,
     "closure": 0,
     "traffic_reduction": 6.68,
-    "access_restriction": 16.22,
-    "risk": 31.5
+    "access_restriction": 14.7,
+    "risk": 39.88
   },
   "source_counts": {
     "passage": 7,
     "closure": 0,
-    "primary_sources": 2
+    "primary_sources": 3
   },
   "latest_confirmed_transit_at": "2026-08-11T14:12:00Z",
   "legacy_engine": {
@@ -52,9 +52,24 @@
   },
   "evidence": [
     {
-      "kind": "TRAFFIC_REDUCED",
-      "title": "Gulf stocks fall on fading prospects of US-Iran deal - Reuters",
+      "kind": "RISK_SEVERE",
+      "title": "New attacks on shipping as Iran war talks hit fresh impasse - reuters.com",
       "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVzI4ZllHeXZmVDVJVE40M0w5NkYtdkFzM0RyYlZvY1pXbEJoc1d4RHNvVWxTem1kMEhGNUxmc0tZZmZ2ZkpZamtDNkd6bjRTVXhCVEF6dGhOSXltR0RQc3RPc0RFUzctZ00xRjAzX0hwNy1oYlU0a0dMYU9iUjdqYXZ4ZWM5YXhBMUhEREduYVo2QkVsT2ktQ19NaFNpUF85TmhFcnF1REktbFZfRklXb0EtbzZsLUZ1Vk53TFRR?oc=5",
+      "published_at": "2026-08-11T22:52:43Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "TRAFFIC_REDUCED",
+      "title": "Gulf stocks fall on fading prospects of US-Iran deal - reuters.com",
+      "source": "reuters.com",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWE51WXltVHpwZ1NDajBwY2hiNmo1N2hocHpnb2VSaHJ4SFoweUJOTkd4Y0h3djdlbVhCSnZnQ2MxUHdNWDN0dGRERlFLcTF4blVQZjFjZ29LWmFGaEthaXEzQnNuQTJHdl9SQ1p1MExiSE9aZWtNbWFBRFR2STlwemZCSndOTEN3UnZESFRoSWlNa1VLVXBnLUlyaENoT3lEQkE?oc=5",
       "published_at": "2026-08-11T13:36:44Z",
       "tier": 4,
@@ -68,8 +83,8 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Houthi attack on small cargo ship in Red Sea kills three crew members, sources say - Reuters",
-      "source": "Reuters",
+      "title": "Houthi attack on small cargo ship in Red Sea kills three crew members, sources say - reuters.com",
+      "source": "reuters.com",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOSURtU0FxazNSZWRITkpUbGp3SDRFemExTERkeHk0c3B6c0hoT3Vaa2lJNGxqZ3pjdmIxX1k0Y0M2cWlxOTRlSGE1WF9WT1V0eUdWd1poSEZObm1kdHpyS24xVU9jNUdubXpTQUpjOURBTERkYTFUNjF0aFAwYXZ0cTN0bVZadW5ub0JBWElFa1lMNlpvZWFYQ1lB?oc=5",
       "published_at": "2026-08-11T11:32:37Z",
       "tier": 4,
@@ -86,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-11T22:20:52Z",
+      "published_at": "2026-08-11T23:20:46Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -155,25 +170,10 @@
       "effective_weight": 1.932,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
-    },
-    {
-      "kind": "TRAFFIC_SEVERELY_REDUCED",
-      "title": "Reuters: only 33 vessels crossed from Monday to Thursday versus 50 in the same period a week earlier",
-      "source": "Reuters",
-      "url": "https://www.reuters.com/business/energy/vessel-traffic-through-hormuz-dwindles-this-week-markets-watch-iran-oman-talks-2026-08-07/",
-      "published_at": "2026-08-07T08:00:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "seed-primary",
-      "details": "Reuters reports 33 transits Monday-Thursday versus 50 in the same period a week earlier; this is used qualitatively, not as a direct ratio to the JMIC baseline.",
-      "traffic_ratio": null,
-      "effective_weight": 1.68,
-      "kind_label_es": "Tráfico muy reducido",
-      "kind_label_en": "Severely reduced traffic"
     }
   ],
   "diagnostics": {
-    "signals_considered": 68,
+    "signals_considered": 72,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
