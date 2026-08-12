@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-12T05:16:35Z",
+  "generated_at": "2026-08-12T06:55:28Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,11 +33,11 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 6.24,
+    "passage": 6.11,
     "closure": 0,
     "traffic_reduction": 5.0,
-    "access_restriction": 14.38,
-    "risk": 44.16
+    "access_restriction": 15.58,
+    "risk": 48.04
   },
   "source_counts": {
     "passage": 5,
@@ -101,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-12T05:16:35Z",
+      "published_at": "2026-08-12T06:55:28Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -127,9 +127,24 @@
       "kind_label_en": "Severe risk"
     },
     {
+      "kind": "RISK_SEVERE",
+      "title": "Houthis reportedly kill six in first deadly attack since start of Iran war - bbc.co.uk",
+      "source": "bbc.co.uk",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9oTzN2MlZweVB5NFpNM1BJOHh3NWRCbktlT3RDYmdtdVpZVTFTbk5ObXYxejFYem8yYzlTbGxVNDVKMmlRTUxqbXFyZi1XU18tWmdNSkpGOW1MSkxG?oc=5",
+      "published_at": "2026-08-11T13:35:57Z",
+      "tier": 3,
+      "weight": 3.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
       "kind": "TRAFFIC_NORMAL",
-      "title": "Why Restoring Normal Traffic to the Strait of Hormuz Is Proving So Difficult - bloomberg.com",
-      "source": "bloomberg.com",
+      "title": "Why Restoring Normal Traffic to the Strait of Hormuz Is Proving So Difficult - Bloomberg.com",
+      "source": "Bloomberg.com",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNX09IOFNfMHBEYjAtWWdZYVgya3hGQmRnZUliQ0ozSVA5RTVnOVYyeEd6US02SU1JMXBHWUxSUzNuem9NbFBYNzduSk5ETzliSjBLaTR1Snl1QkZmdVdHRG5mRGotNXhPQXVMWDVwSDlZMlBIUm83bWZuWmJlSE1SMEhjb01YMFRLVmNvbDU3WFR5ejE1b2pZMHpnU1NEUG13Y3dUTktTc0ZTNjRsVWJ1REl2NGhlWURuNEd4WDJVemhRdU9N?oc=5",
       "published_at": "2026-08-11T11:09:13Z",
       "tier": 3,
@@ -155,25 +170,10 @@
       "effective_weight": 2.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
-      "published_at": "2026-08-12T03:44:02Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 2.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 62,
+    "signals_considered": 67,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
