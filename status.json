@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-12T18:28:17Z",
-  "last_success_at": "2026-08-12T18:28:17Z",
+  "checked_at": "2026-08-12T19:39:49Z",
+  "last_success_at": "2026-08-12T19:39:49Z",
   "last_change_at": "2026-08-11T11:23:22Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-11T15:18:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-12T18:28:17Z"
+      "observed_at": "2026-08-12T19:39:49Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-12T05:10:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-12T18:28:17Z"
+      "observed_at": "2026-08-12T19:39:49Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-08-12T06:36:04Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-12T18:28:17Z"
+      "observed_at": "2026-08-12T19:39:49Z"
     }
   ],
   "diagnostics": {
@@ -65,7 +65,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 63,
+    "articles_considered": 67,
     "signals_considered": 7,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -90,7 +90,7 @@
       "published_at": "2026-08-12T06:36:04Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-12T18:28:17Z"
+      "observed_at": "2026-08-12T19:39:49Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -100,7 +100,7 @@
       "published_at": "2026-08-12T05:10:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-12T18:28:17Z"
+      "observed_at": "2026-08-12T19:39:49Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -685,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-12T18:28:57Z",
+    "generated_at": "2026-08-12T19:40:38Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -718,11 +718,11 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 10.14,
+      "passage": 6.24,
       "closure": 0,
       "traffic_reduction": 5.6,
-      "access_restriction": 18.36,
-      "risk": 34.8
+      "access_restriction": 15.16,
+      "risk": 36.6
     },
     "source_counts": {
       "passage": 5,
@@ -736,21 +736,6 @@
       "confidence": "MEDIA"
     },
     "evidence": [
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Tankers keep moving through Hormuz as diplomacy stalls - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNVTdGb2NVVmIzMG1OdGFmUktTMWVGc25CdXVhT1dUZEJqNXdBanY4TWhlamxGR2VaNGpHX0lFaG4zcFliX0wwb3h4STRUNHZaODlWUjdCMEhTSGRkTlN4dGFHZkZOZThEZ3AxaFZ1N184RzFXNWJRMHFwNGEyNUduaHlQOTVaWWR1MFp6WW5PMUxLUjBCVXc?oc=5",
-        "published_at": "2026-08-12T11:37:43Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
-      },
       {
         "kind": "RISK_SEVERE",
         "title": "New attacks on shipping as Iran war talks hit fresh impasse - Reuters",
@@ -786,7 +771,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-12T18:28:57Z",
+        "published_at": "2026-08-12T19:40:38Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -795,21 +780,6 @@
         "effective_weight": 3.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Panama canal fees soar due to Iran war and El Niño as ship ‘pays $4m to jump queue’ - The Guardian",
-        "source": "The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNjhEZFIxS0c1X2hyZ2dKWWNOOVNRYmFzcWxnNmlRQlV6cXFVTWVfMGQ2eUhHdnN3Ym0yZTNVenVuamN6QkJUZW85T0hKemw1QVhFUlR6N2EzZ3ZrNjUyOE9BZ1QzNjF6cUpYd2FuN3dYdkVwclZjbzgzUV82RVdMb19CV0pibXcwR3lYYnJ0UHFmLWZDWkhFTjM3UVRXeEJy?oc=5",
-        "published_at": "2026-08-12T14:52:00Z",
-        "tier": 3,
-        "weight": 3.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 3.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
       },
       {
         "kind": "TRAFFIC_NORMAL",
@@ -855,10 +825,40 @@
         "effective_weight": 2.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "US military fires on cargo vessel it said sought to break Iran blockade - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNVDZDSVYteFdRNE1CNmNDaDJBWUFkc1M1b21WalE1UDZaSnAybDJwNWZlZEhORVdmMC1JRVdRMk9MOHhWZjFCdXhudzN5dEdWdWNlck5PU0NJQ25fZDZOZXd2d1BoTXhtZlpMVW9HY1pQdzlOWTRCYlNHUTBNMUhCTjRBU29HbXI2dGdUeHhCbVlwM3VoZGU0TVFRNkdCRE5aSTl4VU12Y243WmVEMVVUbXNn0gG3AUFVX3lxTE5zMklBY3BGOEdfX0FtdkNXLUVER3NGVnRPU0REUkVfRjg4UDlTNkxoVUhVS1VJYnN2N2liZE95Wi1reWhXV25kOU5iWmlILTJCVVlKRklQOUM0ampTQzBqcWhnZmhwX2hLOG5UZlJ6bG5OWjU3QWVTR0Q2RWtPM3J5Mkt2RTVfT1Eta0JqWUExUktzMmRWWkZBVHE2c2huWG9RZG1oM3gyWWR5cEhlMTRYaG9zd25HQQ?oc=5",
+        "published_at": "2026-08-11T20:01:45Z",
+        "tier": 2,
+        "weight": 2.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 2.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
+      },
+      {
+        "kind": "FORMAL_CLOSURE_CLAIM",
+        "title": "Iran Declares Hormuz Closed Until US Meets Requirements - marinelink.com",
+        "source": "marinelink.com",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNcGxrVFFuaHI0MG4yZDlJVVlnRHhacWhWc2F2VUJ6enVHRGh1ZjQ3WEVIemVjSUhkcmRBWmdTLTBxWnBOMWd3Z0dqemNpVjJiQ0Q1N3hrcGZZbEcya3VpXzlMbmJPRVFWUl9aQmFWeElTMk5DWDBQNjhWeER0TEpwZg?oc=5",
+        "published_at": "2026-08-11T19:04:44Z",
+        "tier": 2,
+        "weight": 1.4,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.26,
+        "kind_label_es": "Declaración de cierre",
+        "kind_label_en": "Closure declaration"
       }
     ],
     "diagnostics": {
-      "signals_considered": 62,
+      "signals_considered": 63,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
