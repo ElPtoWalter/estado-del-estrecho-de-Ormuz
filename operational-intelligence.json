@@ -1,13 +1,13 @@
 {
   "version": 7,
-  "generated_at": "2026-08-12T12:26:30Z",
+  "generated_at": "2026-08-12T14:00:10Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
   "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
   "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
   "operational_label_en": "Physical passage exists, but flows are severely degraded",
-  "confidence": "ALTA",
+  "confidence": "MEDIA",
   "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
   "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "dimensions": {
@@ -33,39 +33,24 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 8.554,
+    "passage": 9.854,
     "closure": 0,
-    "traffic_reduction": 5.0,
-    "access_restriction": 14.36,
-    "risk": 50.28
+    "traffic_reduction": 4.6,
+    "access_restriction": 13.14,
+    "risk": 49.2
   },
   "source_counts": {
-    "passage": 4,
+    "passage": 5,
     "closure": 0,
-    "primary_sources": 3
+    "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-12T11:37:43Z",
+  "latest_confirmed_transit_at": "2026-08-12T11:46:00Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "MEDIA"
   },
   "evidence": [
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Strait of Hormuz attack puts fragile ceasefire to the test - foxbaltimore.com",
-      "source": "foxbaltimore.com",
-      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNTno2M3BYeW9vNW9VREZIXzQ0cGpyRW51NWFKek9CaWJsZ3pJbFMtTkNiZmZxY0kycDVYVXFvRU42eGhEcUc1aC1VR0lSNmhjWG5Mek9GOUlBWEFVTWEtcTJ1WE9FbmJQdnQzSng5UHFHVlRrQXVtdFJlMEUyNXFTcHZFYTl1bkNIUHQtYTdTcUxld2NmdWZvUXRxTzRyam05WEhPTGoxam0yNkNNallPU29UdFFYRXV3ZkNHT3A0UnlWZkxicU1UcW5hdDNiS3NzWkYzUFRYOS1CQTJ6Nm9xaGNZekJQeVRVMXNpcDlRRzFvMXFn?oc=5",
-      "published_at": "2026-08-11T10:03:43Z",
-      "tier": 5,
-      "weight": 5.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 4.5,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
     {
       "kind": "TRANSIT_CONFIRMED",
       "title": "Tankers keep moving through Hormuz as diplomacy stalls - Lloyd's List",
@@ -122,7 +107,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Tráfico reducido",
       "kind_label_en": "Reduced traffic"
     },
@@ -146,7 +131,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-12T12:26:30Z",
+      "published_at": "2026-08-12T14:00:10Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -170,10 +155,25 @@
       "effective_weight": 2.7,
       "kind_label_es": "Tráfico próximo a normalidad",
       "kind_label_en": "Traffic near normal"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - Al Jazeera",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
+      "published_at": "2026-08-12T06:36:04Z",
+      "tier": 2,
+      "weight": 2.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 69,
+    "signals_considered": 72,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
