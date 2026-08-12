@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-12T22:19:57Z",
-  "last_success_at": "2026-08-12T22:19:57Z",
+  "checked_at": "2026-08-12T23:18:28Z",
+  "last_success_at": "2026-08-12T23:18:28Z",
   "last_change_at": "2026-08-11T11:23:22Z",
   "verification_ok": true,
   "stale": false,
@@ -22,17 +22,17 @@
       "published_at": "2026-08-11T15:18:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-12T22:19:57Z"
+      "observed_at": "2026-08-12T23:18:28Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Saudi Arabia ramps up oil exports through Mediterranean pipeline to avoid attacks in Red Sea - cnbc.com",
+      "title": "Saudi ramps oil via Mediterranean to avoid Houthi attacks in Red Sea",
       "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORDlpS0ZwT3UtcTZ6NldxNWFBOFlDa20wVWpsYk51d1RaQzlEcm5leGphRDdSZEdrcm5hMHZVcXNVaHJycm5IQVk3NmdqdTkyQXk0NlhSTWFFelVHMGlhLTJwZEZqZGgzd25kRHFueXpCVjhxVWJycHpBZlkwRnJySDF4Tlh0T3NZMlZlWVFlVktWblR5UmNfU05ZR0x0SW_SAaQBQVVfeXFMUEtKYTRWckg5Zk93eHBlbTE5d0hxX2pwaTY1aGJLUUtUZUlublFtelRxVzgwRTU0U1ZJeDJfdmVQYTVJN3ZydDBndjJROGV3VjE3YlFHYzUxSnU1eWhJSHlQOE44eGlheHRVVm1wZy1SZ19sdFNTQzluX2o4UzNNMzFFa3JPX2VGUEFDaHh3bEVHVDR0ekdHeGxGeDl4YmJDQllvUzY?oc=5",
+      "source_url": "https://www.cnbc.com/2026/08/12/saudi-arabia-iran-oil-red-sea-houthi-suez-canal-strait-hormuz.html",
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-12T22:19:57Z"
+      "observed_at": "2026-08-12T23:18:28Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,17 +42,16 @@
       "published_at": "2026-08-12T06:36:04Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-12T22:19:57Z"
+      "observed_at": "2026-08-12T23:18:28Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -65,8 +64,8 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 72,
-    "signals_considered": 8,
+    "articles_considered": 77,
+    "signals_considered": 9,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -84,6 +83,16 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Saudi ramps oil via Mediterranean to avoid Houthi attacks in Red Sea",
+      "source_name": "CNBC",
+      "source_url": "https://www.cnbc.com/2026/08/12/saudi-arabia-iran-oil-red-sea-houthi-suez-canal-strait-hormuz.html",
+      "published_at": "2026-08-12T19:39:41Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-12T23:18:28Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Saudi Arabia ramps up oil exports through Mediterranean pipeline to avoid attacks in Red Sea - cnbc.com",
       "source_name": "CNBC",
       "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORDlpS0ZwT3UtcTZ6NldxNWFBOFlDa20wVWpsYk51d1RaQzlEcm5leGphRDdSZEdrcm5hMHZVcXNVaHJycm5IQVk3NmdqdTkyQXk0NlhSTWFFelVHMGlhLTJwZEZqZGgzd25kRHFueXpCVjhxVWJycHpBZlkwRnJySDF4Tlh0T3NZMlZlWVFlVktWblR5UmNfU05ZR0x0SW_SAaQBQVVfeXFMUEtKYTRWckg5Zk93eHBlbTE5d0hxX2pwaTY1aGJLUUtUZUlublFtelRxVzgwRTU0U1ZJeDJfdmVQYTVJN3ZydDBndjJROGV3VjE3YlFHYzUxSnU1eWhJSHlQOE44eGlheHRVVm1wZy1SZ19sdFNTQzluX2o4UzNNMzFFa3JPX2VGUEFDaHh3bEVHVDR0ekdHeGxGeDl4YmJDQllvUzY?oc=5",
@@ -94,23 +103,13 @@
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Saudi ramps oil via Mediterranean to avoid Houthi attacks in Red Sea",
-      "source_name": "CNBC",
-      "source_url": "https://www.cnbc.com/2026/08/12/saudi-arabia-iran-oil-red-sea-houthi-suez-canal-strait-hormuz.html",
-      "published_at": "2026-08-12T19:39:41Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-12T21:23:09Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
       "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
       "published_at": "2026-08-12T06:36:04Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-12T22:19:57Z"
+      "observed_at": "2026-08-12T23:18:28Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -685,7 +684,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-12T22:20:41Z",
+    "generated_at": "2026-08-12T23:19:03Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -720,9 +719,9 @@
     "scores": {
       "passage": 14.678,
       "closure": 0,
-      "traffic_reduction": 7.4,
-      "access_restriction": 13.96,
-      "risk": 40.1
+      "traffic_reduction": 6.5,
+      "access_restriction": 15.96,
+      "risk": 42.8
     },
     "source_counts": {
       "passage": 8,
@@ -801,7 +800,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-12T22:20:41Z",
+        "published_at": "2026-08-12T23:19:03Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -810,6 +809,21 @@
         "effective_weight": 3.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Panama canal fees soar due to Iran war and El Niño as ship ‘pays $4m to jump queue’ - The Guardian",
+        "source": "The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNjhEZFIxS0c1X2hyZ2dKWWNOOVNRYmFzcWxnNmlRQlV6cXFVTWVfMGQ2eUhHdnN3Ym0yZTNVenVuamN6QkJUZW85T0hKemw1QVhFUlR6N2EzZ3ZrNjUyOE9BZ1QzNjF6cUpYd2FuN3dYdkVwclZjbzgzUV82RVdMb19CV0pibXcwR3lYYnJ0UHFmLWZDWkhFTjM3UVRXeEJy?oc=5",
+        "published_at": "2026-08-12T19:01:00Z",
+        "tier": 3,
+        "weight": 3.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
       },
       {
         "kind": "TRAFFIC_NORMAL",
@@ -840,25 +854,10 @@
         "effective_weight": 2.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Six killed in Houthi attack on Bab al-Mandeb ship, Yemen’s government says - Al Jazeera",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNV3Z2SnhPazVIQnhtS1Q4MnZZY0l4N0thOE9IMDVYdFJYYXRrQWxCellTNlowMnc5RDdqdmNzZEo4WHlKNjQ1OTRyTGR3TWxGTS1VdEdhRlZoWGdTeUF0MERkYnJiRFVoNFF4Rk1tMElRdFNHZnpyZ3VUby0xU2VLNXJaXzJ5YjRJZldiQTVXOWZONWpkTVpVbk94d3ZsVzlndmpGSUdpaWlMMUdsbFNEYWtvc9IBuAFBVV95cUxPNmM5RlF4c0I0VlZZTS1Sbmo2ejBFS3B4RnBsUUV5TVpSS3E5QnpFeUkzSlk0S29ZaEQzNWZESWRyVE5fWlUycVJmZDZYR0VGNVZTVzF6dFVMZ2ZIMmJKT2JHaURuMVZIYTNuMFY2MlZCMmdUMnZlQWxyOTRzNlUtTzc0SlZTUHkzV2ZzRHJzRlBGZVRCTkFJM2N1eWlsNFpxVm1UWFZrNF9TdzJUa2EzXzZfVUZQdDN6?oc=5",
-        "published_at": "2026-08-12T03:13:56Z",
-        "tier": 2,
-        "weight": 2.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 2.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 67,
+      "signals_considered": 69,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
