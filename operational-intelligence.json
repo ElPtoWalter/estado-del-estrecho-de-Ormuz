@@ -1,13 +1,13 @@
 {
   "version": 7,
-  "generated_at": "2026-08-12T19:40:38Z",
+  "generated_at": "2026-08-12T21:23:53Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
   "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
   "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
   "operational_label_en": "Physical passage exists, but flows are severely degraded",
-  "confidence": "MEDIA",
+  "confidence": "ALTA",
   "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
   "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "dimensions": {
@@ -33,24 +33,39 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 6.24,
+    "passage": 9.478,
     "closure": 0,
-    "traffic_reduction": 5.6,
-    "access_restriction": 15.16,
-    "risk": 36.6
+    "traffic_reduction": 6.5,
+    "access_restriction": 15.08,
+    "risk": 43.9
   },
   "source_counts": {
-    "passage": 5,
+    "passage": 7,
     "closure": 0,
-    "primary_sources": 2
+    "primary_sources": 3
   },
-  "latest_confirmed_transit_at": "2026-08-12T17:30:19Z",
+  "latest_confirmed_transit_at": "2026-08-12T17:54:51Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "MEDIA"
   },
   "evidence": [
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Strait of Hormuz attack puts fragile ceasefire to the test - foxbaltimore.com",
+      "source": "foxbaltimore.com",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNTno2M3BYeW9vNW9VREZIXzQ0cGpyRW51NWFKek9CaWJsZ3pJbFMtTkNiZmZxY0kycDVYVXFvRU42eGhEcUc1aC1VR0lSNmhjWG5Mek9GOUlBWEFVTWEtcTJ1WE9FbmJQdnQzSng5UHFHVlRrQXVtdFJlMEUyNXFTcHZFYTl1bkNIUHQtYTdTcUxld2NmdWZvUXRxTzRyam05WEhPTGoxam0yNkNNallPU29UdFFYRXV3ZkNHT3A0UnlWZkxicU1UcW5hdDNiS3NzWkYzUFRYOS1CQTJ6Nm9xaGNZekJQeVRVMXNpcDlRRzFvMXFn?oc=5",
+      "published_at": "2026-08-11T10:03:43Z",
+      "tier": 5,
+      "weight": 5.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.5,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
     {
       "kind": "RISK_SEVERE",
       "title": "New attacks on shipping as Iran war talks hit fresh impasse - Reuters",
@@ -86,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-12T19:40:38Z",
+      "published_at": "2026-08-12T21:23:53Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -152,28 +167,13 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 2.0,
+      "effective_weight": 1.8,
       "kind_label_es": "Acceso restringido",
       "kind_label_en": "Restricted access"
-    },
-    {
-      "kind": "FORMAL_CLOSURE_CLAIM",
-      "title": "Iran Declares Hormuz Closed Until US Meets Requirements - marinelink.com",
-      "source": "marinelink.com",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNcGxrVFFuaHI0MG4yZDlJVVlnRHhacWhWc2F2VUJ6enVHRGh1ZjQ3WEVIemVjSUhkcmRBWmdTLTBxWnBOMWd3Z0dqemNpVjJiQ0Q1N3hrcGZZbEcya3VpXzlMbmJPRVFWUl9aQmFWeElTMk5DWDBQNjhWeER0TEpwZg?oc=5",
-      "published_at": "2026-08-11T19:04:44Z",
-      "tier": 2,
-      "weight": 1.4,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.26,
-      "kind_label_es": "Declaración de cierre",
-      "kind_label_en": "Closure declaration"
     }
   ],
   "diagnostics": {
-    "signals_considered": 63,
+    "signals_considered": 71,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
