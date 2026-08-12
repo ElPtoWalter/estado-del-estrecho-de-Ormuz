@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-12T15:30:18Z",
+  "generated_at": "2026-08-12T16:28:40Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -35,9 +35,9 @@
   "scores": {
     "passage": 4.654,
     "closure": 0,
-    "traffic_reduction": 4.6,
-    "access_restriction": 16.14,
-    "risk": 42.28
+    "traffic_reduction": 5.6,
+    "access_restriction": 18.36,
+    "risk": 40.28
   },
   "source_counts": {
     "passage": 4,
@@ -101,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-12T15:30:18Z",
+      "published_at": "2026-08-12T16:28:40Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -112,9 +112,24 @@
       "kind_label_en": "Severe risk"
     },
     {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "Panama canal fees soar due to Iran war and El Niño as ship ‘pays $4m to jump queue’ - The Guardian",
+      "source": "The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNjhEZFIxS0c1X2hyZ2dKWWNOOVNRYmFzcWxnNmlRQlV6cXFVTWVfMGQ2eUhHdnN3Ym0yZTNVenVuamN6QkJUZW85T0hKemw1QVhFUlR6N2EzZ3ZrNjUyOE9BZ1QzNjF6cUpYd2FuN3dYdkVwclZjbzgzUV82RVdMb19CV0pibXcwR3lYYnJ0UHFmLWZDWkhFTjM3UVRXeEJy?oc=5",
+      "published_at": "2026-08-12T14:52:00Z",
+      "tier": 3,
+      "weight": 3.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.0,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
+    },
+    {
       "kind": "TRAFFIC_NORMAL",
-      "title": "Why Restoring Normal Traffic to the Strait of Hormuz Is Proving So Difficult - Bloomberg.com",
-      "source": "Bloomberg.com",
+      "title": "Why Restoring Normal Traffic to the Strait of Hormuz Is Proving So Difficult - bloomberg.com",
+      "source": "bloomberg.com",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNX09IOFNfMHBEYjAtWWdZYVgya3hGQmRnZUliQ0ozSVA5RTVnOVYyeEd6US02SU1JMXBHWUxSUzNuem9NbFBYNzduSk5ETzliSjBLaTR1Snl1QkZmdVdHRG5mRGotNXhPQXVMWDVwSDlZMlBIUm83bWZuWmJlSE1SMEhjb01YMFRLVmNvbDU3WFR5ejE1b2pZMHpnU1NEUG13Y3dUTktTc0ZTNjRsVWJ1REl2NGhlWURuNEd4WDJVemhRdU9N?oc=5",
       "published_at": "2026-08-11T11:09:13Z",
       "tier": 3,
@@ -155,25 +170,10 @@
       "effective_weight": 2.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "US military fires on cargo vessel it said sought to break Iran blockade - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNVDZDSVYteFdRNE1CNmNDaDJBWUFkc1M1b21WalE1UDZaSnAybDJwNWZlZEhORVdmMC1JRVdRMk9MOHhWZjFCdXhudzN5dEdWdWNlck5PU0NJQ25fZDZOZXd2d1BoTXhtZlpMVW9HY1pQdzlOWTRCYlNHUTBNMUhCTjRBU29HbXI2dGdUeHhCbVlwM3VoZGU0TVFRNkdCRE5aSTl4VU12Y243WmVEMVVUbXNn0gG3AUFVX3lxTE5zMklBY3BGOEdfX0FtdkNXLUVER3NGVnRPU0REUkVfRjg4UDlTNkxoVUhVS1VJYnN2N2liZE95Wi1reWhXV25kOU5iWmlILTJCVVlKRklQOUM0ampTQzBqcWhnZmhwX2hLOG5UZlJ6bG5OWjU3QWVTR0Q2RWtPM3J5Mkt2RTVfT1Eta0JqWUExUktzMmRWWkZBVHE2c2huWG9RZG1oM3gyWWR5cEhlMTRYaG9zd25HQQ?oc=5",
-      "published_at": "2026-08-11T20:01:45Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 2.0,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
     }
   ],
   "diagnostics": {
-    "signals_considered": 68,
+    "signals_considered": 65,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
