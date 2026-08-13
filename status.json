@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-13T17:31:39Z",
-  "last_success_at": "2026-08-13T17:31:39Z",
+  "checked_at": "2026-08-13T18:29:04Z",
+  "last_success_at": "2026-08-13T18:29:04Z",
   "last_change_at": "2026-08-11T11:23:22Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-11T15:18:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-13T17:31:39Z"
+      "observed_at": "2026-08-13T18:29:04Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-13T17:31:39Z"
+      "observed_at": "2026-08-13T18:29:04Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,16 +42,17 @@
       "published_at": "2026-08-12T06:36:04Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-13T17:31:39Z"
+      "observed_at": "2026-08-13T18:29:04Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -64,7 +65,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 72,
+    "articles_considered": 69,
     "signals_considered": 6,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -99,7 +100,7 @@
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-13T17:31:39Z"
+      "observed_at": "2026-08-13T18:29:04Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -129,7 +130,7 @@
       "published_at": "2026-08-12T06:36:04Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-13T17:31:39Z"
+      "observed_at": "2026-08-13T18:29:04Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -684,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-13T17:31:59Z",
+    "generated_at": "2026-08-13T18:29:42Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -717,11 +718,11 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 17.771,
+      "passage": 17.578,
       "closure": 0,
-      "traffic_reduction": 7.02,
-      "access_restriction": 14.92,
-      "risk": 30.16
+      "traffic_reduction": 6.02,
+      "access_restriction": 15.82,
+      "risk": 31.06
     },
     "source_counts": {
       "passage": 11,
@@ -740,7 +741,7 @@
         "title": "US can keep naval blockade on Iranian ports \"indefinitely,\" Pentagon chief says - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOVG5Gb2NKOTltbG9CVlpKTElmclFqS1JyWGtIckF6UzhMYlVCQUp4a1FEWnRzWDQxS24ycTZYTEstVHIzbzhpMENnMWVzV2kxdklsV0pFR3h5Nk93OGtDRUJndkJhWEMtaUNjQm1scHdJZlczYWlfcUZXQ2pLMGp6S3k0YTdMUS1zaUxyWk1Sd2VSUWpFUmxxb285T1JaUGdUM2paUGotRk5JLWY1QVJWR1lTOC1XWC1xbndPdk5LdkdpTXR2VXc?oc=5",
-        "published_at": "2026-08-13T16:15:43Z",
+        "published_at": "2026-08-13T16:43:12Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "Google News RSS",
@@ -815,7 +816,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-13T17:31:59Z",
+        "published_at": "2026-08-13T18:29:42Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -857,7 +858,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 62,
+      "signals_considered": 63,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
