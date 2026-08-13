@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-13T22:20:19Z",
-  "last_success_at": "2026-08-13T22:20:19Z",
+  "checked_at": "2026-08-13T23:20:11Z",
+  "last_success_at": "2026-08-13T23:20:11Z",
   "last_change_at": "2026-08-11T11:23:22Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,23 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Oil Holds Drop as Hormuz Deal Elusive While Ship Attacks Persist - Bloomberg.com",
+      "source_name": "Bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOamF2UGtRV1NUdzZyR01kazlnMHhqSVhWcTFTLWd0djdrSTY4Rk5MYWtnZ1V2ZTRXRGRQRWdMMW5HZGk3MDV2blNpS1hveFJCZlBIbDZCUGN2bllXd1Y1WHlDbkU2RU83Ny1mSkhvRHZQVXh5RzAtRzc1NmVEZGJvYUJwcmVNSWM4TEZRcWU0ZE9jQ2VGaTFfTXYtSHlsQQ?oc=5",
+      "published_at": "2026-08-13T22:04:53Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-08-13T23:20:11Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "New attacks on shipping as Iran war talks hit fresh impasse - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVzI4ZllHeXZmVDVJVE40M0w5NkYtdkFzM0RyYlZvY1pXbEJoc1d4RHNvVWxTem1kMEhGNUxmc0tZZmZ2ZkpZamtDNkd6bjRTVXhCVEF6dGhOSXltR0RQc3RPc0RFUzctZ00xRjAzX0hwNy1oYlU0a0dMYU9iUjdqYXZ4ZWM5YXhBMUhEREduYVo2QkVsT2ktQ19NaFNpUF85TmhFcnF1REktbFZfRklXb0EtbzZsLUZ1Vk53TFRR?oc=5",
       "published_at": "2026-08-12T02:48:50Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-13T22:20:19Z"
+      "observed_at": "2026-08-13T23:20:11Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,55 +42,66 @@
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-13T22:20:19Z"
+      "observed_at": "2026-08-13T23:20:11Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - aljazeera.com",
+      "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
       "published_at": "2026-08-12T06:36:04Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-13T22:20:19Z"
+      "observed_at": "2026-08-13T23:20:11Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5.395
+      "risk": 8.595
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 3
+      "risk": 4
     },
     "articles_considered": 76,
-    "signals_considered": 6,
-    "current_cycle_evidence": 3,
+    "signals_considered": 7,
+    "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-12T19:39:41Z",
-    "current_cycle_count": 3,
+    "as_of": "2026-08-13T22:04:53Z",
+    "current_cycle_count": 4,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil Holds Drop as Hormuz Deal Elusive While Ship Attacks Persist - Bloomberg.com",
+      "source_name": "Bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOamF2UGtRV1NUdzZyR01kazlnMHhqSVhWcTFTLWd0djdrSTY4Rk5MYWtnZ1V2ZTRXRGRQRWdMMW5HZGk3MDV2blNpS1hveFJCZlBIbDZCUGN2bllXd1Y1WHlDbkU2RU83Ny1mSkhvRHZQVXh5RzAtRzc1NmVEZGJvYUJwcmVNSWM4TEZRcWU0ZE9jQ2VGaTFfTXYtSHlsQQ?oc=5",
+      "published_at": "2026-08-13T22:04:53Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-08-13T23:20:11Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Oil rises following news of spill near Oman amid worries over supply",
@@ -99,7 +120,7 @@
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-13T22:20:19Z"
+      "observed_at": "2026-08-13T23:20:11Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -123,6 +144,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
+      "published_at": "2026-08-12T06:36:04Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-13T23:20:11Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - aljazeera.com",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
@@ -130,16 +161,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-13T22:20:19Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
-      "published_at": "2026-08-12T06:36:04Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-13T21:24:22Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -199,7 +220,7 @@
       "published_at": "2026-08-12T02:48:50Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-13T22:20:19Z"
+      "observed_at": "2026-08-13T23:20:11Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -670,21 +691,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-02T14:09:52Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Trump cancels planned attack on Iran, saying he reached an agreement over the 'perimeters of a deal' - cnbc.com",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNlJNSEJDbTFqdDBHa182OVo1X3hId1pwMG5kSE1DU2liRDRLMzhIVkkxbURMVFE3NDdyeDNKM3lCNURfQ1pvZGZmaU1jWGNCUkxvdUhIbXdnVEN4OHpoc25GMUpLNDdYWVBzeTJnc2YwWEIyMGhUcDdKXzNhbmI5U2FrQWpRY1N4dHNnUGV6dU9VaVdtdE5jdjNUQ2c4eEVDR1hjR0ZRNWHSAa4BQVVfeXFMT2hGWndFZkV5eE9RRTVkX1RnTDZRc3R5MnRQWmhwUFNSNFNMX1RIcHRwaXdQWFlMMjhydWNNSGtUa3g0YW9PNS1YLXM1OW9RYkxWUjA0THB2V0pUTFl2b29nYXdxLVRLNVBLU3JLUWlOeUZ1dWFjMy02WWVON2pTQWtsdTNSN01mSzZLT2RNRUkzSER1SXlCUlRIV2lYaEtFNlA1WW1nNWVlY2Vfa2F3?oc=5",
-      "published_at": "2026-08-02T07:47:37Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-05T15:40:28Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-13T22:21:16Z",
+    "generated_at": "2026-08-13T23:20:55Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -717,18 +728,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 14.978,
+      "passage": 16.278,
       "closure": 0,
-      "traffic_reduction": 8.83,
-      "access_restriction": 16.54,
-      "risk": 29.16
+      "traffic_reduction": 7.27,
+      "access_restriction": 18.32,
+      "risk": 36.86
     },
     "source_counts": {
-      "passage": 9,
+      "passage": 10,
       "closure": 0,
-      "primary_sources": 2
+      "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-08-13T15:14:00Z",
+    "latest_confirmed_transit_at": "2026-08-13T21:34:00Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -782,6 +793,21 @@
       },
       {
         "kind": "RISK_SEVERE",
+        "title": "Iranian-backed Houthis kill 6 in attack on vessel, and other developments in the Mideast - AP News",
+        "source": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxORXhISUZDNXVZTlFMeWpOeGVEUDVsYWZKYkFQV2tmaXVSSW45SW5RZmtyeGQtaVIxMlVGdVZVNm5vemI5Rm9yMS1xMFc4Q0kzcTN4UThPTnF1anVDd1FSdWlIdEY2SWM2bkRiZ0VQQVQxOUJ4dXl2U2pIZFZOWVJyQ0NrelJvSlJsUWlpOHhxeFBSa0V6Y1BYb3dvaXQ?oc=5",
+        "published_at": "2026-08-12T08:46:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.6,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
         "title": "New attacks on shipping as Iran war talks hit fresh impasse - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVzI4ZllHeXZmVDVJVE40M0w5NkYtdkFzM0RyYlZvY1pXbEJoc1d4RHNvVWxTem1kMEhGNUxmc0tZZmZ2ZkpZamtDNkd6bjRTVXhCVEF6dGhOSXltR0RQc3RPc0RFUzctZ00xRjAzX0hwNy1oYlU0a0dMYU9iUjdqYXZ4ZWM5YXhBMUhEREduYVo2QkVsT2ktQ19NaFNpUF85TmhFcnF1REktbFZfRklXb0EtbzZsLUZ1Vk53TFRR?oc=5",
@@ -815,7 +841,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-13T22:21:16Z",
+        "published_at": "2026-08-13T23:20:55Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -826,38 +852,23 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "TRAFFIC_NORMAL",
-        "title": "Why Restoring Normal Traffic to the Strait of Hormuz Is Proving So Difficult - Bloomberg.com",
-        "source": "Bloomberg.com",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNX09IOFNfMHBEYjAtWWdZYVgya3hGQmRnZUliQ0ozSVA5RTVnOVYyeEd6US02SU1JMXBHWUxSUzNuem9NbFBYNzduSk5ETzliSjBLaTR1Snl1QkZmdVdHRG5mRGotNXhPQXVMWDVwSDlZMlBIUm83bWZuWmJlSE1SMEhjb01YMFRLVmNvbDU3WFR5ejE1b2pZMHpnU1NEUG13Y3dUTktTc0ZTNjRsVWJ1REl2NGhlWURuNEd4WDJVemhRdU9N?oc=5",
-        "published_at": "2026-08-11T11:09:13Z",
+        "kind": "RISK_SEVERE",
+        "title": "Oil Holds Drop as Hormuz Deal Elusive While Ship Attacks Persist - Bloomberg.com",
+        "source": "Bloomberg",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOamF2UGtRV1NUdzZyR01kazlnMHhqSVhWcTFTLWd0djdrSTY4Rk5MYWtnZ1V2ZTRXRGRQRWdMMW5HZGk3MDV2blNpS1hveFJCZlBIbDZCUGN2bllXd1Y1WHlDbkU2RU83Ny1mSkhvRHZQVXh5RzAtRzc1NmVEZGJvYUJwcmVNSWM4TEZRcWU0ZE9jQ2VGaTFfTXYtSHlsQQ?oc=5",
+        "published_at": "2026-08-13T22:04:53Z",
         "tier": 3,
         "weight": 3.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 2.34,
-        "kind_label_es": "Tráfico próximo a normalidad",
-        "kind_label_en": "Traffic near normal"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - aljazeera.com",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
-        "published_at": "2026-08-12T06:36:04Z",
-        "tier": 2,
-        "weight": 2.0,
         "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 1.8,
+        "effective_weight": 3.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 63,
+      "signals_considered": 65,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
