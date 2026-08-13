@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-13T00:09:04Z",
-  "last_success_at": "2026-08-13T00:09:04Z",
+  "checked_at": "2026-08-13T03:10:28Z",
+  "last_success_at": "2026-08-13T03:10:28Z",
   "last_change_at": "2026-08-11T11:23:22Z",
   "verification_ok": true,
   "stale": false,
@@ -22,17 +22,17 @@
       "published_at": "2026-08-11T15:18:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-13T00:09:04Z"
+      "observed_at": "2026-08-13T03:10:28Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Saudi ramps oil via Mediterranean to avoid Houthi attacks in Red Sea",
+      "title": "Oil rises following news of spill near Oman amid worries over supply",
       "source_name": "CNBC",
-      "source_url": "https://www.cnbc.com/2026/08/12/saudi-arabia-iran-oil-red-sea-houthi-suez-canal-strait-hormuz.html",
-      "published_at": "2026-08-12T19:39:41Z",
+      "source_url": "https://www.cnbc.com/2026/08/13/oil-spill-near-oman-worries-over-supply-.html",
+      "published_at": "2026-08-13T01:59:06Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-13T00:09:04Z"
+      "observed_at": "2026-08-13T03:10:28Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-08-12T06:36:04Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-13T00:09:04Z"
+      "observed_at": "2026-08-13T03:10:28Z"
     }
   ],
   "diagnostics": {
@@ -56,7 +56,7 @@
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 7.66
+      "risk": 7.3
     },
     "independent_sources": {
       "open": 0,
@@ -64,8 +64,8 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 75,
-    "signals_considered": 9,
+    "articles_considered": 70,
+    "signals_considered": 10,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -73,7 +73,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-12T19:39:41Z",
+    "as_of": "2026-08-13T01:59:06Z",
     "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -81,6 +81,16 @@
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil rises following news of spill near Oman amid worries over supply",
+      "source_name": "CNBC",
+      "source_url": "https://www.cnbc.com/2026/08/13/oil-spill-near-oman-worries-over-supply-.html",
+      "published_at": "2026-08-13T01:59:06Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-13T03:10:28Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Saudi ramps oil via Mediterranean to avoid Houthi attacks in Red Sea",
@@ -109,7 +119,7 @@
       "published_at": "2026-08-12T06:36:04Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-13T00:09:04Z"
+      "observed_at": "2026-08-13T03:10:28Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -670,21 +680,11 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-08-02T04:57:57Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Trump says US will hold off on fresh Iran attack in hope of quick deal - reuters.com",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOQnFCZlNtaWNsWjNfQzZYSUltNnlianRRMlRsUmVqWFNEWlEwWERhVmp5dVdSazcwNmo4bTNzQjNwcW1rS1pYSFRzUXZvUkF5dEFRYzY4T3Q4UUF0ZVBFLXlxVzA5YnRXZTliVWN0M2ZlcV9WVEw4ZjZqblVxOFJ6N2JmX1FMSk5HUXdLWWpOM2l1SWI3b0E2NHB5UU5rLUFRbjRXUEZ6ajZ1VUt1N0JIdURWT1VNbkVHX2UxUVU1b1lFTzY4aFNaOEJ5TTJJdw?oc=5",
-      "published_at": "2026-08-01T22:33:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-08-02T22:29:37Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-13T00:09:21Z",
+    "generated_at": "2026-08-13T03:10:49Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -717,18 +717,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 14.678,
+      "passage": 10.27,
       "closure": 0,
       "traffic_reduction": 7.4,
-      "access_restriction": 13.96,
-      "risk": 37.4
+      "access_restriction": 15.84,
+      "risk": 36.3
     },
     "source_counts": {
-      "passage": 8,
+      "passage": 5,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-12T17:54:51Z",
+    "latest_confirmed_transit_at": "2026-08-12T17:10:50Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -785,7 +785,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-13T00:09:21Z",
+        "published_at": "2026-08-13T03:10:49Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -794,6 +794,21 @@
         "effective_weight": 3.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Panama canal fees soar due to Iran war and El Niño as ship ‘pays $4m to jump queue’ - The Guardian",
+        "source": "The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNjhEZFIxS0c1X2hyZ2dKWWNOOVNRYmFzcWxnNmlRQlV6cXFVTWVfMGQ2eUhHdnN3Ym0yZTNVenVuamN6QkJUZW85T0hKemw1QVhFUlR6N2EzZ3ZrNjUyOE9BZ1QzNjF6cUpYd2FuN3dYdkVwclZjbzgzUV82RVdMb19CV0pibXcwR3lYYnJ0UHFmLWZDWkhFTjM3UVRXeEJy?oc=5",
+        "published_at": "2026-08-13T01:30:00Z",
+        "tier": 3,
+        "weight": 3.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
       },
       {
         "kind": "TRAFFIC_NORMAL",
@@ -839,25 +854,10 @@
         "effective_weight": 2.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "US military fires on cargo vessel it said sought to break Iran blockade - Al Jazeera",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNVDZDSVYteFdRNE1CNmNDaDJBWUFkc1M1b21WalE1UDZaSnAybDJwNWZlZEhORVdmMC1JRVdRMk9MOHhWZjFCdXhudzN5dEdWdWNlck5PU0NJQ25fZDZOZXd2d1BoTXhtZlpMVW9HY1pQdzlOWTRCYlNHUTBNMUhCTjRBU29HbXI2dGdUeHhCbVlwM3VoZGU0TVFRNkdCRE5aSTl4VU12Y243WmVEMVVUbXNn0gG3AUFVX3lxTE5zMklBY3BGOEdfX0FtdkNXLUVER3NGVnRPU0REUkVfRjg4UDlTNkxoVUhVS1VJYnN2N2liZE95Wi1reWhXV25kOU5iWmlILTJCVVlKRklQOUM0ampTQzBqcWhnZmhwX2hLOG5UZlJ6bG5OWjU3QWVTR0Q2RWtPM3J5Mkt2RTVfT1Eta0JqWUExUktzMmRWWkZBVHE2c2huWG9RZG1oM3gyWWR5cEhlMTRYaG9zd25HQQ?oc=5",
-        "published_at": "2026-08-11T20:01:45Z",
-        "tier": 2,
-        "weight": 2.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.8,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
       }
     ],
     "diagnostics": {
-      "signals_considered": 68,
+      "signals_considered": 63,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
