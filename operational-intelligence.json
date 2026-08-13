@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-13T10:39:08Z",
+  "generated_at": "2026-08-13T12:26:26Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,16 +33,16 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 12.428,
+    "passage": 11.402,
     "closure": 0,
-    "traffic_reduction": 8.4,
-    "access_restriction": 16.8,
-    "risk": 27.8
+    "traffic_reduction": 7.4,
+    "access_restriction": 13.02,
+    "risk": 29.8
   },
   "source_counts": {
-    "passage": 7,
+    "passage": 6,
     "closure": 0,
-    "primary_sources": 2
+    "primary_sources": 3
   },
   "latest_confirmed_transit_at": "2026-08-13T03:38:05Z",
   "legacy_engine": {
@@ -62,9 +62,24 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Iranian-backed Houthis kill 6 in attack on vessel, and other developments in the Mideast - AP News",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxORXhISUZDNXVZTlFMeWpOeGVEUDVsYWZKYkFQV2tmaXVSSW45SW5RZmtyeGQtaVIxMlVGdVZVNm5vemI5Rm9yMS1xMFc4Q0kzcTN4UThPTnF1anVDd1FSdWlIdEY2SWM2bkRiZ0VQQVQxOUJ4dXl2U2pIZFZOWVJyQ0NrelJvSlJsUWlpOHhxeFBSa0V6Y1BYb3dvaXQ?oc=5",
+      "published_at": "2026-08-12T08:46:00Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.6,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     },
     {
       "kind": "RISK_SEVERE",
@@ -101,7 +116,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-13T10:39:08Z",
+      "published_at": "2026-08-13T12:26:26Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -110,21 +125,6 @@
       "effective_weight": 3.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "Panama canal fees soar due to Iran war and El Niño as ship ‘pays $4m to jump queue’ - The Guardian",
-      "source": "The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNjhEZFIxS0c1X2hyZ2dKWWNOOVNRYmFzcWxnNmlRQlV6cXFVTWVfMGQ2eUhHdnN3Ym0yZTNVenVuamN6QkJUZW85T0hKemw1QVhFUlR6N2EzZ3ZrNjUyOE9BZ1QzNjF6cUpYd2FuN3dYdkVwclZjbzgzUV82RVdMb19CV0pibXcwR3lYYnJ0UHFmLWZDWkhFTjM3UVRXeEJy?oc=5",
-      "published_at": "2026-08-13T01:30:00Z",
-      "tier": 3,
-      "weight": 3.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.0,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
     },
     {
       "kind": "TRAFFIC_NORMAL",
@@ -137,7 +137,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 2.7,
+      "effective_weight": 2.34,
       "kind_label_es": "Tráfico próximo a normalidad",
       "kind_label_en": "Traffic near normal"
     },
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 61,
+    "signals_considered": 58,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
