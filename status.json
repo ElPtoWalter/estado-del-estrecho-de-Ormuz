@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-13T06:59:04Z",
-  "last_success_at": "2026-08-13T06:59:04Z",
+  "checked_at": "2026-08-13T08:51:48Z",
+  "last_success_at": "2026-08-13T08:51:48Z",
   "last_change_at": "2026-08-11T11:23:22Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,13 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Saudi Arabia ramps up oil exports through Mediterranean pipeline to avoid attacks in Red Sea - cnbc.com",
+      "title": "Saudi Arabia ramps up oil exports through Mediterranean pipeline to avoid attacks in Red Sea - CNBC",
       "source_name": "CNBC",
       "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORDlpS0ZwT3UtcTZ6NldxNWFBOFlDa20wVWpsYk51d1RaQzlEcm5leGphRDdSZEdrcm5hMHZVcXNVaHJycm5IQVk3NmdqdTkyQXk0NlhSTWFFelVHMGlhLTJwZEZqZGgzd25kRHFueXpCVjhxVWJycHpBZlkwRnJySDF4Tlh0T3NZMlZlWVFlVktWblR5UmNfU05ZR0x0SW_SAaQBQVVfeXFMUEtKYTRWckg5Zk93eHBlbTE5d0hxX2pwaTY1aGJLUUtUZUlublFtelRxVzgwRTU0U1ZJeDJfdmVQYTVJN3ZydDBndjJROGV3VjE3YlFHYzUxSnU1eWhJSHlQOE44eGlheHRVVm1wZy1SZ19sdFNTQzluX2o4UzNNMzFFa3JPX2VGUEFDaHh3bEVHVDR0ekdHeGxGeDl4YmJDQllvUzY?oc=5",
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-13T06:59:04Z"
+      "observed_at": "2026-08-13T08:51:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,42 +32,51 @@
       "published_at": "2026-08-11T15:18:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-13T06:59:04Z"
+      "observed_at": "2026-08-13T08:51:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - Al Jazeera",
+      "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - aljazeera.com",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
       "published_at": "2026-08-12T06:36:04Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-13T06:59:04Z"
+      "observed_at": "2026-08-13T08:51:48Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran-aligned Houthis claim they attacked oil refinery in Saudi Arabia - The Guardian",
+      "source_name": "The Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxONUczZGxpN3lGb084MkNINGQtY1FfSDNZM1NpZk9La2xSbVB5VkpuMEVJTm03X0JpWElISU11Q1JaM1lTOHkzZGRYUl9DVWNCbnJCVXlCMzlXRjNkbGU0UUJwODF3dHU5OGFJNFFBMi1razRnQ0FEVzZXR1dsbHVqaE13dTRQRmlkZ0NfWEppa0lxeTlUeVNOWTM3Z2JmM1pPNUpXbkVTSUFzZWRfUmhiOS11TQ?oc=5",
+      "published_at": "2026-08-09T12:29:00Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-08-13T08:51:48Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 6.25
+      "risk": 7.265
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 3
+      "risk": 4
     },
-    "articles_considered": 70,
-    "signals_considered": 7,
-    "current_cycle_evidence": 3,
+    "articles_considered": 72,
+    "signals_considered": 8,
+    "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
@@ -75,7 +84,7 @@
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-08-12T19:39:41Z",
-    "current_cycle_count": 3,
+    "current_cycle_count": 4,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -91,6 +100,16 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-13T05:19:35Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Saudi Arabia ramps up oil exports through Mediterranean pipeline to avoid attacks in Red Sea - CNBC",
+      "source_name": "CNBC",
+      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORDlpS0ZwT3UtcTZ6NldxNWFBOFlDa20wVWpsYk51d1RaQzlEcm5leGphRDdSZEdrcm5hMHZVcXNVaHJycm5IQVk3NmdqdTkyQXk0NlhSTWFFelVHMGlhLTJwZEZqZGgzd25kRHFueXpCVjhxVWJycHpBZlkwRnJySDF4Tlh0T3NZMlZlWVFlVktWblR5UmNfU05ZR0x0SW_SAaQBQVVfeXFMUEtKYTRWckg5Zk93eHBlbTE5d0hxX2pwaTY1aGJLUUtUZUlublFtelRxVzgwRTU0U1ZJeDJfdmVQYTVJN3ZydDBndjJROGV3VjE3YlFHYzUxSnU1eWhJSHlQOE44eGlheHRVVm1wZy1SZ19sdFNTQzluX2o4UzNNMzFFa3JPX2VGUEFDaHh3bEVHVDR0ekdHeGxGeDl4YmJDQllvUzY?oc=5",
+      "published_at": "2026-08-12T19:39:41Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-13T08:51:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -111,6 +130,16 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-13T00:09:04Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - aljazeera.com",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
+      "published_at": "2026-08-12T06:36:04Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-13T08:51:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -280,7 +309,7 @@
       "published_at": "2026-08-09T12:29:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-12T03:06:18Z"
+      "observed_at": "2026-08-13T08:51:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -661,31 +690,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-05T15:40:28Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Trump cancels planned attack on Iran, saying he reached an agreement over the 'perimeters of a deal' - CNBC",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNlJNSEJDbTFqdDBHa182OVo1X3hId1pwMG5kSE1DU2liRDRLMzhIVkkxbURMVFE3NDdyeDNKM3lCNURfQ1pvZGZmaU1jWGNCUkxvdUhIbXdnVEN4OHpoc25GMUpLNDdYWVBzeTJnc2YwWEIyMGhUcDdKXzNhbmI5U2FrQWpRY1N4dHNnUGV6dU9VaVdtdE5jdjNUQ2c4eEVDR1hjR0ZRNWHSAa4BQVVfeXFMT2hGWndFZkV5eE9RRTVkX1RnTDZRc3R5MnRQWmhwUFNSNFNMX1RIcHRwaXdQWFlMMjhydWNNSGtUa3g0YW9PNS1YLXM1OW9RYkxWUjA0THB2V0pUTFl2b29nYXdxLVRLNVBLU3JLUWlOeUZ1dWFjMy02WWVON2pTQWtsdTNSN01mSzZLT2RNRUkzSER1SXlCUlRIV2lYaEtFNlA1WW1nNWVlY2Vfa2F3?oc=5",
-      "published_at": "2026-08-02T07:47:37Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-04T17:13:59Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Trump says he is cancelling strikes on Iran subject to rapidly making deal",
-      "source_name": "BBC",
-      "source_url": "https://www.bbc.co.uk/news/articles/cjwx74qgld2o",
-      "published_at": "2026-08-02T03:00:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-08-02T04:57:57Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-13T06:59:43Z",
+    "generated_at": "2026-08-13T08:52:36Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -718,39 +727,24 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 10.114,
+      "passage": 7.514,
       "closure": 0,
       "traffic_reduction": 6.4,
       "access_restriction": 16.68,
-      "risk": 33.64
+      "risk": 32.42
     },
     "source_counts": {
-      "passage": 5,
+      "passage": 6,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-12T17:10:50Z",
+    "latest_confirmed_transit_at": "2026-08-13T03:38:05Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "MEDIA"
     },
     "evidence": [
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Tankers keep moving through Hormuz as diplomacy stalls - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNVTdGb2NVVmIzMG1OdGFmUktTMWVGc25CdXVhT1dUZEJqNXdBanY4TWhlamxGR2VaNGpHX0lFaG4zcFliX0wwb3h4STRUNHZaODlWUjdCMEhTSGRkTlN4dGFHZkZOZThEZ3AxaFZ1N184RzFXNWJRMHFwNGEyNUduaHlQOTVaWWR1MFp6WW5PMUxLUjBCVXc?oc=5",
-        "published_at": "2026-08-12T11:37:43Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
-      },
       {
         "kind": "RISK_SEVERE",
         "title": "New attacks on shipping as Iran war talks hit fresh impasse - Reuters",
@@ -786,7 +780,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-13T06:59:43Z",
+        "published_at": "2026-08-13T08:52:36Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -813,8 +807,8 @@
       },
       {
         "kind": "TRAFFIC_NORMAL",
-        "title": "Why Restoring Normal Traffic to the Strait of Hormuz Is Proving So Difficult - Bloomberg.com",
-        "source": "Bloomberg.com",
+        "title": "Why Restoring Normal Traffic to the Strait of Hormuz Is Proving So Difficult - Bloomberg",
+        "source": "Bloomberg",
         "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNX09IOFNfMHBEYjAtWWdZYVgya3hGQmRnZUliQ0ozSVA5RTVnOVYyeEd6US02SU1JMXBHWUxSUzNuem9NbFBYNzduSk5ETzliSjBLaTR1Snl1QkZmdVdHRG5mRGotNXhPQXVMWDVwSDlZMlBIUm83bWZuWmJlSE1SMEhjb01YMFRLVmNvbDU3WFR5ejE1b2pZMHpnU1NEUG13Y3dUTktTc0ZTNjRsVWJ1REl2NGhlWURuNEd4WDJVemhRdU9N?oc=5",
         "published_at": "2026-08-11T11:09:13Z",
         "tier": 3,
@@ -828,7 +822,7 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - Al Jazeera",
+        "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - aljazeera.com",
         "source": "Al Jazeera",
         "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
         "published_at": "2026-08-12T06:36:04Z",
@@ -842,23 +836,38 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "RISK_SEVERE",
-        "title": "Six killed in Houthi attack on Bab al-Mandeb ship, Yemen’s government says - Al Jazeera",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNV3Z2SnhPazVIQnhtS1Q4MnZZY0l4N0thOE9IMDVYdFJYYXRrQWxCellTNlowMnc5RDdqdmNzZEo4WHlKNjQ1OTRyTGR3TWxGTS1VdEdhRlZoWGdTeUF0MERkYnJiRFVoNFF4Rk1tMElRdFNHZnpyZ3VUby0xU2VLNXJaXzJ5YjRJZldiQTVXOWZONWpkTVpVbk94d3ZsVzlndmpGSUdpaWlMMUdsbFNEYWtvc9IBuAFBVV95cUxPNmM5RlF4c0I0VlZZTS1Sbmo2ejBFS3B4RnBsUUV5TVpSS3E5QnpFeUkzSlk0S29ZaEQzNWZESWRyVE5fWlUycVJmZDZYR0VGNVZTVzF6dFVMZ2ZIMmJKT2JHaURuMVZIYTNuMFY2MlZCMmdUMnZlQWxyOTRzNlUtTzc0SlZTUHkzV2ZzRHJzRlBGZVRCTkFJM2N1eWlsNFpxVm1UWFZrNF9TdzJUa2EzXzZfVUZQdDN6?oc=5",
-        "published_at": "2026-08-12T03:13:56Z",
-        "tier": 2,
-        "weight": 2.0,
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Iran cites environmental damage to justify Strait of Hormuz fee - Yahoo",
+        "source": "Yahoo",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPTzFCOTN3OTNBWE5feV81N0FSVnZLSG9iYWNkVm9wX2hIRWhRWjE0SlVKaGRWV2FUQ2NXTUFkSXZxNmJyMHEwNER6SVpzTDA3SW1hRGh1V1JGdU5hVU5wUjUyMzJHazNzQTl3SVV2UVpEOE0xTG1xZmtmeG85UnpsczN0SFBCU2xzMFc3SG5TQVJxTHpNLUZ4aUF4RTB5YnM?oc=5",
+        "published_at": "2026-08-13T07:18:27Z",
+        "tier": 1,
+        "weight": 1.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 1.8,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
+        "effective_weight": 1.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Trump says US to keep up blockade, as Iran vows closed Hormuz until demands met - The Times of Israel",
+        "source": "The Times of Israel",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNOXN2eGRVdUlXN3FQb3VaUVA1eXd1b1lyS0t3MDhTbGdPVHFhdzdmTDhpaU5uMFNGUjlCMS1OWUZpTmw2eGViVGZ0YWRSSlpKSVlXNFZSRmh5X2tkUHVJZkdNeUJBdWV4Ry1QU212dDl6cVpOdzE0STVtb1RDb2tMalh5QkNDOENhLU11aGRMUUZNM3NFRHFUbXNEbzBQOElmOWgwVEFoUUx5dGxFbFJoLVMyb9IBswFBVV95cUxNOXN2eGRVdUlXN3FQb3VaUVA1eXd1b1lyS0t3MDhTbGdPVHFhdzdmTDhpaU5uMFNGUjlCMS1OWUZpTmw2eGViVGZ0YWRSSlpKSVlXNFZSRmh5X2tkUHVJZkdNeUJBdWV4Ry1QU212dDl6cVpOdzE0STVtb1RDb2tMalh5QkNDOENhLU11aGRMUUZNM3NFRHFUbXNEbzBQOElmOWgwVEFoUUx5dGxFbFJoLVMybw?oc=5",
+        "published_at": "2026-08-13T06:15:48Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
       }
     ],
     "diagnostics": {
-      "signals_considered": 64,
+      "signals_considered": 68,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
