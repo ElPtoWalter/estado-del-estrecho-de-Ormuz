@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-13T15:32:07Z",
+  "generated_at": "2026-08-13T16:28:13Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,24 +33,39 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 15.302,
+    "passage": 16.472,
     "closure": 0,
-    "traffic_reduction": 7.02,
-    "access_restriction": 9.12,
-    "risk": 25.8
+    "traffic_reduction": 7.8,
+    "access_restriction": 13.92,
+    "risk": 31.2
   },
   "source_counts": {
-    "passage": 9,
+    "passage": 10,
     "closure": 0,
-    "primary_sources": 2
+    "primary_sources": 3
   },
-  "latest_confirmed_transit_at": "2026-08-13T14:45:33Z",
+  "latest_confirmed_transit_at": "2026-08-13T15:14:00Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "MEDIA"
   },
   "evidence": [
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "US can keep naval blockade on Iranian ports \"indefinitely,\" Pentagon chief says - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOVG5Gb2NKOTltbG9CVlpKTElmclFqS1JyWGtIckF6UzhMYlVCQUp4a1FEWnRzWDQxS24ycTZYTEstVHIzbzhpMENnMWVzV2kxdklsV0pFR3h5Nk93OGtDRUJndkJhWEMtaUNjQm1scHdJZlczYWlfcUZXQ2pLMGp6S3k0YTdMUS1zaUxyWk1Sd2VSUWpFUmxxb285T1JaUGdUM2paUGotRk5JLWY1QVJWR1lTOC1XWC1xbndPdk5LdkdpTXR2VXc?oc=5",
+      "published_at": "2026-08-13T16:15:43Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
+    },
     {
       "kind": "TRANSIT_CONFIRMED",
       "title": "Tankers keep moving through Hormuz as diplomacy stalls - Lloyd's List",
@@ -65,6 +80,21 @@
       "effective_weight": 3.6,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Iranian-backed Houthis kill 6 in attack on vessel, and other developments in the Mideast - AP News",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxORXhISUZDNXVZTlFMeWpOeGVEUDVsYWZKYkFQV2tmaXVSSW45SW5RZmtyeGQtaVIxMlVGdVZVNm5vemI5Rm9yMS1xMFc4Q0kzcTN4UThPTnF1anVDd1FSdWlIdEY2SWM2bkRiZ0VQQVQxOUJ4dXl2U2pIZFZOWVJyQ0NrelJvSlJsUWlpOHhxeFBSa0V6Y1BYb3dvaXQ?oc=5",
+      "published_at": "2026-08-12T08:46:00Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.6,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     },
     {
       "kind": "RISK_SEVERE",
@@ -101,7 +131,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-13T15:32:07Z",
+      "published_at": "2026-08-13T16:28:13Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -140,40 +170,10 @@
       "effective_weight": 1.8,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Six killed in Houthi attack on Bab al-Mandeb ship, Yemen’s government says - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNV3Z2SnhPazVIQnhtS1Q4MnZZY0l4N0thOE9IMDVYdFJYYXRrQWxCellTNlowMnc5RDdqdmNzZEo4WHlKNjQ1OTRyTGR3TWxGTS1VdEdhRlZoWGdTeUF0MERkYnJiRFVoNFF4Rk1tMElRdFNHZnpyZ3VUby0xU2VLNXJaXzJ5YjRJZldiQTVXOWZONWpkTVpVbk94d3ZsVzlndmpGSUdpaWlMMUdsbFNEYWtvc9IBuAFBVV95cUxPNmM5RlF4c0I0VlZZTS1Sbmo2ejBFS3B4RnBsUUV5TVpSS3E5QnpFeUkzSlk0S29ZaEQzNWZESWRyVE5fWlUycVJmZDZYR0VGNVZTVzF6dFVMZ2ZIMmJKT2JHaURuMVZIYTNuMFY2MlZCMmdUMnZlQWxyOTRzNlUtTzc0SlZTUHkzV2ZzRHJzRlBGZVRCTkFJM2N1eWlsNFpxVm1UWFZrNF9TdzJUa2EzXzZfVUZQdDN6?oc=5",
-      "published_at": "2026-08-12T03:13:56Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.8,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "FORMAL_CLOSURE_CLAIM",
-      "title": "Iran Declares Hormuz Closed Until US Meets Requirements - marinelink.com",
-      "source": "marinelink.com",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNcGxrVFFuaHI0MG4yZDlJVVlnRHhacWhWc2F2VUJ6enVHRGh1ZjQ3WEVIemVjSUhkcmRBWmdTLTBxWnBOMWd3Z0dqemNpVjJiQ0Q1N3hrcGZZbEcya3VpXzlMbmJPRVFWUl9aQmFWeElTMk5DWDBQNjhWeER0TEpwZg?oc=5",
-      "published_at": "2026-08-11T19:04:44Z",
-      "tier": 2,
-      "weight": 1.4,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.26,
-      "kind_label_es": "Declaración de cierre",
-      "kind_label_en": "Closure declaration"
     }
   ],
   "diagnostics": {
-    "signals_considered": 56,
+    "signals_considered": 62,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
