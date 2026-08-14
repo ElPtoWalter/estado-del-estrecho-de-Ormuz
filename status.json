@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-08-14T13:56:20Z",
-  "last_success_at": "2026-08-14T13:56:20Z",
+  "checked_at": "2026-08-14T15:23:05Z",
+  "last_success_at": "2026-08-14T15:23:05Z",
   "last_change_at": "2026-08-11T11:23:22Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,13 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - AP News",
+      "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - apnews.com",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU19BM2l2RGhNUW5aWGxpdXJRU1QwVWtzekJ1ckw2bUdzWlhBSWcxX3U3T1JVblRkYW92MEhkaS1rakhweUN6MnlYc0xVbzVQcUtwdXRBbGFPUzV5T2Q5a3lmbVNqdE0zZFgyT0J3OGt6bzlwT1dWb2dtdVBieEtuOVFQXzdlNFdzUm8tU3FrV1JQS1hEUGpscjl3Q1BRczR4RlE?oc=5",
-      "published_at": "2026-08-14T11:06:00Z",
+      "published_at": "2026-08-14T14:20:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-14T13:56:20Z"
+      "observed_at": "2026-08-14T15:23:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-13T21:19:19Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-14T13:56:20Z"
+      "observed_at": "2026-08-14T15:23:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-08-14T05:01:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-14T13:56:20Z"
+      "observed_at": "2026-08-14T15:23:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +52,7 @@
       "published_at": "2026-08-14T00:36:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-14T13:56:20Z"
+      "observed_at": "2026-08-14T15:23:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,22 +62,21 @@
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-14T13:56:20Z"
+      "observed_at": "2026-08-14T15:23:05Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 14.015
+      "risk": 13.415
     },
     "independent_sources": {
       "open": 0,
@@ -85,7 +84,7 @@
       "declared": 0,
       "risk": 5
     },
-    "articles_considered": 75,
+    "articles_considered": 82,
     "signals_considered": 9,
     "current_cycle_evidence": 5,
     "evidence_display_mode": "current",
@@ -94,7 +93,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-14T11:06:00Z",
+    "as_of": "2026-08-14T14:20:00Z",
     "current_cycle_count": 5,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -102,6 +101,16 @@
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - apnews.com",
+      "source_name": "Associated Press",
+      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU19BM2l2RGhNUW5aWGxpdXJRU1QwVWtzekJ1ckw2bUdzWlhBSWcxX3U3T1JVblRkYW92MEhkaS1rakhweUN6MnlYc0xVbzVQcUtwdXRBbGFPUzV5T2Q5a3lmbVNqdE0zZFgyT0J3OGt6bzlwT1dWb2dtdVBieEtuOVFQXzdlNFdzUm8tU3FrV1JQS1hEUGpscjl3Q1BRczR4RlE?oc=5",
+      "published_at": "2026-08-14T14:20:00Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-08-14T15:23:05Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "How traffic through the Strait of Hormuz is adapting to war",
@@ -130,7 +139,7 @@
       "published_at": "2026-08-14T05:01:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-14T13:56:20Z"
+      "observed_at": "2026-08-14T15:23:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -150,7 +159,7 @@
       "published_at": "2026-08-14T00:36:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-14T13:56:20Z"
+      "observed_at": "2026-08-14T15:23:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -190,7 +199,7 @@
       "published_at": "2026-08-13T21:19:19Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-14T13:56:20Z"
+      "observed_at": "2026-08-14T15:23:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -210,7 +219,7 @@
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-14T13:56:20Z"
+      "observed_at": "2026-08-14T15:23:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -691,21 +700,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-03T16:04:27Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US-Israel-Iran War Latest News: Tanker Reports Hearing Explosion in Strait of Hormuz, UKMTO Issues Security Alert; Fresh Fears Grip Key Oil Route - The Sunday Guardian",
-      "source_name": "The Sunday Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOMkg3eXJOMTR2a2JMTkV5LS1fOXlZcEprQTk0Qk1PbmkwVkhNM1Jsdk8xdWVTY2pMdkp3SXJsN0tCUGZVb0pkWXpRVXhEaHZPeDJaZDB6ZlZxakNab1ZFakI5S3RZYVZIN0RWdlZtYzA2UWpvOG1xUnFmWUt1YkdsQkFiblBsMlFMQWVtVnNPTnc3OXk3aTdkRlFsR0VycGpsa0ZiLXFsSFM1cUs4bFhrOXBoRnkwY05ubDFzVS00LU1DME94VUowVFh5VG9Jd2xaX2Y0NnhNX09HXzVpUjdfcWJnUGxaa2RKN05xMUhQNEkxSS13dEJRTHFRLXJrZTBuV2NoeTFTcFJXVmp2WHJRQXlkV3lPZUNDVFhV0gGbAkFVX3lxTE4ySDd5ck4xNHZrYkxORXktLV85eVlwSmtBOTRCTU9uaTBWSE0zUmx2TzF1ZVNjakx2SndJcmw3S0JQZlVvSmRZelFVeERodk94MlpkMHpmVnFqQ1pvVkVqQjlLdFlhVkg3RFZ2Vm1jMDZRam84bXFScWZZS3ViR2xCQWJuUGwyUUxBZW1Wc09Odzc5eTdpN2RGUWxHRXJwamxrRmItcWxIUzVxSzhsWGs5cGhGeTBjTm5sMXNVLTQtTUMwT3hVSjBUWHlUb0l3bFpfZjQ2eE1fT0dfNWlSN19xYmdQbFprZEo3TnExSFA0STFJLXd0QlFMcVEtcmtlMG5XY2h5MVNwUldWanZYclFBeWRXeU9lQ0NUWFU?oc=5",
-      "published_at": "2026-08-03T02:16:09Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-05T18:07:10Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-14T13:57:05Z",
+    "generated_at": "2026-08-14T15:23:22Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -738,18 +737,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 31.07,
+      "passage": 32.24,
       "closure": 0,
-      "traffic_reduction": 7.53,
-      "access_restriction": 24.78,
-      "risk": 76.38
+      "traffic_reduction": 8.21,
+      "access_restriction": 25.78,
+      "risk": 72.86
     },
     "source_counts": {
-      "passage": 19,
+      "passage": 20,
       "closure": 0,
-      "primary_sources": 4
+      "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-08-14T13:44:31Z",
+    "latest_confirmed_transit_at": "2026-08-14T14:58:50Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -758,10 +757,10 @@
     "evidence": [
       {
         "kind": "TRANSIT_CONFIRMED",
-        "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - AP News",
+        "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - apnews.com",
         "source": "Associated Press",
         "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU19BM2l2RGhNUW5aWGxpdXJRU1QwVWtzekJ1ckw2bUdzWlhBSWcxX3U3T1JVblRkYW92MEhkaS1rakhweUN6MnlYc0xVbzVQcUtwdXRBbGFPUzV5T2Q5a3lmbVNqdE0zZFgyT0J3OGt6bzlwT1dWb2dtdVBieEtuOVFQXzdlNFdzUm8tU3FrV1JQS1hEUGpscjl3Q1BRczR4RlE?oc=5",
-        "published_at": "2026-08-14T11:06:00Z",
+        "published_at": "2026-08-14T14:20:00Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "legacy-engine",
@@ -848,16 +847,16 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Iranian-backed Houthis kill 6 in attack on vessel, and other developments in the Mideast - AP News",
-        "source": "AP News",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxORXhISUZDNXVZTlFMeWpOeGVEUDVsYWZKYkFQV2tmaXVSSW45SW5RZmtyeGQtaVIxMlVGdVZVNm5vemI5Rm9yMS1xMFc4Q0kzcTN4UThPTnF1anVDd1FSdWlIdEY2SWM2bkRiZ0VQQVQxOUJ4dXl2U2pIZFZOWVJyQ0NrelJvSlJsUWlpOHhxeFBSa0V6Y1BYb3dvaXQ?oc=5",
-        "published_at": "2026-08-12T08:46:00Z",
+        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+        "source": "Lloyd's List",
+        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+        "published_at": "2026-08-14T15:23:22Z",
         "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
+        "weight": 3.0,
+        "provider": "Lloyd's List hot topic",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.12,
+        "effective_weight": 3.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -872,13 +871,13 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.12,
+        "effective_weight": 2.48,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 113,
+      "signals_considered": 114,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
