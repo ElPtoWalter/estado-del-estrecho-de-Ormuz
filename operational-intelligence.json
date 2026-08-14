@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-14T00:10:07Z",
+  "generated_at": "2026-08-14T03:09:15Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 13.678,
+    "passage": 14.978,
     "closure": 0,
-    "traffic_reduction": 7.27,
-    "access_restriction": 18.32,
-    "risk": 38.96
+    "traffic_reduction": 7.95,
+    "access_restriction": 24.32,
+    "risk": 42.26
   },
   "source_counts": {
-    "passage": 8,
+    "passage": 9,
     "closure": 0,
     "primary_sources": 3
   },
-  "latest_confirmed_transit_at": "2026-08-13T18:37:57Z",
+  "latest_confirmed_transit_at": "2026-08-14T00:46:33Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -53,10 +53,25 @@
   "evidence": [
     {
       "kind": "ACCESS_RESTRICTED",
-      "title": "US eyes indefinite Iran naval blockade as oil supply shortfall deepens - Reuters",
+      "title": "Oil steadies after US threatens to blockade Iran indefinitely - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOeHh3dmRQTVJOaXBOODZqNzdueG9RbzJ0VUZ0TTJ3UGNyaXFfOUJ4c1BsWXdKXzFWY21VZTdaaHpySzhxYXFIYnBVcUpsWDdUUE1od3pKN2psUWI1dS10enVtNzBDX0xBQUpqNmkxVE1xZE1scnFHeS1DQkM4YTRwOE01NXpwU3RWREhIWGFZMlFTcndNQzRWc3NrM0xWa2hwdlMzSE5IeEhqUzVJVFBv?oc=5",
+      "published_at": "2026-08-14T01:36:00Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
+    },
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "US says it can keep naval blockade on Iran 'indefinitely,' vows more economic pressure - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPamFTRDhha2lGLW5hTU1KdDZnVjlxd2hEY1lqX3Zfd2NmVlRXZjVWbDNHMXdJem1SX1hsNUpoaF9lWHhYUVFmUWJ0SDBWRG5uOGMzYzI0MFh6ckthOWJNZXNtR0tJVFJFcEMtVjdwZVFpdURyczZ0NTkzMDh1dDJNRWxKQ2htMEpBQ3N2Q25OY19wRWxaYTVCTmJJRWprVFFSMWNITjl4QmUxQVN1MUFnNHRsRWJGYUpHZ1Ywb0Nn?oc=5",
-      "published_at": "2026-08-13T22:01:51Z",
+      "published_at": "2026-08-13T21:53:00Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "Google News RSS",
@@ -122,7 +137,7 @@
       "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.6,
+      "effective_weight": 3.12,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -146,7 +161,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-14T00:10:07Z",
+      "published_at": "2026-08-14T03:09:15Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -155,25 +170,10 @@
       "effective_weight": 3.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Oil Holds Drop as Hormuz Deal Elusive While Ship Attacks Persist - Bloomberg.com",
-      "source": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOamF2UGtRV1NUdzZyR01kazlnMHhqSVhWcTFTLWd0djdrSTY4Rk5MYWtnZ1V2ZTRXRGRQRWdMMW5HZGk3MDV2blNpS1hveFJCZlBIbDZCUGN2bllXd1Y1WHlDbkU2RU83Ny1mSkhvRHZQVXh5RzAtRzc1NmVEZGJvYUJwcmVNSWM4TEZRcWU0ZE9jQ2VGaTFfTXYtSHlsQQ?oc=5",
-      "published_at": "2026-08-13T22:04:53Z",
-      "tier": 3,
-      "weight": 3.0,
-      "provider": "legacy-engine",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 65,
+    "signals_considered": 74,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
