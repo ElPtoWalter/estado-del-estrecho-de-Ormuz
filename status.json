@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-08-14T18:26:39Z",
-  "last_success_at": "2026-08-14T18:26:39Z",
+  "checked_at": "2026-08-14T19:30:06Z",
+  "last_success_at": "2026-08-14T19:30:06Z",
   "last_change_at": "2026-08-14T17:30:38Z",
   "verification_ok": true,
   "stale": false,
@@ -19,30 +19,30 @@
       "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - AP News",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU19BM2l2RGhNUW5aWGxpdXJRU1QwVWtzekJ1ckw2bUdzWlhBSWcxX3U3T1JVblRkYW92MEhkaS1rakhweUN6MnlYc0xVbzVQcUtwdXRBbGFPUzV5T2Q5a3lmbVNqdE0zZFgyT0J3OGt6bzlwT1dWb2dtdVBieEtuOVFQXzdlNFdzUm8tU3FrV1JQS1hEUGpscjl3Q1BRczR4RlE?oc=5",
-      "published_at": "2026-08-14T17:28:00Z",
+      "published_at": "2026-08-14T18:23:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-14T18:26:39Z"
+      "observed_at": "2026-08-14T19:30:06Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Oil climbs on tanker attacks, US-Iran claims about Hormuz control - Reuters",
+      "title": "Oil climbs on tanker attacks, US-Iran claims about Hormuz control - reuters.com",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxON2pvV0t4T25LdUVjOHpBU2tzN1RER1ZRQWF3cGZ3aEVZUm1JRXJXSk5xdWxaV3VEbEFMWHAtUkZ6MlpKX0VVRWlmNklKaUM3R3hER1o2WkEydXl0ZzZiS3NpNVNVdm80ck55SktBekVZbG1SaDdVdTJJOWJuUDMyV0RLNlJ5QkpYNUxGVjFQUHNQTWg1bVlJT3RXcXkyNkEwcUFtSGhLOXpWUno0LThMelpqWWRoQW8?oc=5",
       "published_at": "2026-08-14T16:34:24Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-14T18:26:39Z"
+      "observed_at": "2026-08-14T19:30:06Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz - Al Jazeera",
+      "title": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz - aljazeera.com",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQem5NN3dXREFuR3F1YmR6UGZ3Y05uZGxfVFdOMmxDdE1DekEzVUUwTjUwUFI5YWhHTm9tMmN2a1ZXZ2gwSzcteG85MlNna1BvLVhQNUdaa1M2VUtrYVdFRXJlS09vdEctOFB1LUpwZHQzOEc2ZkY2V0E0Wm5fY2J0Uk5Oa3p0ekh2Sy14cXJsVGhvaE5IejlSbElZd2M5aWZyT0t2Rlo3bVhGaWNCOVHSAbMBQVVfeXFMT05jRkpzcEVyYUJUTXVfNDQyUTVGNXlMX3kyVFc3UDZPWExiRTMtQzJ2Y3BETG9rWE4tRTBmTk90emJMbjY3Y0REUTlSTUVjb1czYlo1amVjUlpNNTI5aGhtQkdfUXB4enVqdVBpU0lSalJUV1BabXp6alVDUnd5UTBrM2tFTnNRSVBHODlla1ZXOTA1dGctUjQwck5vc05VZHlYcVBhdFlDWEN4el9VSi1yX0U?oc=5",
       "published_at": "2026-08-14T00:36:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-14T18:26:39Z"
+      "observed_at": "2026-08-14T19:30:06Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,22 +52,21 @@
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-14T18:26:39Z"
+      "observed_at": "2026-08-14T19:30:06Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 11.535
+      "risk": 11.175
     },
     "independent_sources": {
       "open": 0,
@@ -75,8 +74,8 @@
       "declared": 0,
       "risk": 4
     },
-    "articles_considered": 75,
-    "signals_considered": 9,
+    "articles_considered": 76,
+    "signals_considered": 8,
     "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -84,7 +83,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-14T17:28:00Z",
+    "as_of": "2026-08-14T18:23:00Z",
     "current_cycle_count": 4,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -97,10 +96,20 @@
       "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - AP News",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU19BM2l2RGhNUW5aWGxpdXJRU1QwVWtzekJ1ckw2bUdzWlhBSWcxX3U3T1JVblRkYW92MEhkaS1rakhweUN6MnlYc0xVbzVQcUtwdXRBbGFPUzV5T2Q5a3lmbVNqdE0zZFgyT0J3OGt6bzlwT1dWb2dtdVBieEtuOVFQXzdlNFdzUm8tU3FrV1JQS1hEUGpscjl3Q1BRczR4RlE?oc=5",
-      "published_at": "2026-08-14T17:28:00Z",
+      "published_at": "2026-08-14T18:23:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-14T18:26:39Z"
+      "observed_at": "2026-08-14T19:30:06Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil climbs on tanker attacks, US-Iran claims about Hormuz control - reuters.com",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxON2pvV0t4T25LdUVjOHpBU2tzN1RER1ZRQWF3cGZ3aEVZUm1JRXJXSk5xdWxaV3VEbEFMWHAtUkZ6MlpKX0VVRWlmNklKaUM3R3hER1o2WkEydXl0ZzZiS3NpNVNVdm80ck55SktBekVZbG1SaDdVdTJJOWJuUDMyV0RLNlJ5QkpYNUxGVjFQUHNQTWg1bVlJT3RXcXkyNkEwcUFtSGhLOXpWUno0LThMelpqWWRoQW8?oc=5",
+      "published_at": "2026-08-14T16:34:24Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-08-14T19:30:06Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -154,6 +163,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz - aljazeera.com",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQem5NN3dXREFuR3F1YmR6UGZ3Y05uZGxfVFdOMmxDdE1DekEzVUUwTjUwUFI5YWhHTm9tMmN2a1ZXZ2gwSzcteG85MlNna1BvLVhQNUdaa1M2VUtrYVdFRXJlS09vdEctOFB1LUpwZHQzOEc2ZkY2V0E0Wm5fY2J0Uk5Oa3p0ekh2Sy14cXJsVGhvaE5IejlSbElZd2M5aWZyT0t2Rlo3bVhGaWNCOVHSAbMBQVVfeXFMT05jRkpzcEVyYUJUTXVfNDQyUTVGNXlMX3kyVFc3UDZPWExiRTMtQzJ2Y3BETG9rWE4tRTBmTk90emJMbjY3Y0REUTlSTUVjb1czYlo1amVjUlpNNTI5aGhtQkdfUXB4enVqdVBpU0lSalJUV1BabXp6alVDUnd5UTBrM2tFTnNRSVBHODlla1ZXOTA1dGctUjQwck5vc05VZHlYcVBhdFlDWEN4el9VSi1yX0U?oc=5",
+      "published_at": "2026-08-14T00:36:07Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-14T19:30:06Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQem5NN3dXREFuR3F1YmR6UGZ3Y05uZGxfVFdOMmxDdE1DekEzVUUwTjUwUFI5YWhHTm9tMmN2a1ZXZ2gwSzcteG85MlNna1BvLVhQNUdaa1M2VUtrYVdFRXJlS09vdEctOFB1LUpwZHQzOEc2ZkY2V0E0Wm5fY2J0Uk5Oa3p0ekh2Sy14cXJsVGhvaE5IejlSbElZd2M5aWZyT0t2Rlo3bVhGaWNCOVHSAbMBQVVfeXFMT05jRkpzcEVyYUJUTXVfNDQyUTVGNXlMX3kyVFc3UDZPWExiRTMtQzJ2Y3BETG9rWE4tRTBmTk90emJMbjY3Y0REUTlSTUVjb1czYlo1amVjUlpNNTI5aGhtQkdfUXB4enVqdVBpU0lSalJUV1BabXp6alVDUnd5UTBrM2tFTnNRSVBHODlla1ZXOTA1dGctUjQwck5vc05VZHlYcVBhdFlDWEN4el9VSi1yX0U?oc=5",
@@ -161,16 +180,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-14T18:26:39Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz - aljazeera.com",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQem5NN3dXREFuR3F1YmR6UGZ3Y05uZGxfVFdOMmxDdE1DekEzVUUwTjUwUFI5YWhHTm9tMmN2a1ZXZ2gwSzcteG85MlNna1BvLVhQNUdaa1M2VUtrYVdFRXJlS09vdEctOFB1LUpwZHQzOEc2ZkY2V0E0Wm5fY2J0Uk5Oa3p0ekh2Sy14cXJsVGhvaE5IejlSbElZd2M5aWZyT0t2Rlo3bVhGaWNCOVHSAbMBQVVfeXFMT05jRkpzcEVyYUJUTXVfNDQyUTVGNXlMX3kyVFc3UDZPWExiRTMtQzJ2Y3BETG9rWE4tRTBmTk90emJMbjY3Y0REUTlSTUVjb1czYlo1amVjUlpNNTI5aGhtQkdfUXB4enVqdVBpU0lSalJUV1BabXp6alVDUnd5UTBrM2tFTnNRSVBHODlla1ZXOTA1dGctUjQwck5vc05VZHlYcVBhdFlDWEN4el9VSi1yX0U?oc=5",
-      "published_at": "2026-08-14T00:36:07Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-14T12:11:30Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -220,7 +229,7 @@
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-14T18:26:39Z"
+      "observed_at": "2026-08-14T19:30:06Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -681,21 +690,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-03T05:07:37Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Trump says Iran talks to resume Monday after scrapping strikes",
-      "source_name": "CNBC",
-      "source_url": "https://www.cnbc.com/2026/08/03/trump-iran-us-negotiations-peace-proposals-.html",
-      "published_at": "2026-08-03T02:23:21Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-03T05:07:37Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-14T18:27:19Z",
+    "generated_at": "2026-08-14T19:30:47Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -710,36 +709,36 @@
       "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "CLOSURE_CLAIMED"
+      "legal": "DISPUTED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Cierre declarado por una parte"
+      "legal": "Régimen disputado"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "Closure claimed by one party"
+      "legal": "Disputed regime"
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 40.04,
+      "passage": 43.81,
       "closure": 0,
-      "traffic_reduction": 10.21,
-      "access_restriction": 22.22,
-      "risk": 84.72
+      "traffic_reduction": 9.43,
+      "access_restriction": 24.22,
+      "risk": 88.94
     },
     "source_counts": {
-      "passage": 23,
+      "passage": 26,
       "closure": 0,
-      "primary_sources": 4
+      "primary_sources": 5
     },
-    "latest_confirmed_transit_at": "2026-08-14T17:28:00Z",
+    "latest_confirmed_transit_at": "2026-08-14T19:17:22Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -751,7 +750,7 @@
         "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - AP News",
         "source": "Associated Press",
         "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU19BM2l2RGhNUW5aWGxpdXJRU1QwVWtzekJ1ckw2bUdzWlhBSWcxX3U3T1JVblRkYW92MEhkaS1rakhweUN6MnlYc0xVbzVQcUtwdXRBbGFPUzV5T2Q5a3lmbVNqdE0zZFgyT0J3OGt6bzlwT1dWb2dtdVBieEtuOVFQXzdlNFdzUm8tU3FrV1JQS1hEUGpscjl3Q1BRczR4RlE?oc=5",
-        "published_at": "2026-08-14T17:28:00Z",
+        "published_at": "2026-08-14T18:23:00Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "legacy-engine",
@@ -763,7 +762,7 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Oil climbs on tanker attacks, US-Iran claims about Hormuz control - Reuters",
+        "title": "Oil climbs on tanker attacks, US-Iran claims about Hormuz control - reuters.com",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxON2pvV0t4T25LdUVjOHpBU2tzN1RER1ZRQWF3cGZ3aEVZUm1JRXJXSk5xdWxaV3VEbEFMWHAtUkZ6MlpKX0VVRWlmNklKaUM3R3hER1o2WkEydXl0ZzZiS3NpNVNVdm80ck55SktBekVZbG1SaDdVdTJJOWJuUDMyV0RLNlJ5QkpYNUxGVjFQUHNQTWg1bVlJT3RXcXkyNkEwcUFtSGhLOXpWUno0LThMelpqWWRoQW8?oc=5",
         "published_at": "2026-08-14T16:34:24Z",
@@ -793,8 +792,8 @@
       },
       {
         "kind": "ACCESS_RESTRICTED",
-        "title": "Oil rises after US threatens indefinite blockade of Iran; set for weekly gains - Reuters",
-        "source": "Reuters",
+        "title": "Oil rises after US threatens indefinite blockade of Iran; set for weekly gains - reuters.com",
+        "source": "reuters.com",
         "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOeHh3dmRQTVJOaXBOODZqNzdueG9RbzJ0VUZ0TTJ3UGNyaXFfOUJ4c1BsWXdKXzFWY21VZTdaaHpySzhxYXFIYnBVcUpsWDdUUE1od3pKN2psUWI1dS10enVtNzBDX0xBQUpqNmkxVE1xZE1scnFHeS1DQkM4YTRwOE01NXpwU3RWREhIWGFZMlFTcndNQzRWc3NrM0xWa2hwdlMzSE5IeEhqUzVJVFBv?oc=5",
         "published_at": "2026-08-14T01:36:00Z",
         "tier": 4,
@@ -808,8 +807,8 @@
       },
       {
         "kind": "ACCESS_RESTRICTED",
-        "title": "US says it can keep naval blockade on Iran 'indefinitely,' vows more economic pressure - Reuters",
-        "source": "Reuters",
+        "title": "US says it can keep naval blockade on Iran 'indefinitely,' vows more economic pressure - reuters.com",
+        "source": "reuters.com",
         "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPamFTRDhha2lGLW5hTU1KdDZnVjlxd2hEY1lqX3Zfd2NmVlRXZjVWbDNHMXdJem1SX1hsNUpoaF9lWHhYUVFmUWJ0SDBWRG5uOGMzYzI0MFh6ckthOWJNZXNtR0tJVFJFcEMtVjdwZVFpdURyczZ0NTkzMDh1dDJNRWxKQ2htMEpBQ3N2Q25OY19wRWxaYTVCTmJJRWprVFFSMWNITjl4QmUxQVN1MUFnNHRsRWJGYUpHZ1Ywb0Nn?oc=5",
         "published_at": "2026-08-13T21:53:00Z",
         "tier": 4,
@@ -823,8 +822,8 @@
       },
       {
         "kind": "ACCESS_RESTRICTED",
-        "title": "US can keep naval blockade on Iranian ports \"indefinitely,\" Pentagon chief says - Reuters",
-        "source": "Reuters",
+        "title": "US can keep naval blockade on Iranian ports \"indefinitely,\" Pentagon chief says - reuters.com",
+        "source": "reuters.com",
         "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOVG5Gb2NKOTltbG9CVlpKTElmclFqS1JyWGtIckF6UzhMYlVCQUp4a1FEWnRzWDQxS24ycTZYTEstVHIzbzhpMENnMWVzV2kxdklsV0pFR3h5Nk93OGtDRUJndkJhWEMtaUNjQm1scHdJZlczYWlfcUZXQ2pLMGp6S3k0YTdMUS1zaUxyWk1Sd2VSUWpFUmxxb285T1JaUGdUM2paUGotRk5JLWY1QVJWR1lTOC1XWC1xbndPdk5LdkdpTXR2VXc?oc=5",
         "published_at": "2026-08-13T16:43:12Z",
         "tier": 4,
@@ -853,8 +852,8 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "New attacks on shipping as Iran war talks hit fresh impasse - Reuters",
-        "source": "Reuters",
+        "title": "New attacks on shipping as Iran war talks hit fresh impasse - reuters.com",
+        "source": "reuters.com",
         "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVzI4ZllHeXZmVDVJVE40M0w5NkYtdkFzM0RyYlZvY1pXbEJoc1d4RHNvVWxTem1kMEhGNUxmc0tZZmZ2ZkpZamtDNkd6bjRTVXhCVEF6dGhOSXltR0RQc3RPc0RFUzctZ00xRjAzX0hwNy1oYlU0a0dMYU9iUjdqYXZ4ZWM5YXhBMUhEREduYVo2QkVsT2ktQ19NaFNpUF85TmhFcnF1REktbFZfRklXb0EtbzZsLUZ1Vk53TFRR?oc=5",
         "published_at": "2026-08-12T02:48:50Z",
         "tier": 4,
@@ -868,7 +867,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 123,
+      "signals_considered": 126,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
