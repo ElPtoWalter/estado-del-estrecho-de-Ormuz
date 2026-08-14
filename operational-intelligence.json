@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-14T11:21:57Z",
+  "generated_at": "2026-08-14T12:11:47Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 23.556,
+    "passage": 28.47,
     "closure": 0,
-    "traffic_reduction": 7.17,
-    "access_restriction": 24.24,
-    "risk": 66.62
+    "traffic_reduction": 7.95,
+    "access_restriction": 23.46,
+    "risk": 68.42
   },
   "source_counts": {
-    "passage": 16,
+    "passage": 17,
     "closure": 0,
-    "primary_sources": 3
+    "primary_sources": 4
   },
-  "latest_confirmed_transit_at": "2026-08-14T09:07:18Z",
+  "latest_confirmed_transit_at": "2026-08-14T11:26:38Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -65,6 +65,21 @@
       "effective_weight": 4.0,
       "kind_label_es": "Acceso restringido",
       "kind_label_en": "Restricted access"
+    },
+    {
+      "kind": "TRANSIT_CONFIRMED",
+      "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - AP News",
+      "source": "Associated Press",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU19BM2l2RGhNUW5aWGxpdXJRU1QwVWtzekJ1ckw2bUdzWlhBSWcxX3U3T1JVblRkYW92MEhkaS1rakhweUN6MnlYc0xVbzVQcUtwdXRBbGFPUzV5T2Q5a3lmbVNqdE0zZFgyT0J3OGt6bzlwT1dWb2dtdVBieEtuOVFQXzdlNFdzUm8tU3FrV1JQS1hEUGpscjl3Q1BRczR4RlE?oc=5",
+      "published_at": "2026-08-14T09:07:00Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Tránsito confirmado",
+      "kind_label_en": "Confirmed transit"
     },
     {
       "kind": "ACCESS_RESTRICTED",
@@ -122,7 +137,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.6,
+      "effective_weight": 3.12,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
     },
@@ -155,25 +170,10 @@
       "effective_weight": 3.12,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "TRAFFIC_REDUCED",
-      "title": "Gulf stocks fall on fading prospects of US-Iran deal - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWE51WXltVHpwZ1NDajBwY2hiNmo1N2hocHpnb2VSaHJ4SFoweUJOTkd4Y0h3djdlbVhCSnZnQ2MxUHdNWDN0dGRERlFLcTF4blVQZjFjZ29LWmFGaEthaXEzQnNuQTJHdl9SQ1p1MExiSE9aZWtNbWFBRFR2STlwemZCSndOTEN3UnZESFRoSWlNa1VLVXBnLUlyaENoT3lEQkE?oc=5",
-      "published_at": "2026-08-11T13:36:44Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.12,
-      "kind_label_es": "Tráfico reducido",
-      "kind_label_en": "Reduced traffic"
     }
   ],
   "diagnostics": {
-    "signals_considered": 96,
+    "signals_considered": 102,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
