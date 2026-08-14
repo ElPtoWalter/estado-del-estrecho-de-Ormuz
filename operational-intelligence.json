@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-14T17:31:31Z",
+  "generated_at": "2026-08-14T18:27:19Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -35,22 +35,37 @@
   "scores": {
     "passage": 40.04,
     "closure": 0,
-    "traffic_reduction": 9.21,
-    "access_restriction": 22.38,
-    "risk": 84.08
+    "traffic_reduction": 10.21,
+    "access_restriction": 22.22,
+    "risk": 84.72
   },
   "source_counts": {
     "passage": 23,
     "closure": 0,
     "primary_sources": 4
   },
-  "latest_confirmed_transit_at": "2026-08-14T17:20:53Z",
+  "latest_confirmed_transit_at": "2026-08-14T17:28:00Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "ALTA"
   },
   "evidence": [
+    {
+      "kind": "TRANSIT_CONFIRMED",
+      "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - AP News",
+      "source": "Associated Press",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU19BM2l2RGhNUW5aWGxpdXJRU1QwVWtzekJ1ckw2bUdzWlhBSWcxX3U3T1JVblRkYW92MEhkaS1rakhweUN6MnlYc0xVbzVQcUtwdXRBbGFPUzV5T2Q5a3lmbVNqdE0zZFgyT0J3OGt6bzlwT1dWb2dtdVBieEtuOVFQXzdlNFdzUm8tU3FrV1JQS1hEUGpscjl3Q1BRczR4RlE?oc=5",
+      "published_at": "2026-08-14T17:28:00Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Tránsito confirmado",
+      "kind_label_en": "Confirmed transit"
+    },
     {
       "kind": "RISK_SEVERE",
       "title": "Oil climbs on tanker attacks, US-Iran claims about Hormuz control - Reuters",
@@ -65,21 +80,6 @@
       "effective_weight": 4.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - AP News",
-      "source": "Associated Press",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU19BM2l2RGhNUW5aWGxpdXJRU1QwVWtzekJ1ckw2bUdzWlhBSWcxX3U3T1JVblRkYW92MEhkaS1rakhweUN6MnlYc0xVbzVQcUtwdXRBbGFPUzV5T2Q5a3lmbVNqdE0zZFgyT0J3OGt6bzlwT1dWb2dtdVBieEtuOVFQXzdlNFdzUm8tU3FrV1JQS1hEUGpscjl3Q1BRczR4RlE?oc=5",
-      "published_at": "2026-08-14T14:20:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "legacy-engine",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 4.0,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
     },
     {
       "kind": "RISK_SEVERE",
@@ -158,16 +158,16 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
-      "source": "Lloyd's List",
-      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-14T17:31:31Z",
+      "title": "New attacks on shipping as Iran war talks hit fresh impasse - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVzI4ZllHeXZmVDVJVE40M0w5NkYtdkFzM0RyYlZvY1pXbEJoc1d4RHNvVWxTem1kMEhGNUxmc0tZZmZ2ZkpZamtDNkd6bjRTVXhCVEF6dGhOSXltR0RQc3RPc0RFUzctZ00xRjAzX0hwNy1oYlU0a0dMYU9iUjdqYXZ4ZWM5YXhBMUhEREduYVo2QkVsT2ktQ19NaFNpUF85TmhFcnF1REktbFZfRklXb0EtbzZsLUZ1Vk53TFRR?oc=5",
+      "published_at": "2026-08-12T02:48:50Z",
       "tier": 4,
-      "weight": 3.0,
-      "provider": "Lloyd's List hot topic",
+      "weight": 4.0,
+      "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.0,
+      "effective_weight": 3.12,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     }
