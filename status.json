@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-14T03:08:32Z",
-  "last_success_at": "2026-08-14T03:08:32Z",
+  "checked_at": "2026-08-14T05:16:25Z",
+  "last_success_at": "2026-08-14T05:16:25Z",
   "last_change_at": "2026-08-11T11:23:22Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,13 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Oil Holds Drop While Hormuz Deal Stalls and Ship Attacks Persist - bloomberg.com",
+      "title": "Oil Holds Drop as Hormuz Deal Elusive While Ship Attacks Persist - bloomberg.com",
       "source_name": "Bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOamF2UGtRV1NUdzZyR01kazlnMHhqSVhWcTFTLWd0djdrSTY4Rk5MYWtnZ1V2ZTRXRGRQRWdMMW5HZGk3MDV2blNpS1hveFJCZlBIbDZCUGN2bllXd1Y1WHlDbkU2RU83Ny1mSkhvRHZQVXh5RzAtRzc1NmVEZGJvYUJwcmVNSWM4TEZRcWU0ZE9jQ2VGaTFfTXYtSHlsQQ?oc=5",
       "published_at": "2026-08-13T22:04:53Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-14T03:08:32Z"
+      "observed_at": "2026-08-14T05:16:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,17 +32,17 @@
       "published_at": "2026-08-14T00:36:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-14T03:08:32Z"
+      "observed_at": "2026-08-14T05:16:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
       "title": "New attacks on shipping as Iran war talks hit fresh impasse - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVzI4ZllHeXZmVDVJVE40M0w5NkYtdkFzM0RyYlZvY1pXbEJoc1d4RHNvVWxTem1kMEhGNUxmc0tZZmZ2ZkpZamtDNkd6bjRTVXhCVEF6dGhOSXltR0RQc3RPc0RFUzctZ00xRjAzX0hwNy1oYlU0a0dMYU9iUjdqYXZ4ZWM5YXhBMUhEREduYVo2QkVsT2ktQ19NaFNpUF85TmhFcnF1REktbFZfRklXb0EtbzZsLUZ1Vk53TFRR?oc=5",
-      "published_at": "2026-08-12T02:48:50Z",
+      "published_at": "2026-08-11T15:18:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-14T03:08:32Z"
+      "observed_at": "2026-08-14T05:16:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,22 +52,21 @@
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-14T03:08:32Z"
+      "observed_at": "2026-08-14T05:16:25Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 9.675
+      "risk": 9.355
     },
     "independent_sources": {
       "open": 0,
@@ -75,7 +74,7 @@
       "declared": 0,
       "risk": 4
     },
-    "articles_considered": 76,
+    "articles_considered": 74,
     "signals_considered": 8,
     "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
@@ -100,7 +99,17 @@
       "published_at": "2026-08-14T00:36:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-14T03:08:32Z"
+      "observed_at": "2026-08-14T05:16:25Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil Holds Drop as Hormuz Deal Elusive While Ship Attacks Persist - bloomberg.com",
+      "source_name": "Bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOamF2UGtRV1NUdzZyR01kazlnMHhqSVhWcTFTLWd0djdrSTY4Rk5MYWtnZ1V2ZTRXRGRQRWdMMW5HZGk3MDV2blNpS1hveFJCZlBIbDZCUGN2bllXd1Y1WHlDbkU2RU83Ny1mSkhvRHZQVXh5RzAtRzc1NmVEZGJvYUJwcmVNSWM4TEZRcWU0ZE9jQ2VGaTFfTXYtSHlsQQ?oc=5",
+      "published_at": "2026-08-13T22:04:53Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-08-14T05:16:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -111,16 +120,6 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-08-14T03:08:32Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil Holds Drop as Hormuz Deal Elusive While Ship Attacks Persist - Bloomberg.com",
-      "source_name": "Bloomberg",
-      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOamF2UGtRV1NUdzZyR01kazlnMHhqSVhWcTFTLWd0djdrSTY4Rk5MYWtnZ1V2ZTRXRGRQRWdMMW5HZGk3MDV2blNpS1hveFJCZlBIbDZCUGN2bllXd1Y1WHlDbkU2RU83Ny1mSkhvRHZQVXh5RzAtRzc1NmVEZGJvYUJwcmVNSWM4TEZRcWU0ZE9jQ2VGaTFfTXYtSHlsQQ?oc=5",
-      "published_at": "2026-08-13T22:04:53Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-08-14T00:09:35Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -140,7 +139,7 @@
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-14T03:08:32Z"
+      "observed_at": "2026-08-14T05:16:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -695,7 +694,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-14T03:09:15Z",
+    "generated_at": "2026-08-14T05:16:45Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -728,18 +727,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 14.978,
+      "passage": 15.108,
       "closure": 0,
-      "traffic_reduction": 7.95,
-      "access_restriction": 24.32,
-      "risk": 42.26
+      "traffic_reduction": 7.17,
+      "access_restriction": 22.7,
+      "risk": 47.9
     },
     "source_counts": {
       "passage": 9,
       "closure": 0,
       "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-08-14T00:46:33Z",
+    "latest_confirmed_transit_at": "2026-08-14T03:00:00Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -748,7 +747,7 @@
     "evidence": [
       {
         "kind": "ACCESS_RESTRICTED",
-        "title": "Oil steadies after US threatens to blockade Iran indefinitely - Reuters",
+        "title": "Oil steadies after US threatens indefinite blockade of Iran - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOeHh3dmRQTVJOaXBOODZqNzdueG9RbzJ0VUZ0TTJ3UGNyaXFfOUJ4c1BsWXdKXzFWY21VZTdaaHpySzhxYXFIYnBVcUpsWDdUUE1od3pKN2psUWI1dS10enVtNzBDX0xBQUpqNmkxVE1xZE1scnFHeS1DQkM4YTRwOE01NXpwU3RWREhIWGFZMlFTcndNQzRWc3NrM0xWa2hwdlMzSE5IeEhqUzVJVFBv?oc=5",
         "published_at": "2026-08-14T01:36:00Z",
@@ -826,7 +825,7 @@
         "title": "New attacks on shipping as Iran war talks hit fresh impasse - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVzI4ZllHeXZmVDVJVE40M0w5NkYtdkFzM0RyYlZvY1pXbEJoc1d4RHNvVWxTem1kMEhGNUxmc0tZZmZ2ZkpZamtDNkd6bjRTVXhCVEF6dGhOSXltR0RQc3RPc0RFUzctZ00xRjAzX0hwNy1oYlU0a0dMYU9iUjdqYXZ4ZWM5YXhBMUhEREduYVo2QkVsT2ktQ19NaFNpUF85TmhFcnF1REktbFZfRklXb0EtbzZsLUZ1Vk53TFRR?oc=5",
-        "published_at": "2026-08-12T02:48:50Z",
+        "published_at": "2026-08-11T15:18:00Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "legacy-engine",
@@ -856,7 +855,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-14T03:09:15Z",
+        "published_at": "2026-08-14T05:16:45Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -868,7 +867,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 74,
+      "signals_considered": 73,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
