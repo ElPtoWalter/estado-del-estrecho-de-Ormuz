@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-08-15T04:05:35Z",
-  "last_success_at": "2026-08-15T04:05:35Z",
+  "checked_at": "2026-08-15T04:58:25Z",
+  "last_success_at": "2026-08-15T04:58:25Z",
   "last_change_at": "2026-08-14T17:30:38Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-14T23:13:47Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-15T04:05:35Z"
+      "observed_at": "2026-08-15T04:58:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-14T19:35:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-15T04:05:35Z"
+      "observed_at": "2026-08-15T04:58:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-08-14T18:15:59Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-15T04:05:35Z"
+      "observed_at": "2026-08-15T04:58:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +52,7 @@
       "published_at": "2026-08-14T00:36:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-15T04:05:35Z"
+      "observed_at": "2026-08-15T04:58:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,16 +62,17 @@
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-15T04:05:35Z"
+      "observed_at": "2026-08-15T04:58:25Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -84,7 +85,7 @@
       "declared": 0,
       "risk": 5
     },
-    "articles_considered": 71,
+    "articles_considered": 68,
     "signals_considered": 10,
     "current_cycle_evidence": 5,
     "evidence_display_mode": "current",
@@ -109,7 +110,7 @@
       "published_at": "2026-08-14T23:13:47Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-15T04:05:35Z"
+      "observed_at": "2026-08-15T04:58:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -119,7 +120,7 @@
       "published_at": "2026-08-14T19:35:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-15T04:05:35Z"
+      "observed_at": "2026-08-15T04:58:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -149,7 +150,7 @@
       "published_at": "2026-08-14T18:15:59Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-15T04:05:35Z"
+      "observed_at": "2026-08-15T04:58:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -209,7 +210,7 @@
       "published_at": "2026-08-14T00:36:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-15T04:05:35Z"
+      "observed_at": "2026-08-15T04:58:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -269,7 +270,7 @@
       "published_at": "2026-08-12T19:39:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-15T04:05:35Z"
+      "observed_at": "2026-08-15T04:58:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -704,7 +705,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-15T04:05:59Z",
+    "generated_at": "2026-08-15T04:59:08Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -737,18 +738,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 45.084,
+      "passage": 47.684,
       "closure": 0,
       "traffic_reduction": 9.095,
       "access_restriction": 17.6,
-      "risk": 81.38
+      "risk": 74.38
     },
     "source_counts": {
       "passage": 24,
       "closure": 0,
       "primary_sources": 4
     },
-    "latest_confirmed_transit_at": "2026-08-15T02:49:00Z",
+    "latest_confirmed_transit_at": "2026-08-14T23:13:47Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -791,21 +792,6 @@
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxON2pvV0t4T25LdUVjOHpBU2tzN1RER1ZRQWF3cGZ3aEVZUm1JRXJXSk5xdWxaV3VEbEFMWHAtUkZ6MlpKX0VVRWlmNklKaUM3R3hER1o2WkEydXl0ZzZiS3NpNVNVdm80ck55SktBekVZbG1SaDdVdTJJOWJuUDMyV0RLNlJ5QkpYNUxGVjFQUHNQTWg1bVlJT3RXcXkyNkEwcUFtSGhLOXpWUno0LThMelpqWWRoQW8?oc=5",
         "published_at": "2026-08-14T19:21:47Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Fresh Adnoc tanker attack claims underscore prolonged Hormuz security threat - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUk9MME5LUFByajdvcUh1Y1RfRDJEUHMtRklWQzRkSFB2bGJ2WU1SeWtlTjZxOXNwajN5RHdTb21NS3FzaU9NbzdGeWIwUU96Zl8zcmc5TEt3YzcxTGVsRDl2Y0hCWjdXZlZiX3RQdEZta0xNRmNqYUNXMUh4TTUwbTAzbE4tQ3NPYVdTNjFUSVlnV0c1OXdMWUliYmNlWHREdkplMHV3WWx5TTNNVnN2WHZVbw?oc=5",
-        "published_at": "2026-08-14T06:04:49Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "Google News RSS",
@@ -865,7 +851,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-15T04:05:59Z",
+        "published_at": "2026-08-15T04:59:08Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -874,10 +860,25 @@
         "effective_weight": 3.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - BNN Bloomberg",
+        "source": "Bloomberg",
+        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQME1uc1lLbjcxT0R0bkhjbmhoMmxkTUdKUkRiTFZEX0JwNDZCb2hfeWluVWRYQ04tOHYzSnRSbXFrMFRUbXpBVENvVXRmcnBaa0JkY1BpX0lBR2NteDhLUnRDNDg1MkRzdzV2NGF0LWNFMzFqYVVwZkQ0dWVDVllrdEc3YzRPNUFZMXZuUHlYWm9EUnJXTWZRSEhXMGtnYlFLSDVuSUg2b0VJcjR5S0xNTUZzNGZEcWI3T0hXeU4yRE03WDBqYk5hbHBNc0xmdzJCU2dEMzk2WUxKVkhoT1NVS0RlWlY3Q1ROLWc?oc=5",
+        "published_at": "2026-08-14T18:15:59Z",
+        "tier": 3,
+        "weight": 3.0,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.0,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
       }
     ],
     "diagnostics": {
-      "signals_considered": 111,
+      "signals_considered": 107,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
