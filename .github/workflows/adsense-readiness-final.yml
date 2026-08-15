@@ -1,0 +1,154 @@
+name: AdSense Readiness Final
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: adsense-readiness-final
+  cancel-in-progress: false
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Aplicar ajustes editoriales
+        run: python fix_adsense_readiness.py
+
+      - name: Validar Python y pruebas existentes
+        run: |
+          python -m py_compile \
+            fix_adsense_readiness.py \
+            generate_daily_journal.py \
+            install_v11.py \
+            build_public_site.py
+          python -m unittest -v test_daily_journal_v8.py
+
+      - name: Regenerar Diario de hoy
+        run: python generate_daily_journal.py --force
+
+      - name: Verificar fecha y eliminar repeticiones
+        run: python fix_adsense_readiness.py --audit-diary
+
+      - name: Regenerar sitemap
+        run: python build_sitemap.py --root .
+
+      - name: Validar sitio fuente
+        run: python validate_site.py --root . --report "${{ runner.temp }}/adsense-readiness-validation.json"
+
+      - name: Construir versión pública
+        run: python build_public_site.py
+
+      - name: Auditoría AdSense de la superficie pública
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          root = Path("_site")
+          banned = (
+              "El motor ejecuta comprobaciones automáticas periódicas",
+              "The engine runs periodic automated checks",
+              "La API y el RSS son públicos",
+              "The API and RSS are public",
+              "status.json",
+              "history.json",
+              "config.json",
+              "operational-intelligence.json",
+              "Crónica diaria automática",
+              "Daily automated",
+          )
+
+          errors = []
+          for rel in ("index.html", "en.html", "diario.html", "en-diary.html"):
+              path = root / rel
+              if not path.exists():
+                  errors.append(f"Falta {rel}")
+                  continue
+              body = path.read_text(encoding="utf-8", errors="ignore")
+              for token in banned:
+                  if token.lower() in body.lower():
+                      errors.append(f"{rel}: {token}")
+
+          no_ads = (
+              "alertas.html", "en-alerts.html", "evidencias.html", "en-evidence.html",
+              "historial.html", "en-history.html", "widget.html", "en-widget.html",
+              "embed.html", "en-embed.html", "contacto.html", "en-contact.html",
+              "privacidad.html", "en-privacy.html", "cookies.html", "en-cookies.html",
+              "aviso-legal.html", "en-legal.html", "media-kit.html", "en-media-kit.html",
+          )
+          for rel in no_ads:
+              path = root / rel
+              if path.exists():
+                  body = path.read_text(encoding="utf-8", errors="ignore")
+                  if "pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" in body:
+                      errors.append(f"{rel}: AdSense loader en página no monetizable")
+
+          today = datetime.now(ZoneInfo("Europe/Madrid")).date().isoformat()
+          for rel in ("diario.html", "en-diary.html"):
+              path = root / rel
+              if path.exists() and f'datetime="{today}"' not in path.read_text(encoding="utf-8"):
+                  errors.append(f"{rel}: edición no fechada {today}")
+
+          if errors:
+              raise SystemExit("AUDITORÍA ADSENSE FALLIDA:\n" + "\n".join(errors))
+
+          print("AUDITORÍA ADSENSE: OK")
+          print("FAQ limpio, endpoints internos ausentes, Diario actual y utility pages sin anuncios.")
+          PY
+
+      - name: Comprobar cambios
+        run: |
+          git diff --check
+          git status --short
+
+      - name: Guardar cambios
+        run: |
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
+          find . -type f -name '*.pyc' -delete
+          rm -rf _site
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add \
+            fix_adsense_readiness.py \
+            generate_daily_journal.py \
+            install_v11.py \
+            build_public_site.py \
+            index.html \
+            en.html \
+            diario.html \
+            en-diary.html \
+            diario \
+            diary \
+            journal-data \
+            journal-latest.json \
+            journal-archive.json \
+            journal-state.json \
+            journal-health.json \
+            journal-social-draft.json \
+            diario-feed.xml \
+            sitemap.xml
+
+          if git diff --cached --quiet; then
+            echo "Los ajustes ya estaban aplicados."
+          else
+            git commit -m "Mejora calidad editorial antes de revisión AdSense"
+            git push
+          fi
