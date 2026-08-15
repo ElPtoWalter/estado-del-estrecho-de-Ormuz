@@ -100,6 +100,10 @@ PRO_LANGUAGE = (
     ("API JSON", "Metodología y fuentes"),
     ("Datos para desarrolladores", "Documentación editorial"),
     ("Developer data", "Editorial documentation"),
+    ("El motor ejecuta comprobaciones automáticas periódicas. La hora exacta del último ciclo aparece en el panel principal.", "El observatorio mantiene un seguimiento continuo. La hora de la última comprobación aparece en el panel principal."),
+    ("The engine runs periodic automated checks. The exact time of the latest cycle appears in the main panel.", "The observatory is continuously monitored. The time of the latest verification appears in the main panel."),
+    ("La API y el RSS son públicos para consulta razonable. Cita a Estrecho Ormuz y enlaza la metodología cuando reutilices la clasificación.", "Sí. Puedes citar las conclusiones públicas de Estrecho Ormuz, indicando la fuente y enlazando la metodología. El RSS está disponible para seguir nuevas publicaciones."),
+    ("The API and RSS are public for reasonable use. Credit Estrecho Ormuz and link to the methodology when reusing the classification.", "Yes. You may cite Estrecho Ormuz\'s public conclusions with attribution and a link to the methodology. RSS is available for following new publications."),
 )
 
 METHOD_ES = (

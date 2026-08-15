@@ -8,7 +8,6 @@ el monitor y de un barrido prudente de noticias recientes. La edición en vivo
 se actualiza todos los días; solo se crea una URL histórica indexable cuando
 hay novedad material suficiente.
 
-No usa una API de IA de pago. La redacción es determinista y se construye solo
 con hechos estructurados y titulares enlazados. Los titulares interrogativos,
 de opinión o puramente especulativos nunca se convierten en hechos.
 """
@@ -630,9 +629,14 @@ def section_paragraph(topic: str, items: list[NewsItem], lang: str) -> str:
         if interpretable:
             clauses = []
             used_sources = []
-            for item, clause in interpretable[:2]:
+            for item, clause in interpretable:
+                if clause in clauses:
+                    continue
                 clauses.append(clause)
-                used_sources.append(item.source)
+                if item.source not in used_sources:
+                    used_sources.append(item.source)
+                if len(clauses) >= 2:
+                    break
             source_text = " y ".join(dict.fromkeys(used_sources))
             return f"Las novedades seleccionadas en este frente proceden de {source_text}. En conjunto, {clauses[0]}" + (f"; además, {clauses[1]}" if len(clauses) > 1 else "") + ". La conclusión se limita a lo que permiten sostener las fuentes enlazadas y no convierte titulares de opinión en hechos."
         return f"Hay {len(relevant)} actualización(es) reciente(s) en esta área, procedentes de {', '.join(sources[:3])}. Se conservan como contexto porque sus titulares son analíticos, interrogativos o no permiten extraer por sí solos una afirmación operativa segura."
@@ -653,9 +657,14 @@ def section_paragraph(topic: str, items: list[NewsItem], lang: str) -> str:
         if interpretable:
             clauses = []
             used_sources = []
-            for item, clause in interpretable[:2]:
+            for item, clause in interpretable:
+                if clause in clauses:
+                    continue
                 clauses.append(clause)
-                used_sources.append(item.source)
+                if item.source not in used_sources:
+                    used_sources.append(item.source)
+                if len(clauses) >= 2:
+                    break
             source_text = " and ".join(dict.fromkeys(used_sources))
             return f"Selected developments in this area come from {source_text}. Taken together, {clauses[0]}" + (f"; in addition, {clauses[1]}" if len(clauses) > 1 else "") + ". The conclusion is limited to what the linked sources support and does not turn opinion headlines into facts."
         return f"There are {len(relevant)} recent update(s) in this area from {', '.join(sources[:3])}. They are retained as context because their headlines are analytical, interrogative or insufficient on their own for a safe operational claim."
@@ -721,7 +730,7 @@ def structured_data(
         "dateModified": date_iso,
         "inLanguage": lang,
         "mainEntityOfPage": canonical,
-        "author": {"@type": "Organization", "name": "Redacción de Estrecho Ormuz" if lang == "es" else "Estrecho Ormuz News Desk"},
+        "author": {"@type": "Organization", "name": "Equipo editorial de Estrecho Ormuz" if lang == "es" else "Estrecho Ormuz Editorial Team", "url": BASE_URL + ("/sobre.html" if lang == "es" else "/en-about.html")},
         "publisher": {"@type": "Organization", "name": "Estrecho Ormuz", "url": BASE_URL},
         "isAccessibleForFree": True,
     }
