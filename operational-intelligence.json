@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-17T16:57:19Z",
+  "generated_at": "2026-08-17T17:57:29Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 14.04,
+    "passage": 12.532,
     "closure": 0,
-    "traffic_reduction": 4.77,
-    "access_restriction": 5.82,
-    "risk": 58.42
+    "traffic_reduction": 4.15,
+    "access_restriction": 5.66,
+    "risk": 57.4
   },
   "source_counts": {
-    "passage": 7,
+    "passage": 6,
     "closure": 0,
     "primary_sources": 4
   },
-  "latest_confirmed_transit_at": "2026-08-17T12:31:46Z",
+  "latest_confirmed_transit_at": "2026-08-17T10:31:53Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -101,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-17T16:57:19Z",
+      "published_at": "2026-08-17T17:57:29Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -142,6 +142,21 @@
       "kind_label_en": "Severe risk"
     },
     {
+      "kind": "RISK_SEVERE",
+      "title": "Frequency of vessel attacks in Hormuz increases - Seatrade Maritime News",
+      "source": "Seatrade Maritime News",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNYV9aVHN1MlRoNzYtVkV5dGhGOFBFekNPSWZIaEM0YUtfWXZPcE9BUmZkaTFPWFptSnBPMmJMQ2x5bFI2YlpDaTZKc0FXUWNlbFljNVFqZ3Y3TjFrU3d1S3F6dnNLVlRzRmRGU2Izd3c1SUJRdm1FRUxTUlAybkFRb3RwYzJSRHhTdk9GWU9VQkJZMGpz?oc=5",
+      "published_at": "2026-08-17T03:40:07Z",
+      "tier": 2,
+      "weight": 2.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
       "kind": "ACCESS_RESTRICTED",
       "title": "Is China seeking to copy Iran’s Strait of Hormuz blockade around Taiwan? - Al Jazeera",
       "source": "Al Jazeera",
@@ -155,25 +170,10 @@
       "effective_weight": 1.56,
       "kind_label_es": "Acceso restringido",
       "kind_label_en": "Restricted access"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQem5NN3dXREFuR3F1YmR6UGZ3Y05uZGxfVFdOMmxDdE1DekEzVUUwTjUwUFI5YWhHTm9tMmN2a1ZXZ2gwSzcteG85MlNna1BvLVhQNUdaa1M2VUtrYVdFRXJlS09vdEctOFB1LUpwZHQzOEc2ZkY2V0E0Wm5fY2J0Uk5Oa3p0ekh2Sy14cXJsVGhvaE5IejlSbElZd2M5aWZyT0t2Rlo3bVhGaWNCOVHSAbMBQVVfeXFMT05jRkpzcEVyYUJUTXVfNDQyUTVGNXlMX3kyVFc3UDZPWExiRTMtQzJ2Y3BETG9rWE4tRTBmTk90emJMbjY3Y0REUTlSTUVjb1czYlo1amVjUlpNNTI5aGhtQkdfUXB4enVqdVBpU0lSalJUV1BabXp6alVDUnd5UTBrM2tFTnNRSVBHODlla1ZXOTA1dGctUjQwck5vc05VZHlYcVBhdFlDWEN4el9VSi1yX0U?oc=5",
-      "published_at": "2026-08-14T00:36:07Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.24,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 74,
+    "signals_considered": 68,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
