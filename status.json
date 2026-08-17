@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-08-17T17:56:37Z",
-  "last_success_at": "2026-08-17T17:56:37Z",
+  "checked_at": "2026-08-17T19:08:41Z",
+  "last_success_at": "2026-08-17T19:08:41Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,17 +22,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-17T17:56:37Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US - Iran Memorandum of Understanding expires : How and why it fell apart",
-      "source_name": "Al Jazeera",
-      "source_url": "https://www.aljazeera.com/news/2026/8/17/us-iran-memorandum-of-understanding-expires-how-and-why-it-fell-apart",
-      "published_at": "2026-08-17T12:45:00Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-17T17:56:37Z"
+      "observed_at": "2026-08-17T19:08:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +32,7 @@
       "published_at": "2026-08-17T06:15:57Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-17T17:56:37Z"
+      "observed_at": "2026-08-17T19:08:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +42,7 @@
       "published_at": "2026-08-14T19:35:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-17T17:56:37Z"
+      "observed_at": "2026-08-17T19:08:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,7 +52,7 @@
       "published_at": "2026-08-15T13:00:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-17T17:56:37Z"
+      "observed_at": "2026-08-17T19:08:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -72,21 +62,32 @@
       "published_at": "2026-08-15T12:25:51Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-17T17:56:37Z"
+      "observed_at": "2026-08-17T19:08:41Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQem5NN3dXREFuR3F1YmR6UGZ3Y05uZGxfVFdOMmxDdE1DekEzVUUwTjUwUFI5YWhHTm9tMmN2a1ZXZ2gwSzcteG85MlNna1BvLVhQNUdaa1M2VUtrYVdFRXJlS09vdEctOFB1LUpwZHQzOEc2ZkY2V0E0Wm5fY2J0Uk5Oa3p0ekh2Sy14cXJsVGhvaE5IejlSbElZd2M5aWZyT0t2Rlo3bVhGaWNCOVHSAbMBQVVfeXFMT05jRkpzcEVyYUJUTXVfNDQyUTVGNXlMX3kyVFc3UDZPWExiRTMtQzJ2Y3BETG9rWE4tRTBmTk90emJMbjY3Y0REUTlSTUVjb1czYlo1amVjUlpNNTI5aGhtQkdfUXB4enVqdVBpU0lSalJUV1BabXp6alVDUnd5UTBrM2tFTnNRSVBHODlla1ZXOTA1dGctUjQwck5vc05VZHlYcVBhdFlDWEN4el9VSi1yX0U?oc=5",
+      "published_at": "2026-08-14T00:36:07Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-17T19:08:41Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 13.205
+      "risk": 11.645
     },
     "independent_sources": {
       "open": 0,
@@ -94,8 +95,8 @@
       "declared": 0,
       "risk": 6
     },
-    "articles_considered": 53,
-    "signals_considered": 11,
+    "articles_considered": 41,
+    "signals_considered": 10,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -103,7 +104,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-17T12:45:00Z",
+    "as_of": "2026-08-17T06:15:57Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -129,7 +130,7 @@
       "published_at": "2026-08-17T06:15:57Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-17T17:56:37Z"
+      "observed_at": "2026-08-17T19:08:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -159,7 +160,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-17T17:56:37Z"
+      "observed_at": "2026-08-17T19:08:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -209,7 +210,17 @@
       "published_at": "2026-08-15T13:00:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-17T17:56:37Z"
+      "observed_at": "2026-08-17T19:08:41Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US-Israel-Iran War Live News: UAE Says Iran Attacked ADNOC-Linked Vessel in Strait of Hormuz; Trump Defends Iran Military Action - The Sunday Guardian",
+      "source_name": "The Sunday Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxON2d2WVZWVXlPYUJWeF9BdEJWcXJWenZxbkFWRGs0TG14VVYxMzFhLTJuMWdLcEswb3lSSE1QNFNaODhJT0x1ZVltUmhna1JxbzBOYU5WSGlKcVpObW1WNVlkZkNXN0hpSEJqckZ4alo4akg2N1NpUnFBaGdRdm52X3l4d09NT09QQ3lSVkNRMFEtamJOSWxEdC04cE5SQVdFNE9uN2lhMDd1a0Y2OS1FSjBKNW1wbmsyVWE0dHRtRkU3REVrVHF2MEVsVDNILWxjbWNhWE9UWWpqVzNMaE40cnVVbDI3dEtodGplVFI1SS00LVY3N0dhaFl0dW5rQnJrSHVCRmdn0gGGAkFVX3lxTE43Z3ZZVlZVeU9hQlZ4X0F0QlZxclZ6dnFuQVZEazRMbXhVVjEzMWEtMm4xZ0twSzBveVJITVA0U1o4OElPTHVlWW1SaGdrUnFvME5hTlZIaUpxWk5tbVY1WWRmQ1c3SGlIQmpyRnhqWjhqSDY3U2lScUFoZ1F2bnZfeXh3T01PT1BDeVJWQ1EwUS1qYk5JbER0LThwTlJBV0U0T243aWEwN3VrRjY5LUVKMEo1bXBuazJVYTR0dG1GRTdERWtUcXYwRWxUM0gtbGNtY2FYT1RZampXM0xoTjRydVVsMjd0S2h0amVUUjVJLTQtVjc3R2FoWXR1bmtCcmtIdUJGZ2c?oc=5",
+      "published_at": "2026-08-15T12:25:51Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-17T19:08:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -220,16 +231,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-17T17:56:37Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US-Israel-Iran War Live News: UAE Says Iran Attacked ADNOC-Linked Vessel in Strait of Hormuz; Trump Defends Iran Military Action - The Sunday Guardian",
-      "source_name": "The Sunday Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxON2d2WVZWVXlPYUJWeF9BdEJWcXJWenZxbkFWRGs0TG14VVYxMzFhLTJuMWdLcEswb3lSSE1QNFNaODhJT0x1ZVltUmhna1JxbzBOYU5WSGlKcVpObW1WNVlkZkNXN0hpSEJqckZ4alo4akg2N1NpUnFBaGdRdm52X3l4d09NT09QQ3lSVkNRMFEtamJOSWxEdC04cE5SQVdFNE9uN2lhMDd1a0Y2OS1FSjBKNW1wbmsyVWE0dHRtRkU3REVrVHF2MEVsVDNILWxjbWNhWE9UWWpqVzNMaE40cnVVbDI3dEtodGplVFI1SS00LVY3N0dhaFl0dW5rQnJrSHVCRmdn0gGGAkFVX3lxTE43Z3ZZVlZVeU9hQlZ4X0F0QlZxclZ6dnFuQVZEazRMbXhVVjEzMWEtMm4xZ0twSzBveVJITVA0U1o4OElPTHVlWW1SaGdrUnFvME5hTlZIaUpxWk5tbVY1WWRmQ1c3SGlIQmpyRnhqWjhqSDY3U2lScUFoZ1F2bnZfeXh3T01PT1BDeVJWQ1EwUS1qYk5JbER0LThwTlJBV0U0T243aWEwN3VrRjY5LUVKMEo1bXBuazJVYTR0dG1GRTdERWtUcXYwRWxUM0gtbGNtY2FYT1RZampXM0xoTjRydVVsMjd0S2h0amVUUjVJLTQtVjc3R2FoWXR1bmtCcmtIdUJGZ2c?oc=5",
-      "published_at": "2026-08-15T12:25:51Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-17T16:56:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -299,7 +300,7 @@
       "published_at": "2026-08-14T19:35:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-17T17:56:37Z"
+      "observed_at": "2026-08-17T19:08:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -399,7 +400,7 @@
       "published_at": "2026-08-14T00:36:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-17T15:51:41Z"
+      "observed_at": "2026-08-17T19:08:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -714,7 +715,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-17T17:57:29Z",
+    "generated_at": "2026-08-17T19:09:23Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -727,21 +728,21 @@
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
-      "access": "SELECTIVE",
+      "access": "RESTRICTED",
       "risk": "EXTREME",
       "legal": "DISPUTED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
-      "access": "Selectivo / condicionado",
+      "access": "Restringido",
       "risk": "Extremo",
       "legal": "Régimen disputado"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
-      "access": "Selective / conditional",
+      "access": "Restricted",
       "risk": "Extreme",
       "legal": "Disputed regime"
     },
@@ -749,9 +750,9 @@
     "scores": {
       "passage": 12.532,
       "closure": 0,
-      "traffic_reduction": 4.15,
-      "access_restriction": 5.66,
-      "risk": 57.4
+      "traffic_reduction": 5.15,
+      "access_restriction": 4.1,
+      "risk": 53.58
     },
     "source_counts": {
       "passage": 6,
@@ -815,7 +816,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-17T17:57:29Z",
+        "published_at": "2026-08-17T19:09:23Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -871,23 +872,23 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Is China seeking to copy Iran’s Strait of Hormuz blockade around Taiwan? - Al Jazeera",
+        "kind": "RISK_SEVERE",
+        "title": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz - Al Jazeera",
         "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNc1U5Rnh2OEQ4VnJTWmlpU2RKTTlfc3NUTkEzLVA4VXAxT0Nya2E5X1U0SVpYRkpWNEdDNVZFYnVGSlVNejhwTndhaE1SWEFKYXo3ZWEwNkFnRHdkNjd5NTVVci1Md3VJYjhBWUsyWmc4SlMwdDJYZ1VkYWFUa2phTEJtSnl6MEZEZ1hpZ2JCZ20tOHdoXy1odU9tcEotdTZIZTRXMXBvT0xCNEt4R3JvSXpPazFFZXpMNkZGQkJ30gHDAUFVX3lxTE40NTlySGhBSHBnb2dyQXJUdW1ETnlMN0NodTJRN3A0VVg5RTlDSkJzclRkTWlDYng0aFpqcVpCRXQ3OGdabFlfbjdxcUJ6NlBxdmpNU2JmZXRtNVhMS0RoWE12SXZuOFJXNnJmb3NwdEJPLXdMZEdkbV9paVoxQzRYLUNjQktTcktPcnNrazFiUzZRUHAydDBjUWE0YV9xVFFoQmRmUjhEV1VVc0tyN0hISGZ1OFZLMVU0WVUyTTFGcXFBNA?oc=5",
-        "published_at": "2026-08-15T11:30:47Z",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQem5NN3dXREFuR3F1YmR6UGZ3Y05uZGxfVFdOMmxDdE1DekEzVUUwTjUwUFI5YWhHTm9tMmN2a1ZXZ2gwSzcteG85MlNna1BvLVhQNUdaa1M2VUtrYVdFRXJlS09vdEctOFB1LUpwZHQzOEc2ZkY2V0E0Wm5fY2J0Uk5Oa3p0ekh2Sy14cXJsVGhvaE5IejlSbElZd2M5aWZyT0t2Rlo3bVhGaWNCOVHSAbMBQVVfeXFMT05jRkpzcEVyYUJUTXVfNDQyUTVGNXlMX3kyVFc3UDZPWExiRTMtQzJ2Y3BETG9rWE4tRTBmTk90emJMbjY3Y0REUTlSTUVjb1czYlo1amVjUlpNNTI5aGhtQkdfUXB4enVqdVBpU0lSalJUV1BabXp6alVDUnd5UTBrM2tFTnNRSVBHODlla1ZXOTA1dGctUjQwck5vc05VZHlYcVBhdFlDWEN4el9VSi1yX0U?oc=5",
+        "published_at": "2026-08-14T00:36:07Z",
         "tier": 2,
         "weight": 2.0,
-        "provider": "Google News RSS",
+        "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 1.56,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
+        "effective_weight": 1.24,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 68,
+      "signals_considered": 64,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
