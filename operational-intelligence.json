@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-17T23:49:42Z",
+  "generated_at": "2026-08-18T02:00:56Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -13,38 +13,38 @@
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
-    "access": "SELECTIVE",
+    "access": "RESTRICTED",
     "risk": "EXTREME",
-    "legal": "DISPUTED"
+    "legal": "OPEN_LEGAL"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
-    "access": "Selectivo / condicionado",
+    "access": "Restringido",
     "risk": "Extremo",
-    "legal": "Régimen disputado"
+    "legal": "Sin cierre formal reconocido"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
-    "access": "Selective / conditional",
+    "access": "Restricted",
     "risk": "Extreme",
-    "legal": "Disputed regime"
+    "legal": "No recognised formal closure"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 10.062,
+    "passage": 8.762,
     "closure": 0,
     "traffic_reduction": 7.15,
-    "access_restriction": 6.1,
-    "risk": 48.04
+    "access_restriction": 2.62,
+    "risk": 45.2
   },
   "source_counts": {
-    "passage": 5,
+    "passage": 4,
     "closure": 0,
     "primary_sources": 4
   },
-  "latest_confirmed_transit_at": "2026-08-17T10:31:53Z",
+  "latest_confirmed_transit_at": "2026-08-17T05:48:48Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -62,7 +62,7 @@
       "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -71,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-17T23:49:42Z",
+      "published_at": "2026-08-18T02:00:56Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -112,21 +112,6 @@
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "Oil rises after US threatens indefinite blockade of Iran; set for weekly gains - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOeHh3dmRQTVJOaXBOODZqNzdueG9RbzJ0VUZ0TTJ3UGNyaXFfOUJ4c1BsWXdKXzFWY21VZTdaaHpySzhxYXFIYnBVcUpsWDdUUE1od3pKN2psUWI1dS10enVtNzBDX0xBQUpqNmkxVE1xZE1scnFHeS1DQkM4YTRwOE01NXpwU3RWREhIWGFZMlFTcndNQzRWc3NrM0xWa2hwdlMzSE5IeEhqUzVJVFBv?oc=5",
-      "published_at": "2026-08-14T01:40:31Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 2.48,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
-    },
-    {
       "kind": "RISK_SEVERE",
       "title": "Iran, Oman Home In on Hormuz Strait Deal as Ship Attacks Mount - Bloomberg.com",
       "source": "Bloomberg",
@@ -157,23 +142,38 @@
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "RISK_SEVERE",
-      "title": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQem5NN3dXREFuR3F1YmR6UGZ3Y05uZGxfVFdOMmxDdE1DekEzVUUwTjUwUFI5YWhHTm9tMmN2a1ZXZ2gwSzcteG85MlNna1BvLVhQNUdaa1M2VUtrYVdFRXJlS09vdEctOFB1LUpwZHQzOEc2ZkY2V0E0Wm5fY2J0Uk5Oa3p0ekh2Sy14cXJsVGhvaE5IejlSbElZd2M5aWZyT0t2Rlo3bVhGaWNCOVHSAbMBQVVfeXFMT05jRkpzcEVyYUJUTXVfNDQyUTVGNXlMX3kyVFc3UDZPWExiRTMtQzJ2Y3BETG9rWE4tRTBmTk90emJMbjY3Y0REUTlSTUVjb1czYlo1amVjUlpNNTI5aGhtQkdfUXB4enVqdVBpU0lSalJUV1BabXp6alVDUnd5UTBrM2tFTnNRSVBHODlla1ZXOTA1dGctUjQwck5vc05VZHlYcVBhdFlDWEN4el9VSi1yX0U?oc=5",
-      "published_at": "2026-08-14T00:36:07Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "legacy-engine",
+      "kind": "TRAFFIC_SEVERELY_REDUCED",
+      "title": "Hormuz Tanker Traffic Slows to a Trickle - Crude Oil Prices Today | OilPrice.com",
+      "source": "Crude Oil Prices Today | OilPrice.com",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNb2NEc0V3MHNBMEdtTU9iRTRYT19rVDlMQkhIMzMyVURubTdMR2Z0cENaTmIwelpqMHpvSmdhcTdBYzJTUF95ZHpPNDFLR3FpYmFtbU8tYmMyWXlWTS1sU0hGeWk5TDl5b3Fod0lsX3ppT19wMUZMRm5kNHc2Y2tVbDNSWTUtY2tqZmVLMzBJaDY0NFRKdk5ockZjLWjSAaIBQVVfeXFMUGJLT0o0Q0V5ZzJmbEhDS1l2N0xPdGpNcUQ2dWY4MHU2dEE1VVR0Q1g0SlZfR0JIMGdscGJEMjdaNklaZlRVZ3IxUUNQSnE0Q1RHRDNQNDBMMGRoUENqS1V0cFhrYW81eG5nTXZRMmtLZFl0Y3V2TExVMWdpa09WejQ1bXRLSHA0dVFMaXpLWFpoV3VTYUloWXZITWhiaEV4NmZn?oc=5",
+      "published_at": "2026-08-17T05:30:00Z",
+      "tier": 1,
+      "weight": 1.15,
+      "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 1.24,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
+      "effective_weight": 1.15,
+      "kind_label_es": "Tráfico muy reducido",
+      "kind_label_en": "Severely reduced traffic"
+    },
+    {
+      "kind": "TRAFFIC_REDUCED",
+      "title": "US stocks fall on spiking bond yields, higher oil prices - Yahoo Finance UK",
+      "source": "Yahoo Finance UK",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9uTnVJQl9rZGJnZGNVNXZ5Smx3dmplaEhMcUhOdldSUjJhTzFJSjkweC1HTktZQmtoMGJmdHVWME50Ul9ISjY3QVo4Um4tTWJnWFh6c3VQR3ZvVnVyTmRoTTJyUjQwMDh2TlItdFBqZ1N1aTNpa3FZNmM0Rmk5Zw?oc=5",
+      "published_at": "2026-08-17T20:55:04Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Tráfico reducido",
+      "kind_label_en": "Reduced traffic"
     }
   ],
   "diagnostics": {
-    "signals_considered": 62,
+    "signals_considered": 56,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
