@@ -1,50 +1,50 @@
 {
   "version": 7,
-  "generated_at": "2026-08-18T08:06:31Z",
+  "generated_at": "2026-08-18T09:05:48Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
   "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
   "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
   "operational_label_en": "Physical passage exists, but flows are severely degraded",
-  "confidence": "BAJA",
-  "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
-  "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
+  "confidence": "MEDIA",
+  "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+  "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
     "access": "RESTRICTED",
     "risk": "EXTREME",
-    "legal": "DISPUTED"
+    "legal": "OPEN_LEGAL"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
     "access": "Restringido",
     "risk": "Extremo",
-    "legal": "Régimen disputado"
+    "legal": "Sin cierre formal reconocido"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
     "access": "Restricted",
     "risk": "Extreme",
-    "legal": "Disputed regime"
+    "legal": "No recognised formal closure"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 12.286,
+    "passage": 16.367,
     "closure": 0,
     "traffic_reduction": 7.0,
-    "access_restriction": 4.62,
-    "risk": 55.54
+    "access_restriction": 2.62,
+    "risk": 61.88
   },
   "source_counts": {
-    "passage": 7,
+    "passage": 12,
     "closure": 0,
-    "primary_sources": 4
+    "primary_sources": 3
   },
-  "latest_confirmed_transit_at": "2026-08-18T06:50:00Z",
+  "latest_confirmed_transit_at": "2026-08-18T08:20:04Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -71,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-18T07:22:03Z",
+      "published_at": "2026-08-18T09:05:48Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -83,7 +83,7 @@
     },
     {
       "kind": "TRANSIT_CONFIRMED",
-      "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - AP News",
+      "title": "2 UAE tankers attacked while transiting Strait of Hormuz, and other news from the Middle East - apnews.com",
       "source": "Associated Press",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU19BM2l2RGhNUW5aWGxpdXJRU1QwVWtzekJ1ckw2bUdzWlhBSWcxX3U3T1JVblRkYW92MEhkaS1rakhweUN6MnlYc0xVbzVQcUtwdXRBbGFPUzV5T2Q5a3lmbVNqdE0zZFgyT0J3OGt6bzlwT1dWb2dtdVBieEtuOVFQXzdlNFdzUm8tU3FrV1JQS1hEUGpscjl3Q1BRczR4RlE?oc=5",
       "published_at": "2026-08-14T19:35:00Z",
@@ -113,7 +113,7 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Iran, Oman Home In on Hormuz Strait Deal as Ship Attacks Mount - Bloomberg.com",
+      "title": "Iran, Oman Home In on Hormuz Strait Deal as Ship Attacks Mount - bloomberg.com",
       "source": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOOS04WjZoR3dBZ21aRGRYU3FaZnZwTmRMVlNPZzdRd3pKeTg3Q2ZRaHhmdS1HQ2RFdkNnaEFRTkRFTlNGYWc5VFg0LVBYaHZSZTR6Y05vYWhPRWs5Mmk1OG1zZXJPTzBXY3hrOFVpTmFWemxRdDktY09YSDFkaDZLZjdEQXhxZno2bWRjeC1nYTdHU3FTU1U2UW0yRjNKcnRIN3JYUGdqX0t3a1VaLVdWdFNR?oc=5",
       "published_at": "2026-08-15T13:00:56Z",
@@ -158,10 +158,10 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Ship struck in Strait of Hormuz amid rising US-Iran tensions, says UKMTO - Firstpost",
-      "source": "Firstpost",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPa0I3ekVuWTNNVTNlOWdLVGFSbTl1VXJPN0dlRDh6Vy1QcG1HQ05pYldxTkhGS2ctMDhrTVZSVjZvUVlXWkE0Z3dmWjlRd283U2ZWZ215ZDV5NkVFVm9KeVJFU3diUEFDaTRKa3NhWl9CT1BoWHJxNW5ET2lSNEtLMXE5X1FseTc3OFQ0WmZlZlJJcG1OM0tKNFZGTEIzY0IweGRxMWxCZHRGZVY4enVrV2laZDJPQTda0gG-AUFVX3lxTE5QRTBWamhibEdxcENPQ1pqb1NBRGxMblNVc0JOdkttRmNzUmo2dXFobGpQa1N4REN4YXJXU3hGUmktNi1LZkJDSGFob1pCcGl4NVRPSGFpUEprUGNPXzdqVDZ3RGtIZGhCQ3hHd0RlVzJUcWpWc0dIUzRDeDI1cGR5ZEp2ZW51WllkREJuZ2ppTTdhQmZBSjBQQkkzLWpMN0JGUzFzeVdOUmxVTVZXT2laUkkxbnBqZEJ1UV93SUE?oc=5",
-      "published_at": "2026-08-18T07:14:20Z",
+      "title": "Vessel struck in Strait of Hormuz, crew casualty reported, maritime agency says - The Times of Israel",
+      "source": "The Times of Israel",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPT3dNdURhVHc0dUV4UmtQSF9SdkpSUURuQWhHSGNOZWdIcFBOd3k4a0h2bDZnYTg0SHBXb0pnaTJFU3BZV0tJcXB1bFVrTGZsTmpTZ05jNUtpenlEd1BpWmp3eTFENGlLd0dBWTE3azFQMnhaZHBWSVRoUUI4QmloVnhoZjgyUTVtN2V0bDZHZkg1TkNKRGxPR3pfODMzMDhxX01SU0NWZ3o0ckxE0gGyAUFVX3lxTE1kLXc5VUk4bTdvR2JJa0hMaHk2bVRvenZNVFg0b0RJNzR1MUREeVJ0ejJPTm1BaWl6M2FjNmtKSjYweW40SjYwTzRmYzVBRG42NFdhbzVva0d6S1pGRXl5UlpVZWZ4OFhVQm5lS2lyVnpLOGFZTkgySHY3Q2kwdmdrZ1haZjRpT1J1UUlqb1F1YmhKWndOM1NXcDYwUF8zakxRSjZtQjJZeG1qRkVJUF80VUE?oc=5",
+      "published_at": "2026-08-18T08:43:22Z",
       "tier": 1,
       "weight": 1.0,
       "provider": "Google News RSS",
@@ -173,17 +173,11 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 1,
-    "provider_errors": [
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable"
-    ],
+    "signals_considered": 79,
+    "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
     "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
     "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-  },
-  "carried_forward": true
+  }
 }
