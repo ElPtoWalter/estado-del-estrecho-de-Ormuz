@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-18T14:08:45Z",
+  "generated_at": "2026-08-18T15:03:59Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,39 +33,24 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 41.548,
+    "passage": 35.048,
     "closure": 0,
-    "traffic_reduction": 4.0,
-    "access_restriction": 1.9,
-    "risk": 68.46
+    "traffic_reduction": 3.0,
+    "access_restriction": 3.9,
+    "risk": 68.56
   },
   "source_counts": {
-    "passage": 25,
+    "passage": 24,
     "closure": 0,
     "primary_sources": 4
   },
-  "latest_confirmed_transit_at": "2026-08-18T12:57:40Z",
+  "latest_confirmed_transit_at": "2026-08-18T13:38:00Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "ALTA"
   },
   "evidence": [
-    {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "Ship attacked during Strait of Hormuz transit and other news from the Middle East - AP News",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQUGE0ZXdacDJQQU1FSTNKRzRoV21MR3h5R1FIekhsU054VE9WSzdUdThYNmY3emZwQWpXUFczUklKU2MzZVdUeV9ZaWtoaF9IUXRaT24xS0Y2MmdlbnlxT1JicndhbWpfb1N4Z09GeDV4UGMyQUdLb3Utb3pqNTNDQTR2amh2cTVGZTJ5S3FVVzlWZmoyNHNLUy12WnM3YUtiMW01Vnp5TmRQWjdQS3c?oc=5",
-      "published_at": "2026-08-18T11:39:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 4.0,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
-    },
     {
       "kind": "RISK_SEVERE",
       "title": "Seafarer killed in latest Hormuz attack - Lloyd's List",
@@ -101,7 +86,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-18T14:08:45Z",
+      "published_at": "2026-08-18T15:03:59Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -170,10 +155,25 @@
       "effective_weight": 2.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Vessel Struck In Strait Of Hormuz, Crew Injured - marinelink.com",
+      "source": "marinelink.com",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNWVowNnNrSm5QWWtSNXk3eWRtTlg2cndPR2tBRTJYRjJzTGpSS2ZuUTJMTEFnNzJFajA2QzM4M2p0aVRyMkNsQUd1WlQxZXdUV2t5WnVVYzEzdndUZlJEajdzRE12aHpsZXN6ZnZINUJMeWg2WlNNRm1YUVdtOWs0QVhIMmVnUQ?oc=5",
+      "published_at": "2026-08-18T04:16:10Z",
+      "tier": 2,
+      "weight": 2.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 101,
+    "signals_considered": 100,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
