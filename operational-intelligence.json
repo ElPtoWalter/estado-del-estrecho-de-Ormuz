@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-18T20:52:42Z",
+  "generated_at": "2026-08-18T21:50:56Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -13,34 +13,34 @@
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
-    "access": "SELECTIVE",
+    "access": "RESTRICTED",
     "risk": "EXTREME",
     "legal": "CLOSURE_CLAIMED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
-    "access": "Selectivo / condicionado",
+    "access": "Restringido",
     "risk": "Extremo",
     "legal": "Cierre declarado por una parte"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
-    "access": "Selective / conditional",
+    "access": "Restricted",
     "risk": "Extreme",
     "legal": "Closure claimed by one party"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 31.2,
+    "passage": 33.8,
     "closure": 0,
     "traffic_reduction": 2.0,
-    "access_restriction": 5.52,
-    "risk": 70.68
+    "access_restriction": 4.9,
+    "risk": 75.68
   },
   "source_counts": {
-    "passage": 24,
+    "passage": 26,
     "closure": 0,
     "primary_sources": 2
   },
@@ -101,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-18T20:52:42Z",
+      "published_at": "2026-08-18T21:50:56Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 97,
+    "signals_considered": 104,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
