@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-08-18T17:56:03Z",
-  "last_success_at": "2026-08-18T17:56:03Z",
+  "checked_at": "2026-08-18T19:08:15Z",
+  "last_success_at": "2026-08-18T19:08:15Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,17 +22,17 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-18T17:56:03Z"
+      "observed_at": "2026-08-18T19:08:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Ship attack in Hormuz results in one casualty while Trump says strait is 'open and operating' - CNBC",
+      "title": "Hormuz ship attack results in death as Trump says strait is open",
       "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNQll2LTZWcThSeTZYWjFBZXE0dVUxSl95V0RVdVhyVGRoZ2x3U28xcmxLWkFEN3ZVSnV1TVZaamh1UHBJd28xT19LN1JBNXdydndscmVqUHBPSUtkaXdBbFRyTnJKZGNlSmtQUnNhX0pka1VKS2xHVEdrTkd6U1o5MFd30gGHAUFVX3lxTE9JSG4tT1c5eF9DUEtCeVF6V1pYWnUtai1uY2hnNERGZ25hR2Y0OHBKR2l2b1dtcEhpaDRxWmdYMWlYMFUzRUJWb0VXTE0wUUczbktXV0Y2alc2RzdfT3hZU1FIUHVreFE0aDNvUS1mSTRBNmk0MEZReWZya3BybHhxTUhPN0RiVQ?oc=5",
+      "source_url": "https://www.cnbc.com/2026/08/18/iran-war-strait-hormuz-ship-traffic-oil.html",
       "published_at": "2026-08-18T15:50:46Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-18T17:56:03Z"
+      "observed_at": "2026-08-18T19:08:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-18T17:56:03Z"
+      "observed_at": "2026-08-18T19:08:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,27 +52,26 @@
       "published_at": "2026-08-14T19:35:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-18T17:56:03Z"
+      "observed_at": "2026-08-18T19:08:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran, Oman Home In on Hormuz Strait Deal as Ship Attacks Mount - bloomberg.com",
+      "title": "Iran, Oman Home In on Hormuz Strait Deal as Ship Attacks Mount - Bloomberg",
       "source_name": "Bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOOS04WjZoR3dBZ21aRGRYU3FaZnZwTmRMVlNPZzdRd3pKeTg3Q2ZRaHhmdS1HQ2RFdkNnaEFRTkRFTlNGYWc5VFg0LVBYaHZSZTR6Y05vYWhPRWs5Mmk1OG1zZXJPTzBXY3hrOFVpTmFWemxRdDktY09YSDFkaDZLZjdEQXhxZno2bWRjeC1nYTdHU3FTU1U2UW0yRjNKcnRIN3JYUGdqX0t3a1VaLVdWdFNR?oc=5",
       "published_at": "2026-08-15T13:00:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-18T17:56:03Z"
+      "observed_at": "2026-08-18T19:08:15Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -85,8 +84,8 @@
       "declared": 0,
       "risk": 5
     },
-    "articles_considered": 43,
-    "signals_considered": 8,
+    "articles_considered": 44,
+    "signals_considered": 9,
     "current_cycle_evidence": 5,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -102,6 +101,16 @@
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Hormuz ship attack results in death as Trump says strait is open",
+      "source_name": "CNBC",
+      "source_url": "https://www.cnbc.com/2026/08/18/iran-war-strait-hormuz-ship-traffic-oil.html",
+      "published_at": "2026-08-18T15:50:46Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-18T19:08:15Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Ship attack in Hormuz results in one casualty while Trump says strait is 'open and operating' - CNBC",
@@ -130,7 +139,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-18T17:56:03Z"
+      "observed_at": "2026-08-18T19:08:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -210,7 +219,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-18T17:56:03Z"
+      "observed_at": "2026-08-18T19:08:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -254,6 +263,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Iran, Oman Home In on Hormuz Strait Deal as Ship Attacks Mount - Bloomberg",
+      "source_name": "Bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOOS04WjZoR3dBZ21aRGRYU3FaZnZwTmRMVlNPZzdRd3pKeTg3Q2ZRaHhmdS1HQ2RFdkNnaEFRTkRFTlNGYWc5VFg0LVBYaHZSZTR6Y05vYWhPRWs5Mmk1OG1zZXJPTzBXY3hrOFVpTmFWemxRdDktY09YSDFkaDZLZjdEQXhxZno2bWRjeC1nYTdHU3FTU1U2UW0yRjNKcnRIN3JYUGdqX0t3a1VaLVdWdFNR?oc=5",
+      "published_at": "2026-08-15T13:00:56Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-08-18T19:08:15Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Iran, Oman Home In on Hormuz Strait Deal as Ship Attacks Mount - bloomberg.com",
       "source_name": "Bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOOS04WjZoR3dBZ21aRGRYU3FaZnZwTmRMVlNPZzdRd3pKeTg3Q2ZRaHhmdS1HQ2RFdkNnaEFRTkRFTlNGYWc5VFg0LVBYaHZSZTR6Y05vYWhPRWs5Mmk1OG1zZXJPTzBXY3hrOFVpTmFWemxRdDktY09YSDFkaDZLZjdEQXhxZno2bWRjeC1nYTdHU3FTU1U2UW0yRjNKcnRIN3JYUGdqX0t3a1VaLVdWdFNR?oc=5",
@@ -261,16 +280,6 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-08-18T17:56:03Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran, Oman Home In on Hormuz Strait Deal as Ship Attacks Mount - Bloomberg",
-      "source_name": "Bloomberg",
-      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOOS04WjZoR3dBZ21aRGRYU3FaZnZwTmRMVlNPZzdRd3pKeTg3Q2ZRaHhmdS1HQ2RFdkNnaEFRTkRFTlNGYWc5VFg0LVBYaHZSZTR6Y05vYWhPRWs5Mmk1OG1zZXJPTzBXY3hrOFVpTmFWemxRdDktY09YSDFkaDZLZjdEQXhxZno2bWRjeC1nYTdHU3FTU1U2UW0yRjNKcnRIN3JYUGdqX0t3a1VaLVdWdFNR?oc=5",
-      "published_at": "2026-08-15T13:00:56Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-08-18T11:52:43Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -350,7 +359,7 @@
       "published_at": "2026-08-14T19:35:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-18T17:56:03Z"
+      "observed_at": "2026-08-18T19:08:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -691,21 +700,11 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-08-09T19:13:21Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Yemen Houthis claim responsibility for attack on Saudi oil refinery | Houthis",
-      "source_name": "The Guardian",
-      "source_url": "https://www.theguardian.com/world/2026/aug/09/yemen-houthis-saudi-oil-refinery-defence-pact-iran-strait-of-hormuz",
-      "published_at": "2026-08-09T15:11:28Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-08-09T19:13:21Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-18T17:56:41Z",
+    "generated_at": "2026-08-18T19:08:50Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -738,54 +737,24 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 41.548,
+      "passage": 44.148,
       "closure": 0,
       "traffic_reduction": 1.0,
-      "access_restriction": 3.9,
-      "risk": 71.84
+      "access_restriction": 4.9,
+      "risk": 65.16
     },
     "source_counts": {
-      "passage": 29,
+      "passage": 31,
       "closure": 0,
       "primary_sources": 4
     },
-    "latest_confirmed_transit_at": "2026-08-18T13:38:00Z",
+    "latest_confirmed_transit_at": "2026-08-18T16:56:22Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "ALTA"
     },
     "evidence": [
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Hormuz traffic holds firm as attacks intensify and diplomacy collapses - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUGc2WFVCYlFZUGEyclVGeldXdjBDcmxHVXFwY3FjLUZFRGJFSnBaQ19uRUpkSmNmM3A3c3h6QVlUQkFxdDFfWGc5U0luN3lBd0VqT3RKTFNSR29hNFlpM3FNU3RvaFFWM0NQUFBSa0ZIajU5SC15TThHcDl3RVlpMFFmNk9pQWNxbVpTVTMwajYtVGdRZ2dXaG9RY1NvZTg2dTFnMUdCRC0yejg?oc=5",
-        "published_at": "2026-08-18T16:25:55Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Seafarer killed as bulker struck in latest Strait of Hormuz attack - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVXhKaktJQ0lnODB0UzZrdFBhMkd4cHZvU2lJUWxRazhHVkNxOVo3ODdzbmJiSGswZkR2R2ZRbWZTQ3VzSWJYNHNXTEIzUndTUlM3MXU0VjNoNVRYYVhVRURpWFpjUFFHNnBVMlVUWTlTTXVMNU1lSW5lSkpSRjY0WHdn?oc=5",
-        "published_at": "2026-08-18T14:47:44Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
       {
         "kind": "RISK_SEVERE",
         "title": "Shipping slows through Strait of Hormuz after tanker attacks, data shows - Reuters",
@@ -806,7 +775,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-18T17:56:41Z",
+        "published_at": "2026-08-18T19:08:50Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -875,10 +844,40 @@
         "effective_weight": 2.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Iran, Oman Home In on Hormuz Strait Deal as Ship Attacks Mount - Bloomberg",
+        "source": "Bloomberg",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOOS04WjZoR3dBZ21aRGRYU3FaZnZwTmRMVlNPZzdRd3pKeTg3Q2ZRaHhmdS1HQ2RFdkNnaEFRTkRFTlNGYWc5VFg0LVBYaHZSZTR6Y05vYWhPRWs5Mmk1OG1zZXJPTzBXY3hrOFVpTmFWemxRdDktY09YSDFkaDZLZjdEQXhxZno2bWRjeC1nYTdHU3FTU1U2UW0yRjNKcnRIN3JYUGdqX0t3a1VaLVdWdFNR?oc=5",
+        "published_at": "2026-08-15T13:00:56Z",
+        "tier": 3,
+        "weight": 3.0,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.86,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Trump says U.S. has no talks planned with Iran as ships in the Strait of Hormuz still face attacks - Los Angeles Times",
+        "source": "Los Angeles Times",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPSVpXdXFKRWRIb2xIXzQyOVF5em0xLTJfMGlzSDVQNEN0M0cyWm5Oang0Wk9DejJJM2ctWHIxUEpNSzJxTFB2emhPZnBQOWF6VGZrdUY4bXVVZnFDcUlBZVNzUHc5cTlPVkFyazZiSTdILWM0a2RRRGpsNTY3cXdHOWQ5eDhjNlEycUhJNkxDaTBHWUtVUXYtUlhvTFZYOFpDYUctRFRmdXpyLVJLcFYzMks4RFE2eGNmbW5Ya1d4NzNaS2FiRkVDMTczOVM0Tm40U2ZaY09VU0xQRU5xSS01bQ?oc=5",
+        "published_at": "2026-08-18T18:42:11Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 101,
+      "signals_considered": 103,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
