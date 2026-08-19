@@ -4,9 +4,9 @@
   "operational_status": "HIGH_RISK_UNCONFIRMED",
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
-  "confidence": "ALTA",
-  "checked_at": "2026-08-19T10:56:28Z",
-  "last_success_at": "2026-08-19T10:56:28Z",
+  "confidence": "MEDIA",
+  "checked_at": "2026-08-19T11:52:54Z",
+  "last_success_at": "2026-08-19T11:52:54Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T10:56:28Z"
+      "observed_at": "2026-08-19T11:52:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,17 +32,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T10:56:28Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran latest warning to the US signals the hardliners are just getting started",
-      "source_name": "CNN",
-      "source_url": "https://us.cnn.com/2026/08/19/middleeast/iran-hardliners-just-getting-started-intl",
-      "published_at": "2026-08-19T04:01:29Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-19T10:56:28Z"
+      "observed_at": "2026-08-19T11:52:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +42,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-19T10:56:28Z"
+      "observed_at": "2026-08-19T11:52:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,31 +52,32 @@
       "published_at": "2026-08-15T13:00:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-19T10:56:28Z"
+      "observed_at": "2026-08-19T11:52:54Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 10.62
+      "risk": 8.37
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5
+      "risk": 4
     },
-    "articles_considered": 60,
-    "signals_considered": 11,
-    "current_cycle_evidence": 5,
+    "articles_considered": 50,
+    "signals_considered": 8,
+    "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
@@ -94,7 +85,7 @@
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-08-19T06:52:12Z",
-    "current_cycle_count": 5,
+    "current_cycle_count": 4,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -109,7 +100,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T10:56:28Z"
+      "observed_at": "2026-08-19T11:52:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -179,7 +170,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T10:56:28Z"
+      "observed_at": "2026-08-19T11:52:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -269,7 +260,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-19T10:56:28Z"
+      "observed_at": "2026-08-19T11:52:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -319,7 +310,7 @@
       "published_at": "2026-08-15T13:00:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-19T10:56:28Z"
+      "observed_at": "2026-08-19T11:52:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -704,7 +695,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-19T10:56:47Z",
+    "generated_at": "2026-08-19T11:53:33Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -737,11 +728,11 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 28.328,
+      "passage": 27.028,
       "closure": 0,
       "traffic_reduction": 2.9,
       "access_restriction": 4.9,
-      "risk": 66.3
+      "risk": 72.48
     },
     "source_counts": {
       "passage": 22,
@@ -752,9 +743,24 @@
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
-      "confidence": "ALTA"
+      "confidence": "MEDIA"
     },
     "evidence": [
+      {
+        "kind": "RISK_ELEVATED",
+        "title": "UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdzR1UDJHQ1pYM2Y2dzJ4Wmo3d3VCNFBEbDZQamtaSm5wdF9uWUdwRzdNa0ZtTFdzaUppUkdtelNyaDV0ZnU4aWY1aUlBLWhNdzN2VmhvZzJNdk8zM3gwSXZvc0p6Zld0UHhRQ0RjY2NTekZOekZnMEhwWlo1OXc2Mk1KZ0ZkZHF4WFR5NVRMejB2eDQxdXJJR0VocU5QVmRHbHFTZXlJNWRfdE43Sko3cXlYalB2VmFWSFczb044NlZEU21vOTNHOHpB?oc=5",
+        "published_at": "2026-08-19T11:27:21Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Riesgo elevado",
+        "kind_label_en": "Elevated risk"
+      },
       {
         "kind": "RISK_SEVERE",
         "title": "Hormuz traffic holds firm as attacks intensify and diplomacy collapses - Lloyd's List",
@@ -805,7 +811,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-19T10:56:47Z",
+        "published_at": "2026-08-19T11:53:33Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -821,21 +827,6 @@
         "source": "Al Jazeera",
         "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUmllc1dobzVIUzRBUl9ydXdrRTlTUDFwZW9qWGZlbFAwcWh4MkhTX3NjOUQ3S2tlMVRudUZ3TVR6bk9SdWFQN3g2QmNpYm1ZT3gxTEJfVVdnNmFMS01nNXNaMkZ3T0hQcFpOM0RUdTV0b0E5a1UxUHR0dWZ3QUlhSkZzWkl6MGsyVVFWMDNVRTNHeWx2NExYUlFNcnU4MDNBR0xKaEtlcjlBcElhQXRzbmlFOGPSAboBQVVfeXFMUHdKbW85MVRhT242aE5QLVZENFc5VVNSeTVHNHZzZkJPSHdnY1JGd2J5UEk0RzhKYXdmNWs5c2xTWHQ4UUNkRXVYaTZuQkNySWt4dzZtQzNHNnhYOWRRMVVGaFl6NlpNaGxfQ1d1TGQtbzl3TEJCUG00WG50YUpkNk1fc2laQTBOVW95SnYyZlNsZDNVcjdwc1V3ZXY4TnBSMWR4dFpPMURRQkUxMURQUlFyRHo2VHgtYlNn?oc=5",
         "published_at": "2026-08-19T03:39:26Z",
-        "tier": 2,
-        "weight": 2.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 2.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Vessel Struck In Strait Of Hormuz, Crew Injured - marinelink.com",
-        "source": "marinelink.com",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNWVowNnNrSm5QWWtSNXk3eWRtTlg2cndPR2tBRTJYRjJzTGpSS2ZuUTJMTEFnNzJFajA2QzM4M2p0aVRyMkNsQUd1WlQxZXdUV2t5WnVVYzEzdndUZlJEajdzRE12aHpsZXN6ZnZINUJMeWg2WlNNRm1YUVdtOWs0QVhIMmVnUQ?oc=5",
-        "published_at": "2026-08-18T19:27:38Z",
         "tier": 2,
         "weight": 2.0,
         "provider": "Google News RSS",
@@ -877,7 +868,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 90,
+      "signals_considered": 94,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
