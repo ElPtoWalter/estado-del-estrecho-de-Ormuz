@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-19T07:22:13Z",
+  "generated_at": "2026-08-19T08:05:41Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -15,32 +15,32 @@
     "traffic": "REDUCED",
     "access": "RESTRICTED",
     "risk": "EXTREME",
-    "legal": "CLOSURE_CLAIMED"
+    "legal": "DISPUTED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
     "access": "Restringido",
     "risk": "Extremo",
-    "legal": "Cierre declarado por una parte"
+    "legal": "Régimen disputado"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
     "access": "Restricted",
     "risk": "Extreme",
-    "legal": "Closure claimed by one party"
+    "legal": "Disputed regime"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 30.94,
+    "passage": 31.448,
     "closure": 0,
     "traffic_reduction": 1.0,
-    "access_restriction": 3.9,
-    "risk": 69.42
+    "access_restriction": 4.9,
+    "risk": 69.32
   },
   "source_counts": {
-    "passage": 24,
+    "passage": 25,
     "closure": 0,
     "primary_sources": 2
   },
@@ -48,7 +48,7 @@
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "confidence": "ALTA"
+    "confidence": "MEDIA"
   },
   "evidence": [
     {
@@ -101,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-19T07:22:13Z",
+      "published_at": "2026-08-19T08:05:41Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 93,
+    "signals_considered": 94,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
