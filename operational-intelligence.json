@@ -1,13 +1,13 @@
 {
   "version": 7,
-  "generated_at": "2026-08-19T04:10:45Z",
+  "generated_at": "2026-08-19T05:04:42Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
   "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
   "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
   "operational_label_en": "Physical passage exists, but flows are severely degraded",
-  "confidence": "MEDIA",
+  "confidence": "ALTA",
   "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
   "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "dimensions": {
@@ -15,36 +15,36 @@
     "traffic": "REDUCED",
     "access": "RESTRICTED",
     "risk": "EXTREME",
-    "legal": "CLOSURE_CLAIMED"
+    "legal": "DISPUTED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
     "access": "Restringido",
     "risk": "Extremo",
-    "legal": "Cierre declarado por una parte"
+    "legal": "Régimen disputado"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
     "access": "Restricted",
     "risk": "Extreme",
-    "legal": "Closure claimed by one party"
+    "legal": "Disputed regime"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 34.97,
+    "passage": 32.37,
     "closure": 0,
     "traffic_reduction": 1.0,
-    "access_restriction": 3.9,
-    "risk": 71.8
+    "access_restriction": 4.9,
+    "risk": 70.24
   },
   "source_counts": {
-    "passage": 27,
+    "passage": 25,
     "closure": 0,
-    "primary_sources": 2
+    "primary_sources": 3
   },
-  "latest_confirmed_transit_at": "2026-08-18T16:56:22Z",
+  "latest_confirmed_transit_at": "2026-08-18T13:38:00Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -53,31 +53,16 @@
   "evidence": [
     {
       "kind": "RISK_SEVERE",
-      "title": "Hormuz traffic holds firm as attacks intensify and diplomacy collapses - Lloyd's List",
-      "source": "Lloyd's List",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUGc2WFVCYlFZUGEyclVGeldXdjBDcmxHVXFwY3FjLUZFRGJFSnBaQ19uRUpkSmNmM3A3c3h6QVlUQkFxdDFfWGc5U0luN3lBd0VqT3RKTFNSR29hNFlpM3FNU3RvaFFWM0NQUFBSa0ZIajU5SC15TThHcDl3RVlpMFFmNk9pQWNxbVpTVTMwajYtVGdRZ2dXaG9RY1NvZTg2dTFnMUdCRC0yejg?oc=5",
-      "published_at": "2026-08-18T16:45:01Z",
-      "tier": 4,
-      "weight": 4.0,
+      "title": "UK authorities: Vessel in Strait of Hormuz hit by projectile, one casualty - foxbaltimore.com",
+      "source": "foxbaltimore.com",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNOHRVbENURXZDVWFzbThiQ20ycmpTUnZuYnBiQ0JKbVMzR184cFpwMl9GOVUwQnp4aVNDNUwzSWhIWlBVTTJ2X0dhMUJ0clVWZmNKMlVnM3dzcHJEMExPNjJWVjgyc2hDWHRuRVBXZkM4N1N4ZV9xSmZjZzFLYWlKVUNKOXJjVDZMTTQ1d0hqLUpMY3dUZXBFS2otSHJRdVZXeElLaldBaXhkdGtVbktiQ05MUnUzdUN0MTJGTmFScXB1UEtObWRscHJnMHJGWUJrZ0UySWlORkxhd0Y3NGQ3QW8wZXdfTnhBV3IwM282M2xqSDB2SnVKdG1Hb1paSGl2?oc=5",
+      "published_at": "2026-08-18T20:25:37Z",
+      "tier": 5,
+      "weight": 5.0,
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 4.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Seafarer killed as bulker struck in latest Strait of Hormuz attack - Lloyd's List",
-      "source": "Lloyd's List",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVXhKaktJQ0lnODB0UzZrdFBhMkd4cHZvU2lJUWxRazhHVkNxOVo3ODdzbmJiSGswZkR2R2ZRbWZTQ3VzSWJYNHNXTEIzUndTUlM3MXU0VjNoNVRYYVhVRURpWFpjUFFHNnBVMlVUWTlTTXVMNU1lSW5lSkpSRjY0WHdn?oc=5",
-      "published_at": "2026-08-18T14:47:44Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 4.0,
+      "effective_weight": 5.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -101,7 +86,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-19T04:10:45Z",
+      "published_at": "2026-08-19T05:04:42Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -113,7 +98,7 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Vessel hit by 'unknown projectile' in Strait of Hormuz, UKMTO says - aljazeera.com",
+      "title": "Vessel hit by 'unknown projectile' in Strait of Hormuz, UKMTO says - Al Jazeera",
       "source": "Al Jazeera",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdnhsTnlwVkVUTjEzcmw0cVhsUDZxVUoyUDl6WkNSSXp1SEx1c1AzQ1pwcloxN3RnMUV5SU9oSnJzcm1aQkRIV1hPMnBqWDAwMGp4T1g3YmxJT05qSGVxZm5LcDlmY3p5UkY5el82UHplTzR0R3dMWUQ1dzRvU2sxNTUxanRDVlMwVV9ab3EzRkYwLVFYWVdLcWVpXzVXLVktcG9odVdGSdIBrAFBVV95cUxQWmg0WGhUZzNuTDBDYkNzeDdJMjRVMEJRRFJLcENEaXhXNDR2T2tyVzVvMF9YSmtLYkRObGEzSE9NSmNUQTFfYXFseDFFYm40VmNSbkNFNGdqcDY0NWttUlpjbmFzMmFobW9pVGdMTEplNHFaTlBlaXZvZmM3N013Nk1UMF84SnkyT0FyQl9iLXpQTEZpWnVCY2dnbzJvblVJMUtreWF1TW5nZnps?oc=5",
       "published_at": "2026-08-18T06:50:35Z",
@@ -143,7 +128,7 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Iran, Oman Home In on Hormuz Strait Deal as Ship Attacks Mount - Bloomberg",
+      "title": "Iran, Oman Home In on Hormuz Strait Deal as Ship Attacks Mount - Bloomberg.com",
       "source": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOOS04WjZoR3dBZ21aRGRYU3FaZnZwTmRMVlNPZzdRd3pKeTg3Q2ZRaHhmdS1HQ2RFdkNnaEFRTkRFTlNGYWc5VFg0LVBYaHZSZTR6Y05vYWhPRWs5Mmk1OG1zZXJPTzBXY3hrOFVpTmFWemxRdDktY09YSDFkaDZLZjdEQXhxZno2bWRjeC1nYTdHU3FTU1U2UW0yRjNKcnRIN3JYUGdqX0t3a1VaLVdWdFNR?oc=5",
       "published_at": "2026-08-15T13:00:56Z",
@@ -155,6 +140,21 @@
       "effective_weight": 1.86,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "Strait of Hormuz traffic slows amid blockade - The Jerusalem Post",
+      "source": "The Jerusalem Post",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBiQ2FHc1FtY1lqVWxJaEU2M3E5TnZIcTVrNHNoY0ZhemNQZjlDa2VMUkhfNlZ0UFFWcExVeU5nRFg5UXRlU25HNTdQSzM1Q3hTWnNRcV9oVUs4X0ItaUpYZWgwdnVaUUJDdnc?oc=5",
+      "published_at": "2026-08-19T03:51:19Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
     },
     {
       "kind": "RISK_SEVERE",
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 98,
+    "signals_considered": 97,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
