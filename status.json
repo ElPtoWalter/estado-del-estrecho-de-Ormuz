@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-19T05:04:21Z",
-  "last_success_at": "2026-08-19T05:04:21Z",
+  "checked_at": "2026-08-19T05:57:56Z",
+  "last_success_at": "2026-08-19T05:57:56Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T05:04:21Z"
+      "observed_at": "2026-08-19T05:57:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-18T15:50:46Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T05:04:21Z"
+      "observed_at": "2026-08-19T05:57:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-19T05:04:21Z"
+      "observed_at": "2026-08-19T05:57:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,16 +52,17 @@
       "published_at": "2026-08-15T13:00:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-19T05:04:21Z"
+      "observed_at": "2026-08-19T05:57:56Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -74,7 +75,7 @@
       "declared": 0,
       "risk": 4
     },
-    "articles_considered": 51,
+    "articles_considered": 48,
     "signals_considered": 8,
     "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
@@ -99,7 +100,7 @@
       "published_at": "2026-08-18T15:50:46Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T05:04:21Z"
+      "observed_at": "2026-08-19T05:57:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -139,7 +140,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T05:04:21Z"
+      "observed_at": "2026-08-19T05:57:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -229,7 +230,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-19T05:04:21Z"
+      "observed_at": "2026-08-19T05:57:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -279,7 +280,7 @@
       "published_at": "2026-08-15T13:00:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-19T05:04:21Z"
+      "observed_at": "2026-08-19T05:57:56Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -694,14 +695,14 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-19T05:04:42Z",
+    "generated_at": "2026-08-19T05:58:34Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
     "operational_label_en": "Physical passage exists, but flows are severely degraded",
-    "confidence": "ALTA",
+    "confidence": "MEDIA",
     "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
     "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
     "dimensions": {
@@ -709,36 +710,36 @@
       "traffic": "REDUCED",
       "access": "RESTRICTED",
       "risk": "EXTREME",
-      "legal": "DISPUTED"
+      "legal": "CLOSURE_CLAIMED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Restringido",
       "risk": "Extremo",
-      "legal": "Régimen disputado"
+      "legal": "Cierre declarado por una parte"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Restricted",
       "risk": "Extreme",
-      "legal": "Disputed regime"
+      "legal": "Closure claimed by one party"
     },
     "traffic_ratio_estimate": null,
     "scores": {
       "passage": 32.37,
       "closure": 0,
       "traffic_reduction": 1.0,
-      "access_restriction": 4.9,
-      "risk": 70.24
+      "access_restriction": 3.9,
+      "risk": 70.44
     },
     "source_counts": {
       "passage": 25,
       "closure": 0,
-      "primary_sources": 3
+      "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-18T13:38:00Z",
+    "latest_confirmed_transit_at": "2026-08-18T16:56:22Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -747,16 +748,31 @@
     "evidence": [
       {
         "kind": "RISK_SEVERE",
-        "title": "UK authorities: Vessel in Strait of Hormuz hit by projectile, one casualty - foxbaltimore.com",
-        "source": "foxbaltimore.com",
-        "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNOHRVbENURXZDVWFzbThiQ20ycmpTUnZuYnBiQ0JKbVMzR184cFpwMl9GOVUwQnp4aVNDNUwzSWhIWlBVTTJ2X0dhMUJ0clVWZmNKMlVnM3dzcHJEMExPNjJWVjgyc2hDWHRuRVBXZkM4N1N4ZV9xSmZjZzFLYWlKVUNKOXJjVDZMTTQ1d0hqLUpMY3dUZXBFS2otSHJRdVZXeElLaldBaXhkdGtVbktiQ05MUnUzdUN0MTJGTmFScXB1UEtObWRscHJnMHJGWUJrZ0UySWlORkxhd0Y3NGQ3QW8wZXdfTnhBV3IwM282M2xqSDB2SnVKdG1Hb1paSGl2?oc=5",
-        "published_at": "2026-08-18T20:25:37Z",
-        "tier": 5,
-        "weight": 5.0,
+        "title": "Hormuz traffic holds firm as attacks intensify and diplomacy collapses - Lloyd's List",
+        "source": "Lloyd's List",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUGc2WFVCYlFZUGEyclVGeldXdjBDcmxHVXFwY3FjLUZFRGJFSnBaQ19uRUpkSmNmM3A3c3h6QVlUQkFxdDFfWGc5U0luN3lBd0VqT3RKTFNSR29hNFlpM3FNU3RvaFFWM0NQUFBSa0ZIajU5SC15TThHcDl3RVlpMFFmNk9pQWNxbVpTVTMwajYtVGdRZ2dXaG9RY1NvZTg2dTFnMUdCRC0yejg?oc=5",
+        "published_at": "2026-08-18T16:45:01Z",
+        "tier": 4,
+        "weight": 4.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 5.0,
+        "effective_weight": 4.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Seafarer killed as bulker struck in latest Strait of Hormuz attack - Lloyd's List",
+        "source": "Lloyd's List",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVXhKaktJQ0lnODB0UzZrdFBhMkd4cHZvU2lJUWxRazhHVkNxOVo3ODdzbmJiSGswZkR2R2ZRbWZTQ3VzSWJYNHNXTEIzUndTUlM3MXU0VjNoNVRYYVhVRURpWFpjUFFHNnBVMlVUWTlTTXVMNU1lSW5lSkpSRjY0WHdn?oc=5",
+        "published_at": "2026-08-18T14:47:44Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 4.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -780,13 +796,28 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-19T05:04:42Z",
+        "published_at": "2026-08-19T05:58:34Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 3.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "UAE imposes indefinite trade embargo on Iran over alleged missile attacks - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUmllc1dobzVIUzRBUl9ydXdrRTlTUDFwZW9qWGZlbFAwcWh4MkhTX3NjOUQ3S2tlMVRudUZ3TVR6bk9SdWFQN3g2QmNpYm1ZT3gxTEJfVVdnNmFMS01nNXNaMkZ3T0hQcFpOM0RUdTV0b0E5a1UxUHR0dWZ3QUlhSkZzWkl6MGsyVVFWMDNVRTNHeWx2NExYUlFNcnU4MDNBR0xKaEtlcjlBcElhQXRzbmlFOGPSAboBQVVfeXFMUHdKbW85MVRhT242aE5QLVZENFc5VVNSeTVHNHZzZkJPSHdnY1JGd2J5UEk0RzhKYXdmNWs5c2xTWHQ4UUNkRXVYaTZuQkNySWt4dzZtQzNHNnhYOWRRMVVGaFl6NlpNaGxfQ1d1TGQtbzl3TEJCUG00WG50YUpkNk1fc2laQTBOVW95SnYyZlNsZDNVcjdwc1V3ZXY4TnBSMWR4dFpPMURRQkUxMURQUlFyRHo2VHgtYlNn?oc=5",
+        "published_at": "2026-08-19T03:39:26Z",
+        "tier": 2,
+        "weight": 2.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 2.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -799,21 +830,6 @@
         "tier": 2,
         "weight": 2.0,
         "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 2.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Seafarer killed in Hormuz cargo ship attack - Seatrade Maritime News",
-        "source": "Seatrade Maritime News",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNRHFMazJiS0V3a05Ua1JXbmh4T1VZU2I3b2FlYks1WUowT3RsMlM3d2d5VkFpVkhYcGFtZVhKZ2kweEpBbUE2SGxBWkdCRGQ4cFliTV9tS045MVhmZXNUVVNQVjBseWhGRjlkTnROZHFQbzJTUjI1M3hFSndCb09tVUpPa1laZw?oc=5",
-        "published_at": "2026-08-18T05:48:57Z",
-        "tier": 2,
-        "weight": 2.0,
-        "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 2.0,
@@ -836,38 +852,23 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Strait of Hormuz traffic slows amid blockade - The Jerusalem Post",
-        "source": "The Jerusalem Post",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBiQ2FHc1FtY1lqVWxJaEU2M3E5TnZIcTVrNHNoY0ZhemNQZjlDa2VMUkhfNlZ0UFFWcExVeU5nRFg5UXRlU25HNTdQSzM1Q3hTWnNRcV9oVUs4X0ItaUpYZWgwdnVaUUJDdnc?oc=5",
-        "published_at": "2026-08-19T03:51:19Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
-      },
-      {
         "kind": "RISK_SEVERE",
-        "title": "Seafarer killed after attack on Minoan Dignity bulk carrier in Hormuz - Shipping Telegraph",
-        "source": "Shipping Telegraph",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTEZnNHFsQlBNVkVpNWkzZHpKTGlpbXBraU1Sc2QzU0I3dHZaamQ1MG1DcDBQWmFvYW9JVTRKc0k2SXVadmFCdW1oRUhobmlQZkZCRXBHODhlOHVTVS1Cc1UzVU9YYmthNjl5cnphLXlDYUFqR0JTdWFUem9SUlZYZHhFWi1WRG91SktNY2U1d2dxS3J0cGxfVkdOR1NfQnRNU0U2T0k2ZkhmbWswVnpLOG9QbjRmYUtpSmpJdWhvQ0s?oc=5",
-        "published_at": "2026-08-19T00:57:15Z",
-        "tier": 1,
-        "weight": 1.0,
+        "title": "Seafarer killed in Hormuz cargo ship attack - Seatrade Maritime News",
+        "source": "Seatrade Maritime News",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNRHFMazJiS0V3a05Ua1JXbmh4T1VZU2I3b2FlYks1WUowT3RsMlM3d2d5VkFpVkhYcGFtZVhKZ2kweEpBbUE2SGxBWkdCRGQ4cFliTV9tS045MVhmZXNUVVNQVjBseWhGRjlkTnROZHFQbzJTUjI1M3hFSndCb09tVUpPa1laZw?oc=5",
+        "published_at": "2026-08-18T05:48:57Z",
+        "tier": 2,
+        "weight": 2.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 1.0,
+        "effective_weight": 1.8,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 97,
+      "signals_considered": 95,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
