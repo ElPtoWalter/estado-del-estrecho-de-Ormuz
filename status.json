@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-19T15:59:19Z",
-  "last_success_at": "2026-08-19T15:59:19Z",
+  "checked_at": "2026-08-19T16:57:32Z",
+  "last_success_at": "2026-08-19T16:57:32Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T15:59:19Z"
+      "observed_at": "2026-08-19T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T15:59:19Z"
+      "observed_at": "2026-08-19T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,17 +42,16 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-19T15:59:19Z"
+      "observed_at": "2026-08-19T16:57:32Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -65,7 +64,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 50,
+    "articles_considered": 54,
     "signals_considered": 7,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -90,7 +89,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T15:59:19Z"
+      "observed_at": "2026-08-19T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -170,7 +169,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T15:59:19Z"
+      "observed_at": "2026-08-19T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -260,7 +259,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-19T15:59:19Z"
+      "observed_at": "2026-08-19T16:57:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -685,7 +684,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-19T16:00:00Z",
+    "generated_at": "2026-08-19T16:57:59Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -722,7 +721,7 @@
       "closure": 0,
       "traffic_reduction": 3.9,
       "access_restriction": 3.58,
-      "risk": 58.76
+      "risk": 57.06
     },
     "source_counts": {
       "passage": 22,
@@ -753,21 +752,6 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Seafarer killed as bulker struck in latest Strait of Hormuz attack - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVXhKaktJQ0lnODB0UzZrdFBhMkd4cHZvU2lJUWxRazhHVkNxOVo3ODdzbmJiSGswZkR2R2ZRbWZTQ3VzSWJYNHNXTEIzUndTUlM3MXU0VjNoNVRYYVhVRURpWFpjUFFHNnBVMlVUWTlTTXVMNU1lSW5lSkpSRjY0WHdn?oc=5",
-        "published_at": "2026-08-18T14:47:44Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 3.6,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
         "title": "Shipping slows through Strait of Hormuz after tanker attacks, data shows - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOS011b1NvcmEzQUNzX2dVdzFyUmg1UnpkLXZqNW5nUFFxNGZpaE51amZaZWJDZnNTQi1yZDE2cGxwU09PdzhMWWJiV1lpMk0xSmJmb0dQNVdGN1F3RHBTaVQtRzlsU2Nwa2RER0ZlbngzOWc3aDV2MmMwRmNfZ2xXclpHRzE0RkFzeDZ3MjY2QTAwMlFPSEVTeTRQM0JDQ2VtQjVPQTFPZWxRaXB4YzBTbjBVSXlxQTBoMUE?oc=5",
@@ -786,7 +770,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-19T16:00:00Z",
+        "published_at": "2026-08-19T16:57:59Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -855,10 +839,25 @@
         "effective_weight": 1.0,
         "kind_label_es": "Tránsito confirmado",
         "kind_label_en": "Confirmed transit"
+      },
+      {
+        "kind": "RISK_ELEVATED",
+        "title": "Trump doubles down on threat to claim the Strait of Hormuz - FOX Carolina News",
+        "source": "FOX Carolina News",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxONWRLS0xZRHZwVmlVNWFRaTQyWUpwUG1CZlZvR0F1QzVCLXdkZHRLR1VyeDhvbVdRSXREYVJYd3A5RFR6LUVnamhXWlVVOHVoWlBVaURtSnFoSjJvM1V5MF8yQVozYXlaMG55MmxyaEh1bVh1bmljMG5UMGVXRnM5bVQ3NFNRYjFyZGtKNWxEMzZ3OFZoUS1EbnEtc2VncEZZUlHSAaIBQVVfeXFMTjVkS0tMWUR2cFZpVTVhUWk0MllKcFBtQmZWb0dBdUM1Qi13ZGR0S0dVcng4b21XUUl0RGFSWHdwOURUei1FZ2poV1pVVTh1aFpQVWlEbUpxaEoybzNVeTBfMkFaM2F5WjBueTJscmhIdW1YdW5pYzBuVDBlV0ZzOW1UNzRTUWIxcmRrSjVsRDM2dzhWaFEtRG5xLXNlZ3BGWVJR?oc=5",
+        "published_at": "2026-08-19T12:34:00Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo elevado",
+        "kind_label_en": "Elevated risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 85,
+      "signals_considered": 86,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
