@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-19T16:57:32Z",
-  "last_success_at": "2026-08-19T16:57:32Z",
+  "checked_at": "2026-08-19T17:52:17Z",
+  "last_success_at": "2026-08-19T17:52:17Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T16:57:32Z"
+      "observed_at": "2026-08-19T17:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T16:57:32Z"
+      "observed_at": "2026-08-19T17:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,16 +42,17 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-19T16:57:32Z"
+      "observed_at": "2026-08-19T17:52:17Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -64,7 +65,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 54,
+    "articles_considered": 50,
     "signals_considered": 7,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -89,7 +90,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T16:57:32Z"
+      "observed_at": "2026-08-19T17:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -169,7 +170,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T16:57:32Z"
+      "observed_at": "2026-08-19T17:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -259,7 +260,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-19T16:57:32Z"
+      "observed_at": "2026-08-19T17:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -684,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-19T16:57:59Z",
+    "generated_at": "2026-08-19T17:52:59Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -719,9 +720,9 @@
     "scores": {
       "passage": 26.638,
       "closure": 0,
-      "traffic_reduction": 3.9,
+      "traffic_reduction": 4.9,
       "access_restriction": 3.58,
-      "risk": 57.06
+      "risk": 60.64
     },
     "source_counts": {
       "passage": 22,
@@ -752,6 +753,21 @@
       },
       {
         "kind": "RISK_SEVERE",
+        "title": "Seafarer killed as bulker struck in latest Strait of Hormuz attack - Lloyd's List",
+        "source": "Lloyd's List",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVXhKaktJQ0lnODB0UzZrdFBhMkd4cHZvU2lJUWxRazhHVkNxOVo3ODdzbmJiSGswZkR2R2ZRbWZTQ3VzSWJYNHNXTEIzUndTUlM3MXU0VjNoNVRYYVhVRURpWFpjUFFHNnBVMlVUWTlTTXVMNU1lSW5lSkpSRjY0WHdn?oc=5",
+        "published_at": "2026-08-18T14:47:44Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.6,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
         "title": "Shipping slows through Strait of Hormuz after tanker attacks, data shows - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOS011b1NvcmEzQUNzX2dVdzFyUmg1UnpkLXZqNW5nUFFxNGZpaE51amZaZWJDZnNTQi1yZDE2cGxwU09PdzhMWWJiV1lpMk0xSmJmb0dQNVdGN1F3RHBTaVQtRzlsU2Nwa2RER0ZlbngzOWc3aDV2MmMwRmNfZ2xXclpHRzE0RkFzeDZ3MjY2QTAwMlFPSEVTeTRQM0JDQ2VtQjVPQTFPZWxRaXB4YzBTbjBVSXlxQTBoMUE?oc=5",
@@ -770,7 +786,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-19T16:57:59Z",
+        "published_at": "2026-08-19T17:52:59Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -826,38 +842,23 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Over 80 percent of vessels transiting Strait of Hormuz choose Omani route: US media - 巴士的報",
-        "source": "巴士的報",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOeFZWbmVGb0s0SEo0MncwZi1yUXdEYkw0bDQ4WklqUjZIb2UxRGhib1o0eFVzelFIbmx2RzBmZlJmQlg0Ymo3UHc4NU9zRzZhdGhPWkFVSEhrWVY4b05pekhQRkhtU2hreW4zd0FYekhGQnRMS1JvcHB1ZzBtQzFvN1ZVbldINHhDZWdiSkVnWnRZT2VIQ09RV1Y4SkFLUGJqOEhxak5TTEdoSXFrVVNaRVlpWmF5QjVQZkJSSklwMWFkQkRPX0dGV0RSOXVkeGM?oc=5",
-        "published_at": "2026-08-19T12:37:13Z",
+        "kind": "TRAFFIC_REDUCED",
+        "title": "Is Iran Losing Control of the Strait of Hormuz? Ship Traffic Plunges Despite Trump's Claim It Is Fully Open - inkl",
+        "source": "inkl",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQZnpwV3FSVllRTTI0RDhBMWRLTVlRalpOUzNKSFpUd096Tkl5d3V6dVRudkk5TklJeUw5dEd3cUt0ZHFEOHg0UHV5NkVWQVYxaThnb1FlNHpqU3ktdU1XajVGeHJySEc5c25kSk04OHNXMGNUeFhkUUN0Ym1SWHZwc3pWUTJZZnJ2VndSRU10WTk1ckI0SVVqYTg0OHpmZ09IRThHb1czV292bW5UV3pXTnZKU25BdDh6VjJ3LWp5MFN0eDNUZTRVTTVSZw?oc=5",
+        "published_at": "2026-08-19T16:08:09Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 1.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
-      },
-      {
-        "kind": "RISK_ELEVATED",
-        "title": "Trump doubles down on threat to claim the Strait of Hormuz - FOX Carolina News",
-        "source": "FOX Carolina News",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxONWRLS0xZRHZwVmlVNWFRaTQyWUpwUG1CZlZvR0F1QzVCLXdkZHRLR1VyeDhvbVdRSXREYVJYd3A5RFR6LUVnamhXWlVVOHVoWlBVaURtSnFoSjJvM1V5MF8yQVozYXlaMG55MmxyaEh1bVh1bmljMG5UMGVXRnM5bVQ3NFNRYjFyZGtKNWxEMzZ3OFZoUS1EbnEtc2VncEZZUlHSAaIBQVVfeXFMTjVkS0tMWUR2cFZpVTVhUWk0MllKcFBtQmZWb0dBdUM1Qi13ZGR0S0dVcng4b21XUUl0RGFSWHdwOURUei1FZ2poV1pVVTh1aFpQVWlEbUpxaEoybzNVeTBfMkFaM2F5WjBueTJscmhIdW1YdW5pYzBuVDBlV0ZzOW1UNzRTUWIxcmRrSjVsRDM2dzhWaFEtRG5xLXNlZ3BGWVJR?oc=5",
-        "published_at": "2026-08-19T12:34:00Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Riesgo elevado",
-        "kind_label_en": "Elevated risk"
+        "kind_label_es": "Tráfico reducido",
+        "kind_label_en": "Reduced traffic"
       }
     ],
     "diagnostics": {
-      "signals_considered": 86,
+      "signals_considered": 88,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
