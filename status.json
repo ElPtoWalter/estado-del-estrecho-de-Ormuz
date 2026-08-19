@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-19T14:08:10Z",
-  "last_success_at": "2026-08-19T14:08:10Z",
+  "checked_at": "2026-08-19T15:03:20Z",
+  "last_success_at": "2026-08-19T15:03:20Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,27 +22,17 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T14:08:10Z"
+      "observed_at": "2026-08-19T15:03:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
       "title": "UAE severs trade with Iran after reported missile strike - CNBC",
       "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4xWXltSkJ1VVdJSDBqRktHbUd0bjg0cG5KcjhudGFwaUFCLUk2cUxndEpIalBiUndYRzM2azBKU1Q3VUdwTjZhNjM3SHVCS0Y1Ym9qSy1rSzlMUDMxb0lSLUxfekhvdHdPVlUtdnln?oc=5",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4xWXltSkJ1VVdJSDBqRktHbUd0bjg0cG5KcjhudGFwaUFCLUk2cUxndEpIalBiUndYRzM2azBKU1Q3VUdwTjZhNjM3SHVCS0Y1Ym9qSy1rSzlMUDMxb0lSLUxfekhvdHdPVlUtdnln0gFzQVVfeXFMTklBNnA3QkJxbGljbGpEei1oYnVWeWJ2Z1hjRjNaY0M0ZGlMR0xHa3ZlUEJrcEhBWG5qWHZ2Tk5KMWJPMkpQZFl1U0R2cnI1TngyQWVrY1NadEx6YUR3dTUxdGEtY2V3S3REdDA5bHNzRHZOVQ?oc=5",
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T14:08:10Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran latest warning to the US signals the hardliners are just getting started",
-      "source_name": "CNN",
-      "source_url": "https://us.cnn.com/2026/08/19/middleeast/iran-hardliners-just-getting-started-intl",
-      "published_at": "2026-08-19T04:01:29Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-19T14:08:10Z"
+      "observed_at": "2026-08-19T15:03:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,31 +42,32 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-19T14:08:10Z"
+      "observed_at": "2026-08-19T15:03:20Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 9.25
+      "risk": 7.0
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 4
+      "risk": 3
     },
-    "articles_considered": 57,
-    "signals_considered": 8,
-    "current_cycle_evidence": 4,
+    "articles_considered": 49,
+    "signals_considered": 7,
+    "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
@@ -84,7 +75,7 @@
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-08-19T06:52:12Z",
-    "current_cycle_count": 4,
+    "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -95,11 +86,11 @@
       "signal": "RISK_RESTRICTION",
       "title": "UAE severs trade with Iran after reported missile strike - CNBC",
       "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4xWXltSkJ1VVdJSDBqRktHbUd0bjg0cG5KcjhudGFwaUFCLUk2cUxndEpIalBiUndYRzM2azBKU1Q3VUdwTjZhNjM3SHVCS0Y1Ym9qSy1rSzlMUDMxb0lSLUxfekhvdHdPVlUtdnln?oc=5",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4xWXltSkJ1VVdJSDBqRktHbUd0bjg0cG5KcjhudGFwaUFCLUk2cUxndEpIalBiUndYRzM2azBKU1Q3VUdwTjZhNjM3SHVCS0Y1Ym9qSy1rSzlMUDMxb0lSLUxfekhvdHdPVlUtdnln0gFzQVVfeXFMTklBNnA3QkJxbGljbGpEei1oYnVWeWJ2Z1hjRjNaY0M0ZGlMR0xHa3ZlUEJrcEhBWG5qWHZ2Tk5KMWJPMkpQZFl1U0R2cnI1TngyQWVrY1NadEx6YUR3dTUxdGEtY2V3S3REdDA5bHNzRHZOVQ?oc=5",
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T14:08:10Z"
+      "observed_at": "2026-08-19T15:03:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -179,7 +170,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T14:08:10Z"
+      "observed_at": "2026-08-19T15:03:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -269,7 +260,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-19T14:08:10Z"
+      "observed_at": "2026-08-19T15:03:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -694,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-19T14:08:42Z",
+    "generated_at": "2026-08-19T15:04:02Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -727,14 +718,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 27.808,
+      "passage": 26.638,
       "closure": 0,
       "traffic_reduction": 3.9,
-      "access_restriction": 3.78,
-      "risk": 65.72
+      "access_restriction": 4.58,
+      "risk": 60.86
     },
     "source_counts": {
-      "passage": 23,
+      "passage": 22,
       "closure": 0,
       "primary_sources": 2
     },
@@ -762,21 +753,6 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Hormuz traffic holds firm as attacks intensify and diplomacy collapses - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUGc2WFVCYlFZUGEyclVGeldXdjBDcmxHVXFwY3FjLUZFRGJFSnBaQ19uRUpkSmNmM3A3c3h6QVlUQkFxdDFfWGc5U0luN3lBd0VqT3RKTFNSR29hNFlpM3FNU3RvaFFWM0NQUFBSa0ZIajU5SC15TThHcDl3RVlpMFFmNk9pQWNxbVpTVTMwajYtVGdRZ2dXaG9RY1NvZTg2dTFnMUdCRC0yejg?oc=5",
-        "published_at": "2026-08-18T16:45:01Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
         "title": "Seafarer killed as bulker struck in latest Strait of Hormuz attack - Lloyd's List",
         "source": "Lloyd's List",
         "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVXhKaktJQ0lnODB0UzZrdFBhMkd4cHZvU2lJUWxRazhHVkNxOVo3ODdzbmJiSGswZkR2R2ZRbWZTQ3VzSWJYNHNXTEIzUndTUlM3MXU0VjNoNVRYYVhVRURpWFpjUFFHNnBVMlVUWTlTTXVMNU1lSW5lSkpSRjY0WHdn?oc=5",
@@ -786,7 +762,7 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 4.0,
+        "effective_weight": 3.6,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -810,7 +786,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-19T14:08:42Z",
+        "published_at": "2026-08-19T15:04:02Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -864,10 +840,25 @@
         "effective_weight": 1.8,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "The Fate of Hormuz: Iranian attacks force Gulf nations to find work-arounds to war-zone waterway - washingtontimes.com",
+        "source": "washingtontimes.com",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOb1dmUkpVZklzakVVNFA3YWh5QWdEREZ3aUVRZmdLTi0xVDhTY1ptSThzVERZS0k0Zk90ZVFKald5WVNSRl9PVkJjbW1TaDN6VmJzMHY3Wkd6S0NQUUw3cVNETHdhRHprRUs5S3FjbGNRcFFyVC1NWkRHQWVIN0ltVUUwMmFBbTEzQ1VpVjB1dFVqamRNUVhZN0NaNGZkZzZzc2ludEQwNWtLQVFvZmlZYWQ1NVp2UWZDbUE?oc=5",
+        "published_at": "2026-08-19T13:10:52Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 89,
+      "signals_considered": 88,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
