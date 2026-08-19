@@ -4,9 +4,9 @@
   "operational_status": "HIGH_RISK_UNCONFIRMED",
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
-  "confidence": "MEDIA",
-  "checked_at": "2026-08-19T08:04:59Z",
-  "last_success_at": "2026-08-19T08:04:59Z",
+  "confidence": "ALTA",
+  "checked_at": "2026-08-19T09:06:36Z",
+  "last_success_at": "2026-08-19T09:06:36Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T08:04:59Z"
+      "observed_at": "2026-08-19T09:06:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,17 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T08:04:59Z"
+      "observed_at": "2026-08-19T09:06:36Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran latest warning to the US signals the hardliners are just getting started",
+      "source_name": "CNN",
+      "source_url": "https://us.cnn.com/2026/08/19/middleeast/iran-hardliners-just-getting-started-intl",
+      "published_at": "2026-08-19T04:01:29Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-19T09:06:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +52,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-19T08:04:59Z"
+      "observed_at": "2026-08-19T09:06:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,32 +62,31 @@
       "published_at": "2026-08-15T13:00:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-19T08:04:59Z"
+      "observed_at": "2026-08-19T09:06:36Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 8.37
+      "risk": 10.87
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 4
+      "risk": 5
     },
-    "articles_considered": 50,
-    "signals_considered": 9,
-    "current_cycle_evidence": 4,
+    "articles_considered": 61,
+    "signals_considered": 12,
+    "current_cycle_evidence": 5,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
@@ -85,7 +94,7 @@
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-08-19T06:52:12Z",
-    "current_cycle_count": 4,
+    "current_cycle_count": 5,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -100,7 +109,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T08:04:59Z"
+      "observed_at": "2026-08-19T09:06:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -116,11 +125,11 @@
       "signal": "RISK_RESTRICTION",
       "title": "Iran latest warning to the US signals the hardliners are just getting started",
       "source_name": "CNN",
-      "source_url": "https://www.cnn.com/2026/08/19/middleeast/iran-hardliners-just-getting-started-intl",
+      "source_url": "https://us.cnn.com/2026/08/19/middleeast/iran-hardliners-just-getting-started-intl",
       "published_at": "2026-08-19T04:01:29Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T07:21:44Z"
+      "observed_at": "2026-08-19T09:06:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -170,7 +179,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-19T08:04:59Z"
+      "observed_at": "2026-08-19T09:06:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -260,7 +269,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-19T08:04:59Z"
+      "observed_at": "2026-08-19T09:06:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -310,7 +319,7 @@
       "published_at": "2026-08-15T13:00:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-19T08:04:59Z"
+      "observed_at": "2026-08-19T09:06:36Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -695,7 +704,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-19T08:05:41Z",
+    "generated_at": "2026-08-19T09:06:54Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -728,22 +737,22 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 31.448,
+      "passage": 27.418,
       "closure": 0,
-      "traffic_reduction": 1.0,
+      "traffic_reduction": 2.0,
       "access_restriction": 4.9,
-      "risk": 69.32
+      "risk": 67.8
     },
     "source_counts": {
-      "passage": 25,
+      "passage": 21,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-18T16:56:22Z",
+    "latest_confirmed_transit_at": "2026-08-19T08:41:07Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
-      "confidence": "MEDIA"
+      "confidence": "ALTA"
     },
     "evidence": [
       {
@@ -796,7 +805,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-19T08:05:41Z",
+        "published_at": "2026-08-19T09:06:54Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -868,7 +877,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 94,
+      "signals_considered": 90,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
