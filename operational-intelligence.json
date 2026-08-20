@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-20T22:57:21Z",
+  "generated_at": "2026-08-20T23:53:07Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -13,31 +13,31 @@
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
-    "access": "SELECTIVE",
+    "access": "RESTRICTED",
     "risk": "EXTREME",
     "legal": "DISPUTED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
-    "access": "Selectivo / condicionado",
+    "access": "Restringido",
     "risk": "Extremo",
     "legal": "Régimen disputado"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
-    "access": "Selective / conditional",
+    "access": "Restricted",
     "risk": "Extreme",
     "legal": "Disputed regime"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 11.792,
+    "passage": 11.921,
     "closure": 0,
-    "traffic_reduction": 1.78,
-    "access_restriction": 6.88,
-    "risk": 47.08
+    "traffic_reduction": 0.78,
+    "access_restriction": 4.98,
+    "risk": 50.42
   },
   "source_counts": {
     "passage": 11,
@@ -83,10 +83,25 @@
     },
     {
       "kind": "RISK_SEVERE",
+      "title": "Vessel struck by unknown projectile in Strait of Hormuz, crew casualty reported, UKMTO says - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOdC1DbUtnYVo3NzVqcVBVR3FXcm1WQXBOWHI2b1d0SG5NOG1wS25jdjJJeUx3NFc0Ym13OTlZTzl5Q1hnR3dVWFpuTkF6cVlic0NNdXJDWHBIcGZlRVRLWUtJclYybUxvNTJ5RWFDZjJOaGR2aGFrS21Ibzg3b1FudnZjVkZTQV9ra2ZmMnNZNGZWWGdDZXpxUmpoMXEybC1oMjd2T3RYVjJwZ3NacE9XcERRWEZhcHZtbVE1VmhsaDNiWkhlV2hyei1QZ3c?oc=5",
+      "published_at": "2026-08-18T03:40:51Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.12,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-20T22:57:21Z",
+      "published_at": "2026-08-20T23:53:07Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -155,25 +170,10 @@
       "effective_weight": 1.0,
       "kind_label_es": "Riesgo elevado",
       "kind_label_en": "Elevated risk"
-    },
-    {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "Hormuz shipping death toll rises as seafarer confirmed killed on Malaysian bulker - TradeWinds News",
-      "source": "TradeWinds News",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQeEEzbkZLLXByeWlwdUs2SzJQUTJJZjI0OG5VMV9XdDZqYkZBaG45RUJxTkhQaHN4Y3RIN3BUbWRQbko0R2hURmZHaWFkcHVFb2JvS09scGg0bjRSQWxKTUZLQ2lwcnR5RFptLV94cUlBTEp4aE9ZUVR6WjhiUjM5TVNGZUU2X2hXTkVTMFhBUHhtV0hNaXd1ZGVTWWpYbHo3ODlXYzRjamNWZk5sSzlIeVJONGlZQ0s3cTVMTGhUNzh6dnJ4aVFNUktpeXFCUi1h?oc=5",
-      "published_at": "2026-08-20T16:47:07Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
     }
   ],
   "diagnostics": {
-    "signals_considered": 68,
+    "signals_considered": 65,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
