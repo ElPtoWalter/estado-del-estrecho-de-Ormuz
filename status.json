@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-20T15:06:43Z",
-  "last_success_at": "2026-08-20T15:06:43Z",
+  "checked_at": "2026-08-20T16:00:54Z",
+  "last_success_at": "2026-08-20T16:00:54Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-20T15:06:43Z"
+      "observed_at": "2026-08-20T16:00:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-20T15:06:43Z"
+      "observed_at": "2026-08-20T16:00:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-20T15:06:43Z"
+      "observed_at": "2026-08-20T16:00:54Z"
     }
   ],
   "diagnostics": {
@@ -65,7 +65,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 50,
+    "articles_considered": 49,
     "signals_considered": 6,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -100,7 +100,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-20T15:06:43Z"
+      "observed_at": "2026-08-20T16:00:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -200,7 +200,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-20T15:06:43Z"
+      "observed_at": "2026-08-20T16:00:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -300,7 +300,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-20T15:06:43Z"
+      "observed_at": "2026-08-20T16:00:54Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -685,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-20T15:07:27Z",
+    "generated_at": "2026-08-20T16:02:16Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -698,34 +698,34 @@
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
-      "access": "RESTRICTED",
+      "access": "SELECTIVE",
       "risk": "EXTREME",
       "legal": "DISPUTED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
-      "access": "Restringido",
+      "access": "Selectivo / condicionado",
       "risk": "Extremo",
       "legal": "Régimen disputado"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
-      "access": "Restricted",
+      "access": "Selective / conditional",
       "risk": "Extreme",
       "legal": "Disputed regime"
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 12.52,
+      "passage": 11.505,
       "closure": 0,
       "traffic_reduction": 1.78,
-      "access_restriction": 4.3,
-      "risk": 49.84
+      "access_restriction": 5.18,
+      "risk": 49.5
     },
     "source_counts": {
-      "passage": 12,
+      "passage": 11,
       "closure": 0,
       "primary_sources": 2
     },
@@ -771,7 +771,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-20T15:07:27Z",
+        "published_at": "2026-08-20T16:02:16Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -827,6 +827,21 @@
         "kind_label_en": "Severe risk"
       },
       {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Strait of Hormuz Latest: US Says Waterway Open as Iran Loses Ground Amid Naval Blockade Standoff - International Business Times",
+        "source": "International Business Times",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUHpXVUtwcWszWThTdWJxbFROS25qUnpBSG5EZ2ZZV3FtZVJFNnJ3ZWJtVXZrQzlKQUdrUnR4TUtZVFdGYnlKamFXczFaRnRVbEhSbXhmNnVhMm1ZTnFLTnpIbkp0WEdsQ1RvNFl0YkMwZ3JaS1dlc0wzOVA3U0t0X1JBM2QwY0dtVVI5ZjVwVEFkUmY4b0pYUVZtRzN2eF85emVtakZ2VTZlbUs5R3I2My1rdFlscEdqZHc4?oc=5",
+        "published_at": "2026-08-20T15:26:31Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
+      },
+      {
         "kind": "RISK_ELEVATED",
         "title": "Trump's threat of economic consequences: who will it affect and is it credible? - thenationalnews.com",
         "source": "thenationalnews.com",
@@ -840,21 +855,6 @@
         "effective_weight": 1.0,
         "kind_label_es": "Riesgo elevado",
         "kind_label_en": "Elevated risk"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "US's secret Hormuz corridor: How America kept ships and oil moving despite Iran's closure - The Times of India",
-        "source": "The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQYU5TcjVQbTNmNzVLX1VQSnlKaUtqVjVVYk5OY1VacE1sVVQ4Q0VwSDkwNzV3SjVNNUFYUmxiN2owQV9pSEwweGxtNm83WHp4RXUxbmtuRVU2M3pvWHkzS1pveWFjbmw3Tk1sZmwzVjNzT25zTFhpd2psVnBtaWFoaG5TWGlKSWNQbGZlZjlQamJWMWUtWXcxcVVHS1V5d0NRbzZOQnlnTGlNdGUzaDNfLVlxNVozU29GSmxNUU5qRzhWOFpHWmpRZ0M5eUw0QkR5cnNlRzVSRUF1cEFEZ2F3Z0QxS0ZISk1yVW5vcU9nTFRmZ9IB9wFBVV95cUxNUUs0Smo0STdJMzdZRE9jYmxqMXNNTWRVU2hCdG9jOG9xX2xuem5CMHY5TmVRMko2UWxUeERSN1Jhc0F3RnV4SktBZE9rRmcyNWtOZ3RlR3YzQTlJWTNlZUNZbHVuMVI0MUk0em9CdEE4ek5VdnV1ZmxRWTE4OHVHWU1qUE5mR19ldVdDQjI2WklaZXhVVkJDWk05R2NtZUFTc0kxb2ZxN1JjUElZbmJvclk0SUZBSzJVSWE0ejZHRmNCSUxXUS0tWHNjMU5UZm5lbV84R2lRcEswWHRkU0ZnMDFIeWZRZkhxMTZLaVdzSHN2YVd1MVlV?oc=5",
-        "published_at": "2026-08-20T11:09:00Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
       }
     ],
     "diagnostics": {
