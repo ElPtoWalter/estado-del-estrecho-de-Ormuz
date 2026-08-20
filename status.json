@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-20T10:02:26Z",
-  "last_success_at": "2026-08-20T10:02:26Z",
+  "checked_at": "2026-08-20T10:59:10Z",
+  "last_success_at": "2026-08-20T10:59:10Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,23 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Trump threatens Iran trade partners , as military strikes make way for economic pressure | US - Israel war on Iran",
+      "source_name": "The Guardian",
+      "source_url": "https://www.theguardian.com/world/2026/aug/20/trump-threatens-crush-iran-economy-war-hormuz",
+      "published_at": "2026-08-20T05:45:00Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-08-20T10:59:10Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "UAE severs trade with Iran after reported missile strike - CNBC",
       "source_name": "CNBC",
       "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4xWXltSkJ1VVdJSDBqRktHbUd0bjg0cG5KcjhudGFwaUFCLUk2cUxndEpIalBiUndYRzM2azBKU1Q3VUdwTjZhNjM3SHVCS0Y1Ym9qSy1rSzlMUDMxb0lSLUxfekhvdHdPVlUtdnln0gFzQVVfeXFMTklBNnA3QkJxbGljbGpEei1oYnVWeWJ2Z1hjRjNaY0M0ZGlMR0xHa3ZlUEJrcEhBWG5qWHZ2Tk5KMWJPMkpQZFl1U0R2cnI1TngyQWVrY1NadEx6YUR3dTUxdGEtY2V3S3REdDA5bHNzRHZOVQ?oc=5",
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-20T10:02:26Z"
+      "observed_at": "2026-08-20T10:59:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +42,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-20T10:02:26Z"
+      "observed_at": "2026-08-20T10:59:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,40 +52,39 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-20T10:02:26Z"
+      "observed_at": "2026-08-20T10:59:10Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5.145
+      "risk": 8.045
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 3
+      "risk": 4
     },
-    "articles_considered": 52,
-    "signals_considered": 6,
-    "current_cycle_evidence": 3,
+    "articles_considered": 66,
+    "signals_considered": 7,
+    "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-19T06:52:12Z",
-    "current_cycle_count": 3,
+    "as_of": "2026-08-20T05:45:00Z",
+    "current_cycle_count": 4,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -84,13 +93,23 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Trump threatens Iran trade partners , as military strikes make way for economic pressure | US - Israel war on Iran",
+      "source_name": "The Guardian",
+      "source_url": "https://www.theguardian.com/world/2026/aug/20/trump-threatens-crush-iran-economy-war-hormuz",
+      "published_at": "2026-08-20T05:45:00Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-08-20T10:59:10Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "UAE severs trade with Iran after reported missile strike - CNBC",
       "source_name": "CNBC",
       "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4xWXltSkJ1VVdJSDBqRktHbUd0bjg0cG5KcjhudGFwaUFCLUk2cUxndEpIalBiUndYRzM2azBKU1Q3VUdwTjZhNjM3SHVCS0Y1Ym9qSy1rSzlMUDMxb0lSLUxfekhvdHdPVlUtdnln0gFzQVVfeXFMTklBNnA3QkJxbGljbGpEei1oYnVWeWJ2Z1hjRjNaY0M0ZGlMR0xHa3ZlUEJrcEhBWG5qWHZ2Tk5KMWJPMkpQZFl1U0R2cnI1TngyQWVrY1NadEx6YUR3dTUxdGEtY2V3S3REdDA5bHNzRHZOVQ?oc=5",
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-20T10:02:26Z"
+      "observed_at": "2026-08-20T10:59:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -190,7 +209,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-20T10:02:26Z"
+      "observed_at": "2026-08-20T10:59:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -290,7 +309,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-20T10:02:26Z"
+      "observed_at": "2026-08-20T10:59:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -671,21 +690,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-12T05:15:48Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening",
-      "source_name": "Al Jazeera",
-      "source_url": "https://www.aljazeera.com/economy/2026/8/12/oil-prices-rise-as-attacks-dent-hopes-for-strait-of-hormuz-reopening",
-      "published_at": "2026-08-12T04:15:00Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-12T06:55:08Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-20T10:03:13Z",
+    "generated_at": "2026-08-20T10:59:43Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -718,14 +727,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 22.906,
+      "passage": 20.566,
       "closure": 0,
       "traffic_reduction": 2.93,
       "access_restriction": 4.58,
-      "risk": 51.44
+      "risk": 51.82
     },
     "source_counts": {
-      "passage": 20,
+      "passage": 18,
       "closure": 0,
       "primary_sources": 2
     },
@@ -747,7 +756,7 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 4.0,
+        "effective_weight": 3.6,
         "kind_label_es": "Riesgo elevado",
         "kind_label_en": "Elevated risk"
       },
@@ -771,7 +780,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-20T10:03:13Z",
+        "published_at": "2026-08-20T10:59:43Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -858,7 +867,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 76,
+      "signals_considered": 75,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
