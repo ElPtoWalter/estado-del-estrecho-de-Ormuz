@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-20T10:59:43Z",
+  "generated_at": "2026-08-20T11:55:33Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -13,31 +13,31 @@
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
-    "access": "RESTRICTED",
+    "access": "SELECTIVE",
     "risk": "EXTREME",
     "legal": "DISPUTED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
-    "access": "Restringido",
+    "access": "Selectivo / condicionado",
     "risk": "Extremo",
     "legal": "Régimen disputado"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
-    "access": "Restricted",
+    "access": "Selective / conditional",
     "risk": "Extreme",
     "legal": "Disputed regime"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 20.566,
+    "passage": 18.63,
     "closure": 0,
-    "traffic_reduction": 2.93,
-    "access_restriction": 4.58,
-    "risk": 51.82
+    "traffic_reduction": 1.78,
+    "access_restriction": 5.58,
+    "risk": 49.26
   },
   "source_counts": {
     "passage": 18,
@@ -86,7 +86,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-20T10:59:43Z",
+      "published_at": "2026-08-20T11:55:33Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -157,23 +157,23 @@
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "TRAFFIC_SEVERELY_REDUCED",
-      "title": "Trump Floats Strait of Hormuz as ‘New US Territory’ as Iran Talks Collapse, Oil Prices Surge - The Maine Wire",
-      "source": "The Maine Wire",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNTDVsc2lDXzJOU2xHcVJSTklaUlVSZDUyQTN6X20zYmdTZVdPb05GdnhvNExUeURtckt1NGY5QklXekdKelpZSFBHWkdiTWNZNWo5eVdJclg4VXFLb0wtZGNneWRpZjNaQ0J1VE02S0NHYlpEX0NkclZ3am00bk9FZTBBVXFfdVN4VnFZSnd0ZnpqOHZYSzBReUxFRFNGWG1CTEFBWUNmbnA5YldSa1BMejU1eVp6dFdlZkFhVk9Rc3d0Vi1hWUE?oc=5",
-      "published_at": "2026-08-19T11:41:26Z",
+      "kind": "RISK_SEVERE",
+      "title": "Seafarer killed after attack on Minoan Dignity bulk carrier in Hormuz - Shipping Telegraph",
+      "source": "Shipping Telegraph",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTEZnNHFsQlBNVkVpNWkzZHpKTGlpbXBraU1Sc2QzU0I3dHZaamQ1MG1DcDBQWmFvYW9JVTRKc0k2SXVadmFCdW1oRUhobmlQZkZCRXBHODhlOHVTVS1Cc1UzVU9YYmthNjl5cnphLXlDYUFqR0JTdWFUem9SUlZYZHhFWi1WRG91SktNY2U1d2dxS3J0cGxfVkdOR1NfQnRNU0U2T0k2ZkhmbWswVnpLOG9QbjRmYUtpSmpJdWhvQ0s?oc=5",
+      "published_at": "2026-08-20T09:45:51Z",
       "tier": 1,
-      "weight": 1.15,
+      "weight": 1.0,
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 1.15,
-      "kind_label_es": "Tráfico muy reducido",
-      "kind_label_en": "Severely reduced traffic"
+      "effective_weight": 1.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 75,
+    "signals_considered": 72,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
