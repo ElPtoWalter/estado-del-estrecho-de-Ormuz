@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-20T03:26:17Z",
+  "generated_at": "2026-08-20T04:10:24Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,11 +33,11 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 24.83,
+    "passage": 24.674,
     "closure": 0,
     "traffic_reduction": 4.05,
     "access_restriction": 5.58,
-    "risk": 57.94
+    "risk": 54.34
   },
   "source_counts": {
     "passage": 21,
@@ -83,25 +83,10 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Vessel struck by unknown projectile in Strait of Hormuz, crew casualty reported, UKMTO says - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOdC1DbUtnYVo3NzVqcVBVR3FXcm1WQXBOWHI2b1d0SG5NOG1wS25jdjJJeUx3NFc0Ym13OTlZTzl5Q1hnR3dVWFpuTkF6cVlic0NNdXJDWHBIcGZlRVRLWUtJclYybUxvNTJ5RWFDZjJOaGR2aGFrS21Ibzg3b1FudnZjVkZTQV9ra2ZmMnNZNGZWWGdDZXpxUmpoMXEybC1oMjd2T3RYVjJwZ3NacE9XcERRWEZhcHZtbVE1VmhsaDNiWkhlV2hyei1QZ3c?oc=5",
-      "published_at": "2026-08-18T03:29:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.6,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-20T03:26:17Z",
+      "published_at": "2026-08-20T04:10:24Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -137,7 +122,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 2.0,
+      "effective_weight": 1.8,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -170,10 +155,25 @@
       "effective_weight": 1.15,
       "kind_label_es": "Tráfico muy reducido",
       "kind_label_en": "Severely reduced traffic"
+    },
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "Trump says Strait of Hormuz remains open despite ‘effective’ naval blockade - Yahoo",
+      "source": "Yahoo",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPa1JwU2JPa01SUnJ5bDgySi1Sb1Z4UzFEMkdPMGxIY1dhbmhqUjVmb25zZ3hrcEE1WlR4dHEyMzZ1cW56MG1UQk8wdDlEZWJCbVBZUmEtU2EtOS1tQ1hvQ1pHMzBET2NuT0dlZmlxbXViNHFVWVVYQ0k0ZFV2a0NGekJlUWdtVlRv?oc=5",
+      "published_at": "2026-08-20T02:48:00Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
     }
   ],
   "diagnostics": {
-    "signals_considered": 82,
+    "signals_considered": 81,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
