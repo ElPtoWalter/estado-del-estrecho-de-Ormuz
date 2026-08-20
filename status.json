@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-20T04:09:49Z",
-  "last_success_at": "2026-08-20T04:09:49Z",
+  "checked_at": "2026-08-20T05:05:59Z",
+  "last_success_at": "2026-08-20T05:05:59Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-20T04:09:49Z"
+      "observed_at": "2026-08-20T05:05:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-20T04:09:49Z"
+      "observed_at": "2026-08-20T05:05:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,16 +42,17 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-20T04:09:49Z"
+      "observed_at": "2026-08-20T05:05:59Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -64,7 +65,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 56,
+    "articles_considered": 53,
     "signals_considered": 6,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -89,7 +90,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-20T04:09:49Z"
+      "observed_at": "2026-08-20T05:05:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -179,7 +180,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-20T04:09:49Z"
+      "observed_at": "2026-08-20T05:05:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -279,7 +280,7 @@
       "published_at": "2026-08-16T23:54:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-20T04:09:49Z"
+      "observed_at": "2026-08-20T05:05:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -684,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-20T04:10:24Z",
+    "generated_at": "2026-08-20T05:06:44Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -719,9 +720,9 @@
     "scores": {
       "passage": 24.674,
       "closure": 0,
-      "traffic_reduction": 4.05,
+      "traffic_reduction": 3.05,
       "access_restriction": 5.58,
-      "risk": 54.34
+      "risk": 52.56
     },
     "source_counts": {
       "passage": 21,
@@ -735,21 +736,6 @@
       "confidence": "MEDIA"
     },
     "evidence": [
-      {
-        "kind": "RISK_ELEVATED",
-        "title": "UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdzR1UDJHQ1pYM2Y2dzJ4Wmo3d3VCNFBEbDZQamtaSm5wdF9uWUdwRzdNa0ZtTFdzaUppUkdtelNyaDV0ZnU4aWY1aUlBLWhNdzN2VmhvZzJNdk8zM3gwSXZvc0p6Zld0UHhRQ0RjY2NTekZOekZnMEhwWlo1OXc2Mk1KZ0ZkZHF4WFR5NVRMejB2eDQxdXJJR0VocU5QVmRHbHFTZXlJNWRfdE43Sko3cXlYalB2VmFWSFczb044NlZEU21vOTNHOHpB?oc=5",
-        "published_at": "2026-08-19T10:52:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo elevado",
-        "kind_label_en": "Elevated risk"
-      },
       {
         "kind": "RISK_SEVERE",
         "title": "Seafarer killed as bulker struck in latest Strait of Hormuz attack - Lloyd's List",
@@ -767,10 +753,25 @@
       },
       {
         "kind": "RISK_SEVERE",
+        "title": "Vessel struck by unknown projectile in Strait of Hormuz, crew casualty reported, UKMTO says - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOdC1DbUtnYVo3NzVqcVBVR3FXcm1WQXBOWHI2b1d0SG5NOG1wS25jdjJJeUx3NFc0Ym13OTlZTzl5Q1hnR3dVWFpuTkF6cVlic0NNdXJDWHBIcGZlRVRLWUtJclYybUxvNTJ5RWFDZjJOaGR2aGFrS21Ibzg3b1FudnZjVkZTQV9ra2ZmMnNZNGZWWGdDZXpxUmpoMXEybC1oMjd2T3RYVjJwZ3NacE9XcERRWEZhcHZtbVE1VmhsaDNiWkhlV2hyei1QZ3c?oc=5",
+        "published_at": "2026-08-18T03:29:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.12,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-20T04:10:24Z",
+        "published_at": "2026-08-20T05:06:44Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -826,6 +827,21 @@
         "kind_label_en": "Severe risk"
       },
       {
+        "kind": "RISK_SEVERE",
+        "title": "Seafarer killed in Hormuz cargo ship attack - Seatrade Maritime News",
+        "source": "Seatrade Maritime News",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNRHFMazJiS0V3a05Ua1JXbmh4T1VZU2I3b2FlYks1WUowT3RsMlM3d2d5VkFpVkhYcGFtZVhKZ2kweEpBbUE2SGxBWkdCRGQ4cFliTV9tS045MVhmZXNUVVNQVjBseWhGRjlkTnROZHFQbzJTUjI1M3hFSndCb09tVUpPa1laZw?oc=5",
+        "published_at": "2026-08-18T05:48:57Z",
+        "tier": 2,
+        "weight": 2.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.8,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
         "kind": "TRAFFIC_SEVERELY_REDUCED",
         "title": "Trump Floats Strait of Hormuz as ‘New US Territory’ as Iran Talks Collapse, Oil Prices Surge - The Maine Wire",
         "source": "The Maine Wire",
@@ -839,25 +855,10 @@
         "effective_weight": 1.15,
         "kind_label_es": "Tráfico muy reducido",
         "kind_label_en": "Severely reduced traffic"
-      },
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Trump says Strait of Hormuz remains open despite ‘effective’ naval blockade - Yahoo",
-        "source": "Yahoo",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPa1JwU2JPa01SUnJ5bDgySi1Sb1Z4UzFEMkdPMGxIY1dhbmhqUjVmb25zZ3hrcEE1WlR4dHEyMzZ1cW56MG1UQk8wdDlEZWJCbVBZUmEtU2EtOS1tQ1hvQ1pHMzBET2NuT0dlZmlxbXViNHFVWVVYQ0k0ZFV2a0NGekJlUWdtVlRv?oc=5",
-        "published_at": "2026-08-20T02:48:00Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
       }
     ],
     "diagnostics": {
-      "signals_considered": 81,
+      "signals_considered": 78,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
