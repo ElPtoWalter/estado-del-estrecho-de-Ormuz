@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-21T14:08:18Z",
-  "last_success_at": "2026-08-21T14:08:18Z",
+  "checked_at": "2026-08-21T15:05:03Z",
+  "last_success_at": "2026-08-21T15:05:03Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-18T03:40:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-21T14:08:18Z"
+      "observed_at": "2026-08-21T15:05:03Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-21T14:08:18Z"
+      "observed_at": "2026-08-21T15:05:03Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-21T14:08:18Z"
+      "observed_at": "2026-08-21T15:05:03Z"
     }
   ],
   "diagnostics": {
@@ -64,7 +64,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 55,
+    "articles_considered": 53,
     "signals_considered": 6,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -99,7 +99,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-21T14:08:18Z"
+      "observed_at": "2026-08-21T15:05:03Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -149,7 +149,7 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-21T14:08:18Z"
+      "observed_at": "2026-08-21T15:05:03Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -249,7 +249,7 @@
       "published_at": "2026-08-18T03:40:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-21T14:08:18Z"
+      "observed_at": "2026-08-21T15:05:03Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -684,7 +684,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-21T14:08:36Z",
+    "generated_at": "2026-08-21T15:05:26Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -717,18 +717,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 24.741,
+      "passage": 22.841,
       "closure": 0,
-      "traffic_reduction": 2.62,
-      "access_restriction": 8.36,
-      "risk": 54.26
+      "traffic_reduction": 3.77,
+      "access_restriction": 5.2,
+      "risk": 42.42
     },
     "source_counts": {
-      "passage": 17,
+      "passage": 15,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-21T13:49:40Z",
+    "latest_confirmed_transit_at": "2026-08-21T14:53:48Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -752,6 +752,21 @@
       },
       {
         "kind": "RISK_SEVERE",
+        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+        "source": "Lloyd's List",
+        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+        "published_at": "2026-08-21T15:05:26Z",
+        "tier": 4,
+        "weight": 3.0,
+        "provider": "Lloyd's List hot topic",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
         "title": "Seafarer killed as bulker struck in latest Strait of Hormuz attack - Lloyd's List",
         "source": "Lloyd's List",
         "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVXhKaktJQ0lnODB0UzZrdFBhMkd4cHZvU2lJUWxRazhHVkNxOVo3ODdzbmJiSGswZkR2R2ZRbWZTQ3VzSWJYNHNXTEIzUndTUlM3MXU0VjNoNVRYYVhVRURpWFpjUFFHNnBVMlVUWTlTTXVMNU1lSW5lSkpSRjY0WHdn?oc=5",
@@ -761,22 +776,7 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.12,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
-        "source": "Lloyd's List",
-        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-21T14:08:36Z",
-        "tier": 4,
-        "weight": 3.0,
-        "provider": "Lloyd's List hot topic",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 3.0,
+        "effective_weight": 2.48,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -841,23 +841,23 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "RISK_SEVERE",
-        "title": "Seafarer killed in Hormuz cargo ship attack - Seatrade Maritime News",
-        "source": "Seatrade Maritime News",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNRHFMazJiS0V3a05Ua1JXbmh4T1VZU2I3b2FlYks1WUowT3RsMlM3d2d5VkFpVkhYcGFtZVhKZ2kweEpBbUE2SGxBWkdCRGQ4cFliTV9tS045MVhmZXNUVVNQVjBseWhGRjlkTnROZHFQbzJTUjI1M3hFSndCb09tVUpPa1laZw?oc=5",
-        "published_at": "2026-08-18T05:48:57Z",
-        "tier": 2,
-        "weight": 2.0,
+        "kind": "TRAFFIC_SEVERELY_REDUCED",
+        "title": "Ships Trickle Through Strait Of Hormuz - Marine News Magazine",
+        "source": "Marine News Magazine",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1neFVrRkpCUWdRXzhTTXUtcGNpYmNmT3VDLXI1QWJwYjFRRk1wdEotQm9GNUNoVHRiTFhVU2p2d2padVk5VVIwTElZMWtQay1uODNSRTlpOGlnSVpyOFh6TlQ1UEFvbUJONVBhVl9PT0lDa0E5?oc=5",
+        "published_at": "2026-08-21T04:33:32Z",
+        "tier": 1,
+        "weight": 1.15,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 1.24,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
+        "effective_weight": 1.15,
+        "kind_label_es": "Tráfico muy reducido",
+        "kind_label_en": "Severely reduced traffic"
       }
     ],
     "diagnostics": {
-      "signals_considered": 90,
+      "signals_considered": 73,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
