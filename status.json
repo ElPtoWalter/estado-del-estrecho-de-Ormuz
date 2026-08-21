@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-21T20:52:20Z",
-  "last_success_at": "2026-08-21T20:52:20Z",
+  "checked_at": "2026-08-21T21:51:23Z",
+  "last_success_at": "2026-08-21T21:51:23Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-18T03:40:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-21T20:52:20Z"
+      "observed_at": "2026-08-21T21:51:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-21T20:52:20Z"
+      "observed_at": "2026-08-21T21:51:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,16 +42,17 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-21T20:52:20Z"
+      "observed_at": "2026-08-21T21:51:23Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -64,7 +65,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 53,
+    "articles_considered": 47,
     "signals_considered": 6,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -99,7 +100,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-21T20:52:20Z"
+      "observed_at": "2026-08-21T21:51:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -149,7 +150,7 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-21T20:52:20Z"
+      "observed_at": "2026-08-21T21:51:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -249,7 +250,7 @@
       "published_at": "2026-08-18T03:40:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-21T20:52:20Z"
+      "observed_at": "2026-08-21T21:51:23Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -684,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-21T20:52:40Z",
+    "generated_at": "2026-08-21T21:52:02Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -721,14 +722,14 @@
       "closure": 0,
       "traffic_reduction": 4.77,
       "access_restriction": 7.42,
-      "risk": 39.42
+      "risk": 38.64
     },
     "source_counts": {
       "passage": 13,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-21T14:53:48Z",
+    "latest_confirmed_transit_at": "2026-08-21T14:56:20Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -755,7 +756,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-21T20:52:40Z",
+        "published_at": "2026-08-21T21:52:02Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
