@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-21T03:30:26Z",
-  "last_success_at": "2026-08-21T03:30:26Z",
+  "checked_at": "2026-08-21T04:11:15Z",
+  "last_success_at": "2026-08-21T04:11:15Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -16,23 +16,23 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Vessel struck by unknown projectile in Strait of Hormuz, crew casualty reported, UKMTO says - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOdC1DbUtnYVo3NzVqcVBVR3FXcm1WQXBOWHI2b1d0SG5NOG1wS25jdjJJeUx3NFc0Ym13OTlZTzl5Q1hnR3dVWFpuTkF6cVlic0NNdXJDWHBIcGZlRVRLWUtJclYybUxvNTJ5RWFDZjJOaGR2aGFrS21Ibzg3b1FudnZjVkZTQV9ra2ZmMnNZNGZWWGdDZXpxUmpoMXEybC1oMjd2T3RYVjJwZ3NacE9XcERRWEZhcHZtbVE1VmhsaDNiWkhlV2hyei1QZ3c?oc=5",
-      "published_at": "2026-08-18T03:40:51Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-08-21T03:30:26Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
       "title": "Vessel hit by 'unknown projectile' in Strait of Hormuz, UKMTO says - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdnhsTnlwVkVUTjEzcmw0cVhsUDZxVUoyUDl6WkNSSXp1SEx1c1AzQ1pwcloxN3RnMUV5SU9oSnJzcm1aQkRIV1hPMnBqWDAwMGp4T1g3YmxJT05qSGVxZm5LcDlmY3p5UkY5el82UHplTzR0R3dMWUQ1dzRvU2sxNTUxanRDVlMwVV9ab3EzRkYwLVFYWVdLcWVpXzVXLVktcG9odVdGSdIBrAFBVV95cUxQWmg0WGhUZzNuTDBDYkNzeDdJMjRVMEJRRFJLcENEaXhXNDR2T2tyVzVvMF9YSmtLYkRObGEzSE9NSmNUQTFfYXFseDFFYm40VmNSbkNFNGdqcDY0NWttUlpjbmFzMmFobW9pVGdMTEplNHFaTlBlaXZvZmM3N013Nk1UMF84SnkyT0FyQl9iLXpQTEZpWnVCY2dnbzJvblVJMUtreWF1TW5nZnps?oc=5",
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-21T03:30:26Z"
+      "observed_at": "2026-08-21T04:11:15Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Vessel struck by unknown projectile in Strait of Hormuz, crew casualty reported, UKMTO says - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOdC1DbUtnYVo3NzVqcVBVR3FXcm1WQXBOWHI2b1d0SG5NOG1wS25jdjJJeUx3NFc0Ym13OTlZTzl5Q1hnR3dVWFpuTkF6cVlic0NNdXJDWHBIcGZlRVRLWUtJclYybUxvNTJ5RWFDZjJOaGR2aGFrS21Ibzg3b1FudnZjVkZTQV9ra2ZmMnNZNGZWWGdDZXpxUmpoMXEybC1oMjd2T3RYVjJwZ3NacE9XcERRWEZhcHZtbVE1VmhsaDNiWkhlV2hyei1QZ3c?oc=5",
+      "published_at": "2026-08-18T03:40:51Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-08-21T04:11:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,21 +42,22 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-21T03:30:26Z"
+      "observed_at": "2026-08-21T04:11:15Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5.995
+      "risk": 4.995
     },
     "independent_sources": {
       "open": 0,
@@ -64,7 +65,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 54,
+    "articles_considered": 50,
     "signals_considered": 6,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -99,7 +100,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-21T03:30:26Z"
+      "observed_at": "2026-08-21T04:11:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -199,7 +200,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-21T03:30:26Z"
+      "observed_at": "2026-08-21T04:11:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -249,7 +250,7 @@
       "published_at": "2026-08-18T03:40:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-21T03:30:26Z"
+      "observed_at": "2026-08-21T04:11:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -684,7 +685,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-21T03:30:44Z",
+    "generated_at": "2026-08-21T04:11:58Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -717,24 +718,39 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 10.777,
+      "passage": 15.77,
       "closure": 0,
-      "traffic_reduction": 1.78,
+      "traffic_reduction": 0.78,
       "access_restriction": 4.98,
-      "risk": 44.7
+      "risk": 44.58
     },
     "source_counts": {
-      "passage": 10,
+      "passage": 11,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-20T11:51:59Z",
+    "latest_confirmed_transit_at": "2026-08-21T02:43:00Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "MEDIA"
     },
     "evidence": [
+      {
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Ships passing through Hormuz hover in single digits, data shows - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNSEhZX09yZU9wMFlFN0FUUjM0dUhpZ01zMEVvWFBlVHpoQ25lY0xFckRtVnpXMHZfZVA3TU0zRjNNYlUydy1pelQ1Q3Rmb1dPeWZmU3hDTXF2ZERfY3UyY2tteGpocUNoY0FkdE13dXV5cjV1VUh3MmN1al9MUm5xVlh6RWpwenRzQ2dzR0dxci05c2kwQ1VSUGNDTVBJVkFFd0RjZm9GRnBBdw?oc=5",
+        "published_at": "2026-08-21T02:43:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
+      },
       {
         "kind": "RISK_SEVERE",
         "title": "Seafarer killed as bulker struck in latest Strait of Hormuz attack - Lloyd's List",
@@ -752,6 +768,21 @@
       },
       {
         "kind": "RISK_SEVERE",
+        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+        "source": "Lloyd's List",
+        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+        "published_at": "2026-08-21T04:11:58Z",
+        "tier": 4,
+        "weight": 3.0,
+        "provider": "Lloyd's List hot topic",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
         "title": "Vessel struck by unknown projectile in Strait of Hormuz, crew casualty reported, UKMTO says - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOdC1DbUtnYVo3NzVqcVBVR3FXcm1WQXBOWHI2b1d0SG5NOG1wS25jdjJJeUx3NFc0Ym13OTlZTzl5Q1hnR3dVWFpuTkF6cVlic0NNdXJDWHBIcGZlRVRLWUtJclYybUxvNTJ5RWFDZjJOaGR2aGFrS21Ibzg3b1FudnZjVkZTQV9ra2ZmMnNZNGZWWGdDZXpxUmpoMXEybC1oMjd2T3RYVjJwZ3NacE9XcERRWEZhcHZtbVE1VmhsaDNiWkhlV2hyei1QZ3c?oc=5",
@@ -761,22 +792,7 @@
         "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.12,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
-        "source": "Lloyd's List",
-        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-21T03:30:44Z",
-        "tier": 4,
-        "weight": 3.0,
-        "provider": "Lloyd's List hot topic",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 3.0,
+        "effective_weight": 2.48,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -811,6 +827,21 @@
         "kind_label_en": "Severe risk"
       },
       {
+        "kind": "RISK_SEVERE",
+        "title": "Video: Moment Ship With 21 Indian Sailors Came Under Iran's Attack In Hormuz - NDTV",
+        "source": "NDTV",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPdjVGMWdzT29saGZHVlFKcVBJRkFRMnhYX1FoTnJ3b2JKOVVkdF9Pamg3Mmwza0Y3OXpGWWNITjJqdmdodmZ5SVRjUDFiNEVzRG11NHNTenF0M0R2SERvZWtJa2U0YjJNclpkM2hZTTh0Z0xaTDVCa0o2dTYyOU9ack8yaGJrM3U0VTRGaHpSYi1JNWZKazJVbjRYRDBRNUU3Y09LNWI4cnNhbk9xcHR5aGxlbE84bUZfQVRxMkI3UWJrWEN5Uy1iSVZ30gHSAUFVX3lxTE1kZHRwaW1DbXlQZEpNYU5IM0RIbGpnWmlVaFVTZnRHQmxVUURKWU80a0tIYjVKSzItaGVHcHoyWXNnMkpjY3NJRmI0clBoenAzNTVuN0YzUS1QV0JFOUkyVVRyeWFmOHM1NmgzZTZVV3ZSU3N2dGMxUUIyaDBXWkx1Q2UzejJjM0Nua01KR1FRQTJteGdtUXhHcnRRQlZDaHBTQm9yalVrdEZRN0ZTUWtQOXdYX0ZJRkQ5NnhSd05ZalJaMDUzX1FRSF82c3Q0SDF5Zw?oc=5",
+        "published_at": "2026-08-21T01:51:53Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
         "kind": "RISK_ELEVATED",
         "title": "Iran live updates: Araghchi dismisses Trump's 'economic D-Day' threat - Yahoo",
         "source": "Yahoo",
@@ -824,40 +855,10 @@
         "effective_weight": 1.0,
         "kind_label_es": "Riesgo elevado",
         "kind_label_en": "Elevated risk"
-      },
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Hormuz shipping death toll rises as seafarer confirmed killed on Malaysian bulker - TradeWinds News",
-        "source": "TradeWinds News",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQeEEzbkZLLXByeWlwdUs2SzJQUTJJZjI0OG5VMV9XdDZqYkZBaG45RUJxTkhQaHN4Y3RIN3BUbWRQbko0R2hURmZHaWFkcHVFb2JvS09scGg0bjRSQWxKTUZLQ2lwcnR5RFptLV94cUlBTEp4aE9ZUVR6WjhiUjM5TVNGZUU2X2hXTkVTMFhBUHhtV0hNaXd1ZGVTWWpYbHo3ODlXYzRjamNWZk5sSzlIeVJONGlZQ0s3cTVMTGhUNzh6dnJ4aVFNUktpeXFCUi1h?oc=5",
-        "published_at": "2026-08-20T16:47:07Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Missile Attack On UAE Oil Tanker In Strait Of Hormuz - Breaking News Microsoft (lmVGLhfi0Y) - Mshale",
-        "source": "Mshale",
-        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9xekxqNFl4RHdkalhqaE16WEdCaWFmUDlFUmdDR0p3RFZkVVZtX01JSEx2M2xhbGVDcHZ5dWppV1o0UHl5WTFpLV8xcjdfb1pXQ1pFc3EzeVc3OWc?oc=5",
-        "published_at": "2026-08-20T14:48:27Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 64,
+      "signals_considered": 65,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
