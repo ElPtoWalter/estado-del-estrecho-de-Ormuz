@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-21T02:09:55Z",
+  "generated_at": "2026-08-21T03:30:44Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,14 +33,14 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 11.921,
+    "passage": 10.777,
     "closure": 0,
     "traffic_reduction": 1.78,
     "access_restriction": 4.98,
-    "risk": 47.84
+    "risk": 44.7
   },
   "source_counts": {
-    "passage": 11,
+    "passage": 10,
     "closure": 0,
     "primary_sources": 2
   },
@@ -51,21 +51,6 @@
     "confidence": "MEDIA"
   },
   "evidence": [
-    {
-      "kind": "RISK_ELEVATED",
-      "title": "UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdzR1UDJHQ1pYM2Y2dzJ4Wmo3d3VCNFBEbDZQamtaSm5wdF9uWUdwRzdNa0ZtTFdzaUppUkdtelNyaDV0ZnU4aWY1aUlBLWhNdzN2VmhvZzJNdk8zM3gwSXZvc0p6Zld0UHhRQ0RjY2NTekZOekZnMEhwWlo1OXc2Mk1KZ0ZkZHF4WFR5NVRMejB2eDQxdXJJR0VocU5QVmRHbHFTZXlJNWRfdE43Sko3cXlYalB2VmFWSFczb044NlZEU21vOTNHOHpB?oc=5",
-      "published_at": "2026-08-19T10:52:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.6,
-      "kind_label_es": "Riesgo elevado",
-      "kind_label_en": "Elevated risk"
-    },
     {
       "kind": "RISK_SEVERE",
       "title": "Seafarer killed as bulker struck in latest Strait of Hormuz attack - Lloyd's List",
@@ -101,7 +86,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-21T02:09:55Z",
+      "published_at": "2026-08-21T03:30:44Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -170,10 +155,25 @@
       "effective_weight": 1.0,
       "kind_label_es": "Acceso restringido",
       "kind_label_en": "Restricted access"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Missile Attack On UAE Oil Tanker In Strait Of Hormuz - Breaking News Microsoft (lmVGLhfi0Y) - Mshale",
+      "source": "Mshale",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9xekxqNFl4RHdkalhqaE16WEdCaWFmUDlFUmdDR0p3RFZkVVZtX01JSEx2M2xhbGVDcHZ5dWppV1o0UHl5WTFpLV8xcjdfb1pXQ1pFc3EzeVc3OWc?oc=5",
+      "published_at": "2026-08-20T14:48:27Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 65,
+    "signals_considered": 64,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
