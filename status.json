@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-22T04:07:43Z",
-  "last_success_at": "2026-08-22T04:07:43Z",
+  "checked_at": "2026-08-22T05:00:50Z",
+  "last_success_at": "2026-08-22T05:00:50Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T04:07:43Z"
+      "observed_at": "2026-08-22T05:00:50Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,16 +32,17 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T04:07:43Z"
+      "observed_at": "2026-08-22T05:00:50Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -54,7 +55,7 @@
       "declared": 0,
       "risk": 2
     },
-    "articles_considered": 48,
+    "articles_considered": 40,
     "signals_considered": 5,
     "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
@@ -89,7 +90,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T04:07:43Z"
+      "observed_at": "2026-08-22T05:00:50Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -189,7 +190,7 @@
       "published_at": "2026-08-18T06:50:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T04:07:43Z"
+      "observed_at": "2026-08-22T05:00:50Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -674,7 +675,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-22T04:08:15Z",
+    "generated_at": "2026-08-22T05:01:51Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -707,11 +708,11 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 19.149,
+      "passage": 18.681,
       "closure": 0,
-      "traffic_reduction": 5.82,
+      "traffic_reduction": 6.487,
       "access_restriction": 5.64,
-      "risk": 30.2
+      "risk": 28.58
     },
     "source_counts": {
       "passage": 13,
@@ -730,13 +731,13 @@
         "title": "Ships passing through Hormuz hover in single digits, data shows - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNSEhZX09yZU9wMFlFN0FUUjM0dUhpZ01zMEVvWFBlVHpoQ25lY0xFckRtVnpXMHZfZVA3TU0zRjNNYlUydy1pelQ1Q3Rmb1dPeWZmU3hDTXF2ZERfY3UyY2tteGpocUNoY0FkdE13dXV5cjV1VUh3MmN1al9MUm5xVlh6RWpwenRzQ2dzR0dxci05c2kwQ1VSUGNDTVBJVkFFd0RjZm9GRnBBdw?oc=5",
-        "published_at": "2026-08-21T11:22:01Z",
+        "published_at": "2026-08-21T02:43:00Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 4.0,
+        "effective_weight": 3.6,
         "kind_label_es": "Tránsito confirmado",
         "kind_label_en": "Confirmed transit"
       },
@@ -745,7 +746,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-22T04:08:15Z",
+        "published_at": "2026-08-22T05:01:51Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -826,7 +827,7 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 1.15,
+        "effective_weight": 1.035,
         "kind_label_es": "Tráfico muy reducido",
         "kind_label_en": "Severely reduced traffic"
       },
@@ -841,13 +842,13 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 1.15,
+        "effective_weight": 1.035,
         "kind_label_es": "Tráfico muy reducido",
         "kind_label_en": "Severely reduced traffic"
       }
     ],
     "diagnostics": {
-      "signals_considered": 62,
+      "signals_considered": 61,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
