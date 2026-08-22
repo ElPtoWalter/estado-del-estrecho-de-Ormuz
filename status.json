@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-22T02:00:07Z",
-  "last_success_at": "2026-08-22T02:00:07Z",
+  "checked_at": "2026-08-22T03:21:45Z",
+  "last_success_at": "2026-08-22T03:21:45Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-18T03:40:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-22T02:00:07Z"
+      "observed_at": "2026-08-22T03:21:45Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T02:00:07Z"
+      "observed_at": "2026-08-22T03:21:45Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,17 +42,16 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T02:00:07Z"
+      "observed_at": "2026-08-22T03:21:45Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -65,7 +64,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 48,
+    "articles_considered": 53,
     "signals_considered": 6,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -100,7 +99,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T02:00:07Z"
+      "observed_at": "2026-08-22T03:21:45Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -150,7 +149,7 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T02:00:07Z"
+      "observed_at": "2026-08-22T03:21:45Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -250,7 +249,7 @@
       "published_at": "2026-08-18T03:40:51Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-22T02:00:07Z"
+      "observed_at": "2026-08-22T03:21:45Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -685,7 +684,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-22T02:01:02Z",
+    "generated_at": "2026-08-22T03:22:09Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -718,11 +717,11 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 21.386,
+      "passage": 21.256,
       "closure": 0,
-      "traffic_reduction": 5.92,
-      "access_restriction": 6.64,
-      "risk": 33.56
+      "traffic_reduction": 5.82,
+      "access_restriction": 5.64,
+      "risk": 33.72
     },
     "source_counts": {
       "passage": 14,
@@ -756,7 +755,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-22T02:01:02Z",
+        "published_at": "2026-08-22T03:22:09Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -858,7 +857,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 68,
+      "signals_considered": 66,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
