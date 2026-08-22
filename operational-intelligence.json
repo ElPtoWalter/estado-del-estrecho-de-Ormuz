@@ -1,15 +1,15 @@
 {
   "version": 7,
-  "generated_at": "2026-08-22T20:53:22Z",
+  "generated_at": "2026-08-22T21:49:45Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
   "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
   "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
   "operational_label_en": "Physical passage exists, but flows are severely degraded",
-  "confidence": "BAJA",
-  "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
-  "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
+  "confidence": "MEDIA",
+  "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+  "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 20.349,
+    "passage": 21.649,
     "closure": 0,
-    "traffic_reduction": 4.583,
-    "access_restriction": 6.2,
-    "risk": 18.18
+    "traffic_reduction": 3.87,
+    "access_restriction": 7.2,
+    "risk": 16.46
   },
   "source_counts": {
-    "passage": 13,
+    "passage": 14,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-22T16:04:00Z",
+  "latest_confirmed_transit_at": "2026-08-22T19:28:49Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -71,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-22T19:48:36Z",
+      "published_at": "2026-08-22T21:49:45Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -142,48 +142,42 @@
       "kind_label_en": "Severely reduced traffic"
     },
     {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "Around 40 Oil Tankers Pass Through Strait of Hormuz Amid US Blockade - Межа. Новини України.",
-      "source": "Межа. Новини України.",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAwU2ZNcTUtUERsdm5vNExDRWUxOHVWU3NiZ0xILUVDOUtsZDFhS2Y0ZXFZdnJYbHpmZzYydFZYLTQtWkNCdWVabzlFMlRoalJrUG5sODVVT3BRcm0xNTJnSw?oc=5",
-      "published_at": "2026-08-22T18:21:05Z",
+      "kind": "RISK_SEVERE",
+      "title": "Traffic in the Strait of Hormuz skyrockets nearly 400%, as analysts say Iran’s grip on critical waterway weakens - New York Post",
+      "source": "New York Post",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRzdWWkUydmVBYXl0YnZvMTBEd01vaVMtUWxpQTg2bWFZTXRJTlh1azRrcGJNeldrYkZPcnJkNUw0YTQtNVZhdG8zX0toVGxNR3ZadnFla0c1VE9NWGppSllVUUFBOG0xQWowUGhFQ1l1VjZGMkNEZFljbzVja1RlYjdNd0hSRFY2REdkR3lndmdIQXY0dnFNMWd2bzhCNmNSeVV1MzRVdDUzNW8?oc=5",
+      "published_at": "2026-08-22T20:52:00Z",
       "tier": 1,
       "weight": 1.0,
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 1.0,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     },
     {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "U.S., Iran trade warnings before new sanctions as Hormuz traffic remains stalled - Haaretz",
-      "source": "Haaretz",
-      "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQazl1ZlVlb09fRlNHS2YwQ1pja0Z2WEc3QmtVV1p5SDYwQ29kSHhXTndRc19KNjJ1Vy1tZkk4NDRvbnZtS1dNNF9vNl9XSW44a0pUcFdHM2Z6QkxENWIwdzlER0VhM00yMWJJZ0pBT1lYMndETTRaUUVKWFRyZVBhNVdhTG9fOWtyNHkxbFVIZWVDSkVYUElyemZPS0lKSjNLYlM3WE51VklvTGhSQ2plbmM3Q2wydExKWmt0SEwxUkp4aWpsbUsxSUNEODVIUVl2TGlhVmlZN1FvSUM1czhFVHBNaDZ3a1J2cmRoVEM0R29icE9RMmZwQzk2ZTJFZThPVHpnYTFQbXhuOHpWMXozaQ?oc=5",
-      "published_at": "2026-08-22T16:04:00Z",
+      "kind": "RISK_SEVERE",
+      "title": "'Ghost' tankers with US escort reopen Strait of Hormuz and dodge Iranian attacks - finance.biggo.com",
+      "source": "finance.biggo.com",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE80MlR1SEpCakpNc3ljd0FONmcwZWtlUHg2T21iZ0NfZUFWNmJQOEJ3cUhqQmpoakpPd2RIdUxWZWI1aVFMNGdwaHpERnB4QmRtVnRjMUszZWtXX1pueXFqbnpvbnZ1bVpmQldCRE00YVpiNHdYWUE?oc=5",
+      "published_at": "2026-08-22T19:55:00Z",
       "tier": 1,
       "weight": 1.0,
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 1.0,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 2,
-    "provider_errors": [
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable"
-    ],
+    "signals_considered": 45,
+    "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
     "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
     "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-  },
-  "carried_forward": true
+  }
 }

@@ -1,19 +1,29 @@
 {
   "engine_version": 3,
   "status": "INCIERTO",
-  "operational_status": "NO_RECENT_CONFIRMATION",
-  "operational_label_es": "Sin confirmación reciente",
-  "operational_label_en": "No recent confirmation",
-  "confidence": "BAJA",
-  "checked_at": "2026-08-22T20:51:02Z",
-  "last_success_at": "2026-08-22T20:51:02Z",
-  "last_change_at": "2026-08-22T20:51:02Z",
+  "operational_status": "HIGH_RISK_UNCONFIRMED",
+  "operational_label_es": "Riesgo elevado, estado no confirmado",
+  "operational_label_en": "High risk, status unconfirmed",
+  "confidence": "MEDIA",
+  "checked_at": "2026-08-22T21:49:03Z",
+  "last_success_at": "2026-08-22T21:49:03Z",
+  "last_change_at": "2026-08-22T21:49:03Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
-  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
+  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
   "last_valid_confirmation": null,
   "evidence": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US-Israel-Iran War Live News: Trump Calls Strait of Hormuz 'New US Territory' Amid Iran Standoff, Says No Iran Talks Planned as Vessel Hit By Unknown Projectile - The Sunday Guardian",
+      "source_name": "The Sunday Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxPRlNKcnh3SmxhZU5xTlhTeXdHQ3VWbHhuZWQ3X1J2TnVnU2YwQU1IUUtwNVd6QkVJdTQxc0hmWVdFSkdWbWQ4UDhEbUFkbTVhajJvcXhCNTk5RVhCMmI2ZkF0bktvTjl4VXNPcVNtaHhrNDRJclB2RWh3M0Itc2ZzbjI1RTN3NGhNXzRBTTNOOGtleFpZUDJ2NW52Y0p5QWpkangyR2cydWZZZUkwY29ya1d6eGtSblktSURHN0JCMWozbU5aV2pyaUJydmhPdVIwUkg5aGw2UkpIeFBKZVZ0ZHNHZjhPSzg2b2l4Mkh5ZnF2NlhIeU0zN09DRXVRTlpqQlZtMzVLbTFNdUg0ZnU3Y2RLOWJmX1lRMUNnVnFEbkhYNXplZ1oyWdIBrgJBVV95cUxPUDJYQ3ZYNFlDaFA0WDdJb3NZbnN4ek12YTBLNFdHVVgwcDdnYk1SMFl6QThhQnhCN0tfOW4xZllVamdSWV9VYUdKNC1neGxnUm5yYktIcGNNNHY4VEw1VnFIZTk4eHY4UklqNGZSN1dQMlN1OXkxb2xxNG1UWTlVcWFVaXRMTndfS3Atd3RKMDNvV1k1d29zay1hZllqbXAzX1paNVhoRVFnelhIV2ZndGprRVJPaGh2NTUyMVlFaVRTcHJzLVYwdVpNQWZMcDRERUF1U0NYNkQ1cHl5TVR3NnA4dVlSWXBJdkxaZU10bE1hVThDRWE1dkUwTDZxMHF0bFhqUHFPX2NmMnp6UDFabVlDSEZiYU5mb3JYNzJIMzJ2NWxpWlQxOVhiaDZVQQ?oc=5",
+      "published_at": "2026-08-19T06:10:58Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-22T21:49:03Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "UAE severs trade with Iran after reported missile strike - CNBC",
@@ -22,7 +32,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T19:47:47Z"
+      "observed_at": "2026-08-22T21:49:03Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,44 +42,44 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T19:47:47Z"
+      "observed_at": "2026-08-22T21:49:03Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
-      "Official maritime web search"
+      "Official maritime web search",
+      "Google News RSS"
     ],
     "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests",
-      "Google News RSS: HTTPError: HTTP Error 503: Service Unavailable"
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
     ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 2.73
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 3
     },
-    "articles_considered": 0,
-    "signals_considered": 0,
-    "current_cycle_evidence": 0,
-    "evidence_display_mode": "carried",
+    "articles_considered": 29,
+    "signals_considered": 3,
+    "current_cycle_evidence": 3,
+    "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
-    "mode": "carried",
+    "mode": "current",
     "as_of": "2026-08-19T06:52:12Z",
-    "current_cycle_count": 0,
-    "heading_es": "Últimas evidencias disponibles",
-    "heading_en": "Latest available evidence",
-    "description_es": "La comprobación más reciente no aportó nuevas evidencias publicables. Estas señales proceden de ciclos anteriores y se muestran con su fecha real.",
-    "description_en": "The latest check produced no new publishable evidence. These signals come from earlier cycles and retain their actual publication dates."
+    "current_cycle_count": 3,
+    "heading_es": "Evidencias de esta comprobación",
+    "heading_en": "Evidence from this check",
+    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
+    "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
     {
@@ -90,7 +100,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T19:47:47Z"
+      "observed_at": "2026-08-22T21:49:03Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -124,6 +134,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "US-Israel-Iran War Live News: Trump Calls Strait of Hormuz 'New US Territory' Amid Iran Standoff, Says No Iran Talks Planned as Vessel Hit By Unknown Projectile - The Sunday Guardian",
+      "source_name": "The Sunday Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxPRlNKcnh3SmxhZU5xTlhTeXdHQ3VWbHhuZWQ3X1J2TnVnU2YwQU1IUUtwNVd6QkVJdTQxc0hmWVdFSkdWbWQ4UDhEbUFkbTVhajJvcXhCNTk5RVhCMmI2ZkF0bktvTjl4VXNPcVNtaHhrNDRJclB2RWh3M0Itc2ZzbjI1RTN3NGhNXzRBTTNOOGtleFpZUDJ2NW52Y0p5QWpkangyR2cydWZZZUkwY29ya1d6eGtSblktSURHN0JCMWozbU5aV2pyaUJydmhPdVIwUkg5aGw2UkpIeFBKZVZ0ZHNHZjhPSzg2b2l4Mkh5ZnF2NlhIeU0zN09DRXVRTlpqQlZtMzVLbTFNdUg0ZnU3Y2RLOWJmX1lRMUNnVnFEbkhYNXplZ1oyWdIBrgJBVV95cUxPUDJYQ3ZYNFlDaFA0WDdJb3NZbnN4ek12YTBLNFdHVVgwcDdnYk1SMFl6QThhQnhCN0tfOW4xZllVamdSWV9VYUdKNC1neGxnUm5yYktIcGNNNHY4VEw1VnFIZTk4eHY4UklqNGZSN1dQMlN1OXkxb2xxNG1UWTlVcWFVaXRMTndfS3Atd3RKMDNvV1k1d29zay1hZllqbXAzX1paNVhoRVFnelhIV2ZndGprRVJPaGh2NTUyMVlFaVRTcHJzLVYwdVpNQWZMcDRERUF1U0NYNkQ1cHl5TVR3NnA4dVlSWXBJdkxaZU10bE1hVThDRWE1dkUwTDZxMHF0bFhqUHFPX2NmMnp6UDFabVlDSEZiYU5mb3JYNzJIMzJ2NWxpWlQxOVhiaDZVQQ?oc=5",
+      "published_at": "2026-08-19T06:10:58Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-22T21:49:03Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Iran latest warning to the US signals the hardliners are just getting started",
       "source_name": "CNN",
       "source_url": "https://us.cnn.com/2026/08/19/middleeast/iran-hardliners-just-getting-started-intl",
@@ -140,7 +160,7 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T19:47:47Z"
+      "observed_at": "2026-08-22T21:49:03Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -661,30 +681,20 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-12T15:29:57Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil prices rise as Red Sea, Gulf of Oman attacks heighten supply concerns - CNBC",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1DUGtHWXRCMkh5Y0hKaHl1MTYxYThUT210WjBqdmVrUlEyTFc3RkRuc2hFeF9qSjRIaTB2RnM0MXAteTZmMFBUdXNDUEZkUFlld1pYbkhRMVpObWNOb244UEZKUTNXQW5aVkZGMmdIdEMyek9zQ3ZBQ2Nrb9IBgAFBVV95cUxPdi1sWGRJdmJPTzVFSGMwM3JPTV9hWTBveUQ3cGlTVElHd2JfWU02TXYxWks2ZmFoWkhWRlplT19faF9GcWdyNG1mRndYTjc1a0dHYUp1REdfRHJxWTFzWm95VzNGbjNNdzZ3RW1ZNHlBT2pmLWdtX25RLTM3RllnSQ?oc=5",
-      "published_at": "2026-08-12T04:56:36Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-12T05:15:48Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-22T20:53:22Z",
+    "generated_at": "2026-08-22T21:49:45Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
     "operational_label_en": "Physical passage exists, but flows are severely degraded",
-    "confidence": "BAJA",
-    "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
-    "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
+    "confidence": "MEDIA",
+    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
@@ -708,18 +718,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 20.349,
+      "passage": 21.649,
       "closure": 0,
-      "traffic_reduction": 4.583,
-      "access_restriction": 6.2,
-      "risk": 18.18
+      "traffic_reduction": 3.87,
+      "access_restriction": 7.2,
+      "risk": 16.46
     },
     "source_counts": {
-      "passage": 13,
+      "passage": 14,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-22T16:04:00Z",
+    "latest_confirmed_transit_at": "2026-08-22T19:28:49Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -746,7 +756,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-22T19:48:36Z",
+        "published_at": "2026-08-22T21:49:45Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -817,49 +827,43 @@
         "kind_label_en": "Severely reduced traffic"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Around 40 Oil Tankers Pass Through Strait of Hormuz Amid US Blockade - Межа. Новини України.",
-        "source": "Межа. Новини України.",
-        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAwU2ZNcTUtUERsdm5vNExDRWUxOHVWU3NiZ0xILUVDOUtsZDFhS2Y0ZXFZdnJYbHpmZzYydFZYLTQtWkNCdWVabzlFMlRoalJrUG5sODVVT3BRcm0xNTJnSw?oc=5",
-        "published_at": "2026-08-22T18:21:05Z",
+        "kind": "RISK_SEVERE",
+        "title": "Traffic in the Strait of Hormuz skyrockets nearly 400%, as analysts say Iran’s grip on critical waterway weakens - New York Post",
+        "source": "New York Post",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRzdWWkUydmVBYXl0YnZvMTBEd01vaVMtUWxpQTg2bWFZTXRJTlh1azRrcGJNeldrYkZPcnJkNUw0YTQtNVZhdG8zX0toVGxNR3ZadnFla0c1VE9NWGppSllVUUFBOG0xQWowUGhFQ1l1VjZGMkNEZFljbzVja1RlYjdNd0hSRFY2REdkR3lndmdIQXY0dnFNMWd2bzhCNmNSeVV1MzRVdDUzNW8?oc=5",
+        "published_at": "2026-08-22T20:52:00Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 1.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       },
       {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "U.S., Iran trade warnings before new sanctions as Hormuz traffic remains stalled - Haaretz",
-        "source": "Haaretz",
-        "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQazl1ZlVlb09fRlNHS2YwQ1pja0Z2WEc3QmtVV1p5SDYwQ29kSHhXTndRc19KNjJ1Vy1tZkk4NDRvbnZtS1dNNF9vNl9XSW44a0pUcFdHM2Z6QkxENWIwdzlER0VhM00yMWJJZ0pBT1lYMndETTRaUUVKWFRyZVBhNVdhTG9fOWtyNHkxbFVIZWVDSkVYUElyemZPS0lKSjNLYlM3WE51VklvTGhSQ2plbmM3Q2wydExKWmt0SEwxUkp4aWpsbUsxSUNEODVIUVl2TGlhVmlZN1FvSUM1czhFVHBNaDZ3a1J2cmRoVEM0R29icE9RMmZwQzk2ZTJFZThPVHpnYTFQbXhuOHpWMXozaQ?oc=5",
-        "published_at": "2026-08-22T16:04:00Z",
+        "kind": "RISK_SEVERE",
+        "title": "'Ghost' tankers with US escort reopen Strait of Hormuz and dodge Iranian attacks - finance.biggo.com",
+        "source": "finance.biggo.com",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE80MlR1SEpCakpNc3ljd0FONmcwZWtlUHg2T21iZ0NfZUFWNmJQOEJ3cUhqQmpoakpPd2RIdUxWZWI1aVFMNGdwaHpERnB4QmRtVnRjMUszZWtXX1pueXFqbnpvbnZ1bVpmQldCRE00YVpiNHdYWUE?oc=5",
+        "published_at": "2026-08-22T19:55:00Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 1.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 2,
-      "provider_errors": [
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable"
-      ],
+      "signals_considered": 45,
+      "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-    },
-    "carried_forward": true
+    }
   }
 }
