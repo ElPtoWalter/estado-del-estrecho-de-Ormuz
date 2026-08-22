@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-22T14:51:18Z",
+  "generated_at": "2026-08-22T15:49:29Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 15.926,
+    "passage": 16.082,
     "closure": 0,
     "traffic_reduction": 5.203,
-    "access_restriction": 6.48,
-    "risk": 21.2
+    "access_restriction": 5.58,
+    "risk": 20.36
   },
   "source_counts": {
-    "passage": 10,
+    "passage": 9,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-21T14:56:20Z",
+  "latest_confirmed_transit_at": "2026-08-22T13:39:46Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -56,7 +56,7 @@
       "title": "Ships passing through Hormuz hover in single digits, data shows - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNSEhZX09yZU9wMFlFN0FUUjM0dUhpZ01zMEVvWFBlVHpoQ25lY0xFckRtVnpXMHZfZVA3TU0zRjNNYlUydy1pelQ1Q3Rmb1dPeWZmU3hDTXF2ZERfY3UyY2tteGpocUNoY0FkdE13dXV5cjV1VUh3MmN1al9MUm5xVlh6RWpwenRzQ2dzR0dxci05c2kwQ1VSUGNDTVBJVkFFd0RjZm9GRnBBdw?oc=5",
-      "published_at": "2026-08-21T05:40:45Z",
+      "published_at": "2026-08-21T02:43:00Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "Google News RSS",
@@ -71,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-22T14:51:18Z",
+      "published_at": "2026-08-22T15:49:29Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -142,6 +142,21 @@
       "kind_label_en": "Severely reduced traffic"
     },
     {
+      "kind": "TRANSIT_CONFIRMED",
+      "title": "Around 40 tankers transit Strait of Hormuz Friday night - Axios - Iran International",
+      "source": "Iran International",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9Ha1BKbzI4eTV0WUFzYU5UbEhlWm5ob0NuYjUyczctSHdNSzREa3BCVmxNWWo0UTdJbUd5Q21NSmNIUWpZaDVCUG1jQmI0ck5zWXc?oc=5",
+      "published_at": "2026-08-22T13:39:46Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Tránsito confirmado",
+      "kind_label_en": "Confirmed transit"
+    },
+    {
       "kind": "NEUTRAL_TRANSIT_PERMITTED",
       "title": "Iran grants Iraqi tankers safe passage through Strait of Hormuz - Yahoo",
       "source": "Yahoo",
@@ -155,25 +170,10 @@
       "effective_weight": 1.0,
       "kind_label_es": "Tránsito neutral permitido",
       "kind_label_en": "Neutral transit permitted"
-    },
-    {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "Iran to look at lifting restrictions on Iraqi tankers in Hormuz Strait - Report.az",
-      "source": "Report.az",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPYmZhNlFubWxienJ2bGR0YUlWbkxha3lud3VJUVNTVk9fRnpYNU01U3RWYldCdHFUU1I1a1FFQVRxTDV2eDRYaG9OUXNFN0k4ZWQzcDNnUy1LNkhkWVZ2cmdvRnN2NkRScjZFc0ZwQk92XzU5WUUzbmo3Y3Rnd25xRFQyRm1CbC01TTB2MFZlMnpldWRYSEFDQnlLTXlsbjRwSDRISFZxNzlfNXfSAbABQVVfeXFMTTRqSDEza1JlY2x1MlZXTzgxS252NzItOWhWY1R4MEQtVi1vUjh6dHZZdmZaYVZ6dWNQaXpSekp3LTNjTXNxWVVvdzZoM2lzVHpObFZ2Y3dFWGRUa1FUV3ZSQmxkSzNDSzJFdk5KR3N3bldnM3Q2QVZtUC1vM01ub1IzbEpQcHdoZW5vaW9wTF9HWkVabU9SN0RlQ0FsR21QeUhWeUF5VGtmZFNETE9uV1k?oc=5",
-      "published_at": "2026-08-22T07:25:53Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
     }
   ],
   "diagnostics": {
-    "signals_considered": 49,
+    "signals_considered": 47,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
