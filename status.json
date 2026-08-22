@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-22T09:52:23Z",
-  "last_success_at": "2026-08-22T09:52:23Z",
+  "checked_at": "2026-08-22T10:51:29Z",
+  "last_success_at": "2026-08-22T10:51:29Z",
   "last_change_at": "2026-08-16T03:27:42Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T09:52:23Z"
+      "observed_at": "2026-08-22T10:51:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,17 +32,16 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T09:52:23Z"
+      "observed_at": "2026-08-22T10:51:29Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -55,7 +54,7 @@
       "declared": 0,
       "risk": 2
     },
-    "articles_considered": 40,
+    "articles_considered": 47,
     "signals_considered": 4,
     "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
@@ -90,7 +89,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T09:52:23Z"
+      "observed_at": "2026-08-22T10:51:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -140,7 +139,7 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T09:52:23Z"
+      "observed_at": "2026-08-22T10:51:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -675,7 +674,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-22T09:53:00Z",
+    "generated_at": "2026-08-22T10:51:47Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -708,14 +707,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 18.344,
+      "passage": 17.33,
       "closure": 0,
       "traffic_reduction": 4.867,
       "access_restriction": 7.54,
-      "risk": 25.14
+      "risk": 24.7
     },
     "source_counts": {
-      "passage": 12,
+      "passage": 11,
       "closure": 0,
       "primary_sources": 2
     },
@@ -746,7 +745,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-22T09:53:00Z",
+        "published_at": "2026-08-22T10:51:47Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -833,10 +832,10 @@
       },
       {
         "kind": "ACCESS_RESTRICTED",
-        "title": "Iran exempts Iraq from restrictions on maritime shipping through Strait of Hormuz - TodayPress.tv",
-        "source": "TodayPress.tv",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUGhEREpyMGN1c0NTdUwwaGphVVRuY1FkR3l3bTN2TTg5LUNjcjE3blRnd1Fvb01hTFkxeEV6eXI3SnhELXVTY3NmTnlYcllDNFBMYWVabTdsMmExUnRxWVo1SlNYZWxqWTZhTEJKVWgybl9hVzUtYldOU0JXZTNXRkRwRUVkNWNleUJNWWFrcGpzNEhzdHVHZl9WbnVhRGJ4N2xkMkw1M0FHOThlMFhmRzh3?oc=5",
-        "published_at": "2026-08-22T07:15:58Z",
+        "title": "Iran to look at lifting restrictions on Iraqi tankers in Hormuz Strait - Report.az",
+        "source": "Report.az",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPYmZhNlFubWxienJ2bGR0YUlWbkxha3lud3VJUVNTVk9fRnpYNU01U3RWYldCdHFUU1I1a1FFQVRxTDV2eDRYaG9OUXNFN0k4ZWQzcDNnUy1LNkhkWVZ2cmdvRnN2NkRScjZFc0ZwQk92XzU5WUUzbmo3Y3Rnd25xRFQyRm1CbC01TTB2MFZlMnpldWRYSEFDQnlLTXlsbjRwSDRISFZxNzlfNXfSAbABQVVfeXFMTTRqSDEza1JlY2x1MlZXTzgxS252NzItOWhWY1R4MEQtVi1vUjh6dHZZdmZaYVZ6dWNQaXpSekp3LTNjTXNxWVVvdzZoM2lzVHpObFZ2Y3dFWGRUa1FUV3ZSQmxkSzNDSzJFdk5KR3N3bldnM3Q2QVZtUC1vM01ub1IzbEpQcHdoZW5vaW9wTF9HWkVabU9SN0RlQ0FsR21QeUhWeUF5VGtmZFNETE9uV1k?oc=5",
+        "published_at": "2026-08-22T07:25:53Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
@@ -848,7 +847,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 56,
+      "signals_considered": 55,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
