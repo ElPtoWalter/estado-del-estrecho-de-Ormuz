@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-22T13:54:27Z",
+  "generated_at": "2026-08-22T14:51:18Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 17.226,
+    "passage": 15.926,
     "closure": 0,
-    "traffic_reduction": 4.583,
-    "access_restriction": 6.82,
-    "risk": 24.7
+    "traffic_reduction": 5.203,
+    "access_restriction": 6.48,
+    "risk": 21.2
   },
   "source_counts": {
-    "passage": 11,
+    "passage": 10,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-21T15:19:57Z",
+  "latest_confirmed_transit_at": "2026-08-21T14:56:20Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -71,28 +71,13 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-22T13:54:27Z",
+      "published_at": "2026-08-22T14:51:18Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 3.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Seafarer killed as bulker struck in latest Strait of Hormuz attack - Lloyd's List",
-      "source": "Lloyd's List",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVXhKaktJQ0lnODB0UzZrdFBhMkd4cHZvU2lJUWxRazhHVkNxOVo3ODdzbmJiSGswZkR2R2ZRbWZTQ3VzSWJYNHNXTEIzUndTUlM3MXU0VjNoNVRYYVhVRURpWFpjUFFHNnBVMlVUWTlTTXVMNU1lSW5lSkpSRjY0WHdn?oc=5",
-      "published_at": "2026-08-18T14:47:44Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 2.48,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -170,10 +155,25 @@
       "effective_weight": 1.0,
       "kind_label_es": "Tránsito neutral permitido",
       "kind_label_en": "Neutral transit permitted"
+    },
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "Iran to look at lifting restrictions on Iraqi tankers in Hormuz Strait - Report.az",
+      "source": "Report.az",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPYmZhNlFubWxienJ2bGR0YUlWbkxha3lud3VJUVNTVk9fRnpYNU01U3RWYldCdHFUU1I1a1FFQVRxTDV2eDRYaG9OUXNFN0k4ZWQzcDNnUy1LNkhkWVZ2cmdvRnN2NkRScjZFc0ZwQk92XzU5WUUzbmo3Y3Rnd25xRFQyRm1CbC01TTB2MFZlMnpldWRYSEFDQnlLTXlsbjRwSDRISFZxNzlfNXfSAbABQVVfeXFMTTRqSDEza1JlY2x1MlZXTzgxS252NzItOWhWY1R4MEQtVi1vUjh6dHZZdmZaYVZ6dWNQaXpSekp3LTNjTXNxWVVvdzZoM2lzVHpObFZ2Y3dFWGRUa1FUV3ZSQmxkSzNDSzJFdk5KR3N3bldnM3Q2QVZtUC1vM01ub1IzbEpQcHdoZW5vaW9wTF9HWkVabU9SN0RlQ0FsR21QeUhWeUF5VGtmZFNETE9uV1k?oc=5",
+      "published_at": "2026-08-22T07:25:53Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
     }
   ],
   "diagnostics": {
-    "signals_considered": 53,
+    "signals_considered": 49,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
