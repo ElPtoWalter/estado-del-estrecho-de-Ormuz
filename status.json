@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-22T21:49:03Z",
-  "last_success_at": "2026-08-22T21:49:03Z",
+  "checked_at": "2026-08-22T22:50:52Z",
+  "last_success_at": "2026-08-22T22:50:52Z",
   "last_change_at": "2026-08-22T21:49:03Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-19T06:10:58Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T21:49:03Z"
+      "observed_at": "2026-08-22T22:50:52Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T21:49:03Z"
+      "observed_at": "2026-08-22T22:50:52Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,17 +42,16 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T21:49:03Z"
+      "observed_at": "2026-08-22T22:50:52Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -65,7 +64,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 29,
+    "articles_considered": 30,
     "signals_considered": 3,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -100,7 +99,7 @@
       "published_at": "2026-08-19T06:52:12Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T21:49:03Z"
+      "observed_at": "2026-08-22T22:50:52Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -140,6 +139,16 @@
       "published_at": "2026-08-19T06:10:58Z",
       "tier": 2,
       "official": false,
+      "observed_at": "2026-08-22T22:50:52Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US-Israel-Iran War Live News: Trump Calls Strait of Hormuz 'New US Territory' Amid Iran Standoff, Says No Iran Talks Planned as Vessel Hit By Unknown Projectile - The Sunday Guardian",
+      "source_name": "The Sunday Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxPRlNKcnh3SmxhZU5xTlhTeXdHQ3VWbHhuZWQ3X1J2TnVnU2YwQU1IUUtwNVd6QkVJdTQxc0hmWVdFSkdWbWQ4UDhEbUFkbTVhajJvcXhCNTk5RVhCMmI2ZkF0bktvTjl4VXNPcVNtaHhrNDRJclB2RWh3M0Itc2ZzbjI1RTN3NGhNXzRBTTNOOGtleFpZUDJ2NW52Y0p5QWpkangyR2cydWZZZUkwY29ya1d6eGtSblktSURHN0JCMWozbU5aV2pyaUJydmhPdVIwUkg5aGw2UkpIeFBKZVZ0ZHNHZjhPSzg2b2l4Mkh5ZnF2NlhIeU0zN09DRXVRTlpqQlZtMzVLbTFNdUg0ZnU3Y2RLOWJmX1lRMUNnVnFEbkhYNXplZ1oyWdIBrgJBVV95cUxPUDJYQ3ZYNFlDaFA0WDdJb3NZbnN4ek12YTBLNFdHVVgwcDdnYk1SMFl6QThhQnhCN0tfOW4xZllVamdSWV9VYUdKNC1neGxnUm5yYktIcGNNNHY4VEw1VnFIZTk4eHY4UklqNGZSN1dQMlN1OXkxb2xxNG1UWTlVcWFVaXRMTndfS3Atd3RKMDNvV1k1d29zay1hZllqbXAzX1paNVhoRVFnelhIV2ZndGprRVJPaGh2NTUyMVlFaVRTcHJzLVYwdVpNQWZMcDRERUF1U0NYNkQ1cHl5TVR3NnA4dVlSWXBJdkxaZU10bE1hVThDRWE1dkUwTDZxMHF0bFhqUHFPX2NmMnp6UDFabVlDSEZiYU5mb3JYNzJIMzJ2NWxpWlQxOVhiaDZVQQ?oc=5",
+      "published_at": "2026-08-19T06:10:58Z",
+      "tier": 2,
+      "official": false,
       "observed_at": "2026-08-22T21:49:03Z"
     },
     {
@@ -160,7 +169,7 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-22T21:49:03Z"
+      "observed_at": "2026-08-22T22:50:52Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -671,21 +680,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-12T16:28:09Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Houthi attack kills six in first fatalities in Red Sea in over a year; U.S. strikes container ship - cnbc.com",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOSGtLT21UUTZ1QlQ3UVd6akpNcnhtNzI0aFNidjRHeWExendmSDhoT3VNZmt0VHVkdFk4LS1YVGdveE9uY1VYdUJrWnV2ZGlRanVTZmxmUTB1dzNCNnRDOUg1R2hUS3ZXeHdEMkcwdWZodzNOam9qOTN2TjJlMkNCY25PbzRVNG81RVFMd1NR0gGTAUFVX3lxTE5YekViUjgwbV9GLWVWUmplY0d3Nm9ka1lxQmRFMHVrNzFTWHhiSU1JMVpDbllZRGF2MGtkNW4yakJidmF5LTJsbUk2YVRSQ214ZHQyQzRwczRzYVRTZFJUWk5pNHRMZzZpcXRvX2cwbF9PYzByQlNLNUpvOE1lSGQ3Zk9rUFJsMkdBVFo4ZkMtZnQ1TQ?oc=5",
-      "published_at": "2026-08-12T05:10:09Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-12T15:29:57Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-22T21:49:45Z",
+    "generated_at": "2026-08-22T22:51:36Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -718,18 +717,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 21.649,
+      "passage": 22.143,
       "closure": 0,
       "traffic_reduction": 3.87,
       "access_restriction": 7.2,
-      "risk": 16.46
+      "risk": 17.46
     },
     "source_counts": {
       "passage": 14,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-22T19:28:49Z",
+    "latest_confirmed_transit_at": "2026-08-22T22:22:54Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -741,7 +740,7 @@
         "title": "Ships passing through Hormuz hover in single digits, data shows - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNSEhZX09yZU9wMFlFN0FUUjM0dUhpZ01zMEVvWFBlVHpoQ25lY0xFckRtVnpXMHZfZVA3TU0zRjNNYlUydy1pelQ1Q3Rmb1dPeWZmU3hDTXF2ZERfY3UyY2tteGpocUNoY0FkdE13dXV5cjV1VUh3MmN1al9MUm5xVlh6RWpwenRzQ2dzR0dxci05c2kwQ1VSUGNDTVBJVkFFd0RjZm9GRnBBdw?oc=5",
-        "published_at": "2026-08-21T02:43:00Z",
+        "published_at": "2026-08-21T05:40:45Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "Google News RSS",
@@ -756,7 +755,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-22T21:49:45Z",
+        "published_at": "2026-08-22T22:51:36Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -827,8 +826,23 @@
         "kind_label_en": "Severely reduced traffic"
       },
       {
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Around 40 tankers reportedly crossed Hormuz on Friday: Axios - Türkiye Today",
+        "source": "Türkiye Today",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQaUZOVnJqeE1mMTNVMW94c1hheWhOcGlyZGl5TlVGVkdCbXQtZFZ2LTNKSlhXc2VmMW9wWUhLNk5XMnZqbUlNVW55QVMxejdZUklHN2lhMVE3NlFmazFma2xVUmRrMkc0R0l5bm9ySjRwR1dRNmdHT2k3VThKeFdaWGZOQ1M1Y29PdlF2NXR2ZnVtWEtqTk1FQm5Za1Q0cGZ3c3p4ODlB?oc=5",
+        "published_at": "2026-08-22T22:22:54Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
+      },
+      {
         "kind": "RISK_SEVERE",
-        "title": "Traffic in the Strait of Hormuz skyrockets nearly 400%, as analysts say Iran’s grip on critical waterway weakens - New York Post",
+        "title": "Traffic in Strait of Hormuz skyrockets nearly 400%, as analysts say Iran’s grip on critical waterway weakens - New York Post",
         "source": "New York Post",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRzdWWkUydmVBYXl0YnZvMTBEd01vaVMtUWxpQTg2bWFZTXRJTlh1azRrcGJNeldrYkZPcnJkNUw0YTQtNVZhdG8zX0toVGxNR3ZadnFla0c1VE9NWGppSllVUUFBOG0xQWowUGhFQ1l1VjZGMkNEZFljbzVja1RlYjdNd0hSRFY2REdkR3lndmdIQXY0dnFNMWd2bzhCNmNSeVV1MzRVdDUzNW8?oc=5",
         "published_at": "2026-08-22T20:52:00Z",
@@ -840,25 +854,10 @@
         "effective_weight": 1.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "'Ghost' tankers with US escort reopen Strait of Hormuz and dodge Iranian attacks - finance.biggo.com",
-        "source": "finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE80MlR1SEpCakpNc3ljd0FONmcwZWtlUHg2T21iZ0NfZUFWNmJQOEJ3cUhqQmpoakpPd2RIdUxWZWI1aVFMNGdwaHpERnB4QmRtVnRjMUszZWtXX1pueXFqbnpvbnZ1bVpmQldCRE00YVpiNHdYWUE?oc=5",
-        "published_at": "2026-08-22T19:55:00Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 45,
+      "signals_considered": 46,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
