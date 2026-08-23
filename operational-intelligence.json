@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-23T08:59:37Z",
+  "generated_at": "2026-08-23T09:54:11Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,11 +33,11 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 25.029,
+    "passage": 24.927,
     "closure": 0,
-    "traffic_reduction": 2.715,
-    "access_restriction": 9.68,
-    "risk": 20.44
+    "traffic_reduction": 2.577,
+    "access_restriction": 9.58,
+    "risk": 21.6
   },
   "source_counts": {
     "passage": 17,
@@ -47,7 +47,7 @@
   "latest_confirmed_transit_at": "2026-08-23T08:14:59Z",
   "legacy_engine": {
     "status": "INCIERTO",
-    "operational_status": "HIGH_RISK_UNCONFIRMED",
+    "operational_status": "NO_RECENT_CONFIRMATION",
     "confidence": "BAJA"
   },
   "evidence": [
@@ -71,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-23T08:59:37Z",
+      "published_at": "2026-08-23T09:54:11Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -110,21 +110,6 @@
       "effective_weight": 1.56,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "TRAFFIC_SEVERELY_REDUCED",
-      "title": "US prepares historic sanctions push to collapse Iranian regime and open Hormuz - Baird Maritime",
-      "source": "Baird Maritime",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOejliZXBBQmI4WjBlZW1pYWg4clJmMk50R2ttaTBGR29kUTluVzhmeW5MTVJhbzhUOHRHWWdHM2dWbHhlX0hOaFV6UF80VUlRQWNJZlFmU1pobXM2MjNMWG5qRnQxaWJWY3U4MVZHdUpKb0Q0dnVTUUdoa21IMnNtajQ5SUFRRHJ0Ym5jMlN2RlNpSDcxZ3RDMDFmYXJuOFl2ajd0bVhMTWQxaTZ5SHpGUjh6SlFKak9f0gHGAUFVX3lxTE16N1lJMmJvNXNnQ1JHQmNFdzhJSmJOcVdVRFJLMVktUW1jTWpMMkNjSkFzZXlySl9GSVc3N0tDa2VoQm45OVlfVDdzSkpzbzB2NTJIQ3MtTmJUYkZIdFNhY1JnVmV1M0xVRVFZSWJ4Nm5Eb1d1MkwxeHB4aXJ1dUR0Q1JYNHdIUVRpTWN4UmMyZWVhQlVXM2R5QVNNMmJwSnUtalFPcWNEd243NEVFMDBfUW8xNmo3THN2bFB5VGJmQkZyLXI4QQ?oc=5",
-      "published_at": "2026-08-21T09:20:32Z",
-      "tier": 1,
-      "weight": 1.15,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.035,
-      "kind_label_es": "Tráfico muy reducido",
-      "kind_label_en": "Severely reduced traffic"
     },
     {
       "kind": "TRANSIT_CONFIRMED",
@@ -170,10 +155,25 @@
       "effective_weight": 1.0,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
+    },
+    {
+      "kind": "TRANSIT_CONFIRMED",
+      "title": "About 40 oil tankers transit Strait of Hormuz Friday: US media - 巴士的報",
+      "source": "巴士的報",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZGZQUHQ1WWhqRl9Nc1RUZTkzcHE0cUxfblZUcm9NbEl4TUNYb29OQmxGYy10c2Q2U3Rrd2poSlZRQ1FUc3pYbk9oSDZNTGlMZDlVQTlTWEZfZ29uS2RqQlFMZlozeE94OHA3RVNlRWpveDlhUk5TZ3pNNnAyemI5SkU2S3I5a0U4SGctTldUODRtV25hbkFyWXFxZUVleUdlb0tZYS1hV2o3ZHdhUkh1eFE4UQ?oc=5",
+      "published_at": "2026-08-23T02:11:00Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Tránsito confirmado",
+      "kind_label_en": "Confirmed transit"
     }
   ],
   "diagnostics": {
-    "signals_considered": 55,
+    "signals_considered": 57,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,

@@ -1,17 +1,17 @@
 {
   "engine_version": 3,
   "status": "INCIERTO",
-  "operational_status": "HIGH_RISK_UNCONFIRMED",
-  "operational_label_es": "Riesgo elevado, estado no confirmado",
-  "operational_label_en": "High risk, status unconfirmed",
+  "operational_status": "NO_RECENT_CONFIRMATION",
+  "operational_label_es": "Sin confirmación reciente",
+  "operational_label_en": "No recent confirmation",
   "confidence": "BAJA",
-  "checked_at": "2026-08-23T08:59:06Z",
-  "last_success_at": "2026-08-23T08:59:06Z",
-  "last_change_at": "2026-08-23T08:59:06Z",
+  "checked_at": "2026-08-23T09:53:31Z",
+  "last_success_at": "2026-08-23T09:53:31Z",
+  "last_change_at": "2026-08-23T09:53:31Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
-  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
+  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
   "last_valid_confirmation": null,
   "evidence": [
     {
@@ -28,37 +28,38 @@
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
-      "open": 0,
+      "open": 1.155,
       "closed": 0,
       "declared": 0,
-      "risk": 2.16
+      "risk": 0
     },
     "independent_sources": {
-      "open": 0,
+      "open": 1,
       "closed": 0,
       "declared": 0,
-      "risk": 1
+      "risk": 0
     },
-    "articles_considered": 24,
+    "articles_considered": 25,
     "signals_considered": 1,
-    "current_cycle_evidence": 1,
-    "evidence_display_mode": "current",
+    "current_cycle_evidence": 0,
+    "evidence_display_mode": "carried",
     "evidence_archive_size": 59,
     "evidence_archive_days": 14
   },
   "evidence_context": {
-    "mode": "current",
+    "mode": "carried",
     "as_of": "2026-08-22T23:00:00Z",
-    "current_cycle_count": 1,
-    "heading_es": "Evidencias de esta comprobación",
-    "heading_en": "Evidence from this check",
-    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
-    "description_en": "Publishable signals found during the latest verification cycle."
+    "current_cycle_count": 0,
+    "heading_es": "Últimas evidencias disponibles",
+    "heading_en": "Latest available evidence",
+    "description_es": "La comprobación más reciente no aportó nuevas evidencias publicables. Estas señales proceden de ciclos anteriores y se muestran con su fecha real.",
+    "description_en": "The latest check produced no new publishable evidence. These signals come from earlier cycles and retain their actual publication dates."
   },
   "evidence_archive": [
     {
@@ -654,7 +655,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-23T08:59:37Z",
+    "generated_at": "2026-08-23T09:54:11Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -687,11 +688,11 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 25.029,
+      "passage": 24.927,
       "closure": 0,
-      "traffic_reduction": 2.715,
-      "access_restriction": 9.68,
-      "risk": 20.44
+      "traffic_reduction": 2.577,
+      "access_restriction": 9.58,
+      "risk": 21.6
     },
     "source_counts": {
       "passage": 17,
@@ -701,7 +702,7 @@
     "latest_confirmed_transit_at": "2026-08-23T08:14:59Z",
     "legacy_engine": {
       "status": "INCIERTO",
-      "operational_status": "HIGH_RISK_UNCONFIRMED",
+      "operational_status": "NO_RECENT_CONFIRMATION",
       "confidence": "BAJA"
     },
     "evidence": [
@@ -725,7 +726,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-23T08:59:37Z",
+        "published_at": "2026-08-23T09:54:11Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -764,21 +765,6 @@
         "effective_weight": 1.56,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "TRAFFIC_SEVERELY_REDUCED",
-        "title": "US prepares historic sanctions push to collapse Iranian regime and open Hormuz - Baird Maritime",
-        "source": "Baird Maritime",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOejliZXBBQmI4WjBlZW1pYWg4clJmMk50R2ttaTBGR29kUTluVzhmeW5MTVJhbzhUOHRHWWdHM2dWbHhlX0hOaFV6UF80VUlRQWNJZlFmU1pobXM2MjNMWG5qRnQxaWJWY3U4MVZHdUpKb0Q0dnVTUUdoa21IMnNtajQ5SUFRRHJ0Ym5jMlN2RlNpSDcxZ3RDMDFmYXJuOFl2ajd0bVhMTWQxaTZ5SHpGUjh6SlFKak9f0gHGAUFVX3lxTE16N1lJMmJvNXNnQ1JHQmNFdzhJSmJOcVdVRFJLMVktUW1jTWpMMkNjSkFzZXlySl9GSVc3N0tDa2VoQm45OVlfVDdzSkpzbzB2NTJIQ3MtTmJUYkZIdFNhY1JnVmV1M0xVRVFZSWJ4Nm5Eb1d1MkwxeHB4aXJ1dUR0Q1JYNHdIUVRpTWN4UmMyZWVhQlVXM2R5QVNNMmJwSnUtalFPcWNEd243NEVFMDBfUW8xNmo3THN2bFB5VGJmQkZyLXI4QQ?oc=5",
-        "published_at": "2026-08-21T09:20:32Z",
-        "tier": 1,
-        "weight": 1.15,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.035,
-        "kind_label_es": "Tráfico muy reducido",
-        "kind_label_en": "Severely reduced traffic"
       },
       {
         "kind": "TRANSIT_CONFIRMED",
@@ -824,10 +810,25 @@
         "effective_weight": 1.0,
         "kind_label_es": "Tránsito confirmado",
         "kind_label_en": "Confirmed transit"
+      },
+      {
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "About 40 oil tankers transit Strait of Hormuz Friday: US media - 巴士的報",
+        "source": "巴士的報",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZGZQUHQ1WWhqRl9Nc1RUZTkzcHE0cUxfblZUcm9NbEl4TUNYb29OQmxGYy10c2Q2U3Rrd2poSlZRQ1FUc3pYbk9oSDZNTGlMZDlVQTlTWEZfZ29uS2RqQlFMZlozeE94OHA3RVNlRWpveDlhUk5TZ3pNNnAyemI5SkU2S3I5a0U4SGctTldUODRtV25hbkFyWXFxZUVleUdlb0tZYS1hV2o3ZHdhUkh1eFE4UQ?oc=5",
+        "published_at": "2026-08-23T02:11:00Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
       }
     ],
     "diagnostics": {
-      "signals_considered": 55,
+      "signals_considered": 57,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
