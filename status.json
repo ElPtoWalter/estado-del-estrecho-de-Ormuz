@@ -5,8 +5,8 @@
   "operational_label_es": "Sin confirmación reciente",
   "operational_label_en": "No recent confirmation",
   "confidence": "BAJA",
-  "checked_at": "2026-08-23T14:51:41Z",
-  "last_success_at": "2026-08-23T14:51:41Z",
+  "checked_at": "2026-08-23T15:49:57Z",
+  "last_success_at": "2026-08-23T15:49:57Z",
   "last_change_at": "2026-08-23T13:11:47Z",
   "verification_ok": true,
   "stale": false,
@@ -28,11 +28,10 @@
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 1.155,
       "closed": 0,
@@ -45,7 +44,7 @@
       "declared": 0,
       "risk": 0
     },
-    "articles_considered": 23,
+    "articles_considered": 26,
     "signals_considered": 1,
     "current_cycle_evidence": 0,
     "evidence_display_mode": "carried",
@@ -655,7 +654,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-23T14:52:20Z",
+    "generated_at": "2026-08-23T15:50:27Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -670,32 +669,32 @@
       "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "DISPUTED"
+      "legal": "CLOSURE_CLAIMED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Régimen disputado"
+      "legal": "Cierre declarado por una parte"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "Disputed regime"
+      "legal": "Closure claimed by one party"
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 27.201,
+      "passage": 24.731,
       "closure": 0,
-      "traffic_reduction": 2.457,
-      "access_restriction": 7.68,
-      "risk": 21.64
+      "traffic_reduction": 1.56,
+      "access_restriction": 10.3,
+      "risk": 23.26
     },
     "source_counts": {
-      "passage": 18,
+      "passage": 17,
       "closure": 0,
       "primary_sources": 2
     },
@@ -726,7 +725,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-23T14:52:20Z",
+        "published_at": "2026-08-23T15:50:27Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -752,6 +751,21 @@
         "kind_label_en": "Severe risk"
       },
       {
+        "kind": "RISK_SEVERE",
+        "title": "Hormuz Traffic Surges Nearly 400% as Analysts Say Iran is Losing Its Grip on the World's Most Critical Oil Corridor - Kurdistan24",
+        "source": "Kurdistan24",
+        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNc0RXYVYwSmpMYkVBNlZRbnFwaEltbEVZaVAyLXpfMHVxNHRWZkxiS3hXSGd5dUdmMFN5VmNYVFR0UHJ0SDgzMnZWZGxiVjdCbEFOT044aXY2YnF0Q0k0TWczejlxN2lORlRFR21tVjF1WGJVMjVSWDd5RDNXdUNVWmM3YVNaU25kRDdiUnV2VS1kNXVNYXpoWXB4akwyMEJQQUYzNFFKMy13dEdSOU8tQWFSb3R3ZGZNWTZqNGozanJFbzRwMWM1eW83SncyVTNjSzFJWjlHWC12R0QxR0t5cGxWbTZuWkNLUGVsWXdn?oc=5",
+        "published_at": "2026-08-23T14:17:53Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
         "kind": "TRANSIT_CONFIRMED",
         "title": "Chinese Ships Transit Iranian Side of Strait of Hormuz - WANA News Agency",
         "source": "WANA News Agency",
@@ -772,21 +786,6 @@
         "source": "SunStar Publishing Inc.",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOTmQ1U25SaURRdEsyQlFyMHlBLVVFUkhCbml3NWFHUXJLNHI4Y05UMnlWdUFFU0VQYm9WSW5Qa0xqLTFGWkpwdnNNQzdRLWMwQlNaNkY3SXA5c0p6R1l6QzEtSTI2cWdZeUJKQ1FUM0ZvSUIydHBscTFhdG8taXNxbzl1TmU0TVRpUXFDSUtRZEJiWHVuV0pUQdIBpgFBVV95cUxQdFdPMm5LWnBWVTBVUHNvbkZkbEIxa3JJNmw3STZiX0llYmlULUl2TVdETVZRS3hfM2Njd1N5RndRZ1Zla0M2MGI4ejFET2NNZW9CaE44V3htNzVILUJpSlR5UUYwQU4xU2ZXWjVScW1SVlpnZlp4em9TQ1VDM3RpSmRfWFJYMTVteEFlUUVFZEtFekFGWWJlUlZHT3h0cWd1NWFwTmNB?oc=5",
         "published_at": "2026-08-23T12:56:04Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Hormuz Traffic Surges Nearly 400% as Analysts Say Iran is Losing Its Grip on the World's Most Critical Oil Corridor - Kurdistan24",
-        "source": "Kurdistan24",
-        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNc0RXYVYwSmpMYkVBNlZRbnFwaEltbEVZaVAyLXpfMHVxNHRWZkxiS3hXSGd5dUdmMFN5VmNYVFR0UHJ0SDgzMnZWZGxiVjdCbEFOT044aXY2YnF0Q0k0TWczejlxN2lORlRFR21tVjF1WGJVMjVSWDd5RDNXdUNVWmM3YVNaU25kRDdiUnV2VS1kNXVNYXpoWXB4akwyMEJQQUYzNFFKMy13dEdSOU8tQWFSb3R3ZGZNWTZqNGozanJFbzRwMWM1eW83SncyVTNjSzFJWjlHWC12R0QxR0t5cGxWbTZuWkNLUGVsWXdn?oc=5",
-        "published_at": "2026-08-23T12:56:00Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
@@ -828,7 +827,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 59,
+      "signals_considered": 63,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
