@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-23T10:53:08Z",
+  "generated_at": "2026-08-23T11:49:13Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,21 +33,21 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 26.227,
+    "passage": 29.387,
     "closure": 0,
-    "traffic_reduction": 2.577,
-    "access_restriction": 7.8,
+    "traffic_reduction": 2.457,
+    "access_restriction": 8.8,
     "risk": 21.02
   },
   "source_counts": {
-    "passage": 18,
+    "passage": 20,
     "closure": 0,
     "primary_sources": 2
   },
   "latest_confirmed_transit_at": "2026-08-23T08:14:59Z",
   "legacy_engine": {
     "status": "INCIERTO",
-    "operational_status": "NO_RECENT_CONFIRMATION",
+    "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "BAJA"
   },
   "evidence": [
@@ -71,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-23T10:53:08Z",
+      "published_at": "2026-08-23T11:49:13Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -97,11 +97,26 @@
       "kind_label_en": "Severe risk"
     },
     {
+      "kind": "NEUTRAL_TRANSIT_PERMITTED",
+      "title": "Economist: Iran Hormuz permits ‘too late’ as tankers secure safe passage - IraqiNews",
+      "source": "IraqiNews",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWEdZN3NxaW9LMXNtZDBIWWFwcTdnNGRRR0llRHRyeGt3aDdmcHNLcVByZ1FHbWtuMFFKRTZyNWkyTDRWWkhfR0c4eU1CWjZsVWJGT1Z0dGs2UFVtWHZvWU94Uy0yVmVFOGhYNWNISTlWRVB3TkFKM1RxalRORVZqc093c21WNzQxTGg0U3VNQkFwYW5faEQtVG5aMG1sNDFneHc?oc=5",
+      "published_at": "2026-08-23T11:38:51Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Tránsito neutral permitido",
+      "kind_label_en": "Neutral transit permitted"
+    },
+    {
       "kind": "RISK_ELEVATED",
-      "title": "Hormuz crisis hides a deeper oil threat that could outlast the war - kotaradio.com",
-      "source": "kotaradio.com",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPNVRodDVnT1ZvdVEzaEtZcFpoN3JKdWYwemc5eTh6eXpNVmZ6aHlZbmFNZFJxT0dTc0RzNUpvR09DQ1NtZXRBV3RuRjVOblhNNFo1UTBpRDFlVS1fY2FHaU5JV3pGZ0FkMG5HcXgyZThGYTJjb0F4SzJPNmZCUldQeHVkU3hsaDVScE9MTlhad1RONVhmV2pVRnRoSl9BMkt0bVdkR1AwNA?oc=5",
-      "published_at": "2026-08-23T10:35:20Z",
+      "title": "Hormuz crisis hides a deeper oil threat that could outlast the war - Fox News",
+      "source": "Fox News",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNaVVFS3VxVGlmVjFYRWcxWGFYejJDZDVlNExaVEJEZGFWQmRXZjhmc0dhd1RIUW8tbldhMTJEdHhKSXFjbDFmQ0EybktmZUxzbkNNbVg3VHRrNElSbkI4N2FtT1didm9lSy1UcjNhNFVnTDFHNXZFZzZPaWw0TEVUdDVtZ3R1cXgtUXp2LVpURmxMbTJhR09DSlF30gGaAUFVX3lxTE1pVUVLdXFUaWZWMVhFZzFYYVh6MkNkNWU0TFpUQkRkYVZCZFdmOGZzR2F3VEhRby1uV2ExMkR0eEpJcWNsMWZDQTJuS2ZlTHNuQ01tWDdUdGs0SVJuQjg3YW1PV2J2b2VLLVRyM2E0VWdMMUc1dkVnNk9pbDRMRVR0NW1ndHVxeC1RenYtWlRGbExtMmFHT0NKUXc?oc=5",
+      "published_at": "2026-08-23T10:00:56Z",
       "tier": 1,
       "weight": 1.0,
       "provider": "Google News RSS",
@@ -155,25 +170,10 @@
       "effective_weight": 1.0,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
-    },
-    {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "About 40 oil tankers transit Strait of Hormuz Friday: US media - bastillepost.com",
-      "source": "bastillepost.com",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZGZQUHQ1WWhqRl9Nc1RUZTkzcHE0cUxfblZUcm9NbEl4TUNYb29OQmxGYy10c2Q2U3Rrd2poSlZRQ1FUc3pYbk9oSDZNTGlMZDlVQTlTWEZfZ29uS2RqQlFMZlozeE94OHA3RVNlRWpveDlhUk5TZ3pNNnAyemI5SkU2S3I5a0U4SGctTldUODRtV25hbkFyWXFxZUVleUdlb0tZYS1hV2o3ZHdhUkh1eFE4UQ?oc=5",
-      "published_at": "2026-08-23T02:11:00Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
     }
   ],
   "diagnostics": {
-    "signals_considered": 57,
+    "signals_considered": 61,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
