@@ -5,8 +5,8 @@
   "operational_label_es": "Sin confirmación reciente",
   "operational_label_en": "No recent confirmation",
   "confidence": "BAJA",
-  "checked_at": "2026-08-23T17:48:52Z",
-  "last_success_at": "2026-08-23T17:48:52Z",
+  "checked_at": "2026-08-23T18:58:22Z",
+  "last_success_at": "2026-08-23T18:58:22Z",
   "last_change_at": "2026-08-23T13:11:47Z",
   "verification_ok": true,
   "stale": false,
@@ -44,7 +44,7 @@
       "declared": 0,
       "risk": 0
     },
-    "articles_considered": 26,
+    "articles_considered": 28,
     "signals_considered": 1,
     "current_cycle_evidence": 0,
     "evidence_display_mode": "carried",
@@ -654,7 +654,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-23T17:49:10Z",
+    "generated_at": "2026-08-23T18:59:11Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -687,14 +687,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 29.671,
+      "passage": 24.887,
       "closure": 0,
       "traffic_reduction": 1.56,
-      "access_restriction": 9.04,
-      "risk": 20.46
+      "access_restriction": 8.84,
+      "risk": 21.46
     },
     "source_counts": {
-      "passage": 19,
+      "passage": 17,
       "closure": 0,
       "primary_sources": 2
     },
@@ -725,7 +725,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-23T17:49:10Z",
+        "published_at": "2026-08-23T18:59:11Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -747,6 +747,21 @@
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 1.56,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Hormuz Traffic Surges Nearly 400% as Analysts Say Iran is Losing Its Grip on the World's Most Critical Oil Corridor - Kurdistan24",
+        "source": "Kurdistan24",
+        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNc0RXYVYwSmpMYkVBNlZRbnFwaEltbEVZaVAyLXpfMHVxNHRWZkxiS3hXSGd5dUdmMFN5VmNYVFR0UHJ0SDgzMnZWZGxiVjdCbEFOT044aXY2YnF0Q0k0TWczejlxN2lORlRFR21tVjF1WGJVMjVSWDd5RDNXdUNVWmM3YVNaU25kRDdiUnV2VS1kNXVNYXpoWXB4akwyMEJQQUYzNFFKMy13dEdSOU8tQWFSb3R3ZGZNWTZqNGozanJFbzRwMWM1eW83SncyVTNjSzFJWjlHWC12R0QxR0t5cGxWbTZuWkNLUGVsWXdn?oc=5",
+        "published_at": "2026-08-23T17:53:39Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -781,21 +796,6 @@
         "kind_label_en": "Confirmed transit"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Iranian parliament committee approves fees for ships in Strait of Hormuz - Crypto Briefing",
-        "source": "Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA2cm81Z0V5RFlBOEpnODRmRzhpUjZsNzBpRGdrN3ZzSjdJTUcyclg3cC1MMG9MbHZyNW9ua01JR3pJTGtDaG9fYVo0WDRaTXA2Vzg1VHRnTUxMZlVQVnJFem9TYjYyTnVMcVZR?oc=5",
-        "published_at": "2026-08-23T15:57:11Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
-      },
-      {
         "kind": "TRANSIT_CONFIRMED",
         "title": "Chinese Ships Transit Iranian Side of Strait of Hormuz - WANA News Agency",
         "source": "WANA News Agency",
@@ -827,7 +827,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 61,
+      "signals_considered": 57,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
