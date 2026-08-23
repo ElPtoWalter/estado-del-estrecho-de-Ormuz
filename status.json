@@ -5,8 +5,8 @@
   "operational_label_es": "Sin confirmación reciente",
   "operational_label_en": "No recent confirmation",
   "confidence": "BAJA",
-  "checked_at": "2026-08-23T20:51:39Z",
-  "last_success_at": "2026-08-23T20:51:39Z",
+  "checked_at": "2026-08-23T21:48:47Z",
+  "last_success_at": "2026-08-23T21:48:47Z",
   "last_change_at": "2026-08-23T13:11:47Z",
   "verification_ok": true,
   "stale": false,
@@ -28,10 +28,11 @@
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 1.155,
       "closed": 0,
@@ -44,7 +45,7 @@
       "declared": 0,
       "risk": 0
     },
-    "articles_considered": 27,
+    "articles_considered": 25,
     "signals_considered": 1,
     "current_cycle_evidence": 0,
     "evidence_display_mode": "carried",
@@ -654,7 +655,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-23T20:51:58Z",
+    "generated_at": "2026-08-23T21:49:29Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -669,36 +670,36 @@
       "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "DISPUTED"
+      "legal": "CLOSURE_CLAIMED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Régimen disputado"
+      "legal": "Cierre declarado por una parte"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "Disputed regime"
+      "legal": "Closure claimed by one party"
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 26.825,
+      "passage": 30.595,
       "closure": 0,
       "traffic_reduction": 1.56,
-      "access_restriction": 12.74,
-      "risk": 21.26
+      "access_restriction": 16.64,
+      "risk": 20.76
     },
     "source_counts": {
-      "passage": 19,
+      "passage": 21,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-23T19:22:12Z",
+    "latest_confirmed_transit_at": "2026-08-23T21:32:38Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "NO_RECENT_CONFIRMATION",
@@ -725,7 +726,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-23T20:51:58Z",
+        "published_at": "2026-08-23T21:49:29Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -752,10 +753,55 @@
       },
       {
         "kind": "TRANSIT_CONFIRMED",
+        "title": "Iran announces service fees for ‘authorised’ ships transiting Strait of Hormuz - Asia Insurance Post",
+        "source": "Asia Insurance Post",
+        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE8yWWNXaUVfVzlMY3RscklZT1NnWnhUSnNERXRuTkFmVTZCcHVrdHZxWHc2VmxIdnM2cG9fOEhFN2lWazk0WXhMWlRiYzJZZ0hhZWV0amx3Zw?oc=5",
+        "published_at": "2026-08-23T21:32:38Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Iran committee approves Hormuz shipping fee plan - Yeni Safak English",
+        "source": "Yeni Safak English",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNczBDeUVuczFHRGlqZkVjTlBTV0JEcnFvYzRVU2lqT1dMb0pZNUxnZDhMd244TzhGNEIxY0RRZjFFUHpob0FKRklrM19PYTdNS3RFVG42NzV1TmVFVjdheVFzRnBKdlVVWmNaVDJTbEM0eTdZbFZnOWtHd3VScm5jck5QdHNuUkNRbzFVZzRJS2Y?oc=5",
+        "published_at": "2026-08-23T21:24:11Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
+      },
+      {
+        "kind": "TRANSIT_CONFIRMED",
         "title": "Iran approves fees for ships transiting Strait of Hormuz - İlke Haber Ajansı",
         "source": "İlke Haber Ajansı",
         "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQY2lEaTBFVlRyX1VoRmNfRGhuc3NHQWF0MV9ocjE3dWFjcF9fekdVbWRBVUdLMXYtTm90bmxfUlF3cjFwNl9zX3VBdFpKWHNPNHZsOE8wMmtHUk1YY1gzQnJybXBzS1R3VzZpQk9wcFdXU1JCNFFwOElLVE0zYmFWN0ZlSl9WYWZKRFFRX2JKWWJGRllFenVMUjdZVQ?oc=5",
         "published_at": "2026-08-23T19:22:12Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
+      },
+      {
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Iran warns of fines, seizures for ships violating Hormuz transit rules - Türkiye Today",
+        "source": "Türkiye Today",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPbDFRUFBKb3UwNEl2U0JpaVFrdnpxMU5WRE9DRDZObjV2TWdfOVRHZFdfM090MndVRHJYdmpLTnlkWWdBUjNNRjhvSE5ldl9CaGkxZ0RDM01BQnVyMWt2anF6SUQ1Q2FTSFp0R1ZYVzhTTlRZdHBrOVZLZVJjMEFqTVhKVm5HUXBTWU9pN01QUXlaYXNGMkdaM2RnemNHQ1l6b3ZvX3BuYS12NHJzajN1S3ZlQQ?oc=5",
+        "published_at": "2026-08-23T19:20:15Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
@@ -779,55 +825,10 @@
         "effective_weight": 1.0,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Hormuz Traffic Surges Nearly 400% as Analysts Say Iran is Losing Its Grip on the World's Most Critical Oil Corridor - Kurdistan24",
-        "source": "Kurdistan24",
-        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAzNlAwbUN6YUdLcXV6ckswM2FXLS0tTXpMbWlSSFYxdmlFWmxLMThnQnJhM2pna1pXNUxTYVQzS0pmd2ZnWm1nNkFEZzZjNXk4eVhNUnJ3?oc=5",
-        "published_at": "2026-08-23T18:33:41Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Iran approves service fees for authorised ships transiting Strait of Hormuz - The Tribune",
-        "source": "The Tribune",
-        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNeXNmb0RGQWlvR2JheFRyNGpNRy1MQ2ZrcWhOd2ktWHhGWjRNX1YwblEyNmdNTWpCR3p3aGVoTERVVmVkNktXQzVSOUJPdk5ER3ZWTEx5dHQyT1o2dm15TllscWZUU2RubXRhdVRZWndDZW85OUVELXZna2VJdi1wZ1VsLWFoenhGYngyQUVNTVVjTlFxcEpWSjhmS3ExU3c2SS1qM1REUnpwUGo4alVZZUg4cDJCUzV5Vi1Wd0lwT0EzRDFvY2k4cW1UbURseUh2Z2tOeFp1SdIB1wFBVV95cUxNeXNmb0RGQWlvR2JheFRyNGpNRy1MQ2ZrcWhOd2ktWHhGWjRNX1YwblEyNmdNTWpCR3p3aGVoTERVVmVkNktXQzVSOUJPdk5ER3ZWTEx5dHQyT1o2dm15TllscWZUU2RubXRhdVRZWndDZW85OUVELXZna2VJdi1wZ1VsLWFoenhGYngyQUVNTVVjTlFxcEpWSjhmS3ExU3c2SS1qM1REUnpwUGo4alVZZUg4cDJCUzV5Vi1Wd0lwT0EzRDFvY2k4cW1UbURseUh2Z2tOeFp1SQ?oc=5",
-        "published_at": "2026-08-23T17:33:04Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Iran Approves Fees for Services Provided to Ships Transiting Strait of Hormuz - iranpress.com",
-        "source": "iranpress.com",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPd2ZFQXZLUWVVaVZ4TmhSZmlBVGlRSW9zYktIWndLOGlzTElVSmdrNFdwRmhuVVdlUGhNdFR1eklWZldFMkpBZGpFendCTXVFbUlzS2l1d0Nlc1pES2VpUnpCaWVTTXljdEQ3aExUbzR1MzhrX0NmeGJCU3hFOHRrZmlHcjltMUVVd1N5VjhvQ2dFRHFYRHF0YzB5dmw2SG5UODJJZVBPYU5KYjc4?oc=5",
-        "published_at": "2026-08-23T17:16:18Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
       }
     ],
     "diagnostics": {
-      "signals_considered": 64,
+      "signals_considered": 77,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
