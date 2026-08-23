@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-23T07:58:29Z",
+  "generated_at": "2026-08-23T08:59:37Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,21 +33,21 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 23.729,
+    "passage": 25.029,
     "closure": 0,
     "traffic_reduction": 2.715,
-    "access_restriction": 8.9,
-    "risk": 20.98
+    "access_restriction": 9.68,
+    "risk": 20.44
   },
   "source_counts": {
-    "passage": 16,
+    "passage": 17,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-23T05:53:00Z",
+  "latest_confirmed_transit_at": "2026-08-23T08:14:59Z",
   "legacy_engine": {
     "status": "INCIERTO",
-    "operational_status": "NO_RECENT_CONFIRMATION",
+    "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "BAJA"
   },
   "evidence": [
@@ -71,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-23T07:58:29Z",
+      "published_at": "2026-08-23T08:59:37Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -127,6 +127,21 @@
       "kind_label_en": "Severely reduced traffic"
     },
     {
+      "kind": "TRANSIT_CONFIRMED",
+      "title": "Iran Authorizes Iraqi Oil Tankers to Transit Strait of Hormuz - Egypt Oil & Gas",
+      "source": "Egypt Oil & Gas",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTHlvZElDMzJTeUtfdGVqUmsxclJ2ZXkzd29RSVduUjlxUzVBeUpZVWxFTGZvc09hSWpUTDRCVDYwNkhNWkw5OVlQVWlCbjN2RkJNZTBTVERFRzdHc1l0OEZfZXJtdmRqMjVSODItUjByOVo1N1gzSS1adGtiZTNsdXY3YnZ5U0E0MVRzbDZtR193M0d3RDYw?oc=5",
+      "published_at": "2026-08-23T08:14:59Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Tránsito confirmado",
+      "kind_label_en": "Confirmed transit"
+    },
+    {
       "kind": "RISK_SEVERE",
       "title": "Hormuz Traffic Surges Nearly 400% as Analysts Say Iran is Losing Its Grip on the World's Most Critical Oil Corridor - Kurdistan24",
       "source": "Kurdistan24",
@@ -155,25 +170,10 @@
       "effective_weight": 1.0,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
-    },
-    {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "Iraq Secures Iranian Approval for Oil Tanker Transit Through Hormuz Strait - Data Portuaria",
-      "source": "Data Portuaria",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZV9nTVAxZnMxQ0FGQ19kWnIyYng3Z3VkYVp3ZDE4aVd3eVBBWVdTN1c4WGZWR0F1Qno5R05neUhuU1hYVHFtN1pBUE9DYXNoTFZIbG1Vcno0TXhWVU5Zc3lLTFA0c3RKSEhkOWhCUFdxS0Vic3lNOGZrdDlXNUxVMVNKTmJvMUxqaUZ1aTNCazltNmM2MzR5Qi1xZTZtUEFXTGNQR0VpRnd0aWFIMGdmWldxWWVsTXFw?oc=5",
-      "published_at": "2026-08-23T04:38:45Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
     }
   ],
   "diagnostics": {
-    "signals_considered": 54,
+    "signals_considered": 55,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
