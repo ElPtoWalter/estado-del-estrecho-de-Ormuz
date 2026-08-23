@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-23T05:04:15Z",
+  "generated_at": "2026-08-23T05:57:57Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 22.767,
+    "passage": 24.457,
     "closure": 0,
     "traffic_reduction": 3.612,
-    "access_restriction": 8.1,
-    "risk": 18.86
+    "access_restriction": 9.1,
+    "risk": 17.34
   },
   "source_counts": {
-    "passage": 15,
+    "passage": 17,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-23T02:11:00Z",
+  "latest_confirmed_transit_at": "2026-08-23T05:53:00Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -62,7 +62,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.6,
+      "effective_weight": 3.12,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
     },
@@ -71,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-23T05:04:15Z",
+      "published_at": "2026-08-23T05:57:57Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -128,6 +128,21 @@
     },
     {
       "kind": "TRANSIT_CONFIRMED",
+      "title": "Shipping traffic through the Strait of Hormuz surges as vessels increasingly use US-backed Oman route - i24NEWS",
+      "source": "i24NEWS",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNc2lheklJNkN3dFh2UjV1b1ZnY0NHVWtfdjBmYUdUUm85dExKQ3g5ZjRERzQyd25FN1RiREdYWmhCM2p5M1R3aGI1Tm12T0ZWaTVwbVYwZ2NZOXZENG04dUFEUkJuYjhtOGRyazFMRFdsb2RCQmNjUTRxOVJ0ZlVkVXAxNTEtYzdSN1I4d0tQQWxqc18zcl9UQW92bElaNVBJbnVkYmltaFFwaHJsX0k3b1lMR3pVcjQtNHV4V1dSYzZPMkx2cktUX1g3VzZRUlpxVkpzVElDRDh2czFpMUI2OGtyRmRXdw?oc=5",
+      "published_at": "2026-08-23T05:53:00Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Tránsito confirmado",
+      "kind_label_en": "Confirmed transit"
+    },
+    {
+      "kind": "TRANSIT_CONFIRMED",
       "title": "About 40 oil tankers transit Strait of Hormuz Friday: US media - 巴士的報",
       "source": "巴士的報",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZGZQUHQ1WWhqRl9Nc1RUZTkzcHE0cUxfblZUcm9NbEl4TUNYb29OQmxGYy10c2Q2U3Rrd2poSlZRQ1FUc3pYbk9oSDZNTGlMZDlVQTlTWEZfZ29uS2RqQlFMZlozeE94OHA3RVNlRWpveDlhUk5TZ3pNNnAyemI5SkU2S3I5a0U4SGctTldUODRtV25hbkFyWXFxZUVleUdlb0tZYS1hV2o3ZHdhUkh1eFE4UQ?oc=5",
@@ -155,25 +170,10 @@
       "effective_weight": 1.0,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Traffic in Strait of Hormuz skyrockets nearly 400%, as analysts say Iran’s grip on critical waterway weakens - New York Post",
-      "source": "New York Post",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRzdWWkUydmVBYXl0YnZvMTBEd01vaVMtUWxpQTg2bWFZTXRJTlh1azRrcGJNeldrYkZPcnJkNUw0YTQtNVZhdG8zX0toVGxNR3ZadnFla0c1VE9NWGppSllVUUFBOG0xQWowUGhFQ1l1VjZGMkNEZFljbzVja1RlYjdNd0hSRFY2REdkR3lndmdIQXY0dnFNMWd2bzhCNmNSeVV1MzRVdDUzNW8?oc=5",
-      "published_at": "2026-08-22T20:52:00Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 50,
+    "signals_considered": 51,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
