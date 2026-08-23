@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-23T02:11:07Z",
+  "generated_at": "2026-08-23T03:31:13Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,11 +33,11 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 22.143,
+    "passage": 21.987,
     "closure": 0,
-    "traffic_reduction": 3.87,
-    "access_restriction": 8.2,
-    "risk": 18.6
+    "traffic_reduction": 3.75,
+    "access_restriction": 8.1,
+    "risk": 21.08
   },
   "source_counts": {
     "passage": 14,
@@ -71,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-23T02:11:07Z",
+      "published_at": "2026-08-23T03:31:13Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -80,6 +80,21 @@
       "effective_weight": 3.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_ELEVATED",
+      "title": "UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdzR1UDJHQ1pYM2Y2dzJ4Wmo3d3VCNFBEbDZQamtaSm5wdF9uWUdwRzdNa0ZtTFdzaUppUkdtelNyaDV0ZnU4aWY1aUlBLWhNdzN2VmhvZzJNdk8zM3gwSXZvc0p6Zld0UHhRQ0RjY2NTekZOekZnMEhwWlo1OXc2Mk1KZ0ZkZHF4WFR5NVRMejB2eDQxdXJJR0VocU5QVmRHbHFTZXlJNWRfdE43Sko3cXlYalB2VmFWSFczb044NlZEU21vOTNHOHpB?oc=5",
+      "published_at": "2026-08-19T10:52:00Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.48,
+      "kind_label_es": "Riesgo elevado",
+      "kind_label_en": "Elevated risk"
     },
     {
       "kind": "RISK_SEVERE",
@@ -104,7 +119,7 @@
       "published_at": "2026-08-19T03:39:26Z",
       "tier": 2,
       "weight": 2.0,
-      "provider": "Google News RSS",
+      "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 1.24,
@@ -155,25 +170,10 @@
       "effective_weight": 1.0,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Traffic in Strait of Hormuz skyrockets nearly 400%, as analysts say Iran’s grip on critical waterway weakens - New York Post",
-      "source": "New York Post",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRzdWWkUydmVBYXl0YnZvMTBEd01vaVMtUWxpQTg2bWFZTXRJTlh1azRrcGJNeldrYkZPcnJkNUw0YTQtNVZhdG8zX0toVGxNR3ZadnFla0c1VE9NWGppSllVUUFBOG0xQWowUGhFQ1l1VjZGMkNEZFljbzVja1RlYjdNd0hSRFY2REdkR3lndmdIQXY0dnFNMWd2bzhCNmNSeVV1MzRVdDUzNW8?oc=5",
-      "published_at": "2026-08-22T20:52:00Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 49,
+    "signals_considered": 50,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
