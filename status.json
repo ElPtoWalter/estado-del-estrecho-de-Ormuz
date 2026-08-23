@@ -1,17 +1,17 @@
 {
   "engine_version": 3,
   "status": "INCIERTO",
-  "operational_status": "HIGH_RISK_UNCONFIRMED",
-  "operational_label_es": "Riesgo elevado, estado no confirmado",
-  "operational_label_en": "High risk, status unconfirmed",
+  "operational_status": "NO_RECENT_CONFIRMATION",
+  "operational_label_es": "Sin confirmación reciente",
+  "operational_label_en": "No recent confirmation",
   "confidence": "BAJA",
-  "checked_at": "2026-08-23T11:48:53Z",
-  "last_success_at": "2026-08-23T11:48:53Z",
-  "last_change_at": "2026-08-23T11:48:53Z",
+  "checked_at": "2026-08-23T13:11:47Z",
+  "last_success_at": "2026-08-23T13:11:47Z",
+  "last_change_at": "2026-08-23T13:11:47Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
-  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
+  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
   "last_valid_confirmation": null,
   "evidence": [
     {
@@ -28,37 +28,38 @@
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 1.155,
       "closed": 0,
       "declared": 0,
-      "risk": 2.16
+      "risk": 0
     },
     "independent_sources": {
       "open": 1,
       "closed": 0,
       "declared": 0,
-      "risk": 1
+      "risk": 0
     },
-    "articles_considered": 25,
-    "signals_considered": 2,
-    "current_cycle_evidence": 1,
-    "evidence_display_mode": "current",
+    "articles_considered": 21,
+    "signals_considered": 1,
+    "current_cycle_evidence": 0,
+    "evidence_display_mode": "carried",
     "evidence_archive_size": 59,
     "evidence_archive_days": 14
   },
   "evidence_context": {
-    "mode": "current",
+    "mode": "carried",
     "as_of": "2026-08-22T23:00:00Z",
-    "current_cycle_count": 1,
-    "heading_es": "Evidencias de esta comprobación",
-    "heading_en": "Evidence from this check",
-    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
-    "description_en": "Publishable signals found during the latest verification cycle."
+    "current_cycle_count": 0,
+    "heading_es": "Últimas evidencias disponibles",
+    "heading_en": "Latest available evidence",
+    "description_es": "La comprobación más reciente no aportó nuevas evidencias publicables. Estas señales proceden de ciclos anteriores y se muestran con su fecha real.",
+    "description_en": "The latest check produced no new publishable evidence. These signals come from earlier cycles and retain their actual publication dates."
   },
   "evidence_archive": [
     {
@@ -654,7 +655,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-23T11:49:13Z",
+    "generated_at": "2026-08-23T13:12:29Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -687,21 +688,21 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 29.387,
+      "passage": 26.291,
       "closure": 0,
       "traffic_reduction": 2.457,
-      "access_restriction": 8.8,
-      "risk": 21.02
+      "access_restriction": 7.9,
+      "risk": 21.86
     },
     "source_counts": {
-      "passage": 20,
+      "passage": 18,
       "closure": 0,
       "primary_sources": 2
     },
     "latest_confirmed_transit_at": "2026-08-23T08:14:59Z",
     "legacy_engine": {
       "status": "INCIERTO",
-      "operational_status": "HIGH_RISK_UNCONFIRMED",
+      "operational_status": "NO_RECENT_CONFIRMATION",
       "confidence": "BAJA"
     },
     "evidence": [
@@ -725,7 +726,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-23T11:49:13Z",
+        "published_at": "2026-08-23T13:12:29Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -751,6 +752,51 @@
         "kind_label_en": "Severe risk"
       },
       {
+        "kind": "RISK_SEVERE",
+        "title": "1 Filipino seafarer killed, 17 others repatriated after Hormuz attack - SunStar Publishing Inc.",
+        "source": "SunStar Publishing Inc.",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOTmQ1U25SaURRdEsyQlFyMHlBLVVFUkhCbml3NWFHUXJLNHI4Y05UMnlWdUFFU0VQYm9WSW5Qa0xqLTFGWkpwdnNNQzdRLWMwQlNaNkY3SXA5c0p6R1l6QzEtSTI2cWdZeUJKQ1FUM0ZvSUIydHBscTFhdG8taXNxbzl1TmU0TVRpUXFDSUtRZEJiWHVuV0pUQdIBpgFBVV95cUxQdFdPMm5LWnBWVTBVUHNvbkZkbEIxa3JJNmw3STZiX0llYmlULUl2TVdETVZRS3hfM2Njd1N5RndRZ1Zla0M2MGI4ejFET2NNZW9CaE44V3htNzVILUJpSlR5UUYwQU4xU2ZXWjVScW1SVlpnZlp4em9TQ1VDM3RpSmRfWFJYMTVteEFlUUVFZEtFekFGWWJlUlZHT3h0cWd1NWFwTmNB?oc=5",
+        "published_at": "2026-08-23T12:56:04Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Hormuz Traffic Surges Nearly 400% as Analysts Say Iran is Losing Its Grip on the World's Most Critical Oil Corridor - Kurdistan24",
+        "source": "Kurdistan24",
+        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNc0RXYVYwSmpMYkVBNlZRbnFwaEltbEVZaVAyLXpfMHVxNHRWZkxiS3hXSGd5dUdmMFN5VmNYVFR0UHJ0SDgzMnZWZGxiVjdCbEFOT044aXY2YnF0Q0k0TWczejlxN2lORlRFR21tVjF1WGJVMjVSWDd5RDNXdUNVWmM3YVNaU25kRDdiUnV2VS1kNXVNYXpoWXB4akwyMEJQQUYzNFFKMy13dEdSOU8tQWFSb3R3ZGZNWTZqNGozanJFbzRwMWM1eW83SncyVTNjSzFJWjlHWC12R0QxR0t5cGxWbTZuWkNLUGVsWXdn?oc=5",
+        "published_at": "2026-08-23T12:56:00Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_ELEVATED",
+        "title": "A closer look at the Strait of Hormuz after Iran issues new threat - Egypt Independent",
+        "source": "Egypt Independent",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQWUszY1NIUGtEdjNTR0dLRHhvTUNzQ3hncTc5SmNTc0s1UWFZNlhLR0pVZkpieFR0TXpmV01TZ2FWZWJSZV9yVS0xOHotU3EyV0VWUDBFZWN0UEl6cFh5SWxESDcwSS1xUUZnN2xSN2VhN2htSFZPeHJRNlFKeHVfUm1DY1lPeEM4WGtHTXFnUXBsQTNFVEprMjBGTzRuY2daRnc?oc=5",
+        "published_at": "2026-08-23T12:54:45Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo elevado",
+        "kind_label_en": "Elevated risk"
+      },
+      {
         "kind": "NEUTRAL_TRANSIT_PERMITTED",
         "title": "Economist: Iran Hormuz permits ‘too late’ as tankers secure safe passage - IraqiNews",
         "source": "IraqiNews",
@@ -769,7 +815,7 @@
         "kind": "RISK_ELEVATED",
         "title": "Hormuz crisis hides a deeper oil threat that could outlast the war - Fox News",
         "source": "Fox News",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNaVVFS3VxVGlmVjFYRWcxWGFYejJDZDVlNExaVEJEZGFWQmRXZjhmc0dhd1RIUW8tbldhMTJEdHhKSXFjbDFmQ0EybktmZUxzbkNNbVg3VHRrNElSbkI4N2FtT1didm9lSy1UcjNhNFVnTDFHNXZFZzZPaWw0TEVUdDVtZ3R1cXgtUXp2LVpURmxMbTJhR09DSlF30gGaAUFVX3lxTE1pVUVLdXFUaWZWMVhFZzFYYVh6MkNkNWU0TFpUQkRkYVZCZFdmOGZzR2F3VEhRby1uV2ExMkR0eEpJcWNsMWZDQTJuS2ZlTHNuQ01tWDdUdGs0SVJuQjg3YW1PV2J2b2VLLVRyM2E0VWdMMUc1dkVnNk9pbDRMRVR0NW1ndHVxeC1RenYtWlRGbExtMmFHT0NKUXc?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQdGZlLVpxRnloUXpBZlZpTTdxTVdNTGo1ZnZkWWR0YlRCRVZaQnIzdW9mN1FRUU5ldUpjLVRRQlBBQUg3YWJxTUd6aTNMNnIwMVNERFFwcmRhWExpTFhYc2FTa25ISlFaUG9kaG5aeWxuWEVIT0J6NUpuZ2NKV0JoYW5feW1UQWgyNnJ5djNucE8yb2o10gGaAUFVX3lxTE1pVUVLdXFUaWZWMVhFZzFYYVh6MkNkNWU0TFpUQkRkYVZCZFdmOGZzR2F3VEhRby1uV2ExMkR0eEpJcWNsMWZDQTJuS2ZlTHNuQ01tWDdUdGs0SVJuQjg3YW1PV2J2b2VLLVRyM2E0VWdMMUc1dkVnNk9pbDRMRVR0NW1ndHVxeC1RenYtWlRGbExtMmFHT0NKUXc?oc=5",
         "published_at": "2026-08-23T10:00:56Z",
         "tier": 1,
         "weight": 1.0,
@@ -779,55 +825,10 @@
         "effective_weight": 1.0,
         "kind_label_es": "Riesgo elevado",
         "kind_label_en": "Elevated risk"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Iran Authorizes Iraqi Oil Tankers to Transit Strait of Hormuz - Egypt Oil & Gas",
-        "source": "Egypt Oil & Gas",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTHlvZElDMzJTeUtfdGVqUmsxclJ2ZXkzd29RSVduUjlxUzVBeUpZVWxFTGZvc09hSWpUTDRCVDYwNkhNWkw5OVlQVWlCbjN2RkJNZTBTVERFRzdHc1l0OEZfZXJtdmRqMjVSODItUjByOVo1N1gzSS1adGtiZTNsdXY3YnZ5U0E0MVRzbDZtR193M0d3RDYw?oc=5",
-        "published_at": "2026-08-23T08:14:59Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Hormuz Traffic Surges Nearly 400% as Analysts Say Iran is Losing Its Grip on the World's Most Critical Oil Corridor - Kurdistan24",
-        "source": "Kurdistan24",
-        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNc0RXYVYwSmpMYkVBNlZRbnFwaEltbEVZaVAyLXpfMHVxNHRWZkxiS3hXSGd5dUdmMFN5VmNYVFR0UHJ0SDgzMnZWZGxiVjdCbEFOT044aXY2YnF0Q0k0TWczejlxN2lORlRFR21tVjF1WGJVMjVSWDd5RDNXdUNVWmM3YVNaU25kRDdiUnV2VS1kNXVNYXpoWXB4akwyMEJQQUYzNFFKMy13dEdSOU8tQWFSb3R3ZGZNWTZqNGozanJFbzRwMWM1eW83SncyVTNjSzFJWjlHWC12R0QxR0t5cGxWbTZuWkNLUGVsWXdn?oc=5",
-        "published_at": "2026-08-23T06:48:00Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Shipping traffic through the Strait of Hormuz surges as vessels increasingly use US-backed Oman route - i24NEWS",
-        "source": "i24NEWS",
-        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNc2lheklJNkN3dFh2UjV1b1ZnY0NHVWtfdjBmYUdUUm85dExKQ3g5ZjRERzQyd25FN1RiREdYWmhCM2p5M1R3aGI1Tm12T0ZWaTVwbVYwZ2NZOXZENG04dUFEUkJuYjhtOGRyazFMRFdsb2RCQmNjUTRxOVJ0ZlVkVXAxNTEtYzdSN1I4d0tQQWxqc18zcl9UQW92bElaNVBJbnVkYmltaFFwaHJsX0k3b1lMR3pVcjQtNHV4V1dSYzZPMkx2cktUX1g3VzZRUlpxVkpzVElDRDh2czFpMUI2OGtyRmRXdw?oc=5",
-        "published_at": "2026-08-23T05:53:00Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
       }
     ],
     "diagnostics": {
-      "signals_considered": 61,
+      "signals_considered": 58,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
