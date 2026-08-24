@@ -1,67 +1,76 @@
 {
   "engine_version": 3,
   "status": "INCIERTO",
-  "operational_status": "NO_RECENT_CONFIRMATION",
-  "operational_label_es": "Sin confirmación reciente",
-  "operational_label_en": "No recent confirmation",
+  "operational_status": "HIGH_RISK_UNCONFIRMED",
+  "operational_label_es": "Riesgo elevado, estado no confirmado",
+  "operational_label_en": "High risk, status unconfirmed",
   "confidence": "BAJA",
-  "checked_at": "2026-08-24T21:55:22Z",
-  "last_success_at": "2026-08-24T21:55:22Z",
-  "last_change_at": "2026-08-24T21:55:22Z",
+  "checked_at": "2026-08-24T22:55:09Z",
+  "last_success_at": "2026-08-24T22:55:09Z",
+  "last_change_at": "2026-08-24T22:55:09Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
-  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
+  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
   "last_valid_confirmation": null,
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Houthis claim strike on Saudi tanker in latest Red Sea escalation",
-      "source_name": "Euronews",
-      "source_url": "https://www.euronews.com/2026/08/24/houthis-claim-strike-on-saudi-tanker-in-latest-red-sea-escalation",
-      "published_at": "2026-08-24T15:54:12Z",
+      "title": "Yemen's Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdkNmMGllenFfdWxNVTJYWTF5b3h1Y3lVSmlhSmEwUHZjUC1jRTVQRUZCZ1p2SDFaaWZSRTdVOHNta2JwaFpTSjZyUHgzVUJ4WDdHUjJYeGdXR3Vycm1sdnRjSmdUdmwxQjVuU0tLTURmWXU4S2RRWmlVc3FfNTBzajUwQ0tNX1Z1WWZ30gGQAUFVX3lxTE9nNGYwUkF5QTdrZmVZSnEzSUdXLUt0YURGSFRiTXNQcHZEUXlkemFzTFBxX3JXRzRwQmViNHJJZjdvR0dyNFdvd3piWlpmbVZhNzVaZ1BUTUVUckNmNVpYeW9SQVA4eGtIZHcxc0xiRXMyeGhaOFgwbC1TUG9kX1VaNWU1MTFwbUQ1dFZFVE0ydA?oc=5",
+      "published_at": "2026-08-24T20:07:17Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-24T21:00:34Z"
+      "observed_at": "2026-08-24T22:55:09Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
-      "open": 0.735,
+      "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 2.4
     },
     "independent_sources": {
-      "open": 1,
+      "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 1
     },
-    "articles_considered": 21,
+    "articles_considered": 23,
     "signals_considered": 1,
-    "current_cycle_evidence": 0,
-    "evidence_display_mode": "carried",
+    "current_cycle_evidence": 1,
+    "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
-    "mode": "carried",
-    "as_of": "2026-08-24T15:54:12Z",
-    "current_cycle_count": 0,
-    "heading_es": "Últimas evidencias disponibles",
-    "heading_en": "Latest available evidence",
-    "description_es": "La comprobación más reciente no aportó nuevas evidencias publicables. Estas señales proceden de ciclos anteriores y se muestran con su fecha real.",
-    "description_en": "The latest check produced no new publishable evidence. These signals come from earlier cycles and retain their actual publication dates."
+    "mode": "current",
+    "as_of": "2026-08-24T20:07:17Z",
+    "current_cycle_count": 1,
+    "heading_es": "Evidencias de esta comprobación",
+    "heading_en": "Evidence from this check",
+    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
+    "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Yemen's Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdkNmMGllenFfdWxNVTJYWTF5b3h1Y3lVSmlhSmEwUHZjUC1jRTVQRUZCZ1p2SDFaaWZSRTdVOHNta2JwaFpTSjZyUHgzVUJ4WDdHUjJYeGdXR3Vycm1sdnRjSmdUdmwxQjVuU0tLTURmWXU4S2RRWmlVc3FfNTBzajUwQ0tNX1Z1WWZ30gGQAUFVX3lxTE9nNGYwUkF5QTdrZmVZSnEzSUdXLUt0YURGSFRiTXNQcHZEUXlkemFzTFBxX3JXRzRwQmViNHJJZjdvR0dyNFdvd3piWlpmbVZhNzVaZ1BUTUVUckNmNVpYeW9SQVA4eGtIZHcxc0xiRXMyeGhaOFgwbC1TUG9kX1VaNWU1MTFwbUQ1dFZFVE0ydA?oc=5",
+      "published_at": "2026-08-24T20:07:17Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-24T22:55:09Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Houthis claim strike on Saudi tanker in latest Red Sea escalation",
@@ -651,21 +660,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-14T00:09:35Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - aljazeera.com",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
-      "published_at": "2026-08-12T06:36:04Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-13T22:20:19Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-24T21:56:11Z",
+    "generated_at": "2026-08-24T22:55:46Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -698,21 +697,21 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 49.27,
+      "passage": 47.308,
       "closure": 0,
-      "traffic_reduction": 4.52,
-      "access_restriction": 23.58,
-      "risk": 19.5
+      "traffic_reduction": 5.52,
+      "access_restriction": 22.48,
+      "risk": 20.88
     },
     "source_counts": {
-      "passage": 28,
+      "passage": 26,
       "closure": 0,
       "primary_sources": 2
     },
     "latest_confirmed_transit_at": "2026-08-24T19:03:00Z",
     "legacy_engine": {
       "status": "INCIERTO",
-      "operational_status": "NO_RECENT_CONFIRMATION",
+      "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "BAJA"
     },
     "evidence": [
@@ -736,7 +735,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-24T21:56:11Z",
+        "published_at": "2026-08-24T22:55:46Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -793,10 +792,25 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Yemen’s Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
+        "title": "Yemen's Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
         "source": "Al Jazeera",
         "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdkNmMGllenFfdWxNVTJYWTF5b3h1Y3lVSmlhSmEwUHZjUC1jRTVQRUZCZ1p2SDFaaWZSRTdVOHNta2JwaFpTSjZyUHgzVUJ4WDdHUjJYeGdXR3Vycm1sdnRjSmdUdmwxQjVuU0tLTURmWXU4S2RRWmlVc3FfNTBzajUwQ0tNX1Z1WWZ30gGQAUFVX3lxTE9nNGYwUkF5QTdrZmVZSnEzSUdXLUt0YURGSFRiTXNQcHZEUXlkemFzTFBxX3JXRzRwQmViNHJJZjdvR0dyNFdvd3piWlpmbVZhNzVaZ1BUTUVUckNmNVpYeW9SQVA4eGtIZHcxc0xiRXMyeGhaOFgwbC1TUG9kX1VaNWU1MTFwbUQ1dFZFVE0ydA?oc=5",
         "published_at": "2026-08-24T20:07:17Z",
+        "tier": 2,
+        "weight": 2.0,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 2.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Yemen’s Houthis report attack on Saudi ship - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZzRmMFJBeUE3a2ZlWUpxM0lHVy1LdGFERkhUYk1zUHB2RFF5ZHphc0xQcV9yV0c0cEJlYjRySWY3b0dHcjRXb3d6YlpaZm1WYTc1WmdQVE1FVHJDZjVaWHlvUkFQOHhrSGR3MXNMYkVzMnhoWjhYMGwtU1BvZF9VWjVlNTExcG1ENXRWRVRNMnTSAZABQVVfeXFMT2c0ZjBSQXlBN2tmZVlKcTNJR1ctS3RhREZIVGJNc1BwdkRReWR6YXNMUHFfcldHNHBCZWI0cklmN29HR3I0V293emJaWmZtVmE3NVpnUFRNRVRyQ2Y1Wlh5b1JBUDh4a0hkdzFzTGJFczJ4aFo4WDBsLVNQb2RfVVo1ZTUxMXBtRDV0VkVUTTJ0?oc=5",
+        "published_at": "2026-08-24T19:44:45Z",
         "tier": 2,
         "weight": 2.0,
         "provider": "Google News RSS",
@@ -807,38 +821,23 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Macron, MBS reject navigation fees in Strait of Hormuz - TRT World",
-        "source": "TRT World",
-        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5jTDROSG9yc2VacmRXRjUybjc5UEhFcVhMRDBaRTItOFlDRDhiZEdyanRsSEZxUXlobnJiZzNWYTFTZnJFZFBkS2tsWEZRNGhmRlBpcVVmdnI?oc=5",
-        "published_at": "2026-08-24T19:17:53Z",
+        "kind": "RISK_SEVERE",
+        "title": "Sudan: 200,000 Newly Displaced as Fighting and Floods Intensify, Closure of Red Sea and Strait of Hormuz Threatens Critical Aid - International Organization for Migration",
+        "source": "International Organization for Migration",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOc2ZONDhOTG9uZXY3T25PWkR6QmtmLUhNUjBNamZLMUtOZ1R0ZnV4S3hwUGtWWWFGb1p0ZHdnNGpxRWVkVjc4bDFlbXZnR19CeG5BQk01MXJFc04zZGJ6VDA0QlVmcVBrNzFfTk9qQmNER2M2a3duQzRoLTIxaXQ1ZEx4eG04NnlMM1FQVWhycjN1dklsYmpVWlQyR2h5RlZMOGN6bl9LT095YjlpWFVUNEVkOUJ0YXc0Qm9NNEtOblQ5MVN4VkVDekxacUZoUFNFY21jZ1B6RQ?oc=5",
+        "published_at": "2026-08-24T21:00:25Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 1.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Iran to impose service fees on vessels transiting Strait of Hormuz - The Indian Awaaz",
-        "source": "The Indian Awaaz",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPRUdnTDlqcmtmN0poaTQ1TGZMd3Bnb01SV0tMWEFoaS1tOGdsdTlfald2YkJlM1RxNzBwQXVOeGdZbmpyWGJ2Nm4zaTVxYmFNUXAzbTVLTlBZR0Q4b1hvbXlUNFU3cl8ydHRsZmFnSm1ERmF4UzBaOUxxd0ZlbGw5cmdIS3BVakREWmk5RlhOenVVa1Q4ZS1vRjZR?oc=5",
-        "published_at": "2026-08-24T19:03:00Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 81,
+      "signals_considered": 80,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
