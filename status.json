@@ -5,8 +5,8 @@
   "operational_label_es": "Sin confirmación reciente",
   "operational_label_en": "No recent confirmation",
   "confidence": "BAJA",
-  "checked_at": "2026-08-24T03:32:21Z",
-  "last_success_at": "2026-08-24T03:32:21Z",
+  "checked_at": "2026-08-24T04:23:45Z",
+  "last_success_at": "2026-08-24T04:23:45Z",
   "last_change_at": "2026-08-23T13:11:47Z",
   "verification_ok": true,
   "stale": false,
@@ -28,11 +28,10 @@
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0.735,
       "closed": 0,
@@ -45,7 +44,7 @@
       "declared": 0,
       "risk": 0
     },
-    "articles_considered": 19,
+    "articles_considered": 22,
     "signals_considered": 1,
     "current_cycle_evidence": 0,
     "evidence_display_mode": "carried",
@@ -655,7 +654,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-24T03:33:03Z",
+    "generated_at": "2026-08-24T04:24:15Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -688,39 +687,24 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 43.046,
+      "passage": 38.132,
       "closure": 0,
       "traffic_reduction": 3.77,
-      "access_restriction": 19.18,
-      "risk": 19.24
+      "access_restriction": 20.28,
+      "risk": 15.96
     },
     "source_counts": {
-      "passage": 25,
+      "passage": 26,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-24T03:04:26Z",
+    "latest_confirmed_transit_at": "2026-08-24T04:07:45Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "NO_RECENT_CONFIRMATION",
       "confidence": "BAJA"
     },
     "evidence": [
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Fewer than 20 ships transit key Strait of Hormuz over weekend, data shows - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTXNxWm1BUVFUdWZuUDJoWi1GRUk1d0RXWTRwR0tQTXd6MXQ2V2RBSkRmMURzajdURDdIQnhEQlFTVVh4TG8yOTdfdWVIdmd4U3AyWm5pSlZ2Y0tSaDNKX1NjcGd1N2dqVmtPUU9rZjMwa3cxWDRLajBjYUhYUDkyY0owcm43TXcyNkp2WlJZUW9ONDA3ZlNlbHlOS19CSTRpYzlOU0pmcVhvaDB6SUsyVU5mM1cwQ2Q5TkwtTmlB?oc=5",
-        "published_at": "2026-08-24T02:42:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
-      },
       {
         "kind": "TRANSIT_CONFIRMED",
         "title": "Ships passing through Hormuz hover in single digits, data shows - Reuters",
@@ -741,28 +725,13 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-24T03:33:03Z",
+        "published_at": "2026-08-24T04:24:15Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 3.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Warning of mines in Hormuz after Trump claimed it was clear - Seatrade Maritime News",
-        "source": "Seatrade Maritime News",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPbHgteFJ1NW1PU1RNVFp1MkZNTGxtaU01cG1tMUQ4djFhU1JSRDRTNWRfYnZaR055eEg0elVIYW8xajNpX19sTFZIZGtkRHc0RFh4Z2hfeEZBcXA1d2tzVEZyTHhnUXZkVlZ2RllsZWFJempLcEV0bk84dzJjYnFnTEpzdldQXzBGel9BQTVrb1ZTTmJOcldLcW5LM1hqRVFkNWVzWA?oc=5",
-        "published_at": "2026-08-21T07:13:32Z",
-        "tier": 2,
-        "weight": 2.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.56,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -780,6 +749,36 @@
         "effective_weight": 1.15,
         "kind_label_es": "Tráfico muy reducido",
         "kind_label_en": "Severely reduced traffic"
+      },
+      {
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Iran Parliament approves fee plan for ships passing through Strait of Hormuz | World News - Hindustan Times",
+        "source": "Hindustan Times",
+        "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxNNFotLUN3X0tFM2ZKaFJHaldlZ1JwQmY1M0VFOGdkcXRXXzY3WHp6UXJPME90WThwOXo4T3BpQXFMQU9DSmZzT3Q4bkttR3M2NnIzelB1aVRGN1E3RFZVby0teUZPb3k3dUFhaFZrdXpNbTdMeE1Zc2wxVGUzX0F4d1lnLVZad1NHaFF5NGR4eUJJbk5OUHJJbVhhaWd0UGI2b1E1UHJRV3EybTdSbWRHenBuOFNSSmwwQlp5Y1luSWNsQ3FUcUJxcXFJUkZsclozR1JBTE5KcGdiOXg4LXN1MzhZNVlVMUthazBjQ3JQRkE0RWxJZDJ2V29DRDFRbV85eDN0NlZPM3pKYVJuZVpr0gGUAkFVX3lxTE1YSTBEUEJrbFdlYm1QMW5KdTUwcm9tTlhpNnBrbU0taTJFblZ2MEM1Vmt3SDlLbTVFcmRLenZNaGxyMGxCV18zVXN2dXdQOTBSazVQUmhOdnlPajhfQnhITlBxSV9DUTVFMW5FMUU2X0taREFqTm84eFMwdG5udlhZZjdrY2h4UHpiT25zbmttYkhYekdIbjFTQ0lWTzE1QUdTNDBKR2hxZFpsQnRTbmVuOWo1LTZLVk4tX3p4dlNRUzRaZDlvNDZrRm5yakItSFllQlFKLTYxaS1GOUFqSGpuYzVsVWRtNk92RjF1R2VySFlaUUVoZFRqWExOSllOVFU2VzdiYjNsdUt6NlJGLUt4RzAtdw?oc=5",
+        "published_at": "2026-08-24T04:07:45Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Iran Parliament Dares Trump, Approves Strait of Hormuz Fee for Ships - THISDAYLIVE",
+        "source": "THISDAYLIVE",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSzY5N3ZXN01BNlVfUkE3UDZ4S0FfNG5Qb3JVWFVpaFY2OXRkU0JPNXJvejlOZVlWWThEUzlDd2oxU2hENXVBYXppMHlLWTJoQUwtUEkxUDI2TGZvUjFRWV9WREJ3RldHa0NraFFsREpDNE40R2U3akc1LWY1bEQ0S0FxZ1Q0eUhtS3JaYjZhZk54czl5a2EwaTM1ZHhOd09nVE5ERUtncm1HRUE?oc=5",
+        "published_at": "2026-08-24T03:47:14Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
       },
       {
         "kind": "ACCESS_RESTRICTED",
@@ -800,7 +799,7 @@
         "kind": "TRANSIT_CONFIRMED",
         "title": "Fewer than 20 ships transit key Strait of Hormuz over weekend, data shows - The Hindu",
         "source": "The Hindu",
-        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQdjd4cGVWZHRVU2lxNmRBdERwWDdyLThGWU5kTE5RNkpoVHZFSV9TVHo0UnkxaTM4TFI0aUpqdmNscGRKZG90dWhOWnJxTDhlejlsTHlWMHNyUTNlQTFPYTZPNDNEUlRNREZSSHhXc1E5Qmk4anRqZmRBb1daaUkwem9tcVB5ZzBCaUROemh5bllOOV9Hd2dEMU9BQTlhTkt2RFlJZkRjZl85SmRwaThDQy1CTWNDMC1OVkpNVFgyQzBJTlp1VVA1dnowUEpIN1k2MlHSAdgBQVVfeXFMT3FXbVVRTktfWHBaSWEwclFxS3RvMlNOcUNETVVaSzd0a0YwRWJnWGw5cVBkQmZReS1xZjlLTS1tdVFQc214YkpNaXdBbnBoRUVlcVh2LTBRekd2c1dZVEtrTVd1a2VlY3YycUhQV1BySHY4ZkRuejVHLUtPekdPZEdDTS1LS3o5M0dzN19HT0ljY0thVUhfOVltWlQyWHhUVnZLaF92QlUtbmUzMlo2eGxQZHFTRTRnSE5WUVlFeTI4QUhObEVxa2F1NHJuLWxQT3I4eUEwU2dQ?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcVdtVVFOS19YcFpJYTByUXFLdG8yU05xQ0RNVVpLN3RrRjBFYmdYbDlxUGRCZlF5LXFmOUtNLW11UVBzbXhiSk1pd0FucGhFRWVxWHYtMFF6R3ZzV1lUS2tNV3VrZWVjdjJxSFBXUHJIdjhmRG56NUctS096R09kR0NNLUtLejkzR3M3X0dPSWNjS2FVSF85WW1aVDJYeFRWdktoX3ZCVS1uZTMyWjZ4bFBkcVNFNGdITlZRWUV5MjhBSE5sRXFrYXU0cm4tbFBPcjh5QTBTZ1DSAdgBQVVfeXFMT3FXbVVRTktfWHBaSWEwclFxS3RvMlNOcUNETVVaSzd0a0YwRWJnWGw5cVBkQmZReS1xZjlLTS1tdVFQc214YkpNaXdBbnBoRUVlcVh2LTBRekd2c1dZVEtrTVd1a2VlY3YycUhQV1BySHY4ZkRuejVHLUtPekdPZEdDTS1LS3o5M0dzN19HT0ljY0thVUhfOVltWlQyWHhUVnZLaF92QlUtbmUzMlo2eGxQZHFTRTRnSE5WUVlFeTI4QUhObEVxa2F1NHJuLWxQT3I4eUEwU2dQ?oc=5",
         "published_at": "2026-08-24T03:04:26Z",
         "tier": 1,
         "weight": 1.0,
@@ -828,7 +827,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 76,
+      "signals_considered": 73,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
