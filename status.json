@@ -5,8 +5,8 @@
   "operational_label_es": "Sin confirmación reciente",
   "operational_label_en": "No recent confirmation",
   "confidence": "BAJA",
-  "checked_at": "2026-08-24T04:23:45Z",
-  "last_success_at": "2026-08-24T04:23:45Z",
+  "checked_at": "2026-08-24T05:20:23Z",
+  "last_success_at": "2026-08-24T05:20:23Z",
   "last_change_at": "2026-08-23T13:11:47Z",
   "verification_ok": true,
   "stale": false,
@@ -28,10 +28,11 @@
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0.735,
       "closed": 0,
@@ -44,7 +45,7 @@
       "declared": 0,
       "risk": 0
     },
-    "articles_considered": 22,
+    "articles_considered": 20,
     "signals_considered": 1,
     "current_cycle_evidence": 0,
     "evidence_display_mode": "carried",
@@ -654,7 +655,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-24T04:24:15Z",
+    "generated_at": "2026-08-24T05:21:12Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -687,14 +688,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 38.132,
+      "passage": 36.831,
       "closure": 0,
       "traffic_reduction": 3.77,
       "access_restriction": 20.28,
-      "risk": 15.96
+      "risk": 15.02
     },
     "source_counts": {
-      "passage": 26,
+      "passage": 25,
       "closure": 0,
       "primary_sources": 2
     },
@@ -725,7 +726,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-24T04:24:15Z",
+        "published_at": "2026-08-24T05:21:12Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -749,6 +750,21 @@
         "effective_weight": 1.15,
         "kind_label_es": "Tráfico muy reducido",
         "kind_label_en": "Severely reduced traffic"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Iran warns non-compliant vessels of future restrictions in Strait of Hormuz - National Herald",
+        "source": "National Herald",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNeng0Vl83c3JUR2xlUmNYM2djdkh2MFhOU0doX2h4V1ZxYlJneXN5aWtKdGdyaVVIYmFDQWhxRFFNT2hqN2s0WXdPMnF3LWZDZnJGTDlXRXdhb3lSSWd2VWZkT2ozOTdrMzFad0VrV2czbWZNUVR0aWxXeExVRDdXaExJT01BanNJVUc0MGViZUZnZnVpQmFWeDFmbVp0dDR0TU9CV3d3dExrQVplY3hic2tlbFhNZEVDTGFyWmFRaWJNMGfSAdABQVVfeXFMTUR6Yjh3Mmw1VW9yOTJBeDNueTY0N1B3REZRdC1hZVVzQ1p3bG5TeXRxNTFQRWphOFd4MGZLa2Ztb0dqbDF2TUloMlNkblBDdTRfdGttWHRtLXl2RWVCaEs5V2I5eUlaVV84b2UzMlc5N3BpRDY3WkNMS0pfbXR3akRJaXM4S1AxdnRiUnVGTlJCSnFEcFh5VXo5SWMwdHBDSXVacW5OUm51dGpua3NEZVRXTF9KdHFUXzZISUJZdDQwbElzMHhFbWhiQVZKcWhicA?oc=5",
+        "published_at": "2026-08-24T04:19:11Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
       },
       {
         "kind": "TRANSIT_CONFIRMED",
@@ -797,21 +813,6 @@
       },
       {
         "kind": "TRANSIT_CONFIRMED",
-        "title": "Fewer than 20 ships transit key Strait of Hormuz over weekend, data shows - The Hindu",
-        "source": "The Hindu",
-        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcVdtVVFOS19YcFpJYTByUXFLdG8yU05xQ0RNVVpLN3RrRjBFYmdYbDlxUGRCZlF5LXFmOUtNLW11UVBzbXhiSk1pd0FucGhFRWVxWHYtMFF6R3ZzV1lUS2tNV3VrZWVjdjJxSFBXUHJIdjhmRG56NUctS096R09kR0NNLUtLejkzR3M3X0dPSWNjS2FVSF85WW1aVDJYeFRWdktoX3ZCVS1uZTMyWjZ4bFBkcVNFNGdITlZRWUV5MjhBSE5sRXFrYXU0cm4tbFBPcjh5QTBTZ1DSAdgBQVVfeXFMT3FXbVVRTktfWHBaSWEwclFxS3RvMlNOcUNETVVaSzd0a0YwRWJnWGw5cVBkQmZReS1xZjlLTS1tdVFQc214YkpNaXdBbnBoRUVlcVh2LTBRekd2c1dZVEtrTVd1a2VlY3YycUhQV1BySHY4ZkRuejVHLUtPekdPZEdDTS1LS3o5M0dzN19HT0ljY0thVUhfOVltWlQyWHhUVnZLaF92QlUtbmUzMlo2eGxQZHFTRTRnSE5WUVlFeTI4QUhObEVxa2F1NHJuLWxQT3I4eUEwU2dQ?oc=5",
-        "published_at": "2026-08-24T03:04:26Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
         "title": "Iran decides to impose service fees on vessels transiting Strait of Hormuz - News On AIR",
         "source": "News On AIR",
         "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOYzQySlNXNURiMWNEYUNvTVZhUldiQS1BcVJZdUJ0N24yWXlzWUIwampQZ3plWndUeG5YOGxsaE11WFc3dkM3LUV5Nm1xeTA5Mm5OZnNUaGxoeVVlTDRSR21aNmtmTl96b21MWWVkT1JQQVlWYkd6MUFHNkRyV2tKTktzU2J0UlJIWjM5b3c2UjN3UlN5VEswUnVxWDlFazlJY2c?oc=5",
@@ -827,7 +828,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 73,
+      "signals_considered": 71,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
