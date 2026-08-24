@@ -1,17 +1,17 @@
 {
   "engine_version": 3,
   "status": "INCIERTO",
-  "operational_status": "HIGH_RISK_UNCONFIRMED",
-  "operational_label_es": "Riesgo elevado, estado no confirmado",
-  "operational_label_en": "High risk, status unconfirmed",
+  "operational_status": "NO_RECENT_CONFIRMATION",
+  "operational_label_es": "Sin confirmación reciente",
+  "operational_label_en": "No recent confirmation",
   "confidence": "BAJA",
-  "checked_at": "2026-08-24T21:00:34Z",
-  "last_success_at": "2026-08-24T21:00:34Z",
-  "last_change_at": "2026-08-24T19:11:00Z",
+  "checked_at": "2026-08-24T21:55:22Z",
+  "last_success_at": "2026-08-24T21:55:22Z",
+  "last_change_at": "2026-08-24T21:55:22Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
-  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
+  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
   "last_valid_confirmation": null,
   "evidence": [
     {
@@ -28,37 +28,38 @@
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0.735,
       "closed": 0,
       "declared": 0,
-      "risk": 2.2
+      "risk": 0
     },
     "independent_sources": {
       "open": 1,
       "closed": 0,
       "declared": 0,
-      "risk": 1
+      "risk": 0
     },
-    "articles_considered": 26,
-    "signals_considered": 2,
-    "current_cycle_evidence": 1,
-    "evidence_display_mode": "current",
+    "articles_considered": 21,
+    "signals_considered": 1,
+    "current_cycle_evidence": 0,
+    "evidence_display_mode": "carried",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
-    "mode": "current",
+    "mode": "carried",
     "as_of": "2026-08-24T15:54:12Z",
-    "current_cycle_count": 1,
-    "heading_es": "Evidencias de esta comprobación",
-    "heading_en": "Evidence from this check",
-    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
-    "description_en": "Publishable signals found during the latest verification cycle."
+    "current_cycle_count": 0,
+    "heading_es": "Últimas evidencias disponibles",
+    "heading_en": "Latest available evidence",
+    "description_es": "La comprobación más reciente no aportó nuevas evidencias publicables. Estas señales proceden de ciclos anteriores y se muestran con su fecha real.",
+    "description_en": "The latest check produced no new publishable evidence. These signals come from earlier cycles and retain their actual publication dates."
   },
   "evidence_archive": [
     {
@@ -664,7 +665,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-24T21:01:21Z",
+    "generated_at": "2026-08-24T21:56:11Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -700,8 +701,8 @@
       "passage": 49.27,
       "closure": 0,
       "traffic_reduction": 4.52,
-      "access_restriction": 21.8,
-      "risk": 18.72
+      "access_restriction": 23.58,
+      "risk": 19.5
     },
     "source_counts": {
       "passage": 28,
@@ -711,7 +712,7 @@
     "latest_confirmed_transit_at": "2026-08-24T19:03:00Z",
     "legacy_engine": {
       "status": "INCIERTO",
-      "operational_status": "HIGH_RISK_UNCONFIRMED",
+      "operational_status": "NO_RECENT_CONFIRMATION",
       "confidence": "BAJA"
     },
     "evidence": [
@@ -735,7 +736,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-24T21:01:21Z",
+        "published_at": "2026-08-24T21:56:11Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -837,7 +838,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 78,
+      "signals_considered": 81,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
