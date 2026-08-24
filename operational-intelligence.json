@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-24T15:11:53Z",
+  "generated_at": "2026-08-24T16:06:32Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,22 +33,22 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 63.778,
+    "passage": 56.654,
     "closure": 0,
-    "traffic_reduction": 2.62,
-    "access_restriction": 22.68,
-    "risk": 18.4
+    "traffic_reduction": 3.62,
+    "access_restriction": 21.68,
+    "risk": 18.52
   },
   "source_counts": {
-    "passage": 39,
+    "passage": 33,
     "closure": 0,
     "primary_sources": 2
   },
   "latest_confirmed_transit_at": "2026-08-24T14:09:00Z",
   "legacy_engine": {
     "status": "INCIERTO",
-    "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "confidence": "MEDIA"
+    "operational_status": "NO_RECENT_CONFIRMATION",
+    "confidence": "BAJA"
   },
   "evidence": [
     {
@@ -71,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-24T15:11:53Z",
+      "published_at": "2026-08-24T16:06:32Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -127,6 +127,21 @@
       "kind_label_en": "Confirmed transit"
     },
     {
+      "kind": "TRAFFIC_REDUCED",
+      "title": "Oil prices decline as U.S. prepares new sanctions on Iran - Transport Topics",
+      "source": "Transport Topics",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9oS3NZUWZJQUstN0NyOVlueHZXS3dkSDZHbVJtaGhYTzBJbzVEcjdQQm1pVURrZkFuX3pqYk5tSnplbU1wNHhZV01LaHpvRHpZTXB0cTFmTXpuaTR2dkNWbFo2WC14c2ZmQTNz?oc=5",
+      "published_at": "2026-08-24T13:00:40Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Tráfico reducido",
+      "kind_label_en": "Reduced traffic"
+    },
+    {
       "kind": "TRANSIT_CONFIRMED",
       "title": "Iran warns vessels violating Hormuz transit rules of fines, detention - BOE Report",
       "source": "BOE Report",
@@ -155,25 +170,10 @@
       "effective_weight": 1.0,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
-    },
-    {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "Iran warns vessels risk penalties for breaching Hormuz transit rules - Nation Thailand",
-      "source": "Nation Thailand",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBBUVZtT3RIMDN4VFJneEJUcUtFZVhaTGh2OURJcjlCcVY0UXJWZlJuekFxX1NSRFI1LVF3RndYMURHQUs0WXFsdUhYdzE3RkpLWFFwdHJRMncySF9wWk5B?oc=5",
-      "published_at": "2026-08-24T11:56:00Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
     }
   ],
   "diagnostics": {
-    "signals_considered": 90,
+    "signals_considered": 84,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
