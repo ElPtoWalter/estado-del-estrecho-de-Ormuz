@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-24T11:03:38Z",
-  "last_success_at": "2026-08-24T11:03:38Z",
+  "checked_at": "2026-08-24T11:56:21Z",
+  "last_success_at": "2026-08-24T11:56:21Z",
   "last_change_at": "2026-08-24T10:18:33Z",
   "verification_ok": true,
   "stale": false,
@@ -22,16 +22,17 @@
       "published_at": "2026-08-24T10:01:27Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-24T11:03:38Z"
+      "observed_at": "2026-08-24T11:56:21Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0.735,
       "closed": 0,
@@ -44,7 +45,7 @@
       "declared": 0,
       "risk": 1
     },
-    "articles_considered": 24,
+    "articles_considered": 19,
     "signals_considered": 2,
     "current_cycle_evidence": 1,
     "evidence_display_mode": "current",
@@ -69,7 +70,7 @@
       "published_at": "2026-08-24T10:01:27Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-24T11:03:38Z"
+      "observed_at": "2026-08-24T11:56:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -79,7 +80,7 @@
       "published_at": "2026-08-24T10:01:27Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-24T10:18:33Z"
+      "observed_at": "2026-08-24T11:03:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -664,7 +665,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-24T11:03:59Z",
+    "generated_at": "2026-08-24T11:57:04Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -697,18 +698,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 60.454,
+      "passage": 60.948,
       "closure": 0,
-      "traffic_reduction": 4.92,
-      "access_restriction": 24.68,
-      "risk": 18.46
+      "traffic_reduction": 5.92,
+      "access_restriction": 23.9,
+      "risk": 20.68
     },
     "source_counts": {
-      "passage": 38,
+      "passage": 37,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-24T09:56:23Z",
+    "latest_confirmed_transit_at": "2026-08-24T11:14:46Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -735,7 +736,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-24T11:03:59Z",
+        "published_at": "2026-08-24T11:57:04Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -807,13 +808,13 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "US-Israel-Iran War Latest Live News: Tanker Struck by Unknown Projectile Off Saudi Arabia, Causing Fire on Vessel's Main Deck, Says UKMTO - The Sunday Guardian",
-        "source": "The Sunday Guardian",
-        "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxObDA4SzNhTjF0aU51YmJRM1VjM0w1Y1poclhYaDFRd2JRdjd5MnVJSUgxc0hGVVVQckRNM1VUVV9wclJLOGxTaWwwSG1PZlpkSC1xZHZDQnhIMGtvekJBdDdOV2M0aU1UcTJPTmlUcm4tNGdKMU1SUDVfZUFHMmZhVmEtelE5R0hPX290ckJUNEhDa2tUc202TGZSRlpEM3U1Yk5VN0xyRDREY3VsSnk2eEJ2Vk84MEZKNVZ2UVdKWTY3bWdqQmVRZ2YtbjNKYVRhYUZmZWxfMEpqbDg2a0g2VjdWLVlxQm5nWFo0SUFQRWtwQUl1RnRsbWNEaW5KeWxiUlRoRmhBUWhfZ9IBjwJBVV95cUxPdXlmeHVVcWI2ZnlfSkZpYXBLWVIwZFhDVV9Xb08yUTNSZWI5VmZwRU1QMl9jZUpXWVNPRTY4aVZ3dlNHNGtDemtlX1YxQjM3N2gyV2QteG1tMG9OcF8yMklIWlZPY1VVZHJEN0JBSzhWRnN3T2xOVkJqS3RFM2IyUEYxTTJ5Tk1ZX3Rwc0ZtcUVaTG1jdnFsM3ZBbFFZR3BVQjRGLW9LWE1nSHpnWkkxTy1JaUJFbVBMellrZmdLd1QwY1p5MTNKTURsMGZmaXROcTAzODVESjhqUFJpaDg0WlVtaWFweTdSZkRNOWo1SkxJdnJUVzlXYnZwd1FqSE1La2E3dFlRaXY5a1dPdmlv?oc=5",
-        "published_at": "2026-08-24T10:01:27Z",
+        "title": "Tanker comes under attack in Red Sea near Saudi Arabia - AzerNews",
+        "source": "AzerNews",
+        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFB4Q05FeGpDTDRqdWFFX2pVb0lmemVLa3hLa1pBaERsRGh6RFFzSjVuQTgtS0dCakJ5b1RpNDNEV3Vna3NBdExoSm1GbVNLdVBNYVlVTQ?oc=5",
+        "published_at": "2026-08-24T11:38:55Z",
         "tier": 1,
         "weight": 1.0,
-        "provider": "legacy-engine",
+        "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 1.0,
@@ -821,23 +822,23 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "RISK_ELEVATED",
-        "title": "The Silent Threat : Overlooked Radiological Risk in the Red Sea and the Strait of Hormuz - Center for International Maritime Security",
-        "source": "Center for International Maritime Security",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcVNEbTAtZHpRaGlXNXVIczBnaUxPUXNndjd5MGhNdmNIWHoxM00ta2JpNFB2RGhvUUR5cHlpMXprQVlBaGJiLVdpRmFhR0pkMjBNVmI1MU1obEpaZUhITkJFY0N2M211cmZiMlQ2ZUZId0REV0xSdzJkYkhsWS0tb1RsQU9fa05MdG1KTlEzWFpqeGhRVWYzeWxuVXozekMzb3JOTXNwVUtrQQ?oc=5",
-        "published_at": "2026-08-24T10:00:08Z",
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Iran Approves Service Fees For ‘Authorised’ Ships Transiting Strait Of Hormuz - Marine Insight",
+        "source": "Marine Insight",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxORWZweElUMkdjdnJoc05yOG44ZEVKdHBmSzlBOUlsanI5Qk1DcllGc19DcHc2NXhjMnA1ZWF4OXZiSHFDcW0wX3B0aENBbVdqWmpEWmp4bkJkN0VncHhEZmtUcGlGYmJmcnpwNlNUWTl4blV3U1dLQ0QtbThmN1ZtY2xfNkpSaVJIY3lxTnBONlc2OWhyYXFZdmFGWms1T2pRVDZFRWRXZG1mQQ?oc=5",
+        "published_at": "2026-08-24T11:14:46Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 1.0,
-        "kind_label_es": "Riesgo elevado",
-        "kind_label_en": "Elevated risk"
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
       }
     ],
     "diagnostics": {
-      "signals_considered": 92,
+      "signals_considered": 94,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
