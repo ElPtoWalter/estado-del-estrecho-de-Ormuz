@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-24T10:18:52Z",
+  "generated_at": "2026-08-24T11:03:59Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,39 +33,24 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 64.094,
+    "passage": 60.454,
     "closure": 0,
     "traffic_reduction": 4.92,
-    "access_restriction": 23.68,
-    "risk": 16.78
+    "access_restriction": 24.68,
+    "risk": 18.46
   },
   "source_counts": {
-    "passage": 37,
+    "passage": 38,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-24T09:48:30Z",
+  "latest_confirmed_transit_at": "2026-08-24T09:56:23Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "MEDIA"
   },
   "evidence": [
-    {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "Iran warns vessels violating Hormuz transit rules of fines, detention - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPR1A3TzVlaW92SHFPcHNmUjdQZ1hIYi0xZWNCdGVpcmY4VmZBUHNneElLRnE5dDFwZXRRX1FfcHFkMDlFMm5kdGh2aldsWnllaGZSVWJ2SFhzUVRRU3FyNzJNeWJfb3lrQnhqQ2g0d1c0ZUo0dllmTkd4QzAwWTNZV05sNlc2M3c5c3d5Zi1hTF90N0ltX25sUUk4T0RURUE3akZuX2VrMEFGcXFIMV9FRFU5VWI2UE4wREV3?oc=5",
-      "published_at": "2026-08-24T08:45:06Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 4.0,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
-    },
     {
       "kind": "TRANSIT_CONFIRMED",
       "title": "Fewer than 20 ships transit key Strait of Hormuz over weekend, data shows - Reuters",
@@ -86,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-24T10:18:52Z",
+      "published_at": "2026-08-24T11:03:59Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -170,10 +155,25 @@
       "effective_weight": 1.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_ELEVATED",
+      "title": "The Silent Threat : Overlooked Radiological Risk in the Red Sea and the Strait of Hormuz - Center for International Maritime Security",
+      "source": "Center for International Maritime Security",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcVNEbTAtZHpRaGlXNXVIczBnaUxPUXNndjd5MGhNdmNIWHoxM00ta2JpNFB2RGhvUUR5cHlpMXprQVlBaGJiLVdpRmFhR0pkMjBNVmI1MU1obEpaZUhITkJFY0N2M211cmZiMlQ2ZUZId0REV0xSdzJkYkhsWS0tb1RsQU9fa05MdG1KTlEzWFpqeGhRVWYzeWxuVXozekMzb3JOTXNwVUtrQQ?oc=5",
+      "published_at": "2026-08-24T10:00:08Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Riesgo elevado",
+      "kind_label_en": "Elevated risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 89,
+    "signals_considered": 92,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
