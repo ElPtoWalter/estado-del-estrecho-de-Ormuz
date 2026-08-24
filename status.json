@@ -5,8 +5,8 @@
   "operational_label_es": "Sin confirmación reciente",
   "operational_label_en": "No recent confirmation",
   "confidence": "BAJA",
-  "checked_at": "2026-08-24T06:05:24Z",
-  "last_success_at": "2026-08-24T06:05:24Z",
+  "checked_at": "2026-08-24T07:39:56Z",
+  "last_success_at": "2026-08-24T07:39:56Z",
   "last_change_at": "2026-08-23T13:11:47Z",
   "verification_ok": true,
   "stale": false,
@@ -28,11 +28,10 @@
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0.735,
       "closed": 0,
@@ -45,7 +44,7 @@
       "declared": 0,
       "risk": 0
     },
-    "articles_considered": 20,
+    "articles_considered": 25,
     "signals_considered": 1,
     "current_cycle_evidence": 0,
     "evidence_display_mode": "carried",
@@ -655,7 +654,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-24T06:06:09Z",
+    "generated_at": "2026-08-24T07:40:40Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -688,24 +687,39 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 42.239,
+      "passage": 56.97,
       "closure": 0,
       "traffic_reduction": 3.77,
-      "access_restriction": 21.5,
-      "risk": 16.02
+      "access_restriction": 24.36,
+      "risk": 15.4
     },
     "source_counts": {
-      "passage": 25,
+      "passage": 32,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-24T04:07:45Z",
+    "latest_confirmed_transit_at": "2026-08-24T07:33:25Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "NO_RECENT_CONFIRMATION",
       "confidence": "BAJA"
     },
     "evidence": [
+      {
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Iran warns vessels violating Hormuz transit rules of fines, detention - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPR1A3TzVlaW92SHFPcHNmUjdQZ1hIYi0xZWNCdGVpcmY4VmZBUHNneElLRnE5dDFwZXRRX1FfcHFkMDlFMm5kdGh2aldsWnllaGZSVWJ2SFhzUVRRU3FyNzJNeWJfb3lrQnhqQ2g0d1c0ZUo0dllmTkd4QzAwWTNZV05sNlc2M3c5c3d5Zi1hTF90N0ltX25sUUk4T0RURUE3akZuX2VrMEFGcXFIMV9FRFU5VWI2UE4wREV3?oc=5",
+        "published_at": "2026-08-24T07:23:35Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
+      },
       {
         "kind": "TRANSIT_CONFIRMED",
         "title": "Fewer than 20 ships transit key Strait of Hormuz over weekend, data shows - Reuters",
@@ -726,7 +740,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-24T06:06:09Z",
+        "published_at": "2026-08-24T07:40:40Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -767,68 +781,53 @@
         "kind_label_en": "Severely reduced traffic"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "US redirected 70 vessels, disabled 3 since the start of Iran blockade: Centcom - Firstpost",
-        "source": "Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOcFdvb01Zb1VYV043TUltN3BMNDlhaU5UX1U1M1pRczBtV1VVWjNSNkxuS09sZW8yV19EODBreWRRRTZjQUVLbWtQT0lzOTBBYXdPSWY2LXRTMTdreXNURDV6U2piZ2o0WGUteXNIOHRLWVVIUm81dFFkREpSY3JCVUpuM3hQOGFsNjZIMHlhclhwOGhzeVZzcmdIMUhad3RnSGNvNkd0UE9DMkxRZFpJci1GdktmNWdLeHNMTnlISdIBxAFBVV95cUxOWmUzUUl4cTZ2WDg1VGdaTUdPMV9ZSThfcDJoNFdzMkFBWXF4ZEk5Y0RMTEtLNWpWLWVrT3IwVlNoZUNuVWhoeXg0OEZHMktjRS1CNWlqS1IwSGxkai1uU1ZtUURnNVJKakViWHF5ellyX3pfeU5LRXZlZGRiSU1vNE4ta1J3RnBRU05GUXJjb2RYb2tHaEtMY0Fnb2kxVEV2aWsyT21tdldHUEVrTmNacHBoVWVVd1VsUnFDeGRxQzV1Wnlh?oc=5",
-        "published_at": "2026-08-24T05:56:03Z",
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Iran warns vessels violating Hormuz transit rules of fines, detention - AOL.com",
+        "source": "AOL.com",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPc1oxZFltNFJGUHJXdFlVd1NPZnJ5aVgtaHJKc1AtUTNVWVhtRUxZN0h3bnMtQ0g3aG5Ld0x0STg4OG5YeTU2SDIwTEItbE9DcmZqd1JrSG92RGE0M1ZzZzBHc1FjOEc0VGZFdkNpQURJUkZnRUk3UW9zYW9vYUFJUDRjaERMdw?oc=5",
+        "published_at": "2026-08-24T07:33:25Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 1.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Iran plans fees for ships using Strait of Hormuz as tensions with US escalate - Moneycontrol.com",
-        "source": "Moneycontrol.com",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOaTZvV2tpcnB1YnZJb1RpbjMwcV80WXBzSXUybkJGZDZ0Y0lha1Fyblh4QmN6YWdWei1QWGlzVjZUblozTUpGdnR2b3BtSzZzNjhxZ2JmTmVKZlRHUVV3Y1c0QXRSQURDc25mUUNTYWFHOFdtT0psUGkyUjRfcnZHUzU2X3JMeGY1a2czdm9wdzdWek9nRC1SQjRadzJaR0ViOTgwek1MLVM1QWtUdTVLMldsT2p2X0FiT3RqLTVEUUItTlZVZ0s2cFp4MFE4ZkXSAdQBQVVfeXFMT2lOTXJLaGJBVm5mamtOZ3duYnl0LS10bkZZUFRnZDNUWjZuekNwLVlIRFh6SlR4NXJrZ05UUEl1RVNkUDBfdmdGZnl4Y0hEZVNackN4SnRkZHFJN24tMnZkTGJBVXVpcHJJd0U4clkzRVNhVGM2Nm8zQmljbGhjYWF3WGVrWGVNaTFXSGMyZmtMb0dTX1NMVUl1NHRnYmJKa1FRSGNzU2RObWl4N2hOZloxWWJ2d2NoZk1ZWC0yOUc3Rjk2WWd0dTZycjQ5RjJWT2tfc0E?oc=5",
-        "published_at": "2026-08-24T05:47:15Z",
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Iran warns vessels violating Hormuz transit rules of fines, detention - Internazionale",
+        "source": "Internazionale",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOT0xtT2Vnam1Ub1FZemRIVG03YkFHeThnU1hJN04zWGR2SmJoQnNILUkxRXh4N0E2bkpYNFc3ZHo1RXhNODZTd29NWTNjMUUzTFEyRTcteU5KTlhzNTRNM3BXcW5lUkpLRDQ1SzBIOWF6RTZoSWtYa2xPUkU4Zm9vN0lBXzZnOFhBU2NFLUpiZWRiOXBBbng3VzhPRVNWWlhEeEZfeVNhcENaNTFzOEZYdXptSjZEUGh1QXBBVXdwQ0hST2IxNHhnNzU3bXQ?oc=5",
+        "published_at": "2026-08-24T07:23:14Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 1.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
       },
       {
-        "kind": "RISK_ELEVATED",
-        "title": "Iran faces massive new triple threat as Strait of Hormuz begins to open - news24.com.au",
-        "source": "news24.com.au",
-        "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxOOTB5OTFqTXZ0cGU0OF9wXzFmWHk1Y0prWmxTOUVZeGpweUQyaGZ0VUZlU1M4Slo0eGE5akFsaTJyR0xVS1d2SVpxU1ZSYmNQOS1XS3h2QWFxSHYtMTJnQmxQM1NwTEEwTm9PZmVlMXUzMGNpb2UwVEdxUlZXY3R1QXBfZnFTbWJobXpMeDgxOGJLU2tnbzJFM3llNVY1THkxTzVrN1ZLdEo4OUpGdzBQVi1FbURiU0ZYQ094UGJEOTRBeVdhV0VfREpFZVdkOXBYdmdnSTVxVUl6X0g3OUphMF9acHFBa3A5VWhzb3VWVXl1WlZYUVNNQ3djVmdHY3dsTkFQelVFWTdHNk1jQUdpRzY3NkY1VHRrQzZUelZNMjNOZm95akpNa25faVM2a3hObXpMVXp30gG7AkFVX3lxTFA2d250dEl4cjBTTjNNTDNOZFBQU2x3V3JVRC02X0t5YS1KZ19WX0RVZ2VfRWFobkJ0dDVZUE16UGFDOXgyTmItYWVwQUJuT0FNR2pueDNETzVLZ1B3alRqakFnQk9SSW1MZ09SVXhDSEt4eC15cFdWMlQwYjRkSC1IOXFtM09lMzVwTTRzbWhrZTA5VEN1bUFOMDFUQTdOUzRXaEIyMVpwLWdwVml3ZG5pZXFRU1dDNzh1N3BQMVlHeGxtVnFRdFM0TS1FaXVYeTk5NFNMWm9ndzVFQnZzVVVVdWNMX3RlX08yckVheDBaSXlHWFhvZEZVdnN5TS11U3BhZkFMZzViOUhJQ2dIVDZJZkQ5TFRHRVF2NTJOMkU5d29qa2JmTmJ2VFE5QzJSRU1RdWZKR0tfWTRJWQ?oc=5",
-        "published_at": "2026-08-24T05:42:26Z",
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Iran Says Ships Violating Strait of Hormuz Transit Rules May Face Fines, Detention or Confiscation - bloomingbit",
+        "source": "bloomingbit",
+        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBhOUdOVzk1bGM5ZFNBcVl0bkNKY0xHNzJLYjVlU1gyX0IzdEhJdFFfMFc5SFhtX0cxZzNhaUVlSXVTb0pDSGZIc1N1b1NhVjdCc2lWSA?oc=5",
+        "published_at": "2026-08-24T07:15:11Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 1.0,
-        "kind_label_es": "Riesgo elevado",
-        "kind_label_en": "Elevated risk"
-      },
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Iran warns non-compliant vessels of future restrictions in Strait of Hormuz - National Herald",
-        "source": "National Herald",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNeng0Vl83c3JUR2xlUmNYM2djdkh2MFhOU0doX2h4V1ZxYlJneXN5aWtKdGdyaVVIYmFDQWhxRFFNT2hqN2s0WXdPMnF3LWZDZnJGTDlXRXdhb3lSSWd2VWZkT2ozOTdrMzFad0VrV2czbWZNUVR0aWxXeExVRDdXaExJT01BanNJVUc0MGViZUZnZnVpQmFWeDFmbVp0dDR0TU9CV3d3dExrQVplY3hic2tlbFhNZEVDTGFyWmFRaWJNMGfSAdABQVVfeXFMTUR6Yjh3Mmw1VW9yOTJBeDNueTY0N1B3REZRdC1hZVVzQ1p3bG5TeXRxNTFQRWphOFd4MGZLa2Ztb0dqbDF2TUloMlNkblBDdTRfdGttWHRtLXl2RWVCaEs5V2I5eUlaVV84b2UzMlc5N3BpRDY3WkNMS0pfbXR3akRJaXM4S1AxdnRiUnVGTlJCSnFEcFh5VXo5SWMwdHBDSXVacW5OUm51dGpua3NEZVRXTF9KdHFUXzZISUJZdDQwbElzMHhFbWhiQVZKcWhicA?oc=5",
-        "published_at": "2026-08-24T04:19:11Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
       }
     ],
     "diagnostics": {
-      "signals_considered": 75,
+      "signals_considered": 85,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
