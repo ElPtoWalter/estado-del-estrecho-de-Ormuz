@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-24T13:32:11Z",
+  "generated_at": "2026-08-24T14:20:37Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 62.92,
+    "passage": 56.264,
     "closure": 0,
     "traffic_reduction": 3.77,
-    "access_restriction": 23.8,
-    "risk": 19.3
+    "access_restriction": 24.8,
+    "risk": 18.8
   },
   "source_counts": {
-    "passage": 37,
+    "passage": 34,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-24T12:49:43Z",
+  "latest_confirmed_transit_at": "2026-08-24T14:09:00Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "NO_RECENT_CONFIRMATION",
@@ -71,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-24T13:32:11Z",
+      "published_at": "2026-08-24T14:20:37Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -128,6 +128,21 @@
     },
     {
       "kind": "TRANSIT_CONFIRMED",
+      "title": "Iran Blacklists 45 Tankers Over Strait Of Hormuz Transit Rules - MarketForces Africa",
+      "source": "MarketForces Africa",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNSkFSMGthc0h6OFVlNkhqeDZYT2hHaHc2emtRVk4yTE91Y3UwNmxsemFZQWQxdXYxaUx4MGZWUUFCTHBDdy1fSW1pSHdJV2FTNklnWnE4d1hJSy1GNmRSdlFBSXc4anRpNjhhSXRPbTl2cDlZLURsR1NWUkJpNnZHTlRZb1J3bnJQM0d3UVhLYnhPRGc?oc=5",
+      "published_at": "2026-08-24T14:09:00Z",
+      "tier": 1,
+      "weight": 1.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.0,
+      "kind_label_es": "Tránsito confirmado",
+      "kind_label_en": "Confirmed transit"
+    },
+    {
+      "kind": "TRANSIT_CONFIRMED",
       "title": "Iran Warns Vessels Of Fines, Detention And Confiscation For Violating Strait Of Hormuz Transit Rules - Marine Insight",
       "source": "Marine Insight",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZHp4d2ZINlpJZGtsU0l0aE1jNXJDWFg0TlpnZ0VYazlyZnFORS1tR1RTN3A0YjY2dVFiTEtEWXlZbzlXaHpsSGdlZ3ZhUGthSDJZbDJoWjdMT0hqSVJGUEdtUE5pUUFYMkhEY2o4NVpTNlBtdG4zdk1wQXpqQklLb2xIT1NfaHlqY216VE9VbTlGdXlHZi0wOG8tWHJrZVY1YW9nZXNkRm1oRmNQM2ppUWJzTWZRUVpxb3V1WWJENkJDY1ZpMUxrcFNn?oc=5",
@@ -142,38 +157,23 @@
       "kind_label_en": "Confirmed transit"
     },
     {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "Iran warns vessels risk penalties for breaching Hormuz transit rules - Nation Thailand",
-      "source": "Nation Thailand",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBBUVZtT3RIMDN4VFJneEJUcUtFZVhaTGh2OURJcjlCcVY0UXJWZlJuekFxX1NSRFI1LVF3RndYMURHQUs0WXFsdUhYdzE3RkpLWFFwdHJRMncySF9wWk5B?oc=5",
-      "published_at": "2026-08-24T11:56:00Z",
+      "kind": "TRAFFIC_REDUCED",
+      "title": "Oil Prices Fall Ahead of U.S. Vow to Intensify Economic War Against Iran - The New York Times",
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5fY1BXeFZGMEw3NDdPSS1WSE1pV2kxN044NHduM3FIRmo3SXc2SFFybk5UWS1Bc3VEVUI2Q2VRcEtseEx1dG0zc3ZhdHd2LTVleXRfXzA5QTR6ejVhRHU4UnBoUHdyeE1jZDNPU3dJTVlzSUpTQlNPTU41WUs?oc=5",
+      "published_at": "2026-08-24T12:03:10Z",
       "tier": 1,
       "weight": 1.0,
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 1.0,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Tanker comes under attack in Red Sea near Saudi Arabia - AzerNews",
-      "source": "AzerNews",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFB4Q05FeGpDTDRqdWFFX2pVb0lmemVLa3hLa1pBaERsRGh6RFFzSjVuQTgtS0dCakJ5b1RpNDNEV3Vna3NBdExoSm1GbVNLdVBNYVlVTQ?oc=5",
-      "published_at": "2026-08-24T11:38:55Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
+      "kind_label_es": "Tráfico reducido",
+      "kind_label_en": "Reduced traffic"
     }
   ],
   "diagnostics": {
-    "signals_considered": 92,
+    "signals_considered": 87,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
