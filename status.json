@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "BAJA",
-  "checked_at": "2026-08-24T19:11:00Z",
-  "last_success_at": "2026-08-24T19:11:00Z",
+  "checked_at": "2026-08-24T19:56:32Z",
+  "last_success_at": "2026-08-24T19:56:32Z",
   "last_change_at": "2026-08-24T19:11:00Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-24T16:45:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-24T19:11:00Z"
+      "observed_at": "2026-08-24T19:56:32Z"
     }
   ],
   "diagnostics": {
@@ -44,7 +44,7 @@
       "declared": 0,
       "risk": 1
     },
-    "articles_considered": 26,
+    "articles_considered": 27,
     "signals_considered": 2,
     "current_cycle_evidence": 1,
     "evidence_display_mode": "current",
@@ -69,7 +69,7 @@
       "published_at": "2026-08-24T16:45:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-24T19:11:00Z"
+      "observed_at": "2026-08-24T19:56:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -664,7 +664,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-24T19:11:22Z",
+    "generated_at": "2026-08-24T19:57:06Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -679,32 +679,32 @@
       "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "CLOSURE_CLAIMED"
+      "legal": "DISPUTED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Cierre declarado por una parte"
+      "legal": "Régimen disputado"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "Closure claimed by one party"
+      "legal": "Disputed regime"
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 48.984,
+      "passage": 52.494,
       "closure": 0,
-      "traffic_reduction": 7.62,
-      "access_restriction": 23.58,
-      "risk": 16.12
+      "traffic_reduction": 4.62,
+      "access_restriction": 21.8,
+      "risk": 17.84
     },
     "source_counts": {
-      "passage": 28,
+      "passage": 30,
       "closure": 0,
       "primary_sources": 2
     },
@@ -735,7 +735,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-24T19:11:22Z",
+        "published_at": "2026-08-24T19:57:06Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -791,6 +791,36 @@
         "kind_label_en": "Confirmed transit"
       },
       {
+        "kind": "RISK_SEVERE",
+        "title": "Yemen’s Houthis report attack on Saudi ship - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdkNmMGllenFfdWxNVTJYWTF5b3h1Y3lVSmlhSmEwUHZjUC1jRTVQRUZCZ1p2SDFaaWZSRTdVOHNta2JwaFpTSjZyUHgzVUJ4WDdHUjJYeGdXR3Vycm1sdnRjSmdUdmwxQjVuU0tLTURmWXU4S2RRWmlVc3FfNTBzajUwQ0tNX1Z1WWZ30gGQAUFVX3lxTE9nNGYwUkF5QTdrZmVZSnEzSUdXLUt0YURGSFRiTXNQcHZEUXlkemFzTFBxX3JXRzRwQmViNHJJZjdvR0dyNFdvd3piWlpmbVZhNzVaZ1BUTUVUckNmNVpYeW9SQVA4eGtIZHcxc0xiRXMyeGhaOFgwbC1TUG9kX1VaNWU1MTFwbUQ1dFZFVE0ydA?oc=5",
+        "published_at": "2026-08-24T19:44:41Z",
+        "tier": 2,
+        "weight": 2.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 2.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Macron, MBS reject navigation fees in Strait of Hormuz - TRT World",
+        "source": "TRT World",
+        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5jTDROSG9yc2VacmRXRjUybjc5UEhFcVhMRDBaRTItOFlDRDhiZEdyanRsSEZxUXlobnJiZzNWYTFTZnJFZFBkS2tsWEZRNGhmRlBpcVVmdnI?oc=5",
+        "published_at": "2026-08-24T19:17:53Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
+      },
+      {
         "kind": "TRANSIT_CONFIRMED",
         "title": "Iran to impose service fees on vessels transiting Strait of Hormuz - The Indian Awaaz",
         "source": "The Indian Awaaz",
@@ -804,40 +834,10 @@
         "effective_weight": 1.0,
         "kind_label_es": "Tránsito confirmado",
         "kind_label_en": "Confirmed transit"
-      },
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Why Macron and Saudi Arabia are opposing fees in the Strait of Hormuz - Latest news from Azerbaijan",
-        "source": "Latest news from Azerbaijan",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPdlljSEE0NHphNko0Mi14WHFjcjJ4ekdacGUtVWRONk1uekQwQTY5Zy1JaFZ0YTgwQkRWeWkxc2dDY3FWRlBuNU51N05LT25QVWd4ZVJhY3Qwcmh6dk5WcGJkSmpDTzJ2X3pYOVk2Ukd1N0V6SjZNR0dXRmIzY3VmbUZ5VW1tb0h4RHZ0dzJsd29NOHZG?oc=5",
-        "published_at": "2026-08-24T18:46:49Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "UN offers to facilitate fertilizer transit through Hormuz - Gulf News",
-        "source": "Gulf News",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQMk9yaTFybDhhUUxUUURGbjRFVGgtLXBFclpieVJCSHFGU0picEFYb1p5Z3dpdm5fclNyRVhsUFMzdGpvZlZHM2RNMUt4ZjRPelRKNDJOWWZ0dVNpTjBOb1Q0WnFaVV9zTDdCR0VUYUNVWVBBV2xQZmtvd1h1dHJOakpfaUtObFBmdjJSQ0NCaC14UEhPbjNkOXpORWl2Z18ybVRR0gG2AUFVX3lxTE9lVEo0Y3NUSzBEVS03OWRQMVB5MHdRSjd1YlY4SmFsbnRaQkcxMGtqRm9wdGU1YlVnMlN4dDZ2ZFZaRDhUVEs2c2wwUW9QSUQzLWxZU0RoMXRJbk1yQUtHZ1MzNkh2T2txb0ZYMGo2SnlXR2FhOVFHSHBtcEJFYVBjYUN4SWk0X2VzRHVDMS1BelU1a1NCREpwSWF5X0RPcmVYQUc3cURESFVCOFlZaVJlekt1ZVR3?oc=5",
-        "published_at": "2026-08-24T17:50:26Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
       }
     ],
     "diagnostics": {
-      "signals_considered": 86,
+      "signals_considered": 79,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
