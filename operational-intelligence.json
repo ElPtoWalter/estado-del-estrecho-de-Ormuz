@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-24T09:25:38Z",
+  "generated_at": "2026-08-24T10:18:52Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,22 +33,22 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 58.894,
+    "passage": 64.094,
     "closure": 0,
     "traffic_reduction": 4.92,
-    "access_restriction": 24.58,
+    "access_restriction": 23.68,
     "risk": 16.78
   },
   "source_counts": {
-    "passage": 35,
+    "passage": 37,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-24T09:04:48Z",
+  "latest_confirmed_transit_at": "2026-08-24T09:48:30Z",
   "legacy_engine": {
     "status": "INCIERTO",
-    "operational_status": "NO_RECENT_CONFIRMATION",
-    "confidence": "BAJA"
+    "operational_status": "HIGH_RISK_UNCONFIRMED",
+    "confidence": "MEDIA"
   },
   "evidence": [
     {
@@ -86,7 +86,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-24T09:25:38Z",
+      "published_at": "2026-08-24T10:18:52Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -95,6 +95,21 @@
       "effective_weight": 3.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "TRANSIT_CONFIRMED",
+      "title": "Iran threatens 46 ships in Strait of Hormuz transit crackdown - Financial Times",
+      "source": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOakEwa2dpWkhOOUNySkhjblVGd2VqSlliSFVHMG1HN09JaG5PSTJUQXk1UU13U0MyOEgxbk9wckZxNzBYMl9rOTNpN3BtR2JPM3ZzNll5MHpFaVZMTjRoaHVYM3ZfMlRwOUFaUDl2TWl5UVlsYnRKdmJTc1pxc0pBY0w4blM?oc=5",
+      "published_at": "2026-08-24T09:48:30Z",
+      "tier": 3,
+      "weight": 3.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.0,
+      "kind_label_es": "Tránsito confirmado",
+      "kind_label_en": "Confirmed transit"
     },
     {
       "kind": "TRANSIT_CONFIRMED",
@@ -142,38 +157,23 @@
       "kind_label_en": "Severely reduced traffic"
     },
     {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "Ships violating Hormuz transit rules could be seized, Iran warns - Egypt Independent",
-      "source": "Egypt Independent",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQaC1IVWR1YnZ0VjJjMU1MNlJKVHlsQmltdm9oQkRtQ2ZHM3cycl9oOW5UVXRTUWowNG9FY29lUW90eG5TX25yOF82OFdIUTFMWVVOWE1KWnVSQ0xJZVVsMzl5NEFrTUVkVXc2OW1kMk9faGJvVUhad1pnZEhMb0kwUzh1YWVOanhXYzA2WEpycDZwQkRSZ0ZZdk91OHpfUQ?oc=5",
-      "published_at": "2026-08-24T09:04:48Z",
+      "kind": "RISK_SEVERE",
+      "title": "US-Israel-Iran War Latest Live News: Tanker Struck by Unknown Projectile Off Saudi Arabia, Causing Fire on Vessel's Main Deck, Says UKMTO - The Sunday Guardian",
+      "source": "The Sunday Guardian",
+      "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxObDA4SzNhTjF0aU51YmJRM1VjM0w1Y1poclhYaDFRd2JRdjd5MnVJSUgxc0hGVVVQckRNM1VUVV9wclJLOGxTaWwwSG1PZlpkSC1xZHZDQnhIMGtvekJBdDdOV2M0aU1UcTJPTmlUcm4tNGdKMU1SUDVfZUFHMmZhVmEtelE5R0hPX290ckJUNEhDa2tUc202TGZSRlpEM3U1Yk5VN0xyRDREY3VsSnk2eEJ2Vk84MEZKNVZ2UVdKWTY3bWdqQmVRZ2YtbjNKYVRhYUZmZWxfMEpqbDg2a0g2VjdWLVlxQm5nWFo0SUFQRWtwQUl1RnRsbWNEaW5KeWxiUlRoRmhBUWhfZ9IBjwJBVV95cUxPdXlmeHVVcWI2ZnlfSkZpYXBLWVIwZFhDVV9Xb08yUTNSZWI5VmZwRU1QMl9jZUpXWVNPRTY4aVZ3dlNHNGtDemtlX1YxQjM3N2gyV2QteG1tMG9OcF8yMklIWlZPY1VVZHJEN0JBSzhWRnN3T2xOVkJqS3RFM2IyUEYxTTJ5Tk1ZX3Rwc0ZtcUVaTG1jdnFsM3ZBbFFZR3BVQjRGLW9LWE1nSHpnWkkxTy1JaUJFbVBMellrZmdLd1QwY1p5MTNKTURsMGZmaXROcTAzODVESjhqUFJpaDg0WlVtaWFweTdSZkRNOWo1SkxJdnJUVzlXYnZwd1FqSE1La2E3dFlRaXY5a1dPdmlv?oc=5",
+      "published_at": "2026-08-24T10:01:27Z",
       "tier": 1,
       "weight": 1.0,
-      "provider": "Google News RSS",
+      "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 1.0,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
-    },
-    {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "Iran threatens to fine, detain vessels violating Hormuz transit rules - Investing.com",
-      "source": "Investing.com",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOLUxWVXlRQTYyaExSUFlEb3AzcTVWbDVSc1N3cFlyOUVBV1kzYkVJTlhDSXlwdDNTWFJmc1JyWTVicmQtYTNpU3pldUJzUUVJSHYzMTZEblBOeW5zOHBxZ2JQeTB4cXFvUF9qczNKYWpIVEtvejlPeElKeE00aHlHUVRaYmZDdEZnUmFRZFNjdElhejRDaFRZcUxCUmJ3UWtqRWdEQ2FBZDJYTGJmZHl3OWkzeFp2NWJiVHo5dGJfenUtZ1h0cW84?oc=5",
-      "published_at": "2026-08-24T08:30:00Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 88,
+    "signals_considered": 89,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
