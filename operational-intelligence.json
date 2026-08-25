@@ -1,15 +1,15 @@
 {
   "version": 7,
-  "generated_at": "2026-08-25T19:59:01Z",
+  "generated_at": "2026-08-25T20:58:18Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
   "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
   "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
   "operational_label_en": "Physical passage exists, but flows are severely degraded",
-  "confidence": "BAJA",
-  "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
-  "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
+  "confidence": "MEDIA",
+  "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+  "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 22.958,
+    "passage": 24.102,
     "closure": 0,
-    "traffic_reduction": 3.05,
+    "traffic_reduction": 2.93,
     "access_restriction": 11.78,
-    "risk": 92.72
+    "risk": 87.56
   },
   "source_counts": {
-    "passage": 11,
+    "passage": 12,
     "closure": 0,
-    "primary_sources": 3
+    "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-25T14:01:18Z",
+  "latest_confirmed_transit_at": "2026-08-25T19:34:19Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -52,26 +52,11 @@
   },
   "evidence": [
     {
-      "kind": "RISK_SEVERE",
-      "title": "An attack disables a ship in the Strait of Hormuz and other news from around the Middle East - AP News",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc2ZVY3Y2dXJDajgxb0R0RDNXVTQwWXFQLTltbDJVWUpaanVwZ0lHSzRzQ0VIekg0NkFNZG5UVHVCX0ZOWV9lWThtbnhyV3pSWUxmeEZqR1BTU1YtR2paS0hhajBWQ0tVdHU5Njg5aklzUG1xNDNsaU5VYkJNZlZIbzVXVmZyMmkyYVRBclRKZ1k0dnFrSXJMNzJfVkpfOWhTRTZIOTgwWDRPalBlM1R4LXZFWlU?oc=5",
-      "published_at": "2026-08-25T16:23:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 4.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
       "kind": "TRANSIT_CONFIRMED",
       "title": "Fewer than 20 ships transit key Strait of Hormuz over weekend, data shows - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTXNxWm1BUVFUdWZuUDJoWi1GRUk1d0RXWTRwR0tQTXd6MXQ2V2RBSkRmMURzajdURDdIQnhEQlFTVVh4TG8yOTdfdWVIdmd4U3AyWm5pSlZ2Y0tSaDNKX1NjcGd1N2dqVmtPUU9rZjMwa3cxWDRLajBjYUhYUDkyY0owcm43TXcyNkp2WlJZUW9ONDA3ZlNlbHlOS19CSTRpYzlOU0pmcVhvaDB6SUsyVU5mM1cwQ2Q5TkwtTmlB?oc=5",
-      "published_at": "2026-08-24T02:47:20Z",
+      "published_at": "2026-08-24T02:42:00Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "Google News RSS",
@@ -86,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-25T19:11:26Z",
+      "published_at": "2026-08-25T20:58:18Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -131,7 +116,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-25T19:11:26Z",
+      "published_at": "2026-08-25T20:58:18Z",
       "tier": 4,
       "weight": 2.6,
       "provider": "Lloyd's List hot topic",
@@ -170,20 +155,29 @@
       "effective_weight": 2.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "TRAFFIC_SEVERELY_REDUCED",
+      "title": "Tanker Attack and Traffic Collapse Escalate Strait of Hormuz Crisis - IranWire",
+      "source": "IranWire",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQNlByejIzbUw0SVlIdUp5dmJWZF9PSllLQnVBTVN1aU1VemdXN3VSQWYwYzdQV1JHZW8zVEROV1AwbHlDa0I1Vk5tYzk4QW9FZWg1YldCS05OY3Vfd2pTR29pMkpmVmZGZ3RmRGJIWG16ZUJlbW01S1FHWlVNaWFtcHFfelF5NU9nUFRTY3Y0RVhtdmViNE80Q3A0WVZvSU8xVC1QSEt4bw?oc=5",
+      "published_at": "2026-08-25T12:41:22Z",
+      "tier": 1,
+      "weight": 1.15,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.15,
+      "kind_label_es": "Tráfico muy reducido",
+      "kind_label_en": "Severely reduced traffic"
     }
   ],
   "diagnostics": {
-    "signals_considered": 4,
-    "provider_errors": [
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable"
-    ],
+    "signals_considered": 116,
+    "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
     "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
     "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-  },
-  "carried_forward": true
+  }
 }
