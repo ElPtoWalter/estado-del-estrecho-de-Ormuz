@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "BAJA",
-  "checked_at": "2026-08-25T11:01:25Z",
-  "last_success_at": "2026-08-25T11:01:25Z",
+  "checked_at": "2026-08-25T11:56:37Z",
+  "last_success_at": "2026-08-25T11:56:37Z",
   "last_change_at": "2026-08-25T11:01:25Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-25T08:01:38Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-25T11:01:25Z"
+      "observed_at": "2026-08-25T11:56:37Z"
     }
   ],
   "diagnostics": {
@@ -45,7 +45,7 @@
       "declared": 0,
       "risk": 1
     },
-    "articles_considered": 17,
+    "articles_considered": 18,
     "signals_considered": 1,
     "current_cycle_evidence": 1,
     "evidence_display_mode": "current",
@@ -70,7 +70,7 @@
       "published_at": "2026-08-25T08:01:38Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-25T11:01:25Z"
+      "observed_at": "2026-08-25T11:56:37Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -665,7 +665,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-25T11:02:26Z",
+    "generated_at": "2026-08-25T11:57:17Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -698,14 +698,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 40.834,
+      "passage": 35.816,
       "closure": 0,
       "traffic_reduction": 2.9,
-      "access_restriction": 22.96,
-      "risk": 30.52
+      "access_restriction": 21.06,
+      "risk": 34.52
     },
     "source_counts": {
-      "passage": 22,
+      "passage": 21,
       "closure": 0,
       "primary_sources": 2
     },
@@ -736,7 +736,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-25T11:02:26Z",
+        "published_at": "2026-08-25T11:57:17Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -766,7 +766,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-25T11:02:26Z",
+        "published_at": "2026-08-25T11:57:17Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -775,21 +775,6 @@
         "effective_weight": 2.6,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Ships passing through Hormuz hover in single digits, data shows - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNSEhZX09yZU9wMFlFN0FUUjM0dUhpZ01zMEVvWFBlVHpoQ25lY0xFckRtVnpXMHZfZVA3TU0zRjNNYlUydy1pelQ1Q3Rmb1dPeWZmU3hDTXF2ZERfY3UyY2tteGpocUNoY0FkdE13dXV5cjV1VUh3MmN1al9MUm5xVlh6RWpwenRzQ2dzR0dxci05c2kwQ1VSUGNDTVBJVkFFd0RjZm9GRnBBdw?oc=5",
-        "published_at": "2026-08-21T11:22:01Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 2.48,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
       },
       {
         "kind": "RISK_SEVERE",
@@ -833,6 +818,21 @@
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 2.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Greek-owned tanker struck in Hormuz strait; crew reported safe - eKathimerini.com",
+        "source": "eKathimerini.com",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOMUZaNm9CTkNEWXdIR2UzTnlkcFZIUVJ4eldFa213Y2hkaFgtNnZGX2UxQlUteUR5VmpHTGFtMGFGMml3eEFra1Y5N0pWd0V2SDRuYlZobmFtMl94WThUWVc2eHVlX2diblk0cy14MkV2QXQ5SU0wWDNfU3pQbzZQOHZJSDFQbHFYbHlDZ0JnQUVud1lPdmdIQmNRd001YkJQd1JkajVzMmRaWDJuQ1RqQ0pFTW5ycEluUDZZVF85bGI?oc=5",
+        "published_at": "2026-08-25T11:22:41Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       }
