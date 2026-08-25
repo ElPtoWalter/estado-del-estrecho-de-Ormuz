@@ -1,13 +1,13 @@
 {
   "version": 7,
-  "generated_at": "2026-08-25T14:23:09Z",
+  "generated_at": "2026-08-25T15:24:39Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
   "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
   "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
   "operational_label_en": "Physical passage exists, but flows are severely degraded",
-  "confidence": "ALTA",
+  "confidence": "MEDIA",
   "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
   "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "dimensions": {
@@ -33,16 +33,16 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 29.498,
+    "passage": 29.836,
     "closure": 0,
-    "traffic_reduction": 6.085,
-    "access_restriction": 18.06,
-    "risk": 52.62
+    "traffic_reduction": 5.085,
+    "access_restriction": 15.36,
+    "risk": 44.72
   },
   "source_counts": {
-    "passage": 17,
+    "passage": 16,
     "closure": 0,
-    "primary_sources": 4
+    "primary_sources": 3
   },
   "latest_confirmed_transit_at": "2026-08-25T14:01:18Z",
   "legacy_engine": {
@@ -51,21 +51,6 @@
     "confidence": "BAJA"
   },
   "evidence": [
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Ship disabled by attack in Strait of Hormuz and other news from around the Middle East - Baltimore Sun",
-      "source": "Baltimore Sun",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZkhKTnRzTTFlRU9Iak4yaDladGFmeFlYMUxmdGNpNTFDNzZ6OGx1dEl0eGVuUUk0SHZYOC11ZUFFRkUzRlFCSTZGek5FdEVWMFZqdGdlamlqcTB3ckZaNDVVQW5RTWlsY085bzIxcUVYOUhQVVZmRFFCaDBLUVZyb3diSkRUWllSMnpaLTNIVXdjX3ZMQVV0c0k0bw?oc=5",
-      "published_at": "2026-08-25T11:21:15Z",
-      "tier": 5,
-      "weight": 5.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 5.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
     {
       "kind": "RISK_SEVERE",
       "title": "Ship disabled by attack in Strait of Hormuz and other news from around the Middle East - AP News",
@@ -101,7 +86,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-25T14:23:09Z",
+      "published_at": "2026-08-25T15:24:39Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -131,7 +116,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-25T14:23:09Z",
+      "published_at": "2026-08-25T15:24:39Z",
       "tier": 4,
       "weight": 2.6,
       "provider": "Lloyd's List hot topic",
@@ -170,10 +155,25 @@
       "effective_weight": 2.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "TRAFFIC_SEVERELY_REDUCED",
+      "title": "Tanker Attack and Traffic Collapse Escalate Strait of Hormuz Crisis - IranWire",
+      "source": "IranWire",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQNlByejIzbUw0SVlIdUp5dmJWZF9PSllLQnVBTVN1aU1VemdXN3VSQWYwYzdQV1JHZW8zVEROV1AwbHlDa0I1Vk5tYzk4QW9FZWg1YldCS05OY3Vfd2pTR29pMkpmVmZGZ3RmRGJIWG16ZUJlbW01S1FHWlVNaWFtcHFfelF5NU9nUFRTY3Y0RVhtdmViNE80Q3A0WVZvSU8xVC1QSEt4bw?oc=5",
+      "published_at": "2026-08-25T12:41:22Z",
+      "tier": 1,
+      "weight": 1.15,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.15,
+      "kind_label_es": "Tráfico muy reducido",
+      "kind_label_en": "Severely reduced traffic"
     }
   ],
   "diagnostics": {
-    "signals_considered": 91,
+    "signals_considered": 82,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
