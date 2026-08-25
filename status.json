@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "BAJA",
-  "checked_at": "2026-08-25T11:56:37Z",
-  "last_success_at": "2026-08-25T11:56:37Z",
+  "checked_at": "2026-08-25T13:29:20Z",
+  "last_success_at": "2026-08-25T13:29:20Z",
   "last_change_at": "2026-08-25T11:01:25Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-25T08:01:38Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-25T11:56:37Z"
+      "observed_at": "2026-08-25T13:29:20Z"
     }
   ],
   "diagnostics": {
@@ -45,7 +45,7 @@
       "declared": 0,
       "risk": 1
     },
-    "articles_considered": 18,
+    "articles_considered": 16,
     "signals_considered": 1,
     "current_cycle_evidence": 1,
     "evidence_display_mode": "current",
@@ -70,7 +70,7 @@
       "published_at": "2026-08-25T08:01:38Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-25T11:56:37Z"
+      "observed_at": "2026-08-25T13:29:20Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -665,14 +665,14 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-25T11:57:17Z",
+    "generated_at": "2026-08-25T13:30:01Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
     "operational_label_en": "Physical passage exists, but flows are severely degraded",
-    "confidence": "MEDIA",
+    "confidence": "ALTA",
     "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
     "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
     "dimensions": {
@@ -698,24 +698,54 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 35.816,
+      "passage": 29.706,
       "closure": 0,
-      "traffic_reduction": 2.9,
-      "access_restriction": 21.06,
-      "risk": 34.52
+      "traffic_reduction": 5.085,
+      "access_restriction": 19.16,
+      "risk": 49.72
     },
     "source_counts": {
-      "passage": 21,
+      "passage": 17,
       "closure": 0,
-      "primary_sources": 2
+      "primary_sources": 4
     },
-    "latest_confirmed_transit_at": "2026-08-25T06:43:47Z",
+    "latest_confirmed_transit_at": "2026-08-25T12:29:45Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "BAJA"
     },
     "evidence": [
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Ship disabled by attack in Strait of Hormuz and other news from around the Middle East - Baltimore Sun",
+        "source": "Baltimore Sun",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZkhKTnRzTTFlRU9Iak4yaDladGFmeFlYMUxmdGNpNTFDNzZ6OGx1dEl0eGVuUUk0SHZYOC11ZUFFRkUzRlFCSTZGek5FdEVWMFZqdGdlamlqcTB3ckZaNDVVQW5RTWlsY085bzIxcUVYOUhQVVZmRFFCaDBLUVZyb3diSkRUWllSMnpaLTNIVXdjX3ZMQVV0c0k0bw?oc=5",
+        "published_at": "2026-08-25T11:21:15Z",
+        "tier": 5,
+        "weight": 5.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 5.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Ship disabled by attack in Strait of Hormuz and other news from around the Middle East - AP News",
+        "source": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc2ZVY3Y2dXJDajgxb0R0RDNXVTQwWXFQLTltbDJVWUpaanVwZ0lHSzRzQ0VIekg0NkFNZG5UVHVCX0ZOWV9lWThtbnhyV3pSWUxmeEZqR1BTU1YtR2paS0hhajBWQ0tVdHU5Njg5aklzUG1xNDNsaU5VYkJNZlZIbzVXVmZyMmkyYVRBclRKZ1k0dnFrSXJMNzJfVkpfOWhTRTZIOTgwWDRPalBlM1R4LXZFWlU?oc=5",
+        "published_at": "2026-08-25T12:23:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
       {
         "kind": "TRANSIT_CONFIRMED",
         "title": "Fewer than 20 ships transit key Strait of Hormuz over weekend, data shows - Reuters",
@@ -736,7 +766,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-25T11:57:17Z",
+        "published_at": "2026-08-25T13:30:01Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -766,7 +796,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-25T11:57:17Z",
+        "published_at": "2026-08-25T13:30:01Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -805,40 +835,10 @@
         "effective_weight": 2.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Yemen’s Houthis report attack on Saudi ship - Al Jazeera",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZzRmMFJBeUE3a2ZlWUpxM0lHVy1LdGFERkhUYk1zUHB2RFF5ZHphc0xQcV9yV0c0cEJlYjRySWY3b0dHcjRXb3d6YlpaZm1WYTc1WmdQVE1FVHJDZjVaWHlvUkFQOHhrSGR3MXNMYkVzMnhoWjhYMGwtU1BvZF9VWjVlNTExcG1ENXRWRVRNMnTSAZABQVVfeXFMT2c0ZjBSQXlBN2tmZVlKcTNJR1ctS3RhREZIVGJNc1BwdkRReWR6YXNMUHFfcldHNHBCZWI0cklmN29HR3I0V293emJaWmZtVmE3NVpnUFRNRVRyQ2Y1Wlh5b1JBUDh4a0hkdzFzTGJFczJ4aFo4WDBsLVNQb2RfVVo1ZTUxMXBtRDV0VkVUTTJ0?oc=5",
-        "published_at": "2026-08-24T19:44:45Z",
-        "tier": 2,
-        "weight": 2.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 2.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Greek-owned tanker struck in Hormuz strait; crew reported safe - eKathimerini.com",
-        "source": "eKathimerini.com",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOMUZaNm9CTkNEWXdIR2UzTnlkcFZIUVJ4eldFa213Y2hkaFgtNnZGX2UxQlUteUR5VmpHTGFtMGFGMml3eEFra1Y5N0pWd0V2SDRuYlZobmFtMl94WThUWVc2eHVlX2diblk0cy14MkV2QXQ5SU0wWDNfU3pQbzZQOHZJSDFQbHFYbHlDZ0JnQUVud1lPdmdIQmNRd001YkJQd1JkajVzMmRaWDJuQ1RqQ0pFTW5ycEluUDZZVF85bGI?oc=5",
-        "published_at": "2026-08-25T11:22:41Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 84,
+      "signals_considered": 87,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
