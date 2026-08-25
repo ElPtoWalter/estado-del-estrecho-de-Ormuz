@@ -4,9 +4,9 @@
   "operational_status": "HIGH_RISK_UNCONFIRMED",
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
-  "confidence": "BAJA",
-  "checked_at": "2026-08-25T15:23:18Z",
-  "last_success_at": "2026-08-25T15:23:18Z",
+  "confidence": "MEDIA",
+  "checked_at": "2026-08-25T16:09:59Z",
+  "last_success_at": "2026-08-25T16:09:59Z",
   "last_change_at": "2026-08-25T11:01:25Z",
   "verification_ok": true,
   "stale": false,
@@ -16,52 +16,14 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Yemen's Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdkNmMGllenFfdWxNVTJYWTF5b3h1Y3lVSmlhSmEwUHZjUC1jRTVQRUZCZ1p2SDFaaWZSRTdVOHNta2JwaFpTSjZyUHgzVUJ4WDdHUjJYeGdXR3Vycm1sdnRjSmdUdmwxQjVuU0tLTURmWXU4S2RRWmlVc3FfNTBzajUwQ0tNX1Z1WWZ30gGQAUFVX3lxTE9nNGYwUkF5QTdrZmVZSnEzSUdXLUt0YURGSFRiTXNQcHZEUXlkemFzTFBxX3JXRzRwQmViNHJJZjdvR0dyNFdvd3piWlpmbVZhNzVaZ1BUTUVUckNmNVpYeW9SQVA4eGtIZHcxc0xiRXMyeGhaOFgwbC1TUG9kX1VaNWU1MTFwbUQ1dFZFVE0ydA?oc=5",
-      "published_at": "2026-08-25T08:01:38Z",
-      "tier": 2,
+      "title": "Trump says all mines cleared from Strait of Hormuz - BBC",
+      "source_name": "BBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1tNi16cVlvMnN2YWdPQWdTOVdLYTFYVmFsRE5haGxwWS01blp5eFR0R0JUbi1ZMHJkRk44bnY1RnVrM3QzczI0RjNydDNqUTc1Nnl0QXp5ZjIwdw?oc=5",
+      "published_at": "2026-08-25T15:31:21Z",
+      "tier": 3,
       "official": false,
-      "observed_at": "2026-08-25T15:23:18Z"
-    }
-  ],
-  "diagnostics": {
-    "providers_ok": [
-      "Official maritime web search",
-      "Google News RSS"
-    ],
-    "providers_failed": [
-      "GDELT: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
-    ],
-    "scores": {
-      "open": 0,
-      "closed": 0,
-      "declared": 0,
-      "risk": 2.16
+      "observed_at": "2026-08-25T16:09:59Z"
     },
-    "independent_sources": {
-      "open": 0,
-      "closed": 0,
-      "declared": 0,
-      "risk": 1
-    },
-    "articles_considered": 14,
-    "signals_considered": 1,
-    "current_cycle_evidence": 1,
-    "evidence_display_mode": "current",
-    "evidence_archive_size": 60,
-    "evidence_archive_days": 14
-  },
-  "evidence_context": {
-    "mode": "current",
-    "as_of": "2026-08-25T08:01:38Z",
-    "current_cycle_count": 1,
-    "heading_es": "Evidencias de esta comprobación",
-    "heading_en": "Evidence from this check",
-    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
-    "description_en": "Publishable signals found during the latest verification cycle."
-  },
-  "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
       "title": "Yemen's Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
@@ -70,7 +32,64 @@
       "published_at": "2026-08-25T08:01:38Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-25T15:23:18Z"
+      "observed_at": "2026-08-25T16:09:59Z"
+    }
+  ],
+  "diagnostics": {
+    "providers_ok": [
+      "Official maritime web search",
+      "GDELT",
+      "Google News RSS"
+    ],
+    "providers_failed": [],
+    "scores": {
+      "open": 0,
+      "closed": 0,
+      "declared": 0,
+      "risk": 5.36
+    },
+    "independent_sources": {
+      "open": 0,
+      "closed": 0,
+      "declared": 0,
+      "risk": 2
+    },
+    "articles_considered": 17,
+    "signals_considered": 2,
+    "current_cycle_evidence": 2,
+    "evidence_display_mode": "current",
+    "evidence_archive_size": 60,
+    "evidence_archive_days": 14
+  },
+  "evidence_context": {
+    "mode": "current",
+    "as_of": "2026-08-25T15:31:21Z",
+    "current_cycle_count": 2,
+    "heading_es": "Evidencias de esta comprobación",
+    "heading_en": "Evidence from this check",
+    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
+    "description_en": "Publishable signals found during the latest verification cycle."
+  },
+  "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Trump says all mines cleared from Strait of Hormuz - BBC",
+      "source_name": "BBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1tNi16cVlvMnN2YWdPQWdTOVdLYTFYVmFsRE5haGxwWS01blp5eFR0R0JUbi1ZMHJkRk44bnY1RnVrM3QzczI0RjNydDNqUTc1Nnl0QXp5ZjIwdw?oc=5",
+      "published_at": "2026-08-25T15:31:21Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-08-25T16:09:59Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Yemen's Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdkNmMGllenFfdWxNVTJYWTF5b3h1Y3lVSmlhSmEwUHZjUC1jRTVQRUZCZ1p2SDFaaWZSRTdVOHNta2JwaFpTSjZyUHgzVUJ4WDdHUjJYeGdXR3Vycm1sdnRjSmdUdmwxQjVuU0tLTURmWXU4S2RRWmlVc3FfNTBzajUwQ0tNX1Z1WWZ30gGQAUFVX3lxTE9nNGYwUkF5QTdrZmVZSnEzSUdXLUt0YURGSFRiTXNQcHZEUXlkemFzTFBxX3JXRzRwQmViNHJJZjdvR0dyNFdvd3piWlpmbVZhNzVaZ1BUTUVUckNmNVpYeW9SQVA4eGtIZHcxc0xiRXMyeGhaOFgwbC1TUG9kX1VaNWU1MTFwbUQ1dFZFVE0ydA?oc=5",
+      "published_at": "2026-08-25T08:01:38Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-25T16:09:59Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -651,21 +670,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-13T00:09:04Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil prices rise as attacks dent hopes for Strait of Hormuz reopening - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWWotc2YtdGx5bHp5YXZieWNCaVQ0SzhwRzlnbVd1MkFmdXhmUXl3YmdqR2F1Q1ctTGRpVU5GUkZIQkpia3F5bFdSYXJYYjlpSzNTaFkzRjlBVThrdl9XMjFGOXFYbTJnaE5NbEVMTmphNks4ZHpZQjh6ZjVDZzIzYkYwX0wweTEwdlRoX0lDcjdvYWU4RV80SXdWME9CeGRmUGwtUzhWX09TZWpNMnZlSC130gG3AUFVX3lxTFBhZHlEWGh6eEJFRHVWTmxxVEoyTFlRWUpsbHdFU25kWDNWM1RUWlgxNEoxR1NKOFJqOHNtX2pETkY2LVgtdUZvam41SGNVR2RabUc5NU92YnVVSWVUVnZrM0FLTFdldlV6LVlZSXpBSExmWTNpU1hHWTZBWEdyOVNSVnd5dWdaSHlseGpYcGR0Q0VjeG1mSlZVN1AxQjljMWZWY1UtTVd1cjZwdVJ6Z0ZXLVRJNElRSQ?oc=5",
-      "published_at": "2026-08-12T06:36:04Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-14T00:09:35Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-25T15:24:39Z",
+    "generated_at": "2026-08-25T16:10:22Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -698,14 +707,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 29.836,
+      "passage": 26.728,
       "closure": 0,
-      "traffic_reduction": 5.085,
-      "access_restriction": 15.36,
-      "risk": 44.72
+      "traffic_reduction": 3.05,
+      "access_restriction": 12.68,
+      "risk": 55.84
     },
     "source_counts": {
-      "passage": 16,
+      "passage": 14,
       "closure": 0,
       "primary_sources": 3
     },
@@ -713,7 +722,7 @@
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
-      "confidence": "BAJA"
+      "confidence": "MEDIA"
     },
     "evidence": [
       {
@@ -751,10 +760,25 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-25T15:24:39Z",
+        "published_at": "2026-08-25T16:10:22Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Trump says all mines cleared from Strait of Hormuz - BBC",
+        "source": "BBC",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1tNi16cVlvMnN2YWdPQWdTOVdLYTFYVmFsRE5haGxwWS01blp5eFR0R0JUbi1ZMHJkRk44bnY1RnVrM3QzczI0RjNydDNqUTc1Nnl0QXp5ZjIwdw?oc=5",
+        "published_at": "2026-08-25T15:31:21Z",
+        "tier": 3,
+        "weight": 3.0,
+        "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 3.0,
@@ -781,7 +805,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-25T15:24:39Z",
+        "published_at": "2026-08-25T16:10:22Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -820,25 +844,10 @@
         "effective_weight": 2.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "TRAFFIC_SEVERELY_REDUCED",
-        "title": "Tanker Attack and Traffic Collapse Escalate Strait of Hormuz Crisis - IranWire",
-        "source": "IranWire",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQNlByejIzbUw0SVlIdUp5dmJWZF9PSllLQnVBTVN1aU1VemdXN3VSQWYwYzdQV1JHZW8zVEROV1AwbHlDa0I1Vk5tYzk4QW9FZWg1YldCS05OY3Vfd2pTR29pMkpmVmZGZ3RmRGJIWG16ZUJlbW01S1FHWlVNaWFtcHFfelF5NU9nUFRTY3Y0RVhtdmViNE80Q3A0WVZvSU8xVC1QSEt4bw?oc=5",
-        "published_at": "2026-08-25T12:41:22Z",
-        "tier": 1,
-        "weight": 1.15,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.15,
-        "kind_label_es": "Tráfico muy reducido",
-        "kind_label_en": "Severely reduced traffic"
       }
     ],
     "diagnostics": {
-      "signals_considered": 82,
+      "signals_considered": 83,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,

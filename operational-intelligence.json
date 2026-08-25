@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-25T15:24:39Z",
+  "generated_at": "2026-08-25T16:10:22Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,14 +33,14 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 29.836,
+    "passage": 26.728,
     "closure": 0,
-    "traffic_reduction": 5.085,
-    "access_restriction": 15.36,
-    "risk": 44.72
+    "traffic_reduction": 3.05,
+    "access_restriction": 12.68,
+    "risk": 55.84
   },
   "source_counts": {
-    "passage": 16,
+    "passage": 14,
     "closure": 0,
     "primary_sources": 3
   },
@@ -48,7 +48,7 @@
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "confidence": "BAJA"
+    "confidence": "MEDIA"
   },
   "evidence": [
     {
@@ -86,10 +86,25 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-25T15:24:39Z",
+      "published_at": "2026-08-25T16:10:22Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Trump says all mines cleared from Strait of Hormuz - BBC",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1tNi16cVlvMnN2YWdPQWdTOVdLYTFYVmFsRE5haGxwWS01blp5eFR0R0JUbi1ZMHJkRk44bnY1RnVrM3QzczI0RjNydDNqUTc1Nnl0QXp5ZjIwdw?oc=5",
+      "published_at": "2026-08-25T15:31:21Z",
+      "tier": 3,
+      "weight": 3.0,
+      "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 3.0,
@@ -116,7 +131,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-25T15:24:39Z",
+      "published_at": "2026-08-25T16:10:22Z",
       "tier": 4,
       "weight": 2.6,
       "provider": "Lloyd's List hot topic",
@@ -155,25 +170,10 @@
       "effective_weight": 2.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "TRAFFIC_SEVERELY_REDUCED",
-      "title": "Tanker Attack and Traffic Collapse Escalate Strait of Hormuz Crisis - IranWire",
-      "source": "IranWire",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQNlByejIzbUw0SVlIdUp5dmJWZF9PSllLQnVBTVN1aU1VemdXN3VSQWYwYzdQV1JHZW8zVEROV1AwbHlDa0I1Vk5tYzk4QW9FZWg1YldCS05OY3Vfd2pTR29pMkpmVmZGZ3RmRGJIWG16ZUJlbW01S1FHWlVNaWFtcHFfelF5NU9nUFRTY3Y0RVhtdmViNE80Q3A0WVZvSU8xVC1QSEt4bw?oc=5",
-      "published_at": "2026-08-25T12:41:22Z",
-      "tier": 1,
-      "weight": 1.15,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.15,
-      "kind_label_es": "Tráfico muy reducido",
-      "kind_label_en": "Severely reduced traffic"
     }
   ],
   "diagnostics": {
-    "signals_considered": 82,
+    "signals_considered": 83,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
