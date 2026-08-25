@@ -1,17 +1,17 @@
 {
   "engine_version": 3,
   "status": "INCIERTO",
-  "operational_status": "NO_RECENT_CONFIRMATION",
-  "operational_label_es": "Sin confirmación reciente",
-  "operational_label_en": "No recent confirmation",
+  "operational_status": "HIGH_RISK_UNCONFIRMED",
+  "operational_label_es": "Riesgo elevado, estado no confirmado",
+  "operational_label_en": "High risk, status unconfirmed",
   "confidence": "BAJA",
-  "checked_at": "2026-08-25T10:02:46Z",
-  "last_success_at": "2026-08-25T10:02:46Z",
-  "last_change_at": "2026-08-25T10:02:46Z",
+  "checked_at": "2026-08-25T11:01:25Z",
+  "last_success_at": "2026-08-25T11:01:25Z",
+  "last_change_at": "2026-08-25T11:01:25Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
-  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
+  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
   "last_valid_confirmation": null,
   "evidence": [
     {
@@ -22,44 +22,44 @@
       "published_at": "2026-08-25T08:01:38Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-25T09:10:01Z"
+      "observed_at": "2026-08-25T11:01:25Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT"
+      "Google News RSS"
     ],
     "providers_failed": [
-      "Google News RSS: HTTPError: HTTP Error 503: Service Unavailable"
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
     ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 2.4
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 1
     },
-    "articles_considered": 7,
-    "signals_considered": 0,
-    "current_cycle_evidence": 0,
-    "evidence_display_mode": "carried",
+    "articles_considered": 17,
+    "signals_considered": 1,
+    "current_cycle_evidence": 1,
+    "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
-    "mode": "carried",
+    "mode": "current",
     "as_of": "2026-08-25T08:01:38Z",
-    "current_cycle_count": 0,
-    "heading_es": "Últimas evidencias disponibles",
-    "heading_en": "Latest available evidence",
-    "description_es": "La comprobación más reciente no aportó nuevas evidencias publicables. Estas señales proceden de ciclos anteriores y se muestran con su fecha real.",
-    "description_en": "The latest check produced no new publishable evidence. These signals come from earlier cycles and retain their actual publication dates."
+    "current_cycle_count": 1,
+    "heading_es": "Evidencias de esta comprobación",
+    "heading_en": "Evidence from this check",
+    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
+    "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
     {
@@ -70,7 +70,7 @@
       "published_at": "2026-08-25T08:01:38Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-25T09:10:01Z"
+      "observed_at": "2026-08-25T11:01:25Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -665,16 +665,16 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-25T10:05:17Z",
+    "generated_at": "2026-08-25T11:02:26Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
     "operational_label_en": "Physical passage exists, but flows are severely degraded",
-    "confidence": "BAJA",
-    "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
-    "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
+    "confidence": "MEDIA",
+    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
@@ -698,18 +698,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 42.784,
+      "passage": 40.834,
       "closure": 0,
-      "traffic_reduction": 4.8,
-      "access_restriction": 24.34,
-      "risk": 26.06
+      "traffic_reduction": 2.9,
+      "access_restriction": 22.96,
+      "risk": 30.52
     },
     "source_counts": {
-      "passage": 24,
+      "passage": 22,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-25T07:25:02Z",
+    "latest_confirmed_transit_at": "2026-08-25T06:43:47Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -736,7 +736,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-25T09:10:22Z",
+        "published_at": "2026-08-25T11:02:26Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -757,9 +757,24 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.0,
+        "effective_weight": 2.7,
         "kind_label_es": "Tránsito confirmado",
         "kind_label_en": "Confirmed transit"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
+        "source": "Lloyd's List",
+        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+        "published_at": "2026-08-25T11:02:26Z",
+        "tier": 4,
+        "weight": 2.6,
+        "provider": "Lloyd's List hot topic",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 2.6,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
       },
       {
         "kind": "TRANSIT_CONFIRMED",
@@ -793,6 +808,21 @@
       },
       {
         "kind": "RISK_SEVERE",
+        "title": "Tanker disabled in Strait of Hormuz attack - Seatrade Maritime News",
+        "source": "Seatrade Maritime News",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNbDI5aVNpbzRzbXBBc0tsZFpyWkM5b0xwYlJnM0RhWWdTNHpnMEdZVWtWcm15MXF4SGpLV3VsNlhqcGNaaHhqSVg5UERCRkNiaXNFRFpXSWh6VVRlZzVqTUU4RmRRU1JSdXZPVmpDNml5QXp6Y0ROck93bVNTWXIxUWdUc1M4QmlWY2llU0hn?oc=5",
+        "published_at": "2026-08-25T06:09:58Z",
+        "tier": 2,
+        "weight": 2.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 2.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
         "title": "Yemen’s Houthis report attack on Saudi ship - Al Jazeera",
         "source": "Al Jazeera",
         "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZzRmMFJBeUE3a2ZlWUpxM0lHVy1LdGFERkhUYk1zUHB2RFF5ZHphc0xQcV9yV0c0cEJlYjRySWY3b0dHcjRXb3d6YlpaZm1WYTc1WmdQVE1FVHJDZjVaWHlvUkFQOHhrSGR3MXNMYkVzMnhoWjhYMGwtU1BvZF9VWjVlNTExcG1ENXRWRVRNMnTSAZABQVVfeXFMT2c0ZjBSQXlBN2tmZVlKcTNJR1ctS3RhREZIVGJNc1BwdkRReWR6YXNMUHFfcldHNHBCZWI0cklmN29HR3I0V293emJaWmZtVmE3NVpnUFRNRVRyQ2Y1Wlh5b1JBUDh4a0hkdzFzTGJFczJ4aFo4WDBsLVNQb2RfVVo1ZTUxMXBtRDV0VkVUTTJ0?oc=5",
@@ -805,51 +835,15 @@
         "effective_weight": 2.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Data shows that the number of commodity vessels transiting through Strait of Hormuz has fallen to a three-month low. - Marine News Magazine",
-        "source": "Marine News Magazine",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNmQ3QjJlTkMzUklzS0RXRzcySzREVXFLLTdJRXp2b1piUmoxZU1vZ19paUFGakQxMWIta0E3M0JjRGtnZ1hpRmNsNk85RzZhV2o2WkJIYVZXanFlbWt4bE9ibG1BaTVqYVJQUWhWMzZPREZiSkdVZmJaWFNWVmtYSGxyVnlESTNhY3dKN3pZWE9BYkVCVndXOXJ5d3VpSFNXTzd4bG9B?oc=5",
-        "published_at": "2026-08-25T07:25:02Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
-      },
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Rethinking the Hormuz Toll Debate: Can Coastal States Monetize Maritime Security? - EJIL: Talk!",
-        "source": "EJIL: Talk!",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNRC1iZ3FyTXF0OXY2RFJ3aWFMUndzeEI3Qklvai03M0Nwa2lrVXIxWG9PM1ZhYzhQWmdOQ2xVcnBXbGtQN0dWMW1hb1k2NnN2RGtNODRJdFpkRWRfOUx1OVktVWl4LWhFT2ZHVGV4M2tXYnU4QjlDUWY0akZfSXNyaThqSmczQ3JKSVZuUEtmZk5IV1FQN2lWZElOLWVzRXJKcXFTWVVLa0U?oc=5",
-        "published_at": "2026-08-25T07:08:10Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
       }
     ],
     "diagnostics": {
-      "signals_considered": 2,
-      "provider_errors": [
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable"
-      ],
+      "signals_considered": 84,
+      "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-    },
-    "carried_forward": true
+    }
   }
 }
