@@ -1,15 +1,15 @@
 {
   "version": 7,
-  "generated_at": "2026-08-25T19:11:26Z",
+  "generated_at": "2026-08-25T19:59:01Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
   "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
   "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
   "operational_label_en": "Physical passage exists, but flows are severely degraded",
-  "confidence": "MEDIA",
-  "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
-  "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+  "confidence": "BAJA",
+  "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
+  "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
@@ -173,11 +173,17 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 117,
-    "provider_errors": [],
+    "signals_considered": 4,
+    "provider_errors": [
+      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
+      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
+      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
+      "Google News: HTTPError: HTTP Error 503: Service Unavailable"
+    ],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
     "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
     "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-  }
+  },
+  "carried_forward": true
 }

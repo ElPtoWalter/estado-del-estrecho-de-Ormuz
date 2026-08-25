@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-25T19:09:47Z",
-  "last_success_at": "2026-08-25T19:09:47Z",
+  "checked_at": "2026-08-25T19:56:52Z",
+  "last_success_at": "2026-08-25T19:56:52Z",
   "last_change_at": "2026-08-25T11:01:25Z",
   "verification_ok": true,
   "stale": false,
@@ -16,72 +16,82 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Trump says all mines cleared from Strait of Hormuz - BBC",
+      "title": "Trump says all mines cleared from Strait of Hormuz",
       "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE12aGV3aDB6R2NEeXJCUDRXNFM3OHJwVzVwUzdLUmxtSDN0dDZMRE1oQXhyb291VXJUekk5VWI4bUdlTllibjJjTmIyYXVZUHhJWTBYU0RELWV6Mm42?oc=5",
-      "published_at": "2026-08-25T15:31:21Z",
+      "source_url": "https://www.bbc.com/news/articles/cwyzw836d05o",
+      "published_at": "2026-08-25T18:00:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-25T19:09:47Z"
+      "observed_at": "2026-08-25T19:56:52Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran and Oman discuss joint shipping route in Strait of Hormuz and mine clearing mission - CNBC",
+      "title": "Iran and Oman discuss route in Strait of Hormuz , mine clearing mission",
       "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE96cjBibnU4b2hJd3VMYWZhS2EtUXhudDdYaWdhbUJWaEx5OF9sd3BwdFA5dUhUTlBFeTl6QVYzcVMwdEJEWS1jOEg0Y2VtQVZSLW95bFYwMkxWSGxwZ1FrYzNMNk54T3N3TFJOcTBST0JDUdIBd0FVX3lxTFBzOWdXTm5HXzl0SkxEc2VPLXpDeVRJZnk4YTJjRndaZmZrVG03Yy1kMlplOV9EVzFkWWlkalFOMlZoZVlSWVF4c2hVOVZvdDBHUVRFbVhwdFpsZ1BnbmMyQ1VJYndaMDNpNTh5cDNlbG9NbUgxSWlR?oc=5",
+      "source_url": "https://www.cnbc.com/2026/08/25/iran-oman-strait-hormuz-oil.html",
       "published_at": "2026-08-25T17:16:25Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-25T19:09:47Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Yemen's Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdkNmMGllenFfdWxNVTJYWTF5b3h1Y3lVSmlhSmEwUHZjUC1jRTVQRUZCZ1p2SDFaaWZSRTdVOHNta2JwaFpTSjZyUHgzVUJ4WDdHUjJYeGdXR3Vycm1sdnRjSmdUdmwxQjVuU0tLTURmWXU4S2RRWmlVc3FfNTBzajUwQ0tNX1Z1WWZ30gGQAUFVX3lxTE9nNGYwUkF5QTdrZmVZSnEzSUdXLUt0YURGSFRiTXNQcHZEUXlkemFzTFBxX3JXRzRwQmViNHJJZjdvR0dyNFdvd3piWlpmbVZhNzVaZ1BUTUVUckNmNVpYeW9SQVA4eGtIZHcxc0xiRXMyeGhaOFgwbC1TUG9kX1VaNWU1MTFwbUQ1dFZFVE0ydA?oc=5",
-      "published_at": "2026-08-25T08:01:38Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-25T19:09:47Z"
+      "observed_at": "2026-08-25T19:56:52Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "Google News RSS"
+      "GDELT"
     ],
     "providers_failed": [
-      "GDELT: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+      "Google News RSS: HTTPError: HTTP Error 503: Service Unavailable"
     ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 7.86
+      "risk": 5.7
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 3
+      "risk": 2
     },
-    "articles_considered": 13,
-    "signals_considered": 3,
-    "current_cycle_evidence": 3,
+    "articles_considered": 9,
+    "signals_considered": 2,
+    "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-25T17:16:25Z",
-    "current_cycle_count": 3,
+    "as_of": "2026-08-25T18:00:00Z",
+    "current_cycle_count": 2,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Trump says all mines cleared from Strait of Hormuz",
+      "source_name": "BBC",
+      "source_url": "https://www.bbc.com/news/articles/cwyzw836d05o",
+      "published_at": "2026-08-25T18:00:00Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-08-25T19:56:52Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran and Oman discuss route in Strait of Hormuz , mine clearing mission",
+      "source_name": "CNBC",
+      "source_url": "https://www.cnbc.com/2026/08/25/iran-oman-strait-hormuz-oil.html",
+      "published_at": "2026-08-25T17:16:25Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-25T19:56:52Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Iran and Oman discuss joint shipping route in Strait of Hormuz and mine clearing mission - CNBC",
@@ -661,40 +671,20 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-08-13T05:19:35Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Saudi Arabia ramps up oil exports through Mediterranean pipeline to avoid attacks in Red Sea - CNBC",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORDlpS0ZwT3UtcTZ6NldxNWFBOFlDa20wVWpsYk51d1RaQzlEcm5leGphRDdSZEdrcm5hMHZVcXNVaHJycm5IQVk3NmdqdTkyQXk0NlhSTWFFelVHMGlhLTJwZEZqZGgzd25kRHFueXpCVjhxVWJycHpBZlkwRnJySDF4Tlh0T3NZMlZlWVFlVktWblR5UmNfU05ZR0x0SW_SAaQBQVVfeXFMUEtKYTRWckg5Zk93eHBlbTE5d0hxX2pwaTY1aGJLUUtUZUlublFtelRxVzgwRTU0U1ZJeDJfdmVQYTVJN3ZydDBndjJROGV3VjE3YlFHYzUxSnU1eWhJSHlQOE44eGlheHRVVm1wZy1SZ19sdFNTQzluX2o4UzNNMzFFa3JPX2VGUEFDaHh3bEVHVDR0ekdHeGxGeDl4YmJDQllvUzY?oc=5",
-      "published_at": "2026-08-12T19:39:41Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-15T10:49:54Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Saudi Arabia ramps up oil exports through Mediterranean pipeline to avoid attacks in Red Sea - cnbc.com",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORDlpS0ZwT3UtcTZ6NldxNWFBOFlDa20wVWpsYk51d1RaQzlEcm5leGphRDdSZEdrcm5hMHZVcXNVaHJycm5IQVk3NmdqdTkyQXk0NlhSTWFFelVHMGlhLTJwZEZqZGgzd25kRHFueXpCVjhxVWJycHpBZlkwRnJySDF4Tlh0T3NZMlZlWVFlVktWblR5UmNfU05ZR0x0SW_SAaQBQVVfeXFMUEtKYTRWckg5Zk93eHBlbTE5d0hxX2pwaTY1aGJLUUtUZUlublFtelRxVzgwRTU0U1ZJeDJfdmVQYTVJN3ZydDBndjJROGV3VjE3YlFHYzUxSnU1eWhJSHlQOE44eGlheHRVVm1wZy1SZ19sdFNTQzluX2o4UzNNMzFFa3JPX2VGUEFDaHh3bEVHVDR0ekdHeGxGeDl4YmJDQllvUzY?oc=5",
-      "published_at": "2026-08-12T19:39:41Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-15T07:54:00Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-25T19:11:26Z",
+    "generated_at": "2026-08-25T19:59:01Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
     "operational_label_en": "Physical passage exists, but flows are severely degraded",
-    "confidence": "MEDIA",
-    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
-    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+    "confidence": "BAJA",
+    "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
+    "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
@@ -858,12 +848,18 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 117,
-      "provider_errors": [],
+      "signals_considered": 4,
+      "provider_errors": [
+        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
+        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
+        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
+        "Google News: HTTPError: HTTP Error 503: Service Unavailable"
+      ],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-    }
+    },
+    "carried_forward": true
   }
 }
