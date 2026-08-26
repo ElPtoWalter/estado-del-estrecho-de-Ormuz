@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-26T10:08:01Z",
-  "last_success_at": "2026-08-26T10:08:01Z",
+  "checked_at": "2026-08-26T11:03:49Z",
+  "last_success_at": "2026-08-26T11:03:49Z",
   "last_change_at": "2026-08-25T11:01:25Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-25T15:31:21Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-26T10:08:01Z"
+      "observed_at": "2026-08-26T11:03:49Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-25T17:16:25Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-26T10:08:01Z"
+      "observed_at": "2026-08-26T11:03:49Z"
     }
   ],
   "diagnostics": {
@@ -109,7 +109,7 @@
       "published_at": "2026-08-25T17:16:25Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-26T10:08:01Z"
+      "observed_at": "2026-08-26T11:03:49Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -129,7 +129,7 @@
       "published_at": "2026-08-25T15:31:21Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-26T10:08:01Z"
+      "observed_at": "2026-08-26T11:03:49Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -674,7 +674,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-26T10:08:28Z",
+    "generated_at": "2026-08-26T11:04:52Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -707,14 +707,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 20.007,
+      "passage": 22.007,
       "closure": 0,
-      "traffic_reduction": 14.15,
+      "traffic_reduction": 13.15,
       "access_restriction": 8.18,
-      "risk": 58.9
+      "risk": 62.8
     },
     "source_counts": {
-      "passage": 12,
+      "passage": 14,
       "closure": 0,
       "primary_sources": 2
     },
@@ -760,7 +760,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-26T10:08:28Z",
+        "published_at": "2026-08-26T11:04:52Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -790,7 +790,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-26T10:08:28Z",
+        "published_at": "2026-08-26T11:04:52Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -847,7 +847,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 101,
+      "signals_considered": 104,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
