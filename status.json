@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-26T04:18:41Z",
-  "last_success_at": "2026-08-26T04:18:41Z",
+  "checked_at": "2026-08-26T05:07:19Z",
+  "last_success_at": "2026-08-26T05:07:19Z",
   "last_change_at": "2026-08-25T11:01:25Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-25T15:31:21Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-26T04:18:41Z"
+      "observed_at": "2026-08-26T05:07:19Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,17 @@
       "published_at": "2026-08-26T01:29:20Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-26T04:18:41Z"
+      "observed_at": "2026-08-26T05:07:19Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran and Oman discuss temporary corridor in Strait or Hormuz",
+      "source_name": "Euronews",
+      "source_url": "https://www.euronews.com/2026/08/26/iran-and-oman-discuss-temporary-corridor-in-strait-or-hormuz",
+      "published_at": "2026-08-26T03:25:22Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-26T05:07:19Z"
     }
   ],
   "diagnostics": {
@@ -46,25 +56,25 @@
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5.38
+      "risk": 7.58
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 2
+      "risk": 3
     },
     "articles_considered": 27,
-    "signals_considered": 3,
-    "current_cycle_evidence": 2,
+    "signals_considered": 4,
+    "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-26T01:29:20Z",
-    "current_cycle_count": 2,
+    "as_of": "2026-08-26T03:25:22Z",
+    "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -73,13 +83,23 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Iran and Oman discuss temporary corridor in Strait or Hormuz",
+      "source_name": "Euronews",
+      "source_url": "https://www.euronews.com/2026/08/26/iran-and-oman-discuss-temporary-corridor-in-strait-or-hormuz",
+      "published_at": "2026-08-26T03:25:22Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-26T05:07:19Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Oil falls as the U . S . pivots to economic pressure on Iran",
       "source_name": "CNBC",
       "source_url": "https://www.cnbc.com/2026/08/26/oil-falls-as-the-us-pivots-to-economic-pressure-on-iran-.html",
       "published_at": "2026-08-26T01:29:20Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-26T04:18:41Z"
+      "observed_at": "2026-08-26T05:07:19Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -119,7 +139,7 @@
       "published_at": "2026-08-25T15:31:21Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-26T04:18:41Z"
+      "observed_at": "2026-08-26T05:07:19Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -660,21 +680,11 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-08-14T03:08:32Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "UAE says Iran attacked two ADNOC vessels in Strait of Hormuz; no injuries - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQVGt4emw3dzdDaUdoNmsxMmRjMlkwZUJCUVlURko4RzRvMjUybnlUMVRGUnFLT0plclNLYkt0dGN1RV9fZnQ3QlE2UkN0d002blZDVUtTX0JwQXhkbXVDZ25WbDBLWld0anI2MmEtMUJOUFVNUTVDeVhpOXlldTQtQmlMVmVzcE1KS0tnWHhUNWtodmJRNjJWNFEyak9ZSGRadktNS3FMZ2tjc0o3MEh6eXEwcTZjY1Q3dmg1eg?oc=5",
-      "published_at": "2026-08-13T21:19:19Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-08-14T15:23:05Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-26T04:19:58Z",
+    "generated_at": "2026-08-26T05:08:11Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -707,14 +717,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 19.916,
+      "passage": 18.616,
       "closure": 0,
-      "traffic_reduction": 5.93,
+      "traffic_reduction": 4.93,
       "access_restriction": 9.08,
-      "risk": 68.46
+      "risk": 69.46
     },
     "source_counts": {
-      "passage": 10,
+      "passage": 9,
       "closure": 0,
       "primary_sources": 2
     },
@@ -745,7 +755,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-26T04:19:58Z",
+        "published_at": "2026-08-26T05:08:11Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -790,7 +800,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-26T04:19:58Z",
+        "published_at": "2026-08-26T05:08:11Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
