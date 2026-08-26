@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-26T05:07:19Z",
-  "last_success_at": "2026-08-26T05:07:19Z",
+  "checked_at": "2026-08-26T06:01:41Z",
+  "last_success_at": "2026-08-26T06:01:41Z",
   "last_change_at": "2026-08-25T11:01:25Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-25T15:31:21Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-26T05:07:19Z"
+      "observed_at": "2026-08-26T06:01:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-26T01:29:20Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-26T05:07:19Z"
+      "observed_at": "2026-08-26T06:01:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-08-26T03:25:22Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-26T05:07:19Z"
+      "observed_at": "2026-08-26T06:01:41Z"
     }
   ],
   "diagnostics": {
@@ -64,7 +64,7 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 27,
+    "articles_considered": 30,
     "signals_considered": 4,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
@@ -89,7 +89,7 @@
       "published_at": "2026-08-26T03:25:22Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-26T05:07:19Z"
+      "observed_at": "2026-08-26T06:01:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -99,7 +99,7 @@
       "published_at": "2026-08-26T01:29:20Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-26T05:07:19Z"
+      "observed_at": "2026-08-26T06:01:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -139,7 +139,7 @@
       "published_at": "2026-08-25T15:31:21Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-26T05:07:19Z"
+      "observed_at": "2026-08-26T06:01:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -684,7 +684,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-26T05:08:11Z",
+    "generated_at": "2026-08-26T06:02:12Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -699,42 +699,57 @@
       "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "DISPUTED"
+      "legal": "CLOSURE_CLAIMED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Régimen disputado"
+      "legal": "Cierre declarado por una parte"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "Disputed regime"
+      "legal": "Closure claimed by one party"
     },
     "traffic_ratio_estimate": null,
     "scores": {
       "passage": 18.616,
       "closure": 0,
-      "traffic_reduction": 4.93,
-      "access_restriction": 9.08,
-      "risk": 69.46
+      "traffic_reduction": 10.93,
+      "access_restriction": 8.08,
+      "risk": 66.68
     },
     "source_counts": {
       "passage": 9,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-26T01:55:56Z",
+    "latest_confirmed_transit_at": "2026-08-26T04:48:00Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "MEDIA"
     },
     "evidence": [
+      {
+        "kind": "TRAFFIC_REDUCED",
+        "title": "Oil prices fall $2 on Iran-Oman talks to reopen Strait of Hormuz - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWGpaTWZvaVNwRmNHZEJSYm5oVkZEanpaNEMyLXlEQUZWM0dDSVVycmxLdlJXUXg0MVlCVTN4SUptQ3pqUWg1dlVYV1k3aTgwWlhYMTZHcURfcEZZR1BydDNIVVBQbXhkendYWnRzbWJSbWVndmpyYnljV3ZpVlE3X2dmNmxPMjYyMWJQQ1VCUWs1RmR1UWdIY1ZGTXRiNzlKbmN1WGtBX2Y3TG5LUDBfVW1Ud0ZkVWhMbWc?oc=5",
+        "published_at": "2026-08-25T23:03:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Tráfico reducido",
+        "kind_label_en": "Reduced traffic"
+      },
       {
         "kind": "TRANSIT_CONFIRMED",
         "title": "Fewer than 20 ships transit key Strait of Hormuz over weekend, data shows - Reuters",
@@ -755,7 +770,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-26T05:08:11Z",
+        "published_at": "2026-08-26T06:02:12Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -800,7 +815,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-26T05:08:11Z",
+        "published_at": "2026-08-26T06:02:12Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -839,25 +854,10 @@
         "effective_weight": 2.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "TRAFFIC_SEVERELY_REDUCED",
-        "title": "Tanker Attack and Traffic Collapse Escalate Strait of Hormuz Crisis - IranWire",
-        "source": "IranWire",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQNlByejIzbUw0SVlIdUp5dmJWZF9PSllLQnVBTVN1aU1VemdXN3VSQWYwYzdQV1JHZW8zVEROV1AwbHlDa0I1Vk5tYzk4QW9FZWg1YldCS05OY3Vfd2pTR29pMkpmVmZGZ3RmRGJIWG16ZUJlbW01S1FHWlVNaWFtcHFfelF5NU9nUFRTY3Y0RVhtdmViNE80Q3A0WVZvSU8xVC1QSEt4bw?oc=5",
-        "published_at": "2026-08-25T12:41:22Z",
-        "tier": 1,
-        "weight": 1.15,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.15,
-        "kind_label_es": "Tráfico muy reducido",
-        "kind_label_en": "Severely reduced traffic"
       }
     ],
     "diagnostics": {
-      "signals_considered": 95,
+      "signals_considered": 96,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
