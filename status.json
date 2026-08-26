@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-26T02:10:24Z",
-  "last_success_at": "2026-08-26T02:10:24Z",
+  "checked_at": "2026-08-26T03:33:53Z",
+  "last_success_at": "2026-08-26T03:33:53Z",
   "last_change_at": "2026-08-25T11:01:25Z",
   "verification_ok": true,
   "stale": false,
@@ -22,66 +22,65 @@
       "published_at": "2026-08-25T15:31:21Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-26T02:10:24Z"
+      "observed_at": "2026-08-26T03:33:53Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran and Oman discuss joint shipping route in Strait of Hormuz and mine clearing mission - CNBC",
+      "title": "Oil falls as the U . S . pivots to economic pressure on Iran",
       "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE96cjBibnU4b2hJd3VMYWZhS2EtUXhudDdYaWdhbUJWaEx5OF9sd3BwdFA5dUhUTlBFeTl6QVYzcVMwdEJEWS1jOEg0Y2VtQVZSLW95bFYwMkxWSGxwZ1FrYzNMNk54T3N3TFJOcTBST0JDUdIBd0FVX3lxTFBzOWdXTm5HXzl0SkxEc2VPLXpDeVRJZnk4YTJjRndaZmZrVG03Yy1kMlplOV9EVzFkWWlkalFOMlZoZVlSWVF4c2hVOVZvdDBHUVRFbVhwdFpsZ1BnbmMyQ1VJYndaMDNpNTh5cDNlbG9NbUgxSWlR?oc=5",
-      "published_at": "2026-08-25T17:16:25Z",
+      "source_url": "https://www.cnbc.com/2026/08/26/oil-falls-as-the-us-pivots-to-economic-pressure-on-iran-.html",
+      "published_at": "2026-08-26T01:29:20Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-26T02:10:24Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Yemen's Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdkNmMGllenFfdWxNVTJYWTF5b3h1Y3lVSmlhSmEwUHZjUC1jRTVQRUZCZ1p2SDFaaWZSRTdVOHNta2JwaFpTSjZyUHgzVUJ4WDdHUjJYeGdXR3Vycm1sdnRjSmdUdmwxQjVuU0tLTURmWXU4S2RRWmlVc3FfNTBzajUwQ0tNX1Z1WWZ30gGQAUFVX3lxTE9nNGYwUkF5QTdrZmVZSnEzSUdXLUt0YURGSFRiTXNQcHZEUXlkemFzTFBxX3JXRzRwQmViNHJJZjdvR0dyNFdvd3piWlpmbVZhNzVaZ1BUTUVUckNmNVpYeW9SQVA4eGtIZHcxc0xiRXMyeGhaOFgwbC1TUG9kX1VaNWU1MTFwbUQ1dFZFVE0ydA?oc=5",
-      "published_at": "2026-08-25T08:01:38Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-26T02:10:24Z"
+      "observed_at": "2026-08-26T03:33:53Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 6.93
+      "risk": 5.38
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 3
+      "risk": 2
     },
-    "articles_considered": 18,
+    "articles_considered": 26,
     "signals_considered": 3,
-    "current_cycle_evidence": 3,
+    "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-25T17:16:25Z",
-    "current_cycle_count": 3,
+    "as_of": "2026-08-26T01:29:20Z",
+    "current_cycle_count": 2,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil falls as the U . S . pivots to economic pressure on Iran",
+      "source_name": "CNBC",
+      "source_url": "https://www.cnbc.com/2026/08/26/oil-falls-as-the-us-pivots-to-economic-pressure-on-iran-.html",
+      "published_at": "2026-08-26T01:29:20Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-08-26T03:33:53Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Trump says all mines cleared from Strait of Hormuz",
@@ -120,7 +119,7 @@
       "published_at": "2026-08-25T15:31:21Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-26T02:10:24Z"
+      "observed_at": "2026-08-26T03:33:53Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -671,21 +670,11 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-08-14T15:23:05Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil rises following news of spill near Oman amid worries over supply",
-      "source_name": "CNBC",
-      "source_url": "https://www.cnbc.com/2026/08/13/oil-spill-near-oman-worries-over-supply-.html",
-      "published_at": "2026-08-13T01:59:06Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-08-13T05:19:35Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-26T02:11:28Z",
+    "generated_at": "2026-08-26T03:34:20Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -718,11 +707,11 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 22.048,
+      "passage": 20.93,
       "closure": 0,
-      "traffic_reduction": 1.93,
-      "access_restriction": 8.3,
-      "risk": 68.98
+      "traffic_reduction": 2.93,
+      "access_restriction": 9.08,
+      "risk": 74.56
     },
     "source_counts": {
       "passage": 10,
@@ -747,7 +736,7 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.6,
+        "effective_weight": 3.12,
         "kind_label_es": "Tránsito confirmado",
         "kind_label_en": "Confirmed transit"
       },
@@ -756,7 +745,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-26T02:11:28Z",
+        "published_at": "2026-08-26T03:34:20Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -801,7 +790,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-26T02:11:28Z",
+        "published_at": "2026-08-26T03:34:20Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -813,13 +802,13 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Yemen's Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
+        "title": "Yemen’s Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
         "source": "Al Jazeera",
         "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdkNmMGllenFfdWxNVTJYWTF5b3h1Y3lVSmlhSmEwUHZjUC1jRTVQRUZCZ1p2SDFaaWZSRTdVOHNta2JwaFpTSjZyUHgzVUJ4WDdHUjJYeGdXR3Vycm1sdnRjSmdUdmwxQjVuU0tLTURmWXU4S2RRWmlVc3FfNTBzajUwQ0tNX1Z1WWZ30gGQAUFVX3lxTE9nNGYwUkF5QTdrZmVZSnEzSUdXLUt0YURGSFRiTXNQcHZEUXlkemFzTFBxX3JXRzRwQmViNHJJZjdvR0dyNFdvd3piWlpmbVZhNzVaZ1BUTUVUckNmNVpYeW9SQVA4eGtIZHcxc0xiRXMyeGhaOFgwbC1TUG9kX1VaNWU1MTFwbUQ1dFZFVE0ydA?oc=5",
         "published_at": "2026-08-25T08:01:38Z",
         "tier": 2,
         "weight": 2.0,
-        "provider": "legacy-engine",
+        "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 2.0,
@@ -858,7 +847,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 92,
+      "signals_considered": 98,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
