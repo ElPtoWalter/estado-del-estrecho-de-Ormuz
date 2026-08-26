@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-08-26T11:03:49Z",
-  "last_success_at": "2026-08-26T11:03:49Z",
+  "checked_at": "2026-08-26T11:58:42Z",
+  "last_success_at": "2026-08-26T11:58:42Z",
   "last_change_at": "2026-08-25T11:01:25Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-08-25T15:31:21Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-26T11:03:49Z"
+      "observed_at": "2026-08-26T11:58:42Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-08-25T17:16:25Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-26T11:03:49Z"
+      "observed_at": "2026-08-26T11:58:42Z"
     }
   ],
   "diagnostics": {
@@ -46,7 +46,7 @@
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 4.65
+      "risk": 4.275
     },
     "independent_sources": {
       "open": 0,
@@ -54,7 +54,7 @@
       "declared": 0,
       "risk": 2
     },
-    "articles_considered": 36,
+    "articles_considered": 37,
     "signals_considered": 2,
     "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
@@ -109,7 +109,7 @@
       "published_at": "2026-08-25T17:16:25Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-26T11:03:49Z"
+      "observed_at": "2026-08-26T11:58:42Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -129,7 +129,7 @@
       "published_at": "2026-08-25T15:31:21Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-26T11:03:49Z"
+      "observed_at": "2026-08-26T11:58:42Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -674,7 +674,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-26T11:04:52Z",
+    "generated_at": "2026-08-26T11:59:56Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -707,18 +707,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 22.007,
+      "passage": 20.707,
       "closure": 0,
       "traffic_reduction": 13.15,
-      "access_restriction": 8.18,
-      "risk": 62.8
+      "access_restriction": 6.4,
+      "risk": 58.68
     },
     "source_counts": {
-      "passage": 14,
+      "passage": 13,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-26T10:01:00Z",
+    "latest_confirmed_transit_at": "2026-08-26T09:30:00Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -727,10 +727,10 @@
     "evidence": [
       {
         "kind": "TRAFFIC_REDUCED",
-        "title": "Oil prices fall $2 on Iran-Oman talks to reopen Strait of Hormuz - Reuters",
+        "title": "Indian shares fall as IT, Reliance drag; losses deepen in closing auction - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWGpaTWZvaVNwRmNHZEJSYm5oVkZEanpaNEMyLXlEQUZWM0dDSVVycmxLdlJXUXg0MVlCVTN4SUptQ3pqUWg1dlVYV1k3aTgwWlhYMTZHcURfcEZZR1BydDNIVVBQbXhkendYWnRzbWJSbWVndmpyYnljV3ZpVlE3X2dmNmxPMjYyMWJQQ1VCUWs1RmR1UWdIY1ZGTXRiNzlKbmN1WGtBX2Y3TG5LUDBfVW1Ud0ZkVWhMbWc?oc=5",
-        "published_at": "2026-08-25T23:03:00Z",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVWRsRFlHSWlZWTlaRFNSdWlTbldWM2g1eTFCWHpLNWlZOHc2YVVfNFcwczVOX3ZjMmRxMjFkQXZRakR1SkhvMmpJYkF2ZTVRbTdKSHljWFJYZ25GeWdoQ2ZfWnByT3lEWjV6Q0tPVmRDMmZNVV8xS1ZyTnJMWDdPZWRQT1lCX3ZzZVdKZ09YT21pMHVhYXRvTjRQV0QwY3NuajB4VXI5NGI5WDNiMkUwOHc5amM?oc=5",
+        "published_at": "2026-08-26T02:18:00Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "Google News RSS",
@@ -760,7 +760,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-26T11:04:52Z",
+        "published_at": "2026-08-26T11:59:56Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -790,7 +790,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-26T11:04:52Z",
+        "published_at": "2026-08-26T11:59:56Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -847,7 +847,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 104,
+      "signals_considered": 99,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
