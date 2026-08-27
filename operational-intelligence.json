@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-27T11:57:13Z",
+  "generated_at": "2026-08-27T22:32:49Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -15,40 +15,40 @@
     "traffic": "REDUCED",
     "access": "SELECTIVE",
     "risk": "EXTREME",
-    "legal": "CLOSURE_CLAIMED"
+    "legal": "DISPUTED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
     "access": "Selectivo / condicionado",
     "risk": "Extremo",
-    "legal": "Cierre declarado por una parte"
+    "legal": "Régimen disputado"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
     "access": "Selective / conditional",
     "risk": "Extreme",
-    "legal": "Closure claimed by one party"
+    "legal": "Disputed regime"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 25.39,
+    "passage": 22.204,
     "closure": 0,
-    "traffic_reduction": 9.435,
-    "access_restriction": 5.28,
-    "risk": 74.5
+    "traffic_reduction": 9.097,
+    "access_restriction": 7.22,
+    "risk": 77.22
   },
   "source_counts": {
-    "passage": 14,
+    "passage": 12,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-27T07:51:53Z",
+  "latest_confirmed_transit_at": "2026-08-27T10:18:05Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "confidence": "MEDIA"
+    "confidence": "ALTA"
   },
   "evidence": [
     {
@@ -71,7 +71,7 @@
       "title": "Indian shares fall as IT, Reliance drag; losses deepen in closing auction - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVWRsRFlHSWlZWTlaRFNSdWlTbldWM2g1eTFCWHpLNWlZOHc2YVVfNFcwczVOX3ZjMmRxMjFkQXZRakR1SkhvMmpJYkF2ZTVRbTdKSHljWFJYZ25GeWdoQ2ZfWnByT3lEWjV6Q0tPVmRDMmZNVV8xS1ZyTnJMWDdPZWRQT1lCX3ZzZVdKZ09YT21pMHVhYXRvTjRQV0QwY3NuajB4VXI5NGI5WDNiMkUwOHc5amM?oc=5",
-      "published_at": "2026-08-26T02:18:00Z",
+      "published_at": "2026-08-26T19:35:09Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "Google News RSS",
@@ -86,7 +86,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-27T11:57:13Z",
+      "published_at": "2026-08-27T22:32:49Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -97,26 +97,11 @@
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "RISK_SEVERE",
-      "title": "Trump says all mines cleared from Strait of Hormuz - BBC",
-      "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1tNi16cVlvMnN2YWdPQWdTOVdLYTFYVmFsRE5haGxwWS01blp5eFR0R0JUbi1ZMHJkRk44bnY1RnVrM3QzczI0RjNydDNqUTc1Nnl0QXp5ZjIwdw?oc=5",
-      "published_at": "2026-08-25T21:23:41Z",
-      "tier": 3,
-      "weight": 3.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 2.7,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
       "kind": "ACCESS_RESTRICTED",
       "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-27T11:57:13Z",
+      "published_at": "2026-08-27T22:32:49Z",
       "tier": 4,
       "weight": 2.6,
       "provider": "Lloyd's List hot topic",
@@ -143,6 +128,21 @@
     },
     {
       "kind": "RISK_SEVERE",
+      "title": "Trump says all mines cleared from Strait of Hormuz - BBC",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE12aGV3aDB6R2NEeXJCUDRXNFM3OHJwVzVwUzdLUmxtSDN0dDZMRE1oQXhyb291VXJUekk5VWI4bUdlTllibjJjTmIyYXVZUHhJWTBYU0RELWV6Mm42?oc=5",
+      "published_at": "2026-08-25T15:31:21Z",
+      "tier": 3,
+      "weight": 3.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.34,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
       "title": "Another tanker struck in Strait of Hormuz - Seatrade Maritime News",
       "source": "Seatrade Maritime News",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQcVp0UWp1M0c3Y1dnaEM0bHhwSk9LSnpoNVBpeUNva3YxdjlHUTNLYS16THN5SUVfRmxMZkdYa3BjZGFEdzBqR3BTdi1RUzZsYV95ajFpU29LWm50SWN3S2YxVGJVT2ZtSEdlUXU0RG9NNkE5ZlpfOVlWNE1VSUhKYldxVUt1LWVpRVlN?oc=5",
@@ -157,23 +157,23 @@
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "RISK_SEVERE",
-      "title": "Why Hormuz remains high risk for ships despite US claims of mine-clearing - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQOEhrS296MFZ6dU90WC02X0RZOG83bGV3N2YwWDJMNS0tcXItZHBfY1owN2tmQ2Z0eXpFSWFpWE0wY2E4SkFTc0dlNHZfWi14WXo5Mk5LcG1rR3J1WERhdTUwRjU0cEotdHRTVjJzaGpVZ0xUY0Vmd0JFN1dRbjFxTFROVVlrN2NHeFlBcEZIb01ZVDJJQ2pkMnhBaUhycGh6UHhOZW1EWTVnNkhkV3NSQjlucnU?oc=5",
-      "published_at": "2026-08-26T17:11:01Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "legacy-engine",
+      "kind": "TRANSIT_CONFIRMED",
+      "title": "Iran threatens 46 ships in Strait of Hormuz transit crackdown - Financial Times",
+      "source": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOakEwa2dpWkhOOUNySkhjblVGd2VqSlliSFVHMG1HN09JaG5PSTJUQXk1UU13U0MyOEgxbk9wckZxNzBYMl9rOTNpN3BtR2JPM3ZzNll5MHpFaVZMTjRoaHVYM3ZfMlRwOUFaUDl2TWl5UVlsYnRKdmJTc1pxc0pBY0w4blM?oc=5",
+      "published_at": "2026-08-24T09:48:30Z",
+      "tier": 3,
+      "weight": 3.0,
+      "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 2.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
+      "effective_weight": 1.86,
+      "kind_label_es": "Tránsito confirmado",
+      "kind_label_en": "Confirmed transit"
     }
   ],
   "diagnostics": {
-    "signals_considered": 102,
+    "signals_considered": 105,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
