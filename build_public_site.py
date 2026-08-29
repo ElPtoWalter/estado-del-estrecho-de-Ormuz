@@ -348,6 +348,15 @@ def prerender(document: str, filename: str) -> str:
             "briefChange": brief.get(f"change_{suffix}") or "",
         }.items():
             document = replace_element(document, element_id, esc(value, ""))
+        document = replace_element(
+            document, "briefRisks",
+            "".join(f"<li>{esc(item)}</li>" for item in (brief.get(f"risks_{suffix}") or [])),
+        )
+        document = replace_element(document, "briefEvidence", render_evidence({"evidence": brief.get("evidence") or []}, lang, 5))
+        document = replace_element(
+            document, "briefWatch",
+            "".join(f"<li>{esc(item)}</li>" for item in (brief.get(f"watchlist_{suffix}") or [])),
+        )
 
     if filename in {"widget.html", "en-widget.html"}:
         document = replace_data_attr_content(document, "data-state", esc(label))

@@ -42,16 +42,62 @@ def format_date(value: Any, lang: str) -> str:
 
 
 def replace_content(document: str, element_id: str, content: str) -> str:
-    pattern = re.compile(
-        rf'(<(?P<tag>[a-zA-Z0-9]+)\b[^>]*\bid=["\']{re.escape(element_id)}["\'][^>]*>)'
-        rf'.*?(</(?P=tag)>)',
+    opening = re.compile(
+        rf'<(?P<tag>[a-zA-Z0-9]+)\b[^>]*\bid=["\']{re.escape(element_id)}["\'][^>]*>',
         re.I | re.S,
     )
-    return pattern.sub(
-        lambda match: match.group(1) + content + match.group(3),
-        document,
-        count=1,
+    match = opening.search(document)
+    if not match:
+        return document
+
+    tag = match.group("tag")
+    token_re = re.compile(
+        rf'<{re.escape(tag)}\b[^>]*>|</{re.escape(tag)}\s*>',
+        re.I | re.S,
     )
+    depth = 1
+    for token in token_re.finditer(document, match.end()):
+        raw = token.group(0)
+        if raw.lower().startswith(f'</{tag.lower()}'):
+            depth -= 1
+            if depth == 0:
+                return document[:match.end()] + content + document[token.start():]
+        elif not raw.rstrip().endswith('/>'):
+            depth += 1
+    raise RuntimeError(f'No se encontró el cierre de <{tag}> para #{element_id}')
+
+
+def remove_trailing_corruption(document: str, element_id: str) -> str:
+    """Drop legacy fragments left after a formerly broken nested replacement."""
+    opening = re.compile(
+        rf'<(?P<tag>[a-zA-Z0-9]+)\b[^>]*\bid=["\']{re.escape(element_id)}["\'][^>]*>',
+        re.I | re.S,
+    )
+    match = opening.search(document)
+    if not match:
+        return document
+    tag = match.group("tag")
+    token_re = re.compile(rf'<{re.escape(tag)}\b[^>]*>|</{re.escape(tag)}\s*>', re.I | re.S)
+    depth = 1
+    element_end = None
+    for token in token_re.finditer(document, match.end()):
+        if token.group(0).lower().startswith(f'</{tag.lower()}'):
+            depth -= 1
+            if depth == 0:
+                element_end = token.end()
+                break
+        elif not token.group(0).rstrip().endswith('/>'):
+            depth += 1
+    if element_end is None:
+        return document
+    section_end = re.search(r'</section\s*>', document[element_end:], re.I)
+    if not section_end:
+        return document
+    absolute_section_end = element_end + section_end.start()
+    trailing = document[element_end:absolute_section_end]
+    if '<article' not in trailing.lower():
+        return document
+    return document[:element_end] + document[absolute_section_end:]
 
 
 def remove_loading_class(document: str, element_id: str) -> str:
@@ -249,6 +295,7 @@ def prerender_daily(root: Path, filename: str, lang: str) -> None:
     brief = load_json(root / "daily-brief.json", {})
     status = load_json(root / "status.json", {})
     document = path.read_text(encoding="utf-8")
+    document = remove_trailing_corruption(document, "briefEvidence")
 
     suffix = "es" if lang == "es" else "en"
     status_label = brief.get(f"status_label_{suffix}") or status.get("status")
