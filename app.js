@@ -63,8 +63,8 @@
       provisional:
         "Estado provisional basado en evidencia indirecta. La última confirmación operativa válida puede ser anterior a esta comprobación.",
 
-      mapLoading: "Cargando mapa AIS…",
-      mapLoaded: "Mapa AIS cargado.",
+      mapLoading: "Abriendo el radar AIS en MarineTraffic…",
+      mapLoaded: "Radar AIS abierto en una pestaña nueva.",
       mapTitle: "Mapa AIS en directo del estrecho de Ormuz",
 
       systemOperational: "Sistema operativo",
@@ -126,8 +126,8 @@
       provisional:
         "Provisional status based on indirect evidence. The latest valid operational confirmation may predate this check.",
 
-      mapLoading: "Loading AIS map…",
-      mapLoaded: "AIS map loaded.",
+      mapLoading: "Opening the AIS radar at MarineTraffic…",
+      mapLoaded: "AIS radar opened in a new tab.",
       mapTitle: "Live AIS map of the Strait of Hormuz",
 
       systemOperational: "System operational",
@@ -1052,85 +1052,32 @@
   }
 
   function setupLiveMap() {
-    const button = document.querySelector(
-      "[data-load-marine-map]"
+    const radarLink = document.querySelector(
+      "[data-open-marine-radar]"
     );
-
-    const container = document.getElementById(
-      "marineMapContainer"
-    );
-
-    const placeholder =
-      document.getElementById(
-        "marineMapPlaceholder"
-      );
 
     const status = document.getElementById(
       "marineMapStatus"
     );
 
-    if (
-      !button ||
-      !container ||
-      !placeholder
-    ) {
+    if (!radarLink) {
       return;
     }
 
-    button.addEventListener(
+    radarLink.addEventListener(
       "click",
       () => {
-        if (
-          container.querySelector("iframe")
-        ) {
-          return;
-        }
-
-        button.disabled = true;
-
-        button.textContent =
-          labels.mapLoading;
-
         if (status) {
           status.textContent =
             labels.mapLoading;
-        }
-
-        const iframe =
-          document.createElement("iframe");
-
-        iframe.className =
-          "traffic-map-frame";
-
-        iframe.title =
-          labels.mapTitle;
-
-        iframe.src =
-          "https://www.marinetraffic.com/en/ais/embed/zoom:6/centery:25.8/centerx:57.7/maptype:4/shownames:true/mmsi:0/shipid:0/fleet:/fleet_id:/vtypes:/showmenu:true/remember:false";
-
-        iframe.loading = "eager";
-
-        iframe.referrerPolicy =
-          "strict-origin-when-cross-origin";
-
-        iframe.allowFullscreen = true;
-
-        iframe.addEventListener(
-          "load",
-          () => {
-            placeholder.remove();
-
-            if (status) {
+          window.setTimeout(
+            () => {
               status.textContent =
                 labels.mapLoaded;
-            }
-          },
-          {
-            once: true
-          }
-        );
-
-        container.append(iframe);
+            },
+            250
+          );
+        }
       }
     );
   }
