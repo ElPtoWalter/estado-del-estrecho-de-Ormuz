@@ -163,7 +163,7 @@
 <h2 id="traffic-title">Tráfico marítimo en directo</h2>
 <p>El mapa AIS permite observar patrones de navegación como contexto. No determina automáticamente el estado: la cobertura AIS puede ser incompleta, retrasada o filtrada.</p>
 </div>
-<p class="traffic-note"><strong>Privacidad:</strong> el radar se abre bajo demanda en MarineTraffic. No se establece ninguna conexión con el proveedor hasta que pulsas el enlace.</p>
+<p class="traffic-note"><strong>Privacidad:</strong> el mapa se carga aquí bajo demanda. No se establece ninguna conexión con MyShipTracking hasta que pulsas el botón.</p>
 </div>
 <div class="traffic-map-shell" id="marineMapContainer">
 <div class="traffic-placeholder" id="marineMapPlaceholder">
@@ -174,10 +174,15 @@
 </svg>
 </div>
 <h3>Radar AIS en directo</h3>
-<p>Abre el mapa oficial de MarineTraffic, ya centrado en el estrecho de Ormuz, para consultar el tráfico marítimo actual.</p>
-<a class="button primary" data-open-marine-radar href="https://www.marinetraffic.com/en/ais/home/centerx:57.7/centery:25.8/zoom:6" target="_blank" rel="noopener noreferrer">Abrir radar marítimo en directo ↗</a>
-<p class="traffic-consent">Servicio externo de MarineTraffic. Se aplican sus condiciones y su política de privacidad.</p>
+<p>Consulta el tráfico marítimo actual en un mapa interactivo centrado en el estrecho de Ormuz.</p>
+<button aria-controls="marineMapContainer" class="button primary" data-load-ais-map type="button">Ver radar marítimo aquí</button>
+<p class="traffic-consent" id="marineMapConsent">Al cargarlo, te conectarás al servicio externo MyShipTracking, sujeto a sus condiciones y política de privacidad.</p>
+<a class="traffic-fallback-link" data-open-marine-radar href="https://www.marinetraffic.com/en/ais/home/centerx:56.3/centery:26.6/zoom:7" target="_blank" rel="noopener noreferrer">Alternativa: abrir MarineTraffic ↗</a>
 </div>
+</div>
+<div class="traffic-map-toolbar" hidden id="marineMapToolbar">
+<p>Mapa AIS proporcionado por MyShipTracking · Uso informativo</p>
+<a data-open-marine-radar href="https://www.marinetraffic.com/en/ais/home/centerx:56.3/centery:26.6/zoom:7" target="_blank" rel="noopener noreferrer">Abrir alternativa en MarineTraffic ↗</a>
 </div>
 </div>
 <p aria-live="polite" class="alert-status" id="marineMapStatus" role="status"></p>
@@ -1589,5 +1594,6 @@
 </div>
 <div class="footer-bottom"><div><span>© <span id="currentYear">2026</span> Estrecho Ormuz</span><span>Metodología pública · Fuentes verificables</span><span class="footer-system"><i aria-hidden="true" class="live-pulse"></i>Seguimiento activo</span></div></div>
 </footer>
+<script defer src="/radar-map.js"></script>
 </body>
 </html>
