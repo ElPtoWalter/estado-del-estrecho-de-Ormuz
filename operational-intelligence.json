@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-29T09:20:04Z",
+  "generated_at": "2026-08-29T14:39:54Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 13.487,
+    "passage": 10.055,
     "closure": 0,
-    "traffic_reduction": 10.513,
-    "access_restriction": 7.2,
-    "risk": 69.56
+    "traffic_reduction": 8.02,
+    "access_restriction": 8.08,
+    "risk": 64.94
   },
   "source_counts": {
-    "passage": 9,
+    "passage": 7,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-28T14:48:39Z",
+  "latest_confirmed_transit_at": "2026-08-28T07:00:00Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -77,7 +77,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.6,
+      "effective_weight": 3.12,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
     },
@@ -101,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-29T09:20:04Z",
+      "published_at": "2026-08-29T14:39:54Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -128,25 +128,10 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "US Commander Declares Hormuz Shipping Lanes Are Mine-Free - Bloomberg.com",
-      "source": "Bloomberg.com",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOTFRYbDFXOFVaX0JsSEJNMTZTcDlHTXJXejNCRno0VmNYcFZ0X2ZsQzJRMFViS2ZoS3EzSHRoLUotdzZnR2oxamdDWi1hS3pMMjFqRDNycFplU29oLUFGa2gzS3pqb0EzZ1N3MjAtQVhyNi0ybVdBMzM2LWlDR0hkVjRhWDZiV2ltS1hpQ2RSVUx4YXJvWkQyTmlxcC1DWks5MnNKaXdUSzFYTTFNU0lGZTdoYw?oc=5",
-      "published_at": "2026-08-28T03:52:00Z",
-      "tier": 3,
-      "weight": 3.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 2.7,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
       "title": "US Commander, in Video, Declares Hormuz Shipping Lanes Mine-Free - Bloomberg.com",
       "source": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQd25pRzFzd0h6VmhVMlZJOVA2VTc5amVLVXZYaG01dkJLaS1rRjJaTjFtTkl4MGIza1dnVnZTRWkyWlhNc0xNSnZqb0VCODJ4QlV2cVRnNmp4ektBZHhrS2ZaWnhDQldXNHJfaEhyRHJNUXRYN1Y2c0NDQVpCdW5JY1hBV21NM1RyM3JFT3Z0NVZ1NWRVeHQyN2t6bEtROENmYmxwMmhVYTVUcGJ4bnkycUdEUHBBYmtWQnZORXo4UEJkV2lyWTBR?oc=5",
-      "published_at": "2026-08-28T02:18:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOTFRYbDFXOFVaX0JsSEJNMTZTcDlHTXJXejNCRno0VmNYcFZ0X2ZsQzJRMFViS2ZoS3EzSHRoLUotdzZnR2oxamdDWi1hS3pMMjFqRDNycFplU29oLUFGa2gzS3pqb0EzZ1N3MjAtQVhyNi0ybVdBMzM2LWlDR0hkVjRhWDZiV2ltS1hpQ2RSVUx4YXJvWkQyTmlxcC1DWks5MnNKaXdUSzFYTTFNU0lGZTdoYw?oc=5",
+      "published_at": "2026-08-28T03:52:00Z",
       "tier": 3,
       "weight": 3.0,
       "provider": "legacy-engine",
@@ -170,10 +155,25 @@
       "effective_weight": 1.86,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Another tanker struck in Strait of Hormuz - Seatrade Maritime News",
+      "source": "Seatrade Maritime News",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQcVp0UWp1M0c3Y1dnaEM0bHhwSk9LSnpoNVBpeUNva3YxdjlHUTNLYS16THN5SUVfRmxMZkdYa3BjZGFEdzBqR3BTdi1RUzZsYV95ajFpU29LWm50SWN3S2YxVGJVT2ZtSEdlUXU0RG9NNkE5ZlpfOVlWNE1VSUhKYldxVUt1LWVpRVlN?oc=5",
+      "published_at": "2026-08-27T04:10:52Z",
+      "tier": 2,
+      "weight": 2.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.56,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 98,
+    "signals_considered": 91,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
