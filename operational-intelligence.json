@@ -1,15 +1,15 @@
 {
   "version": 7,
-  "generated_at": "2026-08-29T18:48:58Z",
+  "generated_at": "2026-08-29T21:55:31Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
   "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
   "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
   "operational_label_en": "Physical passage exists, but flows are severely degraded",
-  "confidence": "BAJA",
-  "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
-  "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
+  "confidence": "MEDIA",
+  "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+  "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 10.055,
+    "passage": 10.299,
     "closure": 0,
-    "traffic_reduction": 8.02,
-    "access_restriction": 8.08,
-    "risk": 64.94
+    "traffic_reduction": 7.08,
+    "access_restriction": 9.84,
+    "risk": 58.06
   },
   "source_counts": {
     "passage": 7,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-28T07:00:00Z",
+  "latest_confirmed_transit_at": "2026-08-28T10:21:43Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -82,26 +82,11 @@
       "kind_label_en": "Confirmed transit"
     },
     {
-      "kind": "TRAFFIC_REDUCED",
-      "title": "Indian shares fall as IT, Reliance drag; losses deepen in closing auction - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVWRsRFlHSWlZWTlaRFNSdWlTbldWM2g1eTFCWHpLNWlZOHc2YVVfNFcwczVOX3ZjMmRxMjFkQXZRakR1SkhvMmpJYkF2ZTVRbTdKSHljWFJYZ25GeWdoQ2ZfWnByT3lEWjV6Q0tPVmRDMmZNVV8xS1ZyTnJMWDdPZWRQT1lCX3ZzZVdKZ09YT21pMHVhYXRvTjRQV0QwY3NuajB4VXI5NGI5WDNiMkUwOHc5amM?oc=5",
-      "published_at": "2026-08-26T19:35:09Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.12,
-      "kind_label_es": "Tráfico reducido",
-      "kind_label_en": "Reduced traffic"
-    },
-    {
       "kind": "RISK_SEVERE",
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-29T14:39:54Z",
+      "published_at": "2026-08-29T21:55:31Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -142,48 +127,57 @@
       "kind_label_en": "Severe risk"
     },
     {
+      "kind": "TRAFFIC_REDUCED",
+      "title": "Indian shares fall as IT, Reliance drag; losses deepen in closing auction - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVWRsRFlHSWlZWTlaRFNSdWlTbldWM2g1eTFCWHpLNWlZOHc2YVVfNFcwczVOX3ZjMmRxMjFkQXZRakR1SkhvMmpJYkF2ZTVRbTdKSHljWFJYZ25GeWdoQ2ZfWnByT3lEWjV6Q0tPVmRDMmZNVV8xS1ZyTnJMWDdPZWRQT1lCX3ZzZVdKZ09YT21pMHVhYXRvTjRQV0QwY3NuajB4VXI5NGI5WDNiMkUwOHc5amM?oc=5",
+      "published_at": "2026-08-26T19:35:09Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.48,
+      "kind_label_es": "Tráfico reducido",
+      "kind_label_en": "Reduced traffic"
+    },
+    {
       "kind": "RISK_SEVERE",
-      "title": "Trump says all mines cleared from Strait of Hormuz - BBC",
-      "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE12aGV3aDB6R2NEeXJCUDRXNFM3OHJwVzVwUzdLUmxtSDN0dDZMRE1oQXhyb291VXJUekk5VWI4bUdlTllibjJjTmIyYXVZUHhJWTBYU0RELWV6Mm42?oc=5",
-      "published_at": "2026-08-25T15:31:21Z",
-      "tier": 3,
-      "weight": 3.0,
+      "title": "Why Hormuz remains high risk for ships despite US claims of mine-clearing - Al Jazeera",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQOEhrS296MFZ6dU90WC02X0RZOG83bGV3N2YwWDJMNS0tcXItZHBfY1owN2tmQ2Z0eXpFSWFpWE0wY2E4SkFTc0dlNHZfWi14WXo5Mk5LcG1rR3J1WERhdTUwRjU0cEotdHRTVjJzaGpVZ0xUY0Vmd0JFN1dRbjFxTFROVVlrN2NHeFlBcEZIb01ZVDJJQ2pkMnhBaUhycGh6UHhOZW1EWTVnNkhkV3NSQjlucnXSAboBQVVfeXFMTnIxZjhuSFlHTWVDRVFHQVp0ZHNQTEdUZlY0N1oxc09zRW5aZDRWSXh0SEh3bjFzaVlrSTRRal9YZFVNLXB1QnpmVEFzb01TNEJFUk5MeDh3SG1rSEJFUlVJeTYyZlhJaEZXSG9zZWJlaThrbk04OS1oeGtfa29nM0xsZXY4TVNDXzBWSHlZYS1yd1dnMTJ0dlVQWWNwb2l2Y2ZzTjdHR1lsaTZkVlo5dE9TTjJNcTVLUzNR?oc=5",
+      "published_at": "2026-08-26T17:11:01Z",
+      "tier": 2,
+      "weight": 2.0,
       "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 1.86,
+      "effective_weight": 1.24,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Another tanker struck in Strait of Hormuz - Seatrade Maritime News",
-      "source": "Seatrade Maritime News",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQcVp0UWp1M0c3Y1dnaEM0bHhwSk9LSnpoNVBpeUNva3YxdjlHUTNLYS16THN5SUVfRmxMZkdYa3BjZGFEdzBqR3BTdi1RUzZsYV95ajFpU29LWm50SWN3S2YxVGJVT2ZtSEdlUXU0RG9NNkE5ZlpfOVlWNE1VSUhKYldxVUt1LWVpRVlN?oc=5",
-      "published_at": "2026-08-27T04:10:52Z",
-      "tier": 2,
-      "weight": 2.0,
+      "title": "Navy has cleared mines from the Strait of Hormuz, CENTCOM says - Task & Purpose",
+      "source": "Task & Purpose",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOZHRPQ0NvVGJhVGtXVml5Q3dtXy1iM2lZZ3c1S2ZEYm5QcURnZkJSaEw1Slo3SnlrajlpejFzd09FU0ZTaGxzM0NwbHFrR05vRjZxYXV4a002UTkta2FNTDc1eDZ5QUdhZmRWbGNXcWdZTnBBcFBuaDk5ZVQxeHdmOQ?oc=5",
+      "published_at": "2026-08-29T19:54:17Z",
+      "tier": 1,
+      "weight": 1.0,
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 1.56,
+      "effective_weight": 1.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 6,
-    "provider_errors": [
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-      "Google News: HTTPError: HTTP Error 503: Service Unavailable"
-    ],
+    "signals_considered": 88,
+    "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
     "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
     "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-  },
-  "carried_forward": true
+  }
 }
