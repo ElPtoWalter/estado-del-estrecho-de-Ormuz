@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-30T05:45:09Z",
+  "generated_at": "2026-08-30T12:10:18Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -15,29 +15,29 @@
     "traffic": "REDUCED",
     "access": "SELECTIVE",
     "risk": "EXTREME",
-    "legal": "DISPUTED"
+    "legal": "CLOSURE_CLAIMED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
     "access": "Selectivo / condicionado",
     "risk": "Extremo",
-    "legal": "Régimen disputado"
+    "legal": "Cierre declarado por una parte"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
     "access": "Selective / conditional",
     "risk": "Extreme",
-    "legal": "Disputed regime"
+    "legal": "Closure claimed by one party"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 9.493,
+    "passage": 7.233,
     "closure": 0,
-    "traffic_reduction": 7.88,
-    "access_restriction": 8.02,
-    "risk": 54.12
+    "traffic_reduction": 9.26,
+    "access_restriction": 9.4,
+    "risk": 51.28
   },
   "source_counts": {
     "passage": 6,
@@ -56,15 +56,30 @@
       "title": "Iran lashes out at US sanctions amid economic toll at home - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObFhWQ0dIN3p1bUEzcUdpNlN2VFhmaWRhUk5zbkhfWE45U2swM1ViQ0RvRHhxZjJfT2xaUEhnWU9jZ3MzRXl3bXdabG1mM0xpTmdoRzZEQ3dRNDJOVEpTUnJfX3lCV0s4b2RPSzhPbXlZSllrb1l6SjA0NVRVRzNRR0pBYWFwTWdPU0xtOTduNnUyd3hpZjFUUDZUb1NnMkRoanl1Z2V5SjIwYWpubGc?oc=5",
-      "published_at": "2026-08-28T01:34:00Z",
+      "published_at": "2026-08-28T20:26:36Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.12,
+      "effective_weight": 3.6,
       "kind_label_es": "Acceso restringido",
       "kind_label_en": "Restricted access"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+      "source": "Lloyd's List",
+      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+      "published_at": "2026-08-30T12:10:18Z",
+      "tier": 4,
+      "weight": 3.0,
+      "provider": "Lloyd's List hot topic",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     },
     {
       "kind": "TRANSIT_CONFIRMED",
@@ -77,39 +92,9 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.12,
+      "effective_weight": 2.48,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
-      "source": "Lloyd's List",
-      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-30T05:45:09Z",
-      "tier": 4,
-      "weight": 3.0,
-      "provider": "Lloyd's List hot topic",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "How the Iran war unfolded: every attack and oil price change – visualised | US-Israel war on Iran - The Guardian",
-      "source": "The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZThFSGo4bURVTldLLUdma1FYQy0zVmo2ak9NWEUzTWtsbWlFU3VpT1FyT25nQ3htM3dZQ0d4YzhuV1JlaDZ5cWE2WkRXckhKenpCZ0hJcWRXTVI3OWpJRldtM0Z5WVBOaFhTT25uaDROdjhuNWN1YzF6amR5dUFXZ0tScGt2MlM1U1pMNUxqd21NNzdqVEYzSVgwVVZTVHh1MkV5OXhONFlJS0VicGNfYUxFOW5NbWtZRVR0WnB1OWNWLTVuNXRSeEtWVQ?oc=5",
-      "published_at": "2026-08-28T06:00:00Z",
-      "tier": 3,
-      "weight": 3.0,
-      "provider": "legacy-engine",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 2.7,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     },
     {
       "kind": "TRAFFIC_REDUCED",
@@ -125,6 +110,21 @@
       "effective_weight": 2.48,
       "kind_label_es": "Tráfico reducido",
       "kind_label_en": "Reduced traffic"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "How the Iran war unfolded: every attack and oil price change – visualised | US-Israel war on Iran - The Guardian",
+      "source": "The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZThFSGo4bURVTldLLUdma1FYQy0zVmo2ak9NWEUzTWtsbWlFU3VpT1FyT25nQ3htM3dZQ0d4YzhuV1JlaDZ5cWE2WkRXckhKenpCZ0hJcWRXTVI3OWpJRldtM0Z5WVBOaFhTT25uaDROdjhuNWN1YzF6amR5dUFXZ0tScGt2MlM1U1pMNUxqd21NNzdqVEYzSVgwVVZTVHh1MkV5OXhONFlJS0VicGNfYUxFOW5NbWtZRVR0WnB1OWNWLTVuNXRSeEtWVQ?oc=5",
+      "published_at": "2026-08-28T06:00:00Z",
+      "tier": 3,
+      "weight": 3.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.34,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     },
     {
       "kind": "RISK_SEVERE",
@@ -158,10 +158,10 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "CENTCOM commander says US forces cleared mines from Hormuz shipping lanes - Fox News",
-      "source": "Fox News",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9YZnYtazdJVUF4Z1dzQlNTMTByY1h4SzRYU0F1aWR2U1QxcTliX0xNS2paTENfMU5iQU5MQ09ZSmtuRjN3Tkloa2xkNUQ4MFI3UHVGeDlB?oc=5",
-      "published_at": "2026-08-30T01:43:52Z",
+      "title": "The Hormuz Shutdown and the New Fragility of Global Trade’s Most Critical Route - Modern Diplomacy",
+      "source": "Modern Diplomacy",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNV2RIUW1qbUhtY1NNNXFlSG16alE3emVZbFc0UWJDTmpmalVxVUxoVllxRkFFOXhkMEY2RXAwTy0wSkNZZjhoUkZGVVAxY2szVE9sbmdSbThheENRREdyQW9fWVRsWXRMcXhKSWp5aGc0UVZfUU9aLXd5ZmRGLXNPcFNqYU1rOTRJMkw5WVhacDhwSk9FQjJxQmw5b2pqM0MxdE92ang1SXBkOVJWaFRONmh2T3RlbUNJ?oc=5",
+      "published_at": "2026-08-30T09:00:24Z",
       "tier": 1,
       "weight": 1.0,
       "provider": "Google News RSS",
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 89,
+    "signals_considered": 91,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
