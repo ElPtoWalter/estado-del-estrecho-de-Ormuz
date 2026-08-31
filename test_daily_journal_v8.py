@@ -10,6 +10,34 @@ import generate_daily_journal as journal
 
 
 class DailyJournalV8Tests(unittest.TestCase):
+    def test_delayed_schedule_still_recovers_missing_daily_edition(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "journal-state.json").write_text('{"last_date":"2026-08-30"}', encoding="utf-8")
+            late_run = datetime(2026, 8, 31, 14, 20, tzinfo=journal.MADRID)
+            self.assertTrue(journal.scheduled_allowed(root, late_run))
+
+    def test_editorial_context_uses_own_archive_as_news_pulse(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "journal-data").mkdir()
+            (root / "journal-data" / "2026-08-29.json").write_text('{"new_articles":4}', encoding="utf-8")
+            item = journal.NewsItem(
+                title="Strait of Hormuz shipping traffic continues",
+                source="Reuters",
+                url="https://example.com/a",
+                published_at="2026-08-31T05:00:00Z",
+                tier=5,
+                topic="maritime",
+                query="x",
+            )
+            context = journal.build_editorial_context(
+                root, [item], [item], datetime(2026, 8, 31, 8, 0, tzinfo=journal.MADRID)
+            )
+            self.assertEqual(context["label_es"], "Cuaderno de navegación")
+            self.assertEqual(context["recent_average"], 4)
+            self.assertIn("Agenda", context["pulse_es"])
+
     def test_question_headline_is_not_interpreted_as_fact(self):
         item = journal.NewsItem(
             title="Is the Strait of Hormuz open today?",
@@ -119,6 +147,9 @@ class DailyJournalV8Tests(unittest.TestCase):
             self.assertTrue((root / "diario" / "index.html").exists())
             latest = json.loads((root / "journal-latest.json").read_text(encoding="utf-8"))
             self.assertTrue(latest["material_archive"])
+            self.assertEqual(latest["editorial"]["version"], journal.EDITORIAL_VERSION)
+            self.assertIn("LA SEÑAL DEL DÍA", (root / "diario.html").read_text(encoding="utf-8"))
+            self.assertIn("Lo que aún no sabemos", (root / "diario.html").read_text(encoding="utf-8"))
             self.assertIn("JOURNAL_V8_HOME_START", (root / "index.html").read_text(encoding="utf-8"))
 
 
