@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-08-31T07:31:54Z",
+  "generated_at": "2026-08-31T15:19:37Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -13,38 +13,38 @@
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
-    "access": "SELECTIVE",
+    "access": "RESTRICTED",
     "risk": "EXTREME",
     "legal": "DISPUTED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
-    "access": "Selectivo / condicionado",
+    "access": "Restringido",
     "risk": "Extremo",
     "legal": "Régimen disputado"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
-    "access": "Selective / conditional",
+    "access": "Restricted",
     "risk": "Extreme",
     "legal": "Disputed regime"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 11.731,
+    "passage": 12.012,
     "closure": 0,
-    "traffic_reduction": 1.56,
-    "access_restriction": 6.36,
-    "risk": 97.1
+    "traffic_reduction": 7.56,
+    "access_restriction": 4.36,
+    "risk": 105.0
   },
   "source_counts": {
-    "passage": 8,
+    "passage": 10,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-08-30T23:42:52Z",
+  "latest_confirmed_transit_at": "2026-08-31T14:25:48Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -53,25 +53,10 @@
   "evidence": [
     {
       "kind": "RISK_SEVERE",
-      "title": "Iran dismisses Trump's post of attack on key energy hub of Kharg - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxORVQzSG1hcjZUa3F4dlBHbmczSFliQ3d6ZVgtWjl6RzgtYjE4cGtXNjhpRHhmU0pBb1FSQl9iUHN5b0FUZHFMX0JDSFNONERPQ0c0T2Z6ejBFWE9jUldMUU9sVzJKT1Z0R0JaWGFUaHZUdnNtcVEwclRIZ29vZnpqd1JJOHg1Qmx2cHZ0TVMtVEtjWEdNbE1kZDY4cGxUNlRxYkpsVm1UUnZ3RjE2Z3cwRlQ3WVRWU0hO?oc=5",
-      "published_at": "2026-08-31T05:40:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "legacy-engine",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 4.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Another tanker struck in Strait of Hormuz as US-Iran tensions flare anew - Lloyd's List",
+      "title": "Tanker struck by projectile in Strait of Hormuz as Iran claims mine attack on VLCC - Lloyd's List",
       "source": "Lloyd's List",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPcHd4Y29xc1p1bjlkZ25wWmQ0OExIMklXeDR5YVgwYkwxd1BIQ3RTSUYzNExnU2xGRHNlM0d3VVBqT3ctS242RVhmTnZYRWJ2VjBfSjllZ1BWV0VJa3FGYmh6cWh0aVV3VlB1TEoxSXFEUjFhRm9jVWlvMnd4eWxBa2l3OVlOU0xtV0RVY1pTRTIwUmNTMXo1eDgxaXgwT0lBbTk3bjBucVQ3Z2dyTmc?oc=5",
-      "published_at": "2026-08-31T04:05:48Z",
+      "published_at": "2026-08-31T09:43:02Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "Google News RSS",
@@ -83,13 +68,13 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Oil jumps more than 2% after US attack on Iran's Larak Island - Reuters",
+      "title": "Oil rises over 2% as US and Iran resume military attacks - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQSGRJUGVDenVxZzdzdXZ4aTJudWV6LS1adkVVMmVUNnc1QnMyNVNsLThHcG44U2p6SWoxYm9LbjJnUGdkZDAzTENhSDR2OW90cWV2aDJNZWpKRllRNUhselE2djRhQlI3ejVmUUl6cFNnVDN1UmU4QXVadDNmQloya3daeWVHSmtGNDh4QWktSk1fenV3czlkbnhwNjJ3VzNXWEhZelFCRTIzaWpR?oc=5",
       "published_at": "2026-08-30T22:12:00Z",
       "tier": 4,
       "weight": 4.0,
-      "provider": "Google News RSS",
+      "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 4.0,
@@ -116,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-08-31T07:31:54Z",
+      "published_at": "2026-08-31T15:19:37Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -128,10 +113,10 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Oil Advances on Fresh Mideast Strikes and Claim Tanker Hit Mines - Bloomberg.com",
-      "source": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObkN5Yzc3M05Ld0hYclJKaERPTlNCeXZySklGbVpBdC1JRlFfVE5KbmUzM1J5ZzRLRFZOdk9QZ3Y3b2ZXYWpScmFUMEpId1U4SHVXRjIyY1hrZ2QtTkxoTWhRSmRjNDdKME90eUVneHJJWWhqMzFfbThOYW5hVk5Hel8zOU15elYxc2dpOGdtX0pJWC1hd1JPNzRZSG5RQQ?oc=5",
-      "published_at": "2026-08-31T05:32:00Z",
+      "title": "US and Iran trade strikes after first known US attack in weeks - BBC",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wR1VYOXlxY0JNeElMalZOaEw0VDcycU9GeDBFLUdEQ2x4NjRuSjQzd0drUUtfVDRIR2hzenZjY2lRU2ZvbzVUeWVzYUQxc2QwcS1pWW5HX2EzUQ?oc=5",
+      "published_at": "2026-08-31T13:47:30Z",
       "tier": 3,
       "weight": 3.0,
       "provider": "legacy-engine",
@@ -144,12 +129,12 @@
     {
       "kind": "RISK_SEVERE",
       "title": "US Strikes Iranian Rocket Launchers in First Attack in Weeks - Bloomberg.com",
-      "source": "Bloomberg.com",
+      "source": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPb2JpRHFuQ2xrR0xDTEhWbkxobGJxRktFR1RQMThiY3hvZzdNb24wWmdFUUZSVzVwS3k3akFpbEk5Mzg0ak9Vem9TVDE3Ti1naEFIR1JDWXloaDJWb1NrZ2FRRkYxaXAwdnZYb1FVOEhpYlluNmZES01oMWJRVUExYWdSZEk1dVdIY1VHYTFDaGw5M081NXNSaHgxeHpKMTdkaW9HOVYxdHR4SXB0MV9EQQ?oc=5",
-      "published_at": "2026-08-31T03:40:00Z",
+      "published_at": "2026-08-31T13:28:31Z",
       "tier": 3,
       "weight": 3.0,
-      "provider": "Google News RSS",
+      "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 3.0,
@@ -157,8 +142,23 @@
       "kind_label_en": "Severe risk"
     },
     {
+      "kind": "TRAFFIC_REDUCED",
+      "title": "Oil prices rise and stocks fall after U.S. hits Iranian sites in the Strait of Hormuz - BNN Bloomberg",
+      "source": "BNN Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQNXRYSm5wS2FFcXVtNTAtS0duTG5TbFB5WnJWZ2tRTExNOE40QmJHUlk2aDZobGN5eHB4Q0tpTU82RHhONXpjZnlQSF9CQWFrWjNabUZtcDgtQUJBNEgzcFl6OWQyRHRYU0hWMmhrM3dKVDRDTjFQUFdSNFpaejhwS0xmWW52VGNlUHNMQ1U0ZFNUZHppV2JGc1hYOXJMN0RLZUs5MmFsLVVGYWNpVlVGQkhwZ3h1eW1ZTFRZcE5FckY1N1RINF9neHNnYWtEVWpjblRwNWI1aWZqMlpGNVVj?oc=5",
+      "published_at": "2026-08-31T10:51:12Z",
+      "tier": 3,
+      "weight": 3.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.0,
+      "kind_label_es": "Tráfico reducido",
+      "kind_label_en": "Reduced traffic"
+    },
+    {
       "kind": "RISK_SEVERE",
-      "title": "US strikes Iranian launchers in strait of Hormuz, sparking reprisal attack on airbases in Jordan and UAE - The Guardian",
+      "title": "First US military attacks on Iran in a month prompt retaliation - The Guardian",
       "source": "The Guardian",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPTm1OakU0ZTQxTmQ0YkVOWWVoMHZJQmJSQkhiV3ZTMXJ6TWNRZzYzblpoYnh2cUFCVTUzdkNRQUhBamhWY0I2MzFZZHBxWlpObmVyd3VXZkt4Y1FCNWVfZmR0U3VuRU16ODB3S1NJcHI4SHdhM1RwbnZnRkNSejdzZTB3N3FKM3ZEZmU0cGhfUHhoZFZPQ3E0cG1pelZlVFlpc05CQTZLdGdhV2ZYOXF3X2I5MmhLa21jS2t5SVVB?oc=5",
       "published_at": "2026-08-30T21:05:00Z",
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 99,
+    "signals_considered": 108,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
