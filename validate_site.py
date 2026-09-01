@@ -41,7 +41,7 @@ from maintenance_common import (
 SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 XHTML_NS = "http://www.w3.org/1999/xhtml"
 ATOM_NS = "http://www.w3.org/2005/Atom"
-EXCLUDED_DIRS = {".git", ".github", "node_modules", "tests", "test", "vendor", "tmp"}
+EXCLUDED_DIRS = {".git", ".github", "node_modules", "tests", "test", "vendor", "tmp", "_site"}
 PUBLIC_EXCLUDED = {"404.html", "panel-x.html", "offline.html", "preview.html", "test.html"}
 BAD_SELECTOR = ".status-hero.is-loading .status-dot,status-hero.is-loading .status-word"
 SECRET_PATTERNS = (

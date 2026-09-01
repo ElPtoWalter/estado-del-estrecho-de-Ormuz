@@ -17,6 +17,15 @@
     code.textContent = `<iframe src="${src}" title="${selectedLang === 'en' ? 'Live Strait of Hormuz status' : 'Estado en directo del estrecho de Ormuz'}" width="100%" height="${height}" loading="lazy" style="border:0;border-radius:20px;overflow:hidden" referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
   };
   form.addEventListener('change', update);
-  document.querySelector('[data-copy-embed]')?.addEventListener('click', async (e) => { await navigator.clipboard.writeText(code.textContent); e.currentTarget.textContent = lang === 'en' ? 'Copied' : 'Copiado'; setTimeout(()=>e.currentTarget.textContent = lang === 'en' ? 'Copy code' : 'Copiar código',1400); });
+  document.querySelector('[data-copy-embed]')?.addEventListener('click', async (e) => {
+    const button = e.currentTarget;
+    try {
+      await navigator.clipboard.writeText(code.textContent);
+      button.textContent = lang === 'en' ? 'Copied' : 'Copiado';
+    } catch {
+      button.textContent = lang === 'en' ? 'Select and copy the code below' : 'Selecciona y copia el código de abajo';
+    }
+    setTimeout(() => { button.textContent = lang === 'en' ? 'Copy code' : 'Copiar código'; }, 3000);
+  });
   update();
 })();

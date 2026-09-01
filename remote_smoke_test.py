@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prueba remota con cache-busting y reintentos tras el push de GitHub Pages."""
+"""Check public HTML after deployment, never unpublished internal endpoints."""
 from __future__ import annotations
 
 import argparse
@@ -12,7 +12,6 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
 BASE = "https://estrechoormuz.com/"
-REQUIRED_STATUS = {"status", "operational_status", "confidence", "checked_at", "verification_ok", "stale"}
 
 
 def fetch(path: str, token: str, timeout: int) -> tuple[bytes, str]:
@@ -30,26 +29,23 @@ def one_attempt(timeout: int) -> list[str]:
     token = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S%f")
     errors: list[str] = []
     try:
-        raw, _ = fetch("status.json", token, timeout)
-        payload = json.loads(raw.decode("utf-8-sig"))
-        missing = REQUIRED_STATUS - set(payload) if isinstance(payload, dict) else REQUIRED_STATUS
-        if missing:
-            errors.append(f"status.json carece de: {', '.join(sorted(missing))}")
-    except Exception as exc:
-        errors.append(f"status.json: {exc}")
-    try:
         raw, _ = fetch("sitemap.xml", token, timeout)
         root = ET.fromstring(raw)
         if not root.tag.endswith("urlset"):
             errors.append("sitemap.xml no tiene raíz urlset")
     except Exception as exc:
         errors.append(f"sitemap.xml: {exc}")
-    for page in ("evidencias.html", "historial.html"):
+    for page in ("index.html", "evidencias.html", "en-evidence.html", "historial.html", "parte-diario.html", "diario.html"):
         try:
             raw, _ = fetch(page, token, timeout)
             text = raw.decode("utf-8", errors="replace").lower()
             if "<html" not in text or "</html>" not in text:
                 errors.append(f"{page}: respuesta HTML incompleta")
+            if page in {"evidencias.html", "en-evidence.html"}:
+                if 'data-archive-empty' not in text or 'archive-loading' in text:
+                    errors.append(f"{page}: archivo público no preparado")
+            if '/public-ui.min.js' not in text:
+                errors.append(f"{page}: faltan interacciones públicas")
         except Exception as exc:
             errors.append(f"{page}: {exc}")
     return errors

@@ -37,7 +37,11 @@ jobs:
           python-version: "3.12"
 
       - name: Construir superficie pública
-        run: python build_public_site.py
+        run: |
+          python -m unittest -v test_public_build.py
+          node --test test_public_ui.cjs
+          python build_public_site.py
+          python check_public_links.py _site
 
       - name: Comprobar que no se publica código ni datos internos
         run: |
@@ -70,3 +74,9 @@ jobs:
       - name: Publicar
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Descargar herramientas de comprobación
+        uses: actions/checkout@v6
+
+      - name: Verificar las páginas ya publicadas
+        run: python remote_smoke_test.py --attempts 3 --delay 10 --timeout 10

@@ -150,7 +150,10 @@ def human_date(value: Any, lang: str) -> str:
         return "—"
     return dt.strftime("%d/%m/%Y · %H:%M UTC" if lang == "es" else "%Y-%m-%d · %H:%M UTC")
 
-def lang_for(filename: str) -> str:
+def lang_for(filename: str, document: str = "") -> str:
+    language = re.search(r'<html\b[^>]*\blang=["\']([^"\']+)', document, re.I)
+    if language:
+        return "en" if language.group(1).lower().startswith("en") else "es"
     return "en" if filename == "en.html" or filename.startswith("en-") else "es"
 
 def _replace_inner_html(document: str, opening_pattern: re.Pattern[str], content: str) -> str:
@@ -188,6 +191,65 @@ def replace_data_attr_content(document: str, attr: str, content: str) -> str:
         re.I | re.S,
     )
     return _replace_inner_html(document, opening, content)
+
+
+def set_element_attrs(document: str, element_id: str, **attrs: str) -> str:
+    pattern = re.compile(rf'<[A-Za-z0-9]+\b[^>]*\bid=["\']{re.escape(element_id)}["\'][^>]*>', re.I)
+    def patch(match):
+        tag = match.group(0)
+        for key, value in attrs.items():
+            key = key.replace("_", "-")
+            tag = re.sub(rf'\s+{re.escape(key)}(?:=["\'][^"\']*["\'])?(?=\s|>)', "", tag, flags=re.I)
+            tag = tag[:-1] + f' {key}="{html.escape(str(value), quote=True)}">'
+        return tag
+    return pattern.sub(patch, document, count=1)
+
+
+def archive_items(status: dict[str, Any]) -> list[dict[str, Any]]:
+    items, seen = [], set()
+    for item in (status.get("evidence_archive") or []) + (status.get("evidence") or []):
+        if not isinstance(item, dict) or not item.get("title"):
+            continue
+        key = tuple(str(item.get(k) or "").strip().casefold() for k in ("source_name", "title", "source_url"))
+        if key in seen:
+            continue
+        seen.add(key)
+        items.append(item)
+    return sorted(items, key=lambda x: str(x.get("published_at") or x.get("observed_at") or ""), reverse=True)
+
+
+def render_archive(document: str, status: dict[str, Any], lang: str) -> str:
+    if 'id="archiveList"' not in document:
+        return document
+    items = archive_items(status)
+    sources = sorted({str(x.get("source_name") or "—") for x in items}, key=str.casefold)
+    cards = []
+    for item in items:
+        source = str(item.get("source_name") or "—")
+        url = str(item.get("source_url") or "")
+        title = esc(item.get("title"))
+        link = f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer nofollow">{title}</a>' if url.startswith(("https://", "http://")) else title
+        cards.append(
+            f'<article class="archive-item" data-archive-item data-source="{esc(source)}">'
+            f'<div class="archive-date"><span>{"Publicada" if lang == "es" else "Published"}</span>'
+            f'<strong>{esc(human_date(item.get("published_at") or item.get("observed_at"), lang))}</strong></div>'
+            f'<div class="archive-item-main"><div class="archive-badges"><span class="archive-badge">{esc(item.get("signal"))}</span></div>'
+            f'<h2>{link}</h2><p class="archive-item-source">{esc(source)}</p></div></article>'
+        )
+    empty = "No hay evidencias que coincidan con estos filtros." if lang == "es" else "No evidence matches these filters."
+    document = replace_element(document, "archiveList", "".join(cards) + f'<p class="archive-empty" data-archive-empty{ " hidden" if items else ""}>{empty}</p>')
+    document = set_element_attrs(document, "archiveList", **{"class": "archive-list"})
+    options = '<option value="all">' + ("Todas las fuentes" if lang == "es" else "All sources") + '</option>'
+    options += "".join(f'<option value="{esc(source)}">{esc(source)}</option>' for source in sources)
+    document = replace_element(document, "archiveSource", options)
+    for key, value in {
+        "archiveMetricChecked": human_date(status.get("checked_at"), lang),
+        "archiveMetricDays": str((status.get("diagnostics") or {}).get("evidence_archive_days", 14)) + (" días" if lang == "es" else " days"),
+        "archiveMetricCount": len(items), "archiveMetricSources": len(sources),
+        "archiveSummary": f'{len(items)} ' + ("resultados" if lang == "es" else "results"),
+    }.items():
+        document = replace_element(document, key, html.escape(str(value)))
+    return document
 
 def set_status_hero_class(document: str, family: str) -> str:
     state_class = {
@@ -295,7 +357,7 @@ def render_history(history: Any, lang: str, limit: int) -> str:
     )
 
 def prerender(document: str, filename: str) -> str:
-    lang = lang_for(filename)
+    lang = lang_for(filename, document)
     status = load_json("status.json", {})
     history = load_json("history.json", [])
     brief = load_json("daily-brief.json", {})
@@ -330,9 +392,29 @@ def prerender(document: str, filename: str) -> str:
     document = replace_element(document, "evidenceArchive", render_evidence(status, lang, 20))
     document = replace_element(document, "recentHistory", render_history(history, lang, 3))
     document = replace_element(document, "historyTimeline", render_history(history, lang, 50))
+    document = render_archive(document, status, lang)
+
+    diagnostics = status.get("diagnostics") or {}
+    counts = (diagnostics.get("independent_sources") or {}).values()
+    verified = status.get("verification_ok") is True
+    stale = bool(status.get("stale"))
+    system = (("Comprobación incompleta" if lang == "es" else "Incomplete verification") if not verified else
+              ("Datos pendientes de actualización" if lang == "es" else "Data awaiting update") if stale else
+              ("Seguimiento activo" if lang == "es" else "Monitoring active"))
+    for key, value in {
+        "verificationProviders": len(diagnostics.get("providers_ok") or []),
+        "verificationSources": max((int(x) for x in counts if isinstance(x, (int, float))), default=0),
+        "verificationSignals": diagnostics.get("signals_considered", "—"),
+        "verificationFreshness": human_date(status.get("checked_at"), lang),
+        "systemStatus": system,
+    }.items():
+        document = replace_element(document, key, html.escape(str(value)))
+    document = set_element_attrs(document, "systemStatus", **{"class": "system-status " + ("is-error" if not verified else "is-warning" if stale else "is-operational")})
+    document = set_element_attrs(document, "verificationFreshness", data_checked_at=str(status.get("checked_at") or ""))
 
     if isinstance(history, list):
         document = replace_element(document, "historyEventCount", str(len(history)))
+        document = replace_element(document, "historyCount", str(len(history)))
         if history:
             document = replace_element(document, "historyLastChange", esc(human_date(history[0].get("at"), lang)))
     document = replace_element(document, "historyCurrentStatus", esc(label))
@@ -346,6 +428,7 @@ def prerender(document: str, filename: str) -> str:
             "briefSummary": brief.get(f"summary_{suffix}") or summary,
             "briefGenerated": human_date(brief.get("generated_at"), lang),
             "briefChange": brief.get(f"change_{suffix}") or "",
+            "briefConfidence": (brief.get("confidence_label") or {}).get(lang) or brief.get("confidence") or "—",
         }.items():
             document = replace_element(document, element_id, esc(value, ""))
         document = replace_element(
@@ -357,6 +440,15 @@ def prerender(document: str, filename: str) -> str:
             document, "briefWatch",
             "".join(f"<li>{esc(item)}</li>" for item in (brief.get(f"watchlist_{suffix}") or [])),
         )
+        archive = load_json("daily-brief-archive.json", [])
+        if isinstance(archive, dict):
+            archive = archive.get("items") or []
+        document = replace_element(document, "briefArchive", "".join(
+            f'<article><time>{esc(item.get("date"))}</time><h3>{esc(item.get(f"operational_label_{suffix}"))}</h3><p>{esc(item.get(f"summary_{suffix}"))}</p></article>'
+            for item in archive[:6] if isinstance(item, dict)
+        ))
+        if brief:
+            document = set_element_attrs(document, "briefLoading", hidden="hidden")
 
     if filename in {"widget.html", "en-widget.html"}:
         document = replace_data_attr_content(document, "data-state", esc(label))
@@ -590,7 +682,7 @@ def strip_adsense(document: str, filename: str) -> str:
     return ADSENSE_SCRIPT_RE.sub("\n", ADSENSE_BLOCK_RE.sub("\n", document))
 
 def sanitize_html(document: str, filename: str) -> str:
-    lang = lang_for(filename)
+    lang = lang_for(filename, document)
     document = prerender(document, filename)
     document = strip_private_scripts(document)
     document = remove_private_links(document)
@@ -632,7 +724,7 @@ def sanitize_html(document: str, filename: str) -> str:
         if main:
             document = document[:main.end()] + "\n<!-- PROFESSIONAL_EDITORIAL_SIGNATURE_V9 -->\n" + signature + document[main.end():]
 
-    if filename != "404.html" and "/public-ui.min.js" not in document:
+    if "/public-ui.min.js" not in document:
         document = re.sub(
             r"</body>", '<script defer src="/public-ui.min.js"></script>\n</body>',
             document, count=1, flags=re.I,
@@ -649,6 +741,8 @@ PUBLIC_UI = r'''(()=>{"use strict";document.addEventListener("click",e=>{const b
 PUBLIC_WIDGET = r'''(()=>{"use strict";const p=new URLSearchParams(location.search),b=document.body,w=document.querySelector("[data-g4-widget]");if(p.get("theme")==="light"){b.classList.add("g4-widget-light");w&&w.classList.add("is-light")}if(p.get("compact")==="1"){b.classList.add("g4-widget-compact");w&&w.classList.add("is-compact")}const lang=document.documentElement.lang==="en"?"en":"es";const c=document.querySelector("[data-confidence-label]"),u=document.querySelector("[data-updated-label]"),v=document.querySelector("[data-view]");if(c)c.textContent=lang==="en"?"Confidence":"Confianza";if(u)u.textContent=lang==="en"?"Updated":"Actualizado";if(v){v.textContent=lang==="en"?"View evidence →":"Ver evidencias →";v.href=lang==="en"?"/en-evidence.html":"/evidencias.html"}})();'''
 
 PUBLIC_CSS = r'''
+[data-archive-item][hidden],[data-archive-empty][hidden],#briefLoading[hidden]{display:none!important}
+.copy-feedback{display:block;margin-top:.5rem;font-size:.85rem;color:var(--muted)}
 .editorial-signature-v9{display:flex;flex-wrap:wrap;gap:.45rem 1rem;align-items:center;margin:0 auto 1.4rem;max-width:1180px;padding:.85rem 1rem;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);font-size:.82rem}
 .editorial-signature-v9 span,.editorial-signature-v9 small{color:var(--muted)}
 .editorial-signature-v9 strong{font-size:.88rem}
@@ -818,7 +912,7 @@ def main() -> int:
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(path, target)
 
-    (OUT / "public-ui.min.js").write_text(PUBLIC_UI, encoding="utf-8")
+    (OUT / "public-ui.min.js").write_text((ROOT / "public-ui.js").read_text(encoding="utf-8"), encoding="utf-8")
     (OUT / "public-widget.min.js").write_text(PUBLIC_WIDGET, encoding="utf-8")
     (OUT / "professional-v9.css").write_text(PUBLIC_CSS.strip() + "\n", encoding="utf-8")
     (OUT / "_headers").write_text(HEADERS.strip() + "\n", encoding="utf-8")
