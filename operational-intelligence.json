@@ -1,48 +1,48 @@
 {
   "version": 7,
-  "generated_at": "2026-09-01T17:26:02Z",
+  "generated_at": "2026-09-01T20:07:40Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
   "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
   "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
   "operational_label_en": "Physical passage exists, but flows are severely degraded",
-  "confidence": "ALTA",
+  "confidence": "MEDIA",
   "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
   "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
-    "access": "RESTRICTED",
+    "access": "SELECTIVE",
     "risk": "EXTREME",
     "legal": "DISPUTED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
-    "access": "Restringido",
+    "access": "Selectivo / condicionado",
     "risk": "Extremo",
     "legal": "Régimen disputado"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
-    "access": "Restricted",
+    "access": "Selective / conditional",
     "risk": "Extreme",
     "legal": "Disputed regime"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 17.68,
+    "passage": 16.068,
     "closure": 0,
-    "traffic_reduction": 1.9,
-    "access_restriction": 4.0,
-    "risk": 116.22
+    "traffic_reduction": 0.62,
+    "access_restriction": 8.48,
+    "risk": 127.4
   },
   "source_counts": {
-    "passage": 14,
+    "passage": 13,
     "closure": 0,
-    "primary_sources": 3
+    "primary_sources": 2
   },
   "latest_confirmed_transit_at": "2026-09-01T12:06:54Z",
   "legacy_engine": {
@@ -51,21 +51,6 @@
     "confidence": "ALTA"
   },
   "evidence": [
-    {
-      "kind": "RISK_SEVERE",
-      "title": "US launches new Iran strikes after attacks in Strait of Hormuz - WMAR 2 News Baltimore",
-      "source": "WMAR 2 News Baltimore",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNngwaVV0TFRzRnFVTXZBVmNhaE4wSlBBZXdMRTNSZnBIQlM2RnpnYjdCR0hVY1hzZkx3elFWaGVoeXR4bFhNQ0g2encyT1RYdm5xSjd4Yld6eVB0aGdVSmg1d24wYTdOVTdCYlV2b2RnZXBobGxNWkdQZWpfc3NkY3Zhd0t3aUpVdUpBaWo5aDBvdmhJWHdsZWxqeDA2djVNUzVybE4tWGo?oc=5",
-      "published_at": "2026-09-01T16:46:09Z",
-      "tier": 5,
-      "weight": 5.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 5.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
     {
       "kind": "ACCESS_RESTRICTED",
       "title": "Blockade succeeds where sanctions failed as Iran oil exports stall - Reuters",
@@ -98,6 +83,21 @@
     },
     {
       "kind": "RISK_SEVERE",
+      "title": "Oil settles up by more than 2.5% as US and Iran resume military attacks - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQSGRJUGVDenVxZzdzdXZ4aTJudWV6LS1adkVVMmVUNnc1QnMyNVNsLThHcG44U2p6SWoxYm9LbjJnUGdkZDAzTENhSDR2OW90cWV2aDJNZWpKRllRNUhselE2djRhQlI3ejVmUUl6cFNnVDN1UmU4QXVadDNmQloya3daeWVHSmtGNDh4QWktSk1fenV3czlkbnhwNjJ3VzNXWEhZelFCRTIzaWpR?oc=5",
+      "published_at": "2026-08-31T23:16:53Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
       "title": "Tanker struck by projectile in Strait of Hormuz as Iran claims mine attack on VLCC - Lloyd's List",
       "source": "Lloyd's List",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPcHd4Y29xc1p1bjlkZ25wWmQ0OExIMklXeDR5YVgwYkwxd1BIQ3RTSUYzNExnU2xGRHNlM0d3VVBqT3ctS242RVhmTnZYRWJ2VjBfSjllZ1BWV0VJa3FGYmh6cWh0aVV3VlB1TEoxSXFEUjFhRm9jVWlvMnd4eWxBa2l3OVlOU0xtV0RVY1pTRTIwUmNTMXo1eDgxaXgwT0lBbTk3bjBucVQ3Z2dyTmc?oc=5",
@@ -113,25 +113,10 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Oil settles up by more than 2.5% as US and Iran resume military attacks - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQSGRJUGVDenVxZzdzdXZ4aTJudWV6LS1adkVVMmVUNnc1QnMyNVNsLThHcG44U2p6SWoxYm9LbjJnUGdkZDAzTENhSDR2OW90cWV2aDJNZWpKRllRNUhselE2djRhQlI3ejVmUUl6cFNnVDN1UmU4QXVadDNmQloya3daeWVHSmtGNDh4QWktSk1fenV3czlkbnhwNjJ3VzNXWEhZelFCRTIzaWpR?oc=5",
-      "published_at": "2026-08-30T22:12:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.6,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-01T17:26:02Z",
+      "published_at": "2026-09-01T20:07:40Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -143,13 +128,28 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "US and Iran trade strikes after first known US attack in weeks - bbc.com",
+      "title": "US launches strikes on Iran following 'attempted attacks in Strait' - BBC",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFByamU5TjBFcHB1R2ZhQ0UtQ2pKTHY1Y09IQ045YlRBNEtMUjV3MVJISGdMZ0dLZ0lzTkR3QTRNdGo2ZDBSVFdObXhySXBvNVYyeDBHLXptQXBxUQ?oc=5",
+      "published_at": "2026-09-01T17:35:14Z",
+      "tier": 3,
+      "weight": 3.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "US and Iran trade strikes after first known US attack in weeks - BBC",
       "source": "BBC",
       "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wR1VYOXlxY0JNeElMalZOaEw0VDcycU9GeDBFLUdEQ2x4NjRuSjQzd0drUUtfVDRIR2hzenZjY2lRU2ZvbzVUeWVzYUQxc2QwcS1pWW5HX2EzUQ?oc=5",
       "published_at": "2026-08-31T13:47:30Z",
       "tier": 3,
       "weight": 3.0,
-      "provider": "legacy-engine",
+      "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 2.7,
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 114,
+    "signals_considered": 129,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
