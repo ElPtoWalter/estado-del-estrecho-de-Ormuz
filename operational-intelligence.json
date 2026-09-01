@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-01T20:07:40Z",
+  "generated_at": "2026-09-01T22:46:43Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -13,34 +13,34 @@
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
-    "access": "SELECTIVE",
+    "access": "RESTRICTED",
     "risk": "EXTREME",
-    "legal": "DISPUTED"
+    "legal": "OPEN_LEGAL"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
-    "access": "Selectivo / condicionado",
+    "access": "Restringido",
     "risk": "Extremo",
-    "legal": "Régimen disputado"
+    "legal": "Sin cierre formal reconocido"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
-    "access": "Selective / conditional",
+    "access": "Restricted",
     "risk": "Extreme",
-    "legal": "Disputed regime"
+    "legal": "No recognised formal closure"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 16.068,
+    "passage": 14.898,
     "closure": 0,
-    "traffic_reduction": 0.62,
-    "access_restriction": 8.48,
-    "risk": 127.4
+    "traffic_reduction": 1.52,
+    "access_restriction": 2.0,
+    "risk": 126.56
   },
   "source_counts": {
-    "passage": 13,
+    "passage": 12,
     "closure": 0,
     "primary_sources": 2
   },
@@ -51,21 +51,6 @@
     "confidence": "ALTA"
   },
   "evidence": [
-    {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "Blockade succeeds where sanctions failed as Iran oil exports stall - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaWZjU0g0TmRIVUt5RlNtTUIxLVBDZmJlS2ljODlldVpZSW9rVm1WeHJOcnU0ZHFOMTB0QlhoR1FXV1d0Q2N6MC1aek9NLWN5QmxvYmpCQjZmUGtqRkpZUmx6Qk42YkIxZzQzR3pnU3Q3eE5BZjdadVI5UThGSUZrZ0RSS0hlUjJSNmhEN3RUcWRQZzJHaUtrOWtLZUthRkxDenNDWVZ0Wk5RSTRsYjJhQjJTTkgxQQ?oc=5",
-      "published_at": "2026-09-01T13:10:16Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 4.0,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
-    },
     {
       "kind": "RISK_ELEVATED",
       "title": "Hormuz crisis exposes shortcomings in war risk clauses amid unprecedented conflict - Lloyd's List",
@@ -116,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-01T20:07:40Z",
+      "published_at": "2026-09-01T22:46:43Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -128,31 +113,16 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "US launches strikes on Iran following 'attempted attacks in Strait' - BBC",
-      "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFByamU5TjBFcHB1R2ZhQ0UtQ2pKTHY1Y09IQ045YlRBNEtMUjV3MVJISGdMZ0dLZ0lzTkR3QTRNdGo2ZDBSVFdObXhySXBvNVYyeDBHLXptQXBxUQ?oc=5",
+      "title": "US launches strikes on Iran following 'attempted attacks in Strait' - bbc.co.uk",
+      "source": "bbc.co.uk",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9lc2h4WjRYM2FvWHJYRmR2b1hLYU13Y0o0MFBxRmJZQlByUDc2Z0hJMklSYjh1Z2VlSEE0ZzlfRnJGNXRUaUFELWxvVjJQQzVsWUNla1dQc2R5TWJT?oc=5",
       "published_at": "2026-09-01T17:35:14Z",
-      "tier": 3,
-      "weight": 3.0,
-      "provider": "legacy-engine",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "US and Iran trade strikes after first known US attack in weeks - BBC",
-      "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wR1VYOXlxY0JNeElMalZOaEw0VDcycU9GeDBFLUdEQ2x4NjRuSjQzd0drUUtfVDRIR2hzenZjY2lRU2ZvbzVUeWVzYUQxc2QwcS1pWW5HX2EzUQ?oc=5",
-      "published_at": "2026-08-31T13:47:30Z",
       "tier": 3,
       "weight": 3.0,
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 2.7,
+      "effective_weight": 3.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -167,7 +137,37 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 2.7,
+      "effective_weight": 2.34,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Oil prices jump as US, Iranian attacks stoke fears of escalation - Al Jazeera",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTzBVakF1VXpKSWdkbXZsNXJOYS0wRnV2bWstenBpNnhlNXBzTVVxVEFPUW5HeS14Rjh6UnM3b0RpWG5NWjdWdW5NdWNHdlJLV3psWHlhOVd2Y1FySF9MRlVmRGZab3RTcTd5Rmt2QkFONEVFWmJHVmZzMGxid2g0MjR0UzJXdmRZcVdEaGhlT1Z5RTAyT1VFVndXWU52ZGNlRENGaHNBVXF1YzTSAbABQVVfeXFMT2dkcDBqS3R3WmtGZmhqcl9RTzNSc0xObFNYam1fQTllaFdkamxnZnZ2OW11SXc3d1hNWER5WGxQclV4aDhYbnZxNE5tRGNWQllxQ3F0eXViSmZoTFNwamJTLXQ4cUxXS0tldkc1ODE0NGZMXzRFbFBfYkhSdFMtMnZfVkIySkRVMlBtLUxhaEpMZ2NxZUFRUEtMTFRlWDFjY25FaWtqMDNVT25hSWpJZ0E?oc=5",
+      "published_at": "2026-09-01T09:32:51Z",
+      "tier": 2,
+      "weight": 2.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Sinokor tanker struck three times in Strait of Hormuz - Seatrade Maritime News",
+      "source": "Seatrade Maritime News",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQ1VFZnBQMk1pRTBUSlVHd0l6M0pBblFIcTVXTUZXWDlLenZBQ2xRUzFreS13Y1Rra2o3NzE1dEhzZ1NYTHdQWVpnV2Rza3JCQm5WMHBlTmlTcHFZYndNNS0xLXRKZXViSFBxdXljaDBEWklXUmlWM0RCYmtheVBhQ3UwbmdwOEpuLXhlQ1pHMkljZw?oc=5",
+      "published_at": "2026-09-01T06:29:47Z",
+      "tier": 2,
+      "weight": 2.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     }
