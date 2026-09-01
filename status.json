@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-08-31T21:01:10Z",
-  "last_success_at": "2026-08-31T21:01:10Z",
+  "checked_at": "2026-09-01T00:45:38Z",
+  "last_success_at": "2026-09-01T00:45:38Z",
   "last_change_at": "2026-08-29T21:54:29Z",
   "verification_ok": true,
   "stale": false,
@@ -16,23 +16,13 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "US Strikes Iranian Rocket Launchers in First Attack in Weeks - Bloomberg.com",
-      "source_name": "Bloomberg",
-      "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPb2JpRHFuQ2xrR0xDTEhWbkxobGJxRktFR1RQMThiY3hvZzdNb24wWmdFUUZSVzVwS3k3akFpbEk5Mzg0ak9Vem9TVDE3Ti1naEFIR1JDWXloaDJWb1NrZ2FRRkYxaXAwdnZYb1FVOEhpYlluNmZES01oMWJRVUExYWdSZEk1dVdIY1VHYTFDaGw5M081NXNSaHgxeHpKMTdkaW9HOVYxdHR4SXB0MV9EQQ?oc=5",
-      "published_at": "2026-08-31T20:02:55Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-08-31T21:01:10Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US strikes Iranian rocket launchers on the Strait of Hormuz in first military action in weeks - apnews.com",
+      "title": "US strikes Iranian rocket launchers on the Strait of Hormuz in first military action in weeks - AP News",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVGpkelhtWHpKQXVxRDdydU9CekxJS2FnYzFHcklqek5leUhjLUMwdGlJN2dIYzlrbG12UGY2QTNjd2ZMeW1IckUwYi14R0xabVpreXI4LUhLYnc3cHFWbG5ZWnp4bXJTdVdqWVRsbEJFNzFkcW41U3FEU3UycTVFcVlvUVZRVktJanBMWGl0d3otT2RLdnB0ZXUxR0xHMXM5?oc=5",
       "published_at": "2026-08-31T01:38:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-08-31T21:01:10Z"
+      "observed_at": "2026-09-01T00:45:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,17 +32,17 @@
       "published_at": "2026-08-30T17:38:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-31T21:01:10Z"
+      "observed_at": "2026-09-01T00:45:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "US and Iran trade strikes for first time in weeks - BBC",
+      "title": "US and Iran trade strikes after first known US attack in weeks - BBC",
       "source_name": "BBC",
       "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wR1VYOXlxY0JNeElMalZOaEw0VDcycU9GeDBFLUdEQ2x4NjRuSjQzd0drUUtfVDRIR2hzenZjY2lRU2ZvbzVUeWVzYUQxc2QwcS1pWW5HX2EzUQ?oc=5",
       "published_at": "2026-08-31T13:47:30Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-08-31T21:01:10Z"
+      "observed_at": "2026-09-01T00:45:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,7 +52,7 @@
       "published_at": "2026-08-31T13:03:55Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-31T21:01:10Z"
+      "observed_at": "2026-09-01T00:45:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -72,40 +62,39 @@
       "published_at": "2026-08-31T03:52:42Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-31T21:01:10Z"
+      "observed_at": "2026-09-01T00:45:38Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: URLError: <urlopen error timed out>"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 16.145
+      "risk": 12.615
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 6
+      "risk": 5
     },
-    "articles_considered": 32,
-    "signals_considered": 12,
-    "current_cycle_evidence": 6,
+    "articles_considered": 35,
+    "signals_considered": 11,
+    "current_cycle_evidence": 5,
     "evidence_display_mode": "current",
     "evidence_archive_size": 59,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-08-31T20:02:55Z",
-    "current_cycle_count": 6,
+    "as_of": "2026-08-31T13:47:30Z",
+    "current_cycle_count": 5,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -124,6 +113,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "US and Iran trade strikes after first known US attack in weeks - BBC",
+      "source_name": "BBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wR1VYOXlxY0JNeElMalZOaEw0VDcycU9GeDBFLUdEQ2x4NjRuSjQzd0drUUtfVDRIR2hzenZjY2lRU2ZvbzVUeWVzYUQxc2QwcS1pWW5HX2EzUQ?oc=5",
+      "published_at": "2026-08-31T13:47:30Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-09-01T00:45:38Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "US and Iran trade strikes for first time in weeks - BBC",
       "source_name": "BBC",
       "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wR1VYOXlxY0JNeElMalZOaEw0VDcycU9GeDBFLUdEQ2x4NjRuSjQzd0drUUtfVDRIR2hzenZjY2lRU2ZvbzVUeWVzYUQxc2QwcS1pWW5HX2EzUQ?oc=5",
@@ -134,23 +133,13 @@
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "US and Iran trade strikes after first known US attack in weeks - BBC",
-      "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wR1VYOXlxY0JNeElMalZOaEw0VDcycU9GeDBFLUdEQ2x4NjRuSjQzd0drUUtfVDRIR2hzenZjY2lRU2ZvbzVUeWVzYUQxc2QwcS1pWW5HX2EzUQ?oc=5",
-      "published_at": "2026-08-31T13:47:30Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-08-31T15:19:08Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
       "title": "Can Iran use rockets to mine the Strait of Hormuz, as US claims? - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOdVp4TUZwdzl1RkRLWjNXR19ad1FWRWZ6by1YMUxNck1XX3R0MDB5OUc0cDE0SmszaUdRS0VWaDJVaDEzXzlqQzl2WkNoODZJeWRTTXVBM3dmbmZSekFrNTZ4VUZ1X3FHSGV6WW9xaGNTTnViUGxGYWs3dnQ1bHV4U1lfYlptOHIyWERKNE1DS09EaFYwc0tpOUlJUVNzdEZQbXBYUzZn0gGrAUFVX3lxTE9CMkdLYTRQNkJadk55dXBSRnFGLVZDWHNQNm8wcF9mc1FONHZzUnVVbnVwYTRDRnRIejFMUEVKWkQ1SmhwbGptRC1HY3djYW1JQ1VRMTlseTJ4TnJyOVMxOFBFTUJ0VGVBVWdsajRMcXdxUFlDTVl4LTMxNmM5bkhzVzZfdlRpUUZjME96aF9wWUFLcHBFSEFNdnBqVFhaOUJXakx2ZUZVYkpmRQ?oc=5",
       "published_at": "2026-08-31T13:03:55Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-31T21:01:10Z"
+      "observed_at": "2026-09-01T00:45:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -190,7 +179,17 @@
       "published_at": "2026-08-31T03:52:42Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-31T21:01:10Z"
+      "observed_at": "2026-09-01T00:45:38Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "US strikes Iranian rocket launchers on the Strait of Hormuz in first military action in weeks - AP News",
+      "source_name": "Associated Press",
+      "source_url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVGpkelhtWHpKQXVxRDdydU9CekxJS2FnYzFHcklqek5leUhjLUMwdGlJN2dIYzlrbG12UGY2QTNjd2ZMeW1IckUwYi14R0xabVpreXI4LUhLYnc3cHFWbG5ZWnp4bXJTdVdqWVRsbEJFNzFkcW41U3FEU3UycTVFcVlvUVZRVktJanBMWGl0d3otT2RLdnB0ZXUxR0xHMXM5?oc=5",
+      "published_at": "2026-08-31T01:38:00Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-09-01T00:45:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -201,16 +200,6 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-08-31T21:01:10Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US strikes Iranian rocket launchers on the Strait of Hormuz in first military action in weeks - AP News",
-      "source_name": "Associated Press",
-      "source_url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVGpkelhtWHpKQXVxRDdydU9CekxJS2FnYzFHcklqek5leUhjLUMwdGlJN2dIYzlrbG12UGY2QTNjd2ZMeW1IckUwYi14R0xabVpreXI4LUhLYnc3cHFWbG5ZWnp4bXJTdVdqWVRsbEJFNzFkcW41U3FEU3UycTVFcVlvUVZRVktJanBMWGl0d3otT2RLdnB0ZXUxR0xHMXM5?oc=5",
-      "published_at": "2026-08-31T01:38:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-08-31T15:19:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -310,7 +299,7 @@
       "published_at": "2026-08-30T17:38:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-31T21:01:10Z"
+      "observed_at": "2026-09-01T00:45:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -320,7 +309,7 @@
       "published_at": "2026-08-30T17:38:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-08-31T15:19:08Z"
+      "observed_at": "2026-08-31T21:01:10Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -705,7 +694,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-08-31T21:02:52Z",
+    "generated_at": "2026-09-01T00:46:40Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -738,18 +727,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 10.946,
+      "passage": 12.116,
       "closure": 0,
-      "traffic_reduction": 5.4,
-      "access_restriction": 3.72,
-      "risk": 94.76
+      "traffic_reduction": 7.24,
+      "access_restriction": 3.1,
+      "risk": 98.46
     },
     "source_counts": {
       "passage": 9,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-08-31T14:25:48Z",
+    "latest_confirmed_transit_at": "2026-08-31T23:39:32Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -782,7 +771,7 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 4.0,
+        "effective_weight": 3.6,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -791,7 +780,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-08-31T21:02:52Z",
+        "published_at": "2026-09-01T00:46:40Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -803,10 +792,10 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "US Strikes Iranian Rocket Launchers in First Attack in Weeks - Bloomberg.com",
-        "source": "Bloomberg",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPb2JpRHFuQ2xrR0xDTEhWbkxobGJxRktFR1RQMThiY3hvZzdNb24wWmdFUUZSVzVwS3k3akFpbEk5Mzg0ak9Vem9TVDE3Ti1naEFIR1JDWXloaDJWb1NrZ2FRRkYxaXAwdnZYb1FVOEhpYlluNmZES01oMWJRVUExYWdSZEk1dVdIY1VHYTFDaGw5M081NXNSaHgxeHpKMTdkaW9HOVYxdHR4SXB0MV9EQQ?oc=5",
-        "published_at": "2026-08-31T20:02:55Z",
+        "title": "US and Iran trade strikes after first known US attack in weeks - BBC",
+        "source": "BBC",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wR1VYOXlxY0JNeElMalZOaEw0VDcycU9GeDBFLUdEQ2x4NjRuSjQzd0drUUtfVDRIR2hzenZjY2lRU2ZvbzVUeWVzYUQxc2QwcS1pWW5HX2EzUQ?oc=5",
+        "published_at": "2026-08-31T13:47:30Z",
         "tier": 3,
         "weight": 3.0,
         "provider": "legacy-engine",
@@ -827,7 +816,7 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.0,
+        "effective_weight": 2.7,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -878,7 +867,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 101,
+      "signals_considered": 108,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
