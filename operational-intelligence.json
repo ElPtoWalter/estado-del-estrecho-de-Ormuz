@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-01T06:44:14Z",
+  "generated_at": "2026-09-01T12:44:07Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -15,42 +15,57 @@
     "traffic": "REDUCED",
     "access": "RESTRICTED",
     "risk": "EXTREME",
-    "legal": "DISPUTED"
+    "legal": "OPEN_LEGAL"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
     "access": "Restringido",
     "risk": "Extremo",
-    "legal": "Régimen disputado"
+    "legal": "Sin cierre formal reconocido"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
     "access": "Restricted",
     "risk": "Extreme",
-    "legal": "Disputed regime"
+    "legal": "No recognised formal closure"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 17.186,
+    "passage": 18.98,
     "closure": 0,
-    "traffic_reduction": 8.14,
-    "access_restriction": 3.48,
-    "risk": 102.44
+    "traffic_reduction": 4.14,
+    "access_restriction": 2.48,
+    "risk": 101.9
   },
   "source_counts": {
-    "passage": 14,
+    "passage": 15,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-09-01T05:58:40Z",
+  "latest_confirmed_transit_at": "2026-09-01T12:06:54Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "ALTA"
   },
   "evidence": [
+    {
+      "kind": "RISK_ELEVATED",
+      "title": "Hormuz crisis exposes shortcomings in war risk clauses amid unprecedented conflict - Lloyd's List",
+      "source": "Lloyd's List",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNUUladGZ0ZGlLdnd0RER3bXBqSzlUdlpocXc2U2lvR0RZQTR4U1VOOWZtc0JuUnJuU3ptdW1pZjdvc0UzZEhndHdRUmVZM2xyaHpLU1RrV2JSME0wM3BuQUk5R0N0Qzdaa3BBVGFIVnk3M1h0VUFFVDlJMGZ4S2xkTGNKaHNneTZ6YXlLTGdZRVhILVFodlRRMFVfVWxKeUlheUZVeUliMFllSll1RnBnUmpnbU5hOXVsdG40?oc=5",
+      "published_at": "2026-09-01T11:58:20Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Riesgo elevado",
+      "kind_label_en": "Elevated risk"
+    },
     {
       "kind": "RISK_SEVERE",
       "title": "Tanker struck by projectile in Strait of Hormuz as Iran claims mine attack on VLCC - Lloyd's List",
@@ -62,7 +77,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -74,7 +89,7 @@
       "published_at": "2026-08-30T22:12:00Z",
       "tier": 4,
       "weight": 4.0,
-      "provider": "legacy-engine",
+      "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 3.6,
@@ -86,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-01T06:44:14Z",
+      "published_at": "2026-09-01T12:44:07Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -98,10 +113,10 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "US and Iran trade strikes after first known US attack in weeks - BBC",
-      "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wR1VYOXlxY0JNeElMalZOaEw0VDcycU9GeDBFLUdEQ2x4NjRuSjQzd0drUUtfVDRIR2hzenZjY2lRU2ZvbzVUeWVzYUQxc2QwcS1pWW5HX2EzUQ?oc=5",
-      "published_at": "2026-08-31T13:47:30Z",
+      "title": "Hormuz Oil Flow Recovery Imperiled by Renewed Tanker Attacks - Bloomberg.com",
+      "source": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUVJoOVNTYk5oVkNKNkk1MEhTOXNUQjNOSk11dG5PNkM1aUVOa2prazIwbG9vd2F0cGs2OTNoeTdPdXkydlhLOTJHX2loRmdodFdLMjVLZnZiTmVrQ3BjXzg3RFFnZUFNcWJGVWkzVXBPdzBuWE1FaUE4V2lUaHNyaTFmZEs1VmZnd21zaXZiS3dBeVliYVg1ZGVOeVFSQjc4aTBQVUZOSW1UQWJKWjdEcEpya0c?oc=5",
+      "published_at": "2026-09-01T11:51:08Z",
       "tier": 3,
       "weight": 3.0,
       "provider": "legacy-engine",
@@ -119,7 +134,7 @@
       "published_at": "2026-08-30T21:05:00Z",
       "tier": 3,
       "weight": 3.0,
-      "provider": "legacy-engine",
+      "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 2.7,
@@ -131,7 +146,7 @@
       "title": "Iran lashes out at US sanctions amid economic toll at home - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObFhWQ0dIN3p1bUEzcUdpNlN2VFhmaWRhUk5zbkhfWE45U2swM1ViQ0RvRHhxZjJfT2xaUEhnWU9jZ3MzRXl3bXdabG1mM0xpTmdoRzZEQ3dRNDJOVEpTUnJfX3lCV0s4b2RPSzhPbXlZSllrb1l6SjA0NVRVRzNRR0pBYWFwTWdPU0xtOTduNnUyd3hpZjFUUDZUb1NnMkRoanl1Z2V5SjIwYWpubGc?oc=5",
-      "published_at": "2026-08-28T20:26:36Z",
+      "published_at": "2026-08-29T02:21:16Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "Google News RSS",
@@ -143,10 +158,10 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Oil prices climb as US, Iranian attacks stoke fears of escalation - Al Jazeera",
+      "title": "Oil prices jump as US, Iranian attacks stoke fears of escalation - Al Jazeera",
       "source": "Al Jazeera",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTzBVakF1VXpKSWdkbXZsNXJOYS0wRnV2bWstenBpNnhlNXBzTVVxVEFPUW5HeS14Rjh6UnM3b0RpWG5NWjdWdW5NdWNHdlJLV3psWHlhOVd2Y1FySF9MRlVmRGZab3RTcTd5Rmt2QkFONEVFWmJHVmZzMGxid2g0MjR0UzJXdmRZcVdEaGhlT1Z5RTAyT1VFVndXWU52ZGNlRENGaHNBVXF1YzTSAbABQVVfeXFMT2dkcDBqS3R3WmtGZmhqcl9RTzNSc0xObFNYam1fQTllaFdkamxnZnZ2OW11SXc3d1hNWER5WGxQclV4aDhYbnZxNE5tRGNWQllxQ3F0eXViSmZoTFNwamJTLXQ4cUxXS0tldkc1ODE0NGZMXzRFbFBfYkhSdFMtMnZfVkIySkRVMlBtLUxhaEpMZ2NxZUFRUEtMTFRlWDFjY25FaWtqMDNVT25hSWpJZ0E?oc=5",
-      "published_at": "2026-09-01T06:22:30Z",
+      "published_at": "2026-09-01T09:32:51Z",
       "tier": 2,
       "weight": 2.0,
       "provider": "legacy-engine",
@@ -155,25 +170,10 @@
       "effective_weight": 2.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Tanker struck three times in Strait of Hormuz - Seatrade Maritime News",
-      "source": "Seatrade Maritime News",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQ1VFZnBQMk1pRTBUSlVHd0l6M0pBblFIcTVXTUZXWDlLenZBQ2xRUzFreS13Y1Rra2o3NzE1dEhzZ1NYTHdQWVpnV2Rza3JCQm5WMHBlTmlTcHFZYndNNS0xLXRKZXViSFBxdXljaDBEWklXUmlWM0RCYmtheVBhQ3UwbmdwOEpuLXhlQ1pHMkljZw?oc=5",
-      "published_at": "2026-09-01T03:02:24Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 2.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 117,
+    "signals_considered": 109,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
