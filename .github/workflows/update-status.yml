@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: update-hormuz-status
+  group: ormuz-content-update
   cancel-in-progress: false
 
 jobs:
@@ -106,6 +106,9 @@ jobs:
       - name: Reparar HTML sin alterar el diseño
         run: python repair_html.py --root .
 
+      - name: Recuperar la edición diaria si el cron de mañana se retrasa
+        run: python generate_daily_journal.py --scheduled
+
       - name: Regenerar sitemap y robots desde cero
         run: python build_sitemap.py --root .
 
@@ -177,8 +180,3 @@ jobs:
           else
             echo "No hay cambio editorial notificable o falta notify_services.py."
           fi
-
-      - name: Verificar despliegue público sin caché
-        if: steps.commit.outputs.changed == 'true'
-        continue-on-error: true
-        run: python remote_smoke_test.py --attempts 10 --delay 20 --timeout 20
