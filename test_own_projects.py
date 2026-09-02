@@ -109,11 +109,14 @@ class PromotionTests(unittest.TestCase):
             self.assertLess(asset.stat().st_size, 200_000)
             self.assertEqual(asset.read_bytes()[:4], b"RIFF")
 
-    def test_fixed_rules_are_only_in_wide_tall_mouse_media_query(self):
+    def test_desktop_rails_remain_separate_from_mobile_popup(self):
         css = (Path(__file__).parent / "own-projects.css").read_text()
         guard = "@media screen and (min-width: 110rem) and (min-height: 50rem) and (hover: hover) and (pointer: fine)"
         before, after = css.split(guard)
-        self.assertNotIn("position: fixed", before)
+        default, mobile_popup = before.split('@media screen and (max-width: 48rem)')
+        self.assertNotIn("position: fixed", default)
+        self.assertIn('.own-projects.own-projects--popup', mobile_popup)
+        self.assertIn('position: fixed', mobile_popup)
         self.assertIn("position: fixed", after)
         self.assertIn("@media print", after)
         self.assertIn("overflow-y: auto", after)
@@ -157,8 +160,8 @@ class PromotionTests(unittest.TestCase):
 
     def test_css_version_invalidates_previous_cached_cards(self):
         result = promo.add_promotions(self.page(), "index.html", "ormuz")
-        self.assertIn("own-projects.css?v=20260902-3", result)
-        self.assertIn('defer src="/own-projects.js?v=20260902-3"', result)
+        self.assertIn("own-projects.css?v=20260902-4", result)
+        self.assertIn('defer src="/own-projects.js?v=20260902-4"', result)
 
     def test_home_comes_after_status_not_before_initial_information(self):
         for site, path, attrs in (("ormuz", "index.html", 'id="estado-actual"'),
@@ -203,13 +206,27 @@ class PromotionTests(unittest.TestCase):
         self.assertLess(result.index('</h1>'), result.index('data-own-projects'))
         self.assertLess(result.index('projects-desktop-position'), result.index('</main>'))
 
-    def test_mobile_is_compact_and_not_fixed_or_sticky(self):
+    def test_mobile_fallback_is_compact_and_not_fixed_or_sticky(self):
         css = (Path(__file__).parent / "own-projects.css").read_text()
-        mobile = css.split('@media (max-width: 48rem)', 1)[1].split('/* 1280px', 1)[0]
+        mobile = css.split('@media (max-width: 48rem)', 1)[1].split('/* One non-modal', 1)[0]
         for unwanted in ('position: fixed', 'position: sticky', 'animation:', 'overflow-y: auto'):
             self.assertNotIn(unwanted, mobile)
         self.assertIn('grid-template-columns: minmax(0, 1fr) 28%', mobile)
         self.assertIn('height: 5.5rem', mobile)
+
+    def test_popup_close_is_localised_immediate_and_hidden_without_js(self):
+        for lang, label in (("es", "Cerrar promociones"), ("en", "Close promotions")):
+            block = promo.render_promotions("ormuz", lang)
+            self.assertEqual(block.count('<button '), 1)
+            self.assertIn(f'type="button" aria-label="{label}" hidden', block)
+            self.assertIn('<span aria-hidden="true">×</span>', block)
+            for modal in ('aria-modal', '<dialog', 'autofocus'):
+                self.assertNotIn(modal, block)
+        css = (Path(__file__).parent / "own-projects.css").read_text()
+        self.assertIn('min-width: 2.75rem; min-height: 2.75rem', css)
+        self.assertIn('.own-projects[hidden], .own-projects [hidden] { display: none !important; }', css)
+        self.assertIn('env(safe-area-inset-bottom)', css)
+        self.assertIn('.own-projects--popup .own-projects__close:focus-visible', css)
 
     @unittest.skipUnless(shutil.which('node'), 'Node is required for the responsive placement test')
     def test_responsive_relocation_script(self):
