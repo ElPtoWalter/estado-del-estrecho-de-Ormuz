@@ -38,7 +38,7 @@ jobs:
 
       - name: Construir superficie pública
         run: |
-          python -m unittest -v test_public_build.py test_editorial_quality.py test_daily_journal_v8.py
+          python -m unittest -v test_public_build.py test_editorial_quality.py test_daily_journal_v8.py test_own_projects.py
           node --test test_public_ui.cjs
           python generate_daily_journal.py --offline --force
           python build_public_site.py
