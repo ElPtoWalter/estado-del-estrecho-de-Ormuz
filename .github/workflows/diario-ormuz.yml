@@ -33,7 +33,7 @@ jobs:
       - name: Validar redacción automática
         run: |
           python -m py_compile generate_daily_journal.py test_daily_journal_v8.py
-          python -m unittest -v test_daily_journal_v8.py
+          python -m unittest -v test_daily_journal_v8.py test_editorial_quality.py
 
       - name: Redactar edición de la mañana
         run: python generate_daily_journal.py --scheduled

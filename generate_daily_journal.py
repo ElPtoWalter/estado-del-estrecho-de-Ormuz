@@ -13,6 +13,8 @@ de opinión o puramente especulativos nunca se convierten en hechos.
 """
 from __future__ import annotations
 
+from journal_evidence import classify_headline, identity, reading, section_note
+
 import argparse
 import email.utils
 import hashlib
@@ -42,7 +44,7 @@ USER_AGENT = (
 MAX_NEWS = 40
 MAX_ARCHIVE = 180
 MATERIAL_THRESHOLD = 4
-EDITORIAL_VERSION = 9
+EDITORIAL_VERSION = 10
 
 TRUSTED_SOURCES = {
     "reuters": 5,
@@ -299,13 +301,7 @@ def source_tier(name: str) -> int:
 
 
 def topic_for(title: str) -> str:
-    scores = {
-        key: len(pattern.findall(title))
-        for key, pattern in TOPIC_PATTERNS.items()
-    }
-    best, score = max(scores.items(), key=lambda item: item[1])
-    return best if score else "other"
-
+    return classify_headline(title)
 
 def article_key(item: NewsItem | dict[str, Any]) -> str:
     if isinstance(item, NewsItem):
@@ -316,8 +312,7 @@ def article_key(item: NewsItem | dict[str, Any]) -> str:
         url = str(item.get("url") or item.get("source_url") or "")
         title = str(item.get("title") or "")
         source = str(item.get("source") or item.get("source_name") or "")
-    raw = f"{url}|{source}|{re.sub(r'\W+', ' ', title.lower()).strip()}"
-    return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:20]
+    return identity(url, title, source)
 
 
 def request_bytes(url: str, timeout: int = 25) -> bytes:
@@ -410,13 +405,14 @@ def evidence_as_news(status: dict[str, Any], now: datetime) -> list[NewsItem]:
         source = norm(raw.get("source_name"))
         pub = parse_date(raw.get("published_at") or raw.get("observed_at"))
         tier = source_tier(source)
-        if not title or tier <= 0 or pub < cutoff:
+        url = norm(raw.get("source_url"))
+        if not title or tier <= 0 or pub < cutoff or pub > now or not re.match(r"^https?://[^/\s]+", url):
             continue
         output.append(
             NewsItem(
                 title=title,
                 source=source,
-                url=norm(raw.get("source_url")),
+                url=url,
                 published_at=iso_z(pub),
                 tier=tier,
                 topic=topic_for(title),
@@ -470,50 +466,23 @@ def state_fingerprint(status: dict[str, Any], operational: dict[str, Any]) -> di
     }
 
 
-def material_score(
-    current: dict[str, Any],
-    previous: dict[str, Any],
-    new_items: list[NewsItem],
-) -> tuple[int, list[str]]:
-    score = 0
-    reasons: list[str] = []
+def material_score(current: dict[str, Any], previous: dict[str, Any], new_items: list[NewsItem]) -> tuple[int, list[str]]:
+    # Headline volume is not an editorial event. Preserve state changes, not daily synonyms.
     if not previous:
-        return 6, ["Primera edición del archivo editorial"]
-
-    if current.get("v7_state") and current.get("v7_state") != previous.get("v7_state"):
-        score += 5
-        reasons.append("Cambio del diagnóstico operativo V7")
-    elif current.get("legacy_status") != previous.get("legacy_status"):
-        score += 5
-        reasons.append("Cambio de estado del motor principal")
-
-    cur_dims = current.get("dimensions") or {}
-    prev_dims = previous.get("dimensions") or {}
-    changed_dims = [key for key in set(cur_dims) | set(prev_dims) if cur_dims.get(key) != prev_dims.get(key)]
-    if changed_dims:
-        score += min(3, len(changed_dims))
-        reasons.append("Cambian dimensiones: " + ", ".join(sorted(changed_dims)))
-
-    independent = {item.source.lower() for item in new_items}
-    topics = {item.topic for item in new_items if item.topic != "other"}
-    high_tier = [item for item in new_items if item.tier >= 4]
-    if len(new_items) >= 3:
-        score += 2
-        reasons.append(f"{len(new_items)} noticias nuevas de fuentes seleccionadas")
-    elif new_items:
-        score += 1
-        reasons.append(f"{len(new_items)} noticia(s) nueva(s)")
-    if len(independent) >= 2:
-        score += 1
-        reasons.append("Dos o más fuentes independientes")
-    if len(topics) >= 2:
-        score += 1
-        reasons.append("Novedades en varias áreas")
-    if high_tier:
-        score += 1
-        reasons.append("Hay una fuente de primer nivel")
+        return 6, ["Primera referencia del seguimiento; no implica revisión humana"]
+    reasons = []
+    score = 0
+    if current.get("v7_state") != previous.get("v7_state") or current.get("legacy_status") != previous.get("legacy_status"):
+        score = 5
+        reasons.append("Cambio de clasificación del monitor; no equivale a un cambio físico confirmado")
+    changed = [key for key in set(current.get("dimensions") or {}) | set(previous.get("dimensions") or {})
+               if (current.get("dimensions") or {}).get(key) != (previous.get("dimensions") or {}).get(key)]
+    if changed:
+        score += 4
+        reasons.append("Cambian dimensiones: " + ", ".join(sorted(changed)))
+    if not reasons:
+        reasons.append("Sin cambio de clasificación: más titulares no justifican otra URL histórica")
     return score, reasons
-
 
 def confidence_label(value: str, lang: str) -> str:
     mapping = {
@@ -534,91 +503,15 @@ def date_label(dt: datetime, lang: str) -> str:
 
 
 def headline_for(status: dict[str, Any], operational: dict[str, Any], new_items: list[NewsItem], lang: str) -> str:
-    state = norm(operational.get("state")) if operational else ""
-    if lang == "es":
-        if state == "OPEN_SEVERELY_RESTRICTED":
-            return stable_pick((
-                "Ormuz mantiene el paso comercial, pero la normalidad sigue lejos",
-                "Hay paso por Ormuz, aunque el corredor continúa lejos de la normalidad",
-                "El tránsito persiste en Ormuz bajo unas condiciones todavía excepcionales",
-            ), utc_now().date().isoformat() + state + lang)
-        if state == "OPEN_RESTRICTED":
-            return stable_pick((
-                "Ormuz sigue abierto con restricciones mientras el mercado mide el riesgo",
-                "El paso continúa en Ormuz, con restricciones que aún pesan sobre la ruta",
-            ), utc_now().date().isoformat() + state + lang)
-        if state == "OPEN_NORMAL":
-            return "Ormuz conserva un tránsito operativo próximo a la normalidad"
-        if state in {"CLOSED_CONFIRMED", "EFFECTIVELY_CLOSED"}:
-            return "El tráfico ordinario en Ormuz queda severamente interrumpido"
-        legacy = status.get("status")
-        if legacy == "ABIERTO":
-            return "Ormuz abre la jornada con tránsito operativo y vigilancia reforzada"
-        if legacy == "CERRADO":
-            return "Ormuz afronta una jornada marcada por la interrupción del tráfico"
-        return "Ormuz abre la jornada bajo vigilancia y sin una normalización confirmada"
-    else:
-        if state == "OPEN_SEVERELY_RESTRICTED":
-            return stable_pick((
-                "Hormuz remains physically open, but normal traffic is still far away",
-                "Passage continues through Hormuz under conditions still far from normal",
-                "Ships can still pass Hormuz, though the corridor remains exceptional",
-            ), utc_now().date().isoformat() + state + lang)
-        if state == "OPEN_RESTRICTED":
-            return "Hormuz stays open with restrictions as shipping weighs the risk"
-        if state == "OPEN_NORMAL":
-            return "Hormuz maintains operational traffic close to normal conditions"
-        if state in {"CLOSED_CONFIRMED", "EFFECTIVELY_CLOSED"}:
-            return "Routine traffic through Hormuz faces severe interruption"
-        legacy = status.get("status")
-        if legacy == "ABIERTO":
-            return "Hormuz starts the day with operational transit and heightened monitoring"
-        if legacy == "CERRADO":
-            return "Hormuz enters the day under a major disruption of routine traffic"
-        return "Hormuz starts the day under watch, with normalisation still unconfirmed"
-
+    if operational.get("carried_forward"):
+        return "Ormuz: titulares nuevos, tránsito sin nueva confirmación" if lang == "es" else "Hormuz: new headlines, no fresh transit confirmation"
+    topic = dominant_topic(new_items)
+    focus = TOPIC_LABELS[lang].get(topic, TOPIC_LABELS[lang]["other"]).lower()
+    return f"Ormuz: {focus}, evidencia y límites" if lang == "es" else f"Hormuz: {focus}, evidence and limits"
 
 def interpret_item(item: NewsItem, lang: str) -> str | None:
-    if item.analytical:
-        return None
-    low = item.title.lower()
-    if lang == "es":
-        if item.topic == "maritime":
-            if re.search(r"dwindl|plung|drop|fall|declin|slow|reduced|single-digit|trickle", low):
-                return "los datos publicados apuntan a un tráfico todavía muy por debajo de la normalidad"
-            if re.search(r"transit|passing|cross|traffic.*contin|ships? .*moving", low):
-                return "se han comunicado nuevas señales de tránsito comercial a través del estrecho"
-            return "el foco marítimo continúa puesto en la continuidad y el volumen real de los cruces"
-        if item.topic == "security":
-            if re.search(r"attack|struck|explosion|missile|projectile|drone|mine", low):
-                return "la seguridad marítima sigue condicionada por incidentes o amenazas de carácter militar"
-            return "los avisos de seguridad mantienen elevada la vigilancia sobre la ruta"
-        if item.topic == "diplomacy":
-            return "las conversaciones y propuestas políticas siguen influyendo en las expectativas sobre el régimen de paso"
-        if item.topic == "energy":
-            return "el mercado energético continúa pendiente de la continuidad física de las exportaciones y del coste de sustitución"
-        if item.topic == "insurance":
-            return "los costes de seguro y transporte siguen siendo una pieza central de la operatividad comercial"
-        return None
-    else:
-        if item.topic == "maritime":
-            if re.search(r"dwindl|plung|drop|fall|declin|slow|reduced|single-digit|trickle", low):
-                return "published data point to traffic remaining far below normal levels"
-            if re.search(r"transit|passing|cross|traffic.*contin|ships? .*moving", low):
-                return "new evidence of commercial transit through the strait has been reported"
-            return "the maritime focus remains on the continuity and actual volume of crossings"
-        if item.topic == "security":
-            if re.search(r"attack|struck|explosion|missile|projectile|drone|mine", low):
-                return "maritime security remains constrained by military incidents or threats"
-            return "security notices continue to justify heightened monitoring of the route"
-        if item.topic == "diplomacy":
-            return "talks and political proposals continue to shape expectations about the passage regime"
-        if item.topic == "energy":
-            return "energy markets remain focused on physical export continuity and replacement costs"
-        if item.topic == "insurance":
-            return "insurance and freight costs remain central to commercial operability"
-        return None
-
+    # Explain evidentiary limits, never manufacture a summary from keywords.
+    return None if item.analytical else reading(item.topic, lang)
 
 def selected_narrative_items(items: list[NewsItem]) -> list[NewsItem]:
     selected: list[NewsItem] = []
@@ -641,53 +534,17 @@ def selected_narrative_items(items: list[NewsItem]) -> list[NewsItem]:
     return selected
 
 
-def build_lead(
-    status: dict[str, Any], operational: dict[str, Any], dt: datetime, lang: str
-) -> str:
-    state, summary, confidence = display_state(status, operational, lang)
-    dims = dimensions(operational, lang)
+def build_lead(status: dict[str, Any], operational: dict[str, Any], local_dt: datetime, lang: str) -> str:
+    _, summary, confidence = display_state(status, operational, lang)
+    checked = status.get("checked_at") or "—"
+    carried = operational.get("carried_forward")
     if lang == "es":
-        detail = ""
-        if dims:
-            parts = []
-            if dims.get("passage"):
-                parts.append(f"paso físico {dims['passage'].lower()}")
-            if dims.get("traffic"):
-                parts.append(f"tráfico {dims['traffic'].lower()}")
-            if dims.get("risk"):
-                parts.append(f"riesgo {dims['risk'].lower()}")
-            detail = "; " + ", ".join(parts) if parts else ""
-        closing = stable_pick((
-            "La edición de hoy separa lo que ocurre en el agua de las declaraciones políticas y de la reacción de los mercados.",
-            "La pregunta de la jornada no es solo si existe paso, sino con qué volumen, riesgo y coste se está utilizando.",
-            "El cuaderno cruza navegación, seguridad y mercado sin convertir una declaración aislada en un hecho operativo.",
-        ), dt.date().isoformat() + state + lang)
-        return (
-            f"El estrecho de Ormuz llega a la jornada del {date_label(dt, 'es')} con un diagnóstico de "
-            f"«{state}» y confianza {confidence_label(confidence, 'es')}{detail}. {summary} "
-            + closing
-        )
-    detail = ""
-    if dims:
-        parts = []
-        if dims.get("passage"):
-            parts.append(f"physical passage {dims['passage'].lower()}")
-        if dims.get("traffic"):
-            parts.append(f"traffic {dims['traffic'].lower()}")
-        if dims.get("risk"):
-            parts.append(f"risk {dims['risk'].lower()}")
-        detail = "; " + ", ".join(parts) if parts else ""
-    closing = stable_pick((
-        "Today's edition separates events on the water from political statements and market reaction.",
-        "The day's question is not only whether passage exists, but at what volume, risk and cost it is being used.",
-        "This log brings navigation, security and markets together without turning an isolated statement into an operational fact.",
-    ), dt.date().isoformat() + state + lang)
-    return (
-        f"The Strait of Hormuz enters {date_label(dt, 'en')} with an assessment of “{state}” and "
-        f"{confidence_label(confidence, 'en')} confidence{detail}. {summary} "
-        + closing
-    )
-
+        return (f"Última consulta del monitor: {checked}. {summary} "
+                + ("Las dimensiones mostradas se arrastran del diagnóstico anterior: no son una nueva comprobación de tránsito. " if carried else "")
+                + "Este parte clasifica titulares y separa su alcance de la evidencia operativa; no sustituye la lectura de las fuentes originales.")
+    return (f"Latest monitor check: {checked}. {summary} "
+            + ("Displayed dimensions are carried forward from the previous assessment, not a fresh transit observation. " if carried else "")
+            + "This digest classifies headlines and distinguishes their scope from operational evidence; it does not replace the original sources.")
 
 def change_paragraph(
     current_fp: dict[str, Any], previous_fp: dict[str, Any], lang: str
@@ -722,66 +579,7 @@ def change_paragraph(
 
 
 def section_paragraph(topic: str, items: list[NewsItem], lang: str) -> str:
-    relevant = [x for x in items if x.topic == topic]
-    interpretable = [(x, interpret_item(x, lang)) for x in relevant]
-    interpretable = [(x, clause) for x, clause in interpretable if clause]
-    if lang == "es":
-        if not relevant:
-            fallbacks = {
-                "maritime": "No se ha detectado una nueva señal marítima de suficiente calidad para modificar la lectura de la jornada. El monitor mantiene como referencia el último diagnóstico operativo válido.",
-                "security": "No hay una novedad de seguridad suficientemente sólida para elevar o rebajar por sí sola la evaluación. Los avisos oficiales siguen teniendo prioridad sobre titulares aislados.",
-                "diplomacy": "La diplomacia no aporta hoy una señal suficientemente clara para modificar la conclusión física sobre el paso. Las declaraciones se mantienen separadas de la evidencia de tránsito.",
-                "energy": "Sin una novedad energética material, la lectura continúa centrada en la disponibilidad física del corredor y en la prima de riesgo asociada.",
-                "insurance": "No aparece una variación verificable de seguros o fletes que merezca una conclusión independiente en esta edición.",
-            }
-            return fallbacks[topic]
-        sources = []
-        for item in relevant:
-            if item.source not in sources:
-                sources.append(item.source)
-        if interpretable:
-            clauses = []
-            used_sources = []
-            for item, clause in interpretable:
-                if clause in clauses:
-                    continue
-                clauses.append(clause)
-                if item.source not in used_sources:
-                    used_sources.append(item.source)
-                if len(clauses) >= 2:
-                    break
-            source_text = " y ".join(dict.fromkeys(used_sources))
-            return f"Las novedades seleccionadas en este frente proceden de {source_text}. En conjunto, {clauses[0]}" + (f"; además, {clauses[1]}" if len(clauses) > 1 else "") + ". La conclusión se limita a lo que permiten sostener las fuentes enlazadas y no convierte titulares de opinión en hechos."
-        return f"Hay {len(relevant)} actualización(es) reciente(s) en esta área, procedentes de {', '.join(sources[:3])}. Se conservan como contexto porque sus titulares son analíticos, interrogativos o no permiten extraer por sí solos una afirmación operativa segura."
-    else:
-        if not relevant:
-            fallbacks = {
-                "maritime": "No new maritime signal of sufficient quality has been detected to alter today's reading. The monitor keeps the latest valid operational assessment as its reference.",
-                "security": "There is no sufficiently strong security development to raise or lower the assessment on its own. Official notices continue to outrank isolated headlines.",
-                "diplomacy": "Diplomacy does not provide a sufficiently clear signal today to change the physical assessment of passage. Political statements remain separate from transit evidence.",
-                "energy": "Without a material energy development, the focus remains on the physical availability of the corridor and the associated risk premium.",
-                "insurance": "No verifiable change in insurance or freight conditions justifies a separate conclusion in this edition.",
-            }
-            return fallbacks[topic]
-        sources = []
-        for item in relevant:
-            if item.source not in sources:
-                sources.append(item.source)
-        if interpretable:
-            clauses = []
-            used_sources = []
-            for item, clause in interpretable:
-                if clause in clauses:
-                    continue
-                clauses.append(clause)
-                if item.source not in used_sources:
-                    used_sources.append(item.source)
-                if len(clauses) >= 2:
-                    break
-            source_text = " and ".join(dict.fromkeys(used_sources))
-            return f"Selected developments in this area come from {source_text}. Taken together, {clauses[0]}" + (f"; in addition, {clauses[1]}" if len(clauses) > 1 else "") + ". The conclusion is limited to what the linked sources support and does not turn opinion headlines into facts."
-        return f"There are {len(relevant)} recent update(s) in this area from {', '.join(sources[:3])}. They are retained as context because their headlines are analytical, interrogative or insufficient on their own for a safe operational claim."
-
+    return section_note(topic, items, lang)
 
 def watchlist(status: dict[str, Any], operational: dict[str, Any], lang: str) -> list[str]:
     dims_raw = operational.get("dimensions") if operational else {}
@@ -904,18 +702,18 @@ def render_page(
     material_reasons: list[str],
     editorial: dict[str, Any],
 ) -> str:
-    title = headline_for(status, operational, new_items, lang)
+    title = headline_for(status, operational, news, lang)
     state_label, summary, confidence = display_state(status, operational, lang)
     lead = build_lead(status, operational, local_dt, lang)
     change = change_paragraph(current_fp, previous_fp, lang)
     watch = watchlist(status, operational, lang)
     sources_html = make_sources(news, lang)
-    topic_counts = Counter(item.topic for item in new_items if item.topic in TOPIC_PATTERNS)
+    topic_counts = Counter(item.topic for item in news if item.topic in TOPIC_PATTERNS)
     topics = [topic for topic, _ in topic_counts.most_common()]
     if not topics:
         topics = ["maritime"]
     date_text = date_label(local_dt, lang)
-    byline = "Equipo editorial de Estrecho Ormuz" if lang == "es" else "Estrecho Ormuz Editorial Team"
+    byline = "Estrecho Ormuz · selección automática" if lang == "es" else "Estrecho Ormuz · automated selection"
     minutes = max(3, min(7, 2 + len(topics)))
     read_time = f"Lectura: {minutes} min" if lang == "es" else f"Reading time: {minutes} min"
     kicker = "EL DIARIO DE ORMUZ" if lang == "es" else "HORMUZ DAILY"
@@ -941,8 +739,8 @@ def render_page(
 
     sections = ""
     for topic in topics:
-        paragraph = section_paragraph(topic, new_items, lang)
-        relevant = [x for x in new_items if x.topic == topic]
+        paragraph = section_paragraph(topic, news, lang)
+        relevant = [x for x in news if x.topic == topic]
         link_cards = ""
         for item in relevant[:2]:
             link_cards += (
@@ -984,7 +782,7 @@ def render_page(
     limit = editorial.get("limit_es" if lang == "es" else "limit_en") or ""
     triad = f'''<section class="journal-triad" aria-label="{'Capas de lectura' if lang == 'es' else 'Reading layers'}">
 <article><span>{'BASE OBSERVABLE' if lang == 'es' else 'OBSERVABLE BASE'}</span><strong>{safe(state_label)}</strong><p>{'Diagnóstico del observatorio con confianza' if lang == 'es' else 'Observatory assessment with'} {safe(confidence_label(confidence, lang))}{'' if lang == 'es' else ' confidence'}.</p></article>
-<article><span>{'CAMBIO' if lang == 'es' else 'CHANGE'}</span><strong>{'Respecto a ayer' if lang == 'es' else 'Since yesterday'}</strong><p>{safe(change)}</p></article>
+<article><span>{'CAMBIO' if lang == 'es' else 'CHANGE'}</span><strong>{'Desde la referencia anterior' if lang == 'es' else 'Since the previous reference'}</strong><p>{safe(change)}</p></article>
 <article><span>{'LÍMITE' if lang == 'es' else 'LIMIT'}</span><strong>{'Lo que aún no sabemos' if lang == 'es' else 'What remains unknown'}</strong><p>{safe(limit)}</p></article>
 </section>'''
 
@@ -995,7 +793,8 @@ def render_page(
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>{safe(title)} | {safe(kicker.title())}</title>
 <meta name="description" content="{safe(description[:250])}"/>
-<meta name="robots" content="index,follow,max-image-preview:large"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="editorial-status" content="automated-digest"/>
 <meta name="theme-color" content="#07111f"/>
 <link rel="canonical" href="{safe(canonical)}"/>
 <link rel="alternate" hreflang="{lang}" href="{safe(canonical)}"/>
@@ -1031,10 +830,11 @@ def render_page(
 {desk}
 <p class="journal-lead">{safe(lead)}</p>
 {triad}
+<p><a href="{'/datos-propios-monitor-ormuz.html' if lang == 'es' else '/en-monitor-original-data-report.html'}">{'Análisis propio: qué mide realmente el historial del monitor' if lang == 'es' else 'Original analysis: what the monitor archive actually measures'}</a></p>
 {sections}
 <section class="journal-section journal-watch"><h2>{'Qué vigilar en las próximas 24 horas' if lang == 'es' else 'What to watch over the next 24 hours'}</h2><ul>{watch_html}</ul></section>
-<section class="journal-section journal-sources"><div class="journal-section-title"><div><span>{'Fuentes verificables' if lang == 'es' else 'Verifiable sources'}</span><h2>{'Fuentes y noticias consultadas' if lang == 'es' else 'Sources and news reviewed'}</h2></div></div><ul>{sources_html}</ul></section>
-<section class="journal-method-note"><h2>{'Criterios editoriales de esta edición' if lang == 'es' else 'Editorial standards for this edition'}</h2><p>{safe('Esta edición ha sido preparada por el Equipo editorial de Estrecho Ormuz a partir de fuentes marítimas, energéticas y periodísticas contrastadas, junto con los datos propios del observatorio. La redacción distingue hechos operativos, declaraciones, interpretación y señales de mercado. Las fuentes utilizadas se enlazan para facilitar su comprobación.' if lang == 'es' else "This edition has been prepared by the Estrecho Ormuz Editorial Team using cross-checked maritime, energy and journalistic sources together with the observatory's own data. The editorial process distinguishes operational facts, statements, interpretation and market signals. Sources are linked so readers can verify the underlying information.")}</p><p>{safe(quality_note)}</p><details><summary>{'Criterio de hemeroteca' if lang == 'es' else 'Archive criteria'}</summary><ul>{reason_html}</ul></details></section>
+<section class="journal-section journal-sources"><div class="journal-section-title"><div><span>{'Fuentes verificables' if lang == 'es' else 'Verifiable sources'}</span><h2>{'Referencias seleccionadas' if lang == 'es' else 'Selected references'}</h2></div></div><ul>{sources_html}</ul></section>
+<section class="journal-method-note"><h2>{'Criterios editoriales de esta edición' if lang == 'es' else 'Editorial standards for this edition'}</h2><p>{safe('Este parte se compone mediante reglas locales y selección automática de titulares. No se ha leído ni verificado automáticamente el texto íntegro de cada noticia, ni se atribuye una revisión humana a cada edición. La fecha de un feed puede corresponder a una actualización, no al momento del hecho. Las marcas de medios diferentes tampoco garantizan investigación independiente. Para el análisis propio y reproducible, consulta el informe de datos del monitor.' if lang == 'es' else "This digest uses local rules and automated headline selection. Full article texts are not automatically read or verified, and no per-edition human review is claimed. Feed dates may reflect updates rather than event dates. Different publisher names do not guarantee independent reporting.")}</p><p>{safe(quality_note)}</p><details><summary>{'Criterio de hemeroteca' if lang == 'es' else 'Archive criteria'}</summary><ul>{reason_html}</ul></details></section>
 </article>
 </main>
 <footer class="journal-footer"><p>© 2026 Estrecho Ormuz · {'Proyecto independiente · No constituye asesoramiento marítimo, financiero ni de seguridad.' if lang == 'es' else 'Independent project · Not maritime, financial or security advice.'}</p></footer>
@@ -1055,7 +855,7 @@ def archive_page(items: list[dict[str, Any]], lang: str) -> str:
         )
     canonical = f"{BASE_URL}/{'diario/' if es else 'diary/'}"
     alt = f"{BASE_URL}/{'diary/' if es else 'diario/'}"
-    return f'''<!DOCTYPE html><html lang="{lang}"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>{'Archivo de El Diario de Ormuz' if es else 'Hormuz Daily Archive'}</title><meta name="description" content="{'Archivo de ediciones materiales de El Diario de Ormuz.' if es else 'Archive of material Hormuz Daily editions.'}"/><meta name="robots" content="index,follow,max-image-preview:large"/><link rel="canonical" href="{canonical}"/><link rel="alternate" hreflang="{lang}" href="{canonical}"/><link rel="alternate" hreflang="{'en' if es else 'es'}" href="{alt}"/><link rel="stylesheet" href="/styles.css"/><link rel="stylesheet" href="/v11.css"/><link rel="stylesheet" href="/diario-v8.css?v=20260831-9"/></head><body class="journal-page"> <header class="journal-header"><div class="journal-header-inner"><a class="journal-brand" href="{'/' if es else '/en.html'}"><strong>ESTRECHO ORMUZ</strong><small>{'El Diario de Ormuz' if es else 'Hormuz Daily'}</small></a>{nav(lang)}</div></header><main class="journal-main"><section class="journal-archive-hero"><span class="section-kicker">{'HEMEROTECA · CUADERNOS DE ORMUZ' if es else 'ARCHIVE · HORMUZ LOGS'}</span><h1>{'El Diario de Ormuz' if es else 'Hormuz Daily'}</h1><p>{'Cada edición adopta el foco real de la jornada: navegación, seguridad, diplomacia, energía, costes marítimos o continuidad. Solo se archivan como páginas indexables los días con cambios o novedades suficientes.' if es else 'Each edition follows the day’s actual focus: navigation, security, diplomacy, energy, shipping costs or continuity. Only days with sufficient change or new information are kept as indexable pages.'}</p></section><section class="journal-archive-grid">{''.join(cards) if cards else '<p>Aún no hay ediciones archivadas.</p>' if es else '<p>No archived editions yet.</p>'}</section></main></body></html>'''
+    return f'''<!DOCTYPE html><html lang="{lang}"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>{'Archivo de El Diario de Ormuz' if es else 'Hormuz Daily Archive'}</title><meta name="description" content="{'Archivo de ediciones materiales de El Diario de Ormuz.' if es else 'Archive of material Hormuz Daily editions.'}"/><meta name="robots" content="index,follow,max-image-preview:large"/><link rel="canonical" href="{canonical}"/><link rel="alternate" hreflang="{lang}" href="{canonical}"/><link rel="alternate" hreflang="{'en' if es else 'es'}" href="{alt}"/><link rel="stylesheet" href="/styles.css"/><link rel="stylesheet" href="/v11.css"/><link rel="stylesheet" href="/diario-v8.css?v=20260831-9"/></head><body class="journal-page"> <header class="journal-header"><div class="journal-header-inner"><a class="journal-brand" href="{'/' if es else '/en.html'}"><strong>ESTRECHO ORMUZ</strong><small>{'El Diario de Ormuz' if es else 'Hormuz Daily'}</small></a>{nav(lang)}</div></header><main class="journal-main"><section class="journal-archive-hero"><span class="section-kicker">{'HEMEROTECA · CUADERNOS DE ORMUZ' if es else 'ARCHIVE · HORMUZ LOGS'}</span><h1>{'El Diario de Ormuz' if es else 'Hormuz Daily'}</h1><p>{'Los partes conservan las referencias y el diagnóstico de cada edición. Las nuevas entradas exigen un cambio de clasificación y referencias nuevas de al menos dos medios; no se presentan como reportajes verificados ni como páginas indexables.' if es else 'Digests preserve each edition’s references and assessment. New archive entries require a changed classification and new references from at least two publishers; they are not presented as verified reporting or indexable articles.'}</p></section><section class="journal-archive-grid">{''.join(cards) if cards else '<p>Aún no hay ediciones archivadas.</p>' if es else '<p>No archived editions yet.</p>'}</section></main></body></html>'''
 
 
 def feed_xml(items: list[dict[str, Any]], generated_at: str) -> str:
@@ -1130,8 +930,20 @@ def main() -> int:
         previous_state = {}
     previous_fp = previous_state.get("fingerprint") if isinstance(previous_state.get("fingerprint"), dict) else {}
     seen = set(previous_state.get("seen_keys") or [])
+    latest = load_json(root / "journal-latest.json", {})
+    seen.update(article_key(item) for item in latest.get("news", []) if isinstance(item, dict))
 
     news = evidence_as_news(status, now)
+    if args.offline:
+        # Preserve the last RSS selection when rebuilding without network access.
+        for item in latest.get("news", []):
+            if isinstance(item, dict) and now - timedelta(hours=48) <= parse_date(item.get("published_at")) <= now:
+                try:
+                    cached = NewsItem(**{key: item[key] for key in NewsItem.__dataclass_fields__ if key in item})
+                    cached.topic = topic_for(cached.title)
+                    news.append(cached)
+                except TypeError:
+                    continue
     fetch_errors: list[str] = []
     if not args.offline:
         fetched, fetch_errors = fetch_news(now)
@@ -1143,14 +955,14 @@ def main() -> int:
 
     current_fp = state_fingerprint(status, operational)
     score, reasons = material_score(current_fp, previous_fp, new_items)
-    independent = {item.source.lower() for item in new_items}
-    material = score >= MATERIAL_THRESHOLD and (len(independent) >= 2 or score >= 6)
+    independent = {item.source.lower() for item in new_items if not item.analytical}
+    material = score >= MATERIAL_THRESHOLD and len(independent) >= 2
 
     date_iso = local_now.date().isoformat()
     generated_at = iso_z(now)
     editorial = build_editorial_context(root, news, new_items, local_now)
-    title_es = headline_for(status, operational, new_items, "es")
-    title_en = headline_for(status, operational, new_items, "en")
+    title_es = headline_for(status, operational, news, "es")
+    title_en = headline_for(status, operational, news, "en")
     _, summary_es, _ = display_state(status, operational, "es")
     _, summary_en, _ = display_state(status, operational, "en")
 
@@ -1158,14 +970,14 @@ def main() -> int:
         status=status, operational=operational, news=news, new_items=new_items,
         previous_fp=previous_fp, current_fp=current_fp, local_dt=local_now,
         lang="es", canonical=f"{BASE_URL}/diario.html", archive=False,
-        material_score_value=score, material_reasons=reasons,
+        material_score_value=score if material else 0, material_reasons=reasons,
         editorial=editorial,
     )
     live_en = render_page(
         status=status, operational=operational, news=news, new_items=new_items,
         previous_fp=previous_fp, current_fp=current_fp, local_dt=local_now,
         lang="en", canonical=f"{BASE_URL}/en-diary.html", archive=False,
-        material_score_value=score, material_reasons=reasons,
+        material_score_value=score if material else 0, material_reasons=reasons,
         editorial=editorial,
     )
     stable_write(root / "diario.html", live_es)
@@ -1187,7 +999,7 @@ def main() -> int:
         "material_reasons": reasons,
         "material_archive": material,
         "new_articles": len(new_items),
-        "independent_sources": len(independent),
+        "source_brands": len(independent),
         "topics": dict(Counter(item.topic for item in new_items)),
         "fingerprint": current_fp,
         "news": [asdict(item) for item in news[:15]],
@@ -1201,7 +1013,7 @@ def main() -> int:
     dump_json(root / "journal-data" / f"{date_iso}.json", edition)
     dump_json(root / "journal-latest.json", edition)
 
-    if material:
+    if material or (root / "diario" / f"{date_iso}.html").exists():
         archive_es_url = f"{BASE_URL}/diario/{date_iso}.html"
         archive_en_url = f"{BASE_URL}/diary/{date_iso}.html"
         archive_es = render_page(
@@ -1263,7 +1075,7 @@ def main() -> int:
         "material_archive": material,
         "news_considered": len(news),
         "new_articles": len(new_items),
-        "independent_sources": len(independent),
+        "source_brands": len(independent),
         "fetch_errors": fetch_errors,
         "operational_intelligence_used": bool(operational),
     })

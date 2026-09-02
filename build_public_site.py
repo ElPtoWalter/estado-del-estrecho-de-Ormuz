@@ -10,6 +10,8 @@ import shutil
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from publication_quality import apply_policy
+from monitor_report import build_reports
 from typing import Any
 
 ROOT = Path(__file__).resolve().parent
@@ -87,8 +89,8 @@ PRO_LANGUAGE = (
     ("Artificial intelligence", "internal analysis tools"),
     ("inteligencia artificial", "herramientas internas de análisis"),
     ("artificial intelligence", "internal analysis tools"),
-    ("Redacción automatizada con control de consistencia", "Equipo editorial de Estrecho Ormuz"),
-    ("Automated newsroom with consistency checks", "Estrecho Ormuz Editorial Team"),
+    ("Redacción automatizada con control de consistencia", "Estrecho Ormuz · selección automática"),
+    ("Automated newsroom with consistency checks", "Estrecho Ormuz · automated selection"),
     ("Crónica diaria automática y trazable", "Crónica diaria · fuentes verificables"),
     ("Daily automated, traceable briefing", "Daily briefing · verifiable sources"),
     ("API pública", "servicio público"),
@@ -518,7 +520,7 @@ def clean_jsonld(document: str, lang: str) -> str:
                 if value.get("@type") in {"Article", "NewsArticle", "AnalysisNewsArticle", "Report"}:
                     value["author"] = {
                         "@type": "Organization",
-                        "name": "Equipo editorial de Estrecho Ormuz" if lang == "es" else "Estrecho Ormuz Editorial Team",
+                        "name": "Estrecho Ormuz",
                         "url": DOMAIN + ("/sobre.html" if lang == "es" else "/en-about.html"),
                     }
                     value["publisher"] = {"@type": "Organization", "name": "Estrecho Ormuz", "url": DOMAIN + "/"}
@@ -713,12 +715,12 @@ def sanitize_html(document: str, filename: str) -> str:
     ):
         signature = (
             '<div class="editorial-signature-v9"><span>Publicación</span>'
-            '<strong>Equipo editorial de Estrecho Ormuz</strong>'
-            '<small>Fuentes contrastadas · Metodología pública · Política de correcciones</small></div>'
+            '<strong>Estrecho Ormuz</strong>'
+            '<small>Fuentes enlazadas · Metodología pública · Política de correcciones</small></div>'
             if lang == "es" else
             '<div class="editorial-signature-v9"><span>Published by</span>'
-            '<strong>Estrecho Ormuz Editorial Team</strong>'
-            '<small>Cross-checked sources · Public methodology · Corrections policy</small></div>'
+            '<strong>Estrecho Ormuz</strong>'
+            '<small>Linked sources · Public methodology · Corrections policy</small></div>'
         )
         main = re.search(r"<main\b[^>]*>", document, re.I)
         if main:
@@ -794,6 +796,8 @@ def javascript_is_private(path: Path) -> bool:
     return bool(PRIVATE_ENDPOINT_RE.search(body))
 
 def copy_asset(path: Path) -> bool:
+    if path.name == "monitor-records.csv":
+        return True
     if private_name(path) or path.name.startswith("."):
         return False
     suffix = path.suffix.lower()
@@ -869,6 +873,7 @@ def audit_public_build() -> None:
         raise SystemExit(2)
 
 def main() -> int:
+    build_reports(ROOT)
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
@@ -882,7 +887,7 @@ def main() -> int:
         target = OUT / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(
-            sanitize_html(path.read_text(encoding="utf-8"), path.name),
+            apply_policy(sanitize_html(path.read_text(encoding="utf-8"), path.name), rel.as_posix()),
             encoding="utf-8",
         )
 
@@ -905,7 +910,7 @@ def main() -> int:
             if path.suffix.lower() == ".html":
                 target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_text(
-                    sanitize_html(path.read_text(encoding="utf-8"), path.name),
+                    apply_policy(sanitize_html(path.read_text(encoding="utf-8"), path.name), rel.as_posix()),
                     encoding="utf-8",
                 )
             elif copy_asset(path):
