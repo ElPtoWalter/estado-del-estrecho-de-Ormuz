@@ -102,27 +102,46 @@ def render_promotions(site, lang):
     name = ("Estrecho de Gibraltar" if other == "gibraltar" else "Estrecho de Ormuz") if es else ("Strait of Gibraltar" if other == "gibraltar" else "Strait of Hormuz")
     url = ("https://estrechogibraltar.com/" if other == "gibraltar" else "https://estrechoormuz.com/") + ("" if es else "en.html")
     description = (
-        ("Tráfico marítimo, puertos y contexto entre el Atlántico y el Mediterráneo." if other == "gibraltar" else "Tráfico marítimo, energía y claves para entender el corredor del Golfo.")
+        ("Puertos, comercio y geopolítica entre dos continentes." if other == "gibraltar" else "Tráfico, petróleo y claves del corredor del Golfo.")
         if es else
-        ("Shipping, ports and context between the Atlantic and the Mediterranean." if other == "gibraltar" else "Shipping, energy and context for understanding the Gulf corridor.")
+        ("Ports, trade and geopolitics between two continents." if other == "gibraltar" else "Shipping, oil and context for the Gulf corridor.")
     )
     label = "Publicidad propia · Otros proyectos" if es else "House promotion · Other projects"
-    dv_copy = "Una web privada para vuestra despedida, con fotos, mensajes y juegos a medida. Se abre desde un QR, sin instalar apps." if es else "A private website for your stag or hen party, with photos, messages and personalised games. Open it with a QR code, no app needed."
-    dv_cta = "Descubrir DespedidaVerse" if es else "Explore DespedidaVerse"
+    dv_copy = "Vuestras fotos y juegos, en una web privada." if es else "Your photos and games, in a private website."
+    dv_cta = "Entrar en DespedidaVerse" if es else "Explore DespedidaVerse"
     other_cta = "Visitar el observatorio" if es else "Visit the observatory"
+    disclosure = "Publicidad propia" if es else "House promotion"
+    domain = "estrechogibraltar.com" if other == "gibraltar" else "estrechoormuz.com"
+    topics = (("Tráfico y puertos", "Economía y rutas", "Geopolítica") if other == "gibraltar" else
+              ("Tráfico marítimo", "Energía y rutas", "Fuentes y análisis")) if es else (
+              ("Shipping and ports", "Economy and routes", "Geopolitics") if other == "gibraltar" else
+              ("Maritime traffic", "Energy and routes", "Sources and analysis"))
+    topic_rows = "".join(f'<span><b>0{n}</b>{topic}</span>' for n, topic in enumerate(topics, 1))
     return f'''<aside id="otros-proyectos" class="own-projects own-projects--{site}" data-own-projects aria-labelledby="own-projects-title">
 <h2 id="own-projects-title" class="own-projects__label">{label}</h2>
 <div class="own-projects__grid">
 <a class="own-projects__card own-projects__card--verse" href="https://despedidaverse.com/" rel="sponsored">
-<span class="own-projects__eyebrow">{"EXPERIENCIAS PARA DESPEDIDAS" if es else "PERSONALISED PARTY EXPERIENCES"}</span>
-<strong class="own-projects__brand">DespedidaVerse</strong>
+<span class="own-projects__disclosure">{disclosure}<span aria-hidden="true">↗</span></span>
+<div class="own-projects__window own-projects__window--verse">
+<span class="own-projects__address">despedidaverse.com</span>
+<img class="own-projects__logo" src="/own-projects-dv-logo.webp" alt="DespedidaVerse Studio" width="1600" height="400" decoding="async">
+<strong class="own-projects__headline">{"Una despedida." if es else "One celebration."}<em>{"Todo un universo." if es else "A whole universe."}</em></strong>
 <p class="own-projects__copy">{dv_copy}</p>
-<span class="own-projects__cta">{dv_cta}<span aria-hidden="true"> →</span>{" · Spanish-language site" if not es else ""}</span>
+<span class="own-projects__preview"><img src="/own-projects-dv-preview.webp" alt="" width="958" height="759" decoding="async"></span>
+<span class="own-projects__caption">{"Ejemplo real · Antonverse" if es else "Real example · Antonverse"}</span>
+</div>
+<span class="own-projects__cta">{dv_cta}<span aria-hidden="true"> →</span>{'<small lang="en">Spanish-language site</small>' if not es else ""}</span>
 </a>
-<a class="own-projects__card own-projects__card--strait" href="{escape(url, quote=True)}" rel="sponsored">
-<span class="own-projects__eyebrow">{"OTRO ESTRECHO, MÁS CONTEXTO" if es else "ANOTHER STRAIT, MORE CONTEXT"}</span>
+<a class="own-projects__card own-projects__card--strait own-projects__card--{other}" href="{escape(url, quote=True)}" rel="sponsored">
+<span class="own-projects__disclosure">{disclosure}<span aria-hidden="true">↗</span></span>
+<div class="own-projects__window own-projects__window--strait">
+<span class="own-projects__address">{domain}</span>
+<span class="own-projects__eyebrow">{"OBSERVATORIO INDEPENDIENTE" if es else "INDEPENDENT OBSERVATORY"}</span>
 <strong class="own-projects__brand">{name}</strong>
 <p class="own-projects__copy">{description}</p>
+<span class="own-projects__topics">{topic_rows}</span>
+<span class="own-projects__caption">{"El otro paso. Otra perspectiva." if es else "Another passage. Another perspective."}</span>
+</div>
 <span class="own-projects__cta">{other_cta}<span aria-hidden="true"> →</span></span>
 </a>
 </div></aside>'''
@@ -138,4 +157,4 @@ def add_promotions(document, path, site):
     facts.feed(document)
     position = main_end[-1].start()
     document = document[:position] + render_promotions(site, facts.lang) + "\n" + document[position:]
-    return re.sub(r"</head\s*>", '<link rel="stylesheet" href="/own-projects.css?v=20260902-1">\n</head>', document, count=1, flags=re.I)
+    return re.sub(r"</head\s*>", '<link rel="stylesheet" href="/own-projects.css?v=20260902-2">\n</head>', document, count=1, flags=re.I)

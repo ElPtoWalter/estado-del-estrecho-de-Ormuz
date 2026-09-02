@@ -63,7 +63,7 @@ class PromotionTests(unittest.TestCase):
 
     def test_no_tracking_scripts_or_external_assets(self):
         block = promo.render_promotions("gibraltar", "es")
-        for unwanted in ("<script", "<iframe", "<img", "utm_", "onclick", "adsbygoogle", "target="):
+        for unwanted in ("<script", "<iframe", "utm_", "onclick", "adsbygoogle", "target="):
             self.assertNotIn(unwanted, block)
         self.assertEqual(block.count('rel="sponsored"'), 2)
 
@@ -71,13 +71,89 @@ class PromotionTests(unittest.TestCase):
         for page in ("<html><head></head><body>Texto</body></html>", "<main><p>Texto</p></main>"):
             self.assertEqual(promo.add_promotions(page, "index.html", "ormuz"), page)
 
-    def test_css_has_mobile_and_keyboard_rules_without_overlay(self):
+    def test_css_has_mobile_and_keyboard_rules_without_animation(self):
         css = (Path(__file__).parent / "own-projects.css").read_text()
         self.assertIn("@media (max-width: 42rem)", css)
         self.assertIn("grid-template-columns: minmax(0, 1fr)", css)
         self.assertIn(":focus-visible", css)
-        for forbidden in ("position: fixed", "position: absolute", "animation:", "@import", "url("):
+        for forbidden in ("animation:", "@import", "url("):
             self.assertNotIn(forbidden, css)
+
+    def test_each_card_identified_as_house_promotion(self):
+        for lang in ("es", "en"):
+            result = promo.render_promotions("ormuz", lang)
+            self.assertEqual(result.count('class="own-projects__disclosure"'), 2)
+            self.assertIn("Ejemplo real" if lang == "es" else "Real example", result)
+
+    def test_portal_images_are_local_real_assets_with_reserved_dimensions(self):
+        class Images(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.images = []
+            def handle_starttag(self, tag, attrs):
+                if tag == "img":
+                    self.images.append(dict(attrs))
+        parser = Images()
+        parser.feed(promo.render_promotions("ormuz", "es"))
+        self.assertEqual(len(parser.images), 2)
+        for attrs in parser.images:
+            self.assertTrue(attrs["src"].startswith("/own-projects-dv-"))
+            self.assertGreater(int(attrs["width"]), 0)
+            self.assertGreater(int(attrs["height"]), 0)
+            self.assertIn("alt", attrs)
+            asset = Path(__file__).parent / attrs["src"].lstrip("/")
+            self.assertTrue(asset.is_file())
+            self.assertLess(asset.stat().st_size, 200_000)
+            self.assertEqual(asset.read_bytes()[:4], b"RIFF")
+
+    def test_fixed_rules_are_only_in_wide_tall_mouse_media_query(self):
+        css = (Path(__file__).parent / "own-projects.css").read_text()
+        guard = "@media screen and (min-width: 110rem) and (min-height: 50rem) and (hover: hover) and (pointer: fine)"
+        before, after = css.split(guard)
+        self.assertNotIn("position: fixed", before)
+        self.assertIn("position: fixed", after)
+        self.assertIn("@media print", after)
+        self.assertIn("overflow-y: auto", after)
+        self.assertIn("min(38rem, calc(100svh - 11rem))", after)
+        self.assertIn(".own-projects__cta { flex: 0 0 auto", after)
+
+    def test_side_geometry_preserves_editorial_width(self):
+        # Mirrors CSS: 80rem centre, max 18rem rail, 1rem edge and content gap.
+        for rem in (16, 20, 32):
+            for width in (110 * rem, 120 * rem, 160 * rem, 240 * rem):
+                card = min(18 * rem, (width - 80 * rem) / 2 - 2 * rem)
+                left = max(rem, width / 2 - 59 * rem)
+                content_left = (width - 80 * rem) / 2
+                self.assertGreaterEqual(card, 13 * rem)
+                self.assertGreaterEqual(left, rem)
+                self.assertGreaterEqual(content_left - (left + card), rem)
+
+    def test_portals_have_balanced_markup_and_only_two_click_targets(self):
+        class Structure(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.stack = []
+                self.errors = []
+                self.links = 0
+            def handle_starttag(self, tag, attrs):
+                if tag == "a":
+                    self.links += 1
+                    if "a" in self.stack:
+                        self.errors.append("nested link")
+                if tag != "img":
+                    self.stack.append(tag)
+            def handle_endtag(self, tag):
+                if not self.stack or self.stack.pop() != tag:
+                    self.errors.append(tag)
+        for site in ("ormuz", "gibraltar"):
+            parser = Structure()
+            parser.feed(promo.render_promotions(site, "es"))
+            self.assertEqual(parser.links, 2)
+            self.assertEqual(parser.stack, [])
+            self.assertEqual(parser.errors, [])
+
+    def test_css_version_invalidates_previous_cached_cards(self):
+        self.assertIn("own-projects.css?v=20260902-2", promo.add_promotions(self.page(), "index.html", "ormuz"))
 
 
 if __name__ == "__main__":
