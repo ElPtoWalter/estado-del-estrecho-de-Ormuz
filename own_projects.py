@@ -147,6 +147,80 @@ def render_promotions(site, lang):
 </div></aside>'''
 
 
+class PromotionPlacement(HTMLParser):
+    """Find a complete introductory block; never split paragraphs or headings."""
+    VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
+    IGNORED = {"script", "style", "nav", "aside", "form", "template", "noscript"}
+
+    def __init__(self, document):
+        super().__init__()
+        self.document = document
+        self.lines = [0]
+        for line in document.splitlines(keepends=True):
+            self.lines.append(self.lines[-1] + len(line))
+        self.stack = []
+        self.blocks = []
+        self.paragraphs = []
+
+    def source_position(self):
+        line, column = self.getpos()
+        return self.lines[line - 1] + column
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self.VOID:
+            return
+        parents = [frame["tag"] for frame in self.stack]
+        inside = "main" in parents and not self.IGNORED.intersection(parents)
+        if tag == "h1":
+            for frame in self.stack:
+                frame["heading"] = True
+        self.stack.append({"tag": tag, "attrs": dict(attrs), "start": self.source_position(),
+                           "inside": inside, "parent": parents[-1] if parents else "",
+                           "words": 0, "heading": False})
+
+    def handle_startendtag(self, tag, attrs):
+        return
+
+    def handle_data(self, data):
+        if self.IGNORED.intersection(frame["tag"] for frame in self.stack):
+            return
+        words = len(re.findall(r"[^\W_]+", data))
+        for frame in self.stack:
+            frame["words"] += words
+
+    def handle_endtag(self, tag):
+        index = next((i for i in range(len(self.stack)-1, -1, -1) if self.stack[i]["tag"] == tag), None)
+        if index is None:
+            return
+        frame = self.stack[index]
+        del self.stack[index:]
+        if not frame["inside"]:
+            return
+        frame["end"] = self.document.find(">", self.source_position()) + 1
+        if tag in {"section", "header"} and frame["parent"] in {"main", "article"}:
+            if frame["words"] >= 8 and (tag == "section" or frame["heading"]):
+                self.blocks.append(frame)
+        elif tag == "p" and frame["words"] >= 12 and frame["parent"] in {"main", "article"}:
+            self.paragraphs.append(frame)
+
+
+def mobile_position(document, path, site, fallback):
+    placement = PromotionPlacement(document)
+    placement.feed(document)
+    blocks = sorted(placement.blocks, key=lambda frame: frame["start"])
+    if path in HOME_PAGES:
+        for frame in blocks:
+            attrs = frame["attrs"]
+            if (site == "ormuz" and attrs.get("id") in {"estado-actual", "current-status"}) or (
+                    site == "gibraltar" and "gwc-status" in attrs.get("class", "").split()):
+                return frame["end"]
+    if blocks:
+        return blocks[0]["end"]
+    if placement.paragraphs:
+        return min(placement.paragraphs, key=lambda frame: frame["start"])["end"]
+    return fallback
+
+
 def add_promotions(document, path, site):
     if "data-own-projects" in document or not eligible(document, path, site):
         return document
@@ -155,6 +229,14 @@ def add_promotions(document, path, site):
         return document
     facts = PageFacts()
     facts.feed(document)
-    position = main_end[-1].start()
-    document = document[:position] + render_promotions(site, facts.lang) + "\n" + document[position:]
-    return re.sub(r"</head\s*>", '<link rel="stylesheet" href="/own-projects.css?v=20260902-2">\n</head>', document, count=1, flags=re.I)
+    end = main_end[-1].start()
+    early = mobile_position(document, path, site, end)
+    # One pair, already near the start without JavaScript. Desktop restores its
+    # original end position; CSS alone continues to provide the wide side rails.
+    start_marker = '<span id="projects-mobile-position" class="own-projects-anchor" hidden></span>'
+    end_marker = '<span id="projects-desktop-position" class="own-projects-anchor" hidden></span>'
+    block = start_marker + render_promotions(site, facts.lang) + "\n"
+    document = document[:early] + block + document[early:end] + end_marker + document[end:]
+    assets = ('<link rel="stylesheet" href="/own-projects.css?v=20260902-3">\n'
+              '<script defer src="/own-projects.js?v=20260902-3"></script>\n</head>')
+    return re.sub(r"</head\s*>", assets, document, count=1, flags=re.I)
