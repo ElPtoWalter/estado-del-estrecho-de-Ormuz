@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from publication_quality import apply_policy
 from monitor_report import build_reports
+from own_projects import add_promotions
 from typing import Any
 
 ROOT = Path(__file__).resolve().parent
@@ -887,7 +888,7 @@ def main() -> int:
         target = OUT / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(
-            apply_policy(sanitize_html(path.read_text(encoding="utf-8"), path.name), rel.as_posix()),
+            add_promotions(apply_policy(sanitize_html(path.read_text(encoding="utf-8"), path.name), rel.as_posix()), rel.as_posix(), "ormuz"),
             encoding="utf-8",
         )
 
@@ -910,7 +911,7 @@ def main() -> int:
             if path.suffix.lower() == ".html":
                 target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_text(
-                    apply_policy(sanitize_html(path.read_text(encoding="utf-8"), path.name), rel.as_posix()),
+                    add_promotions(apply_policy(sanitize_html(path.read_text(encoding="utf-8"), path.name), rel.as_posix()), rel.as_posix(), "ormuz"),
                     encoding="utf-8",
                 )
             elif copy_asset(path):
