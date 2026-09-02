@@ -1,4 +1,5 @@
-/* Two first-party promotions; scoped, static and independent of ad networks. */
+/* House promotions: one pair, in-flow by default, fixed only in spare side space.
+   Editorial shells remain unchanged. Local assets reproduce the public DV studio. */
 .own-projects {
   --op-label: #465765;
   box-sizing: border-box;
@@ -13,81 +14,123 @@
 .own-projects--ormuz { --op-label: #aebdcc; }
 .own-projects *, .own-projects *::before, .own-projects *::after { box-sizing: border-box; }
 .own-projects .own-projects__label {
-  margin: 0 0 1rem;
-  padding: 0;
+  margin: 0 0 1rem; padding: 0;
   color: var(--op-label);
   font: 600 .875rem/1.5 system-ui, sans-serif;
-  letter-spacing: .03em;
-  text-transform: none;
+  letter-spacing: .03em; text-transform: none;
 }
 .own-projects .own-projects__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
 }
 .own-projects .own-projects__card {
-  --op-accent: #d5b3ff;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 0;
-  height: auto;
-  margin: 0;
-  padding: clamp(1.125rem, 2.5vw, 1.75rem);
-  gap: .75rem;
-  border: 1px solid #67537e;
-  border-top: 3px solid var(--op-accent);
-  border-radius: .75rem;
-  background: linear-gradient(115deg, #231336, #121321);
-  color: #fff;
-  font-family: inherit;
-  text-decoration: none;
-  overflow-wrap: anywhere;
-  box-shadow: none;
+  --op-accent: #52ded8; --op-ink: #f7f5ef;
+  --op-muted: #bfc5cd; --op-line: #e1eef42b;
+  display: flex; flex-direction: column; align-items: stretch;
+  min-width: 0; margin: 0; padding: 0;
+  border: 1px solid #555468; border-radius: .75rem;
+  background: #07090f; color: var(--op-ink);
+  text-decoration: none; overflow-wrap: anywhere; word-break: normal;
+  box-shadow: 0 12px 36px #00000024;
 }
-.own-projects .own-projects__card--strait {
-  --op-accent: #8dd5e2;
-  border-color: #416779;
-  border-top-color: var(--op-accent);
-  background: linear-gradient(115deg, #102e40, #101e2c);
+.own-projects .own-projects__disclosure {
+  display: flex; justify-content: space-between; gap: .5rem;
+  padding: .65rem 1rem; border-bottom: 1px solid #ffffff26;
+  color: #d5dbe4; font: 500 .75rem/1.4 system-ui, sans-serif; letter-spacing: .03em;
 }
-.own-projects .own-projects__eyebrow {
-  color: var(--op-accent);
-  font: 650 .75rem/1.5 system-ui, sans-serif;
-  letter-spacing: .075em;
+.own-projects .own-projects__window {
+  display: flex; flex: 1; flex-direction: column; gap: .85rem;
+  min-width: 0; padding: clamp(1rem, 2vw, 1.5rem);
+  background: radial-gradient(ellipse at top left, #7968ff20, transparent 70%), #090d14;
 }
+.own-projects .own-projects__address {
+  display: block; padding-bottom: .65rem;
+  border-bottom: 1px solid var(--op-line); color: var(--op-muted);
+  font: 400 .75rem/1.4 ui-monospace, monospace;
+}
+.own-projects .own-projects__logo {
+  display: block; width: 100%; max-width: 20rem; height: auto;
+  aspect-ratio: 4 / 1; object-fit: contain;
+}
+.own-projects .own-projects__headline,
 .own-projects .own-projects__brand {
-  display: block;
-  margin: 0;
-  color: #fff;
-  font: 700 clamp(1.4rem, 2.4vw, 1.8rem)/1.2 system-ui, sans-serif;
-  letter-spacing: -.025em;
-  text-wrap: balance;
+  display: block; margin: 0; color: var(--op-ink);
+  font: 750 clamp(1.75rem, 2.5vw, 2.5rem)/1.03 system-ui, sans-serif;
+  letter-spacing: -.04em; text-wrap: balance;
+}
+.own-projects .own-projects__headline em {
+  display: block; margin-top: .15em; color: #e9e2d2;
+  font: 400 1em/1.05 Georgia, serif; letter-spacing: -.035em;
 }
 .own-projects .own-projects__copy {
-  max-width: 40em;
-  margin: 0;
-  padding: 0;
-  color: #d9e3eb;
-  font: 400 1rem/1.6 system-ui, sans-serif;
+  margin: 0; padding: 0; color: var(--op-muted);
+  font: 400 1rem/1.5 system-ui, sans-serif; text-wrap: pretty;
+}
+.own-projects .own-projects__preview {
+  display: block; height: 11rem; min-height: 5rem; overflow: hidden;
+  border: 1px solid #52ded84d; border-radius: .4rem; background: #171026;
+}
+.own-projects .own-projects__preview img {
+  display: block; width: 100%; max-width: 100%; height: 100%;
+  object-fit: cover; object-position: top left;
+}
+.own-projects .own-projects__caption { display: block; color: var(--op-muted); font: 400 .75rem/1.5 system-ui, sans-serif; }
+.own-projects .own-projects__eyebrow {
+  display: block; color: var(--op-accent);
+  font: 650 .75rem/1.5 system-ui, sans-serif; letter-spacing: .08em;
 }
 .own-projects .own-projects__cta {
-  display: block;
-  margin-top: auto;
-  padding-top: .5rem;
-  color: #fff;
-  font: 650 .9375rem/1.5 system-ui, sans-serif;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: .25em;
+  display: block; margin: .9rem; padding: .85rem .8rem;
+  border: 1px solid #ffffff30; border-radius: .3rem;
+  background: linear-gradient(115deg, #aa234a, #5842c7); color: #fff;
+  font: 650 .9375rem/1.4 system-ui, sans-serif;
 }
-.own-projects .own-projects__card:hover { border-color: var(--op-accent); }
-.own-projects .own-projects__card:focus-visible {
-  outline: 3px solid #f1ad39;
-  outline-offset: 4px;
+.own-projects .own-projects__cta small { display: block; margin-top: .25rem; font: 400 .75rem/1.4 system-ui, sans-serif; }
+.own-projects .own-projects__topics { display: grid; margin-block: auto; padding-top: .75rem; }
+.own-projects .own-projects__topics > span {
+  display: flex; align-items: baseline; gap: .6rem; padding: .8rem 0;
+  border-top: 1px solid var(--op-line); color: var(--op-ink);
+  font: 500 .875rem/1.45 system-ui, sans-serif;
 }
+.own-projects .own-projects__topics b { color: var(--op-accent); font: 500 .75rem/1.5 ui-monospace, monospace; }
+.own-projects .own-projects__card--gibraltar {
+  --op-ink: #102733; --op-muted: #435967;
+  --op-accent: #0d6278; --op-line: #10273330; border-color: #597c85;
+}
+.own-projects .own-projects__card--gibraltar .own-projects__window { background: #f5f0e5; }
+.own-projects .own-projects__card--gibraltar .own-projects__brand { font-family: Georgia, serif; font-weight: 500; }
+.own-projects .own-projects__card--strait .own-projects__disclosure { background: #102733; border-radius: .7rem .7rem 0 0; }
+.own-projects .own-projects__card--strait .own-projects__cta { background: #0d6278; }
+.own-projects .own-projects__card--ormuz .own-projects__window { background: #0b1420; }
+.own-projects .own-projects__card:hover { border-color: #52ded8; box-shadow: 0 12px 40px #00000040; }
+.own-projects .own-projects__card:focus-visible { outline: 3px solid #eea731; outline-offset: 4px; }
+
 @media (max-width: 42rem) {
   .own-projects { margin-top: 2rem; }
   .own-projects .own-projects__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* 1280px editorial shell + two 208px rails + four 16px gaps = 1760px.
+   Zoom, larger default fonts, short windows and touch-only devices use in-flow. */
+@media screen and (min-width: 110rem) and (min-height: 50rem) and (hover: hover) and (pointer: fine) {
+  .own-projects { width: 0; height: 0; margin: 0; padding: 0; border: 0; }
+  .own-projects .own-projects__label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); }
+  .own-projects .own-projects__grid { display: block; }
+  .own-projects .own-projects__card {
+    position: fixed; z-index: 10; top: 9rem;
+    width: min(18rem, calc((100% - 80rem) / 2 - 2rem));
+    height: min(38rem, calc(100vh - 11rem));
+    height: min(38rem, calc(100svh - 11rem));
+  }
+  .own-projects .own-projects__card--verse { left: max(1rem, calc(50% - 59rem)); }
+  .own-projects .own-projects__card--strait { right: max(1rem, calc(50% - 59rem)); }
+  .own-projects .own-projects__window { min-height: 0; gap: .7rem; padding: .9rem; overflow-y: auto; scrollbar-width: thin; }
+  .own-projects .own-projects__headline,
+  .own-projects .own-projects__brand { font-size: 1.5rem; }
+  .own-projects .own-projects__copy { font-size: 1rem; line-height: 1.4; }
+  .own-projects .own-projects__preview { flex: 1; min-height: 4rem; height: auto; }
+  .own-projects .own-projects__topics > span { padding: .65rem 0; }
+  .own-projects .own-projects__cta { flex: 0 0 auto; margin-top: 0; }
 }
 @media print { .own-projects { display: none; } }
