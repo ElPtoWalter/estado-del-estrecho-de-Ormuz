@@ -1,4 +1,6 @@
 import unittest
+import shutil
+import subprocess
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -26,9 +28,10 @@ class PromotionTests(unittest.TestCase):
         self.assertIn("Spanish-language site", result)
         self.assertIn('href="https://despedidaverse.com/"', result)
 
-    def test_inserted_after_article_before_main_end(self):
+    def test_inserted_after_first_information_before_main_end(self):
         result = promo.add_promotions(self.page(), "index.html", "ormuz")
-        self.assertLess(result.index("</article>"), result.index("data-own-projects"))
+        self.assertLess(result.index("</p>"), result.index("data-own-projects"))
+        self.assertLess(result.index("data-own-projects"), result.index("</article>"))
         self.assertLess(result.index("data-own-projects"), result.index("</main>"))
         self.assertLess(result.index("</main>"), result.index("<footer>"))
 
@@ -73,7 +76,7 @@ class PromotionTests(unittest.TestCase):
 
     def test_css_has_mobile_and_keyboard_rules_without_animation(self):
         css = (Path(__file__).parent / "own-projects.css").read_text()
-        self.assertIn("@media (max-width: 42rem)", css)
+        self.assertIn("@media (max-width: 48rem)", css)
         self.assertIn("grid-template-columns: minmax(0, 1fr)", css)
         self.assertIn(":focus-visible", css)
         for forbidden in ("animation:", "@import", "url("):
@@ -153,7 +156,66 @@ class PromotionTests(unittest.TestCase):
             self.assertEqual(parser.errors, [])
 
     def test_css_version_invalidates_previous_cached_cards(self):
-        self.assertIn("own-projects.css?v=20260902-2", promo.add_promotions(self.page(), "index.html", "ormuz"))
+        result = promo.add_promotions(self.page(), "index.html", "ormuz")
+        self.assertIn("own-projects.css?v=20260902-3", result)
+        self.assertIn('defer src="/own-projects.js?v=20260902-3"', result)
+
+    def test_home_comes_after_status_not_before_initial_information(self):
+        for site, path, attrs in (("ormuz", "index.html", 'id="estado-actual"'),
+                                  ("ormuz", "en.html", 'id="current-status"'),
+                                  ("gibraltar", "index.html", 'class="gwc-status"'),
+                                  ("gibraltar", "en.html", 'class="gwc-status"')):
+            content = ('<section><h1>Portada</h1><p>' + 'intro ' * 30 + '</p></section>'
+                       f'<section {attrs}><header><h2>Estado</h2></header><p>' + 'situación ' * 30 +
+                       '</p><section><p>Detalle anidado</p></section></section>'
+                       '<section id="siguiente"><p>Más información</p></section>')
+            page = f'<html><head></head><body><main>{content}</main></body></html>'
+            result = promo.add_promotions(page, path, site)
+            self.assertIn('</section></section><span id="projects-mobile-position"', result)
+            self.assertLess(result.index("data-own-projects"), result.index('id="siguiente"'))
+            self.assertEqual(result.count('id="otros-proyectos"'), 1)
+
+    def test_article_keeps_complete_intro_before_promotions(self):
+        content = ('<article><header><h1>Guía del estrecho</h1><p>' + 'intro ' * 30 +
+                   '</p></header><section id="analisis"><p>' + 'dato ' * 400 + '</p></section></article>')
+        page = f'<html><head></head><body><main>{content}</main></body></html>'
+        result = promo.add_promotions(page, "importancia.html", "ormuz")
+        self.assertIn('</header><span id="projects-mobile-position"', result)
+        self.assertLess(result.index("data-own-projects"), result.index('id="analisis"'))
+        self.assertLess(result.index('</article>'), result.index('id="projects-desktop-position"'))
+
+    def test_empty_or_non_editorial_sections_are_not_insertion_targets(self):
+        content = ('<nav><section><p>' + 'menú ' * 50 + '</p></section></nav><section></section>'
+                   '<header><h1>Título</h1></header><script>const x = "</section>";</script>'
+                   '<section id="primero"><p>' + 'texto ' * 40 + '</p></section><section id="resto"></section>')
+        page = f'<html><head></head><body><main>{content}</main></body></html>'
+        result = promo.add_promotions(page, "index.html", "ormuz")
+        self.assertLess(result.index('id="primero"'), result.index('id="projects-mobile-position"'))
+        self.assertLess(result.index("data-own-projects"), result.index('id="resto"'))
+
+    def test_unicode_multiline_offsets_and_fallback_are_safe(self):
+        page = '<html>\n<head></head><body><main><section><p>' + 'tráfico ' * 20 + '</p></section>\n<p>Final</p></main></body></html>'
+        result = promo.add_promotions(page, "index.html", "gibraltar")
+        self.assertIn('</section><span id="projects-mobile-position"', result)
+        self.assertIn('<p>Final</p><span id="projects-desktop-position"', result)
+        minimal = '<html><head></head><body><main><h1>Sin resumen</h1></main></body></html>'
+        result = promo.add_promotions(minimal, "index.html", "ormuz")
+        self.assertLess(result.index('</h1>'), result.index('data-own-projects'))
+        self.assertLess(result.index('projects-desktop-position'), result.index('</main>'))
+
+    def test_mobile_is_compact_and_not_fixed_or_sticky(self):
+        css = (Path(__file__).parent / "own-projects.css").read_text()
+        mobile = css.split('@media (max-width: 48rem)', 1)[1].split('/* 1280px', 1)[0]
+        for unwanted in ('position: fixed', 'position: sticky', 'animation:', 'overflow-y: auto'):
+            self.assertNotIn(unwanted, mobile)
+        self.assertIn('grid-template-columns: minmax(0, 1fr) 28%', mobile)
+        self.assertIn('height: 5.5rem', mobile)
+
+    @unittest.skipUnless(shutil.which('node'), 'Node is required for the responsive placement test')
+    def test_responsive_relocation_script(self):
+        root = Path(__file__).parent
+        result = subprocess.run(['node', '--test', str(root / 'test_own_projects.cjs')], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
 
 if __name__ == "__main__":
