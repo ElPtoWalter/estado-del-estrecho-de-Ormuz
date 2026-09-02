@@ -118,7 +118,10 @@ def render_promotions(site, lang):
               ("Maritime traffic", "Energy and routes", "Sources and analysis"))
     topic_rows = "".join(f'<span><b>0{n}</b>{topic}</span>' for n, topic in enumerate(topics, 1))
     return f'''<aside id="otros-proyectos" class="own-projects own-projects--{site}" data-own-projects aria-labelledby="own-projects-title">
+<div class="own-projects__head">
 <h2 id="own-projects-title" class="own-projects__label">{label}</h2>
+<button class="own-projects__close" type="button" aria-label="{'Cerrar promociones' if es else 'Close promotions'}" hidden><span aria-hidden="true">×</span></button>
+</div>
 <div class="own-projects__grid">
 <a class="own-projects__card own-projects__card--verse" href="https://despedidaverse.com/" rel="sponsored">
 <span class="own-projects__disclosure">{disclosure}<span aria-hidden="true">↗</span></span>
@@ -130,7 +133,7 @@ def render_promotions(site, lang):
 <span class="own-projects__preview"><img src="/own-projects-dv-preview.webp" alt="" width="958" height="759" decoding="async"></span>
 <span class="own-projects__caption">{"Ejemplo real · Antonverse" if es else "Real example · Antonverse"}</span>
 </div>
-<span class="own-projects__cta">{dv_cta}<span aria-hidden="true"> →</span>{'<small lang="en">Spanish-language site</small>' if not es else ""}</span>
+<span class="own-projects__cta"><span class="own-projects__cta-full">{dv_cta}<span aria-hidden="true"> →</span></span><span class="own-projects__cta-short">{'Entrar' if es else 'Explore'}<span aria-hidden="true"> →</span></span>{'<small lang="en">Spanish-language site</small>' if not es else ""}</span>
 </a>
 <a class="own-projects__card own-projects__card--strait own-projects__card--{other}" href="{escape(url, quote=True)}" rel="sponsored">
 <span class="own-projects__disclosure">{disclosure}<span aria-hidden="true">↗</span></span>
@@ -142,7 +145,7 @@ def render_promotions(site, lang):
 <span class="own-projects__topics">{topic_rows}</span>
 <span class="own-projects__caption">{"El otro paso. Otra perspectiva." if es else "Another passage. Another perspective."}</span>
 </div>
-<span class="own-projects__cta">{other_cta}<span aria-hidden="true"> →</span></span>
+<span class="own-projects__cta"><span class="own-projects__cta-full">{other_cta}<span aria-hidden="true"> →</span></span><span class="own-projects__cta-short">{'Visitar' if es else 'Visit'}<span aria-hidden="true"> →</span></span></span>
 </a>
 </div></aside>'''
 
@@ -237,6 +240,6 @@ def add_promotions(document, path, site):
     end_marker = '<span id="projects-desktop-position" class="own-projects-anchor" hidden></span>'
     block = start_marker + render_promotions(site, facts.lang) + "\n"
     document = document[:early] + block + document[early:end] + end_marker + document[end:]
-    assets = ('<link rel="stylesheet" href="/own-projects.css?v=20260902-3">\n'
-              '<script defer src="/own-projects.js?v=20260902-3"></script>\n</head>')
+    assets = ('<link rel="stylesheet" href="/own-projects.css?v=20260902-4">\n'
+              '<script defer src="/own-projects.js?v=20260902-4"></script>\n</head>')
     return re.sub(r"</head\s*>", assets, document, count=1, flags=re.I)
