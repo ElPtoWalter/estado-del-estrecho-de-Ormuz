@@ -1,17 +1,17 @@
 {
   "engine_version": 3,
   "status": "INCIERTO",
-  "operational_status": "HIGH_RISK_UNCONFIRMED",
-  "operational_label_es": "Riesgo elevado, estado no confirmado",
-  "operational_label_en": "High risk, status unconfirmed",
-  "confidence": "ALTA",
-  "checked_at": "2026-09-02T01:17:30Z",
-  "last_success_at": "2026-09-02T01:17:30Z",
-  "last_change_at": "2026-08-29T21:54:29Z",
+  "operational_status": "NO_RECENT_CONFIRMATION",
+  "operational_label_es": "Sin confirmación reciente",
+  "operational_label_en": "No recent confirmation",
+  "confidence": "BAJA",
+  "checked_at": "2026-09-02T06:20:39Z",
+  "last_success_at": "2026-09-02T06:20:39Z",
+  "last_change_at": "2026-09-02T06:20:39Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
-  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
+  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
+  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
   "last_valid_confirmation": null,
   "evidence": [
     {
@@ -78,37 +78,38 @@
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
-      "Google News RSS"
+      "GDELT"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "Google News RSS: HTTPError: HTTP Error 503: Service Unavailable"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 21.135
+      "risk": 0
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 8
+      "risk": 0
     },
-    "articles_considered": 25,
-    "signals_considered": 13,
-    "current_cycle_evidence": 6,
-    "evidence_display_mode": "current",
+    "articles_considered": 1,
+    "signals_considered": 0,
+    "current_cycle_evidence": 0,
+    "evidence_display_mode": "carried",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
-    "mode": "current",
+    "mode": "carried",
     "as_of": "2026-09-01T22:53:56Z",
-    "current_cycle_count": 6,
-    "heading_es": "Evidencias de esta comprobación",
-    "heading_en": "Evidence from this check",
-    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
-    "description_en": "Publishable signals found during the latest verification cycle."
+    "current_cycle_count": 0,
+    "heading_es": "Últimas evidencias disponibles",
+    "heading_en": "Latest available evidence",
+    "description_es": "La comprobación más reciente no aportó nuevas evidencias publicables. Estas señales proceden de ciclos anteriores y se muestran con su fecha real.",
+    "description_en": "The latest check produced no new publishable evidence. These signals come from earlier cycles and retain their actual publication dates."
   },
   "evidence_archive": [
     {
@@ -714,16 +715,16 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-02T01:19:19Z",
+    "generated_at": "2026-09-02T06:22:50Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
     "operational_label_en": "Physical passage exists, but flows are severely degraded",
-    "confidence": "MEDIA",
-    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
-    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+    "confidence": "BAJA",
+    "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
+    "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
@@ -887,12 +888,18 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 109,
-      "provider_errors": [],
+      "signals_considered": 3,
+      "provider_errors": [
+        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
+        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
+        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
+        "Google News: HTTPError: HTTP Error 503: Service Unavailable"
+      ],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-    }
+    },
+    "carried_forward": true
   }
 }
