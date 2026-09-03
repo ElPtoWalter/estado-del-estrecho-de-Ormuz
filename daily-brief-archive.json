@@ -1,6 +1,92 @@
 [
   {
     "schema_version": 1,
+    "date": "2026-09-04",
+    "generated_at": "2026-09-03T22:46:27Z",
+    "source_checked_at": "2026-09-03T22:46:24Z",
+    "status": "ABIERTO",
+    "status_label_es": "ABIERTO CON RESTRICCIONES",
+    "status_label_en": "OPEN WITH RESTRICTIONS",
+    "operational_status": "OPEN_RESTRICTED",
+    "operational_label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
+    "operational_label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
+    "confidence": "MEDIA",
+    "confidence_label": {
+      "es": "Media",
+      "en": "Medium"
+    },
+    "verification_ok": true,
+    "stale": false,
+    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
+    "risks_es": [
+      "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
+      "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+    ],
+    "risks_en": [
+      "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
+      "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
+    ],
+    "watchlist_es": [
+      "Avisos marítimos oficiales y confirmaciones operativas independientes.",
+      "Trayectorias completas de buques y continuidad real de los cruces, no puntos AIS aislados.",
+      "Cambios en restricciones, seguros, escoltas, puertos y disponibilidad de tripulaciones."
+    ],
+    "watchlist_en": [
+      "Official maritime notices and independent operational confirmations.",
+      "Completed vessel tracks and actual continuity of crossings, not isolated AIS points.",
+      "Changes in restrictions, insurance, escorts, ports and crew availability."
+    ],
+    "evidence": [
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US-Israel-Iran War Latest Live News: US Military Says 87 Vessels Diverted in Renewed Blockade on Iran Amid Rising Strait of Hormuz Tensions - The Sunday Guardian",
+        "source_name": "The Sunday Guardian",
+        "source_url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPcURvTF81a2FuX2N3LWwxbWFWS25WVWxJeVdvWnF2UmE0cVktV2dGRmVZMUMyQUZlTTA0VW9NM1pSMmlJZURCWWNndWtGVDI3RmJzV1o4UmJtUFZjX0laWkJESXliMDZWT092aHB2eHYwYUxoWWc1UEFLNEYyeDVtTThhYXhSbHZoQ01LamlnT0JFOVF1cERCMklYS1I5M3M4Tjk1VGZGUmRURTJDSzNnaE9kNG9xVlhIZzFSbWthd0xKcnUwcGp6OEZ4d28zdGZUendMWlpKRXJBcFFxdEpGekZ1clNsUXZVWm12Z1VITEN1Mmw5UURPeUV4Mm5wd2RyTU94TElraWFtS3VLdHg2cdIBlgJBVV95cUxPdTY1WUlKbGtYM05pejI2TTU3d1A4N2RtX1A4Y2RNeDhWeVhrT182bXJSc2g5VlZQakhkaExWYzdmbHdSSXRKR2tYU1F3SElZVWhyTVlyenAyeTZhY3pNNGZhTGNnenNLWUtFN0t5RHI1aDNMMkFiZkJ4MkloTE9ld3BUWTJ4LVBpazB1TzB3YjdvekthRXFZdFZ1ZG9fNDl2TjkzOFF0TVpWVEpidnBrZmNhclY4dHZPQ1hqWGRrSFR3UF9femhyT1Flc19UekpfVEhpX1l1LUVBX1FwaUVqXzh4THl6N0d1RTJiY0NOOEVWUnpPc25wbm01a2lMUy1aMWhLaXdyeEVPZ29JLWNac3N4QkEzQQ?oc=5",
+        "published_at": "2026-09-03T21:36:45Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Vance says no talks with Iran until Hormuz attacks stop - Reuters",
+        "source_name": "Reuters",
+        "source_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE90ZTVGWlA2T0dYV3MyVjVKc0Q4aXpnVUo1b0tGSkZ6SzRBVngwNlR0LUpNb3V1YnZXTVhDX09uTmEycG5veG5pSnQ0cDVxT25wdDB4NmJMU0xXV1l3LUJlVzRjSmFKYWp6enYyOFc5RERBZk5SaWFxTQ?oc=5",
+        "published_at": "2026-09-03T21:02:45Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Iran Red Crescent urges ICC probe into deadly US strike on wedding party - Al Jazeera",
+        "source_name": "Al Jazeera",
+        "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOenVFUkk5MkduZ3dqeWF3YUczT2NxVEY3U1VQRGlqRUhBajczUEFjYkpZZjZZTUtTeGEwV0EwdzdZRFpsTi04bGJidG5nbnBZMXQ0VTVYLTlfNG1FMFFxZ0xhRXFIalN1LVRqQ1ZKdjlTRjBReWszaXdsbGV0QTRNUUVJY0JCeHFxd1BVcGhkQUlKVlhKVHFsOWlybFdhaDFnYlAyM1hHTEEyendiLWJDQXJ30gG3AUFVX3lxTE5pT0VVWlRJY1YwV0VPMUNTNk0zNEZmSFJoODkxblJnUlNyQzZ3Rl9qX3lPQU5pLThabkRmcGk0QnNhVS1hUGJkM3ZIbGVmb25xZHlJbFNIYTAtSU5ycHRuR3dQejFhVHFFMzFuUEdDSVlZekNhQzRwX3JCWmVzSUdpYVgxb3VtZXVMRGxRYUNvZjFyYUZpcWtVRFVFREIzNDg1dGlhR1YyOHBpYUljbG9UUTE2T21Qdw?oc=5",
+        "published_at": "2026-09-03T07:44:06Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Iran targets US allies in Gulf after overnight attacks, and other Mideast news - AP News",
+        "source_name": "Associated Press",
+        "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOOTAxalBMekxHQmg5Z1UyMmlvNjNjZWJtc015S2dUNEdELTNJX0xCZzVKRHJqdVZsc0Z6eEJMUTIzSXk2SlMyajgwaklyT1g2clhDODBmWmlSQUZUWHlHTlN6TFhTeDZ0bUplZzVPdDFMN24yTTVpZWhJOWo1b1l1S2ljeFpXM0c3WUEtdHV2c3h6Z0hIdGVobFAzalFXRWYwU08wdEJkUXJyNHM?oc=5",
+        "published_at": "2026-09-03T02:12:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Iranian attack on Saudi tanker killed two Filipino sailors, Saudi Arabia says - BBC",
+        "source_name": "BBC",
+        "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5ETHRCRWFjMm04endYR2xHNmlwWHhGUGUtalljVkRZVXp6aTZaa0J4TlBrb0JHQzA1d2h3ZWI5MnZIelBDbnAya2x1MGZLSlZRT0QwY3RKc2dCQQ?oc=5",
+        "published_at": "2026-09-02T17:33:45Z",
+        "official": false
+      }
+    ],
+    "last_valid_confirmation": null,
+    "publish_recommended": false,
+    "material_hash": "fba9a89dd50f3604"
+  },
+  {
+    "schema_version": 1,
     "date": "2026-09-03",
     "generated_at": "2026-09-03T20:05:01Z",
     "source_checked_at": "2026-09-03T20:04:57Z",
