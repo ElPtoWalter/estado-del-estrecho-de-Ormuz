@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-04T19:05:06Z",
-  "last_success_at": "2026-09-04T19:05:06Z",
+  "checked_at": "2026-09-04T21:43:48Z",
+  "last_success_at": "2026-09-04T21:43:48Z",
   "last_change_at": "2026-09-02T11:39:08Z",
   "verification_ok": true,
   "stale": false,
@@ -16,33 +16,33 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Vance says no talks with Iran until Hormuz attacks stop - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE90ZTVGWlA2T0dYV3MyVjVKc0Q4aXpnVUo1b0tGSkZ6SzRBVngwNlR0LUpNb3V1YnZXTVhDX09uTmEycG5veG5pSnQ0cDVxT25wdDB4NmJMU0xXV1l3LUJlVzRjSmFKYWp6enYyOFc5RERBZk5SaWFxTQ?oc=5",
-      "published_at": "2026-09-03T21:02:45Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-09-04T19:05:06Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
       "title": "Iran fires on its Gulf neighbors, retaliating for US strikes after a wedding was hit - AP News",
       "source_name": "Associated Press",
       "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOSTQ5RWEwemszN1g0ZGdybDJrd0d4MW9sTk43M05welQ3WGZmeWgycERkU0NFck5vMDc4eXBjbmdQSzc0OTNodV9tMXhpTFg1WF9SR2JXOXp3aEVGVjBHSUlwVFR5QWpVdnJodmNfV1FmdEZBeDlhUHNJZVZPeHliVlBQU3hZTXJhNGgzNGZoNURLUWtqOW53OUF2TTJpSEpsNGVBTDVyOUI?oc=5",
       "published_at": "2026-09-03T02:07:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-04T19:05:06Z"
+      "observed_at": "2026-09-04T21:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iranian attack on Saudi tanker killed two Filipino sailors, Saudi Arabia says - BBC",
+      "title": "US-Iran strikes raise fears of renewed war across the Middle East - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORjZ4d3JRTk1WcXR6eThpVm1wcVpzQV8wMm42eDB4bDJRMVhxelJpdmZTYXVPQ0JTUmtiNXFVWEZyb1NBTTZibmZJTkk4bjlRNGwtWTU1OF8zXzhENVZhWDN4TUwzekdfVG8xWUpmY3hmcHBDQk5TUzBLSERGbFJ0c05nekFpclo3cFdMcm93dHlEUXctVTY2MjJIMkkxSTRGWnc?oc=5",
+      "published_at": "2026-09-02T15:55:10Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-09-04T21:43:48Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran says US strike killed four at wedding in 'war crime' as US denies targeting civilians - BBC",
       "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5sRFdyci12V2h5VzJnS3M1NXo1SndBeGlUektTaHFtQ180Y1Z6OWJ4ZmllVGNlMXNIci1CVU9xQWVhT0dNR01ybUlCejJJY0NsWDBqZFpjXy16R2RK?oc=5",
-      "published_at": "2026-09-02T17:33:45Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFByamU5TjBFcHB1R2ZhQ0UtQ2pKTHY1Y09IQ045YlRBNEtMUjV3MVJISGdMZ0dLZ0lzTkR3QTRNdGo2ZDBSVFdObXhySXBvNVYyeDBHLXptQXBxUQ?oc=5",
+      "published_at": "2026-09-02T15:33:19Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-04T19:05:06Z"
+      "observed_at": "2026-09-04T21:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +52,7 @@
       "published_at": "2026-09-02T00:42:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-04T19:05:06Z"
+      "observed_at": "2026-09-04T21:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,22 +62,21 @@
       "published_at": "2026-09-03T01:48:34Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-04T19:05:06Z"
+      "observed_at": "2026-09-04T21:43:48Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 9.655
+      "risk": 8.855
     },
     "independent_sources": {
       "open": 0,
@@ -85,16 +84,16 @@
       "declared": 0,
       "risk": 5
     },
-    "articles_considered": 41,
-    "signals_considered": 15,
+    "articles_considered": 30,
+    "signals_considered": 13,
     "current_cycle_evidence": 5,
     "evidence_display_mode": "current",
-    "evidence_archive_size": 59,
+    "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-09-03T21:02:45Z",
+    "as_of": "2026-09-03T02:07:00Z",
     "current_cycle_count": 5,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -170,7 +169,7 @@
       "published_at": "2026-09-03T02:07:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-04T19:05:06Z"
+      "observed_at": "2026-09-04T21:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -190,7 +189,7 @@
       "published_at": "2026-09-03T01:48:34Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-04T19:05:06Z"
+      "observed_at": "2026-09-04T21:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -294,6 +293,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Iran says US strike killed four at wedding in 'war crime' as US denies targeting civilians - BBC",
+      "source_name": "BBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFByamU5TjBFcHB1R2ZhQ0UtQ2pKTHY1Y09IQ045YlRBNEtMUjV3MVJISGdMZ0dLZ0lzTkR3QTRNdGo2ZDBSVFdObXhySXBvNVYyeDBHLXptQXBxUQ?oc=5",
+      "published_at": "2026-09-02T15:33:19Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-09-04T21:43:48Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "US-Israel-Iran War Latest Live News: Qatar Condemns Iranian Attack on Saudi Tanker, Rejects Strait of Hormuz Use as a 'Bargaining Chip' - The Sunday Guardian",
       "source_name": "The Sunday Guardian",
       "source_url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPZEVYcmw2Vl9sYzZkSDg4X0sxNjE4SURNbWFiZmRBNWF5eF9ETjBwemZFdVFyZC1vX0h6ZUNLVmd6Nlo5R1hzYVVRbWY4Y3lHRnprSW9KS1RtRUpFVXNWa2swWGFxcmlVSUNLMnpVN0REV2IwV3hnNEdaM2c0Yzk4ZTJPaFdWblUxV09selBaeExwN3M3a2JfMFhSSUZsRFhKTlpnZzdCa1ViUUp2dHJGc2hPTG5VREpyaVZBemdoTjRLSE00c3RpNjUwYnR6RVlmX19ramUwWnBzRUpCa05odk84ck56VG9mcmFja3k5alUtSjkxZlBOLUVfMEJrMC1RTlR3bGMzTdIBjAJBVV95cUxPYmMwTWM4enNmRzNHRTVzSWRsUEhjLUxWVnZROVhyRUdkNGJ0RkhsTjRLVE01empnaEhlZHRqd3h1aVRTN2kzelJTQncwOUsweEhVVGZfcUdHM1Z4cXZCTjlsNnZaZGRSNU1nanAxNW9EUklpUGh1dW9DclA2dXhxMkFKTlo1eUNVSzJrSlFxNlNJYzhhcDN2QUxGRmFrMU9YWHZBTkwyVkxybGxNcFJWY2UwRGliUE9OdHpkdDRxdmVsZDVtMFdWWFRKZENjSHNER01WWW5FY2VtX0d4VzJvR1dTVHJZTDg2cy0xREViWFVtcnd2ZFNMTVNiX3ZYeXhQbkdvYjh3bWpSVXpL?oc=5",
@@ -340,7 +349,7 @@
       "published_at": "2026-09-02T00:42:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-04T19:05:06Z"
+      "observed_at": "2026-09-04T21:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -695,7 +704,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-04T19:05:56Z",
+    "generated_at": "2026-09-04T21:44:23Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -708,38 +717,38 @@
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
-      "access": "SELECTIVE",
+      "access": "RESTRICTED",
       "risk": "EXTREME",
-      "legal": "DISPUTED"
+      "legal": "OPEN_LEGAL"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
-      "access": "Selectivo / condicionado",
+      "access": "Restringido",
       "risk": "Extremo",
-      "legal": "Régimen disputado"
+      "legal": "Sin cierre formal reconocido"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
-      "access": "Selective / conditional",
+      "access": "Restricted",
       "risk": "Extreme",
-      "legal": "Disputed regime"
+      "legal": "No recognised formal closure"
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 10.4,
+      "passage": 2.184,
       "closure": 0,
-      "traffic_reduction": 1.62,
-      "access_restriction": 10.6,
-      "risk": 61.2
+      "traffic_reduction": 0,
+      "access_restriction": 1.8,
+      "risk": 38.58
     },
     "source_counts": {
-      "passage": 9,
+      "passage": 2,
       "closure": 0,
-      "primary_sources": 2
+      "primary_sources": 1
     },
-    "latest_confirmed_transit_at": "2026-09-04T10:29:16Z",
+    "latest_confirmed_transit_at": "2026-09-03T12:21:09Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -748,76 +757,16 @@
     "evidence": [
       {
         "kind": "RISK_SEVERE",
-        "title": "Vance says no talks with Iran until Hormuz attacks stop - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE02ZTJ3aVBVMWFNR1U3eDIyc1ZWejBzbDN6UWk4dktEN2YxM1AxUTlMOFg5ZkNNVndBc1dvVEdJeTdBM0V6NFhfalYwNWc2Z1ZaVDNCdEZYaVlyanZkaEZSQmtZY1d1dGM?oc=5",
-        "published_at": "2026-09-03T21:02:46Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZmJEcTdhQU9kcW41Z2J6enVZU2NHQ253eVV1VDJKOXBSTTJfbGhfVi1wbTQ0U1gzRllLb2xUUV9LRGRZaWpvaUlSWWRwQTdBaXdNY2x1Z3pxU1U1WjJSdzdKWGR6a2FLSXN6dnBPQ3NhM1hwUkxOZlIyd0dDX0ZycjdVSlpEUFN5N1NQbWR2UW1oRHNBU3BTZENPbGotQVFOSmdfUUFJNERYbEZTVzU3WDlrUQ?oc=5",
-        "published_at": "2026-09-03T02:03:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 3.6,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-04T19:05:56Z",
+        "published_at": "2026-09-04T21:44:23Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 3.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Blockade succeeds where sanctions failed as Iran oil exports stall - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaWZjU0g0TmRIVUt5RlNtTUIxLVBDZmJlS2ljODlldVpZSW9rVm1WeHJOcnU0ZHFOMTB0QlhoR1FXV1d0Q2N6MC1aek9NLWN5QmxvYmpCQjZmUGtqRkpZUmx6Qk42YkIxZzQzR3pnU3Q3eE5BZjdadVI5UThGSUZrZ0RSS0hlUjJSNmhEN3RUcWRQZzJHaUtrOWtLZUthRkxDenNDWVZ0Wk5RSTRsYjJhQjJTTkgxQQ?oc=5",
-        "published_at": "2026-09-01T13:10:16Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 2.48,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Iranian attack on Saudi tanker killed two Filipino sailors, Saudi Arabia says - BBC",
-        "source": "BBC",
-        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5sRFdyci12V2h5VzJnS3M1NXo1SndBeGlUektTaHFtQ180Y1Z6OWJ4ZmllVGNlMXNIci1CVU9xQWVhT0dNR01ybUlCejJJY0NsWDBqZFpjXy16R2RK?oc=5",
-        "published_at": "2026-09-02T17:33:45Z",
-        "tier": 3,
-        "weight": 3.0,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 2.34,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -847,7 +796,7 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 1.8,
+        "effective_weight": 1.56,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -862,13 +811,73 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 1.8,
+        "effective_weight": 1.56,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Iran, US exchange new attacks: Who was hit in latest strikes? - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQR3h3Q3czNUdSME4tbUc1Y3BMREVOSEgybjhDbnZ0ZHRXRllCdnZSN19mQUZDTGNPN1RYUkxMUG5MYUlKYkQ3TXJhVTk4WUpNTTBjbl9FMGpmTmlTRmVEOUNOT2hwcEFpX0FLTHhFbjFpWEhodm1jM1dycWUzTjlaNmh1ckwzOTNSTGt2RFNteHo3SGZJNGVZZWxIbUxqQm_SAaQBQVVfeXFMUEprUWViUHBaanlJLUxlZWxOcks0VGRxYVhhS3ZWRWdQREJJa3BpNnpSUERfLTJXc0FQd25BMXRvb01aYk9sUU9UQktsNlYzb1dCZmxiOVVqSVd3TnlSRlRYMGx6UVJfVEhWQ1NxVDZtazhFOUdzZEhzZnlKYTlwejV6cUNBdE9XMUJSelgzemV2b1NGaWFfbjRUdUkwTWEzY3dhODc?oc=5",
+        "published_at": "2026-09-02T08:57:30Z",
+        "tier": 2,
+        "weight": 2.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.56,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Oil prices jump as US, Iranian attacks stoke fears of escalation - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTzBVakF1VXpKSWdkbXZsNXJOYS0wRnV2bWstenBpNnhlNXBzTVVxVEFPUW5HeS14Rjh6UnM3b0RpWG5NWjdWdW5NdWNHdlJLV3psWHlhOVd2Y1FySF9MRlVmRGZab3RTcTd5Rmt2QkFONEVFWmJHVmZzMGxid2g0MjR0UzJXdmRZcVdEaGhlT1Z5RTAyT1VFVndXWU52ZGNlRENGaHNBVXF1YzTSAbABQVVfeXFMT2dkcDBqS3R3WmtGZmhqcl9RTzNSc0xObFNYam1fQTllaFdkamxnZnZ2OW11SXc3d1hNWER5WGxQclV4aDhYbnZxNE5tRGNWQllxQ3F0eXViSmZoTFNwamJTLXQ4cUxXS0tldkc1ODE0NGZMXzRFbFBfYkhSdFMtMnZfVkIySkRVMlBtLUxhaEpMZ2NxZUFRUEtMTFRlWDFjY25FaWtqMDNVT25hSWpJZ0E?oc=5",
+        "published_at": "2026-09-01T09:32:51Z",
+        "tier": 2,
+        "weight": 2.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.24,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Sinokor VLCC struck three times in Strait of Hormuz - Seatrade Maritime News",
+        "source": "Seatrade Maritime News",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQ1VFZnBQMk1pRTBUSlVHd0l6M0pBblFIcTVXTUZXWDlLenZBQ2xRUzFreS13Y1Rra2o3NzE1dEhzZ1NYTHdQWVpnV2Rza3JCQm5WMHBlTmlTcHFZYndNNS0xLXRKZXViSFBxdXljaDBEWklXUmlWM0RCYmtheVBhQ3UwbmdwOEpuLXhlQ1pHMkljZw?oc=5",
+        "published_at": "2026-09-01T06:29:47Z",
+        "tier": 2,
+        "weight": 2.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.24,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "World’s 5th most powerful military prepares for possible Strait of Hormuz mission with US, UK and France after attacks on African-flagged vessels - Business Insider Africa",
+        "source": "Business Insider Africa",
+        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNMm5GMUFvTHVIQVlfQ3FHaUFOb2lyT1pzZzFGR3BUenA2S21VYXNiMWZjaFpEQ05xM003Z2VpZ3FtYUlxQm9Xckx1Qk53V1FYcGtuVzRUNWZMYVU3LTV5d3MtNm1QeFZ6YW9HaElOaFZHZ0kzRnNVam9tWHRvQW5hZEp1M1VBdFYxN2kzV2ROTy1hSC1NZ2k2ZkZkTWc2dThJMG5WSTZCX3ZuUXBWeTBwaEhjZlh3eUZQcFlyZTUzc3RacXJWaW9oRmgxZFdxbldpcUtlTFVOM0w5Zw?oc=5",
+        "published_at": "2026-09-04T08:30:55Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 1.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 80,
+      "signals_considered": 43,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
