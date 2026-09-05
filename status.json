@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-04T21:43:48Z",
-  "last_success_at": "2026-09-04T21:43:48Z",
+  "checked_at": "2026-09-05T00:18:46Z",
+  "last_success_at": "2026-09-05T00:18:46Z",
   "last_change_at": "2026-09-02T11:39:08Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-09-03T02:07:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-04T21:43:48Z"
+      "observed_at": "2026-09-05T00:18:46Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,17 +32,17 @@
       "published_at": "2026-09-02T15:55:10Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-04T21:43:48Z"
+      "observed_at": "2026-09-05T00:18:46Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran says US strike killed four at wedding in 'war crime' as US denies targeting civilians - BBC",
+      "title": "Iranian attack on Saudi tanker killed two Filipino sailors, Saudi Arabia says - BBC",
       "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFByamU5TjBFcHB1R2ZhQ0UtQ2pKTHY1Y09IQ045YlRBNEtMUjV3MVJISGdMZ0dLZ0lzTkR3QTRNdGo2ZDBSVFdObXhySXBvNVYyeDBHLXptQXBxUQ?oc=5",
-      "published_at": "2026-09-02T15:33:19Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5sRFdyci12V2h5VzJnS3M1NXo1SndBeGlUektTaHFtQ180Y1Z6OWJ4ZmllVGNlMXNIci1CVU9xQWVhT0dNR01ybUlCejJJY0NsWDBqZFpjXy16R2RK?oc=5",
+      "published_at": "2026-09-02T17:33:45Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-04T21:43:48Z"
+      "observed_at": "2026-09-05T00:18:46Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,26 +52,27 @@
       "published_at": "2026-09-02T00:42:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-04T21:43:48Z"
+      "observed_at": "2026-09-05T00:18:46Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Trump threatens more strikes as death toll in Iran rises to 18 - Al Jazeera",
+      "title": "Trump threatens more strikes as death toll in Iran rises to 18 - aljazeera.com",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVG1PeWk5NTJCOFhHM2E3N28zM1M2d0NHTk1hTFB6VjNEZ09FamhlMEJpOExMSWtwb3NraThjT0twUzRPbFk4S00wRGd1WG9GbmFSN3Y0YmVWV25BWXRyUkxaM2dsZ1JuRWE0UlVDRmR0cHJGcmsxWlZ6OGlSSkYwRFJueWVNOUdoWTJKVzRQbmhndmN1WXd5eVBDdXUwRHZTaXl3ZtIBqgFBVV95cUxPRElVbDMtTFJER3dJWnJYemxQVU9qV2pMdlBUVzgtM1NldC1ZQkJXS3U2alBfVmhyZGVEZ2d6MmxrNFk0TXFPTzlTTmY0X2k2M0NqalkzSU5UMjh0NVpIVkdlOEN3ek44d1hkUlU4OWlhUUJaSjhyLXFKQVZ3RzJaR1RVZ2lMTkpEV3g5WUlNOWY3WGhrR1BFdC1NQVZFT1dkenpZaXRYVmxfQQ?oc=5",
       "published_at": "2026-09-03T01:48:34Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-04T21:43:48Z"
+      "observed_at": "2026-09-05T00:18:46Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -84,8 +85,8 @@
       "declared": 0,
       "risk": 5
     },
-    "articles_considered": 30,
-    "signals_considered": 13,
+    "articles_considered": 40,
+    "signals_considered": 14,
     "current_cycle_evidence": 5,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -169,7 +170,7 @@
       "published_at": "2026-09-03T02:07:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-04T21:43:48Z"
+      "observed_at": "2026-09-05T00:18:46Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -183,6 +184,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Trump threatens more strikes as death toll in Iran rises to 18 - aljazeera.com",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVG1PeWk5NTJCOFhHM2E3N28zM1M2d0NHTk1hTFB6VjNEZ09FamhlMEJpOExMSWtwb3NraThjT0twUzRPbFk4S00wRGd1WG9GbmFSN3Y0YmVWV25BWXRyUkxaM2dsZ1JuRWE0UlVDRmR0cHJGcmsxWlZ6OGlSSkYwRFJueWVNOUdoWTJKVzRQbmhndmN1WXd5eVBDdXUwRHZTaXl3ZtIBqgFBVV95cUxPRElVbDMtTFJER3dJWnJYemxQVU9qV2pMdlBUVzgtM1NldC1ZQkJXS3U2alBfVmhyZGVEZ2d6MmxrNFk0TXFPTzlTTmY0X2k2M0NqalkzSU5UMjh0NVpIVkdlOEN3ek44d1hkUlU4OWlhUUJaSjhyLXFKQVZ3RzJaR1RVZ2lMTkpEV3g5WUlNOWY3WGhrR1BFdC1NQVZFT1dkenpZaXRYVmxfQQ?oc=5",
+      "published_at": "2026-09-03T01:48:34Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-09-05T00:18:46Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Trump threatens more strikes as death toll in Iran rises to 18 - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVG1PeWk5NTJCOFhHM2E3N28zM1M2d0NHTk1hTFB6VjNEZ09FamhlMEJpOExMSWtwb3NraThjT0twUzRPbFk4S00wRGd1WG9GbmFSN3Y0YmVWV25BWXRyUkxaM2dsZ1JuRWE0UlVDRmR0cHJGcmsxWlZ6OGlSSkYwRFJueWVNOUdoWTJKVzRQbmhndmN1WXd5eVBDdXUwRHZTaXl3ZtIBqgFBVV95cUxPRElVbDMtTFJER3dJWnJYemxQVU9qV2pMdlBUVzgtM1NldC1ZQkJXS3U2alBfVmhyZGVEZ2d6MmxrNFk0TXFPTzlTTmY0X2k2M0NqalkzSU5UMjh0NVpIVkdlOEN3ek44d1hkUlU4OWlhUUJaSjhyLXFKQVZ3RzJaR1RVZ2lMTkpEV3g5WUlNOWY3WGhrR1BFdC1NQVZFT1dkenpZaXRYVmxfQQ?oc=5",
@@ -190,16 +201,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-09-04T21:43:48Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Trump threatens more strikes as death toll in Iran rises to 18 - aljazeera.com",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVG1PeWk5NTJCOFhHM2E3N28zM1M2d0NHTk1hTFB6VjNEZ09FamhlMEJpOExMSWtwb3NraThjT0twUzRPbFk4S00wRGd1WG9GbmFSN3Y0YmVWV25BWXRyUkxaM2dsZ1JuRWE0UlVDRmR0cHJGcmsxWlZ6OGlSSkYwRFJueWVNOUdoWTJKVzRQbmhndmN1WXd5eVBDdXUwRHZTaXl3ZtIBqgFBVV95cUxPRElVbDMtTFJER3dJWnJYemxQVU9qV2pMdlBUVzgtM1NldC1ZQkJXS3U2alBfVmhyZGVEZ2d6MmxrNFk0TXFPTzlTTmY0X2k2M0NqalkzSU5UMjh0NVpIVkdlOEN3ek44d1hkUlU4OWlhUUJaSjhyLXFKQVZ3RzJaR1RVZ2lMTkpEV3g5WUlNOWY3WGhrR1BFdC1NQVZFT1dkenpZaXRYVmxfQQ?oc=5",
-      "published_at": "2026-09-03T01:48:34Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-04T06:28:49Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -269,7 +270,7 @@
       "published_at": "2026-09-02T17:33:45Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-04T19:05:06Z"
+      "observed_at": "2026-09-05T00:18:46Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -349,7 +350,7 @@
       "published_at": "2026-09-02T00:42:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-04T21:43:48Z"
+      "observed_at": "2026-09-05T00:18:46Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -704,7 +705,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-04T21:44:23Z",
+    "generated_at": "2026-09-05T00:19:28Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -717,38 +718,38 @@
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
-      "access": "RESTRICTED",
+      "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "OPEN_LEGAL"
+      "legal": "DISPUTED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
-      "access": "Restringido",
+      "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Sin cierre formal reconocido"
+      "legal": "Régimen disputado"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
-      "access": "Restricted",
+      "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "No recognised formal closure"
+      "legal": "Disputed regime"
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 2.184,
+      "passage": 11.038,
       "closure": 0,
-      "traffic_reduction": 0,
-      "access_restriction": 1.8,
-      "risk": 38.58
+      "traffic_reduction": 0.62,
+      "access_restriction": 8.08,
+      "risk": 52.88
     },
     "source_counts": {
-      "passage": 2,
+      "passage": 10,
       "closure": 0,
-      "primary_sources": 1
+      "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-09-03T12:21:09Z",
+    "latest_confirmed_transit_at": "2026-09-04T10:29:16Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -757,10 +758,25 @@
     "evidence": [
       {
         "kind": "RISK_SEVERE",
+        "title": "Vance says no talks with Iran until Hormuz attacks stop - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE02ZTJ3aVBVMWFNR1U3eDIyc1ZWejBzbDN6UWk4dktEN2YxM1AxUTlMOFg5ZkNNVndBc1dvVEdJeTdBM0V6NFhfalYwNWc2Z1ZaVDNCdEZYaVlyanZkaEZSQmtZY1d1dGM?oc=5",
+        "published_at": "2026-09-03T21:02:46Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 3.6,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-04T21:44:23Z",
+        "published_at": "2026-09-05T00:19:28Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -772,7 +788,37 @@
       },
       {
         "kind": "ACCESS_RESTRICTED",
-        "title": "Trump threatens more strikes as death toll in Iran rises to 18 - Al Jazeera",
+        "title": "Blockade succeeds where sanctions failed as Iran oil exports stall - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaWZjU0g0TmRIVUt5RlNtTUIxLVBDZmJlS2ljODlldVpZSW9rVm1WeHJOcnU0ZHFOMTB0QlhoR1FXV1d0Q2N6MC1aek9NLWN5QmxvYmpCQjZmUGtqRkpZUmx6Qk42YkIxZzQzR3pnU3Q3eE5BZjdadVI5UThGSUZrZ0RSS0hlUjJSNmhEN3RUcWRQZzJHaUtrOWtLZUthRkxDenNDWVZ0Wk5RSTRsYjJhQjJTTkgxQQ?oc=5",
+        "published_at": "2026-09-01T13:10:16Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 2.48,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Iranian attack on Saudi tanker killed two Filipino sailors, Saudi Arabia says - BBC",
+        "source": "BBC",
+        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5sRFdyci12V2h5VzJnS3M1NXo1SndBeGlUektTaHFtQ180Y1Z6OWJ4ZmllVGNlMXNIci1CVU9xQWVhT0dNR01ybUlCejJJY0NsWDBqZFpjXy16R2RK?oc=5",
+        "published_at": "2026-09-02T17:33:45Z",
+        "tier": 3,
+        "weight": 3.0,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "effective_weight": 2.34,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Trump threatens more strikes as death toll in Iran rises to 18 - aljazeera.com",
         "source": "Al Jazeera",
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVG1PeWk5NTJCOFhHM2E3N28zM1M2d0NHTk1hTFB6VjNEZ09FamhlMEJpOExMSWtwb3NraThjT0twUzRPbFk4S00wRGd1WG9GbmFSN3Y0YmVWV25BWXRyUkxaM2dsZ1JuRWE0UlVDRmR0cHJGcmsxWlZ6OGlSSkYwRFJueWVNOUdoWTJKVzRQbmhndmN1WXd5eVBDdXUwRHZTaXl3ZtIBqgFBVV95cUxPRElVbDMtTFJER3dJWnJYemxQVU9qV2pMdlBUVzgtM1NldC1ZQkJXS3U2alBfVmhyZGVEZ2d6MmxrNFk0TXFPTzlTTmY0X2k2M0NqalkzSU5UMjh0NVpIVkdlOEN3ek44d1hkUlU4OWlhUUJaSjhyLXFKQVZ3RzJaR1RVZ2lMTkpEV3g5WUlNOWY3WGhrR1BFdC1NQVZFT1dkenpZaXRYVmxfQQ?oc=5",
         "published_at": "2026-09-03T01:48:34Z",
@@ -802,51 +848,6 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Saudi Arabia condemns deadly Iranian attack on tanker in Strait of Hormuz - Al Jazeera",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOLWNZNEl1T053MU40MzNHT1cxYjdxQmxrTnk0LVZxSS05QjBXbW14VHBaNzNCT04xMHdNOENSQUdsM0xVVWp4eFBSN0tGUklDa0ZNLXhWNDMyVmVSZDlOdUFFZl9STm43dF85aS1mMkFGNWZSOFlZUzdBdHp0X0w5RzVPNlBBazItU2h4OUpZZXNGbXNsdUZ6UmlWZVhHenVUOWN5ekNaRTVlVFk0VzR6d1doSdIBuAFBVV95cUxNaDR3dzN5TlY0ZHdjckxjandwejNzcXZsNFBvUEttUXpGSHhwMFJOaEpELVEzS0gyV2pOWW12YzlnZm1YOFNIaURlWlZBYnFrQWhPblhMTXlmMWFmQi1jZ1FERV9PWkVhaVk2Wk5lVVRPZXJqNGpSNWdPc0NySFBmT0Y3ZnYtUFlIWm5raXZrbzM4UHhEWlVXUGNZWW9kWm9qWkFjX1UyVjBxMHhtVWtRUTE5QTFXR2ZR?oc=5",
-        "published_at": "2026-09-02T19:28:05Z",
-        "tier": 2,
-        "weight": 2.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.56,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Iran, US exchange new attacks: Who was hit in latest strikes? - Al Jazeera",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQR3h3Q3czNUdSME4tbUc1Y3BMREVOSEgybjhDbnZ0ZHRXRllCdnZSN19mQUZDTGNPN1RYUkxMUG5MYUlKYkQ3TXJhVTk4WUpNTTBjbl9FMGpmTmlTRmVEOUNOT2hwcEFpX0FLTHhFbjFpWEhodm1jM1dycWUzTjlaNmh1ckwzOTNSTGt2RFNteHo3SGZJNGVZZWxIbUxqQm_SAaQBQVVfeXFMUEprUWViUHBaanlJLUxlZWxOcks0VGRxYVhhS3ZWRWdQREJJa3BpNnpSUERfLTJXc0FQd25BMXRvb01aYk9sUU9UQktsNlYzb1dCZmxiOVVqSVd3TnlSRlRYMGx6UVJfVEhWQ1NxVDZtazhFOUdzZEhzZnlKYTlwejV6cUNBdE9XMUJSelgzemV2b1NGaWFfbjRUdUkwTWEzY3dhODc?oc=5",
-        "published_at": "2026-09-02T08:57:30Z",
-        "tier": 2,
-        "weight": 2.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.56,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Oil prices jump as US, Iranian attacks stoke fears of escalation - Al Jazeera",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTzBVakF1VXpKSWdkbXZsNXJOYS0wRnV2bWstenBpNnhlNXBzTVVxVEFPUW5HeS14Rjh6UnM3b0RpWG5NWjdWdW5NdWNHdlJLV3psWHlhOVd2Y1FySF9MRlVmRGZab3RTcTd5Rmt2QkFONEVFWmJHVmZzMGxid2g0MjR0UzJXdmRZcVdEaGhlT1Z5RTAyT1VFVndXWU52ZGNlRENGaHNBVXF1YzTSAbABQVVfeXFMT2dkcDBqS3R3WmtGZmhqcl9RTzNSc0xObFNYam1fQTllaFdkamxnZnZ2OW11SXc3d1hNWER5WGxQclV4aDhYbnZxNE5tRGNWQllxQ3F0eXViSmZoTFNwamJTLXQ4cUxXS0tldkc1ODE0NGZMXzRFbFBfYkhSdFMtMnZfVkIySkRVMlBtLUxhaEpMZ2NxZUFRUEtMTFRlWDFjY25FaWtqMDNVT25hSWpJZ0E?oc=5",
-        "published_at": "2026-09-01T09:32:51Z",
-        "tier": 2,
-        "weight": 2.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 1.24,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
         "title": "Sinokor VLCC struck three times in Strait of Hormuz - Seatrade Maritime News",
         "source": "Seatrade Maritime News",
         "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQ1VFZnBQMk1pRTBUSlVHd0l6M0pBblFIcTVXTUZXWDlLenZBQ2xRUzFreS13Y1Rra2o3NzE1dEhzZ1NYTHdQWVpnV2Rza3JCQm5WMHBlTmlTcHFZYndNNS0xLXRKZXViSFBxdXljaDBEWklXUmlWM0RCYmtheVBhQ3UwbmdwOEpuLXhlQ1pHMkljZw?oc=5",
@@ -861,23 +862,23 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "RISK_SEVERE",
-        "title": "World’s 5th most powerful military prepares for possible Strait of Hormuz mission with US, UK and France after attacks on African-flagged vessels - Business Insider Africa",
-        "source": "Business Insider Africa",
-        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNMm5GMUFvTHVIQVlfQ3FHaUFOb2lyT1pzZzFGR3BUenA2S21VYXNiMWZjaFpEQ05xM003Z2VpZ3FtYUlxQm9Xckx1Qk53V1FYcGtuVzRUNWZMYVU3LTV5d3MtNm1QeFZ6YW9HaElOaFZHZ0kzRnNVam9tWHRvQW5hZEp1M1VBdFYxN2kzV2ROTy1hSC1NZ2k2ZkZkTWc2dThJMG5WSTZCX3ZuUXBWeTBwaEhjZlh3eUZQcFlyZTUzc3RacXJWaW9oRmgxZFdxbldpcUtlTFVOM0w5Zw?oc=5",
-        "published_at": "2026-09-04T08:30:55Z",
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Oman says no to Iranian toll plan for Strait of Hormuz: Report - The Times of India",
+        "source": "The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQZk1NSVBwNTkxRlpqanZrV3h3Zm5xcWtBNnYyM05jaTlZQjF0YnBzRk15cEY1MjVGN2tYcUF3WGIwWnZrSUxHSzZ5NmljZlFfbk1IMFFwQVVkY2Zfb0lwdlRMOGZfNzlwbmRfYWlpcUJuUWdMY2FhT2psV3B2WUUtWjU5QW5ockNCeWxZYU5fTWJBSTJndDZnS0o2cUhYbGJqWWtoLURJc3dZVUpYQjlPZzRjRlBfS3B1WWkzNmVtQXlBSENJanA0RDRSSklRZlp5SjVfVDltYmTSAd4BQVVfeXFMTW81UGNPUGVyNVJGa3dZc2tlSjg3c1lmMlUwTlFxcFU5TnAwQ3pnQ2NQeUtKT1pGOFAwWWJDeGdYdEgwQ0dXc01hN0E0ZTlmbWV4RnlqM3ZlTjRpeldSeGM3LUM0SzNZU3o3X3dNdTZYTmRMX2FtaW5sbWJZNzlsQmwyeTNDeS1BbFRyQWIzT0dPZHlyX0xQaVJLdXllbzQxLTZlNVdJckdoQ0RxTGE1V1BmVU15WGN4V0UxUU5sWmNkc2RyXzJKYXllSzhSMkxyenZjblRHLW1DMnhTZFV3?oc=5",
+        "published_at": "2026-09-04T16:42:00Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 1.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
       }
     ],
     "diagnostics": {
-      "signals_considered": 43,
+      "signals_considered": 74,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
