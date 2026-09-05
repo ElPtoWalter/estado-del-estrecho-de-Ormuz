@@ -1,6 +1,92 @@
 [
   {
     "schema_version": 1,
+    "date": "2026-09-06",
+    "generated_at": "2026-09-05T23:12:08Z",
+    "source_checked_at": "2026-09-05T23:12:05Z",
+    "status": "ABIERTO",
+    "status_label_es": "ABIERTO CON RESTRICCIONES",
+    "status_label_en": "OPEN WITH RESTRICTIONS",
+    "operational_status": "OPEN_RESTRICTED",
+    "operational_label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
+    "operational_label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
+    "confidence": "MEDIA",
+    "confidence_label": {
+      "es": "Media",
+      "en": "Medium"
+    },
+    "verification_ok": true,
+    "stale": false,
+    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
+    "risks_es": [
+      "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
+      "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+    ],
+    "risks_en": [
+      "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
+      "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
+    ],
+    "watchlist_es": [
+      "Avisos marítimos oficiales y confirmaciones operativas independientes.",
+      "Trayectorias completas de buques y continuidad real de los cruces, no puntos AIS aislados.",
+      "Cambios en restricciones, seguros, escoltas, puertos y disponibilidad de tripulaciones."
+    ],
+    "watchlist_en": [
+      "Official maritime notices and independent operational confirmations.",
+      "Completed vessel tracks and actual continuity of crossings, not isolated AIS points.",
+      "Changes in restrictions, insurance, escorts, ports and crew availability."
+    ],
+    "evidence": [
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Iran says it attacked tankers, US-linked vessels in Hormuz escalation - Euronews.com",
+        "source_name": "Euronews",
+        "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNmZvMmFhak9ROGpLQ2RDdzh6Q01QTS1vWkdDZThmdVBYUkQ4OUhVcHl6aG1TamFVTlA5QUVjQ3Vsa3ZZVEVYZjNwYTlFVDktYUhvTkNmWVFmUy1Oa3Y4bFlUS1N5d3VYMjNJZUJUeU1TNk41QThSZlpwYkhyQ0xjR1o0WXpUM1VJSE9KUUItdV9fX3BTQnRRamFCRUJaanRMQVZqSk1BM0hfZw?oc=5",
+        "published_at": "2026-09-05T22:06:19Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US strikes three Iranian oil tankers in response to attacks on warships - Financial Times",
+        "source_name": "Financial Times",
+        "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNT0RQT1NRZzB1TUptODhkblE5OFZCdDh3bS11NEJBVDN6Z21JRDQwWWVIblFLY3lwU3RDNnJTVzBtenhYVEJ3M1pEYnYxbkY2U0xlNWhwdEFydzVtU1gyVWFMU1E0cktxenRaSHdQZC1hN3BmUEduODRVdDNhbVpoUTFPSkM?oc=5",
+        "published_at": "2026-09-05T15:07:06Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "U.S. attacks 3 Iranian oil tankers after missiles target Navy warships - CNBC",
+        "source_name": "CNBC",
+        "source_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNeFdHUjNvUG9RMmZ3VVE2Vk1OZ28zajNuZGdGTjZPMEl6ZGpZeWU3ejU2aTgtaWoyY3RlRS1KR0dvNFRuWlI1bW5PWEY5clhkNFE5eklrMkl0dU9IODljc2tNOWRWZ1Rtcm0xN0tmUGFnNEh3LUJFd1U5UElfQTYyaklB0gGHAUFVX3lxTE5CZVY1SVM2aEVJTHdFcl9ZYU80MHFDb3dFTlUteUdCTFNqdXZFRWlpUURMUjEzVEhrSG9mTkYtcVpDcnRvdzlkdVN3MmhSYzlJdnowM0VsNzJQbTJrTnV0MFotQTczemxoTlhOc3VIQm1ZQmI2MDNFZW81aW8tdHVacjdQUkFBZw?oc=5",
+        "published_at": "2026-09-05T14:59:41Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US military strikes three Iranian tankers in retaliation for missile attacks - CNN",
+        "source_name": "CNN",
+        "source_url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9tVlZfRVpnZHk5LUZINnd1bUh0Mkp3N3FoU3ZpT1Rad3ZwbzU2SllpNEUzeFpjdms2SWI4MWFCSVU4S2JtQ3BRTUNRQ01ybWprRmFybkNUdDk4TWxtZTFiWV9CQzJha0JWdlh0XzhHUzJSa2hEQkE?oc=5",
+        "published_at": "2026-09-05T13:52:09Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US-Israel-Iran War Latest Live News: US Military Says 87 Vessels Diverted in Renewed Blockade on Iran Amid Rising Strait of Hormuz Tensions - The Sunday Guardian",
+        "source_name": "The Sunday Guardian",
+        "source_url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPcURvTF81a2FuX2N3LWwxbWFWS25WVWxJeVdvWnF2UmE0cVktV2dGRmVZMUMyQUZlTTA0VW9NM1pSMmlJZURCWWNndWtGVDI3RmJzV1o4UmJtUFZjX0laWkJESXliMDZWT092aHB2eHYwYUxoWWc1UEFLNEYyeDVtTThhYXhSbHZoQ01LamlnT0JFOVF1cERCMklYS1I5M3M4Tjk1VGZGUmRURTJDSzNnaE9kNG9xVlhIZzFSbWthd0xKcnUwcGp6OEZ4d28zdGZUendMWlpKRXJBcFFxdEpGekZ1clNsUXZVWm12Z1VITEN1Mmw5UURPeUV4Mm5wd2RyTU94TElraWFtS3VLdHg2cdIBlgJBVV95cUxPdTY1WUlKbGtYM05pejI2TTU3d1A4N2RtX1A4Y2RNeDhWeVhrT182bXJSc2g5VlZQakhkaExWYzdmbHdSSXRKR2tYU1F3SElZVWhyTVlyenAyeTZhY3pNNGZhTGNnenNLWUtFN0t5RHI1aDNMMkFiZkJ4MkloTE9ld3BUWTJ4LVBpazB1TzB3YjdvekthRXFZdFZ1ZG9fNDl2TjkzOFF0TVpWVEpidnBrZmNhclY4dHZPQ1hqWGRrSFR3UF9femhyT1Flc19UekpfVEhpX1l1LUVBX1FwaUVqXzh4THl6N0d1RTJiY0NOOEVWUnpPc25wbm01a2lMUy1aMWhLaXdyeEVPZ29JLWNac3N4QkEzQQ?oc=5",
+        "published_at": "2026-09-03T21:36:45Z",
+        "official": false
+      }
+    ],
+    "last_valid_confirmation": null,
+    "publish_recommended": false,
+    "material_hash": "6910a4c65c7e872f"
+  },
+  {
+    "schema_version": 1,
     "date": "2026-09-05",
     "generated_at": "2026-09-05T20:39:56Z",
     "source_checked_at": "2026-09-05T20:39:53Z",
