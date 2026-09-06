@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-06T17:18:53Z",
+  "generated_at": "2026-09-06T19:27:41Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,14 +33,14 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 10.025,
+    "passage": 8.855,
     "closure": 1.35,
     "traffic_reduction": 1.8,
-    "access_restriction": 5.38,
-    "risk": 76.16
+    "access_restriction": 10.48,
+    "risk": 69.34
   },
   "source_counts": {
-    "passage": 6,
+    "passage": 5,
     "closure": 1,
     "primary_sources": 3
   },
@@ -86,7 +86,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-06T17:18:53Z",
+      "published_at": "2026-09-06T19:27:41Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -98,10 +98,10 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Iran warns of 'faster, heavier, more painful response' to US attacks - BBC",
+      "title": "Iran warns of faster , heavier , more painful response to US attacks",
       "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5UR3B1TU1mSXExZlE2dDZIR3JXV29PNmtJejBZSG1uZjlrZktkNzl2a290TXk2Nmczc21XS1FKNlRZVGZCQndxTHVkZUpqX2wtUE5WWXJmWVU3QQ?oc=5",
-      "published_at": "2026-09-06T16:11:03Z",
+      "url": "https://www.bbc.co.uk/news/articles/cp8d56w7d9po",
+      "published_at": "2026-09-06T17:45:00Z",
       "tier": 3,
       "weight": 3.0,
       "provider": "legacy-engine",
@@ -113,7 +113,7 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "The risky mission to de-mine the Strait of Hormuz - Financial Times",
+      "title": "The risky mission to de-mine the Strait of Hormuz - ft.com",
       "source": "Financial Times",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNUp3aDJkX0lnZHJLRXVaSFdDS0hyX29JcWN2RzZuWkpzRlF2TWpDTmkwTEI1cklabXlXUllTWFhnQnRJRlhZbHBManBJOXRUU1B5U3FmcVlPMkF0VnJwV0tBaGJ0SE0tZ05fQTRTNk92RmhWZGZoTW1mbkJ5UzI1VzRTX1Y?oc=5",
       "published_at": "2026-09-06T04:02:14Z",
@@ -143,21 +143,6 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "US and Iran trade retaliatory attacks on ships as conflict flares - BBC",
-      "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9MR2lQUEVfWHpBVV9NQjVxS0x6WldUNHB1RzFWSzlDa0hYWm1wYVpxMEVhdkRiT1dCeGVlY2Y5d25uR3lQOEtxbW5CVG5VNDRhRmFvU2NLQlN5UQ?oc=5",
-      "published_at": "2026-09-05T22:44:07Z",
-      "tier": 3,
-      "weight": 3.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
       "title": "Iran buries victims of reported US wedding attack, fires on Kuwait - reuters.com",
       "source": "reuters.com",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZmJEcTdhQU9kcW41Z2J6enVZU2NHQ253eVV1VDJKOXBSTTJfbGhfVi1wbTQ0U1gzRllLb2xUUV9LRGRZaWpvaUlSWWRwQTdBaXdNY2x1Z3pxU1U1WjJSdzdKWGR6a2FLSXN6dnBPQ3NhM1hwUkxOZlIyd0dDX0ZycjdVSlpEUFN5N1NQbWR2UW1oRHNBU3BTZENPbGotQVFOSmdfUUFJNERYbEZTVzU3WDlrUQ?oc=5",
@@ -170,10 +155,25 @@
       "effective_weight": 2.48,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "Iran touts military response as US maintains blockade , hits tankers",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/9/6/iran-touts-military-response-as-us-maintains-blockade-hits-tankers",
+      "published_at": "2026-09-06T17:15:00Z",
+      "tier": 2,
+      "weight": 2.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.0,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
     }
   ],
   "diagnostics": {
-    "signals_considered": 78,
+    "signals_considered": 75,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
