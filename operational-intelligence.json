@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-06T11:17:15Z",
+  "generated_at": "2026-09-06T14:21:47Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -13,36 +13,36 @@
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
-    "access": "SELECTIVE",
+    "access": "RESTRICTED",
     "risk": "EXTREME",
     "legal": "DISPUTED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
-    "access": "Selectivo / condicionado",
+    "access": "Restringido",
     "risk": "Extremo",
     "legal": "Régimen disputado"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
-    "access": "Selective / conditional",
+    "access": "Restricted",
     "risk": "Extreme",
     "legal": "Disputed regime"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 8.14,
-    "closure": 1.5,
+    "passage": 8.894,
+    "closure": 1.35,
     "traffic_reduction": 1.8,
-    "access_restriction": 5.44,
-    "risk": 74.92
+    "access_restriction": 4.54,
+    "risk": 71.08
   },
   "source_counts": {
-    "passage": 5,
+    "passage": 6,
     "closure": 1,
-    "primary_sources": 3
+    "primary_sources": 2
   },
   "latest_confirmed_transit_at": "2026-09-05T11:52:56Z",
   "legacy_engine": {
@@ -53,25 +53,25 @@
   "evidence": [
     {
       "kind": "RISK_SEVERE",
-      "title": "Vance says no talks with Iran until Hormuz attacks stop - reuters.com",
-      "source": "reuters.com",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE02ZTJ3aVBVMWFNR1U3eDIyc1ZWejBzbDN6UWk4dktEN2YxM1AxUTlMOFg5ZkNNVndBc1dvVEdJeTdBM0V6NFhfalYwNWc2Z1ZaVDNCdEZYaVlyanZkaEZSQmtZY1d1dGM?oc=5",
-      "published_at": "2026-09-03T21:02:46Z",
+      "title": "Iran to tackle economic issues, says further attacks will be 'more painful' - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNa2JCeUZJRmd5UEhfaFJjQ2U3UDRValp0Y0ZVOVBiWXE0YzBVZHhTd3RlR0FQMlZHMFRadXJvS01XOHBvb0p2Qzg0V1FYeDdUWC1uMDBFZU5JNnZCRVh1M1lLLWZCQ2Jhb1djdlJxTGEtNGNHWk96czEzUm13VE9wMVp1YjhEQ21WSVZwUlZOMEpBbkJVRm1tRV9wTy13Z0RaMXpvd29RMFdRUkg5ZjVUaTRuRkhCZ3doLTJtWnRoZFU?oc=5",
+      "published_at": "2026-09-06T13:10:32Z",
       "tier": 4,
       "weight": 4.0,
-      "provider": "Google News RSS",
+      "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.12,
+      "effective_weight": 4.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Iran buries victims of reported US wedding attack, fires on Kuwait - reuters.com",
-      "source": "reuters.com",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZmJEcTdhQU9kcW41Z2J6enVZU2NHQ253eVV1VDJKOXBSTTJfbGhfVi1wbTQ0U1gzRllLb2xUUV9LRGRZaWpvaUlSWWRwQTdBaXdNY2x1Z3pxU1U1WjJSdzdKWGR6a2FLSXN6dnBPQ3NhM1hwUkxOZlIyd0dDX0ZycjdVSlpEUFN5N1NQbWR2UW1oRHNBU3BTZENPbGotQVFOSmdfUUFJNERYbEZTVzU3WDlrUQ?oc=5",
-      "published_at": "2026-09-03T11:26:34Z",
+      "title": "Vance says no talks with Iran until Hormuz attacks stop - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE02ZTJ3aVBVMWFNR1U3eDIyc1ZWejBzbDN6UWk4dktEN2YxM1AxUTlMOFg5ZkNNVndBc1dvVEdJeTdBM0V6NFhfalYwNWc2Z1ZaVDNCdEZYaVlyanZkaEZSQmtZY1d1dGM?oc=5",
+      "published_at": "2026-09-03T21:02:46Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "Google News RSS",
@@ -86,7 +86,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-06T11:17:15Z",
+      "published_at": "2026-09-06T14:21:47Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -128,6 +128,21 @@
     },
     {
       "kind": "RISK_SEVERE",
+      "title": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZmJEcTdhQU9kcW41Z2J6enVZU2NHQ253eVV1VDJKOXBSTTJfbGhfVi1wbTQ0U1gzRllLb2xUUV9LRGRZaWpvaUlSWWRwQTdBaXdNY2x1Z3pxU1U1WjJSdzdKWGR6a2FLSXN6dnBPQ3NhM1hwUkxOZlIyd0dDX0ZycjdVSlpEUFN5N1NQbWR2UW1oRHNBU3BTZENPbGotQVFOSmdfUUFJNERYbEZTVzU3WDlrUQ?oc=5",
+      "published_at": "2026-09-03T11:26:34Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.48,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
       "title": "Iranian attack on Saudi tanker killed two Filipino sailors, Saudi Arabia says - BBC",
       "source": "BBC",
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5sRFdyci12V2h5VzJnS3M1NXo1SndBeGlUektTaHFtQ180Y1Z6OWJ4ZmllVGNlMXNIci1CVU9xQWVhT0dNR01ybUlCejJJY0NsWDBqZFpjXy16R2RK?oc=5",
@@ -155,25 +170,10 @@
       "effective_weight": 1.24,
       "kind_label_es": "Acceso restringido",
       "kind_label_en": "Restricted access"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Saudi Arabia condemns deadly Iranian attack on tanker in Strait of Hormuz - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOLWNZNEl1T053MU40MzNHT1cxYjdxQmxrTnk0LVZxSS05QjBXbW14VHBaNzNCT04xMHdNOENSQUdsM0xVVWp4eFBSN0tGUklDa0ZNLXhWNDMyVmVSZDlOdUFFZl9STm43dF85aS1mMkFGNWZSOFlZUzdBdHp0X0w5RzVPNlBBazItU2h4OUpZZXNGbXNsdUZ6UmlWZVhHenVUOWN5ekNaRTVlVFk0VzR6d1doSdIBuAFBVV95cUxNaDR3dzN5TlY0ZHdjckxjandwejNzcXZsNFBvUEttUXpGSHhwMFJOaEpELVEzS0gyV2pOWW12YzlnZm1YOFNIaURlWlZBYnFrQWhPblhMTXlmMWFmQi1jZ1FERV9PWkVhaVk2Wk5lVVRPZXJqNGpSNWdPc0NySFBmT0Y3ZnYtUFlIWm5raXZrbzM4UHhEWlVXUGNZWW9kWm9qWkFjX1UyVjBxMHhtVWtRUTE5QTFXR2ZR?oc=5",
-      "published_at": "2026-09-02T19:28:05Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.24,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 84,
+    "signals_considered": 80,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
