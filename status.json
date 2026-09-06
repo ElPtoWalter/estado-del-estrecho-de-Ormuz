@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-09-06T06:26:48Z",
-  "last_success_at": "2026-09-06T06:26:48Z",
+  "checked_at": "2026-09-06T11:16:35Z",
+  "last_success_at": "2026-09-06T11:16:35Z",
   "last_change_at": "2026-09-02T11:39:08Z",
   "verification_ok": true,
   "stale": false,
@@ -19,10 +19,10 @@
       "title": "The risky mission to de-mine the Strait of Hormuz - Financial Times",
       "source_name": "Financial Times",
       "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNUp3aDJkX0lnZHJLRXVaSFdDS0hyX29JcWN2RzZuWkpzRlF2TWpDTmkwTEI1cklabXlXUllTWFhnQnRJRlhZbHBManBJOXRUU1B5U3FmcVlPMkF0VnJwV0tBaGJ0SE0tZ05fQTRTNk92RmhWZGZoTW1mbkJ5UzI1VzRTX1Y?oc=5",
-      "published_at": "2026-09-06T04:00:12Z",
+      "published_at": "2026-09-06T04:02:14Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-06T06:26:48Z"
+      "observed_at": "2026-09-06T11:16:35Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,17 @@
       "published_at": "2026-09-05T22:44:07Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-06T06:26:48Z"
+      "observed_at": "2026-09-06T11:16:35Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Vance says no talks with Iran until Hormuz attacks stop - reuters.com",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9fak45SXFBUXd2Z2V5c09qTmNjTnhYM2VBc0dEdkY1V0NoWkRxNmJlbTRkV1FmYkpsaHpadHRGelVqdHlKTkVqSTgtVlljQ2ppWDd2YWVKQUlxaG9pRHlOcWR1d3BPQ3R5b1pkd0pTcmx5MlJPM09jbVlJSHk?oc=5",
+      "published_at": "2026-09-03T21:02:45Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-09-06T11:16:35Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +52,7 @@
       "published_at": "2026-09-05T14:59:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-06T06:26:48Z"
+      "observed_at": "2026-09-06T11:16:35Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,17 +62,7 @@
       "published_at": "2026-09-05T13:52:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-06T06:26:48Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Vance says no talks with Iran until Hormuz attacks stop - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9fak45SXFBUXd2Z2V5c09qTmNjTnhYM2VBc0dEdkY1V0NoWkRxNmJlbTRkV1FmYkpsaHpadHRGelVqdHlKTkVqSTgtVlljQ2ppWDd2YWVKQUlxaG9pRHlOcWR1d3BPQ3R5b1pkd0pTcmx5MlJPM09jbVlJSHk?oc=5",
-      "published_at": "2026-09-03T21:02:45Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-09-06T06:26:48Z"
+      "observed_at": "2026-09-06T11:16:35Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -72,30 +72,31 @@
       "published_at": "2026-09-05T09:39:48Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-06T06:26:48Z"
+      "observed_at": "2026-09-06T11:16:35Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 18.265
+      "risk": 15.6
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 9
+      "risk": 8
     },
-    "articles_considered": 40,
-    "signals_considered": 15,
+    "articles_considered": 33,
+    "signals_considered": 12,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -103,7 +104,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-09-06T04:00:12Z",
+    "as_of": "2026-09-06T04:02:14Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -116,10 +117,10 @@
       "title": "The risky mission to de-mine the Strait of Hormuz - Financial Times",
       "source_name": "Financial Times",
       "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNUp3aDJkX0lnZHJLRXVaSFdDS0hyX29JcWN2RzZuWkpzRlF2TWpDTmkwTEI1cklabXlXUllTWFhnQnRJRlhZbHBManBJOXRUU1B5U3FmcVlPMkF0VnJwV0tBaGJ0SE0tZ05fQTRTNk92RmhWZGZoTW1mbkJ5UzI1VzRTX1Y?oc=5",
-      "published_at": "2026-09-06T04:00:12Z",
+      "published_at": "2026-09-06T04:02:14Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-06T06:26:48Z"
+      "observed_at": "2026-09-06T11:16:35Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -129,7 +130,7 @@
       "published_at": "2026-09-05T22:44:07Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-06T06:26:48Z"
+      "observed_at": "2026-09-06T11:16:35Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -179,7 +180,7 @@
       "published_at": "2026-09-05T14:59:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-06T06:26:48Z"
+      "observed_at": "2026-09-06T11:16:35Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -199,7 +200,7 @@
       "published_at": "2026-09-05T13:52:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-06T06:26:48Z"
+      "observed_at": "2026-09-06T11:16:35Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -243,6 +244,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Vance says no talks with Iran until Hormuz attacks stop - reuters.com",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9fak45SXFBUXd2Z2V5c09qTmNjTnhYM2VBc0dEdkY1V0NoWkRxNmJlbTRkV1FmYkpsaHpadHRGelVqdHlKTkVqSTgtVlljQ2ppWDd2YWVKQUlxaG9pRHlOcWR1d3BPQ3R5b1pkd0pTcmx5MlJPM09jbVlJSHk?oc=5",
+      "published_at": "2026-09-03T21:02:45Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-09-06T11:16:35Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Vance says no talks with Iran until Hormuz attacks stop - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9fak45SXFBUXd2Z2V5c09qTmNjTnhYM2VBc0dEdkY1V0NoWkRxNmJlbTRkV1FmYkpsaHpadHRGelVqdHlKTkVqSTgtVlljQ2ppWDd2YWVKQUlxaG9pRHlOcWR1d3BPQ3R5b1pkd0pTcmx5MlJPM09jbVlJSHk?oc=5",
@@ -250,16 +261,6 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-09-06T06:26:48Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Vance says no talks with Iran until Hormuz attacks stop - reuters.com",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE90ZTVGWlA2T0dYV3MyVjVKc0Q4aXpnVUo1b0tGSkZ6SzRBVngwNlR0LUpNb3V1YnZXTVhDX09uTmEycG5veG5pSnQ0cDVxT25wdDB4NmJMU0xXV1l3LUJlVzRjSmFKYWp6enYyOFc5RERBZk5SaWFxTQ?oc=5",
-      "published_at": "2026-09-03T21:02:45Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-09-04T16:33:24Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -714,7 +715,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-06T06:27:19Z",
+    "generated_at": "2026-09-06T11:17:15Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -747,16 +748,16 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 9.622,
-      "closure": 0,
-      "traffic_reduction": 2.42,
-      "access_restriction": 6.06,
-      "risk": 60.18
+      "passage": 8.14,
+      "closure": 1.5,
+      "traffic_reduction": 1.8,
+      "access_restriction": 5.44,
+      "risk": 74.92
     },
     "source_counts": {
-      "passage": 8,
-      "closure": 0,
-      "primary_sources": 2
+      "passage": 5,
+      "closure": 1,
+      "primary_sources": 3
     },
     "latest_confirmed_transit_at": "2026-09-05T11:52:56Z",
     "legacy_engine": {
@@ -767,8 +768,8 @@
     "evidence": [
       {
         "kind": "RISK_SEVERE",
-        "title": "Vance says no talks with Iran until Hormuz attacks stop - Reuters",
-        "source": "Reuters",
+        "title": "Vance says no talks with Iran until Hormuz attacks stop - reuters.com",
+        "source": "reuters.com",
         "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE02ZTJ3aVBVMWFNR1U3eDIyc1ZWejBzbDN6UWk4dktEN2YxM1AxUTlMOFg5ZkNNVndBc1dvVEdJeTdBM0V6NFhfalYwNWc2Z1ZaVDNCdEZYaVlyanZkaEZSQmtZY1d1dGM?oc=5",
         "published_at": "2026-09-03T21:02:46Z",
         "tier": 4,
@@ -782,8 +783,8 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
-        "source": "Reuters",
+        "title": "Iran buries victims of reported US wedding attack, fires on Kuwait - reuters.com",
+        "source": "reuters.com",
         "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZmJEcTdhQU9kcW41Z2J6enVZU2NHQ253eVV1VDJKOXBSTTJfbGhfVi1wbTQ0U1gzRllLb2xUUV9LRGRZaWpvaUlSWWRwQTdBaXdNY2x1Z3pxU1U1WjJSdzdKWGR6a2FLSXN6dnBPQ3NhM1hwUkxOZlIyd0dDX0ZycjdVSlpEUFN5N1NQbWR2UW1oRHNBU3BTZENPbGotQVFOSmdfUUFJNERYbEZTVzU3WDlrUQ?oc=5",
         "published_at": "2026-09-03T11:26:34Z",
         "tier": 4,
@@ -800,7 +801,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-06T06:27:19Z",
+        "published_at": "2026-09-06T11:17:15Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -815,7 +816,7 @@
         "title": "The risky mission to de-mine the Strait of Hormuz - Financial Times",
         "source": "Financial Times",
         "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNUp3aDJkX0lnZHJLRXVaSFdDS0hyX29JcWN2RzZuWkpzRlF2TWpDTmkwTEI1cklabXlXUllTWFhnQnRJRlhZbHBManBJOXRUU1B5U3FmcVlPMkF0VnJwV0tBaGJ0SE0tZ05fQTRTNk92RmhWZGZoTW1mbkJ5UzI1VzRTX1Y?oc=5",
-        "published_at": "2026-09-06T04:00:12Z",
+        "published_at": "2026-09-06T04:02:14Z",
         "tier": 3,
         "weight": 3.0,
         "provider": "legacy-engine",
@@ -887,7 +888,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 76,
+      "signals_considered": 84,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
