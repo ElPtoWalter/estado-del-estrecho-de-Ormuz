@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-09-06T23:05:34Z",
-  "last_success_at": "2026-09-06T23:05:34Z",
+  "checked_at": "2026-09-07T01:15:51Z",
+  "last_success_at": "2026-09-07T01:15:51Z",
   "last_change_at": "2026-09-02T11:39:08Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-09-06T19:23:20Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-06T23:05:34Z"
+      "observed_at": "2026-09-07T01:15:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,17 +32,17 @@
       "published_at": "2026-09-06T17:46:01Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-06T23:05:34Z"
+      "observed_at": "2026-09-07T01:15:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran warns of faster , heavier , more painful response to US attacks",
+      "title": "Iran warns of 'faster, heavier, more painful response' to US attacks - BBC",
       "source_name": "BBC",
-      "source_url": "https://www.bbc.co.uk/news/articles/cp8d56w7d9po",
-      "published_at": "2026-09-06T17:45:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5UR3B1TU1mSXExZlE2dDZIR3JXV29PNmtJejBZSG1uZjlrZktkNzl2a290TXk2Nmczc21XS1FKNlRZVGZCQndxTHVkZUpqX2wtUE5WWXJmWVU3QQ?oc=5",
+      "published_at": "2026-09-06T17:00:56Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-06T23:05:34Z"
+      "observed_at": "2026-09-07T01:15:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,17 +52,7 @@
       "published_at": "2026-09-06T09:10:47Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-06T23:05:34Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran touts military response as US maintains blockade , hits tankers",
-      "source_name": "Al Jazeera",
-      "source_url": "https://www.aljazeera.com/news/2026/9/6/iran-touts-military-response-as-us-maintains-blockade-hits-tankers",
-      "published_at": "2026-09-06T17:15:00Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-06T23:05:34Z"
+      "observed_at": "2026-09-07T01:15:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -72,30 +62,41 @@
       "published_at": "2026-09-06T04:02:14Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-06T23:05:34Z"
+      "observed_at": "2026-09-07T01:15:51Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "U.S. attacks 3 Iranian oil tankers after missiles target Navy warships - CNBC",
+      "source_name": "CNBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNeFdHUjNvUG9RMmZ3VVE2Vk1OZ28zajNuZGdGTjZPMEl6ZGpZeWU3ejU2aTgtaWoyY3RlRS1KR0dvNFRuWlI1bW5PWEY5clhkNFE5eklrMkl0dU9IODljc2tNOWRWZ1Rtcm0xN0tmUGFnNEh3LUJFd1U5UElfQTYyaklB0gGHAUFVX3lxTE5CZVY1SVM2aEVJTHdFcl9ZYU80MHFDb3dFTlUteUdCTFNqdXZFRWlpUURMUjEzVEhrSG9mTkYtcVpDcnRvdzlkdVN3MmhSYzlJdnowM0VsNzJQbTJrTnV0MFotQTczemxoTlhOc3VIQm1ZQmI2MDNFZW81aW8tdHVacjdQUkFBZw?oc=5",
+      "published_at": "2026-09-05T14:59:41Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-09-07T01:15:51Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 23.74
+      "risk": 20.63
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 9
+      "risk": 8
     },
-    "articles_considered": 38,
-    "signals_considered": 12,
+    "articles_considered": 27,
+    "signals_considered": 10,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -119,7 +120,7 @@
       "published_at": "2026-09-06T19:23:20Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-06T23:05:34Z"
+      "observed_at": "2026-09-07T01:15:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -149,7 +150,7 @@
       "published_at": "2026-09-06T17:46:01Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-06T23:05:34Z"
+      "observed_at": "2026-09-07T01:15:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -173,6 +174,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Iran warns of 'faster, heavier, more painful response' to US attacks - BBC",
+      "source_name": "BBC",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5UR3B1TU1mSXExZlE2dDZIR3JXV29PNmtJejBZSG1uZjlrZktkNzl2a290TXk2Nmczc21XS1FKNlRZVGZCQndxTHVkZUpqX2wtUE5WWXJmWVU3QQ?oc=5",
+      "published_at": "2026-09-06T17:00:56Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-09-07T01:15:51Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Iran warns of 'faster, heavier, more painful response' to US attacks - bbc.com",
       "source_name": "BBC",
       "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5UR3B1TU1mSXExZlE2dDZIR3JXV29PNmtJejBZSG1uZjlrZktkNzl2a290TXk2Nmczc21XS1FKNlRZVGZCQndxTHVkZUpqX2wtUE5WWXJmWVU3QQ?oc=5",
@@ -180,16 +191,6 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-09-06T21:36:07Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran warns of 'faster, heavier, more painful response' to US attacks - BBC",
-      "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5UR3B1TU1mSXExZlE2dDZIR3JXV29PNmtJejBZSG1uZjlrZktkNzl2a290TXk2Nmczc21XS1FKNlRZVGZCQndxTHVkZUpqX2wtUE5WWXJmWVU3QQ?oc=5",
-      "published_at": "2026-09-06T16:11:03Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-09-06T17:18:11Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -219,7 +220,7 @@
       "published_at": "2026-09-06T09:10:47Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-06T23:05:34Z"
+      "observed_at": "2026-09-07T01:15:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -229,7 +230,7 @@
       "published_at": "2026-09-06T04:02:14Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-06T23:05:34Z"
+      "observed_at": "2026-09-07T01:15:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -299,7 +300,7 @@
       "published_at": "2026-09-05T14:59:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-06T21:36:07Z"
+      "observed_at": "2026-09-07T01:15:51Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -714,7 +715,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-06T23:06:34Z",
+    "generated_at": "2026-09-07T01:16:32Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -747,18 +748,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 8.855,
+      "passage": 7.985,
       "closure": 1.35,
-      "traffic_reduction": 1.8,
-      "access_restriction": 23.48,
-      "risk": 65.54
+      "traffic_reduction": 1.68,
+      "access_restriction": 25.56,
+      "risk": 69.04
     },
     "source_counts": {
       "passage": 5,
       "closure": 1,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-09-06T11:58:40Z",
+    "latest_confirmed_transit_at": "2026-09-06T23:26:56Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -785,7 +786,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-06T23:06:34Z",
+        "published_at": "2026-09-07T01:16:32Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -797,10 +798,10 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Iran warns of faster , heavier , more painful response to US attacks",
+        "title": "Iran warns of 'faster, heavier, more painful response' to US attacks - BBC",
         "source": "BBC",
-        "url": "https://www.bbc.co.uk/news/articles/cp8d56w7d9po",
-        "published_at": "2026-09-06T17:45:00Z",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5UR3B1TU1mSXExZlE2dDZIR3JXV29PNmtJejBZSG1uZjlrZktkNzl2a290TXk2Nmczc21XS1FKNlRZVGZCQndxTHVkZUpqX2wtUE5WWXJmWVU3QQ?oc=5",
+        "published_at": "2026-09-06T17:00:56Z",
         "tier": 3,
         "weight": 3.0,
         "provider": "legacy-engine",
@@ -887,7 +888,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 86,
+      "signals_considered": 93,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
