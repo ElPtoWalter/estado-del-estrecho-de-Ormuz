@@ -222,10 +222,7 @@ def ensure_adsense_code(text: str, filename: str = "") -> str:
     monetizable_exact = {
         "index.html", "en.html",
         "analisis.html", "en-analysis.html",
-        "parte-diario.html", "en-daily-brief.html",
         "importancia.html", "en-importance.html",
-        "metodologia.html", "en-methodology.html",
-        "fuentes.html", "en-sources.html",
         "sobre.html", "en-about.html",
     }
     excluded = {
@@ -237,6 +234,10 @@ def ensure_adsense_code(text: str, filename: str = "") -> str:
         "contacto.html", "en-contact.html",
         "publicidad.html", "en-advertising.html",
         "media-kit.html", "en-media-kit.html",
+        "parte-diario.html", "en-daily-brief.html",
+        "diario.html", "en-diary.html",
+        "metodologia.html", "en-methodology.html",
+        "fuentes.html", "en-sources.html",
         "historial.html", "en-history.html",
         "evidencias.html", "en-evidence.html",
         "embed.html", "en-embed.html",

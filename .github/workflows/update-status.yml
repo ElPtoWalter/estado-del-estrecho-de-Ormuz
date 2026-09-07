@@ -107,6 +107,9 @@ jobs:
         run: python repair_html.py --root .
 
       - name: Recuperar la edición diaria si el cron de mañana se retrasa
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          DIARIO_FREE_AI_MODEL: ${{ vars.DIARIO_FREE_AI_MODEL }}
         run: python generate_daily_journal.py --scheduled
 
       - name: Regenerar sitemap y robots desde cero

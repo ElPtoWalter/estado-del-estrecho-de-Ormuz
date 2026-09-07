@@ -47,6 +47,7 @@ BAD_SELECTOR = ".status-hero.is-loading .status-dot,status-hero.is-loading .stat
 SECRET_PATTERNS = (
     re.compile(r"ghp_[A-Za-z0-9]{30,}"),
     re.compile(r"github_pat_[A-Za-z0-9_]{30,}"),
+    re.compile(r"sk-or-v1-[A-Za-z0-9_-]{20,}"),
     re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
     re.compile(r"(?:TELEGRAM_BOT_TOKEN|CLOUDFLARE_API_TOKEN)\s*[=:]\s*[\"'][^\"']{12,}", re.I),
 )

@@ -34,11 +34,15 @@ jobs:
           python -m py_compile \
             fix_adsense_readiness.py \
             generate_daily_journal.py \
+            free_editorial_ai.py \
             install_v11.py \
             build_public_site.py
-          python -m unittest -v test_daily_journal_v8.py
+          python -m unittest -v test_daily_journal_v8.py test_free_editorial_ai.py
 
       - name: Regenerar Diario de hoy
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          DIARIO_FREE_AI_MODEL: ${{ vars.DIARIO_FREE_AI_MODEL }}
         run: python generate_daily_journal.py --force
 
       - name: Verificar fecha y eliminar repeticiones
@@ -91,6 +95,9 @@ jobs:
               "embed.html", "en-embed.html", "contacto.html", "en-contact.html",
               "privacidad.html", "en-privacy.html", "cookies.html", "en-cookies.html",
               "aviso-legal.html", "en-legal.html", "media-kit.html", "en-media-kit.html",
+              "diario.html", "en-diary.html", "parte-diario.html", "en-daily-brief.html",
+              "metodologia.html", "en-methodology.html",
+              "fuentes.html", "en-sources.html",
           )
           for rel in no_ads:
               path = root / rel

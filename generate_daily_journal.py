@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
-"""El Diario de Ormuz · sistema editorial V9.
+"""El Diario de Ormuz · sistema editorial V11.
 
 Objetivo
 --------
 Crear una crónica diaria legible y trazable a partir de datos ya publicados por
 el monitor y de un barrido prudente de noticias recientes. La edición en vivo
 se actualiza todos los días; solo se crea una URL histórica indexable cuando
-hay novedad material suficiente.
-
-con hechos estructurados y titulares enlazados. Los titulares interrogativos,
-de opinión o puramente especulativos nunca se convierten en hechos.
+hay novedad material suficiente. Una capa gratuita opcional puede pulir el
+texto sobre un paquete factual cerrado, pero el borrador local sigue siendo la
+salida garantizada. Los titulares interrogativos, de opinión o puramente
+especulativos nunca se convierten en hechos.
 """
 from __future__ import annotations
 
 from journal_evidence import classify_headline, identity, reading, section_note
+from free_editorial_ai import generate_editorial_drafts
 
 import argparse
 import email.utils
@@ -44,7 +45,7 @@ USER_AGENT = (
 MAX_NEWS = 40
 MAX_ARCHIVE = 180
 MATERIAL_THRESHOLD = 4
-EDITORIAL_VERSION = 10
+EDITORIAL_VERSION = 11
 
 TRUSTED_SOURCES = {
     "reuters": 5,
@@ -534,6 +535,163 @@ def selected_narrative_items(items: list[NewsItem]) -> list[NewsItem]:
     return selected
 
 
+def _journal_topics(news: list[NewsItem]) -> list[str]:
+    counts = Counter(item.topic for item in news if item.topic in TOPIC_PATTERNS and not item.analytical)
+    topics = [topic for topic, _ in counts.most_common()]
+    return topics or ["maritime"]
+
+
+def fallback_editorial_draft(
+    status: dict[str, Any],
+    operational: dict[str, Any],
+    news: list[NewsItem],
+    previous_fp: dict[str, Any],
+    current_fp: dict[str, Any],
+    local_dt: datetime,
+    lang: str,
+) -> dict[str, Any]:
+    """Build the complete local draft that remains available without any API."""
+    _, summary, _ = display_state(status, operational, lang)
+    topics = _journal_topics(news)
+    sections = [
+        {
+            "title": TOPIC_LABELS[lang][topic],
+            "paragraph": section_paragraph(topic, news, lang),
+        }
+        for topic in topics
+    ]
+    watch = watchlist(status, operational, lang)
+    defaults = (
+        [
+            "Comprobar si aparecen avisos oficiales nuevos y si modifican de forma expresa las condiciones de navegación.",
+            "Contrastar las señales de prensa con datos operativos independientes antes de cambiar la clasificación.",
+            "Distinguir un movimiento puntual de una tendencia sostenida durante varias jornadas.",
+        ]
+        if lang == "es"
+        else [
+            "Check whether new official notices explicitly alter navigation conditions.",
+            "Cross-check press signals against independent operational data before changing the classification.",
+            "Separate a one-off movement from a trend sustained across several days.",
+        ]
+    )
+    for item in defaults:
+        if item not in watch and len(watch) < 4:
+            watch.append(item)
+    meaning = (
+        [
+            "La lectura útil no procede de contar titulares, sino de comprobar si fuentes distintas describen el mismo cambio y si ese cambio coincide con el diagnóstico operativo del monitor."
+        ]
+        if lang == "es"
+        else [
+            "The useful reading does not come from counting headlines, but from checking whether separate sources describe the same change and whether it matches the monitor's operational assessment."
+        ]
+    )
+    return {
+        "headline": headline_for(status, operational, news, lang),
+        "deck": summary or build_lead(status, operational, local_dt, lang),
+        "situation": [
+            build_lead(status, operational, local_dt, lang),
+            change_paragraph(current_fp, previous_fp, lang),
+        ],
+        "sections": sections,
+        "meaning": meaning,
+        "watch": watch[:4],
+    }
+
+
+def editorial_drafts(
+    status: dict[str, Any],
+    operational: dict[str, Any],
+    news: list[NewsItem],
+    new_items: list[NewsItem],
+    previous_fp: dict[str, Any],
+    current_fp: dict[str, Any],
+    local_dt: datetime,
+    editorial: dict[str, Any],
+) -> tuple[dict[str, dict[str, Any]], str, str]:
+    fallbacks = {
+        lang: fallback_editorial_draft(
+            status, operational, news, previous_fp, current_fp, local_dt, lang
+        )
+        for lang in ("es", "en")
+    }
+    usable = [item for item in news if not item.analytical]
+    independent = {item.source.casefold() for item in usable if item.source}
+    if len(usable) < 2 or len(independent) < 2:
+        return fallbacks, "rules", "insufficient-sources"
+
+    topics = _journal_topics(news)
+    ai_items: list[NewsItem] = []
+    ai_keys: set[str] = set()
+
+    def add_ai_item(item: NewsItem) -> None:
+        key = article_key(item)
+        if key not in ai_keys and len(ai_items) < 12:
+            ai_keys.add(key)
+            ai_items.append(item)
+
+    # Preserve at least one factual item per rendered section and, when space
+    # permits, one per independent publisher before filling by editorial order.
+    for topic in topics:
+        representative = next((item for item in usable if item.topic == topic), None)
+        if representative:
+            add_ai_item(representative)
+    for publisher in sorted(independent):
+        representative = next((item for item in usable if item.source.casefold() == publisher), None)
+        if representative:
+            add_ai_item(representative)
+    for item in usable:
+        add_ai_item(item)
+
+    sources_by_section: dict[str, dict[str, list[str]]] = {"es": {}, "en": {}}
+    for lang in ("es", "en"):
+        for topic in topics:
+            sources_by_section[lang][TOPIC_LABELS[lang][topic]] = list(dict.fromkeys(
+                item.source for item in ai_items if item.topic == topic and item.source
+            ))
+
+    public_status_keys = (
+        "status", "operational_status", "confidence", "summary_es", "summary_en", "checked_at"
+    )
+    public_operational_keys = (
+        "state", "label_es", "label_en", "summary_es", "summary_en", "confidence",
+        "dimensions", "dimension_labels_es", "dimension_labels_en", "carried_forward",
+    )
+    facts = {
+        "edition_date": local_dt.date().isoformat(),
+        "monitor": {key: status.get(key) for key in public_status_keys if status.get(key) is not None},
+        "operational_assessment": {
+            key: operational.get(key) for key in public_operational_keys if operational.get(key) is not None
+        },
+        "comparison_with_previous_edition": {
+            "es": change_paragraph(current_fp, previous_fp, "es"),
+            "en": change_paragraph(current_fp, previous_fp, "en"),
+        },
+        "editorial_context": {
+            key: value for key, value in editorial.items()
+            if key not in {"signal"} and isinstance(value, (str, int, float, bool, type(None)))
+        },
+        "selected_sources": [
+            {
+                "title": item.title,
+                "source": item.source,
+                "published_at": item.published_at,
+                "topic": item.topic,
+                "analytical_headline": item.analytical,
+                "new_today": item in new_items,
+            }
+            for item in ai_items
+        ],
+    }
+    return generate_editorial_drafts(
+        site_name="Estrecho Ormuz",
+        site_url=BASE_URL,
+        facts=facts,
+        fallbacks=fallbacks,
+        sources_by_section=sources_by_section,
+    )
+
+
 def build_lead(status: dict[str, Any], operational: dict[str, Any], local_dt: datetime, lang: str) -> str:
     _, summary, confidence = display_state(status, operational, lang)
     checked = status.get("checked_at") or "—"
@@ -701,17 +859,25 @@ def render_page(
     material_score_value: int,
     material_reasons: list[str],
     editorial: dict[str, Any],
+    draft: dict[str, Any],
+    editor_engine: str,
 ) -> str:
-    title = headline_for(status, operational, news, lang)
-    state_label, summary, confidence = display_state(status, operational, lang)
-    lead = build_lead(status, operational, local_dt, lang)
+    fallback = fallback_editorial_draft(
+        status, operational, news, previous_fp, current_fp, local_dt, lang
+    )
+    title = norm(draft.get("headline")) or fallback["headline"]
+    description = norm(draft.get("deck")) or fallback["deck"]
+    state_label, _, confidence = display_state(status, operational, lang)
     change = change_paragraph(current_fp, previous_fp, lang)
-    watch = watchlist(status, operational, lang)
+    situation_items = draft.get("situation") if isinstance(draft.get("situation"), list) else fallback["situation"]
+    situation_html = "".join(
+        f'<p class="journal-lead">{safe(item)}</p>' for item in situation_items if norm(item)
+    )
+    meaning_items = draft.get("meaning") if isinstance(draft.get("meaning"), list) else fallback["meaning"]
+    meaning_html = "".join(f"<p>{safe(item)}</p>" for item in meaning_items if norm(item))
+    watch = draft.get("watch") if isinstance(draft.get("watch"), list) else fallback["watch"]
     sources_html = make_sources(news, lang)
-    topic_counts = Counter(item.topic for item in news if item.topic in TOPIC_PATTERNS)
-    topics = [topic for topic, _ in topic_counts.most_common()]
-    if not topics:
-        topics = ["maritime"]
+    topics = _journal_topics(news)
     date_text = date_label(local_dt, lang)
     byline = "Estrecho Ormuz · selección automática" if lang == "es" else "Estrecho Ormuz · automated selection"
     minutes = max(3, min(7, 2 + len(topics)))
@@ -737,9 +903,14 @@ def render_page(
     if not metrics:
         metrics = f'<div class="journal-metric"><span>{"Estado" if lang == "es" else "Status"}</span><strong>{safe(state_label)}</strong></div>'
 
+    section_drafts = {
+        norm(section.get("title")): norm(section.get("paragraph"))
+        for section in draft.get("sections", []) if isinstance(section, dict)
+    }
     sections = ""
     for topic in topics:
-        paragraph = section_paragraph(topic, news, lang)
+        section_title = TOPIC_LABELS[lang][topic]
+        paragraph = section_drafts.get(section_title) or section_paragraph(topic, news, lang)
         relevant = [x for x in news if x.topic == topic]
         link_cards = ""
         for item in relevant[:2]:
@@ -748,7 +919,7 @@ def render_page(
                 f'<span>{safe(item.source)}</span><strong>{safe(item.title)}</strong></a>'
             )
         sections += (
-            f'<section class="journal-section"><h2>{safe(TOPIC_LABELS[lang][topic])}</h2>'
+            f'<section class="journal-section"><h2>{safe(section_title)}</h2>'
             f'<p>{safe(paragraph)}</p>{link_cards}</section>'
         )
 
@@ -771,7 +942,6 @@ def render_page(
         if material_score_value >= MATERIAL_THRESHOLD
         else "The daily edition is updated without adding a redundant entry to the archive."
     )
-    description = summary or lead[:220]
     schema = structured_data(title, description, canonical, iso_z(local_dt.astimezone(timezone.utc)), lang, archive)
     alternate = (
         canonical.replace("/diario/", "/diary/").replace("/diario.html", "/en-diary.html")
@@ -780,6 +950,15 @@ def render_page(
     )
     desk = editorial_dashboard(editorial, lang)
     limit = editorial.get("limit_es" if lang == "es" else "limit_en") or ""
+    method_note = (
+        "La síntesis se redacta con asistencia externa gratuita sobre un paquete factual cerrado. La herramienta no busca noticias, no elige fuentes y no decide el estado. La salida se descarta si altera secciones, omite atribuciones o incorpora cifras que no estaban en los datos seleccionados."
+        if editor_engine == "openrouter-free" and lang == "es"
+        else "The synthesis uses a free external writing assistant over a closed factual packet. The tool does not search for news, choose sources or determine the status. Its output is discarded if it changes sections, omits attribution or introduces figures absent from the selected data."
+        if editor_engine == "openrouter-free"
+        else "Este parte se compone mediante reglas locales y selección automática de titulares. No se ha leído ni verificado automáticamente el texto íntegro de cada noticia, ni se atribuye una revisión humana a cada edición. La fecha de un feed puede corresponder a una actualización, no al momento del hecho. Las marcas de medios diferentes tampoco garantizan investigación independiente. Para el análisis propio y reproducible, consulta el informe de datos del monitor."
+        if lang == "es"
+        else "This digest uses local rules and automated headline selection. Full article texts are not automatically read or verified, and no per-edition human review is claimed. Feed dates may reflect updates rather than event dates. Different publisher names do not guarantee independent reporting."
+    )
     triad = f'''<section class="journal-triad" aria-label="{'Capas de lectura' if lang == 'es' else 'Reading layers'}">
 <article><span>{'BASE OBSERVABLE' if lang == 'es' else 'OBSERVABLE BASE'}</span><strong>{safe(state_label)}</strong><p>{'Diagnóstico del observatorio con confianza' if lang == 'es' else 'Observatory assessment with'} {safe(confidence_label(confidence, lang))}{'' if lang == 'es' else ' confidence'}.</p></article>
 <article><span>{'CAMBIO' if lang == 'es' else 'CHANGE'}</span><strong>{'Desde la referencia anterior' if lang == 'es' else 'Since the previous reference'}</strong><p>{safe(change)}</p></article>
@@ -828,13 +1007,14 @@ def render_page(
 <div class="journal-metrics">{metrics}</div>
 </section>
 {desk}
-<p class="journal-lead">{safe(lead)}</p>
+{situation_html}
 {triad}
 <p><a href="{'/datos-propios-monitor-ormuz.html' if lang == 'es' else '/en-monitor-original-data-report.html'}">{'Análisis propio: qué mide realmente el historial del monitor' if lang == 'es' else 'Original analysis: what the monitor archive actually measures'}</a></p>
 {sections}
+<section class="journal-section journal-meaning"><h2>{'Qué significa esta combinación de señales' if lang == 'es' else 'What this combination of signals means'}</h2>{meaning_html}</section>
 <section class="journal-section journal-watch"><h2>{'Qué vigilar en las próximas 24 horas' if lang == 'es' else 'What to watch over the next 24 hours'}</h2><ul>{watch_html}</ul></section>
 <section class="journal-section journal-sources"><div class="journal-section-title"><div><span>{'Fuentes verificables' if lang == 'es' else 'Verifiable sources'}</span><h2>{'Referencias seleccionadas' if lang == 'es' else 'Selected references'}</h2></div></div><ul>{sources_html}</ul></section>
-<section class="journal-method-note"><h2>{'Criterios editoriales de esta edición' if lang == 'es' else 'Editorial standards for this edition'}</h2><p>{safe('Este parte se compone mediante reglas locales y selección automática de titulares. No se ha leído ni verificado automáticamente el texto íntegro de cada noticia, ni se atribuye una revisión humana a cada edición. La fecha de un feed puede corresponder a una actualización, no al momento del hecho. Las marcas de medios diferentes tampoco garantizan investigación independiente. Para el análisis propio y reproducible, consulta el informe de datos del monitor.' if lang == 'es' else "This digest uses local rules and automated headline selection. Full article texts are not automatically read or verified, and no per-edition human review is claimed. Feed dates may reflect updates rather than event dates. Different publisher names do not guarantee independent reporting.")}</p><p>{safe(quality_note)}</p><details><summary>{'Criterio de hemeroteca' if lang == 'es' else 'Archive criteria'}</summary><ul>{reason_html}</ul></details></section>
+<section class="journal-method-note"><h2>{'Criterios editoriales de esta edición' if lang == 'es' else 'Editorial standards for this edition'}</h2><p>{safe(method_note)}</p><p>{safe(quality_note)}</p><details><summary>{'Criterio de hemeroteca' if lang == 'es' else 'Archive criteria'}</summary><ul>{reason_html}</ul></details></section>
 </article>
 </main>
 <footer class="journal-footer"><p>© 2026 Estrecho Ormuz · {'Proyecto independiente · No constituye asesoramiento marítimo, financiero ni de seguridad.' if lang == 'es' else 'Independent project · Not maritime, financial or security advice.'}</p></footer>
@@ -961,10 +1141,14 @@ def main() -> int:
     date_iso = local_now.date().isoformat()
     generated_at = iso_z(now)
     editorial = build_editorial_context(root, news, new_items, local_now)
-    title_es = headline_for(status, operational, news, "es")
-    title_en = headline_for(status, operational, news, "en")
-    _, summary_es, _ = display_state(status, operational, "es")
-    _, summary_en, _ = display_state(status, operational, "en")
+    drafts, editor_engine, ai_status = editorial_drafts(
+        status, operational, news, new_items, previous_fp, current_fp, local_now, editorial
+    )
+    draft_es, draft_en = drafts["es"], drafts["en"]
+    title_es = norm(draft_es.get("headline")) or headline_for(status, operational, news, "es")
+    title_en = norm(draft_en.get("headline")) or headline_for(status, operational, news, "en")
+    summary_es = norm(draft_es.get("deck"))
+    summary_en = norm(draft_en.get("deck"))
 
     live_es = render_page(
         status=status, operational=operational, news=news, new_items=new_items,
@@ -972,6 +1156,7 @@ def main() -> int:
         lang="es", canonical=f"{BASE_URL}/diario.html", archive=False,
         material_score_value=score if material else 0, material_reasons=reasons,
         editorial=editorial,
+        draft=draft_es, editor_engine=editor_engine,
     )
     live_en = render_page(
         status=status, operational=operational, news=news, new_items=new_items,
@@ -979,6 +1164,7 @@ def main() -> int:
         lang="en", canonical=f"{BASE_URL}/en-diary.html", archive=False,
         material_score_value=score if material else 0, material_reasons=reasons,
         editorial=editorial,
+        draft=draft_en, editor_engine=editor_engine,
     )
     stable_write(root / "diario.html", live_es)
     stable_write(root / "en-diary.html", live_en)
@@ -1004,6 +1190,8 @@ def main() -> int:
         "fingerprint": current_fp,
         "news": [asdict(item) for item in news[:15]],
         "fetch_errors": fetch_errors,
+        "editor_engine": editor_engine,
+        "editor_assistant_status": ai_status,
         "editorial": {k: v for k, v in editorial.items() if k != "signal"},
         "url_es": f"{BASE_URL}/diario.html",
         "url_en": f"{BASE_URL}/en-diary.html",
@@ -1022,6 +1210,7 @@ def main() -> int:
             lang="es", canonical=archive_es_url, archive=True,
             material_score_value=score, material_reasons=reasons,
             editorial=editorial,
+            draft=draft_es, editor_engine=editor_engine,
         )
         archive_en = render_page(
             status=status, operational=operational, news=news, new_items=new_items,
@@ -1029,6 +1218,7 @@ def main() -> int:
             lang="en", canonical=archive_en_url, archive=True,
             material_score_value=score, material_reasons=reasons,
             editorial=editorial,
+            draft=draft_en, editor_engine=editor_engine,
         )
         stable_write(root / "diario" / f"{date_iso}.html", archive_es)
         stable_write(root / "diary" / f"{date_iso}.html", archive_en)
@@ -1078,11 +1268,14 @@ def main() -> int:
         "source_brands": len(independent),
         "fetch_errors": fetch_errors,
         "operational_intelligence_used": bool(operational),
+        "editor_engine": editor_engine,
+        "editor_assistant_status": ai_status,
     })
 
     print(
         f"El Diario de Ormuz V{EDITORIAL_VERSION} listo: {date_iso} · score={score} · "
-        f"archivo={'sí' if material else 'no'} · noticias={len(news)} · nuevas={len(new_items)}"
+        f"archivo={'sí' if material else 'no'} · noticias={len(news)} · nuevas={len(new_items)} · "
+        f"redacción={editor_engine} ({ai_status})"
     )
     return 0
 

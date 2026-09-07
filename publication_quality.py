@@ -27,7 +27,8 @@ def apply_policy(document, path):
                        "historial.html", "en-history.html", "evidencias.html", "en-evidence.html",
                        "alertas.html", "en-alerts.html", "embed.html", "en-embed.html",
                        "widget.html", "en-widget.html", "publicidad.html", "publicidad-y-patrocinios.html",
-                       "media-kit.html", "en-media-kit.html"}
+                       "media-kit.html", "en-media-kit.html", "metodologia.html", "en-methodology.html",
+                       "fuentes.html", "en-sources.html"}
     if digest:
         document = set_noindex(document)
         if 'data-editorial-disclosure' not in document:

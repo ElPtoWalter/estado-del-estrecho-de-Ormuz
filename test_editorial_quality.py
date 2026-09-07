@@ -47,6 +47,21 @@ class EditorialQualityTests(unittest.TestCase):
         self.assertIn("<h1>Archivo</h1>", result)
         self.assertIn("data-editorial-disclosure", result)
 
+    def test_adsense_inventory_keeps_automated_briefs_ad_free(self):
+        root = Path(__file__).resolve().parent
+        report = json.loads((root / "adsense-readiness-report.json").read_text(encoding="utf-8"))
+        ads_txt = (root / "ads.txt").read_text(encoding="utf-8")
+        for filename in (
+            "diario.html", "en-diary.html", "parte-diario.html", "en-daily-brief.html", "metodologia.html",
+            "en-methodology.html", "fuentes.html", "en-sources.html",
+        ):
+            self.assertIn(filename, report["ad_free_pages"])
+            self.assertNotIn(filename, report["monetized_pages"])
+            self.assertNotIn("adsbygoogle", (root / filename).read_text(encoding="utf-8"))
+        self.assertTrue(report["ready_for_resubmission"])
+        self.assertEqual(report["errors"], [])
+        self.assertIn("pub-1713078636060241", ads_txt)
+
     def test_report_csv_and_table_use_same_rows(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

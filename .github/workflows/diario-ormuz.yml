@@ -32,10 +32,13 @@ jobs:
 
       - name: Validar redacción automática
         run: |
-          python -m py_compile generate_daily_journal.py test_daily_journal_v8.py
-          python -m unittest -v test_daily_journal_v8.py test_editorial_quality.py
+          python -m py_compile generate_daily_journal.py free_editorial_ai.py test_daily_journal_v8.py test_free_editorial_ai.py
+          python -m unittest -v test_daily_journal_v8.py test_free_editorial_ai.py test_editorial_quality.py
 
       - name: Redactar edición de la mañana
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          DIARIO_FREE_AI_MODEL: ${{ vars.DIARIO_FREE_AI_MODEL }}
         run: python generate_daily_journal.py --scheduled
 
       - name: Regenerar sitemap

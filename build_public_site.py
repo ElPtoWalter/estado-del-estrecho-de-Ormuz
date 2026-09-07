@@ -49,6 +49,9 @@ NO_ADS_PAGES = {
     "cookies.html", "en-cookies.html", "contacto.html", "en-contact.html",
     "publicidad.html", "en-advertising.html", "media-kit.html", "en-media-kit.html",
     "historial.html", "en-history.html", "evidencias.html", "en-evidence.html",
+    "parte-diario.html", "en-daily-brief.html",
+    "diario.html", "en-diary.html",
+    "metodologia.html", "en-methodology.html", "fuentes.html", "en-sources.html",
     "embed.html", "en-embed.html", "widget.html", "en-widget.html",
 }
 ADSENSE_BLOCK_RE = re.compile(
