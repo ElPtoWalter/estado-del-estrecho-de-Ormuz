@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-09-10T16:38:33Z",
-  "last_success_at": "2026-09-10T16:38:33Z",
+  "checked_at": "2026-09-10T19:59:39Z",
+  "last_success_at": "2026-09-10T19:59:39Z",
   "last_change_at": "2026-09-02T11:39:08Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,13 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Oil surges 5%, Brent and US crude both over $100 on more tanker attacks - Reuters",
+      "title": "Oil pushes past $100 as wave of US-Iran attacks exposes dwindling safety net - Reuters",
       "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPVTlKVk5vOWlpYndFb2Flck9IczhtU2k5X1I3a0tlMjA2dkRmMEJncVFZdWctZW9wX05NaU9vUzNwMU5ld3UycklJMjhHaHB3WDdZVF81Z0t1WWNZak8tTFFwdDZtTHZvUnozMnVpUmtEanVsN2ZxM1A2QkxZS3IydDByTlQtd3RFYThzVnlwVmR0eGMyT1RQQldPZVp4VE1oSm5TcHBXVTd1dXM?oc=5",
-      "published_at": "2026-09-10T01:24:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQWk83eHNVQXFWUEdoZGxYdmRpdnhuMFFKM3JfMkRRNDMxWmM0c1JPVmpkRWhQVVBvX0VLdjlhZ296NHpDVDdUNS0xZl9jRXJEeWZ1N1ZWSnZGUjVueEc2MzdjNTAwUTNlUFEtZWZ5el9Jc3dBYjJzVzN6R080aFJLLVlYWEVqUTU0WHRGX1hMSXQ3cnFpaVNHeHM3enRkYjZDcEUyb0Vic1JhMExzU1BCZVBvZlh2dExCZ3dRTVBlNWxNZw?oc=5",
+      "published_at": "2026-09-09T13:56:11Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-10T16:38:33Z"
+      "observed_at": "2026-09-10T19:59:39Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-09-09T09:26:40Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-10T16:38:33Z"
+      "observed_at": "2026-09-10T19:59:39Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-09-10T07:32:08Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-10T16:38:33Z"
+      "observed_at": "2026-09-10T19:59:39Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +52,7 @@
       "published_at": "2026-09-09T02:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-10T16:38:33Z"
+      "observed_at": "2026-09-10T19:59:39Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,41 +62,32 @@
       "published_at": "2026-09-09T11:46:40Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-10T16:38:33Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "The risky mission to de-mine the Strait of Hormuz - Financial Times",
-      "source_name": "Financial Times",
-      "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNUp3aDJkX0lnZHJLRXVaSFdDS0hyX29JcWN2RzZuWkpzRlF2TWpDTmkwTEI1cklabXlXUllTWFhnQnRJRlhZbHBManBJOXRUU1B5U3FmcVlPMkF0VnJwV0tBaGJ0SE0tZ05fQTRTNk92RmhWZGZoTW1mbkJ5UzI1VzRTX1Y?oc=5",
-      "published_at": "2026-09-06T18:33:07Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-09-10T16:38:33Z"
+      "observed_at": "2026-09-10T19:59:39Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 1.925,
       "closed": 0,
       "declared": 0,
-      "risk": 13.895
+      "risk": 12.175
     },
     "independent_sources": {
       "open": 1,
       "closed": 0,
       "declared": 0,
-      "risk": 6
+      "risk": 5
     },
-    "articles_considered": 41,
-    "signals_considered": 18,
-    "current_cycle_evidence": 6,
+    "articles_considered": 34,
+    "signals_considered": 15,
+    "current_cycle_evidence": 5,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
@@ -104,7 +95,7 @@
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-09-10T07:32:08Z",
-    "current_cycle_count": 6,
+    "current_cycle_count": 5,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -119,7 +110,7 @@
       "published_at": "2026-09-10T07:32:08Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-10T16:38:33Z"
+      "observed_at": "2026-09-10T19:59:39Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -179,7 +170,7 @@
       "published_at": "2026-09-09T13:56:11Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-10T06:34:27Z"
+      "observed_at": "2026-09-10T19:59:39Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -199,7 +190,7 @@
       "published_at": "2026-09-09T11:46:40Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-10T16:38:33Z"
+      "observed_at": "2026-09-10T19:59:39Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -229,17 +220,17 @@
       "published_at": "2026-09-09T09:26:40Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-10T16:38:33Z"
+      "observed_at": "2026-09-10T19:59:39Z"
     },
     {
       "signal": "RISK_RESTRICTION",
       "title": "US-Israel-Iran War Live News: UKMTO Reports Attacks Continue on Shipping in Transit Routes in Gulf and 'Several' Cargo Ships Disabled in Ongoing Attacks - The Sunday Guardian",
       "source_name": "The Sunday Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxPaHNOTDNfdjllTFBLMUtCWUJUb2RQcTVFVE93dkdVdld0Ml9qOFpHSlBJX1BLcVhCOWFERzVEa0lBcXVZV2RWTkVJQmZvTUxXQjVhd3kyOFB6a19SX1JHaDA2NkpUUFBHTVQ2c2VIM0tlS1J6NXNoOW5PRW1BZ2F5bDRUeTl5ZU9ZcmNQYVZJZWpTdTFCREpjdTZhRGh5QnhPYmtVVFlFMkpEV1FEMk0yUUNmYnQtYWJmMWxxZUttQnU5VWlCZTNWa0R2cFUycHFYOE5mY0QxTllHNWp2SDBWZ1BSWXJBakhZeVJ2RmVHRjJvT1JuMnp1RnhZQ01mU1gzNkt6dGUzbTdNeml2SXpPU2QydXN6S29WRFNfcUxVMNIBpAJBVV95cUxNU1BtaVhhd1BTN3hSMkRWRnNTRXZ4LUdLdExsZjhRaGlhaVVJR2gycTEwZ0hlSThuOVBaeHJEQ3NHN0ExZy1BN0U3empRamc2b3ZONmlRem1ncU92cjg3UkprZ3hpcjNzUzZsR2N5Z2FjdHFvME1hUjhWeFlPR3JmakFaSkZRbExybVUzWC15MXhvZTkxcjZLUnhiTldZYnEtRWN4Q2tHMFdHQkN3bTM4XzZEeVRBXzdJbUNtV1pPakNvNVNCWHFzTFBpeG45U3hudksyb1h2Ykg4aGRUTEJuWjRRVzJwMVZTUFdOS1hOSE9tTi1FazJNMkZJUnJqdTR4bkcxX2xBVEhRMzB5RlFZOW9tV25FZE9DRUtNandoM3Fvd0kx?oc=5",
-      "published_at": "2026-09-09T09:26:35Z",
+      "source_url": "https://news.google.com/rss/articles/CBMipAJBVV95cUxNU1BtaVhhd1BTN3hSMkRWRnNTRXZ4LUdLdExsZjhRaGlhaVVJR2gycTEwZ0hlSThuOVBaeHJEQ3NHN0ExZy1BN0U3empRamc2b3ZONmlRem1ncU92cjg3UkprZ3hpcjNzUzZsR2N5Z2FjdHFvME1hUjhWeFlPR3JmakFaSkZRbExybVUzWC15MXhvZTkxcjZLUnhiTldZYnEtRWN4Q2tHMFdHQkN3bTM4XzZEeVRBXzdJbUNtV1pPakNvNVNCWHFzTFBpeG45U3hudksyb1h2Ykg4aGRUTEJuWjRRVzJwMVZTUFdOS1hOSE9tTi1FazJNMkZJUnJqdTR4bkcxX2xBVEhRMzB5RlFZOW9tV25FZE9DRUtNandoM3Fvd0kx0gGkAkFVX3lxTE1TUG1pWGF3UFM3eFIyRFZGc1NFdngtR0t0TGxmOFFoaWFpVUlHaDJxMTBnSGVJOG45UFp4ckRDc0c3QTFnLUE3RTd6alFqZzZvdk42aVF6bWdxT3ZyODdSSmtneGlyM3NTNmxHY3lnYWN0cW8wTWFSOFZ4WU9HcmZqQVpKRlFsTHJtVTNYLXkxeG9lOTFyNktSeGJOV1licS1FY3hDa0cwV0dCQ3dtMzhfNkR5VEFfN0ltQ21XWk9qQ281U0JYcXNMUGl4bjlTeG52SzJvWHZiSDhoZFRMQm5aNFFXMnAxVlNQV05LWE5IT21OLUVrMk0yRklScmp1NHhuRzFfbEFUSFEzMHlGUVk5b21XbkVkT0NFS01qd2gzcW93STE?oc=5",
+      "published_at": "2026-09-09T09:26:40Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-10T06:34:27Z"
+      "observed_at": "2026-09-10T16:38:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -299,7 +290,7 @@
       "published_at": "2026-09-09T02:16:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-10T16:38:33Z"
+      "observed_at": "2026-09-10T19:59:39Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -714,7 +705,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-10T16:39:17Z",
+    "generated_at": "2026-09-10T20:00:25Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -747,14 +738,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 11.535,
+      "passage": 10.235,
       "closure": 0,
-      "traffic_reduction": 3.62,
-      "access_restriction": 20.08,
-      "risk": 73.84
+      "traffic_reduction": 4.52,
+      "access_restriction": 16.9,
+      "risk": 71.58
     },
     "source_counts": {
-      "passage": 6,
+      "passage": 5,
       "closure": 0,
       "primary_sources": 2
     },
@@ -767,13 +758,13 @@
     "evidence": [
       {
         "kind": "RISK_SEVERE",
-        "title": "Oil surges 5%, Brent and US crude both over $100 on more tanker attacks - Reuters",
+        "title": "Oil surges 6%, Brent and US crude both surpass $100 on more tanker attacks - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPVTlKVk5vOWlpYndFb2Flck9IczhtU2k5X1I3a0tlMjA2dkRmMEJncVFZdWctZW9wX05NaU9vUzNwMU5ld3UycklJMjhHaHB3WDdZVF81Z0t1WWNZak8tTFFwdDZtTHZvUnozMnVpUmtEanVsN2ZxM1A2QkxZS3IydDByTlQtd3RFYThzVnlwVmR0eGMyT1RQQldPZVp4VE1oSm5TcHBXVTd1dXM?oc=5",
         "published_at": "2026-09-10T01:24:00Z",
         "tier": 4,
         "weight": 4.0,
-        "provider": "legacy-engine",
+        "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 4.0,
@@ -788,7 +779,7 @@
         "published_at": "2026-09-09T13:56:11Z",
         "tier": 4,
         "weight": 4.0,
-        "provider": "Google News RSS",
+        "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
         "effective_weight": 3.6,
@@ -872,22 +863,22 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "The risky mission to de-mine the Strait of Hormuz - Financial Times",
-        "source": "Financial Times",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNUp3aDJkX0lnZHJLRXVaSFdDS0hyX29JcWN2RzZuWkpzRlF2TWpDTmkwTEI1cklabXlXUllTWFhnQnRJRlhZbHBManBJOXRUU1B5U3FmcVlPMkF0VnJwV0tBaGJ0SE0tZ05fQTRTNk92RmhWZGZoTW1mbkJ5UzI1VzRTX1Y?oc=5",
-        "published_at": "2026-09-06T18:33:07Z",
-        "tier": 3,
-        "weight": 3.0,
+        "title": "US strikes five Iranian oil tankers, as Iran attacks 10 ships, Jordan base - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSVZkSGpmVEVQUWxwTVJzMktrLWQ1R0RESXZqbktnZlo3SmJGM0prNEs3dVg0UUp3WWlzQVdZaUdONHQwOWFwVFU0R19hbm1zZGIyVVFqWkJ3S2c2dEpQQUJ4SHd4VE52UXBwa2pHSGZjWFd3U0xQeTFLQVIzZFBQdS11Y1VoY3NzVGlsTF9WYTduYVVZaUhlV05ob3c0RWFWY3M2Q19zSnlYdkpOTW13LUZrdFpKclnSAbwBQVVfeXFMT3pFYTcwbEJBMkxXWEEya3hZRFhRbzV0dTg4SkFIay1nWkthZFlEY3pFTUNVMnhuRnpTdTZkSzcwT0tmNjBncmpaNzk1akNsUldnWEZkVXNrejB6UEUtMXRpTXhQbHVQYkRiSDZxclQ0S1BUdVc0d1lUT0FmNGdfdzVLLU80czBXSHIwSXJCT3lqTXBCc29qaE9KZk5xM3JjSXBCSm1XX0JEd0VqNjNnY19DMHo3S2M0aWZQWU8?oc=5",
+        "published_at": "2026-09-09T11:46:40Z",
+        "tier": 2,
+        "weight": 2.0,
         "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 1.86,
+        "effective_weight": 1.8,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 98,
+      "signals_considered": 94,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
