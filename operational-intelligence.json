@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-11T01:24:27Z",
+  "generated_at": "2026-09-11T06:35:34Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,39 +33,24 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 9.661,
+    "passage": 11.064,
     "closure": 0,
-    "traffic_reduction": 3.62,
-    "access_restriction": 12.76,
-    "risk": 71.42
+    "traffic_reduction": 6.62,
+    "access_restriction": 15.34,
+    "risk": 58.84
   },
   "source_counts": {
-    "passage": 4,
+    "passage": 7,
     "closure": 0,
-    "primary_sources": 2
+    "primary_sources": 1
   },
-  "latest_confirmed_transit_at": "2026-09-10T10:50:07Z",
+  "latest_confirmed_transit_at": "2026-09-11T06:12:41Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "confidence": "ALTA"
+    "confidence": "MEDIA"
   },
   "evidence": [
-    {
-      "kind": "RISK_ELEVATED",
-      "title": "Yemen's Houthis close in on Bab el-Mandeb Strait in new threat to shipping - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSUNHSEc4V2xmVVpPcmx6cE1GaF85MVB3Tnl5ZzdyWVBlYy0zcnNzOTQ1R2ZyNFdzbmp6c2xodVlOallDQTAyeUFodEUwa0dkOFFCN3ZIcmg0V3Iyc0NiUGczTklDSzhUOGNkUUd5ZWlRME5LRGhBdHFvSDdVUm9WdjZacC0zcFdkM0xZY09LUHFDR3lua1ZXMW1GN0NxT21CTFRYNkFOVGRNMzFsTjJXS1hnejFfVTdUZHBvMEJoMmJGU2xLQnc?oc=5",
-      "published_at": "2026-09-10T04:58:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 4.0,
-      "kind_label_es": "Riesgo elevado",
-      "kind_label_en": "Elevated risk"
-    },
     {
       "kind": "RISK_SEVERE",
       "title": "Oil surges 6%, Brent and US crude both surpass $100 on more tanker attacks - Reuters",
@@ -107,7 +92,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.6,
+      "effective_weight": 3.12,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
     },
@@ -122,22 +107,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.6,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "US military says it destroyed 5 more Iranian oil tankers after missile attacks on Navy warship - AP News",
-      "source": "Associated Press",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOUlN5b1FuNFl6ajd5T0Z0MVppWHZ5Y2hFOHJ4dkd0X1dqMGljMHlOX0FZNE9HSXU4SmoxVUVQVEs5OUg2OG8yM1NyazNZQ1VPU1dCS3p0NmNsUk5rVjBMY0xONjRQWGRtTk1vZkNFOC1PWElwcGZmbk9SUzVRS3JCeTlhN25heDc1b0dWbA?oc=5",
-      "published_at": "2026-09-09T02:16:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "legacy-engine",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.6,
+      "effective_weight": 3.12,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -152,28 +122,58 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.12,
+      "effective_weight": 2.48,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Goldman sees $120/bbl oil risk if attacks on Middle East vessels intensify, Bloomberg reports - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQR01kWlp4MnIxcG5yY0dWZ2NNX3FRVHV5Ny0yNG5kNGFQdVFYbmxoaXZIZ2t1WjExSU8zTDUzNXI4RDY0VVlVZ2RXSTZpSmFjWHRyMWcwdERLSl8weTEydUwyb0pHM3E3S3NKalpHUVdHR3R0ZUlRZDZjZzRRc1dqRWQ2cEpGMFVwMk0xNDRTZ2ZaemlwanlWeENGU2VNSjQ3cFBxLXZ1blhrSU4xS3ctRFc5RlJnb19LVVM5MTZHY0R0NE8wdHljTmlTaw?oc=5",
-      "published_at": "2026-09-07T05:49:00Z",
-      "tier": 4,
-      "weight": 4.0,
+      "title": "US strikes five Iranian oil tankers, as Iran attacks 10 ships, Jordan base - Al Jazeera",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSVZkSGpmVEVQUWxwTVJzMktrLWQ1R0RESXZqbktnZlo3SmJGM0prNEs3dVg0UUp3WWlzQVdZaUdONHQwOWFwVFU0R19hbm1zZGIyVVFqWkJ3S2c2dEpQQUJ4SHd4VE52UXBwa2pHSGZjWFd3U0xQeTFLQVIzZFBQdS11Y1VoY3NzVGlsTF9WYTduYVVZaUhlV05ob3c0RWFWY3M2Q19zSnlYdkpOTW13LUZrdFpKclnSAbwBQVVfeXFMT3pFYTcwbEJBMkxXWEEya3hZRFhRbzV0dTg4SkFIay1nWkthZFlEY3pFTUNVMnhuRnpTdTZkSzcwT0tmNjBncmpaNzk1akNsUldnWEZkVXNrejB6UEUtMXRpTXhQbHVQYkRiSDZxclQ0S1BUdVc0d1lUT0FmNGdfdzVLLU80czBXSHIwSXJCT3lqTXBCc29qaE9KZk5xM3JjSXBCSm1XX0JEd0VqNjNnY19DMHo3S2M0aWZQWU8?oc=5",
+      "published_at": "2026-09-09T11:46:40Z",
+      "tier": 2,
+      "weight": 2.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.8,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Saudi Arabia says 73 wounded as Houthis attack civilian and energy sites - Al Jazeera",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNelpMMWdSSTBNZG5rSnpCMmk5MnVUNGNIR1lvVTQ0X20zUFFIYUdheDN0QzFoRm15VGdmNmlvUi1rUHRJWkRqMXdPTFJwQ3FzUTFPWlpPNGFtNjI5UGE0U1c3azQyanhLdTdvMTZXcGJSYXMzVWczU0pwUU5GLXcxOXZ3dGpuMUplbm9NRzZuV0ZuUGV2SnB5OERyRXVENHpXNWxtSFk1SFpEazFBdVVV0gG0AUFVX3lxTE81M3laVXFBWllCdmJvOFZhQ2J1TjlPVFpNRzdGa2xLNktBSUhJYjlHYU9CLWlaVFNCNmMwOXRZd2doTU9UWTdxV1hZQ2FQWVFSUlBzYVVVX3hWaFNCRXJSRHY0TWc2aFkxNk96TUhwTi1POGdQNlZvTkd4Z3IxeU8xWmpoNmdFVTd3QzUyR3hxUnRjYUFQeGZoQ3FOa0pUWlhhWEVCLTNGRVlJaVdnTFdzUGZ3Rg?oc=5",
+      "published_at": "2026-09-08T12:44:51Z",
+      "tier": 2,
+      "weight": 2.0,
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 2.48,
+      "effective_weight": 1.56,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "Can Iran enforce a restricted zone in the Strait of Hormuz? - Al Jazeera",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVEt3eFVmQzY5SGV4MS1nV194dS1QZmtocWEwQVpkTkpKYldmcV8wWjRnT3llQVV1ZFJDXzRHWEpfM2R2Y2VSWHJPOEpqVXBrWm92MzZQaTh4aUhZUkNkZ0tfR3kzTm1lNzlKQUVxQU5udGFuMjB1REktN0loMmZQNDF5NENDVW8tQlJ0cDg1NTh3S0xpMUtjOVp1d3RqUTjSAaQBQVVfeXFMTWZyOFFNR0NJNy1aYTVwZi1lX0NYdW1fOThtR1ZHLVFVMWtQd3g1aUotQWR1WDU4TC0ydjRrX3dxS0w4eGlfcnYxdTd2Z1BiTGVEZlYzdFFKdGxqeGVHSVRxMUREY001Uy12MUprT2w2aXRmdFZ0UW93M3JNYWdCU3J2X20wNHZjWWhNQ2RmZlJwYmpsYlRwUjJQUFRqbzFVMlk0SGo?oc=5",
+      "published_at": "2026-09-07T11:41:10Z",
+      "tier": 2,
+      "weight": 2.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.24,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
     }
   ],
   "diagnostics": {
-    "signals_considered": 86,
+    "signals_considered": 88,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
