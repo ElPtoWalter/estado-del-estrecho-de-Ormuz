@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-11T16:43:27Z",
+  "generated_at": "2026-09-11T19:58:56Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,16 +33,16 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 11.016,
+    "passage": 9.519,
     "closure": 0,
-    "traffic_reduction": 15.18,
-    "access_restriction": 11.8,
-    "risk": 68.5
+    "traffic_reduction": 13.28,
+    "access_restriction": 10.58,
+    "risk": 66.6
   },
   "source_counts": {
-    "passage": 9,
+    "passage": 7,
     "closure": 0,
-    "primary_sources": 4
+    "primary_sources": 3
   },
   "latest_confirmed_transit_at": "2026-09-11T05:56:25Z",
   "legacy_engine": {
@@ -143,25 +143,10 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "US military says it destroyed 5 more Iranian oil tankers after missile attacks on Navy warship - AP News",
-      "source": "Associated Press",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOUlN5b1FuNFl6ajd5T0Z0MVppWHZ5Y2hFOHJ4dkd0X1dqMGljMHlOX0FZNE9HSXU4SmoxVUVQVEs5OUg2OG8yM1NyazNZQ1VPU1dCS3p0NmNsUk5rVjBMY0xONjRQWGRtTk1vZkNFOC1PWElwcGZmbk9SUzVRS3JCeTlhN25heDc1b0dWbA?oc=5",
-      "published_at": "2026-09-09T02:16:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "legacy-engine",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.12,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-11T16:43:27Z",
+      "published_at": "2026-09-11T19:58:56Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -170,10 +155,25 @@
       "effective_weight": 3.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Saudi Arabia shuts East-West pipeline that bypasses Hormuz after attacks - Financial Times",
+      "source": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNM0Q2VE5CaE1VUFBTRnZ3Z0txSW1GTU9FRDBHSHlkTWZSbmZ3VS01cHRSUjNmQjA2a3ZLSk5pbnhnTE9ENllxQXNiOVBHOGJqVkJ1aDNUS3JoeXpyQTFGZHpmYVJ1Z3AzdkZzU0FsYUJjSHMxdlNuc3hEdjBDcWRJa0F6T0w?oc=5",
+      "published_at": "2026-09-11T19:20:50Z",
+      "tier": 3,
+      "weight": 3.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 87,
+    "signals_considered": 79,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
