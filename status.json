@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-09-11T22:44:22Z",
-  "last_success_at": "2026-09-11T22:44:22Z",
+  "checked_at": "2026-09-12T01:26:44Z",
+  "last_success_at": "2026-09-12T01:26:44Z",
   "last_change_at": "2026-09-02T11:39:08Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-09-11T14:37:33Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-11T22:44:22Z"
+      "observed_at": "2026-09-12T01:26:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-09-11T19:20:50Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-11T22:44:22Z"
+      "observed_at": "2026-09-12T01:26:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,7 +42,7 @@
       "published_at": "2026-09-11T18:46:50Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-11T22:44:22Z"
+      "observed_at": "2026-09-12T01:26:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,7 +52,17 @@
       "published_at": "2026-09-11T18:41:40Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-11T22:44:22Z"
+      "observed_at": "2026-09-12T01:26:44Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Saudi oil pipeline shut down after attack triggers fires",
+      "source_name": "CNN",
+      "source_url": "https://edition.cnn.com/2026/09/11/politics/saudi-arabian-oil-pipeline-hit-by-projectiles-triggering-fires",
+      "published_at": "2026-09-11T16:28:45Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-09-12T01:26:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -62,40 +72,29 @@
       "published_at": "2026-09-09T16:46:53Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-11T22:44:22Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran claims to have attacked 10 ships near strait of Hormuz after US strikes - The Guardian",
-      "source_name": "The Guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQN0tGcHN6eVRuV0EzMllYUTYzOHd1ZDhFeWpJczVqMjB1a3JWWWpnRjh1RmV3Mm1Ya1ViQWxRRjhLRjRfWXlhVHVhM1ZOWlZyZkE4LXRTVDdQZ3RxQ3l2eEM5b1VkLVBySjVITFJMc1NjenAwakdZeEp1ZFBWV0UwcHBoQVdhTHhMRVl4bHdOVWh2X0IyNE5CMGVqYkxqbGtUd0xhY0d5UVNWVVhmTG9IUkROSnNlNDR1ckhkdEZ6dw?oc=5",
-      "published_at": "2026-09-09T15:32:00Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-09-11T22:44:22Z"
+      "observed_at": "2026-09-12T01:26:44Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 1.225,
       "closed": 0,
       "declared": 0,
-      "risk": 17.175
+      "risk": 18.535
     },
     "independent_sources": {
       "open": 1,
       "closed": 0,
       "declared": 0,
-      "risk": 7
+      "risk": 8
     },
-    "articles_considered": 36,
+    "articles_considered": 38,
     "signals_considered": 16,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
@@ -120,7 +119,7 @@
       "published_at": "2026-09-11T19:20:50Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-11T22:44:22Z"
+      "observed_at": "2026-09-12T01:26:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -130,7 +129,7 @@
       "published_at": "2026-09-11T18:46:50Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-11T22:44:22Z"
+      "observed_at": "2026-09-12T01:26:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -150,7 +149,17 @@
       "published_at": "2026-09-11T18:41:40Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-11T22:44:22Z"
+      "observed_at": "2026-09-12T01:26:44Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Saudi oil pipeline shut down after attack triggers fires",
+      "source_name": "CNN",
+      "source_url": "https://edition.cnn.com/2026/09/11/politics/saudi-arabian-oil-pipeline-hit-by-projectiles-triggering-fires",
+      "published_at": "2026-09-11T16:28:45Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-09-12T01:26:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -160,7 +169,7 @@
       "published_at": "2026-09-11T14:37:33Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-11T22:44:22Z"
+      "observed_at": "2026-09-12T01:26:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -250,7 +259,7 @@
       "published_at": "2026-09-09T16:46:53Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-09-11T22:44:22Z"
+      "observed_at": "2026-09-12T01:26:44Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -701,21 +710,11 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-09-07T18:21:21Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran says it attacked tankers, US-linked vessels in Hormuz escalation - Euronews.com",
-      "source_name": "Euronews",
-      "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNmZvMmFhak9ROGpLQ2RDdzh6Q01QTS1vWkdDZThmdVBYUkQ4OUhVcHl6aG1TamFVTlA5QUVjQ3Vsa3ZZVEVYZjNwYTlFVDktYUhvTkNmWVFmUy1Oa3Y4bFlUS1N5d3VYMjNJZUJUeU1TNk41QThSZlpwYkhyQ0xjR1o0WXpUM1VJSE9KUUItdV9fX3BTQnRRamFCRUJaanRMQVZqSk1BM0hfZw?oc=5",
-      "published_at": "2026-09-05T22:06:19Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-05T23:11:24Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-11T22:45:01Z",
+    "generated_at": "2026-09-12T01:27:01Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -748,18 +747,18 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 9.519,
+      "passage": 6.919,
       "closure": 0,
-      "traffic_reduction": 13.4,
-      "access_restriction": 9.7,
-      "risk": 61.2
+      "traffic_reduction": 14.4,
+      "access_restriction": 6.4,
+      "risk": 68.88
     },
     "source_counts": {
-      "passage": 7,
+      "passage": 5,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-09-11T05:56:25Z",
+    "latest_confirmed_transit_at": "2026-09-09T13:05:00Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -807,7 +806,7 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.6,
+        "effective_weight": 3.12,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -861,7 +860,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-11T22:45:01Z",
+        "published_at": "2026-09-12T01:27:01Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -888,7 +887,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 75,
+      "signals_considered": 78,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
