@@ -1,6 +1,214 @@
 [
   {
     "schema_version": 1,
+    "date": "2026-09-12",
+    "generated_at": "2026-09-12T06:23:12Z",
+    "title_es": "Ormuz: seguridad, evidencia y límites",
+    "title_en": "Hormuz: security, evidence and limits",
+    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+    "material_score": 4,
+    "material_reasons": [
+      "Cambian dimensiones: traffic"
+    ],
+    "material_archive": true,
+    "new_articles": 23,
+    "source_brands": 10,
+    "topics": {
+      "security": 7,
+      "maritime": 3,
+      "other": 8,
+      "energy": 5
+    },
+    "fingerprint": {
+      "legacy_status": "INCIERTO",
+      "legacy_operational": "HIGH_RISK_UNCONFIRMED",
+      "legacy_confidence": "ALTA",
+      "v7_state": "OPEN_SEVERELY_RESTRICTED",
+      "v7_confidence": "MEDIA",
+      "dimensions": {
+        "passage": "PASSAGE_CONFIRMED",
+        "traffic": "SEVERELY_REDUCED",
+        "access": "SELECTIVE",
+        "risk": "EXTREME",
+        "legal": "DISPUTED"
+      }
+    },
+    "news": [
+      {
+        "title": "Saudi Arabia shuts key oil pipeline after drone attack launched from Iraq - BBC",
+        "source": "BBC",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1WYkFDZzd0RXNwRTVPRHhYcTlPRG12WmJXWU9fYVZ6YjBjOUFUMXNoZEhYMjRpcEF4WGNhNmVnQzZ4eDl5Y0d3dDZQTVZnd0xNWExUY2JvSWhxdw?oc=5",
+        "published_at": "2026-09-12T04:20:43Z",
+        "tier": 4,
+        "topic": "security",
+        "query": "\"Strait of Hormuz\" (attack OR security OR UKMTO OR JMIC OR mine OR navy) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "US limits air defence time slots for tankers sailing through Hormuz - Financial Times",
+        "source": "Financial Times",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNSlZ4a2p0SHpURGQ0cXRYTEF5aW1jYWJjRXJIc0E2T2NDb05IbnlRRThDcDBBbDVjTUZfbDlUZ3kxVUN6b1hTcDBMNTNSRDJ1SWdRVFZJLWRkMklWUUNOVnF4SjZxMmRlTURkVlVUN0FLUjdiei1EemhObXFLOU13NUxlZlo?oc=5",
+        "published_at": "2026-09-12T04:00:48Z",
+        "tier": 4,
+        "topic": "maritime",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Satellite image shows critical Saudi pipeline damaged in drone attack - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNS3c4OXRFVU5YUm9hbnh4OGtSYXBaUUFyU1hDM2wxNy15Wi1RZFhvNWduOVBkb2JSdVNmdjl3OWtoeWx1LTFmbmJ0ZUNUWTdpU3VFQzZKQTdWM3hFanBsMEVnZ0JiZlNWdllLRW85SWl3Y0dTdk5YTzFuMTJGcG1ENTZvTDNIdlhaemsyVUdCWGNzSS1pZVFCZ2R0ZnRIelZ4eDZXQmRfTdIBrAFBVV95cUxNdHFTUllodmtnRmR4d2xycnIzWkJlYjZQVjJhV2NXaVRybElReVNYWmhZNGlLSEVfTzZhRzF0LS1lVmhKdjBHWEU0eS1oWDlEVHVWd3RZWFdiZTlVVm9Rdy1nTllQUUNkNTJyY284QmYzdFVJa3BiMzcxZ2dfejRWaFJDR1RyRW1mWWxtZTl6cVJjYkx1X0xGdjVYX05oeVFCdks4dHpQaC1uU2V3?oc=5",
+        "published_at": "2026-09-12T02:19:17Z",
+        "tier": 3,
+        "topic": "security",
+        "query": "\"Strait of Hormuz\" (attack OR security OR UKMTO OR JMIC OR mine OR navy) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Saudis shut down oil pipeline as Houthis tighten grip on Red Sea shipping - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQczRVMDVmcFFkMWs3TDRSemk1SnA1SW1NSTRmaGU3VXRmbDlvUnlGTll6VHRRYWxjOTl1N3QzcFhIYWs5RjJaRGRmclRQYmpLdW8tNHNXWExZTnpmSklXaFU4YWJvOC1EcEpvcDdQVnpfWnBYT3l6X1pCRW9Bc19YQzNmYnFrbHBNQXd4aE1nVkpKWktoTjFoM2dSa1BGMnlSb3dVMnJhOFVTRHRrXzlHSFVXTDFvZVNzQ19r?oc=5",
+        "published_at": "2026-09-12T00:55:00Z",
+        "tier": 5,
+        "topic": "maritime",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Saudi Arabia shuts down damaged key pipeline bypassing the Strait of Hormuz - TradeWinds News",
+        "source": "TradeWinds News",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQTjFCRXdqMGZES0pkVWNZTVBuMkpIa0NxVlRNNndKVkd6OElqZnYwbC02T0RGQVIxcjl5aWhIZ2t2ZDFsajQta2NpcGJxMmRuSXQ5cEN1T3V6a1hSMFp2dkZsZ2ZQWWpkdnhMa05obUV5RElBTWlzNVdwSlI2bTB2UG5JZmtweXEweEhhaHB1a3J1ZHQ5S2R6UE1qRWhPS3lUTHFCUDNIdUpMaFoyU2o5UzJreExuRzIxdEdocnFDN0FpY2lG?oc=5",
+        "published_at": "2026-09-11T22:34:22Z",
+        "tier": 4,
+        "topic": "other",
+        "query": "\"Strait of Hormuz\" (attack OR security OR UKMTO OR JMIC OR mine OR navy) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Gulf oil threatened anew as Houthis reach key island and pipeline is shut down - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUk9oUjNYejhGeW1YblJUVWdfQ0JaZU52dHNPZUZVdnpMSkxYS3pKTWhLdjU0REdNUGdubUhnRl9KUXZabHRfbEQyOUJZeXUxQzZfcGFlbFV5V1BlSTVmRkhzdGJaNkpQa3p3OG9LZUt3Q3VXYkdrc2ZRWW9fcWQ4TkYxNFgxNFI0dlhIV0UyUU5Dbk44blJMempZVFVqVm5XbUlfV2dqSlN3YXBNUDlUQmVxS3JQMUxQ?oc=5",
+        "published_at": "2026-09-11T21:28:55Z",
+        "tier": 5,
+        "topic": "energy",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Saudi Shuts Oil Pipeline That Bypasses Hormuz After Attacks - Bloomberg.com",
+        "source": "Bloomberg",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPU2Y0Q1NrVV83eFZoaHJNQ0EtNHRpQXkzd1ZBNUlkdkRRcjZmZ0REVk1SZlowTlVUUEhOLU1fNWx3OHBwR1RUNlVaUWswVTUzdU92OENNQldSLW4wRXBUWkd1T3czaExNQXd3ZENRNEtGMkF6TS0xakM0Q2xtUnlqVmt4ajNZVmZqVVA0LU0zUjBHVFQ4bXRfc1M0ZzlmT2xlY3lzZHFtSThzYm13cWc?oc=5",
+        "published_at": "2026-09-11T21:09:52Z",
+        "tier": 4,
+        "topic": "security",
+        "query": "legacy evidence",
+        "analytical": false
+      },
+      {
+        "title": "Saudi Arabia shuts East-West pipeline that bypasses Hormuz after attacks - Financial Times",
+        "source": "Financial Times",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNM0Q2VE5CaE1VUFBTRnZ3Z0txSW1GTU9FRDBHSHlkTWZSbmZ3VS01cHRSUjNmQjA2a3ZLSk5pbnhnTE9ENllxQXNiOVBHOGJqVkJ1aDNUS3JoeXpyQTFGZHpmYVJ1Z3AzdkZzU0FsYUJjSHMxdlNuc3hEdjBDcWRJa0F6T0w?oc=5",
+        "published_at": "2026-09-11T19:20:50Z",
+        "tier": 4,
+        "topic": "security",
+        "query": "legacy evidence",
+        "analytical": false
+      },
+      {
+        "title": "Saudi Arabia shut down East-West crude oil pipeline after multiple attacks by drones from Iraq - CNBC",
+        "source": "CNBC",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNYTlEWk83M3ZzR1Q5bW14a1FaUGZIWWM2T0dlUlJPdC1jaXh0UVFiZzgtU0tXdlp1TmZoN2FQejFMWlFITUh4a0tWUXo4YmNLaTVtZE9SMFcwVnd4YmdRUHpGUXRtZGI1bHRvMTlLczBDYjdpQ01SbzVydDVYLXp4eWZkQmZ0TlZOcklfd0twSVpGZ9IBlwFBVV95cUxOT2MxY0ZZQ2F5REZjZlB6cU83RnlyVmRMTy1jRGJDdUZqMnNMcS1ybUdlWDFGQ1hYV0dlbzJ3RFlDNE03NEFnUTRoU3hWOGdSUTJBNjc0WWFrNWg4LTRiVlBjZVliS1lBTUdkbFl6M2tIM1JtY2dPS3U5aGxFNjByNG1RV1EySk5NcFJ4bmZSazJibXBQQk40?oc=5",
+        "published_at": "2026-09-11T18:41:40Z",
+        "tier": 3,
+        "topic": "security",
+        "query": "legacy evidence",
+        "analytical": false
+      },
+      {
+        "title": "Iran says will discuss Strait of Hormuz with Gulf states on Monday - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQZEtFdVJWek16LXpWeFV3THNjRzhQd2VxOG5wUHdOdGs0ZE0ybVEzX2ZvSVNFcWRKeXR1VDRrcUR6TWVieWZKa2s1UzdENHVtNHNyTTJmLWVnbS03UE9kaGVKcTJJTmJLTmlxLW4wQ0lhWWpCWTdFSW0zamhpOVgwTHF1SUEyWThFWXdDWWFwREpjVE5oUExwa2RDTHhySHBIMkYxZlkxRlk0SFXSAbABQVVfeXFMTmhTWG1zaTVKa1hmckEtcHViQTFoaDgzM052SmgyZGQ2aUpoR21Sc1NTT091Tm1kamtWeENhOE80MUszOXYyT0lJQUxRUGVST29kNmdSWVZIQjZjNXlPQXp6LUVTeTVRNEwwSHVuVU9RR3dOSERBZ2xhaERjWnhMcEdKOThKcXkyVlhEcnhVSEdMcVlQYVA4VVZEUkxyZDNob1p5eTMxcFh0NGF1SXNaUXY?oc=5",
+        "published_at": "2026-09-11T18:36:10Z",
+        "tier": 3,
+        "topic": "other",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Houthis control key shipping route after gains along Yemen’s Red Sea coast - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNM2lLRlNUMnEtRnREVzJ3MkpoMFIzS2RkSS1Gc29HYV90cS1SRGZBNHhMUHhKUy1YWTdtNkZYclNZclhUTG05NFo0ekhSTWp2X2dGbU5QdkFRak1KcFU5ZE1obkp4SE5FejRGYWhQVmhvUEJGRkpYY2RRaGo4amNfYy00R0JXSEpVN2RZY2dEU210dnNYM0J0bi1DVXpSXzZ6UWl2YUdkTdIBrAFBVV95cUxNdld1R2Jibno1S2hhNGtGZVE2QkcwVjhBN2NGd1VuSW8yaXJMOWpCeTRETHFsZjVrTGJGeXV0c25Ed3Y3UEdGWDdncDczR3NOMXJpdkhEWU5HbVlTOVBDOUx1VHowTEtQUVJCSUQ4MnQ5TjFTRGZaSW5vc3JfOHN2M0thR0lZTXRRRUhJN2V5akZsR0Zrb3BGcWxzdTV3WngtcFRmNDdac01uNFdx?oc=5",
+        "published_at": "2026-09-11T16:21:34Z",
+        "tier": 3,
+        "topic": "maritime",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Crude tanker transits into Hormuz fall to a trickle as hostilities intensify - Lloyd's List",
+        "source": "Lloyd's List",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQcmxUVFJkaGoxenZzZXQzc3hDYmxIbEdCOUpSRE9leWpFcG4xMFJ5YmJYUHdXMFJSQnVFNEdLM21lV20teVItMFVPX1dPR0c0WU5Ya19EUWVRZi02SnBWZFQwTmthYUVlc2t0UjJPMmJkVDAta1ZsR1VjV1BycEZ1VFB2TnFiV1pDM3BBRDQxdjNZLU50R2NyR1BldUQwNV9aOGtva1ZFdk5UV29VWUdvMjBYTQ?oc=5",
+        "published_at": "2026-09-11T16:11:30Z",
+        "tier": 5,
+        "topic": "energy",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Iran and Gulf states to meet in push for Hormuz deal - Financial Times",
+        "source": "Financial Times",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOTm1oWks3YmRRUlYzX0NFSHNHcURubUVVQnUtWHpVclFBQTFpRkExV2VxejlqZVdVZ3h2cURIMjBmUHlkcnl5Zjk4ZzdFcHhGTUdvbTNXaDVtN2FZYjNsTzhSbEZ0ejdOeDYtUlFPNE5KYVJrLU84eF90ZE11bDJDLVl4MjM?oc=5",
+        "published_at": "2026-09-11T16:03:28Z",
+        "tier": 4,
+        "topic": "other",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "80/20 rule kicks in as marine insurers assess Hormuz fallout - Lloyd's List",
+        "source": "Lloyd's List",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOUGUwMDdVcnV4QUUtM0RqM2lRNVZLVHJTZ0JESnVkVDRUa1FZQV9LNndmRFhMMGk1Ql9RbmRxaW9Id2UtWUIzLTFyZDVjMWtKbVNDQmYxM1pPbkk0NVlBYU5kY2wta20ydjFBZFduM2E4YTRoMFZhOGsxQ1pRSHhUZUk1X0JsaEFYSUlzcG41NTBLa0ZPUUtDRE0xY3Q?oc=5",
+        "published_at": "2026-09-11T16:01:46Z",
+        "tier": 5,
+        "topic": "other",
+        "query": "\"Strait of Hormuz\" (oil OR LNG OR insurance OR freight OR war risk) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Can the Houthis close the Red Sea after seizing the Yemen coast? - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQREtMT2VSSC1lYklMdzV1UHJXZWxZdGFjc1VLSkZDSVJFR2F5V05jTUU4aVNwYVY4Qm5hTF81a1hPOG1rb0tlOGp6aVl1amhQQURpQ1N0VWtzLTN2OTROcTMtVmR5OG9QYVY2a3hDa1FoUElLbTdRcXM3Z3ZWb3ZQMGswY204dURSOHBUcGdZakZBOUdfWFltTnJXWjdnWGtsZ3lTWFVTSdIBrAFBVV95cUxQNU5JWVZ0TzIyN2xmeG1DaWFrVXZDQnJYSXFJSHY4MzcxRkVFal9HWXFSVHJLTnVUOGM4U1NkRGtQMlVKM21FblNDQ2JPWWw1RWpvZnJ1b2x3SUd4VmNCclBrMkZoMExVblVzV0g2dWhnUjlCMjBpMlhNdFQ4bzMyOVpVcnlXZERvSG1DeEpCV0RsVW5YNnNtVFc0Q0huak9wNHJ5VHU2aTlRSUtP?oc=5",
+        "published_at": "2026-09-11T14:50:53Z",
+        "tier": 3,
+        "topic": "other",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": true
+      }
+    ],
+    "fetch_errors": [],
+    "editor_engine": "rules",
+    "editor_assistant_status": "no-key",
+    "editorial": {
+      "version": 11,
+      "topic": "security",
+      "slug": "security",
+      "label_es": "Cuaderno de seguridad",
+      "label_en": "Security log",
+      "current_count": 23,
+      "recent_average": 20.142857142857142,
+      "pulse_es": "Agenda más intensa que la media reciente",
+      "pulse_en": "A busier news agenda than the recent average",
+      "source_count": 10,
+      "analytical_count": 2,
+      "limit_es": "2 titular(es) analítico(s) se conservan como contexto, pero no se utilizan para afirmar hechos operativos.",
+      "limit_en": "2 analytical headline(s) are retained as context but are not used to assert operational facts."
+    },
+    "url_es": "https://estrechoormuz.com/diario/2026-09-12.html",
+    "url_en": "https://estrechoormuz.com/diary/2026-09-12.html"
+  },
+  {
+    "schema_version": 1,
     "date": "2026-09-03",
     "generated_at": "2026-09-03T06:24:07Z",
     "title_es": "Ormuz: seguridad, evidencia y límites",
