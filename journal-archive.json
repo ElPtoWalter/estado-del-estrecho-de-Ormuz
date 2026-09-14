@@ -1,6 +1,216 @@
 [
   {
     "schema_version": 1,
+    "date": "2026-09-14",
+    "generated_at": "2026-09-14T05:21:44Z",
+    "title_es": "Ormuz: seguridad, evidencia y límites",
+    "title_en": "Hormuz: security, evidence and limits",
+    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+    "material_score": 4,
+    "material_reasons": [
+      "Cambian dimensiones: access, legal"
+    ],
+    "material_archive": true,
+    "new_articles": 20,
+    "source_brands": 9,
+    "topics": {
+      "energy": 4,
+      "security": 3,
+      "maritime": 3,
+      "diplomacy": 4,
+      "other": 5,
+      "insurance": 1
+    },
+    "fingerprint": {
+      "legacy_status": "INCIERTO",
+      "legacy_operational": "HIGH_RISK_UNCONFIRMED",
+      "legacy_confidence": "ALTA",
+      "v7_state": "OPEN_SEVERELY_RESTRICTED",
+      "v7_confidence": "MEDIA",
+      "dimensions": {
+        "passage": "PASSAGE_CONFIRMED",
+        "traffic": "REDUCED",
+        "access": "RESTRICTED",
+        "risk": "EXTREME",
+        "legal": "OPEN_LEGAL"
+      }
+    },
+    "news": [
+      {
+        "title": "Oman Calls for Alternative LNG Routes That Can Bypass Hormuz - Bloomberg.com",
+        "source": "Bloomberg.com",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPbnliUXVPWmIxZmZadEI2VG43SW5zeENGWFpTNGpVRmZwSFJSTmotU1ZPRTEwUE9uSTFpa05QeDBHbWYwUXBseHRGTFlLcU96OTJRVW44bGFCaHlndlNiYnN5TnRNLXRVTEVNLWFlbDBfeDJXajd0ejBEbkd4bXM0U2MxRGVDWktiQUF6TDZ1RVA4eG9mb18tYk9sa0lHU1RTdERGVmI2YlBLak4yc3FFUA?oc=5",
+        "published_at": "2026-09-14T04:51:00Z",
+        "tier": 4,
+        "topic": "energy",
+        "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Fighting in Yemen intensifies, and Houthis launch more attacks on Saudi Arabia - AP News",
+        "source": "Associated Press",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNYmtucHBpX1JrQVh4ZVl5UDVCMER5bjYtb2NPcUVPZzFrZlZSZERNTjN3YTVKTDhxc3BzbkdMRS05YllDZ3VJeW03c2pRSHNmYkxKTnBWNE1IVm9VYndFdjZlQS0zck1zeUM0QTA4S0p5cUM5MTYxRjNxX052S2xOaXE1Ql9zYXBpc19SZThRR1VwVWpEbkFoNE1YMA?oc=5",
+        "published_at": "2026-09-14T04:41:00Z",
+        "tier": 5,
+        "topic": "security",
+        "query": "legacy evidence",
+        "analytical": false
+      },
+      {
+        "title": "Shipping oil gets ever harder, costlier - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmJCUUMxaW05Wm0yazVud3pVRFlHLTJKai13QUcxaUhtX2dlTEJPcV9XOWZGSnRzdFRXejctZE1sUGZrcEd3Sy1JOUZxVktnQW9hVl9vbTVSdEhldXBEaUxQTlJRanQyWDFpQXNaTlE1UWUwaVgzMU8yTmF2dzFGYUNuUQ?oc=5",
+        "published_at": "2026-09-14T04:33:00Z",
+        "tier": 5,
+        "topic": "maritime",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Hormuz uncertainty persists with Gulf shipping corridor discussion postponed - Lloyd's List",
+        "source": "Lloyd's List",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZGVOQ0tIYjY3bHBsNFMyd2lDYXoxUlRIR0VTclJldTQyX1hZUHNWei1VYW5vMHVTMHJ1N2NKNnFtUDZPS2g1djROOTRXaUpvS2hfX2VZSWdRaVBiNFJ5WFhwZHRwMUdnRUJnRm5BbWFkdjRDRjFBd2dfQ212dE52bHhNLU5fdHh2ejR6bU9vS2twTWlDU3duRmhWOXFyeVgzZ3lQUlhzUnN4NzllbVR1U2FNSQ?oc=5",
+        "published_at": "2026-09-14T04:18:20Z",
+        "tier": 5,
+        "topic": "maritime",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Hormuz shipping traffic remains below 10-day average at weekend, data shows - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPLUFxSXdtaTdhRlc0cWc5b3VuTU5MNEMtdXVGTk1aeGcxQndiaEJOVC1BVjNfLVJRSmhqamgxUVhrc2JBcXRxSnNoNzNDbk5jUGROOUduSkR1MjduOTMtZFRCV190WEhTaGNOMEcxZVEtYjVVcnNMMmktYnhwWTdwcDRrMEJKcW9WOHpxUXFkZTBMRnFhZUVWbm05bm1kUDBBZm1jY01La1E2SHhlUmhsS09EUE1kTU0?oc=5",
+        "published_at": "2026-09-14T04:18:00Z",
+        "tier": 5,
+        "topic": "maritime",
+        "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Trump says U.S. may keep Iranian oil 'like Venezuela' as Gulf-Iran Hormuz talks stall - CNBC",
+        "source": "CNBC",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQVFU1OERQaW5PLWR6STV5TEE2NjZqaXhsZmItQy1yUXlFNnBtam9sM09EbTFzUmYwVEpqLXhYNHZyWThheWNUb1ZJbFB3Z1JhY3ppNElYNFRtbnVxcVJWRFIyb1RwMUVhTDRZdlRLRmw3UHNORHRjVHJndE4tN3E2VndXbE5CZ9IBiwFBVV95cUxNQUxLdTB2b0RST1RCQUx6Zk84Q3psbDctNV9tT2x2SEMxZ3lVVUo5QWpneEhUaXU5UWNoNHVlOUlLampoOWwxN3lvVXlwbVY5b2hEdC1HalF5SlRNWi1ZVVRXQ1pGWkhGaXMwWFVnLTdXbUtVdFFtLXdxdjVUVGdqYTlqUWw4TFpFVzZF?oc=5",
+        "published_at": "2026-09-14T03:01:00Z",
+        "tier": 3,
+        "topic": "diplomacy",
+        "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Oman postpones regional talks on Strait of Hormuz, and other Mideast developments - AP News",
+        "source": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOcjNIT1RidThMRGRHRnBoLTVUM2RPd2dtdm81a1N6cW9SNlB2SFlnaXhYMU5LTVluWnc2TlZfcXlmX2JBM21MdWFVQjl4YTF1WUhJeXBYdWxHSm5tRWtWbzEtQnE2aVdpWXFib0FaRFJycmdmc3RBOTk3V2pRWnVJQkdsWDAwSkJzOFMzcjRDSWIzdDhMU0FqWkxUOVVKNVBUSzRNVzRVUQ?oc=5",
+        "published_at": "2026-09-14T02:35:00Z",
+        "tier": 5,
+        "topic": "diplomacy",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Iranian cargo ship is struck, and talks between Tehran and its neighbors are postponed - AP News",
+        "source": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNMG04XzJlaFg3N0hjVGVucURCODFNSFJKYkdZaHY0aWZxMWJCXzlPY1pGOUNrWHRhWkc3NnJXQms3X1ZxaHBxOTBHTUZVNUFWWXBJV0hLcG9PaEg0Nm9VaTQxbVNfallyV0ZhVzlfMGpqaWMwLTV2ZmYwRGZYNm9EUzFLMnMzZkREbzRlR1JqR0tBd1Fs?oc=5",
+        "published_at": "2026-09-14T01:17:00Z",
+        "tier": 5,
+        "topic": "security",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Diplomacy stumbles with postponement of meeting on Strait of Hormuz proposal - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNUmxSZmUzZzdYUkJrQ2l3RzRTQklHdjFOWmVYZ2NDcmZmOW9UUVBoZkk0bC0wcHhveWNHNldiU2E0WV9PYkFtWGVaUUdMVUlieFBZMVRjVHFkTTZ6YjVWXzVLUlA2QXE2LURQczRJN010RGR1Y3Jkb0JpS1lhdF9fZVdJT0hMV3A5QXNNcllfalNoem0wS3VMNUlNQUgwbG9sUU1XN2R1aUpkaXZDekZ6bnlqN2RiN0t3X3d3?oc=5",
+        "published_at": "2026-09-13T23:02:00Z",
+        "tier": 5,
+        "topic": "diplomacy",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Oil prices up over 3% following new strikes on Saudi, Strait of Hormuz - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOcXNvWlpHUEh2bzNITUYtX04zUG1vclFCeDZ1NVdQTkNXUk5OTmRESElsUXUyQjNsYVU1d2tEMFlNRjB1VXVnenR4UHZzd3F3dEZWR2tWSVZMREFiZXF6NjR5SlB5VmdaNXpTWHQ3UF9POFRGanpoR0NxZUV3ZUU4alAycW9mcGdLak5lQ2NXdlpHQ3I3eDVRM3JDWmI3SGdYUjZsbnJSaUVySHk3UFl4Y3AxVGFZbmg5?oc=5",
+        "published_at": "2026-09-13T22:23:00Z",
+        "tier": 5,
+        "topic": "energy",
+        "query": "legacy evidence",
+        "analytical": false
+      },
+      {
+        "title": "Tehran and Muscat delay talks, citing regional consensus need - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOZFZtTWphS29IZmJ6Y1pjUVBqUnFFRGhFdzNlU3BFWjM5aloxT3ZHYnRUREtwMFN3cF90WUVfdW02MjhFRmh4dE01SG5zRGRrQmNldE1xSjVlcFRZRGh4VnNESUNRSTBoUC1rRTBXM3VTVXhlSVpNUUVubGJTbmp5bjdLNGtDQWd5OGNOcVE2cEVxMGpvZVNuVC16UmhyUmwtakZZ0gGoAUFVX3lxTE80RUg0ZTNRVWs0VzFreUJWNVZfVUZsSnJyLU1jYUZlcC1obXprdndZeEg4Ynp3b0RkUVU0YUNWUHE1NHlIMXN4U0ZlNDY5R0dvMlUyVS1xemVwRzR3MXVHc25jb0NINE9IcEJmejIwa1VURktZQU9jVkh6MlpkckhsLVJkVTU3QmVUT1Z3ai0yM1ZvLWZYLWU4X25uRnNzSkV0QVpxTVk0eg?oc=5",
+        "published_at": "2026-09-13T22:22:48Z",
+        "tier": 3,
+        "topic": "diplomacy",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Oil prices rise after Saudi Arabia shut down critical pipeline that bypasses Strait of Hormuz - CNBC",
+        "source": "CNBC",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOcWFrNEdSMHhodEJrS2thdWhURmpWejhTNHljZTZEVFpnVUp6cDV2Z202cTA5WVlINW43YVhWeXNjNnRLWFVDVWFlT3BxYk83eGlBWGRzZUVOVTJKbGE5Zl9XelpCOFpLUVRsajFMU1M0WmxaMWo5eVhHeElnZmFpQ2c1U1F3MUFKbks4ag?oc=5",
+        "published_at": "2026-09-13T22:08:14Z",
+        "tier": 3,
+        "topic": "energy",
+        "query": "\"Strait of Hormuz\" (attack OR security OR UKMTO OR JMIC OR mine OR navy) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Oil hits $108 after Gulf states postpone talks with Iran over Hormuz - Financial Times",
+        "source": "Financial Times",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPS19fUlNXLWZxOF9IVTF0RVpxcDBRSFNvWmRKT2V3Q1hKbTVKLWV3LU9tM2tMMkZleXZMM0Q3OHFmZXhiU0ZKUW9KZHphMlB6WVVkdUNuUE42Wk51dERDZ1VOVFN4NkJKTlMxUno2bUs5OFM5SVd4eVluam95bzhXN2tnb3E?oc=5",
+        "published_at": "2026-09-13T21:14:47Z",
+        "tier": 4,
+        "topic": "energy",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Hormuz Meeting With Iran and Gulf Nations Delayed, Oman Says - Bloomberg.com",
+        "source": "Bloomberg.com",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWG16MGlLTHpTd3B2dWZfai1GVzJJQ2QxVHdVN3lMcl9oZ1o2eEZYNUJfeE1TTm9yVGRTZ1ZGcUJSR1BsOEhycHZUVmh6ZnU3bEdUallFRWJnUnBGY1ZqM2w3bzZFUTh0Q3d1UUJacVZVVGZYeHpIUFB4Y3UxYVJvWUlUYU5jbm1jVjBMQTBOZlVzdkNSWVBzdkdnNFJxNHZqMnh5VnlwanJRT1pOXzBzYWhR?oc=5",
+        "published_at": "2026-09-13T20:04:23Z",
+        "tier": 4,
+        "topic": "other",
+        "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
+        "analytical": false
+      },
+      {
+        "title": "Oman meeting between Gulf states and Iran postponed, Omani foreign minister says - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPT01mN2pHSkgtLWNGSFhGWm9vSDBvNjlLVVB5N2lFRnczZ012SW1pZDdxTXRmY2NZWmw2MmRiOEJPZ1ZNdklvMkgxbXlEQXd6a3ozbWNrLTNaLWlMekNhalBBQjZTSXhEZEItM0s5WUM2cGN5akN6SXRVZVJseUR1M2Q1X2RoM2VBMEFMZHNrdVU0VUZyU2k5eWEtalNvbGVjQk5sS1NkbUV1QThfaUxocWV5NkVmRDBLQmdrNXJBQmp1ckhHTDBOdQ?oc=5",
+        "published_at": "2026-09-13T19:14:32Z",
+        "tier": 5,
+        "topic": "other",
+        "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+        "analytical": false
+      }
+    ],
+    "fetch_errors": [],
+    "editor_engine": "rules",
+    "editor_assistant_status": "no-key",
+    "editorial": {
+      "version": 11,
+      "topic": "energy",
+      "slug": "energy",
+      "label_es": "Cuaderno de energía",
+      "label_en": "Energy log",
+      "current_count": 20,
+      "recent_average": 21.714285714285715,
+      "pulse_es": "Agenda en línea con la media reciente",
+      "pulse_en": "News agenda in line with the recent average",
+      "source_count": 9,
+      "analytical_count": 1,
+      "limit_es": "1 titular(es) analítico(s) se conservan como contexto, pero no se utilizan para afirmar hechos operativos.",
+      "limit_en": "1 analytical headline(s) are retained as context but are not used to assert operational facts."
+    },
+    "url_es": "https://estrechoormuz.com/diario/2026-09-14.html",
+    "url_en": "https://estrechoormuz.com/diary/2026-09-14.html"
+  },
+  {
+    "schema_version": 1,
     "date": "2026-09-13",
     "generated_at": "2026-09-13T06:43:19Z",
     "title_es": "Ormuz: seguridad, evidencia y límites",
