@@ -1,6 +1,92 @@
 [
   {
     "schema_version": 1,
+    "date": "2026-09-15",
+    "generated_at": "2026-09-14T23:58:09Z",
+    "source_checked_at": "2026-09-14T23:58:06Z",
+    "status": "ABIERTO",
+    "status_label_es": "ABIERTO CON RESTRICCIONES",
+    "status_label_en": "OPEN WITH RESTRICTIONS",
+    "operational_status": "OPEN_RESTRICTED",
+    "operational_label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
+    "operational_label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
+    "confidence": "MEDIA",
+    "confidence_label": {
+      "es": "Media",
+      "en": "Medium"
+    },
+    "verification_ok": true,
+    "stale": false,
+    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
+    "risks_es": [
+      "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
+      "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+    ],
+    "risks_en": [
+      "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
+      "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
+    ],
+    "watchlist_es": [
+      "Avisos marítimos oficiales y confirmaciones operativas independientes.",
+      "Trayectorias completas de buques y continuidad real de los cruces, no puntos AIS aislados.",
+      "Cambios en restricciones, seguros, escoltas, puertos y disponibilidad de tripulaciones."
+    ],
+    "watchlist_en": [
+      "Official maritime notices and independent operational confirmations.",
+      "Completed vessel tracks and actual continuity of crossings, not isolated AIS points.",
+      "Changes in restrictions, insurance, escorts, ports and crew availability."
+    ],
+    "evidence": [
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Saudis Seek to Boost Hormuz Oil Exports as Key Pipeline Attacked - Bloomberg.com",
+        "source_name": "Bloomberg",
+        "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOczBLUXI5WnBHVVExR0F1TmtsZFU5N3VWZTMyNDRXUDJvbm5pd0o1VHFHekpCLTZZcVZoc0Nqbml3R3ZCYU9hVmZIYm9GU3hmZnFTa2tUMl9mbUFYZC1uMWZmdlFFMzR6anQ5UXY3cHlKZmlncHFVZWd1bFhFdklhUGp2TnFWUXhLYTVBQVQwMlRfOC1vUUlYMEhJcFZfZlcxUmtSUzRadTJnODVSTHJ2d0xNQ2VmUQ?oc=5",
+        "published_at": "2026-09-14T16:16:01Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Houthis attack Saudi Arabia as Gulf-Iran talks are postponed - Reuters",
+        "source_name": "Reuters",
+        "source_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNUmxSZmUzZzdYUkJrQ2l3RzRTQklHdjFOWmVYZ2NDcmZmOW9UUVBoZkk0bC0wcHhveWNHNldiU2E0WV9PYkFtWGVaUUdMVUlieFBZMVRjVHFkTTZ6YjVWXzVLUlA2QXE2LURQczRJN010RGR1Y3Jkb0JpS1lhdF9fZVdJT0hMV3A5QXNNcllfalNoem0wS3VMNUlNQUgwbG9sUU1XN2R1aUpkaXZDekZ6bnlqN2RiN0t3X3d3?oc=5",
+        "published_at": "2026-09-13T23:02:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Vessel struck in Strait of Hormuz, UKMTO reports - CNN",
+        "source_name": "CNN",
+        "source_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZ0U4WXUxQlJoODRIbjc2V01xRmNqSnl2MjNrSGNUcUlUVTR4ZFdmM2N5dGRoNVJTaU5yeGFVLUpwcUdNM1BkdGVjVVcxSXk4ZWlkQ1FFMTZoOUtiWnFCTE1xTlduSEpxYk9xTzh3NDRteU1hSlhmcGhDN1J1VkxWb0tR?oc=5",
+        "published_at": "2026-09-13T18:45:55Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Vessel struck in Strait of Hormuz, UKMTO says, as prospects for U.S.-Iran diplomacy appear elusive - CNBC",
+        "source_name": "CNBC",
+        "source_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAwTGlJOEZRVUpiWERhUm51WWZwRDRWVXlnVXczV2pQOGFnY01GUklBZTg2MHc0SU8xbzlYWjlRWFdxMFBKYkxPVy1TRUdXcmdBS3RxZmtsZnpGRG5rSjRobU9BNVY3cUlHNEMtOFZaVTFMRldydlcwSEZHbTJZUdIBgwFBVV95cUxOeF9MeDRhaEhUVXdqZ2ZJdWhkVVFTSlRNWDFoSllFMno3bE5lVXVnaDhGZnA2RDRFSnI3SzRTdF9yNXB5SVp2d2hacVdHS1IteWZkUk5PQ0EwNDhwTEViYUVCQXpGaHg3YXQ4TlhoRnpZMHprOHhkTDNXNDJUSmNnY2xiaw?oc=5",
+        "published_at": "2026-09-13T13:38:23Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Saudi Arabia shuts East-West pipeline that bypasses Hormuz after attacks - Financial Times",
+        "source_name": "Financial Times",
+        "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNM0Q2VE5CaE1VUFBTRnZ3Z0txSW1GTU9FRDBHSHlkTWZSbmZ3VS01cHRSUjNmQjA2a3ZLSk5pbnhnTE9ENllxQXNiOVBHOGJqVkJ1aDNUS3JoeXpyQTFGZHpmYVJ1Z3AzdkZzU0FsYUJjSHMxdlNuc3hEdjBDcWRJa0F6T0w?oc=5",
+        "published_at": "2026-09-12T10:50:57Z",
+        "official": false
+      }
+    ],
+    "last_valid_confirmation": null,
+    "publish_recommended": false,
+    "material_hash": "550974f6956cbc07"
+  },
+  {
+    "schema_version": 1,
     "date": "2026-09-14",
     "generated_at": "2026-09-14T21:02:39Z",
     "source_checked_at": "2026-09-14T21:02:36Z",
