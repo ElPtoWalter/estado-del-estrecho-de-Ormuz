@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-15T15:13:34Z",
+  "generated_at": "2026-09-15T19:09:37Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -35,9 +35,9 @@
   "scores": {
     "passage": 14.846,
     "closure": 0,
-    "traffic_reduction": 12.57,
+    "traffic_reduction": 13.57,
     "access_restriction": 0,
-    "risk": 109.98
+    "risk": 110.66
   },
   "source_counts": {
     "passage": 10,
@@ -51,6 +51,21 @@
     "confidence": "ALTA"
   },
   "evidence": [
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Hull war underwriters reassess pricing after latest attacks on shipping in Middle East Gulf - Lloyd's List",
+      "source": "Lloyd's List",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOWEFsV3hIUHFTY3VmQl9INWVQMWprU3FHRndsN1dBQUpQZjRJZUVyU2x4NnZzS1l4cnJGOEEzVm1uSU94UEJRWjVFcFhlZzJNOFpEbm9IcHRnZG9oRFNTdURPQ0xzNDRsV0JGVndsNVp3MTNHa0w2X0E5dDU1SUVfeC1CUFhhYl9kaTlQbHJzazNLdHdvbkcyRnVCdVg3ZEptbVY2WHpIN3lCSjA5cVB0VnpkdXB2WFpYV1h3dU5Ub2tCQzdhdXNB?oc=5",
+      "published_at": "2026-09-15T16:03:24Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
     {
       "kind": "RISK_SEVERE",
       "title": "Most Gulf bourses in red on Houthi attack and Hormuz shipping slump - Reuters",
@@ -82,26 +97,11 @@
       "kind_label_en": "Reduced traffic"
     },
     {
-      "kind": "RISK_SEVERE",
-      "title": "Oil prices climb as attacks, pipeline outage deepen Saudi supply concerns - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNVGZNVlpqdGZqMGlsa1lSR2IyWU0tbmd2R1ZkY2o5VDNlb0VsMEdhbWlZVzJBLXJ0WU9MTm13WnN2R0M0Slg4TzFkb1VSYVRxQXE5ejQ5eTNRbGcxdUVSNTFKYlk2WmxYbkdPMTJIUEZJRVdBUmFKVHVCamlsUzB2NFJLbkNGbkJFSjR3TTlhNF9vT2g4MXk0MjlzOHhVaWNGX3U3RGlUS0JzekpCb0VBbU8zMGdUbFpIaGlCVHlwcEtoR0U?oc=5",
-      "published_at": "2026-09-15T00:36:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 4.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
       "kind": "TRANSIT_CONFIRMED",
       "title": "Hormuz shipping traffic remains below 10-day average at weekend, data shows - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPLUFxSXdtaTdhRlc0cWc5b3VuTU5MNEMtdXVGTk1aeGcxQndiaEJOVC1BVjNfLVJRSmhqamgxUVhrc2JBcXRxSnNoNzNDbk5jUGROOUduSkR1MjduOTMtZFRCV190WEhTaGNOMEcxZVEtYjVVcnNMMmktYnhwWTdwcDRrMEJKcW9WOHpxUXFkZTBMRnFhZUVWbm05bm1kUDBBZm1jY01La1E2SHhlUmhsS09EUE1kTU0?oc=5",
-      "published_at": "2026-09-14T04:21:40Z",
+      "published_at": "2026-09-14T04:18:00Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "Google News RSS",
@@ -161,7 +161,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-15T15:13:34Z",
+      "published_at": "2026-09-15T19:09:37Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 118,
+    "signals_considered": 121,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
