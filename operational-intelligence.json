@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-14T23:58:06Z",
+  "generated_at": "2026-09-15T05:12:26Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,24 +33,39 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 17.68,
+    "passage": 19.058,
     "closure": 0,
-    "traffic_reduction": 3.62,
+    "traffic_reduction": 9.52,
     "access_restriction": 1.0,
-    "risk": 103.66
+    "risk": 95.36
   },
   "source_counts": {
-    "passage": 10,
+    "passage": 12,
     "closure": 0,
     "primary_sources": 3
   },
-  "latest_confirmed_transit_at": "2026-09-14T10:59:57Z",
+  "latest_confirmed_transit_at": "2026-09-15T02:40:55Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "ALTA"
   },
   "evidence": [
+    {
+      "kind": "TRAFFIC_REDUCED",
+      "title": "Hormuz traffic dwindles after Middle East attacks intensify - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUTFPRnZDMlUxdmU3RmpseHVGS2laWk4tZU0ySUhOSUdDMGlfQ3loQTBQZktUdW96ck0yNlctUWxVV2NYSHpDclc2YnI4cVFISWZXbjdlM1BDSC1vejJmR2Qtc0NjTTlxLVpxRmZXck5nQU9US1JUalB2cTNZd1Z4Y1Q1QkVQUkEySXNqZUxYV1VWLV8wbVJYTU85X3U0bmk3SXFnNm1uMDQ4TkYwMjV3a3ItZw?oc=5",
+      "published_at": "2026-09-15T02:59:00Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Tráfico reducido",
+      "kind_label_en": "Reduced traffic"
+    },
     {
       "kind": "TRANSIT_CONFIRMED",
       "title": "Hormuz shipping traffic remains below 10-day average at weekend, data shows - Reuters",
@@ -62,7 +77,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
     },
@@ -77,7 +92,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -89,7 +104,7 @@
       "published_at": "2026-09-13T23:02:00Z",
       "tier": 4,
       "weight": 4.0,
-      "provider": "legacy-engine",
+      "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 3.6,
@@ -107,7 +122,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.6,
+      "effective_weight": 3.12,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -116,7 +131,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-14T23:58:06Z",
+      "published_at": "2026-09-15T05:12:26Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -128,31 +143,16 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Oil surges 6%, Brent and US crude both surpass $100 on more tanker attacks - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPVTlKVk5vOWlpYndFb2Flck9IczhtU2k5X1I3a0tlMjA2dkRmMEJncVFZdWctZW9wX05NaU9vUzNwMU5ld3UycklJMjhHaHB3WDdZVF81Z0t1WWNZak8tTFFwdDZtTHZvUnozMnVpUmtEanVsN2ZxM1A2QkxZS3IydDByTlQtd3RFYThzVnlwVmR0eGMyT1RQQldPZVp4VE1oSm5TcHBXVTd1dXM?oc=5",
-      "published_at": "2026-09-11T00:54:17Z",
-      "tier": 4,
-      "weight": 4.0,
+      "title": "Tanker on fire after Hormuz attack - Seatrade Maritime News",
+      "source": "Seatrade Maritime News",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbnFscm8zZUZHRnVMUE5rS0hfQUwwVmRhQXpqX0Q3SlN1M0REbHBBTFREUExBMC1GQnhJZkluNC1zLXZqTTZMNktCSmZSdzVYdTVWSmliUEFKOWdiRWNzd2k4QWFzeUFvRlowYi1lWm1KWUZfTVd4eEFWSG9fTnhJeXBodw?oc=5",
+      "published_at": "2026-09-13T08:24:25Z",
+      "tier": 2,
+      "weight": 2.0,
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 2.48,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Saudi Arabia shuts East-West pipeline that bypasses Hormuz after attacks - Financial Times",
-      "source": "Financial Times",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNM0Q2VE5CaE1VUFBTRnZ3Z0txSW1GTU9FRDBHSHlkTWZSbmZ3VS01cHRSUjNmQjA2a3ZLSk5pbnhnTE9ENllxQXNiOVBHOGJqVkJ1aDNUS3JoeXpyQTFGZHpmYVJ1Z3AzdkZzU0FsYUJjSHMxdlNuc3hEdjBDcWRJa0F6T0w?oc=5",
-      "published_at": "2026-09-12T10:50:57Z",
-      "tier": 3,
-      "weight": 3.0,
-      "provider": "legacy-engine",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 2.34,
+      "effective_weight": 1.8,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 112,
+    "signals_considered": 110,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
