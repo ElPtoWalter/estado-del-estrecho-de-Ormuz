@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-15T10:22:39Z",
+  "generated_at": "2026-09-15T15:13:34Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 16.458,
+    "passage": 14.846,
     "closure": 0,
-    "traffic_reduction": 9.52,
+    "traffic_reduction": 12.57,
     "access_restriction": 0,
-    "risk": 106.94
+    "risk": 109.98
   },
   "source_counts": {
-    "passage": 11,
+    "passage": 10,
     "closure": 0,
     "primary_sources": 3
   },
-  "latest_confirmed_transit_at": "2026-09-15T07:18:00Z",
+  "latest_confirmed_transit_at": "2026-09-15T09:44:15Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -53,10 +53,10 @@
   "evidence": [
     {
       "kind": "RISK_SEVERE",
-      "title": "Most Gulf stocks in red on Houthi attack and Hormuz shipping slump - Reuters",
+      "title": "Most Gulf bourses in red on Houthi attack and Hormuz shipping slump - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSExSUVU1Q05HQlpsVG5mSngtVTZFUkYtV1dhYVNqZDdFTTVvWWsxU0d5SUZWV1luUXJXMG9Hb1JKeU9MSTdzb3I5MDZEWVlzZWMzN3dQRHNMZk5nSzIxSW1KWGFvMkVHSlYxdnowc2x3c2xPamVScEhCYXhBS0VheDd6VFR6SkZ4SkROR1UwQi1BR0dCdUd3T1FZYnhrc2ZqTTdvMkRJZzhGZUluRHRJ?oc=5",
-      "published_at": "2026-09-15T08:23:54Z",
+      "published_at": "2026-09-15T13:16:59Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "Google News RSS",
@@ -74,7 +74,7 @@
       "published_at": "2026-09-15T02:59:00Z",
       "tier": 4,
       "weight": 4.0,
-      "provider": "Google News RSS",
+      "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 4.0,
@@ -82,11 +82,26 @@
       "kind_label_en": "Reduced traffic"
     },
     {
+      "kind": "RISK_SEVERE",
+      "title": "Oil prices climb as attacks, pipeline outage deepen Saudi supply concerns - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNVGZNVlpqdGZqMGlsa1lSR2IyWU0tbmd2R1ZkY2o5VDNlb0VsMEdhbWlZVzJBLXJ0WU9MTm13WnN2R0M0Slg4TzFkb1VSYVRxQXE5ejQ5eTNRbGcxdUVSNTFKYlk2WmxYbkdPMTJIUEZJRVdBUmFKVHVCamlsUzB2NFJLbkNGbkJFSjR3TTlhNF9vT2g4MXk0MjlzOHhVaWNGX3U3RGlUS0JzekpCb0VBbU8zMGdUbFpIaGlCVHlwcEtoR0U?oc=5",
+      "published_at": "2026-09-15T00:36:00Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
       "kind": "TRANSIT_CONFIRMED",
       "title": "Hormuz shipping traffic remains below 10-day average at weekend, data shows - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPLUFxSXdtaTdhRlc0cWc5b3VuTU5MNEMtdXVGTk1aeGcxQndiaEJOVC1BVjNfLVJRSmhqamgxUVhrc2JBcXRxSnNoNzNDbk5jUGROOUduSkR1MjduOTMtZFRCV190WEhTaGNOMEcxZVEtYjVVcnNMMmktYnhwWTdwcDRrMEJKcW9WOHpxUXFkZTBMRnFhZUVWbm05bm1kUDBBZm1jY01La1E2SHhlUmhsS09EUE1kTU0?oc=5",
-      "published_at": "2026-09-14T04:18:00Z",
+      "published_at": "2026-09-14T04:21:40Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "Google News RSS",
@@ -146,7 +161,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-15T10:22:39Z",
+      "published_at": "2026-09-15T15:13:34Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -155,25 +170,10 @@
       "effective_weight": 3.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Tanker on fire after Hormuz attack - Seatrade Maritime News",
-      "source": "Seatrade Maritime News",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbnFscm8zZUZHRnVMUE5rS0hfQUwwVmRhQXpqX0Q3SlN1M0REbHBBTFREUExBMC1GQnhJZkluNC1zLXZqTTZMNktCSmZSdzVYdTVWSmliUEFKOWdiRWNzd2k4QWFzeUFvRlowYi1lWm1KWUZfTVd4eEFWSG9fTnhJeXBodw?oc=5",
-      "published_at": "2026-09-13T08:24:25Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.56,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 117,
+    "signals_considered": 118,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
