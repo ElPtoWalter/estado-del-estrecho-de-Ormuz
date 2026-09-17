@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-17T07:56:38Z",
-  "last_success_at": "2026-09-17T07:56:38Z",
+  "checked_at": "2026-09-17T13:43:48Z",
+  "last_success_at": "2026-09-17T13:43:48Z",
   "last_change_at": "2026-09-02T11:39:08Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-09-16T04:42:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-17T07:56:38Z"
+      "observed_at": "2026-09-17T13:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,17 +32,17 @@
       "published_at": "2026-09-15T10:58:27Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-17T07:56:38Z"
+      "observed_at": "2026-09-17T13:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Two sailors missing after tanker attacked in Strait of Hormuz, Oman says - BBC",
-      "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBEekpDQzhwOUk5dHlsaU9mRkpHQzQ2U1BvajhYcU1RNUR3am5OSFFTUngtdmFsemxXcWhQTjh3cWpLU3c5U3JIaUlORGdEZ1JwZ3V1RkZleE42d2VqUkE?oc=5",
-      "published_at": "2026-09-15T13:05:36Z",
-      "tier": 3,
+      "title": "Dozens of aircraft, hundreds of buildings: US loss to Iran attacks revealed - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNR0xBM2hYamtNRV83VktFTTV3UXBqdFNHNmN5dHZ5NEdHSE1oZ0JaMHlQaUMzcnBUc0hPM0ozOFJ3MlBUZ1NQY0NBRUxVX1NqazNrUDN1LWRKQkJKWkxsSkhNYk1yc2FCMk5rcVprMDFEb3NCdG4zb1BSVlVodkVTczBDMU5fOEU3VWhzeTMzc1lfV1A3VUs5NUIyRnd5Zy1HN3hYQ2JWWVJtSEROdVY3TVYycktqeXZvSVHSAb8BQVVfeXFMTXZzNzQwLWcxNUd2QWdKbHhjQ2UxaHlTRVFVREpBUWFMVFdRM2NlOVVKVHN2YXhFWi0wTHlZLWpHQmh6aTBWSE5MaEFPeWlRMlpHN3luTmgtSkFVR1dQTk04ZkpIMGItWVpGNjBqbS1CQ192Qi1GcXlqeWczUnd6YUpkejJndUloRlRSVnctbGtTbFVnYnM2WUhlM3ZVbnByOWdnUGhmR0Ffd2RKVVFVSmV2ekxkY2RWc3RJb0U1Nms?oc=5",
+      "published_at": "2026-09-15T13:58:17Z",
+      "tier": 2,
       "official": false,
-      "observed_at": "2026-09-17T07:56:38Z"
+      "observed_at": "2026-09-17T13:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -52,41 +52,32 @@
       "published_at": "2026-09-13T18:45:55Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-17T07:56:38Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Vessel struck in Strait of Hormuz, UKMTO says, as prospects for U.S.-Iran diplomacy appear elusive - CNBC",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAwTGlJOEZRVUpiWERhUm51WWZwRDRWVXlnVXczV2pQOGFnY01GUklBZTg2MHc0SU8xbzlYWjlRWFdxMFBKYkxPVy1TRUdXcmdBS3RxZmtsZnpGRG5rSjRobU9BNVY3cUlHNEMtOFZaVTFMRldydlcwSEZHbTJZUdIBgwFBVV95cUxOeF9MeDRhaEhUVXdqZ2ZJdWhkVVFTSlRNWDFoSllFMno3bE5lVXVnaDhGZnA2RDRFSnI3SzRTdF9yNXB5SVp2d2hacVdHS1IteWZkUk5PQ0EwNDhwTEViYUVCQXpGaHg3YXQ4TlhoRnpZMHprOHhkTDNXNDJUSmNnY2xiaw?oc=5",
-      "published_at": "2026-09-13T13:38:23Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-17T07:56:38Z"
+      "observed_at": "2026-09-17T13:43:48Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 9.355
+      "risk": 7.69
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5
+      "risk": 4
     },
-    "articles_considered": 40,
-    "signals_considered": 11,
-    "current_cycle_evidence": 5,
+    "articles_considered": 42,
+    "signals_considered": 9,
+    "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
@@ -94,7 +85,7 @@
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-09-16T04:42:00Z",
-    "current_cycle_count": 5,
+    "current_cycle_count": 4,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -109,7 +100,7 @@
       "published_at": "2026-09-16T04:42:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-17T07:56:38Z"
+      "observed_at": "2026-09-17T13:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -149,7 +140,7 @@
       "published_at": "2026-09-15T13:58:17Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-16T17:14:10Z"
+      "observed_at": "2026-09-17T13:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -169,7 +160,7 @@
       "published_at": "2026-09-15T10:58:27Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-17T07:56:38Z"
+      "observed_at": "2026-09-17T13:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -179,7 +170,7 @@
       "published_at": "2026-09-15T10:58:27Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-17T01:38:43Z"
+      "observed_at": "2026-09-17T07:56:38Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -299,7 +290,7 @@
       "published_at": "2026-09-13T18:45:55Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-17T07:56:38Z"
+      "observed_at": "2026-09-17T13:43:48Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -704,7 +695,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-17T07:57:12Z",
+    "generated_at": "2026-09-17T13:44:29Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -737,14 +728,14 @@
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 19.084,
+      "passage": 21.268,
       "closure": 0,
-      "traffic_reduction": 8.295,
+      "traffic_reduction": 9.175,
       "access_restriction": 2.0,
-      "risk": 84.22
+      "risk": 75.96
     },
     "source_counts": {
-      "passage": 10,
+      "passage": 12,
       "closure": 0,
       "primary_sources": 3
     },
@@ -796,7 +787,7 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.6,
+        "effective_weight": 3.12,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -835,7 +826,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-17T07:57:12Z",
+        "published_at": "2026-09-17T13:44:29Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -877,7 +868,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 106,
+      "signals_considered": 98,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
