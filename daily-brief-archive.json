@@ -1,6 +1,92 @@
 [
   {
     "schema_version": 1,
+    "date": "2026-09-18",
+    "generated_at": "2026-09-18T00:43:36Z",
+    "source_checked_at": "2026-09-18T00:43:34Z",
+    "status": "ABIERTO",
+    "status_label_es": "ABIERTO CON RESTRICCIONES",
+    "status_label_en": "OPEN WITH RESTRICTIONS",
+    "operational_status": "OPEN_RESTRICTED",
+    "operational_label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
+    "operational_label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
+    "confidence": "MEDIA",
+    "confidence_label": {
+      "es": "Media",
+      "en": "Medium"
+    },
+    "verification_ok": true,
+    "stale": false,
+    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
+    "risks_es": [
+      "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
+      "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+    ],
+    "risks_en": [
+      "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
+      "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
+    ],
+    "watchlist_es": [
+      "Avisos marítimos oficiales y confirmaciones operativas independientes.",
+      "Trayectorias completas de buques y continuidad real de los cruces, no puntos AIS aislados.",
+      "Cambios en restricciones, seguros, escoltas, puertos y disponibilidad de tripulaciones."
+    ],
+    "watchlist_en": [
+      "Official maritime notices and independent operational confirmations.",
+      "Completed vessel tracks and actual continuity of crossings, not isolated AIS points.",
+      "Changes in restrictions, insurance, escorts, ports and crew availability."
+    ],
+    "evidence": [
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Oil prices fall as Saudi Arabia reportedly offers more crude via Hormuz after pipeline attack - CNBC",
+        "source_name": "CNBC",
+        "source_url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQdEVJc0oxa0dmMXN1eW1DbTZWSDB5TGpPUGxaNEtRWFpITEZvUTNVQnczYkdkX1NUV2JIejl2Y0V0MmNWc2U0WmFrLV9GUWRNUHR3Rmk4eHRYa2d0MmFkQ1ZWQ0o3RTZQMGdPbFNNeTQzYVhtYlVacXFoaUlwaEh0RmJyWmI4UdIBiwFBVV95cUxOcHdJVXpwdHFBbkc5M1E4RzUxOXN4emVFS2gyajNLRVI2b0JtdllRWXF6TE5DQ0pPTFhSaUNTNGNVb05NY3RUdmtsZ1pNaGN2aG1ManlLOWtqeTBKSjNBbmRCdFVSb3B6MXljcnBkRHMyQmVjQnZJWWpIM3k2RVN4U0VrVzJkeVJndE1Z?oc=5",
+        "published_at": "2026-09-17T01:59:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Saudi offers more crude via Oman loading after pipeline attacks, sources say - Reuters",
+        "source_name": "Reuters",
+        "source_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPNHd3ZXRacHUwZzJ0NlI1cnlrQmhnaXJRNWRZRTFXdnQzTUJ2azZ1X09DOXVUa0ZBalBYNlBpRVJ2X3YtczUwbmJjYjJXZGtjZFdVWEZ5YVVzUUJIOWRaZXdYa29xUjF0d25oMC1uZzlOc0JHSUFVOV9iNkxLbGRRdUNwSzcwZDZaRFhFck9uckhQVzdJN2k1aDdVTEFzYlJGTnl1ajlkQWUwVnljanR1ZHJzdl9XZkt2OXg5NThqSm5ib3ZuSnc?oc=5",
+        "published_at": "2026-09-16T04:42:00Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Dozens of aircraft, hundreds of buildings: US loss to Iran attacks revealed - Al Jazeera",
+        "source_name": "Al Jazeera",
+        "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNR0xBM2hYamtNRV83VktFTTV3UXBqdFNHNmN5dHZ5NEdHSE1oZ0JaMHlQaUMzcnBUc0hPM0ozOFJ3MlBUZ1NQY0NBRUxVX1NqazNrUDN1LWRKQkJKWkxsSkhNYk1yc2FCMk5rcVprMDFEb3NCdG4zb1BSVlVodkVTczBDMU5fOEU3VWhzeTMzc1lfV1A3VUs5NUIyRnd5Zy1HN3hYQ2JWWVJtSEROdVY3TVYycktqeXZvSVHSAb8BQVVfeXFMTXZzNzQwLWcxNUd2QWdKbHhjQ2UxaHlTRVFVREpBUWFMVFdRM2NlOVVKVHN2YXhFWi0wTHlZLWpHQmh6aTBWSE5MaEFPeWlRMlpHN3luTmgtSkFVR1dQTk04ZkpIMGItWVpGNjBqbS1CQ192Qi1GcXlqeWczUnd6YUpkejJndUloRlRSVnctbGtTbFVnYnM2WUhlM3ZVbnByOWdnUGhmR0Ffd2RKVVFVSmV2ekxkY2RWc3RJb0U1Nms?oc=5",
+        "published_at": "2026-09-15T13:58:17Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "Two sailors missing after tanker attacked in Strait of Hormuz, Oman says - BBC",
+        "source_name": "BBC",
+        "source_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBEekpDQzhwOUk5dHlsaU9mRkpHQzQ2U1BvajhYcU1RNUR3am5OSFFTUngtdmFsemxXcWhQTjh3cWpLU3c5U3JIaUlORGdEZ1JwZ3V1RkZleE42d2VqUkE?oc=5",
+        "published_at": "2026-09-15T13:05:36Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_RESTRICTION",
+        "title": "US-Israel-Iran War Latest Live News: Mystery Strike Hits Vessel In Strait Of Hormuz; UKMTO Reports Unknown Projectile, No Damage Or Environmental Impact As Probe Begins - The Sunday Guardian",
+        "source_name": "The Sunday Guardian",
+        "source_url": "https://news.google.com/rss/articles/CBMitAJBVV95cUxNdXdYRGZiS0tCajBvY2FNLTlpZ0lkd01QcGhTRmdzV0dTTFplaS0tcWxBbE1qX0tUbG5DZzhoZmFZQ1QxSEM5VzBHUl9uTkhOYXVBbGlVaWdxcVJZLUkzZkhnZzhicHp5bUpWRWtsb0hXVlI1Z1JhdUZZZnNsZVRFaVU0eXpCUHFrU2ViQTZoS2ttUV80NThIRDdZeXpUTUVHbE9DSUlxUUVFN3MzX0VkQXh0YXo5c0JhTE1vVk9USm9XMmF0blFBY2x0RWkyOVdBbHhBY3oya3JldG1MS0l5SUJFcDZ1STI0MjNQOHJFOFdjc1ZPdTBXcUw1dlFnTzJJemVCaHpIUTVxUFUzYjdqNUU2X2drLWx2ZTN6RVhWcFV2Z0Q1VW41QXBkN3B2OGh4eTB1N9IBugJBVV95cUxPRHJTclQ4Mnc2X2RzR1k3ZDBmZl9LZnZnRnpETmdoMEF5YVpVZGVmdUVLcGVYbmpOM012ODBLQWUwTlZfQTY0MTZsZklPcWZ2TDA0aEpROUZOM2NrRHJHZjRJNmd0YXp2UHFMTkZNUmdYTDh3NUpjcVdPRGdydkZkSVBaZERaY3VzektheVhvckN1Y2pzRm5RSTJFckJxMUdjVHo1Q0ZQU2hVbHljT0lScHZqU3pzMUFVeUhUbGlUTl9JUTdrbzlTcUJGeWJSenNWZndQUi1OZ2phS1JDWEJqcWkwVW9QbzNzVU1mUlFlVTg2aGJnYWFlcGViUHB2bGxuMnlFNi1BUGIyTFRzSl9WUXoxLWpXTU9DSERrWGdkZ0otNl9uend4eFppZW5Zell3czhHQ3FjNmh2dw?oc=5",
+        "published_at": "2026-09-15T10:58:27Z",
+        "official": false
+      }
+    ],
+    "last_valid_confirmation": null,
+    "publish_recommended": false,
+    "material_hash": "d84e425622c066ae"
+  },
+  {
+    "schema_version": 1,
     "date": "2026-09-17",
     "generated_at": "2026-09-17T21:40:11Z",
     "source_checked_at": "2026-09-17T21:40:07Z",
