@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-18T16:40:48Z",
+  "generated_at": "2026-09-18T19:55:19Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,24 +33,54 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 17.368,
+    "passage": 16.64,
     "closure": 0,
-    "traffic_reduction": 6.3,
-    "access_restriction": 8.6,
-    "risk": 71.6
+    "traffic_reduction": 5.68,
+    "access_restriction": 15.08,
+    "risk": 79.16
   },
   "source_counts": {
     "passage": 10,
     "closure": 0,
-    "primary_sources": 2
+    "primary_sources": 3
   },
-  "latest_confirmed_transit_at": "2026-09-18T06:11:00Z",
+  "latest_confirmed_transit_at": "2026-09-18T11:36:47Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "MEDIA"
   },
   "evidence": [
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Iran claims it struck an oil tanker in the Strait of Hormuz, and other Mideast developments - AP News",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNeWdlRjU5QTRNU0tfUUpTVW1iYUNBQ3hWejBlMVBaWTFEbFh1MkVtM1QzamhsY240NFQ3aW1vTUdMb0JaVUk2QWY1WE9SZWNqLUpzWVI4OFpyWlN1b0pXTW5vZzNEc3ZqZV9wdVowMGpzeHJub1ZFTWtoZGRyRklIbnR2d19mOVhhWG5GdkxTdTB1bktBRHFMSlVGbEZ5Mk0?oc=5",
+      "published_at": "2026-09-18T17:48:00Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "The Daily View: Hormuz toll booth is looking more like a parallel shipping system - Lloyd's List",
+      "source": "Lloyd's List",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOMF9yaHBtcjJWWGpZZGdDcXRwVkFiR1lLWTQ5WGVJYU9lbi1Sb1g3VEsxaFdMd1FaVEZ3VVhkb21mdUtSTUlhMnFidVJvbHNHa185V3RSNkQ2UWNKdS1CM1lwVmcwb29oWWxfc1pHTkdwUkJEemx1bWFFTEtCS1JCZzF1MnBkWXpoX1RwVUhMVVQwODhZdWNlZ1YybDhqSDluMWkyRWpqX2xXemNnSDdYR05DZmd3ZTNj?oc=5",
+      "published_at": "2026-09-18T16:55:53Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
+    },
     {
       "kind": "TRANSIT_CONFIRMED",
       "title": "Number of ships transiting Strait of Hormuz falls to three on Wednesday, data shows - Reuters",
@@ -74,7 +104,7 @@
       "published_at": "2026-09-16T04:42:00Z",
       "tier": 4,
       "weight": 4.0,
-      "provider": "legacy-engine",
+      "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 3.12,
@@ -86,7 +116,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-18T16:40:48Z",
+      "published_at": "2026-09-18T19:55:19Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -95,6 +125,21 @@
       "effective_weight": 3.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
+      "source": "Lloyd's List",
+      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+      "published_at": "2026-09-18T19:55:19Z",
+      "tier": 4,
+      "weight": 2.6,
+      "provider": "Lloyd's List hot topic",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.6,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
     },
     {
       "kind": "RISK_SEVERE",
@@ -125,55 +170,10 @@
       "effective_weight": 2.48,
       "kind_label_es": "Tráfico reducido",
       "kind_label_en": "Reduced traffic"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Houthis attack Saudi Arabia as Gulf-Iran talks are postponed - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNUmxSZmUzZzdYUkJrQ2l3RzRTQklHdjFOWmVYZ2NDcmZmOW9UUVBoZkk0bC0wcHhveWNHNldiU2E0WV9PYkFtWGVaUUdMVUlieFBZMVRjVHFkTTZ6YjVWXzVLUlA2QXE2LURQczRJN010RGR1Y3Jkb0JpS1lhdF9fZVdJT0hMV3A5QXNNcllfalNoem0wS3VMNUlNQUgwbG9sUU1XN2R1aUpkaXZDekZ6bnlqN2RiN0t3X3d3?oc=5",
-      "published_at": "2026-09-14T23:33:41Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 2.48,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "US military claims Strait of Hormuz remains open amid ongoing blockade - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTXN1Q3Y5OGZKbHhud2JJU3I2TkowZG1TVlRZakwwVi0zaDV2c3p4TnZUWmh5WmNUaDQtZV9rMnhPMkxPWEM0dnhxcHBEQUctX2NySjFmTGhRU0ZDLTlTcVFtS3FqRnpqU3JsZ0VZalZ5M3Y3YTlySG93cXlDcDREVDV0ajJDc2FhQThpRWJIcVVaZmZrZk44YW8ycDBlRnZqVnh2TUFzM1QwbUxJbmFOb9IBtgFBVV95cUxPVVFGaWhMaEFVZjBXV2RFbUtyWE8xSGUzS0dPYTdhNVhGbi1CUTRwSDJhRmp3WGF4c3hRaTdFb1hJYkVIV0NDRk1JUG9UR1NraFJ4ZVdkWnNkRzRyaUdvcmxNNE1SWG9ybWRZR2RxVjkxUy1YaGw1aUZkYjJQTHNUUk9nR0JxXzBCajFOM2ZTT2xjeERlYnZQLXV4akN1Ml9JdWhZZU1iaGJZU3BLSHdXWXdiVVhxZw?oc=5",
-      "published_at": "2026-09-16T23:18:48Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.8,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
-    },
-    {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "Data shows that the number of ships crossing the Strait of Hormuz remains in the single digits - marinelink.com",
-      "source": "marinelink.com",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZ3RTZzhlSHV1YjZjMjZoV3gtVUJCaEM0cHlFQ2ROMXBRVXRFZUV5RTFYNktKX294aS01ZWlzSDBqbFItR1M1ZmRCMDdiU1ZpS2lrMmp1bHVHaS1pRjZSQlNNMThiWDdEbkVjMWpySm9aMGVNVDRLS1NYcW81U05fSkpSSlNrMWxjazA0Y0x3aGoyM0dORkU3V29PM1daWGxWWjlWZXpfNGRxdWctZnA0?oc=5",
-      "published_at": "2026-09-16T12:07:42Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.56,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
     }
   ],
   "diagnostics": {
-    "signals_considered": 98,
+    "signals_considered": 103,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
