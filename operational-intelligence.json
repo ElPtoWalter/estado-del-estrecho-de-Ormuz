@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-18T00:43:34Z",
+  "generated_at": "2026-09-18T06:31:42Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,22 +33,22 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 24.506,
+    "passage": 17.888,
     "closure": 0,
-    "traffic_reduction": 9.257,
-    "access_restriction": 8.7,
-    "risk": 66.82
+    "traffic_reduction": 7.34,
+    "access_restriction": 7.6,
+    "risk": 63.38
   },
   "source_counts": {
-    "passage": 14,
+    "passage": 11,
     "closure": 0,
-    "primary_sources": 3
+    "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-09-17T22:49:06Z",
+  "latest_confirmed_transit_at": "2026-09-18T05:39:10Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "confidence": "MEDIA"
+    "confidence": "ALTA"
   },
   "evidence": [
     {
@@ -62,7 +62,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
     },
@@ -77,7 +77,7 @@
       "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.6,
+      "effective_weight": 3.12,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -97,6 +97,21 @@
       "kind_label_en": "Severe risk"
     },
     {
+      "kind": "RISK_SEVERE",
+      "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+      "source": "Lloyd's List",
+      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+      "published_at": "2026-09-18T06:31:42Z",
+      "tier": 4,
+      "weight": 3.0,
+      "provider": "Lloyd's List hot topic",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
       "kind": "TRAFFIC_REDUCED",
       "title": "Hormuz traffic dwindles after Middle East attacks intensify - Reuters",
       "source": "Reuters",
@@ -107,24 +122,9 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.12,
+      "effective_weight": 2.48,
       "kind_label_es": "Tráfico reducido",
       "kind_label_en": "Reduced traffic"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
-      "source": "Lloyd's List",
-      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-18T00:43:34Z",
-      "tier": 4,
-      "weight": 3.0,
-      "provider": "Lloyd's List hot topic",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     },
     {
       "kind": "RISK_SEVERE",
@@ -142,38 +142,38 @@
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "TRANSIT_CONFIRMED",
-      "title": "Hormuz shipping traffic remains below 10-day average at weekend, data shows - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPLUFxSXdtaTdhRlc0cWc5b3VuTU5MNEMtdXVGTk1aeGcxQndiaEJOVC1BVjNfLVJRSmhqamgxUVhrc2JBcXRxSnNoNzNDbk5jUGROOUduSkR1MjduOTMtZFRCV190WEhTaGNOMEcxZVEtYjVVcnNMMmktYnhwWTdwcDRrMEJKcW9WOHpxUXFkZTBMRnFhZUVWbm05bm1kUDBBZm1jY01La1E2SHhlUmhsS09EUE1kTU0?oc=5",
-      "published_at": "2026-09-14T04:18:00Z",
-      "tier": 4,
-      "weight": 4.0,
+      "kind": "ACCESS_RESTRICTED",
+      "title": "US military claims Strait of Hormuz remains open amid ongoing blockade - Al Jazeera",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTXN1Q3Y5OGZKbHhud2JJU3I2TkowZG1TVlRZakwwVi0zaDV2c3p4TnZUWmh5WmNUaDQtZV9rMnhPMkxPWEM0dnhxcHBEQUctX2NySjFmTGhRU0ZDLTlTcVFtS3FqRnpqU3JsZ0VZalZ5M3Y3YTlySG93cXlDcDREVDV0ajJDc2FhQThpRWJIcVVaZmZrZk44YW8ycDBlRnZqVnh2TUFzM1QwbUxJbmFOb9IBtgFBVV95cUxPVVFGaWhMaEFVZjBXV2RFbUtyWE8xSGUzS0dPYTdhNVhGbi1CUTRwSDJhRmp3WGF4c3hRaTdFb1hJYkVIV0NDRk1JUG9UR1NraFJ4ZVdkWnNkRzRyaUdvcmxNNE1SWG9ybWRZR2RxVjkxUy1YaGw1aUZkYjJQTHNUUk9nR0JxXzBCajFOM2ZTT2xjeERlYnZQLXV4akN1Ml9JdWhZZU1iaGJZU3BLSHdXWXdiVVhxZw?oc=5",
+      "published_at": "2026-09-16T23:18:48Z",
+      "tier": 2,
+      "weight": 2.0,
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 2.48,
-      "kind_label_es": "Tránsito confirmado",
-      "kind_label_en": "Confirmed transit"
+      "effective_weight": 1.8,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Iranian cargo ship is struck, and talks between Tehran and its neighbors are postponed - AP News",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNMG04XzJlaFg3N0hjVGVucURCODFNSFJKYkdZaHY0aWZxMWJCXzlPY1pGOUNrWHRhWkc3NnJXQms3X1ZxaHBxOTBHTUZVNUFWWXBJV0hLcG9PaEg0Nm9VaTQxbVNfallyV0ZhVzlfMGpqaWMwLTV2ZmYwRGZYNm9EUzFLMnMzZkREbzRlR1JqR0tBd1Fs?oc=5",
-      "published_at": "2026-09-14T01:17:00Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
+      "title": "Dozens of aircraft, hundreds of buildings: US loss to Iran attacks revealed - Al Jazeera",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNR0xBM2hYamtNRV83VktFTTV3UXBqdFNHNmN5dHZ5NEdHSE1oZ0JaMHlQaUMzcnBUc0hPM0ozOFJ3MlBUZ1NQY0NBRUxVX1NqazNrUDN1LWRKQkJKWkxsSkhNYk1yc2FCMk5rcVprMDFEb3NCdG4zb1BSVlVodkVTczBDMU5fOEU3VWhzeTMzc1lfV1A3VUs5NUIyRnd5Zy1HN3hYQ2JWWVJtSEROdVY3TVYycktqeXZvSVHSAb8BQVVfeXFMTXZzNzQwLWcxNUd2QWdKbHhjQ2UxaHlTRVFVREpBUWFMVFdRM2NlOVVKVHN2YXhFWi0wTHlZLWpHQmh6aTBWSE5MaEFPeWlRMlpHN3luTmgtSkFVR1dQTk04ZkpIMGItWVpGNjBqbS1CQ192Qi1GcXlqeWczUnd6YUpkejJndUloRlRSVnctbGtTbFVnYnM2WUhlM3ZVbnByOWdnUGhmR0Ffd2RKVVFVSmV2ekxkY2RWc3RJb0U1Nms?oc=5",
+      "published_at": "2026-09-15T13:58:17Z",
+      "tier": 2,
+      "weight": 2.0,
+      "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 2.48,
+      "effective_weight": 1.56,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 99,
+    "signals_considered": 91,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
