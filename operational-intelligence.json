@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-18T06:31:42Z",
+  "generated_at": "2026-09-18T11:41:47Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,24 +33,39 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 17.888,
+    "passage": 16.588,
     "closure": 0,
-    "traffic_reduction": 7.34,
-    "access_restriction": 7.6,
-    "risk": 63.38
+    "traffic_reduction": 10.46,
+    "access_restriction": 9.6,
+    "risk": 68.4
   },
   "source_counts": {
-    "passage": 11,
+    "passage": 9,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-09-18T05:39:10Z",
+  "latest_confirmed_transit_at": "2026-09-18T06:11:00Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "ALTA"
   },
   "evidence": [
+    {
+      "kind": "TRAFFIC_REDUCED",
+      "title": "Oil prices set for weekly fall on easing fears over Saudi supply disruption - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDVrUGNRTzdTOG1wQ1ljY2w0Y002MjMxSVNvM2RrLTBhM3B1dEJVS1B6bnJWTjhydS1BUHpfTVFtbHh2QkdMdFU1ZVo3MDJtQ01kbldpa0lfWFM0QXFWbmVsN1RqcjcxMHczN3JGSHItelVZMzQtYklTN1kwVlJxLU5RVzAwc3BEQV9iVFI1N0xhRXluaGZxN0NrWkxFMDk5Q0pYZw?oc=5",
+      "published_at": "2026-09-18T01:01:00Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Tráfico reducido",
+      "kind_label_en": "Reduced traffic"
+    },
     {
       "kind": "TRANSIT_CONFIRMED",
       "title": "Number of ships transiting Strait of Hormuz falls to three on Wednesday, data shows - Reuters",
@@ -101,7 +116,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-18T06:31:42Z",
+      "published_at": "2026-09-18T11:41:47Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -155,25 +170,10 @@
       "effective_weight": 1.8,
       "kind_label_es": "Acceso restringido",
       "kind_label_en": "Restricted access"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Dozens of aircraft, hundreds of buildings: US loss to Iran attacks revealed - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNR0xBM2hYamtNRV83VktFTTV3UXBqdFNHNmN5dHZ5NEdHSE1oZ0JaMHlQaUMzcnBUc0hPM0ozOFJ3MlBUZ1NQY0NBRUxVX1NqazNrUDN1LWRKQkJKWkxsSkhNYk1yc2FCMk5rcVprMDFEb3NCdG4zb1BSVlVodkVTczBDMU5fOEU3VWhzeTMzc1lfV1A3VUs5NUIyRnd5Zy1HN3hYQ2JWWVJtSEROdVY3TVYycktqeXZvSVHSAb8BQVVfeXFMTXZzNzQwLWcxNUd2QWdKbHhjQ2UxaHlTRVFVREpBUWFMVFdRM2NlOVVKVHN2YXhFWi0wTHlZLWpHQmh6aTBWSE5MaEFPeWlRMlpHN3luTmgtSkFVR1dQTk04ZkpIMGItWVpGNjBqbS1CQ192Qi1GcXlqeWczUnd6YUpkejJndUloRlRSVnctbGtTbFVnYnM2WUhlM3ZVbnByOWdnUGhmR0Ffd2RKVVFVSmV2ekxkY2RWc3RJb0U1Nms?oc=5",
-      "published_at": "2026-09-15T13:58:17Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "legacy-engine",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.56,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     }
   ],
   "diagnostics": {
-    "signals_considered": 91,
+    "signals_considered": 96,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
