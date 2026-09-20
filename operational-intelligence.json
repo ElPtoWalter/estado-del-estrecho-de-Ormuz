@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-20T06:51:38Z",
+  "generated_at": "2026-09-20T12:34:54Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -15,32 +15,32 @@
     "traffic": "REDUCED",
     "access": "SELECTIVE",
     "risk": "EXTREME",
-    "legal": "DISPUTED"
+    "legal": "CLOSURE_CLAIMED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
     "access": "Selectivo / condicionado",
     "risk": "Extremo",
-    "legal": "Régimen disputado"
+    "legal": "Cierre declarado por una parte"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
     "access": "Selective / conditional",
     "risk": "Extreme",
-    "legal": "Disputed regime"
+    "legal": "Closure claimed by one party"
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 7.02,
+    "passage": 6.214,
     "closure": 1.5,
-    "traffic_reduction": 3.02,
-    "access_restriction": 11.72,
-    "risk": 64.66
+    "traffic_reduction": 2.24,
+    "access_restriction": 10.7,
+    "risk": 59.96
   },
   "source_counts": {
-    "passage": 5,
+    "passage": 4,
     "closure": 1,
     "primary_sources": 2
   },
@@ -62,7 +62,7 @@
       "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -71,7 +71,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-20T06:51:38Z",
+      "published_at": "2026-09-20T12:34:54Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -83,7 +83,7 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Saudi Arabia issues first air raid alerts for Riyadh since Houthis escalated attacks - bbc.com",
+      "title": "Saudi Arabia issues first air raid alerts for Riyadh since Houthis escalated attacks - BBC",
       "source": "BBC",
       "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB0YkZPQW9rR2RIWE52My1Bd0VVd0VKc2FORWhuVFJPQ0dFcmd0MTRlOVFrNmd0b200YUI2OFdrUzlXZGxzbWV3RXFCVm1ZZ1lCbVpXZ2ZxTDN2bHc?oc=5",
       "published_at": "2026-09-19T04:20:47Z",
@@ -101,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-20T06:51:38Z",
+      "published_at": "2026-09-20T12:34:54Z",
       "tier": 4,
       "weight": 2.6,
       "provider": "Lloyd's List hot topic",
@@ -158,10 +158,10 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Iran Says Struck Oil Tanker in Strait of Hormuz - ASHARQ AL-AWSAT English",
-      "source": "ASHARQ AL-AWSAT English",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPUDFRYnpTSW9MVzNHWW9oMkhMNnhsMkhDUU00MjRGelpfVFBBdkw0cWNHVjVlZlRZUnY2OTU4RGVERHdWX3NRMzloektGQlRhY3pTM3MxVmRkcGIxVTNrWmY1SGlyYkFTbWlsenpIRTZVS2c3cFpiRkFrdzNQY3NLQUM3MkFxU01DVlE?oc=5",
-      "published_at": "2026-09-20T05:02:50Z",
+      "title": "Mideast developments: Iran claims it struck an oil tanker in the Strait of Hormuz | Politics and Government | News - reviewjournal.com",
+      "source": "reviewjournal.com",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOa2F4RmZ5eXdrUnN4MTBVRjBObWZJZHZsamNJNTg0enBHdEkzbGQ1VWREeEFaNXZBazMzNjhFVWw1X0hpcURQZTRrbTJfMTNnVDZhaG91eGdRTmxTNHQ4UzdaUGhRU2Y2aTFWVnFuOWdXWEhDRDdPdmpWb3NnZGVFakNoRXd6b2JoSi1RV0Y3bmUyUDV0UHFDRnA0NF80Sk9YbzNRV3NVNXhnazROZUJXWkRxQjFMeUhRZFdaNU15b2duOFBqaVE?oc=5",
+      "published_at": "2026-09-20T09:04:48Z",
       "tier": 1,
       "weight": 1.0,
       "provider": "Google News RSS",
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 91,
+    "signals_considered": 101,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
