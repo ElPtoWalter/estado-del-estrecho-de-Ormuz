@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-20T19:00:30Z",
+  "generated_at": "2026-09-20T21:45:54Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,11 +33,11 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 6.214,
+    "passage": 6.058,
     "closure": 3.0,
-    "traffic_reduction": 1.0,
-    "access_restriction": 13.62,
-    "risk": 53.04
+    "traffic_reduction": 1.52,
+    "access_restriction": 13.28,
+    "risk": 50.62
   },
   "source_counts": {
     "passage": 4,
@@ -59,7 +59,7 @@
       "published_at": "2026-09-19T08:20:38Z",
       "tier": 4,
       "weight": 4.0,
-      "provider": "Google News RSS",
+      "provider": "legacy-engine",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 3.6,
@@ -67,26 +67,11 @@
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "The Daily View: Hormuz toll booth is looking more like a parallel shipping system - Lloyd's List",
-      "source": "Lloyd's List",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOMF9yaHBtcjJWWGpZZGdDcXRwVkFiR1lLWTQ5WGVJYU9lbi1Sb1g3VEsxaFdMd1FaVEZ3VVhkb21mdUtSTUlhMnFidVJvbHNHa185V3RSNkQ2UWNKdS1CM1lwVmcwb29oWWxfc1pHTkdwUkJEemx1bWFFTEtCS1JCZzF1MnBkWXpoX1RwVUhMVVQwODhZdWNlZ1YybDhqSDluMWkyRWpqX2xXemNnSDdYR05DZmd3ZTNj?oc=5",
-      "published_at": "2026-09-18T16:55:53Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.12,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
-    },
-    {
       "kind": "RISK_SEVERE",
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-20T19:00:30Z",
+      "published_at": "2026-09-20T21:45:54Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -116,7 +101,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-20T19:00:30Z",
+      "published_at": "2026-09-20T21:45:54Z",
       "tier": 4,
       "weight": 2.6,
       "provider": "Lloyd's List hot topic",
@@ -170,10 +155,25 @@
       "effective_weight": 1.2,
       "kind_label_es": "Interrupción efectiva",
       "kind_label_en": "Effective interruption"
+    },
+    {
+      "kind": "CLOSURE_EFFECTIVE",
+      "title": "'Effectively Closed': The Strait of Hormuz Oil and Gas Crisis Is Going from Bad to Even Worse - 19FortyFive",
+      "source": "19FortyFive",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQ05RMWhhb0VwdWpNT3RxeUkta0ZyOVlCcldiMmJISkw0MW4zb05UVmt4NUtubU9TZ2VyV1F2aTlvU0RoQmhzZWdxUjd2ajBrQWNYNlhrV29Ddm5vVFVxUWhuV3VXQTlCU3VXX19yMmRfUjItWnpoU1ZfYTgtNllGdVh5bjU1U0dXcU9wNVd3MmFTY0FQZnhIQ0hPdmo3Q1Bxa1pWZFBoWTFtZjdOS2s2NHVjdmZ4Njh5NGp3YXVGM2NmVFV4Nmc?oc=5",
+      "published_at": "2026-09-19T23:43:21Z",
+      "tier": 1,
+      "weight": 1.2,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 1.2,
+      "kind_label_es": "Interrupción efectiva",
+      "kind_label_en": "Effective interruption"
     }
   ],
   "diagnostics": {
-    "signals_considered": 99,
+    "signals_considered": 100,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
