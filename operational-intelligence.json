@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-20T21:45:54Z",
+  "generated_at": "2026-09-21T00:26:54Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,33 +33,48 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 6.058,
-    "closure": 3.0,
-    "traffic_reduction": 1.52,
-    "access_restriction": 13.28,
-    "risk": 50.62
+    "passage": 5.85,
+    "closure": 2.85,
+    "traffic_reduction": 0.9,
+    "access_restriction": 15.48,
+    "risk": 49.4
   },
   "source_counts": {
     "passage": 4,
     "closure": 2,
-    "primary_sources": 2
+    "primary_sources": 3
   },
   "latest_confirmed_transit_at": "2026-09-18T19:51:33Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "confidence": "MEDIA"
+    "confidence": "ALTA"
   },
   "evidence": [
     {
       "kind": "RISK_SEVERE",
-      "title": "Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters",
+      "title": "Iran and US trade threats after Houthi attacks escalate regional conflict - reuters.com",
       "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOdWJkS01sRHBUcXZGZVVoTy1zVU04amJ0VUc3WnZ4UkVZd25TTTR6RGY1ZkV5OUtGZzFULVNDcEo4MzlZMmNkamt0VjR5VHg3YzRDaWhEOFAtZklDbFpGSXpCeE9BeGR3UWp3aFN1MVp2aUMyZE93ZnFUN0VTdzdkZGJnMDdrOFNtc1lhZC1UQlNDWFl3dGRWdjZwYkc2SHJGelBn?oc=5",
+      "published_at": "2026-09-20T17:46:57Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - reuters.com",
+      "source": "reuters.com",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDVrUGNRTzdTOG1wQ1ljY2w0Y002MjMxSVNvM2RrLTBhM3B1dEJVS1B6bnJWTjhydS1BUHpfTVFtbHh2QkdMdFU1ZVo3MDJtQ01kbldpa0lfWFM0QXFWbmVsN1RqcjcxMHczN3JGSHItelVZMzQtYklTN1kwVlJxLU5RVzAwc3BEQV9iVFI1N0xhRXluaGZxN0NrWkxFMDk5Q0pYZw?oc=5",
       "published_at": "2026-09-19T08:20:38Z",
       "tier": 4,
       "weight": 4.0,
-      "provider": "legacy-engine",
+      "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
       "effective_weight": 3.6,
@@ -67,11 +82,26 @@
       "kind_label_en": "Severe risk"
     },
     {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "The Daily View: Hormuz toll booth is looking more like a parallel shipping system - Lloyd's List",
+      "source": "Lloyd's List",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOMF9yaHBtcjJWWGpZZGdDcXRwVkFiR1lLWTQ5WGVJYU9lbi1Sb1g3VEsxaFdMd1FaVEZ3VVhkb21mdUtSTUlhMnFidVJvbHNHa185V3RSNkQ2UWNKdS1CM1lwVmcwb29oWWxfc1pHTkdwUkJEemx1bWFFTEtCS1JCZzF1MnBkWXpoX1RwVUhMVVQwODhZdWNlZ1YybDhqSDluMWkyRWpqX2xXemNnSDdYR05DZmd3ZTNj?oc=5",
+      "published_at": "2026-09-18T16:55:53Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.12,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
+    },
+    {
       "kind": "RISK_SEVERE",
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-20T21:45:54Z",
+      "published_at": "2026-09-21T00:26:54Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -101,7 +131,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-20T21:45:54Z",
+      "published_at": "2026-09-21T00:26:54Z",
       "tier": 4,
       "weight": 2.6,
       "provider": "Lloyd's List hot topic",
@@ -113,8 +143,8 @@
     },
     {
       "kind": "TRANSIT_CONFIRMED",
-      "title": "Number of ships transiting Strait of Hormuz falls to three on Wednesday, data shows - Reuters",
-      "source": "Reuters",
+      "title": "Number of ships transiting Strait of Hormuz falls to three on Wednesday, data shows - reuters.com",
+      "source": "reuters.com",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPY040VUp0a3duZlRTZW9xeHNnQ0hIUm42eUZRUmZvcjFfaW53SWFZTFZlaElfaXM5bW0zdlhib2M1N3BqZGJUV2tHeGdydFlMMFg3dngyLUJtREtjZVFLUGxCZ2ZMX3FZSHp6MjlPS29sR2xwbkRvd2M4c3BGajFGWFZadkVORTdwWGxJYVVRc2RsTWxZY3ZLMXJJWUp1TlZMX0QtUUEyaE9Gc01hOHA5bHNyN3ZsdWZFWFV2bENmV3pkZw?oc=5",
       "published_at": "2026-09-17T05:22:00Z",
       "tier": 4,
@@ -125,21 +155,6 @@
       "effective_weight": 2.48,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
-    },
-    {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "US military claims Strait of Hormuz remains open amid ongoing blockade - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTXN1Q3Y5OGZKbHhud2JJU3I2TkowZG1TVlRZakwwVi0zaDV2c3p4TnZUWmh5WmNUaDQtZV9rMnhPMkxPWEM0dnhxcHBEQUctX2NySjFmTGhRU0ZDLTlTcVFtS3FqRnpqU3JsZ0VZalZ5M3Y3YTlySG93cXlDcDREVDV0ajJDc2FhQThpRWJIcVVaZmZrZk44YW8ycDBlRnZqVnh2TUFzM1QwbUxJbmFOb9IBtgFBVV95cUxPVVFGaWhMaEFVZjBXV2RFbUtyWE8xSGUzS0dPYTdhNVhGbi1CUTRwSDJhRmp3WGF4c3hRaTdFb1hJYkVIV0NDRk1JUG9UR1NraFJ4ZVdkWnNkRzRyaUdvcmxNNE1SWG9ybWRZR2RxVjkxUy1YaGw1aUZkYjJQTHNUUk9nR0JxXzBCajFOM2ZTT2xjeERlYnZQLXV4akN1Ml9JdWhZZU1iaGJZU3BLSHdXWXdiVVhxZw?oc=5",
-      "published_at": "2026-09-16T23:18:48Z",
-      "tier": 2,
-      "weight": 2.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.24,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
     },
     {
       "kind": "CLOSURE_EFFECTIVE",
@@ -155,25 +170,10 @@
       "effective_weight": 1.2,
       "kind_label_es": "Interrupción efectiva",
       "kind_label_en": "Effective interruption"
-    },
-    {
-      "kind": "CLOSURE_EFFECTIVE",
-      "title": "'Effectively Closed': The Strait of Hormuz Oil and Gas Crisis Is Going from Bad to Even Worse - 19FortyFive",
-      "source": "19FortyFive",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQ05RMWhhb0VwdWpNT3RxeUkta0ZyOVlCcldiMmJISkw0MW4zb05UVmt4NUtubU9TZ2VyV1F2aTlvU0RoQmhzZWdxUjd2ajBrQWNYNlhrV29Ddm5vVFVxUWhuV3VXQTlCU3VXX19yMmRfUjItWnpoU1ZfYTgtNllGdVh5bjU1U0dXcU9wNVd3MmFTY0FQZnhIQ0hPdmo3Q1Bxa1pWZFBoWTFtZjdOS2s2NHVjdmZ4Njh5NGp3YXVGM2NmVFV4Nmc?oc=5",
-      "published_at": "2026-09-19T23:43:21Z",
-      "tier": 1,
-      "weight": 1.2,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 1.2,
-      "kind_label_es": "Interrupción efectiva",
-      "kind_label_en": "Effective interruption"
     }
   ],
   "diagnostics": {
-    "signals_considered": 100,
+    "signals_considered": 94,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
