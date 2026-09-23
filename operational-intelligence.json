@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-23T06:34:16Z",
+  "generated_at": "2026-09-23T12:02:52Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,39 +33,24 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 26.622,
+    "passage": 24.712,
     "closure": 0.93,
-    "traffic_reduction": 19.204,
-    "access_restriction": 21.94,
-    "risk": 59.52
+    "traffic_reduction": 16.514,
+    "access_restriction": 20.92,
+    "risk": 51.9
   },
   "source_counts": {
     "passage": 17,
     "closure": 1,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-09-23T05:44:08Z",
+  "latest_confirmed_transit_at": "2026-09-23T08:03:15Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "MEDIA"
   },
   "evidence": [
-    {
-      "kind": "TRAFFIC_SEVERELY_REDUCED",
-      "title": "Vessels trickle through Strait of Hormuz as Middle East conflict persists - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPNHdMbF8wY2pMdE0tcHdWa3l5dkc5MGpKWVJEZW9VUnV2UTFlaTlVbVpOZ1pQN245SWZOLU4zWDd3ODlBTUhhZmlmaE1jUGltMzRKUF9xRl9CT2ZpMnNxcXkxOXdQeHJHajFzMkpoNWVnS3N6X3ExamF1ejcyQ3I1LW5DVHRXTXQ5MVVtTEE1cmtxLWhGMURaZ19pajA1blpROVVxRXQ3MHE4Zy1BLUVybldpUm01NU0?oc=5",
-      "published_at": "2026-09-21T08:40:15Z",
-      "tier": 4,
-      "weight": 4.6,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 4.14,
-      "kind_label_es": "Tráfico muy reducido",
-      "kind_label_en": "Severely reduced traffic"
-    },
     {
       "kind": "RISK_SEVERE",
       "title": "Blacklisted ships continue Hormuz transits despite Iranian threats as attacks broaden beyond designated vessels - Lloyd's List",
@@ -107,7 +92,7 @@
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Acceso restringido",
       "kind_label_en": "Restricted access"
     },
@@ -127,41 +112,56 @@
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "RISK_SEVERE",
-      "title": "Iran and US trade threats after Houthi attacks escalate regional conflict - Reuters",
+      "kind": "TRAFFIC_SEVERELY_REDUCED",
+      "title": "Vessels trickle through Strait of Hormuz as Middle East conflict persists - Reuters",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOdWJkS01sRHBUcXZGZVVoTy1zVU04amJ0VUc3WnZ4UkVZd25TTTR6RGY1ZkV5OUtGZzFULVNDcEo4MzlZMmNkamt0VjR5VHg3YzRDaWhEOFAtZklDbFpGSXpCeE9BeGR3UWp3aFN1MVp2aUMyZE93ZnFUN0VTdzdkZGJnMDdrOFNtc1lhZC1UQlNDWFl3dGRWdjZwYkc2SHJGelBn?oc=5",
-      "published_at": "2026-09-20T13:19:00Z",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPNHdMbF8wY2pMdE0tcHdWa3l5dkc5MGpKWVJEZW9VUnV2UTFlaTlVbVpOZ1pQN245SWZOLU4zWDd3ODlBTUhhZmlmaE1jUGltMzRKUF9xRl9CT2ZpMnNxcXkxOXdQeHJHajFzMkpoNWVnS3N6X3ExamF1ejcyQ3I1LW5DVHRXTXQ5MVVtTEE1cmtxLWhGMURaZ19pajA1blpROVVxRXQ3MHE4Zy1BLUVybldpUm01NU0?oc=5",
+      "published_at": "2026-09-21T08:40:15Z",
       "tier": 4,
-      "weight": 4.0,
-      "provider": "legacy-engine",
-      "details": "",
-      "traffic_ratio": null,
-      "effective_weight": 3.12,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDVrUGNRTzdTOG1wQ1ljY2w0Y002MjMxSVNvM2RrLTBhM3B1dEJVS1B6bnJWTjhydS1BUHpfTVFtbHh2QkdMdFU1ZVo3MDJtQ01kbldpa0lfWFM0QXFWbmVsN1RqcjcxMHczN3JGSHItelVZMzQtYklTN1kwVlJxLU5RVzAwc3BEQV9iVFI1N0xhRXluaGZxN0NrWkxFMDk5Q0pYZw?oc=5",
-      "published_at": "2026-09-19T08:20:38Z",
-      "tier": 4,
-      "weight": 4.0,
+      "weight": 4.6,
       "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 2.48,
+      "effective_weight": 3.588,
+      "kind_label_es": "Tráfico muy reducido",
+      "kind_label_en": "Severely reduced traffic"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+      "source": "Lloyd's List",
+      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+      "published_at": "2026-09-23T12:02:52Z",
+      "tier": 4,
+      "weight": 3.0,
+      "provider": "Lloyd's List hot topic",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 3.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
     {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
+      "source": "Lloyd's List",
+      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+      "published_at": "2026-09-23T12:02:52Z",
+      "tier": 4,
+      "weight": 2.6,
+      "provider": "Lloyd's List hot topic",
+      "details": "",
+      "traffic_ratio": null,
+      "effective_weight": 2.6,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
+    },
+    {
       "kind": "TRAFFIC_SEVERELY_REDUCED",
-      "title": "FILE PHOTO: Vessels trickle through Strait of Hormuz as Mideast tension persists - The Lufkin Daily News",
-      "source": "The Lufkin Daily News",
-      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQQzFFZDlrTGVkSTV5LTBkNEM5NkJlazcwWW5Va19IdWxfWUlRLU5uWkJWUVI0dWRPeGJJYzFEMS02MjNYdmtTNjFKZ1NKdzZ1dGkzMDgta0JueDZfOUhCSVZtUlNqQlRhdERuWWR2NzFZOFF5M1JkTkI1MXg5QnBfWEh5anpidjFxa2k2dWZ2aXdKSlgwRGVfUGdnS1RKY1JZWWEyQkt3NnAzVU1wZDA2MFp5cHAya29NcS1WXzRUNG1UaXFHZW8waWRZU3R0eFc4NE9jU0UwZXhGT1paTUdTTkRMQUh0cFQxaUFjQnVqZjFmdjFJQnQ1YWxCa1QwV2x4U2RDTXItV0Q?oc=5",
-      "published_at": "2026-09-22T13:49:39Z",
+      "title": "Vessels trickle through Strait of Hormuz as Middle East conflict persists - The Business Standard",
+      "source": "The Business Standard",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNYlVNbENpNVRDclZGR0dMYm40ajRfR1J4Yy1uN2lNWHg5OFN0Q3VWX0xRWmJ4Z0FSWm5IZjUtcGdZb0lJYnFIYVB4dm0xbzZydFl6M0RDOHYtdzVFLW8ycUlsck5SbEsyOFlsblJwcDJaSkdIa3FzelN4TjBfN2pLNE1Wd01zUk9fVG9mc3Q5bDNDQ0VLb3I4NldNaDQtdEx4QmtMYm1KU0oxQm5JQ0N1M09ISlI2bXYwVzlnOQ?oc=5",
+      "published_at": "2026-09-23T05:25:04Z",
       "tier": 1,
       "weight": 1.15,
       "provider": "Google News RSS",
@@ -173,7 +173,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 122,
+    "signals_considered": 113,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
