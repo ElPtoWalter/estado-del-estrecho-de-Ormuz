@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-23T00:53:06Z",
+  "generated_at": "2026-09-23T06:34:16Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -33,18 +33,18 @@
   },
   "traffic_ratio_estimate": null,
   "scores": {
-    "passage": 23.321,
+    "passage": 26.622,
     "closure": 0.93,
-    "traffic_reduction": 14.48,
-    "access_restriction": 25.86,
-    "risk": 67.86
+    "traffic_reduction": 19.204,
+    "access_restriction": 21.94,
+    "risk": 59.52
   },
   "source_counts": {
-    "passage": 16,
+    "passage": 17,
     "closure": 1,
-    "primary_sources": 3
+    "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-09-22T13:43:35Z",
+  "latest_confirmed_transit_at": "2026-09-23T05:44:08Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -143,33 +143,33 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
-      "source": "Lloyd's List",
-      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-23T00:53:06Z",
+      "title": "Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDVrUGNRTzdTOG1wQ1ljY2w0Y002MjMxSVNvM2RrLTBhM3B1dEJVS1B6bnJWTjhydS1BUHpfTVFtbHh2QkdMdFU1ZVo3MDJtQ01kbldpa0lfWFM0QXFWbmVsN1RqcjcxMHczN3JGSHItelVZMzQtYklTN1kwVlJxLU5RVzAwc3BEQV9iVFI1N0xhRXluaGZxN0NrWkxFMDk5Q0pYZw?oc=5",
+      "published_at": "2026-09-19T08:20:38Z",
       "tier": 4,
-      "weight": 3.0,
-      "provider": "Lloyd's List hot topic",
+      "weight": 4.0,
+      "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 3.0,
+      "effective_weight": 2.48,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
-      "source": "Lloyd's List",
-      "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-23T00:53:06Z",
-      "tier": 4,
-      "weight": 2.6,
-      "provider": "Lloyd's List hot topic",
+      "kind": "TRAFFIC_SEVERELY_REDUCED",
+      "title": "FILE PHOTO: Vessels trickle through Strait of Hormuz as Mideast tension persists - The Lufkin Daily News",
+      "source": "The Lufkin Daily News",
+      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQQzFFZDlrTGVkSTV5LTBkNEM5NkJlazcwWW5Va19IdWxfWUlRLU5uWkJWUVI0dWRPeGJJYzFEMS02MjNYdmtTNjFKZ1NKdzZ1dGkzMDgta0JueDZfOUhCSVZtUlNqQlRhdERuWWR2NzFZOFF5M1JkTkI1MXg5QnBfWEh5anpidjFxa2k2dWZ2aXdKSlgwRGVfUGdnS1RKY1JZWWEyQkt3NnAzVU1wZDA2MFp5cHAya29NcS1WXzRUNG1UaXFHZW8waWRZU3R0eFc4NE9jU0UwZXhGT1paTUdTTkRMQUh0cFQxaUFjQnVqZjFmdjFJQnQ1YWxCa1QwV2x4U2RDTXItV0Q?oc=5",
+      "published_at": "2026-09-22T13:49:39Z",
+      "tier": 1,
+      "weight": 1.15,
+      "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
-      "effective_weight": 2.6,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
+      "effective_weight": 1.15,
+      "kind_label_es": "Tráfico muy reducido",
+      "kind_label_en": "Severely reduced traffic"
     }
   ],
   "diagnostics": {
