@@ -43,6 +43,10 @@ from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent
+try:
+    MADRID = ZoneInfo("Europe/Madrid")
+except Exception:  # Windows environments may not bundle the IANA database.
+    MADRID = timezone(timedelta(hours=2), "CEST")
 STATUS_FILE = ROOT / "status.json"
 HISTORY_FILE = ROOT / "history.json"
 CONFIG_FILE = ROOT / "config.json"
@@ -1029,7 +1033,12 @@ def manual_override_payload(config: dict[str, Any], previous: dict[str, Any], no
 
 def clean_public_evidence(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     public: list[dict[str, Any]] = []
-    for item in items[:6]:
+    ordered = sorted(
+        items,
+        key=lambda item: parse_datetime(item.get("published_at")),
+        reverse=True,
+    )
+    for item in ordered[:6]:
         public.append(
             {
                 "signal": item.get("signal"),
@@ -1206,7 +1215,7 @@ def format_es(value: Any, include_time: bool = True) -> str:
     dt = parse_datetime(value)
     if dt == datetime.min.replace(tzinfo=timezone.utc):
         return "fecha no disponible"
-    local = dt.astimezone(ZoneInfo("Europe/Madrid"))
+    local = dt.astimezone(MADRID)
     base = f"{local.day} de {MONTHS_ES[local.month - 1]} de {local.year}"
     return f"{base}, {local:%H:%M}" if include_time else base
 
@@ -1215,7 +1224,7 @@ def format_en(value: Any, include_time: bool = True) -> str:
     dt = parse_datetime(value)
     if dt == datetime.min.replace(tzinfo=timezone.utc):
         return "date unavailable"
-    local = dt.astimezone(ZoneInfo("UTC"))
+    local = dt.astimezone(timezone.utc)
     month = local.strftime("%B")
     base = f"{month} {local.day}, {local.year}"
     return f"{base}, {local:%H:%M} UTC" if include_time else base

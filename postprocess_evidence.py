@@ -210,12 +210,12 @@ def update_status() -> dict[str, Any]:
     archive = merge_archive(current_items, previous, checked_at)
 
     if current_items:
-        display_items = current_items[:DISPLAY_LIMIT]
+        display_items = sorted(current_items, key=newest_first, reverse=True)[:DISPLAY_LIMIT]
         mode = "current"
     else:
         previous_display = previous.get("evidence") if isinstance(previous.get("evidence"), list) else []
         carried = [cleaned for item in previous_display if (cleaned := clean_item(item))]
-        display_items = (carried or archive)[:DISPLAY_LIMIT]
+        display_items = sorted((carried or archive), key=newest_first, reverse=True)[:DISPLAY_LIMIT]
         mode = "carried" if display_items else "none"
 
     context = build_context(mode, latest_evidence_date(display_items), len(current_items))
@@ -246,8 +246,34 @@ LOADING_STYLE = """<style id=\"ormuz-v8-evidence-style\">
 
 
 def replace_id_element(html: str, element_id: str, replacement: str) -> str:
-    pattern = rf"<(?P<tag>[a-zA-Z0-9]+)(?=[^>]*\bid=[\"']{re.escape(element_id)}[\"'])[^>]*>.*?</(?P=tag)>"
-    return re.sub(pattern, replacement, html, count=1, flags=re.IGNORECASE | re.DOTALL)
+    """Replace a complete element, including nested children of the same tag.
+
+    The former non-greedy expression stopped at the first nested ``</div>``.
+    In the evidence grid that left the old card bodies behind, so they
+    accumulated after every scheduled refresh.
+    """
+    opening = re.compile(
+        rf"<(?P<tag>[a-zA-Z0-9]+)(?=[^>]*\bid=[\"']{re.escape(element_id)}[\"'])[^>]*>",
+        re.IGNORECASE | re.DOTALL,
+    ).search(html)
+    if not opening:
+        return html
+
+    tag = opening.group("tag")
+    token_re = re.compile(
+        rf"<{re.escape(tag)}\b[^>]*>|</{re.escape(tag)}\s*>",
+        re.IGNORECASE | re.DOTALL,
+    )
+    depth = 1
+    for token in token_re.finditer(html, opening.end()):
+        raw = token.group(0)
+        if raw.lower().startswith(f"</{tag.lower()}"):
+            depth -= 1
+            if depth == 0:
+                return html[:opening.start()] + replacement + html[token.end():]
+        elif not raw.rstrip().endswith("/>"):
+            depth += 1
+    raise RuntimeError(f"No se encontró el cierre de #{element_id}")
 
 
 def patch_html(path: Path, lang: str) -> None:

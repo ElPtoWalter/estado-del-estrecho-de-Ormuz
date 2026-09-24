@@ -3,12 +3,15 @@ from __future__ import annotations
 
 import argparse
 import re
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent
-MADRID = ZoneInfo("Europe/Madrid")
+try:
+    MADRID = ZoneInfo("Europe/Madrid")
+except Exception:  # Windows environments may not bundle the IANA database.
+    MADRID = timezone(timedelta(hours=2), "CEST")
 
 GEN = ROOT / "generate_daily_journal.py"
 INDEX_ES = ROOT / "index.html"

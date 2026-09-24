@@ -36,7 +36,10 @@ from typing import Any
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
-MADRID = ZoneInfo("Europe/Madrid")
+try:
+    MADRID = ZoneInfo("Europe/Madrid")
+except Exception:  # Windows environments may not bundle the IANA database.
+    MADRID = timezone(timedelta(hours=2), "CEST")
 BASE_URL = "https://estrechoormuz.com"
 USER_AGENT = (
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
@@ -454,6 +457,28 @@ def dimensions(operational: dict[str, Any], lang: str) -> dict[str, str]:
     if labels:
         return {str(k): norm(v) for k, v in labels.items()}
     return {}
+
+
+def traffic_snapshot_html(operational: dict[str, Any], lang: str) -> str:
+    snapshot = operational.get("traffic_snapshot") if isinstance(operational.get("traffic_snapshot"), dict) else {}
+    if snapshot.get("vessels") is None or not snapshot.get("comparison_average"):
+        return ""
+    note = norm(snapshot.get("note_es" if lang == "es" else "note_en"))
+    source = norm(snapshot.get("source"))
+    published = norm(snapshot.get("published_at"))
+    title = "La cifra detrás del diagnóstico" if lang == "es" else "The figure behind the assessment"
+    label = "TRÁNSITOS OBSERVADOS" if lang == "es" else "OBSERVED TRANSITS"
+    context = (
+        "Es la medición concreta más reciente localizada, no un contador en tiempo real."
+        if lang == "es"
+        else "This is the latest concrete measurement located, not a real-time counter."
+    )
+    attribution = " · ".join(value for value in (source, published) if value)
+    return (
+        f'<section class="journal-section journal-traffic-figure"><span>{safe(label)}</span>'
+        f'<h2>{safe(title)}</h2><p><strong>{safe(note)}</strong> {safe(context)}</p>'
+        f'<small>{safe(attribution)}</small></section>'
+    )
 
 
 def state_fingerprint(status: dict[str, Any], operational: dict[str, Any]) -> dict[str, Any]:
@@ -1006,6 +1031,7 @@ def render_page(
 <div><span>{'Diagnóstico al cierre de edición' if lang == 'es' else 'Assessment at publication time'}</span><strong>{safe(state_label)}</strong><small>{'Confianza' if lang == 'es' else 'Confidence'}: {safe(confidence_label(confidence, lang))}</small></div>
 <div class="journal-metrics">{metrics}</div>
 </section>
+{traffic_snapshot_html(operational, lang)}
 {desk}
 {situation_html}
 {triad}

@@ -30,6 +30,19 @@ class PublicBuildTests(unittest.TestCase):
         self.assertIn("Paso &lt;verificado&gt;", result)
         self.assertIn('id="archiveMetricCount">1<', result)
 
+    def test_home_evidence_is_translated_deduplicated_and_newest_first(self):
+        older = dict(self.evidence, title="Older", published_at="2026-09-01T06:00:00Z", signal="RISK_RESTRICTION")
+        newer = dict(self.evidence, title="Newer", published_at="2026-09-02T06:00:00Z", signal="OPEN_OPERATIONAL")
+        duplicate = dict(newer, source_url="https://example.org/syndicated")
+        self.status["evidence"] = [older, newer, duplicate]
+        doc = '<html lang="es"><body><div id="evidenceList"><article><div>legacy</div></article></div></body></html>'
+        result = build.sanitize_html(doc, "index.html")
+        self.assertNotIn("legacy", result)
+        self.assertNotIn("RISK_RESTRICTION", result)
+        self.assertIn("Riesgo o restricción", result)
+        self.assertEqual(result.count("Newer"), 1)
+        self.assertLess(result.index("Newer"), result.index("Older"))
+
     def test_history_and_brief_have_no_unresolved_controls(self):
         history = build.sanitize_html('<html lang="es"><body><b id="historyCount">—</b></body></html>', "historial.html")
         self.assertIn('id="historyCount">1<', history)

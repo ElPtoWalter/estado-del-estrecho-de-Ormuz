@@ -3,7 +3,7 @@ from __future__ import annotations
 import unittest
 from datetime import datetime, timedelta, timezone
 
-from operational_intelligence_v7 import Signal, assess, iso_z
+from operational_intelligence_v7 import Signal, assess, classify_text_record, iso_z, traffic_measurement
 
 NOW = datetime(2026, 8, 7, 11, 20, tzinfo=timezone.utc)
 
@@ -78,6 +78,28 @@ class IntelligenceV7Tests(unittest.TestCase):
         ]
         result = assess(signals, NOW, {})
         self.assertEqual(result["state"], "UNVERIFIED")
+
+    def test_extracts_count_and_reference_average_from_report(self):
+        count, average, ratio = traffic_measurement(
+            "Three commodity vessels transited the Strait of Hormuz, below the 10-day moving average of about 15"
+        )
+        self.assertEqual((count, average), (3, 15))
+        self.assertAlmostEqual(ratio, 0.2)
+
+    def test_quantified_report_adds_public_traffic_snapshot(self):
+        signals = classify_text_record(
+            "Three commodity vessels transited the Strait of Hormuz",
+            "Reuters",
+            "https://example.com/reuters",
+            iso_z(NOW - timedelta(hours=2)),
+            "fixture",
+            description="The recent moving average was about 15 vessels.",
+        )
+        signals.append(sig("TRANSIT_CONFIRMED", "JMIC / UKMTO", 3, 5))
+        result = assess(signals, NOW, {})
+        self.assertEqual(result["traffic_snapshot"]["vessels"], 3)
+        self.assertEqual(result["traffic_snapshot"]["comparison_average"], 15)
+        self.assertEqual(result["dimensions"]["traffic"], "SEVERELY_REDUCED")
 
 
 if __name__ == "__main__":

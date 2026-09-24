@@ -8,13 +8,16 @@ import json
 import os
 import re
 import unicodedata
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
 ROOT = Path(os.getenv("ORMUZ_ROOT", Path(__file__).resolve().parent))
-MADRID = ZoneInfo("Europe/Madrid")
+try:
+    MADRID = ZoneInfo("Europe/Madrid")
+except Exception:  # Windows environments may not bundle the IANA database.
+    MADRID = timezone(timedelta(hours=2), "CEST")
 BASE_URL = "https://estrechoormuz.com"
 MAX_ARCHIVE_DAYS = 90
 

@@ -98,6 +98,8 @@ class Signal:
     provider: str
     details: str = ""
     traffic_ratio: float | None = None
+    traffic_count: int | None = None
+    traffic_average: int | None = None
 
 
 def utc_now() -> datetime:
@@ -179,14 +181,54 @@ def headline_is_question_or_analysis(text: str) -> bool:
     )
 
 
+NUMBER_WORDS = {
+    "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
+    "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10,
+    "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14,
+    "fifteen": 15, "sixteen": 16, "seventeen": 17, "eighteen": 18,
+    "nineteen": 19, "twenty": 20,
+}
+NUMBER_TOKEN = r"(?:\d{1,3}|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)"
+
+
+def parse_number(value: str) -> int | None:
+    token = normalize(value).lower()
+    if token in NUMBER_WORDS:
+        return NUMBER_WORDS[token]
+    try:
+        return int(token)
+    except ValueError:
+        return None
+
+
+def traffic_measurement(text: str) -> tuple[int | None, int | None, float | None]:
+    low = normalize(text).lower()
+    count_match = re.search(
+        rf"\b(?P<count>{NUMBER_TOKEN})\s+(?:commodity\s+)?(?:vessels?|ships?|tankers?)\b.{{0,70}}\b(?:transited|transit|crossed|passed|traversed)",
+        low,
+    ) or re.search(
+        rf"\b(?:vessel|ship|commodity vessel)\s+transits?\b.{{0,55}}\b(?:fell|fallen|dropped|declined|rose|increased|were|was|to|at)\s+(?:to\s+|at\s+)?(?P<count>{NUMBER_TOKEN})\b",
+        low,
+    )
+    average_match = re.search(
+        rf"\b(?:moving\s+)?average(?:\s+of)?\s+(?:(?:was|is|stood\s+at)\s+)?(?:about\s+|around\s+|approximately\s+|roughly\s+)?(?P<average>{NUMBER_TOKEN})\b",
+        low,
+    )
+    count = parse_number(count_match.group("count")) if count_match else None
+    average = parse_number(average_match.group("average")) if average_match else None
+    ratio = count / average if count is not None and average and 0 <= count <= 500 and average <= 500 else None
+    return count, average, ratio
+
+
 def add_signal(out: list[Signal], kind: str, title: str, source: str, url: str,
                published_at: str, provider: str, *, details: str = "",
-               traffic_ratio: float | None = None, tier: int | None = None,
+               traffic_ratio: float | None = None, traffic_count: int | None = None,
+               traffic_average: int | None = None, tier: int | None = None,
                weight_multiplier: float = 1.0) -> None:
     t = tier if tier is not None else source_tier(source)
     out.append(Signal(kind, normalize(title), normalize(source) or "Unknown source",
                       normalize(url), published_at, t, source_weight(t) * weight_multiplier,
-                      provider, normalize(details), traffic_ratio))
+                      provider, normalize(details), traffic_ratio, traffic_count, traffic_average))
 
 
 def classify_text_record(title: str, source: str, url: str, published_at: str,
@@ -199,6 +241,12 @@ def classify_text_record(title: str, source: str, url: str, published_at: str,
         return out
     hormuz = context_hormuz or "hormuz" in low
     analytical = headline_is_question_or_analysis(title)
+    traffic_count, traffic_average, traffic_ratio = traffic_measurement(combined)
+    traffic_kwargs = {
+        "traffic_ratio": traffic_ratio,
+        "traffic_count": traffic_count,
+        "traffic_average": traffic_average,
+    }
 
     direct_patterns = (
         r"\b(?:ships?|vessels?|tankers?|carriers?)\b.{0,90}\b(?:transit|transiting|passed|passing|crossed|crossing|moving)\b",
@@ -208,14 +256,14 @@ def classify_text_record(title: str, source: str, url: str, published_at: str,
         r"\btransits?\s+through\s+hormuz\b",
     )
     if hormuz and not analytical and any(re.search(p, low) for p in direct_patterns):
-        add_signal(out, "TRANSIT_CONFIRMED", title, source, url, published_at, provider)
+        add_signal(out, "TRANSIT_CONFIRMED", title, source, url, published_at, provider, **traffic_kwargs)
     if hormuz and not analytical and re.search(
         r"\b(?:traffic|shipping|vessels?|ships?|tankers?|transits?)\b.{0,70}\b(?:little changed|steady|stable|continues?|ongoing|present)\b", low):
-        add_signal(out, "TRAFFIC_PRESENT", title, source, url, published_at, provider, weight_multiplier=0.85)
+        add_signal(out, "TRAFFIC_PRESENT", title, source, url, published_at, provider, weight_multiplier=0.85, **traffic_kwargs)
     if hormuz and re.search(r"\b(?:reduced levels?|reduced|slow|slowed|dwindl(?:e|es|ed)|plung(?:e|es|ed)|fall(?:en|ing)?|declin(?:e|ed|ing)|suppression)\b", low):
-        add_signal(out, "TRAFFIC_REDUCED", title, source, url, published_at, provider)
-    if hormuz and re.search(r"\b(?:single[- ]digit|trickle|freefall|collapsed?|collapse|near[- ]total pause|virtually disappeared|80%|90%|severely reduced)\b", low):
-        add_signal(out, "TRAFFIC_SEVERELY_REDUCED", title, source, url, published_at, provider, weight_multiplier=1.15)
+        add_signal(out, "TRAFFIC_REDUCED", title, source, url, published_at, provider, **traffic_kwargs)
+    if hormuz and (re.search(r"\b(?:single[- ]digit|trickle|freefall|collapsed?|collapse|near[- ]total pause|virtually disappeared|80%|90%|severely reduced)\b", low) or (traffic_ratio is not None and traffic_ratio < .35)):
+        add_signal(out, "TRAFFIC_SEVERELY_REDUCED", title, source, url, published_at, provider, weight_multiplier=1.15, **traffic_kwargs)
     if hormuz and re.search(r"\b(?:normal traffic|traffic returned to normal|normal transit levels?|freely open)\b", low):
         add_signal(out, "TRAFFIC_NORMAL", title, source, url, published_at, provider)
     if hormuz and re.search(r"\b(?:no commercial traffic|traffic (?:is |was |has been )?(?:halted|stopped)|shipping (?:is |was |has been )?(?:halted|stopped)|near[- ]total temporary pause|effectively closed|impassable)\b", low):
@@ -245,6 +293,8 @@ def seed_signals(root: Path, now: datetime) -> list[Signal]:
                    str(item.get("published_at") or ""), "seed-primary",
                    details=str(item.get("details") or ""),
                    traffic_ratio=item.get("traffic_ratio"),
+                   traffic_count=item.get("traffic_count"),
+                   traffic_average=item.get("traffic_average"),
                    tier=int(item.get("tier") or source_tier(str(item.get("source") or ""))),
                    weight_multiplier=float(item.get("weight_multiplier") or 1.0))
     return output
@@ -403,6 +453,24 @@ def assess(signals: list[Signal], now: datetime, legacy: dict[str, Any] | None =
         "UNVERIFIED": ("No hay una confirmación operativa reciente suficiente para afirmar paso físico o interrupción efectiva. El sistema evita inferir el estado solo a partir de titulares.", "There is insufficient recent operational evidence to confirm physical passage or effective interruption. The system does not infer status from headlines alone."),
     }
     summary_es, summary_en = summaries[state]
+    measured = max(
+        (item for item in fresh if item.traffic_count is not None and item.traffic_average),
+        key=lambda item: parse_dt(item.published_at),
+        default=None,
+    )
+    traffic_snapshot = None
+    if measured:
+        measured_ratio = measured.traffic_count / measured.traffic_average
+        traffic_snapshot = {
+            "vessels": measured.traffic_count,
+            "comparison_average": measured.traffic_average,
+            "ratio": round(measured_ratio, 4),
+            "published_at": measured.published_at,
+            "source": measured.source,
+            "url": measured.url,
+            "note_es": f"{measured.traffic_count} buques frente a una media de referencia de {measured.traffic_average}.",
+            "note_en": f"{measured.traffic_count} vessels versus a reference average of {measured.traffic_average}.",
+        }
     ranked = sorted(fresh, key=lambda i: (weighted(i, now), i.tier, parse_dt(i.published_at)), reverse=True)
     top = []; seen_titles = set()
     for item in ranked:
@@ -423,6 +491,7 @@ def assess(signals: list[Signal], now: datetime, legacy: dict[str, Any] | None =
         "dimension_labels_es": {k: dimension_labels(v, "es") for k, v in dims.items()},
         "dimension_labels_en": {k: dimension_labels(v, "en") for k, v in dims.items()},
         "traffic_ratio_estimate": round(ratio, 4) if ratio is not None else None,
+        "traffic_snapshot": traffic_snapshot,
         "scores": {"passage": round(open_score,3), "closure": round(closed_score,3), "traffic_reduction": round(reduced_score,3), "access_restriction": round(restriction_score,3), "risk": round(risk_score,3)},
         "source_counts": {"passage": len(open_sources), "closure": len(closed_sources), "primary_sources": len(primary_sources)},
         "latest_confirmed_transit_at": iso_z(latest_transit) if latest_transit.year > 1970 else None,
@@ -459,11 +528,20 @@ def render_block(a: dict[str, Any], lang: str) -> str:
     evidence_html = "".join(rows) or ("<li><strong>No hay evidencia operativa reciente suficiente.</strong></li>" if es else "<li><strong>There is not enough recent operational evidence.</strong></li>")
     names = {"passage":"Paso físico","traffic":"Tráfico","access":"Acceso","risk":"Riesgo"} if es else {"passage":"Physical passage","traffic":"Traffic","access":"Access","risk":"Risk"}
     metrics = "".join(f'<div class="opintel-metric"><span>{names[k]}</span><strong data-opintel-{k}>{html.escape(str(labels[k]))}</strong></div>' for k in ("passage","traffic","access","risk"))
+    snapshot = a.get("traffic_snapshot") if isinstance(a.get("traffic_snapshot"), dict) else {}
+    snapshot_html = ""
+    if snapshot.get("vessels") is not None and snapshot.get("comparison_average"):
+        note = snapshot.get("note_es" if es else "note_en") or ""
+        snapshot_html = (
+            f'<p class="opintel-summary"><strong>{"Cifra de tránsito más reciente:" if es else "Latest transit figure:"}</strong> '
+            f'{html.escape(str(note))} <small>{html.escape(str(snapshot.get("source") or ""))}</small></p>'
+        )
     return f'''<!-- OPERATIONAL_INTELLIGENCE_V7_START -->
 <section class="content-section opintel-v7" id="diagnostico-operativo-v7" data-opintel-state="{html.escape(str(a.get("state") or ""))}">
   <div class="opintel-head"><div><span class="section-kicker">{"Inteligencia operativa V7" if es else "Operational Intelligence V7"}</span><h2>{"Diagnóstico operativo multidimensional" if es else "Multidimensional operational assessment"}</h2><p>{"No tratamos Ormuz como un interruptor binario: separamos paso físico, intensidad, acceso y riesgo." if es else "Hormuz is not treated as a binary switch: physical passage, traffic intensity, access and risk are assessed separately."}</p></div>
   <div class="opintel-verdict"><span>{"Conclusión" if es else "Assessment"}</span><strong data-opintel-label>{html.escape(str(a.get("label_es" if es else "label_en") or ""))}</strong><small data-opintel-confidence>{"Confianza" if es else "Confidence"}: {html.escape(confidence_text(str(a.get("confidence") or "BAJA"), lang))}</small></div></div>
   <div class="opintel-grid">{metrics}</div>
+{snapshot_html}
   <p class="opintel-summary" data-opintel-summary>{html.escape(str(a.get("summary_es" if es else "summary_en") or ""))}</p>
   <div class="opintel-evidence"><div class="opintel-evidence-head"><strong>{"Por qué este diagnóstico" if es else "Why this assessment"}</strong><a href="{'/metodo-inteligencia-operativa.html' if es else '/en-operational-intelligence-method.html'}">{"Cómo se calcula →" if es else "How it is calculated →"}</a></div><ul>{evidence_html}</ul></div>
 </section>

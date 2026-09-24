@@ -191,6 +191,48 @@ def replace_element(document: str, element_id: str, content: str) -> str:
     )
     return _replace_inner_html(document, opening, content)
 
+
+def remove_legacy_evidence_tail(document: str) -> str:
+    """Remove card fragments left by the former nested-div regex.
+
+    The corruption is bounded by the status snapshot markers.  After the
+    balanced evidence grid closes, only the evidence-section closing ``div``
+    may remain before the end marker.
+    """
+    start_marker = "<!-- STATUS_SNAPSHOT_START -->"
+    end_marker = "<!-- STATUS_SNAPSHOT_END -->"
+    start = document.find(start_marker)
+    end = document.find(end_marker, start + len(start_marker))
+    if start < 0 or end < 0:
+        return document
+    segment = document[start:end]
+    opening = re.compile(
+        r'<(?P<tag>[A-Za-z0-9]+)\b[^>]*\bid=["\']evidenceList["\'][^>]*>',
+        re.I | re.S,
+    ).search(segment)
+    if not opening:
+        return document
+    tag = opening.group("tag")
+    depth = 1
+    grid_end = None
+    for token in re.finditer(rf"<{tag}\b[^>]*>|</{tag}\s*>", segment[opening.end():], re.I | re.S):
+        raw = token.group(0)
+        if raw.lower().startswith(f"</{tag.lower()}"):
+            depth -= 1
+            if depth == 0:
+                grid_end = opening.end() + token.end()
+                break
+        elif not raw.rstrip().endswith("/>"):
+            depth += 1
+    if grid_end is None:
+        return document
+    tail = segment[grid_end:]
+    section_close = tail.rfind("</div>")
+    if section_close < 0 or not tail[:section_close].strip():
+        return document
+    clean_segment = segment[:grid_end] + tail[section_close:]
+    return document[:start] + clean_segment + document[end:]
+
 def replace_data_attr_content(document: str, attr: str, content: str) -> str:
     opening = re.compile(
         rf'<(?P<tag>[A-Za-z0-9]+)\b[^>]*\b{re.escape(attr)}(?:=["\'][^"\']*["\'])?[^>]*>',
@@ -313,13 +355,47 @@ def render_evidence(status: dict[str, Any], lang: str, limit: int) -> str:
     items = status.get("evidence")
     if not isinstance(items, list):
         items = []
-    cards = []
-    for item in items[:limit]:
-        if not isinstance(item, dict):
+    signal_labels = {
+        "es": {
+            "OPEN_OPERATIONAL": "Tránsito operativo",
+            "CLOSED_OPERATIONAL": "Interrupción operativa",
+            "CLOSURE_DECLARED": "Declaración de cierre",
+            "RISK_RESTRICTION": "Riesgo o restricción",
+        },
+        "en": {
+            "OPEN_OPERATIONAL": "Operational transit",
+            "CLOSED_OPERATIONAL": "Operational interruption",
+            "CLOSURE_DECLARED": "Closure declaration",
+            "RISK_RESTRICTION": "Risk or restriction",
+        },
+    }[lang]
+    ordered, seen = [], set()
+    for item in sorted(
+        (item for item in items if isinstance(item, dict)),
+        key=lambda item: parse_dt(item.get("published_at"))
+        or datetime.min.replace(tzinfo=timezone.utc),
+        reverse=True,
+    ):
+        key = (
+            str(item.get("source_name") or "").strip().casefold(),
+            re.sub(r"\s+", " ", str(item.get("title") or "").strip().casefold()),
+        )
+        if key in seen:
             continue
+        seen.add(key)
+        ordered.append(item)
+    cards = []
+    for item in ordered[:limit]:
+        signal = str(item.get("signal") or "")
+        label = signal_labels.get(signal, "Evidencia" if lang == "es" else "Evidence")
+        official = (
+            " · oficial" if lang == "es" and item.get("official")
+            else " · official" if item.get("official")
+            else ""
+        )
         cards.append(
             '<article class="evidence-card">'
-            f'<div class="evidence-meta"><span>{esc(item.get("signal"), "Evidencia" if lang=="es" else "Evidence")}</span>'
+            f'<div class="evidence-meta"><span>{esc(label)}{official}</span>'
             f'<time>{esc(human_date(item.get("published_at"), lang))}</time></div>'
             f'<h3><a href="{esc(item.get("source_url"), "#")}" target="_blank" rel="noopener noreferrer">'
             f'{esc(item.get("title"), "Evidencia" if lang=="es" else "Evidence")}</a></h3>'
@@ -395,6 +471,7 @@ def prerender(document: str, filename: str) -> str:
         document = replace_element(document, element_id, value)
 
     document = replace_element(document, "evidenceList", render_evidence(status, lang, 8))
+    document = remove_legacy_evidence_tail(document)
     document = replace_element(document, "evidenceArchive", render_evidence(status, lang, 20))
     document = replace_element(document, "recentHistory", render_history(history, lang, 3))
     document = replace_element(document, "historyTimeline", render_history(history, lang, 50))
