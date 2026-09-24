@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-24T05:14:40Z",
-  "last_success_at": "2026-09-24T05:14:40Z",
+  "checked_at": "2026-09-24T10:25:35Z",
+  "last_success_at": "2026-09-24T10:25:35Z",
   "last_change_at": "2026-09-19T11:23:56Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,23 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "The west is in freefall – and the worst part is that we were warned , but chose not to listen | Owen Jones",
+      "source_name": "The Guardian",
+      "source_url": "https://www.theguardian.com/commentisfree/2026/sep/24/west-freefall-warned-wealth-power",
+      "published_at": "2026-09-24T07:00:12Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-09-24T10:25:35Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "QatarEnergy says Hormuz crisis may delay LNG expansion projects - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPa0wwelQ0b19yYUlLMjVDRUlTV2Jua1lmcW55WERBN3NDVmlUVmJkU0Z2R1dPRkFPeVU5MURITk5idmJ2T1BfYnVfTGlldndMRnlkQmlSbnlBbzhWQnZ5UmEwTnJPd1RUY3I4YXVWMzFYSklreHp6SDRQUzlFMkhTRHg5T0lOMGJ1ejcwU2R2QXI3a214Sml2M05QcWcyUDA3OWRxOTlObmlEeFJ4YjZ4enBsMFpyZw?oc=5",
       "published_at": "2026-09-21T11:13:47Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-24T05:14:40Z"
+      "observed_at": "2026-09-24T10:25:35Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,46 +42,55 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-24T05:14:40Z"
+      "observed_at": "2026-09-24T10:25:35Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 4.0
+      "risk": 6.9
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 2
+      "risk": 3
     },
-    "articles_considered": 24,
-    "signals_considered": 4,
-    "current_cycle_evidence": 2,
+    "articles_considered": 31,
+    "signals_considered": 5,
+    "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-09-23T09:43:07Z",
-    "current_cycle_count": 2,
+    "as_of": "2026-09-24T07:00:12Z",
+    "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "The west is in freefall – and the worst part is that we were warned , but chose not to listen | Owen Jones",
+      "source_name": "The Guardian",
+      "source_url": "https://www.theguardian.com/commentisfree/2026/sep/24/west-freefall-warned-wealth-power",
+      "published_at": "2026-09-24T07:00:12Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-09-24T10:25:35Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Pezeshkian tells UN Iran will not be bullied but will negotiate",
@@ -90,7 +109,7 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-24T05:14:40Z"
+      "observed_at": "2026-09-24T10:25:35Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -120,7 +139,7 @@
       "published_at": "2026-09-21T11:13:47Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-24T05:14:40Z"
+      "observed_at": "2026-09-24T10:25:35Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -661,21 +680,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-09-12T14:19:19Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Trump says Iran probably responsible for attack on Saudi pipeline",
-      "source_name": "CNN",
-      "source_url": "https://edition.cnn.com/2026/09/12/middleeast/trump-iran-saudi-pipeline-intl",
-      "published_at": "2026-09-12T11:20:31Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-12T14:19:19Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-24T05:15:38Z",
+    "generated_at": "2026-09-24T10:26:01Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -690,36 +699,36 @@
       "traffic": "SEVERELY_REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "CLOSURE_CLAIMED"
+      "legal": "DISPUTED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Muy reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Cierre declarado por una parte"
+      "legal": "Régimen disputado"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Severely reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "Closure claimed by one party"
+      "legal": "Disputed regime"
     },
     "traffic_ratio_estimate": null,
     "scores": {
-      "passage": 20.691,
+      "passage": 24.331,
       "closure": 0,
-      "traffic_reduction": 10.933,
-      "access_restriction": 17.28,
-      "risk": 70.6
+      "traffic_reduction": 13.645,
+      "access_restriction": 18.12,
+      "risk": 67.4
     },
     "source_counts": {
-      "passage": 14,
+      "passage": 13,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-09-23T21:53:05Z",
+    "latest_confirmed_transit_at": "2026-09-24T08:11:13Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -788,16 +797,16 @@
       },
       {
         "kind": "TRAFFIC_SEVERELY_REDUCED",
-        "title": "Vessels trickle through Strait of Hormuz as Middle East conflict persists - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPNHdMbF8wY2pMdE0tcHdWa3l5dkc5MGpKWVJEZW9VUnV2UTFlaTlVbVpOZ1pQN245SWZOLU4zWDd3ODlBTUhhZmlmaE1jUGltMzRKUF9xRl9CT2ZpMnNxcXkxOXdQeHJHajFzMkpoNWVnS3N6X3ExamF1ejcyQ3I1LW5DVHRXTXQ5MVVtTEE1cmtxLWhGMURaZ19pajA1blpROVVxRXQ3MHE4Zy1BLUVybldpUm01NU0?oc=5",
-        "published_at": "2026-09-21T08:40:15Z",
-        "tier": 4,
-        "weight": 4.6,
-        "provider": "Google News RSS",
+        "title": "The west is in freefall – and the worst part is that we were warned , but chose not to listen | Owen Jones",
+        "source": "The Guardian",
+        "url": "https://www.theguardian.com/commentisfree/2026/sep/24/west-freefall-warned-wealth-power",
+        "published_at": "2026-09-24T07:00:12Z",
+        "tier": 3,
+        "weight": 3.4499999999999997,
+        "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.588,
+        "effective_weight": 3.45,
         "kind_label_es": "Tráfico muy reducido",
         "kind_label_en": "Severely reduced traffic"
       },
@@ -821,7 +830,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-24T05:15:38Z",
+        "published_at": "2026-09-24T10:26:01Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -832,23 +841,23 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
-        "source": "Lloyd's List",
-        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-24T05:15:38Z",
-        "tier": 4,
-        "weight": 2.6,
-        "provider": "Lloyd's List hot topic",
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Qatar Boosts LNG Traffic Through Hormuz as Global Shortage Bites - Bloomberg.com",
+        "source": "Bloomberg.com",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOdnI4UDJiTF9vTmluakd3ekRQOXcwV3hvSjdMbFFLdzg1WnozazB2VkhmdjFkNERjWFEyX2oxVDR5S3RfclBENnM3R0p1aTcxM0ZOM19PMWpzTlVMdjQ3ckROM3pJSnljamFqeTNzeGlBbjNQZ2tCLU1kS1ItZlhhTXRabVRDT0F4aHg3WlpYV1VHdUtNb1ItVVhLQTcyQWlWREpnZUpfZl9yV3ZYal9MSUlfamdLTlN2TUU0RnN6T1RZeS1LdDZjd3FCRDJRbkNUemhj?oc=5",
+        "published_at": "2026-09-24T07:05:07Z",
+        "tier": 3,
+        "weight": 3.0,
+        "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 2.6,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
+        "effective_weight": 3.0,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
       }
     ],
     "diagnostics": {
-      "signals_considered": 112,
+      "signals_considered": 108,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
