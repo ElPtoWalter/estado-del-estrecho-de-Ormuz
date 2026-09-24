@@ -121,5 +121,35 @@ class FreeEditorialAITests(unittest.TestCase):
         self.assertEqual((engine, status), ("rules", "validation-es"))
 
 
+    def test_gemini_is_preferred_when_configured(self):
+        captured = {}
+
+        def opener(request, timeout):
+            captured["request"] = request
+            envelope = {
+                "candidates": [
+                    {"content": {"parts": [{"text": json.dumps({"es": valid_draft()}, ensure_ascii=False)}]}}
+                ]
+            }
+            return FakeResponse(envelope)
+
+        drafts, engine, status = generate_editorial_drafts(
+            site_name="Sitio de prueba",
+            site_url="https://example.com",
+            facts=self.facts,
+            fallbacks={"es": self.fallback},
+            sources_by_section=self.sources,
+            api_key="",
+            gemini_api_key="gemini-de-prueba",
+            gemini_model="gemini-2.5-flash",
+            opener=opener,
+        )
+        self.assertEqual((engine, status), ("gemini", "ok"))
+        self.assertEqual(drafts["es"]["sections"][0]["title"], "Tráfico")
+        self.assertIn("generativelanguage.googleapis.com", captured["request"].full_url)
+        self.assertNotIn("gemini-de-prueba", captured["request"].full_url)
+        self.assertEqual(captured["request"].headers.get("X-goog-api-key"), "gemini-de-prueba")
+
+
 if __name__ == "__main__":
     unittest.main()
