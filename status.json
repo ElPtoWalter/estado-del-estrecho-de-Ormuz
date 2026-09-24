@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-24T15:26:29Z",
-  "last_success_at": "2026-09-24T15:26:29Z",
+  "checked_at": "2026-09-24T19:05:46Z",
+  "last_success_at": "2026-09-24T19:05:46Z",
   "last_change_at": "2026-09-19T11:23:56Z",
   "verification_ok": true,
   "stale": false,
@@ -16,71 +16,72 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "The west is in freefall – and the worst part is that we were warned , but chose not to listen | Owen Jones",
-      "source_name": "The Guardian",
-      "source_url": "https://www.theguardian.com/commentisfree/2026/sep/24/west-freefall-warned-wealth-power",
-      "published_at": "2026-09-24T07:00:12Z",
-      "tier": 3,
+      "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R?oc=5",
+      "published_at": "2026-09-24T16:50:04Z",
+      "tier": 4,
       "official": false,
-      "observed_at": "2026-09-24T15:26:29Z"
+      "observed_at": "2026-09-24T19:05:46Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "'Annihilate' vs 'crushing' attacks: Why Iran, US up rhetoric amid talks - Al Jazeera",
+      "title": "'Annihilate' vs 'crushing' attacks: Why Iran, US up rhetoric amid talks - aljazeera.com",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM00tdGJYVTZKd1NBNFBDTllXU21LZE02VkR0UnU3dkxNakphNkp0OXFuSFc0cmlTUC1XZktybmlHRU5TZ2xEczFjV1pvZHZheHpnTXJOR0VaY2pZRm81bG8zcDc3YzJUZzZrcGQta0RBQTRYcmtpem9ra0w3bmJoMjhpYkZCbG1CU3hnNFpWSGh5LVVRQ0ZBT1ZtQzd1NDUzZ3c2WHhCQlFJUdIBrwFBVV95cUxQcnNnN0doNUNIV3ZUMjVyRUQwZ3ZUdW9TQUo5VVpWb25UTnYyNkFCMkdscTNKSVdCTXNoVDhOVjlvWTBIanRxTlRpd0hYSURibU9QX1ZnU0NnQS0taVJQeXV5ZGsxREotS00tQXhLRXg5V04xa01VNUdwb3BIeFRHUTNmY3JzRGtBZS12Zm1Ha2lDazl0djc1cDVFSDY5YkIwN1J1VUxBX3ZtOFpxemJr?oc=5",
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-24T15:26:29Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "QatarEnergy says Hormuz crisis may delay LNG expansion projects - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPa0wwelQ0b19yYUlLMjVDRUlTV2Jua1lmcW55WERBN3NDVmlUVmJkU0Z2R1dPRkFPeVU5MURITk5idmJ2T1BfYnVfTGlldndMRnlkQmlSbnlBbzhWQnZ5UmEwTnJPd1RUY3I4YXVWMzFYSklreHp6SDRQUzlFMkhTRHg5T0lOMGJ1ejcwU2R2QXI3a214Sml2M05QcWcyUDA3OWRxOTlObmlEeFJ4YjZ4enBsMFpyZw?oc=5",
-      "published_at": "2026-09-21T11:13:47Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-09-24T15:26:29Z"
+      "observed_at": "2026-09-24T19:05:46Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5.81
+      "risk": 5.8
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 3
+      "risk": 2
     },
-    "articles_considered": 26,
+    "articles_considered": 21,
     "signals_considered": 4,
-    "current_cycle_evidence": 3,
+    "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-09-24T07:00:12Z",
-    "current_cycle_count": 3,
+    "as_of": "2026-09-24T16:50:04Z",
+    "current_cycle_count": 2,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R?oc=5",
+      "published_at": "2026-09-24T16:50:04Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-09-24T19:05:46Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "The west is in freefall – and the worst part is that we were warned , but chose not to listen | Owen Jones",
@@ -103,6 +104,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "'Annihilate' vs 'crushing' attacks: Why Iran, US up rhetoric amid talks - aljazeera.com",
+      "source_name": "Al Jazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM00tdGJYVTZKd1NBNFBDTllXU21LZE02VkR0UnU3dkxNakphNkp0OXFuSFc0cmlTUC1XZktybmlHRU5TZ2xEczFjV1pvZHZheHpnTXJOR0VaY2pZRm81bG8zcDc3YzJUZzZrcGQta0RBQTRYcmtpem9ra0w3bmJoMjhpYkZCbG1CU3hnNFpWSGh5LVVRQ0ZBT1ZtQzd1NDUzZ3c2WHhCQlFJUdIBrwFBVV95cUxQcnNnN0doNUNIV3ZUMjVyRUQwZ3ZUdW9TQUo5VVpWb25UTnYyNkFCMkdscTNKSVdCTXNoVDhOVjlvWTBIanRxTlRpd0hYSURibU9QX1ZnU0NnQS0taVJQeXV5ZGsxREotS00tQXhLRXg5V04xa01VNUdwb3BIeFRHUTNmY3JzRGtBZS12Zm1Ha2lDazl0djc1cDVFSDY5YkIwN1J1VUxBX3ZtOFpxemJr?oc=5",
+      "published_at": "2026-09-23T09:43:07Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-09-24T19:05:46Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "'Annihilate' vs 'crushing' attacks: Why Iran, US up rhetoric amid talks - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM00tdGJYVTZKd1NBNFBDTllXU21LZE02VkR0UnU3dkxNakphNkp0OXFuSFc0cmlTUC1XZktybmlHRU5TZ2xEczFjV1pvZHZheHpnTXJOR0VaY2pZRm81bG8zcDc3YzJUZzZrcGQta0RBQTRYcmtpem9ra0w3bmJoMjhpYkZCbG1CU3hnNFpWSGh5LVVRQ0ZBT1ZtQzd1NDUzZ3c2WHhCQlFJUdIBrwFBVV95cUxQcnNnN0doNUNIV3ZUMjVyRUQwZ3ZUdW9TQUo5VVpWb25UTnYyNkFCMkdscTNKSVdCTXNoVDhOVjlvWTBIanRxTlRpd0hYSURibU9QX1ZnU0NnQS0taVJQeXV5ZGsxREotS00tQXhLRXg5V04xa01VNUdwb3BIeFRHUTNmY3JzRGtBZS12Zm1Ha2lDazl0djc1cDVFSDY5YkIwN1J1VUxBX3ZtOFpxemJr?oc=5",
@@ -110,16 +121,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-09-24T15:26:29Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "'Annihilate' vs 'crushing' attacks: Why Iran, US up rhetoric amid talks - aljazeera.com",
-      "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM00tdGJYVTZKd1NBNFBDTllXU21LZE02VkR0UnU3dkxNakphNkp0OXFuSFc0cmlTUC1XZktybmlHRU5TZ2xEczFjV1pvZHZheHpnTXJOR0VaY2pZRm81bG8zcDc3YzJUZzZrcGQta0RBQTRYcmtpem9ra0w3bmJoMjhpYkZCbG1CU3hnNFpWSGh5LVVRQ0ZBT1ZtQzd1NDUzZ3c2WHhCQlFJUdIBrwFBVV95cUxQcnNnN0doNUNIV3ZUMjVyRUQwZ3ZUdW9TQUo5VVpWb25UTnYyNkFCMkdscTNKSVdCTXNoVDhOVjlvWTBIanRxTlRpd0hYSURibU9QX1ZnU0NnQS0taVJQeXV5ZGsxREotS00tQXhLRXg5V04xa01VNUdwb3BIeFRHUTNmY3JzRGtBZS12Zm1Ha2lDazl0djc1cDVFSDY5YkIwN1J1VUxBX3ZtOFpxemJr?oc=5",
-      "published_at": "2026-09-23T09:43:07Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-23T23:54:31Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -670,21 +671,11 @@
       "tier": 3,
       "official": false,
       "observed_at": "2026-09-14T05:21:03Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Saudi Arabia shuts critical oil pipeline after drone attack : What it means",
-      "source_name": "Al Jazeera",
-      "source_url": "https://www.aljazeera.com/news/2026/9/12/saudi-arabia-shuts-critical-oil-pipeline-after-drone-attack-what-happened",
-      "published_at": "2026-09-12T11:45:00Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-12T14:19:19Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-24T15:27:03Z",
+    "generated_at": "2026-09-24T19:06:36Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -716,25 +707,77 @@
       "legal": "Disputed regime"
     },
     "traffic_ratio_estimate": null,
+    "traffic_snapshot": null,
     "scores": {
-      "passage": 28.191,
+      "passage": 34.385,
       "closure": 0,
-      "traffic_reduction": 12.305,
-      "access_restriction": 19.14,
-      "risk": 65.9
+      "traffic_reduction": 7.362,
+      "access_restriction": 27.3,
+      "risk": 73.34
     },
     "source_counts": {
-      "passage": 17,
+      "passage": 18,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-09-24T11:49:19Z",
+    "latest_confirmed_transit_at": "2026-09-24T16:40:00Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "MEDIA"
     },
     "evidence": [
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYXMwQlBmRVM4WXVFeXhQVkcyYnpaUzE3dk1wUWswS3pZWDBKTGNWVEpqdFNsWXZEYm5PQ3pSVmRhVFl1empQN3p6SFY0YTVHRmxxNWpxbXFNWVlCOEF5T0tBLVp0MzNyWVlyQnpkbUtyVzNTeGtxQXZVc3hhb0E4aVV6bU5QVEdHMFhCaXRhV3hxQVJ3MWRXNF9tNG5EeUVzcTdEOUhGSExiS3F2SUlkS2xzRk1mNlg4bkRhR0FoaE5QZw?oc=5",
+        "published_at": "2026-09-24T17:20:56Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R?oc=5",
+        "published_at": "2026-09-24T16:50:04Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Saudi tanker transits through Hormuz hit war-time high after pipeline attack - Lloyd's List",
+        "source": "Lloyd's List",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRllab01RVkk3OXBfcXhrNjVIZEpIN25SdFJaclhZOE1pN0lmbWV6cHF6dHB3QmNvbXNyd1FYWjFITURLM1ExNTlzdUZLYWRaRll0QlQxU1ltZXZtcFVDM0pHVWthZlBSS1ZTWUQxRC1mcmhkMG1KMnZGQ1lZYVkxZkVuRHF1amZOVHNnd2xPa3dyRjR6VmFRSHdGbWlFelV4WGZraVdkbDZvQzZ0Qlhlc2xRTQ?oc=5",
+        "published_at": "2026-09-24T16:32:37Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
+      },
       {
         "kind": "RISK_SEVERE",
         "title": "UPDATED: Seafarer killed in latest Hormuz attack - Lloyd's List",
@@ -746,7 +789,9 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 4.0,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.6,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -761,24 +806,11 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
-        "effective_weight": 3.6,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.12,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "TRAFFIC_SEVERELY_REDUCED",
-        "title": "The west is in freefall – and the worst part is that we were warned , but chose not to listen | Owen Jones",
-        "source": "The Guardian",
-        "url": "https://www.theguardian.com/commentisfree/2026/sep/24/west-freefall-warned-wealth-power",
-        "published_at": "2026-09-24T07:00:12Z",
-        "tier": 3,
-        "weight": 3.4499999999999997,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 3.45,
-        "kind_label_es": "Tráfico muy reducido",
-        "kind_label_en": "Severely reduced traffic"
       },
       {
         "kind": "NEUTRAL_TRANSIT_PERMITTED",
@@ -791,6 +823,8 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
         "effective_weight": 3.12,
         "kind_label_es": "Tránsito neutral permitido",
         "kind_label_en": "Neutral transit permitted"
@@ -806,58 +840,32 @@
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
         "effective_weight": 3.12,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Saudi Arabia ramps up Gulf oil exports after pipeline attack, data shows - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcThldmdWd2c5aHdfck8zYk1XMWtsa3kweWlXaTNQWEpnV2NIUHhiNTh2cHhoSndCV2Z2QkhwNl9DZEJObFJha2pXWG1JcUZpVXlZU1RqQ2diZUJ0YVV2alRBRmRCampGOGdQQnM4UVV2R2ZMQ2p6WC1QSk5iOGJEWDZ2YXdaSzlLeGtZYnNuVld5MGZESG1tenNaMFlFcExWeVhlZjJBTlJOeHNmVkhBYzFkejJkNno5VWEwU05hRHU4NGlqT1U5UXcxUzU?oc=5",
-        "published_at": "2026-09-21T18:51:41Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 3.12,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-24T15:27:03Z",
+        "published_at": "2026-09-24T19:06:36Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
         "details": "",
         "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
         "effective_weight": 3.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "TRANSIT_CONFIRMED",
-        "title": "Qatar Boosts LNG Traffic Through Hormuz as Global Shortage Bites - Bloomberg.com",
-        "source": "Bloomberg.com",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSTBoQ0JTSVJlUS1JN0JhVnVRVEh3eGh0TWc3c1BYZm55V0NlVEwwRml4ZV8yRlBGakFOSlpqOUdOMlJiaEVvRDJkUkxOeWxkQmhVQ014OF9fdk16Z3VNMkJIS21UdU1qOHN5WUhZM1VrNExKcEFFeXR0RDdmbXllU0dFYk5fdVR5WF81RWwzakNNdG9xZWJteEN3S280THRVTFJpWkN2T3EwTXNpRFNwaGg1UzFiUQ?oc=5",
-        "published_at": "2026-09-24T07:05:07Z",
-        "tier": 3,
-        "weight": 3.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "effective_weight": 3.0,
-        "kind_label_es": "Tránsito confirmado",
-        "kind_label_en": "Confirmed transit"
       }
     ],
     "diagnostics": {
-      "signals_considered": 112,
+      "signals_considered": 119,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
