@@ -8,6 +8,7 @@ from pathlib import Path
 
 import build_sitemap
 import evidence_guard
+import postprocess_evidence
 from maintenance_common import atomic_write_json
 
 
@@ -26,6 +27,19 @@ HTML_EN = """<!doctype html><html lang='en'><head><meta charset='utf-8'>
 
 
 class MaintenanceTests(unittest.TestCase):
+    def test_evidence_placeholder_replacement_removes_nested_legacy_cards(self):
+        source = (
+            '<div id="evidenceList"><article><div class="meta">old one</div></article>'
+            '<article><div>old two</div></article></div><p>after</p>'
+        )
+        replacement = '<div id="evidenceList"><p>loading</p></div>'
+        first = postprocess_evidence.replace_id_element(source, "evidenceList", replacement)
+        second = postprocess_evidence.replace_id_element(first, "evidenceList", replacement)
+        self.assertEqual(first, second)
+        self.assertNotIn("old one", first)
+        self.assertNotIn("old two", first)
+        self.assertTrue(first.endswith("<p>after</p>"))
+
     def test_sitemap_declares_xhtml_namespace_and_nested_paths(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
