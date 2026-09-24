@@ -250,6 +250,9 @@ def generate_editorial_drafts(
     openrouter_key = (api_key if api_key is not None else os.getenv("OPENROUTER_API_KEY", "")).strip()
     gemini_key = (gemini_api_key if gemini_api_key is not None else os.getenv("GEMINI_API_KEY", "")).strip()
 
+    if not gemini_key and not openrouter_key:
+        return safe_fallbacks, "rules", "no-key"
+
     facts_json = json.dumps(facts, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     if len(facts_json.encode("utf-8")) > MAX_FACT_BYTES:
         return safe_fallbacks, "rules", "facts-too-large"
