@@ -1,0 +1,34 @@
+name: Fase 1 Newsroom CI
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "free_editorial_ai.py"
+      - "test_free_editorial_ai.py"
+      - "generate_daily_journal.py"
+      - "test_daily_journal_v8.py"
+      - "test_editorial_quality.py"
+      - "pilot_gemini_phase1.py"
+      - ".github/workflows/pilot-gemini-phase1.yml"
+      - ".github/workflows/phase1-newsroom-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Compilar
+        run: |
+          python -m py_compile free_editorial_ai.py generate_daily_journal.py pilot_gemini_phase1.py test_free_editorial_ai.py
+      - name: Pruebas editoriales
+        run: |
+          python -m unittest -v test_free_editorial_ai.py test_daily_journal_v8.py test_editorial_quality.py
