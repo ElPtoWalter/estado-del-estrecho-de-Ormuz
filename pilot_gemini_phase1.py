@@ -19,12 +19,8 @@ def main() -> int:
     model = free_gemini_model_name(os.getenv("GEMINI_MODEL"))
     payload = {
         "contents": [{
-            "role": "user",
-            "parts": [{"text": 'Devuelve exclusivamente este JSON: {"ok":true}'}],
+            "parts": [{"text": "Responde únicamente: OK"}],
         }],
-        "generationConfig": {
-            "maxOutputTokens": 32,
-        },
     }
     request = urllib.request.Request(
         f"{GEMINI_API_BASE}/{model}:generateContent",
