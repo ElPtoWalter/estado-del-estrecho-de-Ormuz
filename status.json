@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-25T01:49:01Z",
-  "last_success_at": "2026-09-25T01:49:01Z",
+  "checked_at": "2026-09-25T08:07:28Z",
+  "last_success_at": "2026-09-25T08:07:28Z",
   "last_change_at": "2026-09-19T11:23:56Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-25T01:49:01Z"
+      "observed_at": "2026-09-25T08:07:28Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-25T01:49:01Z"
+      "observed_at": "2026-09-25T08:07:28Z"
     }
   ],
   "diagnostics": {
@@ -55,8 +55,8 @@
       "declared": 0,
       "risk": 2
     },
-    "articles_considered": 24,
-    "signals_considered": 5,
+    "articles_considered": 20,
+    "signals_considered": 4,
     "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -80,7 +80,7 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-25T01:49:01Z"
+      "observed_at": "2026-09-25T08:07:28Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -110,7 +110,7 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-25T01:49:01Z"
+      "observed_at": "2026-09-25T08:07:28Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -675,7 +675,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-25T01:49:43Z",
+    "generated_at": "2026-09-25T08:08:10Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -709,41 +709,24 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 41.145,
+      "passage": 39.663,
       "closure": 0,
-      "traffic_reduction": 6.302,
-      "access_restriction": 29.62,
-      "risk": 72.28
+      "traffic_reduction": 10.667,
+      "access_restriction": 32.74,
+      "risk": 72.1
     },
     "source_counts": {
       "passage": 23,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-09-25T00:05:25Z",
+    "latest_confirmed_transit_at": "2026-09-25T06:01:17Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "MEDIA"
     },
     "evidence": [
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYXMwQlBmRVM4WXVFeXhQVkcyYnpaUzE3dk1wUWswS3pZWDBKTGNWVEpqdFNsWXZEYm5PQ3pSVmRhVFl1empQN3p6SFY0YTVHRmxxNWpxbXFNWVlCOEF5T0tBLVp0MzNyWVlyQnpkbUtyVzNTeGtxQXZVc3hhb0E4aVV6bU5QVEdHMFhCaXRhV3hxQVJ3MWRXNF9tNG5EeUVzcTdEOUhGSExiS3F2SUlkS2xzRk1mNlg4bkRhR0FoaE5QZw?oc=5",
-        "published_at": "2026-09-24T17:52:33Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
-      },
       {
         "kind": "RISK_SEVERE",
         "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
@@ -777,6 +760,23 @@
         "effective_weight": 4.0,
         "kind_label_es": "Tránsito confirmado",
         "kind_label_en": "Confirmed transit"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYXMwQlBmRVM4WXVFeXhQVkcyYnpaUzE3dk1wUWswS3pZWDBKTGNWVEpqdFNsWXZEYm5PQ3pSVmRhVFl1empQN3p6SFY0YTVHRmxxNWpxbXFNWVlCOEF5T0tBLVp0MzNyWVlyQnpkbUtyVzNTeGtxQXZVc3hhb0E4aVV6bU5QVEdHMFhCaXRhV3hxQVJ3MWRXNF9tNG5EeUVzcTdEOUhGSExiS3F2SUlkS2xzRk1mNlg4bkRhR0FoaE5QZw?oc=5",
+        "published_at": "2026-09-24T16:18:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
       },
       {
         "kind": "RISK_SEVERE",
@@ -865,7 +865,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 119,
+      "signals_considered": 122,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
