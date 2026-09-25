@@ -24,7 +24,6 @@ def main() -> int:
         }],
         "generationConfig": {
             "maxOutputTokens": 32,
-            "responseMimeType": "application/json",
         },
     }
     request = urllib.request.Request(
