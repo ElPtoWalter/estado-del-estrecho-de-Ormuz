@@ -438,8 +438,6 @@ def generate_editorial_drafts(
             )}]},
             "generationConfig": {
                 "maxOutputTokens": MAX_OUTPUT_TOKENS,
-                "responseMimeType": "application/json",
-                "responseJsonSchema": schema,
             },
         }
         gemini_request = urllib.request.Request(
@@ -456,7 +454,10 @@ def generate_editorial_drafts(
         try:
             with opener(gemini_request, timeout=timeout) as response:
                 envelope = json.loads(response.read().decode("utf-8"))
-            candidate = json.loads(_extract_gemini_content(envelope).strip())
+            raw_content = _extract_gemini_content(envelope).strip()
+            if raw_content.startswith("```"):
+                raw_content = re.sub(r"^```(?:json)?\s*|\s*```$", "", raw_content, flags=re.I)
+            candidate = json.loads(raw_content)
             validated, gemini_status = _validate_candidate(
                 candidate, facts=facts, fallbacks=fallbacks, sources_by_section=sources_by_section
             )
