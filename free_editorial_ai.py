@@ -124,7 +124,7 @@ def _numbers(value: Any) -> set[str]:
 
 def _acronyms(value: Any) -> set[str]:
     text = json.dumps(value, ensure_ascii=False, sort_keys=True) if not isinstance(value, str) else value
-    return set(re.findall(r"(?<![\\w])(?:[A-ZÁÉÍÓÚÜÑ]{2,8})(?![\\w])", text))
+    return set(re.findall(r"(?<![\w])(?:[A-ZÁÉÍÓÚÜÑ]{2,8})(?![\w])", text))
 
 
 _SOURCE_ALIASES: dict[str, tuple[str, ...]] = {
@@ -153,7 +153,7 @@ _SOURCE_ALIASES: dict[str, tuple[str, ...]] = {
 
 
 def _canonical_source(value: str) -> str:
-    text = re.sub(r"\\s+", " ", str(value or "")).strip().casefold().strip(" .")
+    text = re.sub(r"\s+", " ", str(value or "")).strip().casefold().strip(" .")
     for canonical, aliases in _SOURCE_ALIASES.items():
         for alias in aliases:
             if re.fullmatch(rf"{re.escape(alias.casefold())}", text):
@@ -165,7 +165,7 @@ def _mentions_source(paragraph: str, source: str) -> bool:
     canonical = _canonical_source(source)
     aliases = _SOURCE_ALIASES.get(canonical, (source.casefold(),))
     lowered = paragraph.casefold()
-    return any(re.search(rf"(?<!\\w){re.escape(alias.casefold())}(?!\\w)", lowered) for alias in aliases)
+    return any(re.search(rf"(?<!\w){re.escape(alias.casefold())}(?!\w)", lowered) for alias in aliases)
 
 
 def _allowed_source_names(
@@ -192,7 +192,7 @@ def _has_unallowed_known_source(text: str, allowed: set[str]) -> bool:
         if canonical in allowed:
             continue
         for alias in aliases:
-            if re.search(rf"(?<!\\w){re.escape(alias.casefold())}(?!\\w)", lowered):
+            if re.search(rf"(?<!\w){re.escape(alias.casefold())}(?!\w)", lowered):
                 return True
     return False
 
@@ -207,11 +207,11 @@ def _allowed_operational_states(facts: dict[str, Any]) -> set[str]:
         raw.extend(str(operational.get(key, "")) for key in ("state", "label_es", "label_en"))
     joined = " ".join(raw).casefold()
     allowed: set[str] = set()
-    if re.search(r"\\babiert|\\bopen\\b", joined):
+    if re.search(r"\babiert|\bopen\b", joined):
         allowed.update({"abierto", "open"})
-    if re.search(r"\\bcerrad|\\bclosed\\b", joined):
+    if re.search(r"\bcerrad|\bclosed\b", joined):
         allowed.update({"cerrado", "closed"})
-    if re.search(r"\\binciert|\\buncertain\\b|\\bunknown\\b", joined):
+    if re.search(r"\binciert|\buncertain\b|\bunknown\b", joined):
         allowed.update({"incierto", "uncertain"})
     return allowed
 
@@ -221,10 +221,10 @@ def _contradicts_operational_state(text: str, facts: dict[str, Any]) -> bool:
     if not allowed:
         return False
     patterns = (
-        r"\\b(?:está|permanece|figura|se encuentra|continúa)\\s+(?:operativamente\\s+)?(abierto|cerrado|incierto)\\b",
-        r"\\b(?:clasificado|clasifica)\\s+como\\s+(abierto|cerrado|incierto)\\b",
-        r"\\b(?:is|remains|stands|continues)\\s+(?:operationally\\s+)?(open|closed|uncertain)\\b",
-        r"\\bclassified\\s+as\\s+(open|closed|uncertain)\\b",
+        r"\b(?:está|permanece|figura|se encuentra|continúa)\s+(?:operativamente\s+)?(abierto|cerrado|incierto)\b",
+        r"\b(?:clasificado|clasifica)\s+como\s+(abierto|cerrado|incierto)\b",
+        r"\b(?:is|remains|stands|continues)\s+(?:operationally\s+)?(open|closed|uncertain)\b",
+        r"\bclassified\s+as\s+(open|closed|uncertain)\b",
     )
     for pattern in patterns:
         for match in re.finditer(pattern, text, re.I):
@@ -284,7 +284,7 @@ def _validate_language_draft(
     prose = " ".join(
         [headline, deck, *situation, *meaning, *watch, *(section["paragraph"] for section in sections)]
     )
-    words = re.findall(r"\\b\\w+[\\wáéíóúüñ-]*\\b", prose, re.I)
+    words = re.findall(r"\b\w+[\wáéíóúüñ-]*\b", prose, re.I)
     if not 230 <= len(words) <= 1_250:
         return None
     if _numbers(prose) - allowed_numbers:
