@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-24T22:40:33Z",
-  "last_success_at": "2026-09-24T22:40:33Z",
+  "checked_at": "2026-09-25T01:49:01Z",
+  "last_success_at": "2026-09-25T01:49:01Z",
   "last_change_at": "2026-09-19T11:23:56Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-24T22:40:33Z"
+      "observed_at": "2026-09-25T01:49:01Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,21 +32,22 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-24T22:40:33Z"
+      "observed_at": "2026-09-25T01:49:01Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5.32
+      "risk": 4.92
     },
     "independent_sources": {
       "open": 0,
@@ -54,7 +55,7 @@
       "declared": 0,
       "risk": 2
     },
-    "articles_considered": 28,
+    "articles_considered": 24,
     "signals_considered": 5,
     "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
@@ -79,7 +80,7 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-24T22:40:33Z"
+      "observed_at": "2026-09-25T01:49:01Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -109,7 +110,7 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-24T22:40:33Z"
+      "observed_at": "2026-09-25T01:49:01Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -674,7 +675,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-24T22:40:54Z",
+    "generated_at": "2026-09-25T01:49:43Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -708,18 +709,18 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 42.185,
+      "passage": 41.145,
       "closure": 0,
       "traffic_reduction": 6.302,
-      "access_restriction": 29.34,
-      "risk": 75.36
+      "access_restriction": 29.62,
+      "risk": 72.28
     },
     "source_counts": {
-      "passage": 24,
+      "passage": 23,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-09-24T22:32:06Z",
+    "latest_confirmed_transit_at": "2026-09-25T00:05:25Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -790,7 +791,7 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 4.0,
+        "effective_weight": 3.6,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -864,7 +865,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 123,
+      "signals_considered": 119,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
