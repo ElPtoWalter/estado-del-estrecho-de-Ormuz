@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-25T18:49:41Z",
-  "last_success_at": "2026-09-25T18:49:41Z",
+  "checked_at": "2026-09-25T22:42:33Z",
+  "last_success_at": "2026-09-25T22:42:33Z",
   "last_change_at": "2026-09-19T11:23:56Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,23 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Oil prices settle up about 3% as Houthi attack on Saudi Arabia lifts supply fears - Reuters",
+      "title": "How European governments are trying to ease the fuel price shock",
+      "source_name": "Euronews",
+      "source_url": "https://www.euronews.com/2026/09/25/how-european-governments-are-trying-to-ease-the-fuel-price-shock",
+      "published_at": "2026-09-25T06:51:11Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-09-25T22:42:33Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
       "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOR1FxSEFPZkVpeHV0LS1WTURzc3lOWWM3d0dfTG1mQ0hBWmZiLWhia1FPbnUzdm5yMVhuZE1RenYyOTNqYmFqT2d5MzVtNE1IcHJCNGJ4aXU0US1Tc09OWnJINzRpQkFTWXdsczlhcE50N25wT052OUZhS21QOG9haGV4XzFTZnQ4NzNTWFlVbU1QcDRyZC0yejVxX1dabVZmWHMyMVM0dWE5RGpNWXZNVHBn?oc=5",
-      "published_at": "2026-09-24T21:15:24Z",
+      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R?oc=5",
+      "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-25T18:49:41Z"
+      "observed_at": "2026-09-25T22:42:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,40 +42,39 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-25T18:49:41Z"
+      "observed_at": "2026-09-25T22:42:33Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 4.32
+      "risk": 6.3
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 2
+      "risk": 3
     },
-    "articles_considered": 25,
-    "signals_considered": 3,
-    "current_cycle_evidence": 2,
+    "articles_considered": 35,
+    "signals_considered": 4,
+    "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-09-24T21:15:24Z",
-    "current_cycle_count": 2,
+    "as_of": "2026-09-25T06:51:11Z",
+    "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -80,7 +89,7 @@
       "published_at": "2026-09-25T06:51:11Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-25T14:06:11Z"
+      "observed_at": "2026-09-25T22:42:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -100,7 +109,7 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-25T14:06:11Z"
+      "observed_at": "2026-09-25T22:42:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -130,7 +139,7 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-25T18:49:41Z"
+      "observed_at": "2026-09-25T22:42:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -675,7 +684,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-25T18:50:24Z",
+    "generated_at": "2026-09-25T22:42:49Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -709,14 +718,14 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 35.692,
+      "passage": 32.936,
       "closure": 0,
-      "traffic_reduction": 8.035,
-      "access_restriction": 29.12,
-      "risk": 63.5
+      "traffic_reduction": 9.035,
+      "access_restriction": 23.78,
+      "risk": 61.66
     },
     "source_counts": {
-      "passage": 22,
+      "passage": 21,
       "closure": 0,
       "primary_sources": 2
     },
@@ -746,30 +755,13 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Oil prices settle up about 3% as Houthi attack on Saudi Arabia lifts supply fears - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOR1FxSEFPZkVpeHV0LS1WTURzc3lOWWM3d0dfTG1mQ0hBWmZiLWhia1FPbnUzdm5yMVhuZE1RenYyOTNqYmFqT2d5MzVtNE1IcHJCNGJ4aXU0US1Tc09OWnJINzRpQkFTWXdsczlhcE50N25wT052OUZhS21QOG9haGV4XzFTZnQ4NzNTWFlVbU1QcDRyZC0yejVxX1dabVZmWHMyMVM0dWE5RGpNWXZNVHBn?oc=5",
-        "published_at": "2026-09-24T21:15:24Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
         "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R?oc=5",
         "published_at": "2026-09-24T16:50:04Z",
         "tier": 4,
         "weight": 4.0,
-        "provider": "Google News RSS",
+        "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
@@ -814,6 +806,23 @@
       },
       {
         "kind": "RISK_SEVERE",
+        "title": "Oil prices settle up about 3% as Houthi attack on Saudi Arabia lifts supply fears - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOR1FxSEFPZkVpeHV0LS1WTURzc3lOWWM3d0dfTG1mQ0hBWmZiLWhia1FPbnUzdm5yMVhuZE1RenYyOTNqYmFqT2d5MzVtNE1IcHJCNGJ4aXU0US1Tc09OWnJINzRpQkFTWXdsczlhcE50N25wT052OUZhS21QOG9haGV4XzFTZnQ4NzNTWFlVbU1QcDRyZC0yejVxX1dabVZmWHMyMVM0dWE5RGpNWXZNVHBn?oc=5",
+        "published_at": "2026-09-24T01:17:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.6,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
         "title": "UPDATED: Seafarer killed in latest Hormuz attack - Lloyd's List",
         "source": "Lloyd's List",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQlllaGk2SERuY2pUTTFDRWNNSVYyU3RLSWY0TkdnQ0RMckRfcHdibGlJSE9VaElMdTlRaDQ5Z2JKUEQ0S2RJOWpUZUY5Uk5nVVF1LWRnVkdRYmJDSjVJc3pnVHFGZnN4TzlmczJhUEV2MjVUNzY5bG1ISVV5bUpHblFoMklkM2lzVjVsUmV3?oc=5",
@@ -834,7 +843,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-25T18:50:24Z",
+        "published_at": "2026-09-25T22:42:49Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -848,10 +857,10 @@
       },
       {
         "kind": "TRAFFIC_REDUCED",
-        "title": "Oil Prices Decline on Hopes of a Hormuz Deal - bloomberg.com",
-        "source": "bloomberg.com",
+        "title": "Oil Prices Decline on Hopes of a Hormuz Deal - Bloomberg.com",
+        "source": "Bloomberg.com",
         "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZ244NVRTa20yWml0U2RMRDFyc2R5T3NLVG11a2tuMERyLU56R2wwM0o0a2pzMElPMlNUUVhmUTFuV29YS0tIMmoxUEtDb21sOEV2clEzekJIYldaM3paN1duR0J2cmhJZ0t5Y2I5My1VTE0tbFRyOWJMYmZoQTZUYlRNYXdVWGdPUDh5c2M1OXBBX2dJSWRYb3ZQclBFNzA?oc=5",
-        "published_at": "2026-09-25T16:56:08Z",
+        "published_at": "2026-09-25T18:26:08Z",
         "tier": 3,
         "weight": 3.0,
         "provider": "Google News RSS",
@@ -865,7 +874,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 113,
+      "signals_considered": 105,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
