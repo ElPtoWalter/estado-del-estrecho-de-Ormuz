@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-25T08:07:28Z",
-  "last_success_at": "2026-09-25T08:07:28Z",
+  "checked_at": "2026-09-25T14:06:11Z",
+  "last_success_at": "2026-09-25T14:06:11Z",
   "last_change_at": "2026-09-19T11:23:56Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,23 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "How European governments are trying to ease the fuel price shock",
+      "source_name": "Euronews",
+      "source_url": "https://www.euronews.com/2026/09/25/how-european-governments-are-trying-to-ease-the-fuel-price-shock",
+      "published_at": "2026-09-25T06:51:11Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-09-25T14:06:11Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R?oc=5",
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-25T08:07:28Z"
+      "observed_at": "2026-09-25T14:06:11Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,40 +42,39 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-25T08:07:28Z"
+      "observed_at": "2026-09-25T14:06:11Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 4.92
+      "risk": 6.3
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 2
+      "risk": 3
     },
-    "articles_considered": 20,
+    "articles_considered": 30,
     "signals_considered": 4,
-    "current_cycle_evidence": 2,
+    "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-09-24T16:50:04Z",
-    "current_cycle_count": 2,
+    "as_of": "2026-09-25T06:51:11Z",
+    "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -74,13 +83,23 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "How European governments are trying to ease the fuel price shock",
+      "source_name": "Euronews",
+      "source_url": "https://www.euronews.com/2026/09/25/how-european-governments-are-trying-to-ease-the-fuel-price-shock",
+      "published_at": "2026-09-25T06:51:11Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-09-25T14:06:11Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R?oc=5",
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-25T08:07:28Z"
+      "observed_at": "2026-09-25T14:06:11Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -110,7 +129,7 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-25T08:07:28Z"
+      "observed_at": "2026-09-25T14:06:11Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -661,21 +680,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-09-13T12:49:09Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Saudi Arabia shuts key oil pipeline after drone attack launched from Iraq - BBC",
-      "source_name": "BBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1WYkFDZzd0RXNwRTVPRHhYcTlPRG12WmJXWU9fYVZ6YjBjOUFUMXNoZEhYMjRpcEF4WGNhNmVnQzZ4eDl5Y0d3dDZQTVZnd0xNWExUY2JvSWhxdw?oc=5",
-      "published_at": "2026-09-12T12:15:50Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-09-14T05:21:03Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-25T08:08:10Z",
+    "generated_at": "2026-09-25T14:06:57Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -687,21 +696,21 @@
     "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
-      "traffic": "SEVERELY_REDUCED",
+      "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
       "legal": "DISPUTED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
-      "traffic": "Muy reducido",
+      "traffic": "Reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
       "legal": "Régimen disputado"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
-      "traffic": "Severely reduced",
+      "traffic": "Reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
       "legal": "Disputed regime"
@@ -709,18 +718,18 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 39.663,
+      "passage": 38.853,
       "closure": 0,
-      "traffic_reduction": 10.667,
-      "access_restriction": 32.74,
-      "risk": 72.1
+      "traffic_reduction": 7.035,
+      "access_restriction": 30.98,
+      "risk": 69.98
     },
     "source_counts": {
-      "passage": 23,
+      "passage": 22,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-09-25T06:01:17Z",
+    "latest_confirmed_transit_at": "2026-09-25T07:18:40Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -830,42 +839,42 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "NEUTRAL_TRANSIT_PERMITTED",
-        "title": "Putin and Saudi crown prince call for safe passage via Hormuz, Bab el-Mandeb - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOVFBDYXJEV2FiaVcyUWduWFIyWjJSRVlFb2NBRTJzX2ozOTFiUk5famtnNDFoRUUzRHNKZDFrNU5wM1JvSlliOEJNNGFzS2FIcWFBTlcxU201ZkdKdndlMngtaVg1N2hrUTFvZnZvcHFxVnFNNEJsVDZLZjl1RXlVUHlyWVI3YWY1WTRGdW5DbUhZWnRmTWhuNjdIdU1KVWpzTnQ3YVYyMUZFQXVLZW5MSVNHUjBSWmpkSGRZckJR?oc=5",
-        "published_at": "2026-09-22T12:57:16Z",
+        "kind": "RISK_SEVERE",
+        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+        "source": "Lloyd's List",
+        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+        "published_at": "2026-09-25T14:06:57Z",
         "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
+        "weight": 3.0,
+        "provider": "Lloyd's List hot topic",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 3.12,
-        "kind_label_es": "Tránsito neutral permitido",
-        "kind_label_en": "Neutral transit permitted"
+        "effective_weight": 3.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Iran ready to reopen Strait of Hormuz if US eases military pressure and lifts blockade - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQNEdfLVlEeU1GTjFkdDRlZ2NCN19kT0tNTEdKTnJBM29mNGk4OW9EMURHRm9WTEljdFBQY3Y1OTB6VnJBMFRMclpzV2xrV0M4NVMzZld6MlFJeHB1Rnp3Y01aVDJ4STB0Vk80bVE5X2JGaHRPeXlHM1h0WExNNHRlWEhuZkhjWWF0ajJYMGxsX0l1djRWYzRJbUZnbkpTM0k2LWZiT1AtWHA1QnhuajhwOVhjOExkWmNOcjkwXzJJTWJUWWlUazVtTDhR?oc=5",
-        "published_at": "2026-09-22T10:29:43Z",
-        "tier": 4,
-        "weight": 4.0,
+        "kind": "TRAFFIC_REDUCED",
+        "title": "Oil Prices Decline on Hopes of a Hormuz Deal - Bloomberg.com",
+        "source": "Bloomberg.com",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZ244NVRTa20yWml0U2RMRDFyc2R5T3NLVG11a2tuMERyLU56R2wwM0o0a2pzMElPMlNUUVhmUTFuV29YS0tIMmoxUEtDb21sOEV2clEzekJIYldaM3paN1duR0J2cmhJZ0t5Y2I5My1VTE0tbFRyOWJMYmZoQTZUYlRNYXdVWGdPUDh5c2M1OXBBX2dJSWRYb3ZQclBFNzA?oc=5",
+        "published_at": "2026-09-25T10:56:06Z",
+        "tier": 3,
+        "weight": 3.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 3.12,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
+        "effective_weight": 3.0,
+        "kind_label_es": "Tráfico reducido",
+        "kind_label_en": "Reduced traffic"
       }
     ],
     "diagnostics": {
-      "signals_considered": 122,
+      "signals_considered": 118,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
