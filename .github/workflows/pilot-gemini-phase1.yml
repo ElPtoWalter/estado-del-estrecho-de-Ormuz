@@ -2,6 +2,10 @@ name: Piloto Fase 1 Gemini
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/phase1-gemini-pilot.trigger"
 
 permissions:
   contents: read
