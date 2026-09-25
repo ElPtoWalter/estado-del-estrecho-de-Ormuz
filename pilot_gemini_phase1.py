@@ -23,7 +23,6 @@ def main() -> int:
             "parts": [{"text": 'Devuelve exclusivamente este JSON: {"ok":true}'}],
         }],
         "generationConfig": {
-            "temperature": 0,
             "maxOutputTokens": 32,
             "responseMimeType": "application/json",
         },
