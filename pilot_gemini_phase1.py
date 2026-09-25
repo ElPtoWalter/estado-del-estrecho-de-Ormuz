@@ -42,7 +42,18 @@ def main() -> int:
         print("Gemini API: conexión correcta")
         return 0
     except urllib.error.HTTPError as exc:
-        print(f"Gemini API: HTTP {exc.code}")
+        detail = ""
+        try:
+            body = json.loads(exc.read().decode("utf-8", errors="replace"))
+            error = body.get("error") if isinstance(body, dict) else None
+            if isinstance(error, dict):
+                status = str(error.get("status") or "").strip()
+                message = str(error.get("message") or "").strip().replace("\n", " ")
+                if message:
+                    detail = f" · {status}: {message[:500]}" if status else f" · {message[:500]}"
+        except Exception:
+            detail = ""
+        print(f"Gemini API: HTTP {exc.code}{detail}")
         return 4
     except (urllib.error.URLError, TimeoutError):
         print("Gemini API: error de red")
