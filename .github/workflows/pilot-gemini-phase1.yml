@@ -1,0 +1,39 @@
+name: Piloto Fase 1 Gemini
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/phase1-gemini-pilot.trigger"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ormuz-gemini-phase1-pilot
+  cancel-in-progress: true
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Descargar rama seleccionada
+        uses: actions/checkout@v6
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Validar integración editorial
+        run: |
+          python -m py_compile free_editorial_ai.py test_free_editorial_ai.py
+          python -m unittest -v test_free_editorial_ai.py
+
+      - name: Comprobar acceso real a Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+        run: python pilot_gemini_phase1.py
