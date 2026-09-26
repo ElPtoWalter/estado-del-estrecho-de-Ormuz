@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-26T01:52:23Z",
-  "last_success_at": "2026-09-26T01:52:23Z",
+  "checked_at": "2026-09-26T07:57:34Z",
+  "last_success_at": "2026-09-26T07:57:34Z",
   "last_change_at": "2026-09-19T11:23:56Z",
   "verification_ok": true,
   "stale": false,
@@ -16,23 +16,13 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "How European governments are trying to ease the fuel price shock",
-      "source_name": "Euronews",
-      "source_url": "https://www.euronews.com/2026/09/25/how-european-governments-are-trying-to-ease-the-fuel-price-shock",
-      "published_at": "2026-09-25T06:51:11Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-26T01:52:23Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - reuters.com",
+      "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R?oc=5",
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-26T01:52:23Z"
+      "observed_at": "2026-09-26T07:57:34Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,39 +32,40 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-26T01:52:23Z"
+      "observed_at": "2026-09-26T07:57:34Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5.97
+      "risk": 3.52
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 3
+      "risk": 2
     },
     "articles_considered": 32,
-    "signals_considered": 4,
-    "current_cycle_evidence": 3,
+    "signals_considered": 2,
+    "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-09-25T06:51:11Z",
-    "current_cycle_count": 3,
+    "as_of": "2026-09-24T16:50:04Z",
+    "current_cycle_count": 2,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -103,6 +94,16 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
+      "source_name": "Reuters",
+      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R?oc=5",
+      "published_at": "2026-09-24T16:50:04Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-09-26T07:57:34Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - reuters.com",
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R?oc=5",
@@ -110,16 +111,6 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-09-26T01:52:23Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R?oc=5",
-      "published_at": "2026-09-24T16:50:04Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-09-25T22:42:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -149,7 +140,7 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-26T01:52:23Z"
+      "observed_at": "2026-09-26T07:57:34Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -684,7 +675,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-26T01:52:41Z",
+    "generated_at": "2026-09-26T07:58:09Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -718,16 +709,16 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 29.608,
+      "passage": 28.149,
       "closure": 0,
-      "traffic_reduction": 7.0,
-      "access_restriction": 24.38,
-      "risk": 61.42
+      "traffic_reduction": 7.8,
+      "access_restriction": 18.88,
+      "risk": 57.14
     },
     "source_counts": {
-      "passage": 18,
+      "passage": 17,
       "closure": 0,
-      "primary_sources": 3
+      "primary_sources": 2
     },
     "latest_confirmed_transit_at": "2026-09-25T06:01:17Z",
     "legacy_engine": {
@@ -755,7 +746,7 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - reuters.com",
+        "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R?oc=5",
         "published_at": "2026-09-24T16:50:04Z",
@@ -789,8 +780,8 @@
       },
       {
         "kind": "ACCESS_RESTRICTED",
-        "title": "US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - reuters.com",
-        "source": "reuters.com",
+        "title": "US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters",
+        "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYXMwQlBmRVM4WXVFeXhQVkcyYnpaUzE3dk1wUWswS3pZWDBKTGNWVEpqdFNsWXZEYm5PQ3pSVmRhVFl1empQN3p6SFY0YTVHRmxxNWpxbXFNWVlCOEF5T0tBLVp0MzNyWVlyQnpkbUtyVzNTeGtxQXZVc3hhb0E4aVV6bU5QVEdHMFhCaXRhV3hxQVJ3MWRXNF9tNG5EeUVzcTdEOUhGSExiS3F2SUlkS2xzRk1mNlg4bkRhR0FoaE5QZw?oc=5",
         "published_at": "2026-09-24T16:18:00Z",
         "tier": 4,
@@ -806,8 +797,8 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Oil prices settle up about 3% as Houthi attack on Saudi Arabia lifts supply fears - reuters.com",
-        "source": "reuters.com",
+        "title": "Oil prices settle up about 3% as Houthi attack on Saudi Arabia lifts supply fears - Reuters",
+        "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOR1FxSEFPZkVpeHV0LS1WTURzc3lOWWM3d0dfTG1mQ0hBWmZiLWhia1FPbnUzdm5yMVhuZE1RenYyOTNqYmFqT2d5MzVtNE1IcHJCNGJ4aXU0US1Tc09OWnJINzRpQkFTWXdsczlhcE50N25wT052OUZhS21QOG9haGV4XzFTZnQ4NzNTWFlVbU1QcDRyZC0yejVxX1dabVZmWHMyMVM0dWE5RGpNWXZNVHBn?oc=5",
         "published_at": "2026-09-24T01:17:00Z",
         "tier": 4,
@@ -843,7 +834,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-26T01:52:41Z",
+        "published_at": "2026-09-26T07:58:09Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -874,7 +865,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 97,
+      "signals_considered": 89,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
