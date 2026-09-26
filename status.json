@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-26T17:21:31Z",
-  "last_success_at": "2026-09-26T17:21:31Z",
+  "checked_at": "2026-09-26T20:05:41Z",
+  "last_success_at": "2026-09-26T20:05:41Z",
   "last_change_at": "2026-09-19T11:23:56Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-26T17:21:31Z"
+      "observed_at": "2026-09-26T20:05:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-26T17:21:31Z"
+      "observed_at": "2026-09-26T20:05:41Z"
     }
   ],
   "diagnostics": {
@@ -55,7 +55,7 @@
       "declared": 0,
       "risk": 2
     },
-    "articles_considered": 34,
+    "articles_considered": 32,
     "signals_considered": 2,
     "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
@@ -100,7 +100,7 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-26T17:21:31Z"
+      "observed_at": "2026-09-26T20:05:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -140,7 +140,7 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-26T17:21:31Z"
+      "observed_at": "2026-09-26T20:05:41Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -675,7 +675,7 @@
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-26T17:22:08Z",
+    "generated_at": "2026-09-26T20:06:29Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -709,14 +709,14 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 19.968,
+      "passage": 18.486,
       "closure": 0,
-      "traffic_reduction": 8.6,
-      "access_restriction": 14.5,
-      "risk": 37.58
+      "traffic_reduction": 4.7,
+      "access_restriction": 15.14,
+      "risk": 37.14
     },
     "source_counts": {
-      "passage": 12,
+      "passage": 11,
       "closure": 0,
       "primary_sources": 2
     },
@@ -727,6 +727,23 @@
       "confidence": "MEDIA"
     },
     "evidence": [
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYXMwQlBmRVM4WXVFeXhQVkcyYnpaUzE3dk1wUWswS3pZWDBKTGNWVEpqdFNsWXZEYm5PQ3pSVmRhVFl1empQN3p6SFY0YTVHRmxxNWpxbXFNWVlCOEF5T0tBLVp0MzNyWVlyQnpkbUtyVzNTeGtxQXZVc3hhb0E4aVV6bU5QVEdHMFhCaXRhV3hxQVJ3MWRXNF9tNG5EeUVzcTdEOUhGSExiS3F2SUlkS2xzRk1mNlg4bkRhR0FoaE5QZw?oc=5",
+        "published_at": "2026-09-24T17:12:48Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.12,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
+      },
       {
         "kind": "RISK_SEVERE",
         "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
@@ -762,28 +779,11 @@
         "kind_label_en": "Confirmed transit"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYXMwQlBmRVM4WXVFeXhQVkcyYnpaUzE3dk1wUWswS3pZWDBKTGNWVEpqdFNsWXZEYm5PQ3pSVmRhVFl1empQN3p6SFY0YTVHRmxxNWpxbXFNWVlCOEF5T0tBLVp0MzNyWVlyQnpkbUtyVzNTeGtxQXZVc3hhb0E4aVV6bU5QVEdHMFhCaXRhV3hxQVJ3MWRXNF9tNG5EeUVzcTdEOUhGSExiS3F2SUlkS2xzRk1mNlg4bkRhR0FoaE5QZw?oc=5",
-        "published_at": "2026-09-24T16:18:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.12,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
-      },
-      {
         "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-26T17:22:08Z",
+        "published_at": "2026-09-26T20:06:29Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -796,26 +796,9 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "TRAFFIC_REDUCED",
-        "title": "Oil Prices Decline on Hopes of a Hormuz Deal - Bloomberg.com",
-        "source": "Bloomberg.com",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZ244NVRTa20yWml0U2RMRDFyc2R5T3NLVG11a2tuMERyLU56R2wwM0o0a2pzMElPMlNUUVhmUTFuV29YS0tIMmoxUEtDb21sOEV2clEzekJIYldaM3paN1duR0J2cmhJZ0t5Y2I5My1VTE0tbFRyOWJMYmZoQTZUYlRNYXdVWGdPUDh5c2M1OXBBX2dJSWRYb3ZQclBFNzA?oc=5",
-        "published_at": "2026-09-25T18:26:08Z",
-        "tier": 3,
-        "weight": 3.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.0,
-        "kind_label_es": "Tráfico reducido",
-        "kind_label_en": "Reduced traffic"
-      },
-      {
         "kind": "TRANSIT_CONFIRMED",
-        "title": "Qatar Boosts LNG Traffic Through Hormuz as Global Shortage Bites - Bloomberg.com",
-        "source": "Bloomberg.com",
+        "title": "Qatar Boosts LNG Traffic Through Hormuz as Global Shortage Bites - bloomberg.com",
+        "source": "bloomberg.com",
         "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSTBoQ0JTSVJlUS1JN0JhVnVRVEh3eGh0TWc3c1BYZm55V0NlVEwwRml4ZV8yRlBGakFOSlpqOUdOMlJiaEVvRDJkUkxOeWxkQmhVQ014OF9fdk16Z3VNMkJIS21UdU1qOHN5WUhZM1VrNExKcEFFeXR0RDdmbXllU0dFYk5fdVR5WF81RWwzakNNdG9xZWJteEN3S280THRVTFJpWkN2T3EwTXNpRFNwaGg1UzFiUQ?oc=5",
         "published_at": "2026-09-25T02:13:00Z",
         "tier": 3,
@@ -862,10 +845,27 @@
         "effective_weight": 1.24,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "TRAFFIC_REDUCED",
+        "title": "Oil Prices Fall for Fourth Day as Supply Concerns Ease - WSJ",
+        "source": "WSJ",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcEZWRkFoeVdVQnQtNnE2OXRQM2ViMkhkdk41di05ZWhjQXgwRGJFaW12REM2ZnVxMl9zYUR6Vlh2NVVJRFk4X2RUUk9HRXZDUVVHWmw0YjRlcDFsTTlwQjYxZGlwRnVXTUUxTnU5ZzFXMy02Ri1TNkE3Y1ZTa29yWFR2VVZoYWQ0eEttX081M0w5bkpIZ1FmNFdOOGNINWR3LW9N?oc=5",
+        "published_at": "2026-09-26T18:53:30Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Tráfico reducido",
+        "kind_label_en": "Reduced traffic"
       }
     ],
     "diagnostics": {
-      "signals_considered": 73,
+      "signals_considered": 71,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
