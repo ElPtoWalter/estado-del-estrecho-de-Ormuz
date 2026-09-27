@@ -14,7 +14,7 @@ especulativos nunca se convierten en hechos.
 from __future__ import annotations
 
 from journal_evidence import classify_headline, identity, reading, section_note
-from free_editorial_ai import generate_editorial_drafts
+from free_editorial_ai import factual_packet_digest, generate_editorial_drafts
 
 import argparse
 import email.utils
@@ -560,6 +560,17 @@ def selected_narrative_items(items: list[NewsItem]) -> list[NewsItem]:
     return selected
 
 
+def relevance_audit(item: NewsItem, new_items: list[NewsItem]) -> dict[str, Any]:
+    """Expose the small deterministic score used to explain source relevance."""
+    components = {
+        "source_tier": max(0, min(5, int(item.tier))),
+        "new_today": 2 if item in new_items else 0,
+        "operational_topic": 2 if item.topic in {"maritime", "security"} else 1,
+        "factual_headline": 0 if item.analytical else 1,
+    }
+    return {"score": sum(components.values()), "components": components}
+
+
 def _journal_topics(news: list[NewsItem]) -> list[str]:
     counts = Counter(item.topic for item in news if item.topic in TOPIC_PATTERNS and not item.analytical)
     topics = [topic for topic, _ in counts.most_common()]
@@ -633,7 +644,7 @@ def editorial_drafts(
     current_fp: dict[str, Any],
     local_dt: datetime,
     editorial: dict[str, Any],
-) -> tuple[dict[str, dict[str, Any]], str, str]:
+) -> tuple[dict[str, dict[str, Any]], str, str, dict[str, Any]]:
     fallbacks = {
         lang: fallback_editorial_draft(
             status, operational, news, previous_fp, current_fp, local_dt, lang
@@ -642,8 +653,7 @@ def editorial_drafts(
     }
     usable = [item for item in news if not item.analytical]
     independent = {item.source.casefold() for item in usable if item.source}
-    if len(usable) < 2 or len(independent) < 2:
-        return fallbacks, "rules", "insufficient-sources"
+    insufficient_sources = len(usable) < 2 or len(independent) < 2
 
     topics = _journal_topics(news)
     ai_items: list[NewsItem] = []
@@ -704,17 +714,29 @@ def editorial_drafts(
                 "topic": item.topic,
                 "analytical_headline": item.analytical,
                 "new_today": item in new_items,
+                "relevance": relevance_audit(item, new_items),
             }
             for item in ai_items
         ],
     }
-    return generate_editorial_drafts(
+    if insufficient_sources:
+        return fallbacks, "rules", "insufficient-sources", {
+            "validator_version": 2,
+            "factual_packet_sha256": factual_packet_digest(facts),
+            "provider": "rules",
+            "status": "insufficient-sources",
+            "attempts": [],
+        }
+    trace: dict[str, Any] = {}
+    drafts, engine, assistant_status = generate_editorial_drafts(
         site_name="Estrecho Ormuz",
         site_url=BASE_URL,
         facts=facts,
         fallbacks=fallbacks,
         sources_by_section=sources_by_section,
+        trace=trace,
     )
+    return drafts, engine, assistant_status, trace
 
 
 def build_lead(status: dict[str, Any], operational: dict[str, Any], local_dt: datetime, lang: str) -> str:
@@ -977,9 +999,9 @@ def render_page(
     limit = editorial.get("limit_es" if lang == "es" else "limit_en") or ""
     method_note = (
         "La síntesis se redacta con asistencia externa gratuita sobre un paquete factual cerrado. La herramienta no busca noticias, no elige fuentes y no decide el estado. La salida se descarta si altera secciones, omite atribuciones o incorpora cifras que no estaban en los datos seleccionados."
-        if editor_engine == "openrouter-free" and lang == "es"
+        if editor_engine in {"gemini", "openrouter-free"} and lang == "es"
         else "The synthesis uses a free external writing assistant over a closed factual packet. The tool does not search for news, choose sources or determine the status. Its output is discarded if it changes sections, omits attribution or introduces figures absent from the selected data."
-        if editor_engine == "openrouter-free"
+        if editor_engine in {"gemini", "openrouter-free"}
         else "Este parte se compone mediante reglas locales y selección automática de titulares. No se ha leído ni verificado automáticamente el texto íntegro de cada noticia, ni se atribuye una revisión humana a cada edición. La fecha de un feed puede corresponder a una actualización, no al momento del hecho. Las marcas de medios diferentes tampoco garantizan investigación independiente. Para el análisis propio y reproducible, consulta el informe de datos del monitor."
         if lang == "es"
         else "This digest uses local rules and automated headline selection. Full article texts are not automatically read or verified, and no per-edition human review is claimed. Feed dates may reflect updates rather than event dates. Different publisher names do not guarantee independent reporting."
@@ -1167,7 +1189,7 @@ def main() -> int:
     date_iso = local_now.date().isoformat()
     generated_at = iso_z(now)
     editorial = build_editorial_context(root, news, new_items, local_now)
-    drafts, editor_engine, ai_status = editorial_drafts(
+    drafts, editor_engine, ai_status, editorial_trace = editorial_drafts(
         status, operational, news, new_items, previous_fp, current_fp, local_now, editorial
     )
     draft_es, draft_en = drafts["es"], drafts["en"]
@@ -1218,6 +1240,7 @@ def main() -> int:
         "fetch_errors": fetch_errors,
         "editor_engine": editor_engine,
         "editor_assistant_status": ai_status,
+        "editorial_trace": editorial_trace,
         "editorial": {k: v for k, v in editorial.items() if k != "signal"},
         "url_es": f"{BASE_URL}/diario.html",
         "url_en": f"{BASE_URL}/en-diary.html",
@@ -1296,6 +1319,7 @@ def main() -> int:
         "operational_intelligence_used": bool(operational),
         "editor_engine": editor_engine,
         "editor_assistant_status": ai_status,
+        "editorial_trace": editorial_trace,
     })
 
     print(

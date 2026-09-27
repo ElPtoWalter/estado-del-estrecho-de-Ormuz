@@ -231,7 +231,13 @@ class PromotionTests(unittest.TestCase):
     @unittest.skipUnless(shutil.which('node'), 'Node is required for the responsive placement test')
     def test_responsive_relocation_script(self):
         root = Path(__file__).parent
-        result = subprocess.run(['node', '--test', str(root / 'test_own_projects.cjs')], capture_output=True, text=True)
+        help_result = subprocess.run(['node', '--help'], capture_output=True, text=True)
+        isolation = ['--test-isolation=none'] if '--test-isolation' in help_result.stdout else []
+        result = subprocess.run(
+            ['node', '--test', *isolation, str(root / 'test_own_projects.cjs')],
+            capture_output=True,
+            text=True,
+        )
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
 

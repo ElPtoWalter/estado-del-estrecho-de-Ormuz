@@ -10,6 +10,28 @@ import generate_daily_journal as journal
 
 
 class DailyJournalV8Tests(unittest.TestCase):
+    def test_relevance_score_exposes_each_deterministic_component(self):
+        item = journal.NewsItem(
+            title="Strait of Hormuz shipping traffic continues",
+            source="Reuters",
+            url="https://example.com/a",
+            published_at="2026-08-31T05:00:00Z",
+            tier=5,
+            topic="maritime",
+            query="x",
+        )
+        audit = journal.relevance_audit(item, [item])
+        self.assertEqual(audit["score"], 10)
+        self.assertEqual(
+            audit["components"],
+            {
+                "source_tier": 5,
+                "new_today": 2,
+                "operational_topic": 2,
+                "factual_headline": 1,
+            },
+        )
+
     def test_delayed_schedule_still_recovers_missing_daily_edition(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -148,6 +170,8 @@ class DailyJournalV8Tests(unittest.TestCase):
             latest = json.loads((root / "journal-latest.json").read_text(encoding="utf-8"))
             self.assertTrue(latest["material_archive"])
             self.assertEqual(latest["editorial"]["version"], journal.EDITORIAL_VERSION)
+            self.assertEqual(latest["editorial_trace"]["provider"], "rules")
+            self.assertEqual(len(latest["editorial_trace"]["factual_packet_sha256"]), 64)
             self.assertIn("LA SEÑAL DEL DÍA", (root / "diario.html").read_text(encoding="utf-8"))
             self.assertIn("Lo que aún no sabemos", (root / "diario.html").read_text(encoding="utf-8"))
             self.assertIn("JOURNAL_V8_HOME_START", (root / "index.html").read_text(encoding="utf-8"))

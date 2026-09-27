@@ -16,7 +16,7 @@ Un error 429, timeout, fallo de red o salida inválida nunca debe bloquear la ed
 2. No actives Billing para esta fase.
 3. En GitHub abre **Settings → Secrets and variables → Actions → Secrets**.
 4. Crea `GEMINI_API_KEY` con la clave de AI Studio.
-5. Opcionalmente, en **Variables**, crea `GEMINI_MODEL`.
+5. Opcionalmente, en **Variables**, crea `GEMINI_MODEL`. El valor predeterminado es `gemini-3.5-flash-lite`; también se admiten `gemini-3.5-flash`, `gemini-3.8-flash`, `gemini-2.5-flash-lite` y `gemini-2.5-flash`.
 
 El código solo acepta una lista explícita de modelos Gemini aprobados para este flujo gratuito. Si la variable contiene otro nombre, se sustituye por el modelo gratuito por defecto configurado en el código. No existe salto automático a un modelo de pago.
 
@@ -35,14 +35,15 @@ Solo se admite `openrouter/free` o un identificador que termine en `:free`. Cual
 - Los titulares y datos externos se tratan siempre como datos, nunca como instrucciones.
 - La respuesta debe conservar idiomas y secciones.
 - Cada sección debe atribuirse a una fuente permitida.
-- Se rechazan cifras nuevas, fuentes conocidas no autorizadas, acrónimos nuevos sospechosos, URLs/HTML/Markdown extraño y cambios incompatibles con el estado operativo.
+- Se rechazan cifras, fechas, fuentes, atribuciones, personas u organizaciones nuevas; acrónimos sospechosos; URLs/HTML/Markdown extraño; cambios incompatibles con el estado operativo; y frases que convierten una declaración en hecho confirmado.
 - Gemini y OpenRouter pasan por el mismo validador.
 - Ante cualquier rechazo se usa el siguiente fallback.
 - Las claves nunca se almacenan en archivos públicos ni se incluyen en la URL.
+- La traza interna conserva proveedor, estado, intentos, versión del validador y huella SHA-256 del paquete factual, nunca credenciales ni respuestas remotas.
 
 ## Piloto
 
-El workflow manual `.github/workflows/pilot-gemini-phase1.yml` es de solo lectura. Ejecuta tests y una llamada mínima a Gemini, pero no genera Diario, no modifica archivos, no hace commit, no hace push, no ejecuta IndexNow y no envía notificaciones.
+El workflow manual `.github/workflows/pilot-gemini-phase1.yml` es de solo lectura. Ejecuta todos los tests y una llamada mínima a Gemini, pero no genera Diario, no modifica archivos, no hace commit, no hace push, no ejecuta IndexNow y no envía notificaciones. El script solo imprime confirmación de conexión o el código HTTP, sin cuerpo de respuesta.
 
 No ejecutar el piloto real hasta autorizarlo explícitamente.
 
