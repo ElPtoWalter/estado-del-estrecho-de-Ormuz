@@ -8,23 +8,28 @@ on:
         required: true
         default: phase1-gemini-newsroom
         type: string
+  pull_request:
+    types: [synchronize]
+    paths:
+      - ".github/phase1-gemini-pilot.authorized-20260927"
 
 permissions:
   contents: read
 
 concurrency:
-  group: pilot-gemini-phase1-${{ inputs.ref }}
+  group: pilot-gemini-phase1-${{ inputs.ref || github.event.pull_request.head.ref || github.ref }}
   cancel-in-progress: true
 
 jobs:
   controlled-pilot:
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'phase1-gemini-newsroom' && github.repository == 'ElPtoWalter/estado-del-estrecho-de-Ormuz')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Descargar la rama seleccionada
         uses: actions/checkout@v6
         with:
-          ref: ${{ inputs.ref }}
+          ref: ${{ inputs.ref || github.event.pull_request.head.sha }}
           fetch-depth: 1
 
       - name: Configurar Python
