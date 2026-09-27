@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-27T08:30:14Z",
-  "last_success_at": "2026-09-27T08:30:14Z",
+  "checked_at": "2026-09-27T14:13:47Z",
+  "last_success_at": "2026-09-27T14:13:47Z",
   "last_change_at": "2026-09-19T11:23:56Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,13 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Saudi FM accuses Iran of 'flagrant attacks' and condemns Houthis at UNGA - Al Jazeera",
+      "title": "Yemen government forces widen attacks against Houthis : What we know",
       "source_name": "Al Jazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNMVd3S3Q5YjB3NVUxQlo4bFVxTFpXVnVyRjZLS25yZXM4c3BLMmlVbmdjZm9LX0UzOHV1OU0xXy1qcEJIS2VxbmN5dk5rbnp0a3JWWFZvM3RVeHdDQl9iZ1RKWjVPdW05MnpfNGVHRHFmdk4wcWdoMk9RRnJyVm1NeVNtMVRxeGM4NUprVkNpQlRrRV9GZk1lcmdRVVdWNnVzR2ZCVHE5dGV2d3ZnQlJDSFF2dUU3dkpGY3lISXZn0gHDAUFVX3lxTE1PMWtfbUpZaThoVnptdDRhcDJYUWxLZVFMaXBjbEdtaEhmUUFVczJfRF9wcHM0VVFRazFKVkIzZlBUTW14NTNwb1U2UVBFdjZXaFpRempjQXUtaE03ZDByTEkwa1BFYnh5LW85WGJtQ1N5RGZpeU5RbmtxbG4tZElfS3RVdUhuSF9uRENZRXA5bmQzQndYb2RENEN0UjltamxjWkRvV1pndlMwYjZHQjVlaFFxWFVmcG5odnlSbEFrNkQybw?oc=5",
-      "published_at": "2026-09-26T19:43:43Z",
+      "source_url": "https://www.aljazeera.com/news/2026/9/27/yemen-government-forces-widen-attacks-against-houthis-what-we-know",
+      "published_at": "2026-09-27T12:45:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-27T08:30:14Z"
+      "observed_at": "2026-09-27T14:13:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,7 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-27T08:30:14Z"
+      "observed_at": "2026-09-27T14:13:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,22 +42,21 @@
       "published_at": "2026-09-23T17:38:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-27T08:30:14Z"
+      "observed_at": "2026-09-27T14:13:47Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5.445
+      "risk": 5.685
     },
     "independent_sources": {
       "open": 0,
@@ -65,16 +64,16 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 37,
-    "signals_considered": 4,
+    "articles_considered": 44,
+    "signals_considered": 5,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
-    "evidence_archive_size": 59,
+    "evidence_archive_size": 56,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-09-26T19:43:43Z",
+    "as_of": "2026-09-27T12:45:00Z",
     "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -82,6 +81,16 @@
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Yemen government forces widen attacks against Houthis : What we know",
+      "source_name": "Al Jazeera",
+      "source_url": "https://www.aljazeera.com/news/2026/9/27/yemen-government-forces-widen-attacks-against-houthis-what-we-know",
+      "published_at": "2026-09-27T12:45:00Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-09-27T14:13:47Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Saudi FM accuses Iran of 'flagrant attacks' and condemns Houthis at UNGA - Al Jazeera",
@@ -130,7 +139,7 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-27T08:30:14Z"
+      "observed_at": "2026-09-27T14:13:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -170,7 +179,7 @@
       "published_at": "2026-09-23T17:38:35Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-27T08:30:14Z"
+      "observed_at": "2026-09-27T14:13:47Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -631,51 +640,11 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-09-16T23:12:01Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Vessel struck in Strait of Hormuz, UKMTO says, as prospects for U.S.-Iran diplomacy appear elusive - CNBC",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAwTGlJOEZRVUpiWERhUm51WWZwRDRWVXlnVXczV2pQOGFnY01GUklBZTg2MHc0SU8xbzlYWjlRWFdxMFBKYkxPVy1TRUdXcmdBS3RxZmtsZnpGRG5rSjRobU9BNVY3cUlHNEMtOFZaVTFMRldydlcwSEZHbTJZUdIBgwFBVV95cUxOeF9MeDRhaEhUVXdqZ2ZJdWhkVVFTSlRNWDFoSllFMno3bE5lVXVnaDhGZnA2RDRFSnI3SzRTdF9yNXB5SVp2d2hacVdHS1IteWZkUk5PQ0EwNDhwTEViYUVCQXpGaHg3YXQ4TlhoRnpZMHprOHhkTDNXNDJUSmNnY2xiaw?oc=5",
-      "published_at": "2026-09-13T13:38:23Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-17T07:56:38Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Vessel struck in Strait of Hormuz, UKMTO says, as prospects for U.S.-Iran diplomacy appear elusive - cnbc.com",
-      "source_name": "CNBC",
-      "source_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAwTGlJOEZRVUpiWERhUm51WWZwRDRWVXlnVXczV2pQOGFnY01GUklBZTg2MHc0SU8xbzlYWjlRWFdxMFBKYkxPVy1TRUdXcmdBS3RxZmtsZnpGRG5rSjRobU9BNVY3cUlHNEMtOFZaVTFMRldydlcwSEZHbTJZUdIBgwFBVV95cUxOeF9MeDRhaEhUVXdqZ2ZJdWhkVVFTSlRNWDFoSllFMno3bE5lVXVnaDhGZnA2RDRFSnI3SzRTdF9yNXB5SVp2d2hacVdHS1IteWZkUk5PQ0EwNDhwTEViYUVCQXpGaHg3YXQ4TlhoRnpZMHprOHhkTDNXNDJUSmNnY2xiaw?oc=5",
-      "published_at": "2026-09-13T13:38:23Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-14T21:01:46Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran-backed Houthis in Yemen claim new attacks on Saudi Arabia - AP News",
-      "source_name": "Associated Press",
-      "source_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNYmtucHBpX1JrQVh4ZVl5UDVCMER5bjYtb2NPcUVPZzFrZlZSZERNTjN3YTVKTDhxc3BzbkdMRS05YllDZ3VJeW03c2pRSHNmYkxKTnBWNE1IVm9VYndFdjZlQS0zck1zeUM0QTA4S0p5cUM5MTYxRjNxX052S2xOaXE1Ql9zYXBpc19SZThRR1VwVWpEbkFoNE1YMA?oc=5",
-      "published_at": "2026-09-13T12:38:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-09-13T12:49:09Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran reports commercial vessel struck in Strait of Hormuz - CNN",
-      "source_name": "CNN",
-      "source_url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFAxVVpfeTFKbWs2RXFtSllGY1JCek5Vd2pvb0UweDF3RFRadENXb2NlV1pIWmtmN25aZ3RHSUlTdWREZEc3U3k3MkV1UGxlbmlnWjEtLWM4VVhia1ZpVFZReGk5SWljeDhmS1d2b0I2NTdsbFdEV21YV2hkWQ?oc=5",
-      "published_at": "2026-09-13T09:29:23Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-14T00:22:23Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-27T08:31:27Z",
+    "generated_at": "2026-09-27T14:14:32Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -711,9 +680,9 @@
     "scores": {
       "passage": 16.822,
       "closure": 0,
-      "traffic_reduction": 2.68,
-      "access_restriction": 11.54,
-      "risk": 30.74
+      "traffic_reduction": 1.68,
+      "access_restriction": 13.72,
+      "risk": 26.92
     },
     "source_counts": {
       "passage": 11,
@@ -783,7 +752,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-27T08:31:27Z",
+        "published_at": "2026-09-27T14:14:32Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -801,23 +770,6 @@
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOR1FxSEFPZkVpeHV0LS1WTURzc3lOWWM3d0dfTG1mQ0hBWmZiLWhia1FPbnUzdm5yMVhuZE1RenYyOTNqYmFqT2d5MzVtNE1IcHJCNGJ4aXU0US1Tc09OWnJINzRpQkFTWXdsczlhcE50N25wT052OUZhS21QOG9haGV4XzFTZnQ4NzNTWFlVbU1QcDRyZC0yejVxX1dabVZmWHMyMVM0dWE5RGpNWXZNVHBn?oc=5",
         "published_at": "2026-09-24T01:20:37Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 2.48,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "UPDATED: Seafarer killed in latest Hormuz attack - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQlllaGk2SERuY2pUTTFDRWNNSVYyU3RLSWY0TkdnQ0RMckRfcHdibGlJSE9VaElMdTlRaDQ5Z2JKUEQ0S2RJOWpUZUY5Uk5nVVF1LWRnVkdRYmJDSjVJc3pnVHFGZnN4TzlmczJhUEV2MjVUNzY5bG1ISVV5bUpHblFoMklkM2lzVjVsUmV3?oc=5",
-        "published_at": "2026-09-23T15:42:08Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "Google News RSS",
@@ -848,10 +800,10 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Saudi FM accuses Iran of 'flagrant attacks' and condemns Houthis at UNGA - Al Jazeera",
+        "title": "Yemen government forces widen attacks against Houthis : What we know",
         "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNMVd3S3Q5YjB3NVUxQlo4bFVxTFpXVnVyRjZLS25yZXM4c3BLMmlVbmdjZm9LX0UzOHV1OU0xXy1qcEJIS2VxbmN5dk5rbnp0a3JWWFZvM3RVeHdDQl9iZ1RKWjVPdW05MnpfNGVHRHFmdk4wcWdoMk9RRnJyVm1NeVNtMVRxeGM4NUprVkNpQlRrRV9GZk1lcmdRVVdWNnVzR2ZCVHE5dGV2d3ZnQlJDSFF2dUU3dkpGY3lISXZn0gHDAUFVX3lxTE1PMWtfbUpZaThoVnptdDRhcDJYUWxLZVFMaXBjbEdtaEhmUUFVczJfRF9wcHM0VVFRazFKVkIzZlBUTW14NTNwb1U2UVBFdjZXaFpRempjQXUtaE03ZDByTEkwa1BFYnh5LW85WGJtQ1N5RGZpeU5RbmtxbG4tZElfS3RVdUhuSF9uRENZRXA5bmQzQndYb2RENEN0UjltamxjWkRvV1pndlMwYjZHQjVlaFFxWFVmcG5odnlSbEFrNkQybw?oc=5",
-        "published_at": "2026-09-26T19:43:43Z",
+        "url": "https://www.aljazeera.com/news/2026/9/27/yemen-government-forces-widen-attacks-against-houthis-what-we-know",
+        "published_at": "2026-09-27T12:45:00Z",
         "tier": 2,
         "weight": 2.0,
         "provider": "legacy-engine",
@@ -862,10 +814,27 @@
         "effective_weight": 2.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Ready for US attack: Iran vows to fight back after Trump rejects Hormuz plan - India Today",
+        "source": "India Today",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORzJUMUhEV2dxY0I2LXZBa2dJT2VPeUZUZ1ZSS2RSZi1YdUhWakhZZGpGQVdhQjExMWVSNmdCUzhXSUhsZEM5eWluY2hsNkZTbGJVZEZxeURHNktSdUNKbWI5aVFfZE1IdVcwWEZ3RjVvWjVDMmhtanluTk1RdEdwckpFQ0NKc3lJYXZTMTdMTERhb0FrQU9ROEtGeU1oVmpRaWtNWm1ET3Z6elhmVnJXMNIBtgFBVV95cUxPQk1TeUo4MTRxMC1mNWg0TW9qRXVtNGxRMU51dk9IT092cmkzRWNVNHZpUzkzYzdaR1ptbzRsczEwYkc0TUhXb0RoM3VCVUNMSTBNOGFXSjU2SG4tNi1nZzB4eEFPOXVlcS1oRlhaQ3hUZ1Zjb1poNmg1eTB4Vy1BX1FoYlRtMmF1d2RaZVA0alhHTWJsX01GZUN4cG13dUZ1czRNVDVfSXFydlVuUEZCbm1yNTY0Zw?oc=5",
+        "published_at": "2026-09-27T11:37:43Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 53,
+      "signals_considered": 49,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
