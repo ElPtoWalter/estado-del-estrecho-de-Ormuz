@@ -1,28 +1,28 @@
 {
   "engine_version": 3,
   "status": "INCIERTO",
-  "operational_status": "NO_RECENT_CONFIRMATION",
-  "operational_label_es": "Sin confirmación reciente",
-  "operational_label_en": "No recent confirmation",
-  "confidence": "BAJA",
-  "checked_at": "2026-09-27T18:36:59Z",
-  "last_success_at": "2026-09-27T18:36:59Z",
-  "last_change_at": "2026-09-27T18:36:59Z",
+  "operational_status": "HIGH_RISK_UNCONFIRMED",
+  "operational_label_es": "Riesgo elevado, estado no confirmado",
+  "operational_label_en": "High risk, status unconfirmed",
+  "confidence": "MEDIA",
+  "checked_at": "2026-09-27T21:34:17Z",
+  "last_success_at": "2026-09-27T21:34:17Z",
+  "last_change_at": "2026-09-27T21:34:17Z",
   "verification_ok": true,
   "stale": false,
-  "summary_es": "No se ha encontrado una confirmación operativa reciente y suficientemente sólida.",
-  "summary_en": "No sufficiently strong and recent operational confirmation has been found.",
+  "summary_es": "Las fuentes describen riesgo elevado o restricciones, pero no permiten confirmar de forma fiable si el paso está abierto o cerrado.",
+  "summary_en": "Sources describe elevated risk or restrictions, but do not reliably confirm whether the passage is open or closed.",
   "last_valid_confirmation": null,
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Yemen government forces widen attacks against Houthis : What we know",
+      "title": "Saudi FM accuses Iran of 'flagrant attacks' and condemns Houthis at UNGA - Al Jazeera",
       "source_name": "Al Jazeera",
-      "source_url": "https://www.aljazeera.com/news/2026/9/27/yemen-government-forces-widen-attacks-against-houthis-what-we-know",
-      "published_at": "2026-09-27T12:45:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNMVd3S3Q5YjB3NVUxQlo4bFVxTFpXVnVyRjZLS25yZXM4c3BLMmlVbmdjZm9LX0UzOHV1OU0xXy1qcEJIS2VxbmN5dk5rbnp0a3JWWFZvM3RVeHdDQl9iZ1RKWjVPdW05MnpfNGVHRHFmdk4wcWdoMk9RRnJyVm1NeVNtMVRxeGM4NUprVkNpQlRrRV9GZk1lcmdRVVdWNnVzR2ZCVHE5dGV2d3ZnQlJDSFF2dUU3dkpGY3lISXZn0gHDAUFVX3lxTE1PMWtfbUpZaThoVnptdDRhcDJYUWxLZVFMaXBjbEdtaEhmUUFVczJfRF9wcHM0VVFRazFKVkIzZlBUTW14NTNwb1U2UVBFdjZXaFpRempjQXUtaE03ZDByTEkwa1BFYnh5LW85WGJtQ1N5RGZpeU5RbmtxbG4tZElfS3RVdUhuSF9uRENZRXA5bmQzQndYb2RENEN0UjltamxjWkRvV1pndlMwYjZHQjVlaFFxWFVmcG5odnlSbEFrNkQybw?oc=5",
+      "published_at": "2026-09-26T19:43:43Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-27T14:13:47Z"
+      "observed_at": "2026-09-27T21:34:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,54 +32,44 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-27T14:13:47Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "The US Navy Has a Problem: A Cargo Vessel was Struck in the Strait of Hormuz - National Security Journal",
-      "source_name": "National Security Journal",
-      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbFZOVTdFOHhxTzkwTnhNTEpLOWNKMWZlaE1zWHV3NUpraXlkQmk4UWZ3d2Jickt5cG04Ykk1LUMtM0swVzNrZkxUNXg5WWdrY1I3WkJoYXNLYmVYczdvTmJ6OFROM3VTRFlvWTY2amxjRVJsbWRvMFREbjBTdmM3cFVUck9hZGhKRG5xNnU3MHNNX3dhaXNNLTNaa2FKbFBvLTdoQTRPczRxdi0tMEtqakpR?oc=5",
-      "published_at": "2026-09-23T17:38:35Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-27T14:13:47Z"
+      "observed_at": "2026-09-27T21:34:17Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT"
+      "Google News RSS"
     ],
     "providers_failed": [
-      "Google News RSS: HTTPError: HTTP Error 503: Service Unavailable"
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
     ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 3.2
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 0
+      "risk": 2
     },
-    "articles_considered": 7,
-    "signals_considered": 0,
-    "current_cycle_evidence": 0,
-    "evidence_display_mode": "carried",
-    "evidence_archive_size": 56,
+    "articles_considered": 44,
+    "signals_considered": 3,
+    "current_cycle_evidence": 2,
+    "evidence_display_mode": "current",
+    "evidence_archive_size": 54,
     "evidence_archive_days": 14
   },
   "evidence_context": {
-    "mode": "carried",
-    "as_of": "2026-09-27T12:45:00Z",
-    "current_cycle_count": 0,
-    "heading_es": "Últimas evidencias disponibles",
-    "heading_en": "Latest available evidence",
-    "description_es": "La comprobación más reciente no aportó nuevas evidencias publicables. Estas señales proceden de ciclos anteriores y se muestran con su fecha real.",
-    "description_en": "The latest check produced no new publishable evidence. These signals come from earlier cycles and retain their actual publication dates."
+    "mode": "current",
+    "as_of": "2026-09-26T19:43:43Z",
+    "current_cycle_count": 2,
+    "heading_es": "Evidencias de esta comprobación",
+    "heading_en": "Evidence from this check",
+    "description_es": "Señales publicables encontradas en el ciclo más reciente.",
+    "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
     {
@@ -100,7 +90,7 @@
       "published_at": "2026-09-26T19:43:43Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-27T08:30:14Z"
+      "observed_at": "2026-09-27T21:34:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -140,7 +130,7 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-27T14:13:47Z"
+      "observed_at": "2026-09-27T21:34:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -621,40 +611,20 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-09-14T05:21:03Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Vessel struck in Strait of Hormuz, UKMTO reports - CNN",
-      "source_name": "CNN",
-      "source_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZ0U4WXUxQlJoODRIbjc2V01xRmNqSnl2MjNrSGNUcUlUVTR4ZFdmM2N5dGRoNVJTaU5yeGFVLUpwcUdNM1BkdGVjVVcxSXk4ZWlkQ1FFMTZoOUtiWnFCTE1xTlduSEpxYk9xTzh3NDRteU1hSlhmcGhDN1J1VkxWb0tR?oc=5",
-      "published_at": "2026-09-13T18:45:55Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-17T18:28:47Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Vessel struck in Strait of Hormuz, UKMTO reports - edition.cnn.com",
-      "source_name": "CNN",
-      "source_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZ0U4WXUxQlJoODRIbjc2V01xRmNqSnl2MjNrSGNUcUlUVTR4ZFdmM2N5dGRoNVJTaU5yeGFVLUpwcUdNM1BkdGVjVVcxSXk4ZWlkQ1FFMTZoOUtiWnFCTE1xTlduSEpxYk9xTzh3NDRteU1hSlhmcGhDN1J1VkxWb0tR?oc=5",
-      "published_at": "2026-09-13T18:45:55Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-16T23:12:01Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-27T18:38:52Z",
+    "generated_at": "2026-09-27T21:35:01Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
     "operational_label_en": "Physical passage exists, but flows are severely degraded",
-    "confidence": "BAJA",
-    "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
-    "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
+    "confidence": "ALTA",
+    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
@@ -679,16 +649,16 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 16.822,
+      "passage": 15.366,
       "closure": 0,
       "traffic_reduction": 1.68,
-      "access_restriction": 13.72,
-      "risk": 26.92
+      "access_restriction": 14.62,
+      "risk": 21.16
     },
     "source_counts": {
       "passage": 11,
       "closure": 0,
-      "primary_sources": 2
+      "primary_sources": 3
     },
     "latest_confirmed_transit_at": "2026-09-25T07:18:40Z",
     "legacy_engine": {
@@ -697,6 +667,40 @@
       "confidence": "MEDIA"
     },
     "evidence": [
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Iran proposes reopening Strait, resuming nuclear talks if US lifts blockade - foxbaltimore.com",
+        "source": "foxbaltimore.com",
+        "url": "https://news.google.com/rss/articles/CBMi-gJBVV95cUxQYjZYSnkwdndtQTdOLWt5dmhKN2psdERLZFdnOU1iYlVCUUlsM3hQdEFmZThwMmFEQ3ZzT3N5YzJXMkdMazBLSENfbFJVVTJmSGUtTUlqb1RNVEFOaUJiT3UzYlFOS1ZPRzlwLVVnRFZra0NGZHprVEJPTXVNMXpBMzNPdlZDcERreTVseHlIUzRTLVJoRmNrbXBJTC1LMTBtc3R3S0xtQlNQVlVLQ0tzdE0tMTZpb3lOQmpKdDJDcWhmVlVTdC1rSndxdERENHFicWJkMFFPSFR5LW80c2J5QnJCelNZT2UzbkdSQkJWT0NFaERseXc5MGpmM0JNWVR5WGRQdnBFenpYMS1la2h2TFFwRnVNLWtfRmxhanlUc3otV1lrMnZNN2F1UlBJVkRGZFZhcUluNG1jXzlyMW13ajFDdEx2T2x1bWV2aHRTQUNFQ0s0YUpMMVhpOE4waGpxTDBGWHJJMG5BSGNOSVZmWWh0dlZVeC1qemc?oc=5",
+        "published_at": "2026-09-25T14:00:50Z",
+        "tier": 5,
+        "weight": 5.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.9,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+        "source": "Lloyd's List",
+        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+        "published_at": "2026-09-27T21:35:01Z",
+        "tier": 4,
+        "weight": 3.0,
+        "provider": "Lloyd's List hot topic",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
       {
         "kind": "ACCESS_RESTRICTED",
         "title": "US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters",
@@ -710,7 +714,7 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 3.12,
+        "effective_weight": 2.48,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
       },
@@ -727,7 +731,7 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 3.12,
+        "effective_weight": 2.48,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -744,26 +748,9 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 3.12,
+        "effective_weight": 2.48,
         "kind_label_es": "Tránsito confirmado",
         "kind_label_en": "Confirmed transit"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
-        "source": "Lloyd's List",
-        "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-27T14:14:32Z",
-        "tier": 4,
-        "weight": 3.0,
-        "provider": "Lloyd's List hot topic",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       },
       {
         "kind": "RISK_SEVERE",
@@ -801,10 +788,10 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Yemen government forces widen attacks against Houthis : What we know",
+        "title": "Saudi FM accuses Iran of 'flagrant attacks' and condemns Houthis at UNGA - Al Jazeera",
         "source": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/9/27/yemen-government-forces-widen-attacks-against-houthis-what-we-know",
-        "published_at": "2026-09-27T12:45:00Z",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNMVd3S3Q5YjB3NVUxQlo4bFVxTFpXVnVyRjZLS25yZXM4c3BLMmlVbmdjZm9LX0UzOHV1OU0xXy1qcEJIS2VxbmN5dk5rbnp0a3JWWFZvM3RVeHdDQl9iZ1RKWjVPdW05MnpfNGVHRHFmdk4wcWdoMk9RRnJyVm1NeVNtMVRxeGM4NUprVkNpQlRrRV9GZk1lcmdRVVdWNnVzR2ZCVHE5dGV2d3ZnQlJDSFF2dUU3dkpGY3lISXZn0gHDAUFVX3lxTE1PMWtfbUpZaThoVnptdDRhcDJYUWxLZVFMaXBjbEdtaEhmUUFVczJfRF9wcHM0VVFRazFKVkIzZlBUTW14NTNwb1U2UVBFdjZXaFpRempjQXUtaE03ZDByTEkwa1BFYnh5LW85WGJtQ1N5RGZpeU5RbmtxbG4tZElfS3RVdUhuSF9uRENZRXA5bmQzQndYb2RENEN0UjltamxjWkRvV1pndlMwYjZHQjVlaFFxWFVmcG5odnlSbEFrNkQybw?oc=5",
+        "published_at": "2026-09-26T19:43:43Z",
         "tier": 2,
         "weight": 2.0,
         "provider": "legacy-engine",
@@ -812,41 +799,18 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 2.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Ready for US attack: Iran vows to fight back after Trump rejects Hormuz plan - India Today",
-        "source": "India Today",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORzJUMUhEV2dxY0I2LXZBa2dJT2VPeUZUZ1ZSS2RSZi1YdUhWakhZZGpGQVdhQjExMWVSNmdCUzhXSUhsZEM5eWluY2hsNkZTbGJVZEZxeURHNktSdUNKbWI5aVFfZE1IdVcwWEZ3RjVvWjVDMmhtanluTk1RdEdwckpFQ0NKc3lJYXZTMTdMTERhb0FrQU9ROEtGeU1oVmpRaWtNWm1ET3Z6elhmVnJXMNIBtgFBVV95cUxPQk1TeUo4MTRxMC1mNWg0TW9qRXVtNGxRMU51dk9IT092cmkzRWNVNHZpUzkzYzdaR1ptbzRsczEwYkc0TUhXb0RoM3VCVUNMSTBNOGFXSjU2SG4tNi1nZzB4eEFPOXVlcS1oRlhaQ3hUZ1Zjb1poNmg1eTB4Vy1BX1FoYlRtMmF1d2RaZVA0alhHTWJsX01GZUN4cG13dUZ1czRNVDVfSXFydlVuUEZCbm1yNTY0Zw?oc=5",
-        "published_at": "2026-09-27T11:37:43Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.0,
+        "effective_weight": 1.8,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       }
     ],
     "diagnostics": {
-      "signals_considered": 4,
-      "provider_errors": [
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
-        "Google News: HTTPError: HTTP Error 503: Service Unavailable"
-      ],
+      "signals_considered": 41,
+      "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-    },
-    "carried_forward": true
+    }
   }
 }
