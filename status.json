@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-26T23:05:45Z",
-  "last_success_at": "2026-09-26T23:05:45Z",
+  "checked_at": "2026-09-27T01:41:32Z",
+  "last_success_at": "2026-09-27T01:41:32Z",
   "last_change_at": "2026-09-19T11:23:56Z",
   "verification_ok": true,
   "stale": false,
@@ -16,13 +16,13 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "How European governments are trying to ease the fuel price shock",
-      "source_name": "Euronews",
-      "source_url": "https://www.euronews.com/2026/09/25/how-european-governments-are-trying-to-ease-the-fuel-price-shock",
-      "published_at": "2026-09-25T06:51:11Z",
+      "title": "Oil Price Today: (September 25): Brent Nears $105 as US-Iran Truce Hopes Offset Houthi Attacks on Saudi Arabia, Hormuz Risks Keep Market Volatile - The Sunday Guardian",
+      "source_name": "The Sunday Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxOak5JSDkxdmdKeUNxbUtISWhiVkd2UjQ5bkw3T25vWnpvTEg1X3dDZVFkZk5LT04xSVV2eFBfXzRlaU1VRUoyVTR5WUxXbURYb3FVVUxzVlRFcEIyTlJUVlNEb19IclZRcHh1NkR1WDFaV21kM0UzaGhUNUF0cjhzQ1hZSThtVnhob05aS1N3b3ZhNG1LZ0JENVJ1NTVsY0p1VHcweW9qSGZGTTVFdllBUE5fallZVnNqaS0xUkdGR29fbFp1R2JBSHZaNnF1VkNCZlF1aW9hOGNuVlpXS0NNSXNZT2dFMzdwRzIxUzkwRmotZklGcTJlaDh2cEptUVh2anduNFRVdkhZb0NKa25XMnVCSFNGQdIBmwJBVV95cUxPWkdZQWNwelV3NHI4eklTM2VzcVhpS0g5bFZaT2JEbVo4NHROQm5wNVIxMkJ3YllxNTI2T09HWXEtZDMyNnd4OHFmY0ZkNFdPcHduTXhjb2RMXzQxd0FTVFVUcUZOTVBQMFN2bGJpM05CaXhWYVg1TmNER2xkRTgyS083emZ5QVU5WF9rTjVXam1qS2dGU1J3cU4zX2VfZ2RWTm9DQ19UUEp5enlFaWpjRGFIU2tEbE5ZT1BDNzJsSWNqTmpaemtLamhhZHMyZUlhZXpPaThWNXN3RzlzV240UUktQWRsZ3hYX2tuNmxiT1VYR29lbUVkNThuVllkZUxDRmlDT1pjcU5ySlJjbC0wd1Bfdlo4bi1Ka0M0?oc=5",
+      "published_at": "2026-09-25T07:41:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-26T23:05:45Z"
+      "observed_at": "2026-09-27T01:41:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -32,7 +32,17 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-26T23:05:45Z"
+      "observed_at": "2026-09-27T01:41:32Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "The US Navy Has a Problem: A Cargo Vessel was Struck in the Strait of Hormuz - National Security Journal",
+      "source_name": "National Security Journal",
+      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbFZOVTdFOHhxTzkwTnhNTEpLOWNKMWZlaE1zWHV3NUpraXlkQmk4UWZ3d2Jickt5cG04Ykk1LUMtM0swVzNrZkxUNXg5WWdrY1I3WkJoYXNLYmVYczdvTmJ6OFROM3VTRFlvWTY2amxjRVJsbWRvMFREbjBTdmM3cFVUck9hZGhKRG5xNnU3MHNNX3dhaXNNLTNaa2FKbFBvLTdoQTRPczRxdi0tMEtqakpR?oc=5",
+      "published_at": "2026-09-23T17:38:35Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-09-27T01:41:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -42,45 +52,56 @@
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-26T23:05:45Z"
+      "observed_at": "2026-09-27T01:41:32Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 4.25
+      "risk": 5.72
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 3
+      "risk": 4
     },
-    "articles_considered": 36,
-    "signals_considered": 3,
-    "current_cycle_evidence": 3,
+    "articles_considered": 32,
+    "signals_considered": 4,
+    "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-09-25T06:51:11Z",
-    "current_cycle_count": 3,
+    "as_of": "2026-09-25T07:41:07Z",
+    "current_cycle_count": 4,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Oil Price Today: (September 25): Brent Nears $105 as US-Iran Truce Hopes Offset Houthi Attacks on Saudi Arabia, Hormuz Risks Keep Market Volatile - The Sunday Guardian",
+      "source_name": "The Sunday Guardian",
+      "source_url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxOak5JSDkxdmdKeUNxbUtISWhiVkd2UjQ5bkw3T25vWnpvTEg1X3dDZVFkZk5LT04xSVV2eFBfXzRlaU1VRUoyVTR5WUxXbURYb3FVVUxzVlRFcEIyTlJUVlNEb19IclZRcHh1NkR1WDFaV21kM0UzaGhUNUF0cjhzQ1hZSThtVnhob05aS1N3b3ZhNG1LZ0JENVJ1NTVsY0p1VHcweW9qSGZGTTVFdllBUE5fallZVnNqaS0xUkdGR29fbFp1R2JBSHZaNnF1VkNCZlF1aW9hOGNuVlpXS0NNSXNZT2dFMzdwRzIxUzkwRmotZklGcTJlaDh2cEptUVh2anduNFRVdkhZb0NKa25XMnVCSFNGQdIBmwJBVV95cUxPWkdZQWNwelV3NHI4eklTM2VzcVhpS0g5bFZaT2JEbVo4NHROQm5wNVIxMkJ3YllxNTI2T09HWXEtZDMyNnd4OHFmY0ZkNFdPcHduTXhjb2RMXzQxd0FTVFVUcUZOTVBQMFN2bGJpM05CaXhWYVg1TmNER2xkRTgyS083emZ5QVU5WF9rTjVXam1qS2dGU1J3cU4zX2VfZ2RWTm9DQ19UUEp5enlFaWpjRGFIU2tEbE5ZT1BDNzJsSWNqTmpaemtLamhhZHMyZUlhZXpPaThWNXN3RzlzV240UUktQWRsZ3hYX2tuNmxiT1VYR29lbUVkNThuVllkZUxDRmlDT1pjcU5ySlJjbC0wd1Bfdlo4bi1Ka0M0?oc=5",
+      "published_at": "2026-09-25T07:41:07Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-09-27T01:41:32Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "How European governments are trying to ease the fuel price shock",
@@ -109,7 +130,7 @@
       "published_at": "2026-09-24T16:50:04Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-26T23:05:45Z"
+      "observed_at": "2026-09-27T01:41:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -143,13 +164,23 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "The US Navy Has a Problem: A Cargo Vessel was Struck in the Strait of Hormuz - National Security Journal",
+      "source_name": "National Security Journal",
+      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbFZOVTdFOHhxTzkwTnhNTEpLOWNKMWZlaE1zWHV3NUpraXlkQmk4UWZ3d2Jickt5cG04Ykk1LUMtM0swVzNrZkxUNXg5WWdrY1I3WkJoYXNLYmVYczdvTmJ6OFROM3VTRFlvWTY2amxjRVJsbWRvMFREbjBTdmM3cFVUck9hZGhKRG5xNnU3MHNNX3dhaXNNLTNaa2FKbFBvLTdoQTRPczRxdi0tMEtqakpR?oc=5",
+      "published_at": "2026-09-23T17:38:35Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-09-27T01:41:32Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "'Annihilate' vs 'crushing' attacks: Why Iran, US up rhetoric amid talks - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM00tdGJYVTZKd1NBNFBDTllXU21LZE02VkR0UnU3dkxNakphNkp0OXFuSFc0cmlTUC1XZktybmlHRU5TZ2xEczFjV1pvZHZheHpnTXJOR0VaY2pZRm81bG8zcDc3YzJUZzZrcGQta0RBQTRYcmtpem9ra0w3bmJoMjhpYkZCbG1CU3hnNFpWSGh5LVVRQ0ZBT1ZtQzd1NDUzZ3c2WHhCQlFJUdIBrwFBVV95cUxQcnNnN0doNUNIV3ZUMjVyRUQwZ3ZUdW9TQUo5VVpWb25UTnYyNkFCMkdscTNKSVdCTXNoVDhOVjlvWTBIanRxTlRpd0hYSURibU9QX1ZnU0NnQS0taVJQeXV5ZGsxREotS00tQXhLRXg5V04xa01VNUdwb3BIeFRHUTNmY3JzRGtBZS12Zm1Ha2lDazl0djc1cDVFSDY5YkIwN1J1VUxBX3ZtOFpxemJr?oc=5",
       "published_at": "2026-09-23T09:43:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-26T23:05:45Z"
+      "observed_at": "2026-09-27T01:41:32Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -660,31 +691,11 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-09-13T22:33:45Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "New report of attack on Strait of Hormuz shipping fans fears of threats to oil supplies - reuters.com",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUGctZFpGTW5Zd0h2OFl3V0FMR3o0MHVxNW5uSmN6cHpfNWRYRS1Sd0dibnUwUDRCY3VHejJlbUdNVkx6VmN3WTJQVGYtRjRHX1dWQllyQWl3TzEyWWoxY0JRaU45U0RMUTd0SHBvYmRLZmN4bjl3VF82emtKY1JiQzlsN3NqLThWcDk0UEdmaTlHWjJWd0k1b1VtVmVVUFpSZnFhSEZPUk9oeFlTeU5ZcTJKUlJUZjd6d3d2QWJiYmR2UQ?oc=5",
-      "published_at": "2026-09-13T02:22:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-09-13T12:49:09Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "New report of attack on Strait of Hormuz shipping fans fears of threats to oil supplies - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUGctZFpGTW5Zd0h2OFl3V0FMR3o0MHVxNW5uSmN6cHpfNWRYRS1Sd0dibnUwUDRCY3VHejJlbUdNVkx6VmN3WTJQVGYtRjRHX1dWQllyQWl3TzEyWWoxY0JRaU45U0RMUTd0SHBvYmRLZmN4bjl3VF82emtKY1JiQzlsN3NqLThWcDk0UEdmaTlHWjJWd0k1b1VtVmVVUFpSZnFhSEZPUk9oeFlTeU5ZcTJKUlJUZjd6d3d2QWJiYmR2UQ?oc=5",
-      "published_at": "2026-09-13T02:22:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-09-13T06:42:35Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-26T23:07:15Z",
+    "generated_at": "2026-09-27T01:42:11Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -720,9 +731,9 @@
     "scores": {
       "passage": 18.174,
       "closure": 0,
-      "traffic_reduction": 4.7,
-      "access_restriction": 15.98,
-      "risk": 37.92
+      "traffic_reduction": 3.8,
+      "access_restriction": 13.08,
+      "risk": 36.42
     },
     "source_counts": {
       "passage": 11,
@@ -736,6 +747,23 @@
       "confidence": "MEDIA"
     },
     "evidence": [
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYXMwQlBmRVM4WXVFeXhQVkcyYnpaUzE3dk1wUWswS3pZWDBKTGNWVEpqdFNsWXZEYm5PQ3pSVmRhVFl1empQN3p6SFY0YTVHRmxxNWpxbXFNWVlCOEF5T0tBLVp0MzNyWVlyQnpkbUtyVzNTeGtxQXZVc3hhb0E4aVV6bU5QVEdHMFhCaXRhV3hxQVJ3MWRXNF9tNG5EeUVzcTdEOUhGSExiS3F2SUlkS2xzRk1mNlg4bkRhR0FoaE5QZw?oc=5",
+        "published_at": "2026-09-24T17:12:48Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.12,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
+      },
       {
         "kind": "RISK_SEVERE",
         "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
@@ -771,45 +799,11 @@
         "kind_label_en": "Confirmed transit"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYXMwQlBmRVM4WXVFeXhQVkcyYnpaUzE3dk1wUWswS3pZWDBKTGNWVEpqdFNsWXZEYm5PQ3pSVmRhVFl1empQN3p6SFY0YTVHRmxxNWpxbXFNWVlCOEF5T0tBLVp0MzNyWVlyQnpkbUtyVzNTeGtxQXZVc3hhb0E4aVV6bU5QVEdHMFhCaXRhV3hxQVJ3MWRXNF9tNG5EeUVzcTdEOUhGSExiS3F2SUlkS2xzRk1mNlg4bkRhR0FoaE5QZw?oc=5",
-        "published_at": "2026-09-24T16:18:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.12,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Oil prices settle up about 3% as Houthi attack on Saudi Arabia lifts supply fears - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOR1FxSEFPZkVpeHV0LS1WTURzc3lOWWM3d0dfTG1mQ0hBWmZiLWhia1FPbnUzdm5yMVhuZE1RenYyOTNqYmFqT2d5MzVtNE1IcHJCNGJ4aXU0US1Tc09OWnJINzRpQkFTWXdsczlhcE50N25wT052OUZhS21QOG9haGV4XzFTZnQ4NzNTWFlVbU1QcDRyZC0yejVxX1dabVZmWHMyMVM0dWE5RGpNWXZNVHBn?oc=5",
-        "published_at": "2026-09-24T01:20:37Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.12,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
         "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-26T23:07:15Z",
+        "published_at": "2026-09-27T01:42:11Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -837,6 +831,23 @@
         "effective_weight": 2.7,
         "kind_label_es": "Tránsito confirmado",
         "kind_label_en": "Confirmed transit"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Oil prices settle up about 3% as Houthi attack on Saudi Arabia lifts supply fears - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOR1FxSEFPZkVpeHV0LS1WTURzc3lOWWM3d0dfTG1mQ0hBWmZiLWhia1FPbnUzdm5yMVhuZE1RenYyOTNqYmFqT2d5MzVtNE1IcHJCNGJ4aXU0US1Tc09OWnJINzRpQkFTWXdsczlhcE50N25wT052OUZhS21QOG9haGV4XzFTZnQ4NzNTWFlVbU1QcDRyZC0yejVxX1dabVZmWHMyMVM0dWE5RGpNWXZNVHBn?oc=5",
+        "published_at": "2026-09-24T01:20:37Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 2.48,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       },
       {
         "kind": "RISK_SEVERE",
@@ -874,7 +885,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 71,
+      "signals_considered": 65,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
