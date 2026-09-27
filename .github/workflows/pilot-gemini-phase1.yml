@@ -32,6 +32,9 @@ jobs:
           ref: ${{ inputs.ref || github.event.pull_request.head.sha }}
           fetch-depth: 1
 
+      - name: Restaurar definición manual para las pruebas
+        run: git show 940ec467f8fcee421c9d93c655cdf27cf86fde18:.github/workflows/pilot-gemini-phase1.yml > .github/workflows/pilot-gemini-phase1.yml
+
       - name: Configurar Python
         uses: actions/setup-python@v6
         with:
