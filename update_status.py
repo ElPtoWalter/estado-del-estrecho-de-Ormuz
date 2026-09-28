@@ -54,7 +54,6 @@ STATUS_FILE = ROOT / "status.json"
 HISTORY_FILE = ROOT / "history.json"
 CONFIG_FILE = ROOT / "config.json"
 FEED_FILE = ROOT / "feed.xml"
-SITEMAP_FILE = ROOT / "sitemap.xml"
 INDEX_ES = ROOT / "index.html"
 INDEX_EN = ROOT / "en.html"
 HISTORY_ES = ROOT / "historial.html"
@@ -1454,40 +1453,6 @@ def build_feed(history: list[dict[str, Any]], base_url: str) -> str:
 
 
 
-def build_sitemap(base_url: str, dynamic_lastmod: str) -> str:
-    pages = (
-        ("", dynamic_lastmod, "daily", "1.0"),
-        ("en.html", dynamic_lastmod, "daily", "0.9"),
-        ("historial.html", dynamic_lastmod, "daily", "0.9"),
-        ("en-history.html", dynamic_lastmod, "daily", "0.8"),
-        ("metodologia.html", "2026-07-12", "monthly", "0.8"),
-        ("en-methodology.html", "2026-07-12", "monthly", "0.7"),
-        ("importancia.html", "2026-07-12", "monthly", "0.8"),
-        ("en-importance.html", "2026-07-12", "monthly", "0.7"),
-        ("fuentes.html", "2026-07-12", "monthly", "0.7"),
-        ("en-sources.html", "2026-07-12", "monthly", "0.6"),
-        ("alertas.html", "2026-07-12", "monthly", "0.7"),
-        ("en-alerts.html", "2026-07-12", "monthly", "0.6"),
-        ("privacidad.html", "2026-07-12", "yearly", "0.3"),
-        ("en-privacy.html", "2026-07-12", "yearly", "0.3"),
-    )
-    rows = []
-    for path, lastmod, changefreq, priority in pages:
-        rows.append(
-            f"  <url>\n"
-            f"    <loc>{xml_escape(base_url + path)}</loc>\n"
-            f"    <lastmod>{lastmod}</lastmod>\n"
-            f"    <changefreq>{changefreq}</changefreq>\n"
-            f"    <priority>{priority}</priority>\n"
-            f"  </url>"
-        )
-    return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        + "\n".join(rows)
-        + '\n</urlset>\n'
-    )
-
 def write_change_file(previous: dict[str, Any], payload: dict[str, Any], history_changed: bool, config: dict[str, Any]) -> None:
     path_value = os.environ.get("CHANGE_FILE")
     if not path_value:
@@ -1583,7 +1548,6 @@ def run_update() -> int:
     if not base_url.endswith("/"):
         base_url += "/"
     atomic_write_text(FEED_FILE, build_feed(history, base_url))
-    atomic_write_text(SITEMAP_FILE, build_sitemap(base_url, str(payload.get("checked_at", ""))[:10]))
     update_html(payload, history)
     write_change_file(previous, payload, history_changed, config)
 

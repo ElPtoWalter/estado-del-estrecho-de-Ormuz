@@ -81,6 +81,9 @@ jobs:
       - name: Generar verdad canónica V7, eventos y verificación
         run: python operational_intelligence_v7.py
 
+      - name: Regenerar sitemap desde todos los HTML públicos
+        run: python build_sitemap.py --root .
+
       - name: Generar estado técnico público
         run: python generate_health.py --root .
 

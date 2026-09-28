@@ -9,6 +9,7 @@ from pathlib import Path
 import build_sitemap
 import evidence_guard
 import postprocess_evidence
+import update_status
 from maintenance_common import atomic_write_json
 
 
@@ -27,6 +28,21 @@ HTML_EN = """<!doctype html><html lang='en'><head><meta charset='utf-8'>
 
 
 class MaintenanceTests(unittest.TestCase):
+    def test_status_updater_does_not_own_the_sitemap(self):
+        source = Path(update_status.__file__).read_text(encoding="utf-8")
+        self.assertNotIn("SITEMAP_FILE", source)
+        self.assertNotIn("def build_sitemap(", source)
+
+    def test_hourly_workflow_builds_sitemap_before_health(self):
+        root = Path(__file__).resolve().parents[1]
+        workflow = (root / ".github" / "workflows" / "update-status.yml").read_text(encoding="utf-8")
+        sitemap_step = workflow.index("python build_sitemap.py --root .")
+        health_step = workflow.index("python generate_health.py --root .")
+        self.assertLess(sitemap_step, health_step)
+
+    def test_sitemap_ignores_the_public_build_directory(self):
+        self.assertIn("_site", build_sitemap.EXCLUDED_DIRS)
+
     def test_evidence_placeholder_replacement_removes_nested_legacy_cards(self):
         source = (
             '<div id="evidenceList"><article><div class="meta">old one</div></article>'
