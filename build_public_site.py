@@ -371,7 +371,7 @@ def public_assessment(status: dict[str, Any]) -> dict[str, Any]:
         "latest_confirmed_transit_at": (status.get("last_valid_confirmation") or {}).get("at"),
     }
 
-def render_evidence(status: dict[str, Any], lang: str, limit: int) -> str:
+def ordered_evidence(status: dict[str, Any]) -> list[dict[str, Any]]:
     items = status.get("evidence")
     if not isinstance(items, list):
         items = []
@@ -403,8 +403,12 @@ def render_evidence(status: dict[str, Any], lang: str, limit: int) -> str:
         if url_key:
             seen_url_signals.add(url_signal)
         ordered.append((source_id, item))
+    return [item for _, item in ordered]
+
+
+def render_evidence(status: dict[str, Any], lang: str, limit: int) -> str:
     cards = []
-    for _, item in ordered[:limit]:
+    for item in ordered_evidence(status)[:limit]:
         signal = str(item.get("signal") or "")
         label = public_signal_label(signal, lang)
         official = (
@@ -426,6 +430,37 @@ def render_evidence(status: dict[str, Any], lang: str, limit: int) -> str:
         if lang == "es" else
         '<p class="empty-state">No recent publishable evidence.</p>'
     )
+
+
+def dedupe_operational_evidence(document: str, status: dict[str, Any], lang: str) -> str:
+    """Avoid repeating a recent-evidence card in the V7 explanation block."""
+    recent_urls = {
+        canonical_url(item.get("source_url"))
+        for item in ordered_evidence(status)[:8]
+        if canonical_url(item.get("source_url"))
+    }
+    marker = re.compile(
+        r'(<!-- OPERATIONAL_INTELLIGENCE_V7_START -->.*?<div class="opintel-evidence".*?<ul>)(.*?)(</ul>.*?<!-- OPERATIONAL_INTELLIGENCE_V7_END -->)',
+        re.I | re.S,
+    )
+    match = marker.search(document)
+    if not match or not recent_urls:
+        return document
+    rows = re.findall(r'<li\b.*?</li>', match.group(2), re.I | re.S)
+    kept = []
+    for row in rows:
+        href = re.search(r'<a\b[^>]*\bhref=["\']([^"\']+)', row, re.I)
+        if href and canonical_url(html.unescape(href.group(1))) in recent_urls:
+            continue
+        kept.append(row)
+    if not kept:
+        message = (
+            "Las fuentes se muestran una sola vez en «Evidencias recientes»."
+            if lang == "es" else
+            "Sources are shown once under ‘Recent evidence’."
+        )
+        kept = [f'<li><strong>{html.escape(message)}</strong></li>']
+    return document[:match.start()] + match.group(1) + "".join(kept) + match.group(3) + document[match.end():]
 
 def render_history(history: Any, lang: str, limit: int) -> str:
     if not isinstance(history, list):
@@ -491,6 +526,7 @@ def prerender(document: str, filename: str) -> str:
 
     document = replace_element(document, "evidenceList", render_evidence(status, lang, 8))
     document = remove_legacy_evidence_tail(document)
+    document = dedupe_operational_evidence(document, status, lang)
     document = replace_element(document, "evidenceArchive", render_evidence(status, lang, 20))
     document = replace_element(document, "recentHistory", render_history(history, lang, 3))
     document = replace_element(document, "historyTimeline", render_history(history, lang, 50))

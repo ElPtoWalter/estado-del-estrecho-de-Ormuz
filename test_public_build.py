@@ -43,6 +43,21 @@ class PublicBuildTests(unittest.TestCase):
         self.assertEqual(result.count("Newer"), 1)
         self.assertLess(result.index("Newer"), result.index("Older"))
 
+    def test_home_does_not_repeat_recent_evidence_in_v7_explanation(self):
+        url = self.evidence["source_url"]
+        doc = (
+            '<html lang="es"><body><div id="evidenceList"></div>'
+            '<!-- OPERATIONAL_INTELLIGENCE_V7_START -->'
+            '<div class="opintel-evidence"><ul>'
+            f'<li><a href="{url}">Paso verificado</a></li>'
+            '<li><a href="https://example.org/other">Otra razón</a></li>'
+            '</ul></div><!-- OPERATIONAL_INTELLIGENCE_V7_END -->'
+            '</body></html>'
+        )
+        result = build.sanitize_html(doc, "index.html")
+        self.assertEqual(result.count(url), 1)
+        self.assertIn("Otra razón", result)
+
     def test_history_and_brief_have_no_unresolved_controls(self):
         history = build.sanitize_html('<html lang="es"><body><b id="historyCount">—</b></body></html>', "historial.html")
         self.assertIn('id="historyCount">1<', history)
