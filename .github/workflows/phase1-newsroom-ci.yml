@@ -1,10 +1,24 @@
 name: Fase 1 Newsroom CI
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "**.py"
+      - "**.cjs"
+      - "source-registry.json"
+      - ".github/workflows/**.yml"
   pull_request:
     branches: [main]
     paths:
       - "free_editorial_ai.py"
+      - "straitwatch_core.py"
+      - "source-registry.json"
+      - "operational_intelligence_v7.py"
+      - "postprocess_evidence.py"
+      - "generate_health.py"
+      - "build_public_site.py"
+      - "test_straitwatch_core.py"
       - "test_free_editorial_ai.py"
       - "generate_daily_journal.py"
       - "test_daily_journal_v8.py"
@@ -12,6 +26,9 @@ on:
       - "pilot_gemini_phase1.py"
       - ".github/workflows/pilot-gemini-phase1.yml"
       - ".github/workflows/phase1-newsroom-ci.yml"
+      - ".github/workflows/update-status.yml"
+      - ".github/workflows/diario-ormuz.yml"
+      - ".github/workflows/deploy-public.yml"
   workflow_dispatch:
 
 permissions:
@@ -31,6 +48,8 @@ jobs:
           python-version: "3.12"
       - name: Compilar
         run: |
-          python -m py_compile free_editorial_ai.py generate_daily_journal.py pilot_gemini_phase1.py test_free_editorial_ai.py
+          python -m py_compile free_editorial_ai.py generate_daily_journal.py pilot_gemini_phase1.py straitwatch_core.py operational_intelligence_v7.py postprocess_evidence.py generate_health.py build_public_site.py test_free_editorial_ai.py test_straitwatch_core.py
       - name: Pruebas editoriales
         run: python -m unittest discover -v
+      - name: Pruebas de interfaz pública
+        run: node --test test_public_ui.cjs

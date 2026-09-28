@@ -32,6 +32,9 @@ jobs:
         run: |
           python -m py_compile \
             update_status.py \
+            straitwatch_core.py \
+            operational_intelligence_v7.py \
+            postprocess_evidence.py \
             maintenance_common.py \
             evidence_guard.py \
             repair_html.py \
@@ -39,18 +42,6 @@ jobs:
             validate_site.py \
             generate_health.py \
             remote_smoke_test.py
-
-      - name: Ejecutar pruebas existentes y de mantenimiento
-        shell: bash
-        run: |
-          set -euo pipefail
-          for test_file in test_decision_engine.py test_v11.py tests/test_maintenance.py; do
-            if [ -f "$test_file" ]; then
-              python -m unittest -v "$test_file"
-            else
-              echo "Se omite $test_file porque no existe."
-            fi
-          done
 
       - name: Conservar línea base anterior
         shell: bash
@@ -83,39 +74,12 @@ jobs:
             --status status.json \
             --previous "${{ runner.temp }}/status-before.json" \
             --review "${{ runner.temp }}/editorial-review.json" \
-            --aliases source_aliases.json \
+            --aliases source-registry.json \
             --change-file "$CHANGE_FILE" \
             --rollback-unsafe
 
-      - name: Instalar mejoras de interfaz existentes
-        run: |
-          if [ -f install_v11.py ]; then
-            python install_v11.py
-          else
-            echo "install_v11.py no existe; se omite."
-          fi
-
-      - name: Generar parte diario, archivo y borradores
-        run: |
-          if [ -f generate_daily_brief.py ]; then
-            python generate_daily_brief.py
-          else
-            echo "generate_daily_brief.py no existe; se omite."
-          fi
-
-      - name: Reparar HTML sin alterar el diseño
-        run: python repair_html.py --root .
-
-      - name: Recuperar la edición diaria si el cron de mañana se retrasa
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-          DIARIO_FREE_AI_MODEL: ${{ vars.DIARIO_FREE_AI_MODEL }}
-        run: python generate_daily_journal.py --scheduled
-
-      - name: Regenerar sitemap y robots desde cero
-        run: python build_sitemap.py --root .
+      - name: Generar verdad canónica V7, eventos y verificación
+        run: python operational_intelligence_v7.py
 
       - name: Generar estado técnico público
         run: python generate_health.py --root .
@@ -136,7 +100,7 @@ jobs:
             "${{ runner.temp }}/validation-report.json" \
             "${{ runner.temp }}/editorial-review.json" \
             "${{ runner.temp }}/ormuz-change.json" \
-            status.json health.json sitemap.xml; do
+            status.json health.json events.json operational-intelligence.json sitemap.xml; do
             [ ! -f "$file" ] || cp "$file" "${{ runner.temp }}/ormuz-diagnostics/"
           done
           git status --short > "${{ runner.temp }}/ormuz-diagnostics/git-status.txt" || true
