@@ -42,7 +42,10 @@ from typing import Any, Iterable
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
+from straitwatch_core import SourceRegistry, canonical_url, normalize_title
+
 ROOT = Path(__file__).resolve().parent
+SOURCE_REGISTRY = SourceRegistry.from_path(ROOT / "source-registry.json")
 try:
     MADRID = ZoneInfo("Europe/Madrid")
 except Exception:  # Windows environments may not bundle the IANA database.
@@ -293,6 +296,17 @@ def source_profile(
     source_url: str = "",
     article_url: str = "",
 ) -> SourceProfile | None:
+    canonical = SOURCE_REGISTRY.resolve(source_name, source_url or article_url)
+    if canonical.source_id != "unknown":
+        return SourceProfile(
+            canonical.source_id,
+            canonical.canonical_name,
+            canonical.tier,
+            canonical.weight,
+            canonical.domains,
+            canonical.aliases,
+            canonical.official,
+        )
     # ORMUZ_V3_FINAL_GUARD: evita que "ona" coincida dentro de "national".
     for url in (source_url, article_url):
         host = urlparse(url).netloc.lower().removeprefix("www.")
@@ -708,8 +722,24 @@ def deduplicate_articles(articles: Iterable[dict[str, Any]]) -> list[dict[str, A
     result: list[dict[str, Any]] = []
     seen_titles: set[str] = set()
     seen_source_title: set[tuple[str, str]] = set()
+    seen_urls: set[str] = set()
     for article in ordered:
-        key = normalized_key(article.get("title", ""))
+        profile = source_profile(
+            str(article.get("source_name") or ""),
+            str(article.get("url") or ""),
+            str(article.get("url") or ""),
+        )
+        if profile:
+            article["source_id"] = profile.source_id
+            article["source_name"] = profile.name
+            article["tier"] = min(int(article.get("tier") or profile.tier), profile.tier)
+            article["official"] = profile.official
+        url_key = canonical_url(article.get("url"))
+        if url_key:
+            article["url"] = url_key
+            if url_key in seen_urls:
+                continue
+        key = normalize_title(article.get("title", ""))
         if not key:
             continue
         source_key = (article.get("source_id", ""), key)
@@ -721,6 +751,8 @@ def deduplicate_articles(articles: Iterable[dict[str, Any]]) -> list[dict[str, A
             continue
         seen_source_title.add(source_key)
         seen_titles.add(key)
+        if url_key:
+            seen_urls.add(url_key)
         result.append(article)
     return result
 

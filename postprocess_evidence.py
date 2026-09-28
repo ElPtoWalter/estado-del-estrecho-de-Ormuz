@@ -20,6 +20,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+from straitwatch_core import SourceRegistry, canonical_url, normalize_title, title_similarity
+
 ROOT = Path(__file__).resolve().parent
 STATUS_FILE = ROOT / "status.json"
 SITEMAP_FILE = ROOT / "sitemap.xml"
@@ -27,11 +29,13 @@ HTML_FILES = ((ROOT / "index.html", "es"), (ROOT / "en.html", "en"))
 ARCHIVE_DAYS = 14
 ARCHIVE_LIMIT = 60
 DISPLAY_LIMIT = 6
+SOURCE_REGISTRY = SourceRegistry.from_path(ROOT / "source-registry.json")
 
 ALLOWED_EVIDENCE_FIELDS = (
     "signal",
     "title",
     "source_name",
+    "source_id",
     "source_url",
     "published_at",
     "tier",
@@ -84,14 +88,18 @@ def clean_item(item: Any, observed_at: str | None = None) -> dict[str, Any] | No
     if not isinstance(item, dict):
         return None
     title = str(item.get("title") or "").strip()
-    source_name = str(item.get("source_name") or "").strip()
-    source_url = str(item.get("source_url") or "").strip()
+    source_name = str(item.get("source_name") or item.get("source") or "").strip()
+    source_url = str(item.get("source_url") or item.get("url") or "").strip()
     if not title and not source_url:
         return None
     cleaned = {field: item.get(field) for field in ALLOWED_EVIDENCE_FIELDS}
+    source = SOURCE_REGISTRY.resolve(source_name, source_url)
     cleaned["title"] = title
-    cleaned["source_name"] = source_name
-    cleaned["source_url"] = source_url
+    cleaned["source_name"] = source.canonical_name if source.source_id != "unknown" else source_name
+    cleaned["source_id"] = source.source_id
+    cleaned["source_url"] = canonical_url(source_url)
+    cleaned["tier"] = source.tier if source.source_id != "unknown" else max(1, int(item.get("tier") or 1))
+    cleaned["official"] = source.official if source.source_id != "unknown" else bool(item.get("official"))
     if observed_at:
         cleaned["observed_at"] = observed_at
     elif item.get("observed_at"):
@@ -100,11 +108,33 @@ def clean_item(item: Any, observed_at: str | None = None) -> dict[str, Any] | No
 
 
 def evidence_key(item: dict[str, Any]) -> str:
-    title = re.sub(r"\s+", " ", str(item.get("title") or "").lower()).strip()
-    source = re.sub(r"\s+", " ", str(item.get("source_name") or "").lower()).strip()
-    if title:
-        return f"{source}|{title}"
-    return str(item.get("source_url") or "").split("?", 1)[0].lower()
+    url = canonical_url(item.get("source_url"))
+    if url:
+        return f"{url}|{str(item.get('signal') or normalize_title(item.get('title'))).upper()}"
+    title = normalize_title(item.get("title"))
+    source = str(item.get("source_id") or "unknown")
+    return f"{source}|{title}" if title else ""
+
+
+def dedupe_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Collapse exact URLs and near-identical variants from one publisher."""
+    result: list[dict[str, Any]] = []
+    seen_keys: set[str] = set()
+    for item in sorted(items, key=newest_first, reverse=True):
+        key = evidence_key(item)
+        if key and key in seen_keys:
+            continue
+        duplicate = any(
+            item.get("source_id") == previous.get("source_id")
+            and title_similarity(str(item.get("title") or ""), str(previous.get("title") or "")) >= 0.90
+            for previous in result
+        )
+        if duplicate:
+            continue
+        if key:
+            seen_keys.add(key)
+        result.append(item)
+    return result
 
 
 def newest_first(item: dict[str, Any]) -> tuple[datetime, datetime]:
@@ -136,21 +166,16 @@ def merge_archive(
 
     checked_dt = parse_dt(checked_at) or datetime.now(timezone.utc)
     cutoff = checked_dt - timedelta(days=ARCHIVE_DAYS)
-    unique: dict[str, dict[str, Any]] = {}
+    retained: list[dict[str, Any]] = []
     for item in candidates:
         published = parse_dt(item.get("published_at"))
         observed = parse_dt(item.get("observed_at"))
         relevant_date = published or observed
         if relevant_date and relevant_date < cutoff:
             continue
-        key = evidence_key(item)
-        if not key:
-            continue
-        existing = unique.get(key)
-        if existing is None or newest_first(item) > newest_first(existing):
-            unique[key] = item
+        retained.append(item)
 
-    return sorted(unique.values(), key=newest_first, reverse=True)[:ARCHIVE_LIMIT]
+    return dedupe_items(retained)[:ARCHIVE_LIMIT]
 
 
 def latest_evidence_date(items: list[dict[str, Any]]) -> str | None:
@@ -206,7 +231,7 @@ def update_status() -> dict[str, Any]:
     checked_at = str(current.get("checked_at") or iso_z(datetime.now(timezone.utc)))
     raw_current = current.get("evidence")
     current_items = [item for item in raw_current if isinstance(item, dict)] if isinstance(raw_current, list) else []
-    current_items = [cleaned for item in current_items if (cleaned := clean_item(item, checked_at))]
+    current_items = dedupe_items([cleaned for item in current_items if (cleaned := clean_item(item, checked_at))])
     archive = merge_archive(current_items, previous, checked_at)
 
     if current_items:
@@ -214,7 +239,7 @@ def update_status() -> dict[str, Any]:
         mode = "current"
     else:
         previous_display = previous.get("evidence") if isinstance(previous.get("evidence"), list) else []
-        carried = [cleaned for item in previous_display if (cleaned := clean_item(item))]
+        carried = dedupe_items([cleaned for item in previous_display if (cleaned := clean_item(item))])
         display_items = sorted((carried or archive), key=newest_first, reverse=True)[:DISPLAY_LIMIT]
         mode = "carried" if display_items else "none"
 

@@ -15,9 +15,12 @@ from monitor_report import build_reports
 from own_projects import add_promotions
 from typing import Any
 
+from straitwatch_core import SourceRegistry, canonical_url, normalize_title, public_signal_label, title_similarity
+
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "_site"
 DOMAIN = "https://estrechoormuz.com"
+SOURCE_REGISTRY = SourceRegistry.from_path(ROOT / "source-registry.json")
 
 PRIVATE_EXTENSIONS = {
     ".py", ".json", ".yml", ".yaml", ".md", ".map", ".toml",
@@ -254,14 +257,31 @@ def set_element_attrs(document: str, element_id: str, **attrs: str) -> str:
 
 
 def archive_items(status: dict[str, Any]) -> list[dict[str, Any]]:
-    items, seen = [], set()
-    for item in (status.get("evidence_archive") or []) + (status.get("evidence") or []):
-        if not isinstance(item, dict) or not item.get("title"):
+    items: list[dict[str, Any]] = []
+    seen_url_signals: set[tuple[str, str]] = set()
+    for raw in (status.get("evidence_archive") or []) + (status.get("evidence") or []):
+        if not isinstance(raw, dict) or not raw.get("title"):
             continue
-        key = tuple(str(item.get(k) or "").strip().casefold() for k in ("source_name", "title", "source_url"))
-        if key in seen:
+        item = dict(raw)
+        source = SOURCE_REGISTRY.resolve(item.get("source_name"), item.get("source_url"))
+        if source.source_id != "unknown":
+            item["source_id"] = source.source_id
+            item["source_name"] = source.canonical_name
+            item["tier"] = min(int(item.get("tier") or source.tier), source.tier)
+            item["official"] = source.official
+        item["source_url"] = canonical_url(item.get("source_url"))
+        url_key = item["source_url"]
+        url_signal = (url_key, str(item.get("signal") or normalize_title(item.get("title"))).upper())
+        if url_key and url_signal in seen_url_signals:
             continue
-        seen.add(key)
+        if any(
+            item.get("source_id") == previous.get("source_id")
+            and title_similarity(str(item.get("title") or ""), str(previous.get("title") or "")) >= 0.90
+            for previous in items
+        ):
+            continue
+        if url_key:
+            seen_url_signals.add(url_signal)
         items.append(item)
     return sorted(items, key=lambda x: str(x.get("published_at") or x.get("observed_at") or ""), reverse=True)
 
@@ -281,7 +301,7 @@ def render_archive(document: str, status: dict[str, Any], lang: str) -> str:
             f'<article class="archive-item" data-archive-item data-source="{esc(source)}">'
             f'<div class="archive-date"><span>{"Publicada" if lang == "es" else "Published"}</span>'
             f'<strong>{esc(human_date(item.get("published_at") or item.get("observed_at"), lang))}</strong></div>'
-            f'<div class="archive-item-main"><div class="archive-badges"><span class="archive-badge">{esc(item.get("signal"))}</span></div>'
+            f'<div class="archive-item-main"><div class="archive-badges"><span class="archive-badge">{esc(public_signal_label(item.get("signal"), lang))}</span></div>'
             f'<h2>{link}</h2><p class="archive-item-source">{esc(source)}</p></div></article>'
         )
     empty = "No hay evidencias que coincidan con estos filtros." if lang == "es" else "No evidence matches these filters."
@@ -355,39 +375,38 @@ def render_evidence(status: dict[str, Any], lang: str, limit: int) -> str:
     items = status.get("evidence")
     if not isinstance(items, list):
         items = []
-    signal_labels = {
-        "es": {
-            "OPEN_OPERATIONAL": "Tránsito operativo",
-            "CLOSED_OPERATIONAL": "Interrupción operativa",
-            "CLOSURE_DECLARED": "Declaración de cierre",
-            "RISK_RESTRICTION": "Riesgo o restricción",
-        },
-        "en": {
-            "OPEN_OPERATIONAL": "Operational transit",
-            "CLOSED_OPERATIONAL": "Operational interruption",
-            "CLOSURE_DECLARED": "Closure declaration",
-            "RISK_RESTRICTION": "Risk or restriction",
-        },
-    }[lang]
-    ordered, seen = [], set()
-    for item in sorted(
+    ordered: list[tuple[str, dict[str, Any]]] = []
+    seen_url_signals: set[tuple[str, str]] = set()
+    for raw in sorted(
         (item for item in items if isinstance(item, dict)),
         key=lambda item: parse_dt(item.get("published_at"))
         or datetime.min.replace(tzinfo=timezone.utc),
         reverse=True,
     ):
-        key = (
-            str(item.get("source_name") or "").strip().casefold(),
-            re.sub(r"\s+", " ", str(item.get("title") or "").strip().casefold()),
-        )
-        if key in seen:
+        item = dict(raw)
+        source = SOURCE_REGISTRY.resolve(item.get("source_name"), item.get("source_url"))
+        source_id = source.source_id if source.source_id != "unknown" else str(item.get("source_name") or "").casefold()
+        url_key = canonical_url(item.get("source_url"))
+        url_signal = (url_key, str(item.get("signal") or normalize_title(item.get("title"))).upper())
+        if url_key and url_signal in seen_url_signals:
             continue
-        seen.add(key)
-        ordered.append(item)
+        if any(
+            source_id == previous_source
+            and title_similarity(str(item.get("title") or ""), str(previous.get("title") or "")) >= 0.90
+            for previous_source, previous in ordered
+        ):
+            continue
+        if source.source_id != "unknown":
+            item["source_id"] = source.source_id
+            item["source_name"] = source.canonical_name
+        item["source_url"] = url_key
+        if url_key:
+            seen_url_signals.add(url_signal)
+        ordered.append((source_id, item))
     cards = []
-    for item in ordered[:limit]:
+    for _, item in ordered[:limit]:
         signal = str(item.get("signal") or "")
-        label = signal_labels.get(signal, "Evidencia" if lang == "es" else "Evidence")
+        label = public_signal_label(signal, lang)
         official = (
             " · oficial" if lang == "es" and item.get("official")
             else " · official" if item.get("official")
