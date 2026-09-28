@@ -56,10 +56,10 @@ jobs:
           test ! -e _site/_redirects
 
       - name: Preparar GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Subir artefacto público
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
@@ -73,7 +73,7 @@ jobs:
     steps:
       - name: Publicar
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
       - name: Descargar herramientas de comprobación
         uses: actions/checkout@v6
