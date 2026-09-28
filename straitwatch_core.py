@@ -636,6 +636,8 @@ def factual_packet(
                 source_map[str(source["source_id"])] = source
     public_monitor_keys = (
         "checked_at", "status", "operational_status", "confidence", "verification_ok", "stale",
+        "generated_at", "maritime_status", "maritime_note", "border_pressure", "border_note",
+        "bilateral_tension", "bilateral_note", "security_status", "security_note",
     )
     public_operational_keys = (
         "version", "generated_at", "state", "family", "label_es", "label_en",

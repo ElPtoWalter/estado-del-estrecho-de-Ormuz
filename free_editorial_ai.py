@@ -483,7 +483,7 @@ def probe_gemini_connection(
         api_key=key,
         model=free_gemini_model_name(model),
         payload={"contents": [{"parts": [{"text": "Responde únicamente: OK"}]}]},
-        site_name="Estrecho Ormuz pilot",
+        site_name="StraitWatch pilot",
     )
     try:
         with opener(request, timeout=timeout) as response:
