@@ -402,12 +402,13 @@ class FreeEditorialAITests(unittest.TestCase):
         self.assertNotIn("gemini-de-prueba", captured["request"].data.decode("utf-8"))
         self.assertEqual(captured["request"].headers.get("X-goog-api-key"), "gemini-de-prueba")
 
-    def test_pilot_workflow_is_manual_read_only_and_non_publishing(self):
+    def test_pilot_workflow_is_pr_scoped_read_only_and_non_publishing(self):
         workflow = (
             Path(__file__).parent / ".github" / "workflows" / "pilot-gemini-phase1.yml"
         ).read_text(encoding="utf-8")
         self.assertIn("workflow_dispatch:", workflow)
-        self.assertNotIn("pull_request:", workflow)
+        self.assertIn("pull_request:", workflow)
+        self.assertIn("head.repo.full_name == github.repository", workflow)
         self.assertIn("contents: read", workflow)
         self.assertIn("python -m unittest discover -v", workflow)
         self.assertIn("python pilot_gemini_phase1.py", workflow)

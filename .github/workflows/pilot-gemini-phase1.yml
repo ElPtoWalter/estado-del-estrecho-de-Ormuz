@@ -1,6 +1,8 @@
 name: Piloto Gemini · Fase 1
 
 on:
+  pull_request:
+    branches: [main]
   workflow_dispatch:
     inputs:
       ref:
@@ -13,18 +15,19 @@ permissions:
   contents: read
 
 concurrency:
-  group: pilot-gemini-phase1-${{ inputs.ref }}
+  group: pilot-gemini-phase1-${{ github.event.pull_request.number || inputs.ref }}
   cancel-in-progress: true
 
 jobs:
   controlled-pilot:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Descargar la rama seleccionada
         uses: actions/checkout@v6
         with:
-          ref: ${{ inputs.ref }}
+          ref: ${{ github.event.pull_request.head.sha || inputs.ref }}
           fetch-depth: 1
 
       - name: Configurar Python
