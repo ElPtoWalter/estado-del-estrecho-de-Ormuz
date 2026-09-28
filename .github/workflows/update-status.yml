@@ -109,6 +109,8 @@ jobs:
       - name: Recuperar la edición diaria si el cron de mañana se retrasa
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           DIARIO_FREE_AI_MODEL: ${{ vars.DIARIO_FREE_AI_MODEL }}
         run: python generate_daily_journal.py --scheduled
 

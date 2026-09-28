@@ -73,7 +73,7 @@ class EditorialQualityTests(unittest.TestCase):
                 exported = list(csv.DictReader(stream))
             self.assertEqual(len(exported), 3)
             self.assertEqual(set(exported[0]), set(monitor_report.FIELDS))
-            page = (root / "datos-propios-monitor-ormuz.html").read_text()
+            page = (root / "datos-propios-monitor-ormuz.html").read_text(encoding="utf-8")
             self.assertIn("66.7%", page)
             self.assertIn("1 cambios", page)
             self.assertIn("1 pares", page)
