@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-09-29T07:26:46Z",
+  "generated_at": "2026-09-29T14:17:03Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -34,24 +34,41 @@
   "traffic_ratio_estimate": null,
   "traffic_snapshot": null,
   "scores": {
-    "passage": 10.987,
+    "passage": 14.731,
     "closure": 0,
-    "traffic_reduction": 1.0,
-    "access_restriction": 4.64,
-    "risk": 32.8
+    "traffic_reduction": 3.0,
+    "access_restriction": 4.02,
+    "risk": 40.08
   },
   "source_counts": {
-    "passage": 6,
+    "passage": 8,
     "closure": 0,
     "primary_sources": 2
   },
-  "latest_confirmed_transit_at": "2026-09-28T19:49:45Z",
+  "latest_confirmed_transit_at": "2026-09-29T13:13:17Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
     "confidence": "BAJA"
   },
   "evidence": [
+    {
+      "kind": "RISK_SEVERE",
+      "title": "KOTC tanker struck in Strait of Hormuz - Lloyd's List",
+      "source": "Lloyd's List",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWEdMUWNaVkJjQWtVaXFBLXZrOUd3WFhwam9uRGJKME5Hd2JKcnBBQ3lYZmlvRmdwclpHNnoyWC1HYUNNRDdpbXBoNjRUR2o3dXZOUUJnZk1HY0liem5ScWpmNjVIbFFXYjY1UTlWaFlBS3YwMDdjcEdEQldQV0VMMQ?oc=5",
+      "published_at": "2026-09-29T12:24:45Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "traffic_count": null,
+      "traffic_average": null,
+      "effective_weight": 4.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
     {
       "kind": "RISK_SEVERE",
       "title": "The week in charts: Iran’s ship attacks show strategy of disruption not discrimination | Abu Dhabi emerges as container shipping’s Hormuz shuttle operator - Lloyd's List",
@@ -65,7 +82,7 @@
       "traffic_ratio": null,
       "traffic_count": null,
       "traffic_average": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -82,7 +99,7 @@
       "traffic_ratio": null,
       "traffic_count": null,
       "traffic_average": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Tránsito confirmado",
       "kind_label_en": "Confirmed transit"
     },
@@ -91,7 +108,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-09-29T07:26:46Z",
+      "published_at": "2026-09-29T14:17:03Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -102,6 +119,23 @@
       "effective_weight": 3.0,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "TRANSIT_CONFIRMED",
+      "title": "Data shows that shipping traffic through the Strait of Hormuz is lower than the 10-day average. - marinelink.com",
+      "source": "marinelink.com",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQS0JhTGcwcHl5eU4zM0VZMGs2OE1tSDkydkFkTnZ2VnFwRWVXQm5VcXVNbUphUnAxX0EtUEw0eTFpRHNNZnlOdEhpTkdsajNFTS1leHRnTjFMZTVKQ3FGZm5kdVhqd1RqTTNQQ0cxRE95aEZQamdNZFlkbS1WSWduREFWd3NiUTdDcklqdmJYRDg4cVc3UUlaTEYtUWJyWTNHNWpaZVBHSTNaNDZtT0E?oc=5",
+      "published_at": "2026-09-29T03:56:08Z",
+      "tier": 2,
+      "weight": 2.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "traffic_count": null,
+      "traffic_average": null,
+      "effective_weight": 2.0,
+      "kind_label_es": "Tránsito confirmado",
+      "kind_label_en": "Confirmed transit"
     },
     {
       "kind": "RISK_SEVERE",
@@ -121,28 +155,11 @@
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "TRAFFIC_REDUCED",
-      "title": "Asian markets fall, oil rises over Strait of Hormuz situation - UA.NEWS",
-      "source": "UA.NEWS",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQOHd5MzJoRVdpSWM3RzdUSWcwNWJvM0lEaXRxOWpSQjdpZ19DV0NETE4ydTFXSl9CdEdGazJHLVRSNnFqX3ZUZzIzZWl0V3pUYk1JNkdHSTdCNlJ5c19fa2cxQzBMZjZtUGFpeFVkTVVmaFZ6ZzVEYkp0WkdZSkNwWXZWd2paaWxJZ29CalAwaE1jZTQyWUZOWFZXTlhFVzdMcFM1a19nbkJSU2szLUtJaUJsN3pPa2JaNnpCTjFEdm8?oc=5",
-      "published_at": "2026-09-29T04:34:39Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "traffic_count": null,
-      "traffic_average": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Tráfico reducido",
-      "kind_label_en": "Reduced traffic"
-    },
-    {
       "kind": "RISK_SEVERE",
-      "title": "U.S. Marines were wounded in Iranian attack on nonmilitary vessel - The Washington Post",
-      "source": "The Washington Post",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPYjBnQkVEcThIYVdFODR1WURPRldmdEdxenYtZjFLRXNURmlqN0o2dURQV3RqVFkyS1gzcUpLamhSSmVXR1owYjFTSVpHejUwZVgwY3NSWlJVZmlZeFN5S3pCcDJnSFhhN1FQanhaMzVVbjRnYVhrS0VHZ055Y0RYTE56ejVwdTQzOWltTjdNRTAxcEN5MFB1LXJjdVVFTkZZZ1djSl9Bb1Y0SWpmRWZlSGpuQmtFVkN4dHc?oc=5",
-      "published_at": "2026-09-29T03:10:33Z",
+      "title": "Fire breaks out on vessel hit by projectile in Strait of Hormuz: UK maritime agency - Anadolu Ajansı",
+      "source": "Anadolu Ajansı",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQUZqQVE2dVVDUy1kM1VFaVBMX1BzYXJ3TnhHVExjNkxXR2syekhkeDg0WGhraDFJLThGb2VIYTVIZG5PWnkyVlkwSVFUM0RXQ0NxRmpPVXFPZ0pBNmVxYXFXM2lhalktVXR4ZU1Idl9aNEtUYjlQNDRLUlRHa1BLVUUwZU90NW5NTU5fNWV6TG1xZEM4M3J4MExnbk9EWm8zYlhoX3R0R0hDUFdGUXlaajRHT0Q0bkZEZlh6VGxPZHI2a3RUQkE?oc=5",
+      "published_at": "2026-09-29T13:52:18Z",
       "tier": 1,
       "weight": 1.0,
       "provider": "Google News RSS",
@@ -155,28 +172,11 @@
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "ACCESS_RESTRICTED",
-      "title": "How Gulf states are circumventing Iran's blockade of the Strait of Hormuz. - Vietnam.vn",
-      "source": "Vietnam.vn",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPT0x3Z09lM29LRkZIdU44djFBS1pOYUk5cUVkMHdtNExnZEpiakpfYzVFNnI3VzVkS3dZVDdVZEVFZWpRSHZTcWYyb05Rc3VFWENJcXNTRHE4TnhLa25kVk5aWnpPTEMzNjNKR1lWZGd4Z1dLV3VoUWY0TWtQd1A2U1BQa25WbWJURnFldEVQYUc3VERyaUJv?oc=5",
-      "published_at": "2026-09-29T01:21:21Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "traffic_count": null,
-      "traffic_average": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Acceso restringido",
-      "kind_label_en": "Restricted access"
-    },
-    {
       "kind": "RISK_SEVERE",
-      "title": "Iran’s army voices readiness for potential renewed US attack - Rappler",
-      "source": "Rappler",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOczRsN1lxSkhUWWpWcExORkJydHh1VUxMc0YxUHZSRm9ocTZqQ1oxLUhSN1JhTWxsZDhBdG5ySmdaa0I2R2hZNjFmZklxWl9fQ0ZkQlhKUHpYeEM2NjJiUVhpMnhqbllXQWNzQ3NfRElKbElDdXlPcVZuMHRxQW1RejZUVV9BWl8wWm5IYTVRc3lDZjJX?oc=5",
-      "published_at": "2026-09-29T01:18:55Z",
+      "title": "Vessel struck by unknown projectile in Strait of Hormuz, UKMTO says - وكالة الأنباء السورية – سانا",
+      "source": "وكالة الأنباء السورية – سانا",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE14S0RITTFjaktxMmwyTnd0d0FMOFdHajBkNnYtT2tKV3dwY2Z0U2NsMjdVTVRsbXRKdHVUMlc0UjZoUVRzRFlfM20wNkEwaHVTWU9B?oc=5",
+      "published_at": "2026-09-29T13:48:57Z",
       "tier": 1,
       "weight": 1.0,
       "provider": "Google News RSS",
@@ -190,7 +190,7 @@
     }
   ],
   "diagnostics": {
-    "signals_considered": 42,
+    "signals_considered": 50,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
