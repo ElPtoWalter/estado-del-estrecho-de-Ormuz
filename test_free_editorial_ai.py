@@ -359,6 +359,15 @@ class FreeEditorialAITests(unittest.TestCase):
         (_, engine, status), _ = self.call_openrouter({"es": candidate})
         self.assertEqual((engine, status), ("rules", "validation-es"))
 
+    def test_unseen_entity_diagnostic_identifies_only_the_rejected_value(self):
+        candidate = valid_draft()
+        candidate["meaning"][0] += " Maritime Zeta Group mantiene la evaluación."
+        trace = {}
+        (_, engine, status), _ = self.call_gemini(candidate, trace=trace)
+        self.assertEqual((engine, status), ("rules", "gemini-validation-es"))
+        self.assertEqual(trace["validation_diagnostics"]["reason"], "unseen-entity")
+        self.assertEqual(trace["validation_diagnostics"]["value"], "maritime zeta group")
+
     def test_unknown_single_word_attribution_is_rejected(self):
         candidate = valid_draft()
         candidate["meaning"][0] += " Según Acme, la tendencia ya estaría confirmada."

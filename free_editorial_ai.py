@@ -350,9 +350,11 @@ def _validate_language_draft(
     allowed_date_words: set[str],
     diagnostics: dict[str, str] | None = None,
 ) -> dict[str, Any] | None:
-    def reject(reason: str) -> None:
+    def reject(reason: str, value: str | None = None) -> None:
         if diagnostics is not None:
             diagnostics["reason"] = reason
+            if value:
+                diagnostics["value"] = value
         return None
 
     if not isinstance(draft, dict) or set(draft) != {"headline", "deck", "situation", "sections", "meaning", "watch"}:
@@ -420,7 +422,7 @@ def _validate_language_draft(
         return reject("unsupported-certainty")
     for entity in _named_entities(prose):
         if entity not in allowed_corpus.casefold():
-            return reject("unseen-entity")
+            return reject("unseen-entity", entity)
     return normalized
 
 def _extract_content(response: dict[str, Any]) -> str:
@@ -575,7 +577,8 @@ def _validate_candidate(
         )
         if draft is None:
             if diagnostics is not None:
-                diagnostics.update({"language": language, "reason": language_diagnostics.get("reason", "unknown")})
+                diagnostics.update({"language": language, **language_diagnostics})
+                diagnostics.setdefault("reason", "unknown")
             return None, f"validation-{language}"
         validated[language] = draft
     return validated, "ok"
