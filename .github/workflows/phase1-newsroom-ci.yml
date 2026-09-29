@@ -7,6 +7,7 @@ on:
       - "**.py"
       - "**.cjs"
       - "source-registry.json"
+      - "PHASE2_VIDEO_CONTRACT.md"
       - ".github/workflows/**.yml"
   pull_request:
     branches: [main]
@@ -14,6 +15,7 @@ on:
       - "free_editorial_ai.py"
       - "straitwatch_core.py"
       - "source-registry.json"
+      - "PHASE2_VIDEO_CONTRACT.md"
       - "operational_intelligence_v7.py"
       - "postprocess_evidence.py"
       - "generate_health.py"

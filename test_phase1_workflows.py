@@ -30,6 +30,7 @@ class Phase1WorkflowTests(unittest.TestCase):
         self.assertIn("python -m unittest discover -v", workflow)
         self.assertIn("node --test test_public_ui.cjs", workflow)
         self.assertIn('paths:', workflow)
+        self.assertIn('PHASE2_VIDEO_CONTRACT.md', workflow)
 
     def test_deploy_builds_and_validates_without_repeating_ci(self) -> None:
         workflow = self.text("deploy-public.yml")
