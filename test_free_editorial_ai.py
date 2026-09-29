@@ -177,9 +177,9 @@ class FreeEditorialAITests(unittest.TestCase):
         (_, engine, status), captured = self.call_gemini(valid_draft())
         self.assertEqual((engine, status), ("gemini", "ok"))
         payload = json.loads(captured["request"].data.decode("utf-8"))
-        response_format = payload["generationConfig"]["responseFormat"]["text"]
-        self.assertEqual(response_format["mimeType"], "application/json")
-        self.assertFalse(response_format["schema"]["additionalProperties"])
+        generation_config = payload["generationConfig"]
+        self.assertEqual(generation_config["responseMimeType"], "application/json")
+        self.assertFalse(generation_config["responseJsonSchema"]["additionalProperties"])
         prompt = payload["contents"][0]["parts"][0]["text"]
         self.assertIn("BORRADOR LOCAL VALIDADO", prompt)
         self.assertIn(self.fallback["headline"], prompt)

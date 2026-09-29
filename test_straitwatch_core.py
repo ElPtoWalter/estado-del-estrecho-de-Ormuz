@@ -3,7 +3,7 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from straitwatch_core import SourceRegistry, aggregate_events, deduplicate_articles
+from straitwatch_core import SourceRegistry, aggregate_events, deduplicate_articles, factual_packet
 
 
 ROOT = Path(__file__).resolve().parent
@@ -139,6 +139,28 @@ class EventTests(unittest.TestCase):
         event = aggregate_events(rows, REGISTRY)["events"][0]
         self.assertEqual(event["verification_status"], "UNCONFIRMED")
         self.assertFalse(event["operational_eligible"])
+
+
+class FactualPacketTests(unittest.TestCase):
+    def test_editorial_packet_keeps_event_provenance_without_duplicate_articles(self) -> None:
+        store = aggregate_events([article(
+            "Three vessels transit the Strait of Hormuz",
+            "Reuters",
+            "https://reuters.com/a",
+            signal="TRANSIT_CONFIRMED",
+        )], REGISTRY, generated_at="2026-09-28T09:00:00Z")
+        packet = factual_packet(
+            monitor={"status": "INCIERTO"},
+            operational_assessment={"state": "UNKNOWN"},
+            event_store=store,
+            comparison={},
+            known_limits=[],
+            watch_items=[],
+        )
+        self.assertIn("articles", store["events"][0])
+        self.assertNotIn("articles", packet["events"][0])
+        self.assertEqual(packet["events"][0]["event_id"], store["events"][0]["event_id"])
+        self.assertEqual(packet["events"][0]["source_ids"], ["reuters"])
 
 
 if __name__ == "__main__":

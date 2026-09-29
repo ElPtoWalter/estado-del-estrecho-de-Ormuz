@@ -627,7 +627,19 @@ def factual_packet(
     watch_items: list[str],
 ) -> dict[str, Any]:
     events = event_store.get("events") if isinstance(event_store.get("events"), list) else []
-    selected = [event for event in events if event.get("verification_status") != "UNCONFIRMED"][:20]
+    selected_full = [event for event in events if event.get("verification_status") != "UNCONFIRMED"][:20]
+    event_keys = (
+        "event_id", "topic", "first_seen", "last_seen", "headline", "classification",
+        "verification_status", "verification_reason", "sources", "source_ids", "importance",
+        "operational_impact", "operational_eligible",
+    )
+    # The full event store retains article-level provenance. The editorial
+    # packet needs the verified event and source facts, not duplicate article
+    # payloads that can push a real packet over the remote safety limit.
+    selected = [
+        {key: event.get(key) for key in event_keys if event.get(key) is not None}
+        for event in selected_full
+    ]
     statements = [event for event in selected if event.get("classification") == "DECLARATION"]
     source_map: dict[str, dict[str, Any]] = {}
     for event in selected:

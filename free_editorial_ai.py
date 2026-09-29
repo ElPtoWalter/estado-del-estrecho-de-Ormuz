@@ -614,9 +614,10 @@ def generate_editorial_drafts(
             "generationConfig": {
                 "maxOutputTokens": MAX_OUTPUT_TOKENS,
                 "temperature": 0.15,
-                "responseFormat": {
-                    "text": {"mimeType": "application/json", "schema": schema},
-                },
+                # Keep the generateContent-compatible fields while the newer
+                # responseFormat envelope is still rolling out across models.
+                "responseMimeType": "application/json",
+                "responseJsonSchema": schema,
             },
         }
         gemini_request = _gemini_request(
