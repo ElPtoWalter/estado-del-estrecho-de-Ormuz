@@ -1,6 +1,6 @@
 # Contrato de datos de vídeo — Fase 2
 
-Versión del contrato: `1.0.0`  
+Versión del contrato: `1.0.0`
 Estado: aprobado como interfaz futura; implementación fuera de alcance de la Fase 1.
 
 ## 1. Objetivo y límites
