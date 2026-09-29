@@ -142,6 +142,22 @@ def _statement_id(event: dict[str, Any], text: str) -> str:
     return "statement-" + hashlib.sha256(seed.encode("utf-8")).hexdigest()[:16]
 
 
+def _verified_fact_source_ids(event: dict[str, Any]) -> list[str]:
+    factual_classes = {"FACT", "OFFICIAL_NOTICE", "OPERATIONAL_SIGNAL"}
+    article_sources = {
+        str(article.get("source_id") or "")
+        for article in event.get("articles") or []
+        if isinstance(article, dict)
+        and str(article.get("classification") or "").upper() in factual_classes
+        and str(article.get("source_id") or "") not in {"", "unknown"}
+    }
+    event_sources = {
+        str(item) for item in event.get("source_ids") or []
+        if str(item) not in {"", "unknown"}
+    }
+    return sorted(article_sources or event_sources)
+
+
 def _extract_speaker(event: dict[str, Any]) -> str:
     explicit = str(event.get("speaker") or "").strip()
     if explicit:
@@ -269,7 +285,8 @@ def build_video_package(
         mapped = phase2_verification(status)
         source_ids = sorted({str(item) for item in event.get("source_ids") or [] if str(item)})
         headline = str(event.get("headline") or "").strip()
-        if mapped in VERIFIED_STATUSES and headline and source_ids:
+        fact_source_ids = _verified_fact_source_ids(event)
+        if mapped in VERIFIED_STATUSES and headline and fact_source_ids:
             observed_at = utc_iso(parse_utc(event.get("last_seen") or event.get("first_seen")))
             facts.append({
                 "fact_id": _fact_id(event),
@@ -277,7 +294,7 @@ def build_video_package(
                 "text_en": str(event.get("headline_en") or headline).strip(),
                 "event_id": str(event.get("event_id") or ""),
                 "verification_status": mapped,
-                "source_ids": source_ids,
+                "source_ids": fact_source_ids,
                 "observed_at": observed_at,
             })
         if status == "DECLARATION_ONLY" or str(event.get("classification") or "").upper() == "DECLARATION":
