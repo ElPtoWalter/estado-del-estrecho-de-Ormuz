@@ -192,8 +192,10 @@ class FreeEditorialAITests(unittest.TestCase):
     def test_unseen_number_rejects_response(self):
         candidate = valid_draft()
         candidate["meaning"][0] += " La muestra incluiría 77 casos."
-        (_, engine, status), _ = self.call_openrouter({"es": candidate})
-        self.assertEqual((engine, status), ("rules", "validation-es"))
+        trace = {}
+        (_, engine, status), _ = self.call_gemini(candidate, trace=trace)
+        self.assertEqual((engine, status), ("rules", "gemini-validation-es"))
+        self.assertEqual(trace["validation_diagnostics"], {"language": "es", "reason": "unseen-number"})
 
     def test_trusted_fallback_may_keep_derived_values_sources_and_sentence_boundaries(self):
         self.fallback["deck"] += " La selección incluye 7 referencias del Estrecho. Las fuentes siguen separadas."

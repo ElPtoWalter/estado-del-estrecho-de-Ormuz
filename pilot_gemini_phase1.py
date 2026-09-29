@@ -117,6 +117,7 @@ def run_pilot(root: Path) -> dict[str, Any]:
             "assistant_status": gemini_status,
             "fallback_used": gemini_trace.get("fallback_used"),
             "attempts": gemini_trace.get("attempts", []),
+            "validation_diagnostics": gemini_trace.get("validation_diagnostics", {}),
             "drafts": gemini_drafts,
         },
         "trace": {
@@ -142,6 +143,9 @@ def safe_failure_diagnostics(report: dict[str, Any]) -> dict[str, Any]:
         "failed_checks": sorted(str(key) for key, passed in checks.items() if not passed),
         "gemini_engine": str(gemini.get("engine") or ""),
         "gemini_status": str(gemini.get("assistant_status") or ""),
+        "validation_diagnostics": gemini.get("validation_diagnostics")
+        if isinstance(gemini.get("validation_diagnostics"), dict)
+        else {},
         "attempts": safe_attempts,
     }
 

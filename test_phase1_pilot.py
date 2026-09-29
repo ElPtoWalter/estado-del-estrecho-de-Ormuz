@@ -52,12 +52,14 @@ class Phase1PilotTests(unittest.TestCase):
                 "engine": "rules",
                 "assistant_status": "gemini-validation-es",
                 "attempts": [{"provider": "gemini", "model": "gemini-2.5-flash-lite", "raw": "secret"}],
+                "validation_diagnostics": {"language": "es", "reason": "unseen-number"},
                 "drafts": {"es": {"headline": "private response"}},
             },
         }
         diagnostics = pilot.safe_failure_diagnostics(report)
         self.assertEqual(diagnostics["failed_checks"], ["gemini_selected"])
         self.assertEqual(diagnostics["gemini_status"], "gemini-validation-es")
+        self.assertEqual(diagnostics["validation_diagnostics"]["reason"], "unseen-number")
         self.assertNotIn("raw", diagnostics["attempts"][0])
         self.assertNotIn("drafts", diagnostics)
 

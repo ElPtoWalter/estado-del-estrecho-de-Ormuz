@@ -348,9 +348,15 @@ def _validate_language_draft(
     allowed_corpus: str,
     allowed_status_markers: set[str],
     allowed_date_words: set[str],
+    diagnostics: dict[str, str] | None = None,
 ) -> dict[str, Any] | None:
-    if not isinstance(draft, dict) or set(draft) != {"headline", "deck", "situation", "sections", "meaning", "watch"}:
+    def reject(reason: str) -> None:
+        if diagnostics is not None:
+            diagnostics["reason"] = reason
         return None
+
+    if not isinstance(draft, dict) or set(draft) != {"headline", "deck", "situation", "sections", "meaning", "watch"}:
+        return reject("draft-schema")
 
     headline = _plain_text(draft.get("headline"), 28, 180)
     deck = _plain_text(draft.get("deck"), 80, 520)
@@ -358,7 +364,7 @@ def _validate_language_draft(
     meaning = _list_of_text(draft.get("meaning"), 1, 2, 75, 1_100)
     watch = _list_of_text(draft.get("watch"), 3, 4, 28, 360)
     if not all((headline, deck, situation, meaning, watch)):
-        return None
+        return reject("required-field-shape")
 
     expected_titles = [
         str(section.get("title", ""))
@@ -367,21 +373,21 @@ def _validate_language_draft(
     ]
     raw_sections = draft.get("sections")
     if not isinstance(raw_sections, list) or len(raw_sections) != len(expected_titles):
-        return None
+        return reject("section-count")
     sections: list[dict[str, str]] = []
     for position, title in enumerate(expected_titles):
         raw = raw_sections[position]
         if not isinstance(raw, dict) or set(raw) != {"title", "paragraph"} or raw.get("title") != title:
-            return None
+            return reject("section-contract")
         paragraph = _plain_text(raw.get("paragraph"), 85, 1_300)
         if paragraph is None:
-            return None
+            return reject("section-paragraph-shape")
         required_sources = [source for source in sources_by_section.get(title, []) if source]
         if required_sources and not any(_mentions_source(paragraph, source) for source in required_sources):
-            return None
+            return reject("section-source-missing")
         section_sources = {_canonical_source(source) for source in required_sources}
         if section_sources and _has_unknown_attribution(paragraph, section_sources):
-            return None
+            return reject("section-attribution")
         sections.append({"title": title, "paragraph": paragraph})
 
     normalized = {
@@ -397,24 +403,24 @@ def _validate_language_draft(
     )
     words = re.findall(r"\b\w+[\wáéíóúüñ-]*\b", prose, re.I)
     if not 230 <= len(words) <= 1_250:
-        return None
+        return reject("word-count")
     if _numbers(prose) - allowed_numbers:
-        return None
+        return reject("unseen-number")
     if _acronyms(prose) - allowed_acronyms:
-        return None
+        return reject("unseen-acronym")
     if _has_unallowed_known_source(prose, allowed_sources) or _has_unknown_attribution(prose, allowed_sources):
-        return None
+        return reject("source-attribution")
     if _contradicts_operational_state(prose, facts):
-        return None
+        return reject("operational-state")
     if _semantic_markers(prose) - allowed_status_markers:
-        return None
+        return reject("semantic-state")
     if _date_words(prose) - allowed_date_words:
-        return None
+        return reject("unseen-date")
     if UNSUPPORTED_CERTAINTY_PATTERN.search(prose):
-        return None
+        return reject("unsupported-certainty")
     for entity in _named_entities(prose):
         if entity not in allowed_corpus.casefold():
-            return None
+            return reject("unseen-entity")
     return normalized
 
 def _extract_content(response: dict[str, Any]) -> str:
@@ -479,6 +485,7 @@ def _set_trace(
     provider: str,
     status: str,
     attempts: list[dict[str, str]],
+    validation_diagnostics: dict[str, str] | None = None,
 ) -> None:
     if trace is None:
         return
@@ -490,6 +497,8 @@ def _set_trace(
         "status": status,
         "attempts": copy.deepcopy(attempts),
     })
+    if validation_diagnostics:
+        trace["validation_diagnostics"] = copy.deepcopy(validation_diagnostics)
 
 
 def probe_gemini_connection(
@@ -524,6 +533,7 @@ def _validate_candidate(
     facts: dict[str, Any],
     fallbacks: dict[str, dict[str, Any]],
     sources_by_section: dict[str, dict[str, list[str]]],
+    diagnostics: dict[str, str] | None = None,
 ) -> tuple[dict[str, dict[str, Any]] | None, str]:
     # Deterministic fallbacks may contain trusted derived values (for example,
     # source/topic counts) that are not serialized as literal numbers in the
@@ -544,9 +554,12 @@ def _validate_candidate(
     allowed_status_markers = _semantic_markers(facts)
     allowed_date_words = _date_words(facts) | _date_words(fallbacks)
     if not isinstance(candidate, dict) or set(candidate) != set(fallbacks):
+        if diagnostics is not None:
+            diagnostics.update({"language": "all", "reason": "candidate-schema"})
         return None, "schema-mismatch"
     validated: dict[str, dict[str, Any]] = {}
     for language, fallback in fallbacks.items():
+        language_diagnostics: dict[str, str] = {}
         draft = _validate_language_draft(
             candidate.get(language),
             fallback,
@@ -558,8 +571,11 @@ def _validate_candidate(
             allowed_corpus,
             allowed_status_markers,
             allowed_date_words,
+            language_diagnostics,
         )
         if draft is None:
+            if diagnostics is not None:
+                diagnostics.update({"language": language, "reason": language_diagnostics.get("reason", "unknown")})
             return None, f"validation-{language}"
         validated[language] = draft
     return validated, "ok"
@@ -637,6 +653,7 @@ def generate_editorial_drafts(
     schema = _response_schema(fallbacks)
 
     gemini_status: str | None = None
+    gemini_validation_diagnostics: dict[str, str] = {}
     if gemini_key:
         chosen_gemini_model = free_gemini_model_name(gemini_model)
         attempts.append({"provider": "gemini", "model": chosen_gemini_model})
@@ -664,7 +681,11 @@ def generate_editorial_drafts(
             raw_content = _extract_gemini_content(envelope).strip()
             candidate = json.loads(raw_content)
             validated, gemini_status = _validate_candidate(
-                candidate, facts=facts, fallbacks=fallbacks, sources_by_section=sources_by_section
+                candidate,
+                facts=facts,
+                fallbacks=fallbacks,
+                sources_by_section=sources_by_section,
+                diagnostics=gemini_validation_diagnostics,
             )
             if validated is not None:
                 _set_trace(trace, facts=facts, provider="gemini", status="ok", attempts=attempts)
@@ -674,7 +695,14 @@ def generate_editorial_drafts(
 
     if not openrouter_key:
         status = f"gemini-{gemini_status or 'no-key'}"
-        _set_trace(trace, facts=facts, provider="rules", status=status, attempts=attempts)
+        _set_trace(
+            trace,
+            facts=facts,
+            provider="rules",
+            status=status,
+            attempts=attempts,
+            validation_diagnostics=gemini_validation_diagnostics,
+        )
         return safe_fallbacks, "rules", status
 
     chosen_model = free_model_name(model)
