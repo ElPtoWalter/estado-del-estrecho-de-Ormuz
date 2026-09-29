@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "BAJA",
-  "checked_at": "2026-09-29T01:12:04Z",
-  "last_success_at": "2026-09-29T01:12:04Z",
+  "checked_at": "2026-09-29T07:25:58Z",
+  "last_success_at": "2026-09-29T07:25:58Z",
   "last_change_at": "2026-09-28T20:41:51Z",
   "verification_ok": true,
   "stale": false,
@@ -22,7 +22,7 @@
       "published_at": "2026-09-28T17:46:06Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-29T01:12:04Z"
+      "observed_at": "2026-09-29T07:25:58Z"
     }
   ],
   "diagnostics": {
@@ -45,11 +45,11 @@
       "declared": 0,
       "risk": 1
     },
-    "articles_considered": 43,
+    "articles_considered": 44,
     "signals_considered": 3,
     "current_cycle_evidence": 1,
     "evidence_display_mode": "current",
-    "evidence_archive_size": 48,
+    "evidence_archive_size": 46,
     "evidence_archive_days": 14
   },
   "evidence_context": {
@@ -80,7 +80,7 @@
       "published_at": "2026-09-28T17:46:06Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-29T01:12:04Z"
+      "observed_at": "2026-09-29T07:25:58Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -521,31 +521,11 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-09-15T10:21:59Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Hormuz traffic dwindles after Middle East attacks intensify - reuters.com",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUTFPRnZDMlUxdmU3RmpseHVGS2laWk4tZU0ySUhOSUdDMGlfQ3loQTBQZktUdW96ck0yNlctUWxVV2NYSHpDclc2YnI4cVFISWZXbjdlM1BDSC1vejJmR2Qtc0NjTTlxLVpxRmZXck5nQU9US1JUalB2cTNZd1Z4Y1Q1QkVQUkEySXNqZUxYV1VWLV8wbVJYTU85X3U0bmk3SXFnNm1uMDQ4TkYwMjV3a3ItZw?oc=5",
-      "published_at": "2026-09-15T02:59:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-09-16T06:36:51Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Hormuz traffic dwindles after Middle East attacks intensify - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUTFPRnZDMlUxdmU3RmpseHVGS2laWk4tZU0ySUhOSUdDMGlfQ3loQTBQZktUdW96ck0yNlctUWxVV2NYSHpDclc2YnI4cVFISWZXbjdlM1BDSC1vejJmR2Qtc0NjTTlxLVpxRmZXck5nQU9US1JUalB2cTNZd1Z4Y1Q1QkVQUkEySXNqZUxYV1VWLV8wbVJYTU85X3U0bmk3SXFnNm1uMDQ4TkYwMjV3a3ItZw?oc=5",
-      "published_at": "2026-09-15T02:59:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-09-16T00:43:34Z"
     }
   ],
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-29T01:12:53Z",
+    "generated_at": "2026-09-29T07:26:46Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -558,45 +538,62 @@
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
-      "access": "SELECTIVE",
+      "access": "RESTRICTED",
       "risk": "EXTREME",
       "legal": "DISPUTED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
-      "access": "Selectivo / condicionado",
+      "access": "Restringido",
       "risk": "Extremo",
       "legal": "Régimen disputado"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
-      "access": "Selective / conditional",
+      "access": "Restricted",
       "risk": "Extreme",
       "legal": "Disputed regime"
     },
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 11.493,
+      "passage": 10.987,
       "closure": 0,
-      "traffic_reduction": 0.62,
-      "access_restriction": 5.16,
-      "risk": 36.22
+      "traffic_reduction": 1.0,
+      "access_restriction": 4.64,
+      "risk": 32.8
     },
     "source_counts": {
-      "passage": 7,
+      "passage": 6,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-09-28T11:59:19Z",
+    "latest_confirmed_transit_at": "2026-09-28T19:49:45Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "BAJA"
     },
     "evidence": [
+      {
+        "kind": "RISK_SEVERE",
+        "title": "The week in charts: Iran’s ship attacks show strategy of disruption not discrimination | Abu Dhabi emerges as container shipping’s Hormuz shuttle operator - Lloyd's List",
+        "source": "Lloyd's List",
+        "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxOVUF6UHJGQXpvT1ZBdjA1UldYNHg4WVhUVVNSdDlDbVVVNU5pQ0NDOWR5N3FNR3BicEhlLUNMdXRFQU1DbzZ3aE92Yl9yNEgxbUQxRnhKN2VySEQwWmVPcmpzTlZBaV9zQ0VMWGxCRVFpbFFITmw5YlFTMV84ZkhiZFJmRHZBaWhnTEFaNXpoNklmMnFlcEFiR24zVndyWEljekxxS3IxYXU2TTloTmktd0RlM1l3RGcwUHdGUVBYNkxFZm5zNUZLcEtxbjhiWVJHMEVlZEl4TkFUUk9vTF9xV2F5MVdJNU1sbmJuOFJRejNfcVlUdFJ6b010ZklwMlJXdU92a2tBdXpjR0g2cVVhZFpIYWhtQQ?oc=5",
+        "published_at": "2026-09-28T10:21:47Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
       {
         "kind": "TRANSIT_CONFIRMED",
         "title": "Qatar-linked LNG traffic through Hormuz strait picks up despite conflict - Reuters",
@@ -619,7 +616,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://www.lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-29T01:12:53Z",
+        "published_at": "2026-09-29T07:26:46Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -649,11 +646,28 @@
         "kind_label_en": "Severe risk"
       },
       {
+        "kind": "TRAFFIC_REDUCED",
+        "title": "Asian markets fall, oil rises over Strait of Hormuz situation - UA.NEWS",
+        "source": "UA.NEWS",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQOHd5MzJoRVdpSWM3RzdUSWcwNWJvM0lEaXRxOWpSQjdpZ19DV0NETE4ydTFXSl9CdEdGazJHLVRSNnFqX3ZUZzIzZWl0V3pUYk1JNkdHSTdCNlJ5c19fa2cxQzBMZjZtUGFpeFVkTVVmaFZ6ZzVEYkp0WkdZSkNwWXZWd2paaWxJZ29CalAwaE1jZTQyWUZOWFZXTlhFVzdMcFM1a19nbkJSU2szLUtJaUJsN3pPa2JaNnpCTjFEdm8?oc=5",
+        "published_at": "2026-09-29T04:34:39Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Tráfico reducido",
+        "kind_label_en": "Reduced traffic"
+      },
+      {
         "kind": "RISK_SEVERE",
         "title": "U.S. Marines were wounded in Iranian attack on nonmilitary vessel - The Washington Post",
         "source": "The Washington Post",
         "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPYjBnQkVEcThIYVdFODR1WURPRldmdEdxenYtZjFLRXNURmlqN0o2dURQV3RqVFkyS1gzcUpLamhSSmVXR1owYjFTSVpHejUwZVgwY3NSWlJVZmlZeFN5S3pCcDJnSFhhN1FQanhaMzVVbjRnYVhrS0VHZ055Y0RYTE56ejVwdTQzOWltTjdNRTAxcEN5MFB1LXJjdVVFTkZZZ1djSl9Bb1Y0SWpmRWZlSGpuQmtFVkN4dHc?oc=5",
-        "published_at": "2026-09-29T00:43:02Z",
+        "published_at": "2026-09-29T03:10:33Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
@@ -667,10 +681,10 @@
       },
       {
         "kind": "ACCESS_RESTRICTED",
-        "title": "Persian Gulf oil exports hit 72% of prewar levels — as US says Iran is 'exhausted' by blockade - New York Post",
-        "source": "New York Post",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOeFpWVTFwWnptOENIb1BaM2pSWVowX2tHVHhVdnZDS0lWOF8wVnVSa2xYSGJ6WjZBcmFfbWhSaUZGYllRbWVaZkNjdDdnS3FQd2wzRy1DSWpvaGJrZ0lSY3NEd3pYTk5TNVQ3T0ZENzMyZEFtMS1NUlhOZ3B3VldxTTF0a1lIUzdWTWdKYU85MURFZ2F6VkNCamRQalh5bWxCS3JIdm9ZZDNxRndldzNyYnBFSTJjZHB6blMwdHFWeXNHNUZCOHl1ZkNUUQ?oc=5",
-        "published_at": "2026-09-28T21:09:00Z",
+        "title": "How Gulf states are circumventing Iran's blockade of the Strait of Hormuz. - Vietnam.vn",
+        "source": "Vietnam.vn",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPT0x3Z09lM29LRkZIdU44djFBS1pOYUk5cUVkMHdtNExnZEpiakpfYzVFNnI3VzVkS3dZVDdVZEVFZWpRSHZTcWYyb05Rc3VFWENJcXNTRHE4TnhLa25kVk5aWnpPTEMzNjNKR1lWZGd4Z1dLV3VoUWY0TWtQd1A2U1BQa25WbWJURnFldEVQYUc3VERyaUJv?oc=5",
+        "published_at": "2026-09-29T01:21:21Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
@@ -684,44 +698,10 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Iran live updates: 8 Marines hurt in ship attack in Strait of Hormuz - Yahoo News UK",
-        "source": "Yahoo News UK",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE0tWlgzSmpZcGZ2Q0xnZ2JZRS1wRTZvZGltLWZfSUVSVU1MSU44MmI0WWtaQ3p4aDU4N1FBVVZXWG1CRzVKeHA0bEdJSWlRYms4NkRVLUNqZW9fZk1DalFDSnk0RVJOYnpiOVhheEpqX09ncUdtTU92aXRabmo?oc=5",
-        "published_at": "2026-09-28T19:16:00Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "8 US Marines reportedly injured near Hormuz by Iranian attack earlier this month | LIVE BLOG - i24news.tv",
-        "source": "i24news.tv",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQcmVVVTVfZUVwMkJaZFNLemhQUkVWcnhwOF9Yclk0QWJ2LVZZc3FWRjBjczZraFlUY3hpSlNhSHJESzQwelBCbzFiWm9VMWhuVldWRUpqTlpCZlZlbDlyay1iTVZsRVNBNTFQajNMVWlnb1JJZ3dMNzgyN2FXTkFQVGVWT1BfRVpFcVpCeExLazRzWE9kZlNpcWcyOTZRV0dnSW9fMWpGeFNnV2RWRmduSlJGN0xuUVJhOE1uTDQ2MUJ0T1BaZGdyVU8wR1BCb1hnVG9ySw?oc=5",
-        "published_at": "2026-09-28T16:44:57Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Oil rises amid Hormuz impasse, Trump attack threat - Al-Monitor",
-        "source": "Al-Monitor",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPOG5EY0RfaG1SMmt6RVl0Qjc2MHV2MWZObVpXX0cxOW1weGpZTVAxdERmNng2RWxHd3dIQTlTVHVOdmw2a0NYOFJNSEI4azhTeldneWNvVS1xMUFiNy1Nb1Nrc0ppdXZYMlY2a0VfajdSb1VOa0hiRW9naDVWQXZ5cFJyd25fVnNwdGNDWV84aEJiVnVPZTd2cUpn?oc=5",
-        "published_at": "2026-09-28T16:38:50Z",
+        "title": "Iran’s army voices readiness for potential renewed US attack - Rappler",
+        "source": "Rappler",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOczRsN1lxSkhUWWpWcExORkJydHh1VUxMc0YxUHZSRm9ocTZqQ1oxLUhSN1JhTWxsZDhBdG5ySmdaa0I2R2hZNjFmZklxWl9fQ0ZkQlhKUHpYeEM2NjJiUVhpMnhqbllXQWNzQ3NfRElKbElDdXlPcVZuMHRxQW1RejZUVV9BWl8wWm5IYTVRc3lDZjJX?oc=5",
+        "published_at": "2026-09-29T01:18:55Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
@@ -735,7 +715,7 @@
       }
     ],
     "diagnostics": {
-      "signals_considered": 50,
+      "signals_considered": 42,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
