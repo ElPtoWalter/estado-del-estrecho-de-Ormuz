@@ -2,12 +2,14 @@ name: Fase 1 Newsroom CI
 
 on:
   push:
-    branches: [main, codex/phase1-closure-ormuz]
+    branches: [main, codex/phase1-closure-ormuz, phase2a-video-intelligence]
     paths:
       - "**.py"
       - "**.cjs"
       - "source-registry.json"
       - "PHASE2_VIDEO_CONTRACT.md"
+      - "PHASE2A_VIDEO_INTELLIGENCE.md"
+      - "video-rules.json"
       - ".github/workflows/**.yml"
   pull_request:
     branches: [main]
@@ -16,6 +18,12 @@ on:
       - "straitwatch_core.py"
       - "source-registry.json"
       - "PHASE2_VIDEO_CONTRACT.md"
+      - "PHASE2A_VIDEO_INTELLIGENCE.md"
+      - "video-rules.json"
+      - "phase2_video/**"
+      - "pilot_phase2a_video.py"
+      - "test_video_*.py"
+      - "test_phase2a_pilot.py"
       - "operational_intelligence_v7.py"
       - "postprocess_evidence.py"
       - "generate_health.py"
@@ -27,6 +35,7 @@ on:
       - "test_editorial_quality.py"
       - "pilot_gemini_phase1.py"
       - ".github/workflows/pilot-gemini-phase1.yml"
+      - ".github/workflows/pilot-phase2a-video.yml"
       - ".github/workflows/phase1-newsroom-ci.yml"
       - ".github/workflows/update-status.yml"
       - ".github/workflows/diario-ormuz.yml"
@@ -50,7 +59,7 @@ jobs:
           python-version: "3.12"
       - name: Compilar
         run: |
-          python -m py_compile free_editorial_ai.py generate_daily_journal.py pilot_gemini_phase1.py straitwatch_core.py operational_intelligence_v7.py postprocess_evidence.py generate_health.py build_public_site.py test_free_editorial_ai.py test_straitwatch_core.py
+          python -m py_compile free_editorial_ai.py generate_daily_journal.py pilot_gemini_phase1.py pilot_phase2a_video.py straitwatch_core.py operational_intelligence_v7.py postprocess_evidence.py generate_health.py build_public_site.py test_free_editorial_ai.py test_straitwatch_core.py phase2_video/*.py
       - name: Pruebas editoriales
         run: python -m unittest discover -v
       - name: Pruebas de interfaz pública

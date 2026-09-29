@@ -32,6 +32,30 @@ SYSTEM_INSTRUCTION = (
 
 _WORD_RE = re.compile(r"\b[\wáéíóúüñ'-]+\b", re.I)
 
+_STATE_LABELS = {
+    "es": {
+        "OPEN_SEVERELY_RESTRICTED": "abierto con tránsito muy restringido",
+        "OPEN_RESTRICTED": "abierto con tránsito restringido",
+        "OPEN": "abierto",
+        "NORMAL": "normalidad operativa",
+        "CLOSED": "cerrado",
+        "UNCERTAIN": "incierto",
+    },
+    "en": {
+        "OPEN_SEVERELY_RESTRICTED": "open with severely restricted transit",
+        "OPEN_RESTRICTED": "open with restricted transit",
+        "OPEN": "open",
+        "NORMAL": "normal operations",
+        "CLOSED": "closed",
+        "UNCERTAIN": "uncertain",
+    },
+}
+
+_CONFIDENCE_LABELS = {
+    "es": {"high": "alta", "medium": "media", "low": "baja"},
+    "en": {"high": "high", "medium": "medium", "low": "low"},
+}
+
 
 def _first_complete(value: Any, limit: int = 420) -> str:
     text = re.sub(r"\s+", " ", str(value or "")).strip()
@@ -57,6 +81,16 @@ def _spoken(script: dict[str, Any]) -> str:
         *(str(scene.get("voiceover") or "") for scene in script.get("scenes", []) if isinstance(scene, dict)),
         str(script.get("outro") or ""),
     ])
+
+
+def _display_state(value: Any, language: str) -> str:
+    canonical = str(value or "").strip()
+    return _STATE_LABELS[language].get(canonical.upper(), canonical.replace("_", " ").casefold())
+
+
+def _display_confidence(value: Any, language: str) -> str:
+    canonical = str(value or "").strip().casefold()
+    return _CONFIDENCE_LABELS[language].get(canonical, canonical)
 
 
 def _language_templates(language: str) -> dict[str, Any]:
@@ -134,15 +168,16 @@ def generate_local_script(
     primary = _first_complete(facts[0].get(fact_key) or facts[0].get("text_es"))
     add_scene(template["fact"].format(value=primary), "source-card", primary)
     context = package["operational_context"]
+    state_label = _display_state(context["state"], language)
     add_scene(
         template["context"].format(
-            state=str(context["state"]).replace("_", " "),
-            confidence=context["confidence"],
+            state=state_label,
+            confidence=_display_confidence(context["confidence"], language),
         ),
         "status-card",
-        str(context["state"]).replace("_", " "),
+        state_label,
     )
-    if package.get("what_changed"):
+    if package.get("what_changed") and package["video_type"] != "breaking":
         add_scene(
             template["change"].format(value=_first_complete(package["what_changed"][0])),
             "timeline",
@@ -154,7 +189,7 @@ def generate_local_script(
             "text-card",
             _first_complete(package["what_we_dont_know"][0], 160),
         )
-    if package.get("watch_next_24h"):
+    if package.get("watch_next_24h") and package["video_type"] != "breaking":
         add_scene(
             template["watch"].format(value=_first_complete(package["watch_next_24h"][0])),
             "map",

@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 
 class Phase2APilotTests(unittest.TestCase):
     def test_real_historical_fixture_builds_a_green_isolated_pilot(self):
-        output = ROOT.parent / "phase2a-pilot-test-output"
+        output = ROOT.parent / "phase2a-pilot-test-output-ormuz"
         output.mkdir(exist_ok=True)
         try:
             with patch.dict(

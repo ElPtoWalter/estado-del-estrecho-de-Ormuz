@@ -9,7 +9,7 @@ import urllib.error
 
 from phase2_video.script import generate_local_script, generate_script
 from phase2_video.validator import validate_script
-from test_video_support import package, reseal_script
+from test_video_support import event, package, reseal_script
 
 
 class VideoScriptTests(unittest.TestCase):
@@ -36,6 +36,31 @@ class VideoScriptTests(unittest.TestCase):
             script = generate_local_script(self.package, language=language)
             self.assertEqual(script["language"], language)
             self.assertEqual(validate_script(self.package, script)["validation_status"], "PASS")
+
+    def test_local_script_translates_canonical_state_and_confidence(self):
+        localized_package = copy.deepcopy(self.package)
+        localized_package["operational_context"]["state"] = "OPEN_SEVERELY_RESTRICTED"
+        localized_package["operational_context"]["confidence"] = "low"
+        from phase2_video.schema import package_content_hash, package_id
+
+        localized_package["content_hash"] = package_content_hash(localized_package)
+        localized_package["package_id"] = package_id(
+            localized_package["site"], localized_package["edition_date"], localized_package["content_hash"]
+        )
+        script = generate_local_script(localized_package, language="es")
+        status_scene = next(scene for scene in script["scenes"] if scene["visual_intent"] == "status-card")
+        self.assertIn("abierto con tránsito muy restringido", status_scene["voiceover"])
+        self.assertIn("confianza baja", status_scene["voiceover"])
+        self.assertNotIn("OPEN_SEVERELY_RESTRICTED", status_scene["voiceover"])
+        self.assertEqual(validate_script(localized_package, script)["validation_status"], "PASS")
+
+    def test_breaking_script_keeps_uncertainty_within_its_shorter_limit(self):
+        breaking_package = package(event_row=event(importance=90, operational_impact="MATERIAL"))
+        script = generate_local_script(breaking_package)
+        report = validate_script(breaking_package, script)
+        self.assertEqual(report["validation_status"], "PASS", report)
+        self.assertLessEqual(script["estimated_words"], 110)
+        self.assertTrue(any("no sabemos" in scene["voiceover"] for scene in script["scenes"]))
 
     def test_valid_gemini_script_is_selected_and_locally_sealed(self):
         candidate = generate_local_script(self.package)
