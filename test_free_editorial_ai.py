@@ -173,6 +173,17 @@ class FreeEditorialAITests(unittest.TestCase):
         self.assertNotIn("clave-gemini", captured["request"].full_url)
         self.assertNotIn("clave-gemini", captured["request"].data.decode("utf-8"))
 
+    def test_gemini_request_uses_structured_output_and_validated_baseline(self):
+        (_, engine, status), captured = self.call_gemini(valid_draft())
+        self.assertEqual((engine, status), ("gemini", "ok"))
+        payload = json.loads(captured["request"].data.decode("utf-8"))
+        response_format = payload["generationConfig"]["responseFormat"]["text"]
+        self.assertEqual(response_format["mimeType"], "application/json")
+        self.assertFalse(response_format["schema"]["additionalProperties"])
+        prompt = payload["contents"][0]["parts"][0]["text"]
+        self.assertIn("BORRADOR LOCAL VALIDADO", prompt)
+        self.assertIn(self.fallback["headline"], prompt)
+
     def test_gemini_uses_free_default_model(self):
         (_, engine, status), captured = self.call_gemini(valid_draft(), gemini_model="not-allowed")
         self.assertEqual((engine, status), ("gemini", "ok"))

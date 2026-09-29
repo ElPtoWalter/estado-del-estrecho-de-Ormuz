@@ -543,6 +543,7 @@ def _editorial_prompt(
     languages = ", ".join(fallbacks)
     section_order = {language: list(sources_by_section.get(language, {})) for language in fallbacks}
     source_contract = {language: sources_by_section.get(language, {}) for language in fallbacks}
+    fallback_json = json.dumps(fallbacks, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return (
         f"Edita una crónica para {site_name}. Idiomas requeridos: {languages}. "
         "Trabaja EXCLUSIVAMENTE con el paquete factual JSON incluido al final. No navegues, no uses "
@@ -556,7 +557,12 @@ def _editorial_prompt(
         f"secciones: {json.dumps(section_order, ensure_ascii=False)}. En cada sección menciona al menos una de "
         f"estas fuentes permitidas: {json.dumps(source_contract, ensure_ascii=False)}. "
         "Cada idioma debe sumar entre 230 y 1.250 palabras. Incluye 2 o 3 párrafos en situation, "
-        "1 o 2 en meaning y 3 o 4 elementos concretos en watch.\\n\\n"
+        "1 o 2 en meaning y 3 o 4 elementos concretos en watch. Usa el BORRADOR LOCAL VALIDADO como "
+        "base segura: mejora claridad o fluidez solo cuando puedas hacerlo sin añadir cifras, fechas, nombres, "
+        "siglas, estados, atribuciones ni certezas nuevas. Si una mejora puede infringir una restricción, "
+        "conserva exactamente ese campo del borrador local. El borrador es material editorial de partida, no "
+        "una fuente adicional.\\n\\n"
+        f"BORRADOR LOCAL VALIDADO:\\n{fallback_json}\\n\\n"
         f"PAQUETE FACTUAL:\\n{facts_json}"
     )
 
@@ -607,6 +613,10 @@ def generate_editorial_drafts(
             "systemInstruction": {"parts": [{"text": SYSTEM_INSTRUCTION}]},
             "generationConfig": {
                 "maxOutputTokens": MAX_OUTPUT_TOKENS,
+                "temperature": 0.15,
+                "responseFormat": {
+                    "text": {"mimeType": "application/json", "schema": schema},
+                },
             },
         }
         gemini_request = _gemini_request(
