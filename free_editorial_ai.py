@@ -54,9 +54,9 @@ DATE_WORD_PATTERN = re.compile(
 )
 
 ENTITY_PATTERN = re.compile(
-    r"\b(?:[A-ZÁÉÍÓÚÜÑ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ&.'’-]{1,}|[A-Z]{2,})"
+    r"\b(?:[A-ZÁÉÍÓÚÜÑ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ&.'’-]*[A-Za-zÁÉÍÓÚÜÑáéíóúüñ&'’-]|[A-Z]{2,})"
     r"(?:\s+(?:(?:de|del|la|el|of|the|and|&|al)\s+)?"
-    r"(?:[A-ZÁÉÍÓÚÜÑ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ&.'’-]{1,}|[A-Z]{2,})){1,5}\b"
+    r"(?:[A-ZÁÉÍÓÚÜÑ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ&.'’-]*[A-Za-zÁÉÍÓÚÜÑáéíóúüñ&'’-]|[A-Z]{2,})){1,5}\b"
 )
 
 ATTRIBUTION_PATTERN = re.compile(

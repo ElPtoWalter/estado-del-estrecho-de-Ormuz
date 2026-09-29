@@ -8,6 +8,7 @@ from free_editorial_ai import (
     DEFAULT_GEMINI_MODEL,
     GEMINI_API_BASE,
     SYSTEM_INSTRUCTION,
+    _named_entities,
     free_gemini_model_name,
     free_model_name,
     generate_editorial_drafts,
@@ -367,6 +368,11 @@ class FreeEditorialAITests(unittest.TestCase):
         self.assertEqual((engine, status), ("rules", "gemini-validation-es"))
         self.assertEqual(trace["validation_diagnostics"]["reason"], "unseen-entity")
         self.assertEqual(trace["validation_diagnostics"]["value"], "maritime zeta group")
+
+    def test_entity_detection_does_not_cross_a_sentence_boundary(self):
+        entities = _named_entities("Euronews. Un análisis posterior mantiene el límite. Maritime Zeta Group aparece después.")
+        self.assertNotIn("euronews. un", entities)
+        self.assertIn("maritime zeta group", entities)
 
     def test_unknown_single_word_attribution_is_rejected(self):
         candidate = valid_draft()
