@@ -25,7 +25,18 @@ ET.register_namespace("", SITEMAP_NS)
 ET.register_namespace("xhtml", XHTML_NS)
 
 EXCLUDED_FILES = {"404.html", "offline.html", "preview.html", "panel-x.html", "test.html"}
-EXCLUDED_DIRS = {".git", ".github", "node_modules", "tests", "test", "drafts", "private", "vendor", "tmp"}
+EXCLUDED_DIRS = {
+    ".git",
+    ".github",
+    "_site",
+    "node_modules",
+    "tests",
+    "test",
+    "drafts",
+    "private",
+    "vendor",
+    "tmp",
+}
 EXCLUDED_PREFIXES = ("draft-", "private-", "admin-", "test-")
 
 

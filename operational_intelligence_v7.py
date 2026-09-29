@@ -22,9 +22,19 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+from straitwatch_core import (
+    SourceRegistry,
+    aggregate_events,
+    canonical_url,
+    normalize_title,
+    write_json_if_changed,
+)
+
 VERSION = 7
 USER_AGENT = "Mozilla/5.0 Estrecho-Ormuz-Operational-Intelligence/7"
 BASELINE_VESSELS_PER_DAY = 138.0
+ROOT = Path(__file__).resolve().parent
+SOURCE_REGISTRY = SourceRegistry.from_path(ROOT / "source-registry.json")
 
 SOURCE_TIERS = {
     "ukmto": 5, "jmic": 5, "imo": 5, "u.s. marad": 5, "marad": 5,
@@ -151,6 +161,9 @@ def normalize(value: Any) -> str:
 
 
 def source_tier(name: str) -> int:
+    record = SOURCE_REGISTRY.resolve(name)
+    if record.source_id != "unknown":
+        return record.tier
     key = normalize(name).lower()
     for token, tier in SOURCE_TIERS.items():
         if token in key:
@@ -225,9 +238,12 @@ def add_signal(out: list[Signal], kind: str, title: str, source: str, url: str,
                traffic_ratio: float | None = None, traffic_count: int | None = None,
                traffic_average: int | None = None, tier: int | None = None,
                weight_multiplier: float = 1.0) -> None:
-    t = tier if tier is not None else source_tier(source)
-    out.append(Signal(kind, normalize(title), normalize(source) or "Unknown source",
-                      normalize(url), published_at, t, source_weight(t) * weight_multiplier,
+    record = SOURCE_REGISTRY.resolve(source, url)
+    canonical_source = record.canonical_name if record.source_id != "unknown" else normalize(source) or "Unknown source"
+    t = tier if tier is not None else (record.tier if record.source_id != "unknown" else source_tier(source))
+    base_weight = record.weight if record.source_id != "unknown" else source_weight(t)
+    out.append(Signal(kind, normalize(title), canonical_source,
+                      canonical_url(url), published_at, t, base_weight * weight_multiplier,
                       provider, normalize(details), traffic_ratio, traffic_count, traffic_average))
 
 
@@ -372,7 +388,9 @@ def fetch_lloyds_hot_topic(now: datetime) -> tuple[list[Signal], list[str]]:
 def dedupe(signals: list[Signal]) -> list[Signal]:
     seen = set(); result = []
     for item in sorted(signals, key=lambda x: parse_dt(x.published_at), reverse=True):
-        key = (item.kind, normalize(item.source).lower(), re.sub(r"\W+", " ", item.title.lower()).strip())
+        source = SOURCE_REGISTRY.resolve(item.source, item.url)
+        source_id = source.source_id if source.source_id != "unknown" else normalize(item.source).lower()
+        key = (item.kind, source_id, normalize_title(item.title))
         if key in seen: continue
         seen.add(key); result.append(item)
     return result
@@ -383,7 +401,13 @@ def weighted(item: Signal, now: datetime) -> float:
 
 
 def independent_sources(signals: list[Signal], kinds: set[str], now: datetime) -> set[str]:
-    return {normalize(i.source).lower() for i in signals if i.kind in kinds and age_multiplier(i.published_at, now) > 0}
+    return {
+        (lambda source: source.source_id if source.source_id != "unknown" else normalize(i.source).lower())(
+            SOURCE_REGISTRY.resolve(i.source, i.url)
+        )
+        for i in signals
+        if i.kind in kinds and age_multiplier(i.published_at, now) > 0
+    }
 
 
 def dimension_labels(value: str, lang: str) -> str:
@@ -440,7 +464,12 @@ def assess(signals: list[Signal], now: datetime, legacy: dict[str, Any] | None =
         else: state = "OPEN_NORMAL"
     else: state = "UNVERIFIED"
     meta = STATE_META[state]
-    primary_sources = {normalize(i.source).lower() for i in fresh if i.tier >= 4 and weighted(i, now) > 0}
+    primary_sources = {
+        (lambda source: source.source_id if source.source_id != "unknown" else normalize(i.source).lower())(
+            SOURCE_REGISTRY.resolve(i.source, i.url)
+        )
+        for i in fresh if i.tier >= 4 and weighted(i, now) > 0
+    }
     confidence = "ALTA" if state != "UNVERIFIED" and len(primary_sources) >= 2 and any(i.tier >= 5 for i in fresh) else "MEDIA" if state != "UNVERIFIED" and (primary_sources or len(open_sources | closed_sources) >= 2) else "BAJA"
     summaries = {
         "OPEN_SEVERELY_RESTRICTED": (
@@ -570,7 +599,19 @@ def update_status_files(root: Path, a: dict[str, Any]) -> None:
         path = root / filename
         if not path.exists(): continue
         data = load_json(path, {})
-        if isinstance(data, dict): data["operational_intelligence"] = a; write_json(path, data)
+        if isinstance(data, dict):
+            data["legacy_engine_role"] = "internal_diagnostic"
+            data["operational_intelligence"] = a
+            data["canonical_assessment"] = {
+                "engine": "operational-intelligence-v7",
+                "state": a.get("state"),
+                "family": a.get("family"),
+                "label_es": a.get("label_es"),
+                "label_en": a.get("label_en"),
+                "confidence": a.get("confidence"),
+                "generated_at": a.get("generated_at"),
+            }
+            write_json(path, data)
 
 
 def update_history(root: Path, a: dict[str, Any]) -> None:
@@ -583,6 +624,40 @@ def update_history(root: Path, a: dict[str, Any]) -> None:
     if key!=prev: hist.insert(0,a); write_json(path,hist[:365])
 
 
+def build_event_store(root: Path, signals: list[Signal], generated_at: str) -> dict[str, Any]:
+    status = load_json(root / "status.json", {})
+    raw_articles: list[dict[str, Any]] = []
+    if isinstance(status, dict):
+        for key in ("evidence", "evidence_archive"):
+            rows = status.get(key)
+            if isinstance(rows, list):
+                raw_articles.extend(item for item in rows if isinstance(item, dict))
+    for signal in dedupe(signals):
+        raw_articles.append({
+            "title": signal.title,
+            "source_name": signal.source,
+            "source_url": signal.url,
+            "published_at": signal.published_at,
+            "description": signal.details,
+            "signal": signal.kind,
+            "topic": "maritime" if signal.kind in {
+                "TRANSIT_CONFIRMED", "TRAFFIC_PRESENT", "TRAFFIC_REDUCED",
+                "TRAFFIC_SEVERELY_REDUCED", "TRAFFIC_NORMAL", "CLOSURE_EFFECTIVE",
+                "FORMAL_CLOSURE_CLAIM", "ACCESS_RESTRICTED", "NEUTRAL_TRANSIT_PERMITTED",
+            } else "security",
+        })
+    previous = load_json(root / "events.json", {})
+    previous_events = previous.get("events", []) if isinstance(previous, dict) else []
+    store = aggregate_events(
+        raw_articles,
+        SOURCE_REGISTRY,
+        previous_events if isinstance(previous_events, list) else [],
+        generated_at=generated_at,
+    )
+    write_json_if_changed(root / "events.json", store)
+    return store
+
+
 def run(root: Path | str | None = None, *, offline: bool=False) -> dict[str, Any]:
     root_path = Path(root) if root else Path(__file__).resolve().parent; now=utc_now()
     legacy=load_json(root_path/"status.json",{}); previous=load_json(root_path/"operational-intelligence.json",{})
@@ -591,7 +666,12 @@ def run(root: Path | str | None = None, *, offline: bool=False) -> dict[str, Any
         fetched,e=fetch_google_news(now); signals.extend(fetched); errors.extend(e)
         fetched,e=fetch_lloyds_hot_topic(now); signals.extend(fetched); errors.extend(e)
     a=assess(signals,now,legacy if isinstance(legacy,dict) else {}); a=merge_previous_if_needed(a,previous if isinstance(previous,dict) else {},now)
+    event_store = build_event_store(root_path, signals, str(a.get("generated_at") or iso_z(now)))
+    current_events = event_store.get("events") if isinstance(event_store.get("events"), list) else []
+    a["event_ids"] = [event.get("event_id") for event in current_events[:20] if event.get("event_id")]
+    a["verification_summary"] = event_store.get("verification_summary", {})
     a["diagnostics"]={"signals_considered":len(dedupe(signals)),"provider_errors":errors,"offline":offline,"baseline_vessels_per_day":BASELINE_VESSELS_PER_DAY,
+        "event_count": event_store.get("event_count", 0), "article_count_after_deduplication": event_store.get("article_count", 0),
         "model_note_es":"La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
         "model_note_en":"The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."}
     write_json(root_path/"operational-intelligence.json",a); update_status_files(root_path,a); update_history(root_path,a); update_home(root_path,"index.html","es",a); update_home(root_path,"en.html","en",a)

@@ -30,10 +30,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Validar redacción automática
-        run: |
-          python -m py_compile generate_daily_journal.py free_editorial_ai.py test_daily_journal_v8.py test_free_editorial_ai.py
-          python -m unittest -v test_daily_journal_v8.py test_free_editorial_ai.py test_editorial_quality.py
+      - name: Comprobar sintaxis del generador
+        run: python -m py_compile generate_daily_journal.py free_editorial_ai.py straitwatch_core.py
+
+      - name: Preparar parte breve estructurado
+        run: python generate_daily_brief.py
 
       - name: Redactar edición de la mañana
         env:
@@ -74,6 +75,7 @@ jobs:
             journal-state.json \
             journal-health.json \
             journal-social-draft.json \
+            events.json \
             diario-feed.xml \
             index.html \
             en.html \

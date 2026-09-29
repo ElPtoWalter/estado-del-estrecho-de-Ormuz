@@ -54,9 +54,9 @@ DATE_WORD_PATTERN = re.compile(
 )
 
 ENTITY_PATTERN = re.compile(
-    r"\b(?:[A-ZÁÉÍÓÚÜÑ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ&.'’-]{1,}|[A-Z]{2,})"
+    r"\b(?:[A-ZÁÉÍÓÚÜÑ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ&.'’-]*[A-Za-zÁÉÍÓÚÜÑáéíóúüñ&'’-]|[A-Z]{2,})"
     r"(?:\s+(?:(?:de|del|la|el|of|the|and|&|al)\s+)?"
-    r"(?:[A-ZÁÉÍÓÚÜÑ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ&.'’-]{1,}|[A-Z]{2,})){1,5}\b"
+    r"(?:[A-ZÁÉÍÓÚÜÑ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ&.'’-]*[A-Za-zÁÉÍÓÚÜÑáéíóúüñ&'’-]|[A-Z]{2,})){1,5}\b"
 )
 
 ATTRIBUTION_PATTERN = re.compile(
@@ -231,6 +231,11 @@ def _allowed_source_names(
         for item in selected:
             if isinstance(item, dict) and item.get("source"):
                 allowed.add(_canonical_source(str(item["source"])))
+    event_sources = facts.get("sources")
+    if isinstance(event_sources, list):
+        for item in event_sources:
+            if isinstance(item, dict) and (item.get("source_name") or item.get("name")):
+                allowed.add(_canonical_source(str(item.get("source_name") or item.get("name"))))
     for language in sources_by_section.values():
         for sources in language.values():
             for source in sources:
@@ -260,7 +265,26 @@ def _has_unknown_attribution(text: str, allowed: set[str]) -> bool:
 
 def _semantic_markers(value: Any) -> set[str]:
     text = json.dumps(value, ensure_ascii=False, sort_keys=True) if not isinstance(value, str) else value
-    return {name for name, pattern in STATUS_PATTERNS.items() if pattern.search(text)}
+    markers: set[str] = set()
+    for name, pattern in STATUS_PATTERNS.items():
+        for match in pattern.finditer(text):
+            clause = re.split(r"[.;:\n]", text[max(0, match.start() - 64):match.start()])[-1]
+            if re.search(r"\b(?:no|sin|tampoco|not|without|neither|nor)\b", clause, re.I):
+                continue
+            markers.add(name)
+            break
+    return markers
+
+
+def _text_values(value: Any):
+    if isinstance(value, str):
+        yield value
+    elif isinstance(value, dict):
+        for item in value.values():
+            yield from _text_values(item)
+    elif isinstance(value, list):
+        for item in value:
+            yield from _text_values(item)
 
 
 def _date_words(value: Any) -> set[str]:
@@ -324,9 +348,17 @@ def _validate_language_draft(
     allowed_corpus: str,
     allowed_status_markers: set[str],
     allowed_date_words: set[str],
+    diagnostics: dict[str, str] | None = None,
 ) -> dict[str, Any] | None:
-    if not isinstance(draft, dict) or set(draft) != {"headline", "deck", "situation", "sections", "meaning", "watch"}:
+    def reject(reason: str, value: str | None = None) -> None:
+        if diagnostics is not None:
+            diagnostics["reason"] = reason
+            if value:
+                diagnostics["value"] = value
         return None
+
+    if not isinstance(draft, dict) or set(draft) != {"headline", "deck", "situation", "sections", "meaning", "watch"}:
+        return reject("draft-schema")
 
     headline = _plain_text(draft.get("headline"), 28, 180)
     deck = _plain_text(draft.get("deck"), 80, 520)
@@ -334,7 +366,7 @@ def _validate_language_draft(
     meaning = _list_of_text(draft.get("meaning"), 1, 2, 75, 1_100)
     watch = _list_of_text(draft.get("watch"), 3, 4, 28, 360)
     if not all((headline, deck, situation, meaning, watch)):
-        return None
+        return reject("required-field-shape")
 
     expected_titles = [
         str(section.get("title", ""))
@@ -343,21 +375,21 @@ def _validate_language_draft(
     ]
     raw_sections = draft.get("sections")
     if not isinstance(raw_sections, list) or len(raw_sections) != len(expected_titles):
-        return None
+        return reject("section-count")
     sections: list[dict[str, str]] = []
     for position, title in enumerate(expected_titles):
         raw = raw_sections[position]
         if not isinstance(raw, dict) or set(raw) != {"title", "paragraph"} or raw.get("title") != title:
-            return None
+            return reject("section-contract")
         paragraph = _plain_text(raw.get("paragraph"), 85, 1_300)
         if paragraph is None:
-            return None
+            return reject("section-paragraph-shape")
         required_sources = [source for source in sources_by_section.get(title, []) if source]
         if required_sources and not any(_mentions_source(paragraph, source) for source in required_sources):
-            return None
+            return reject("section-source-missing")
         section_sources = {_canonical_source(source) for source in required_sources}
         if section_sources and _has_unknown_attribution(paragraph, section_sources):
-            return None
+            return reject("section-attribution")
         sections.append({"title": title, "paragraph": paragraph})
 
     normalized = {
@@ -373,24 +405,24 @@ def _validate_language_draft(
     )
     words = re.findall(r"\b\w+[\wáéíóúüñ-]*\b", prose, re.I)
     if not 230 <= len(words) <= 1_250:
-        return None
+        return reject("word-count")
     if _numbers(prose) - allowed_numbers:
-        return None
+        return reject("unseen-number")
     if _acronyms(prose) - allowed_acronyms:
-        return None
+        return reject("unseen-acronym")
     if _has_unallowed_known_source(prose, allowed_sources) or _has_unknown_attribution(prose, allowed_sources):
-        return None
+        return reject("source-attribution")
     if _contradicts_operational_state(prose, facts):
-        return None
+        return reject("operational-state")
     if _semantic_markers(prose) - allowed_status_markers:
-        return None
+        return reject("semantic-state")
     if _date_words(prose) - allowed_date_words:
-        return None
+        return reject("unseen-date")
     if UNSUPPORTED_CERTAINTY_PATTERN.search(prose):
-        return None
+        return reject("unsupported-certainty")
     for entity in _named_entities(prose):
         if entity not in allowed_corpus.casefold():
-            return None
+            return reject("unseen-entity", entity)
     return normalized
 
 def _extract_content(response: dict[str, Any]) -> str:
@@ -455,6 +487,7 @@ def _set_trace(
     provider: str,
     status: str,
     attempts: list[dict[str, str]],
+    validation_diagnostics: dict[str, str] | None = None,
 ) -> None:
     if trace is None:
         return
@@ -466,6 +499,8 @@ def _set_trace(
         "status": status,
         "attempts": copy.deepcopy(attempts),
     })
+    if validation_diagnostics:
+        trace["validation_diagnostics"] = copy.deepcopy(validation_diagnostics)
 
 
 def probe_gemini_connection(
@@ -483,7 +518,7 @@ def probe_gemini_connection(
         api_key=key,
         model=free_gemini_model_name(model),
         payload={"contents": [{"parts": [{"text": "Responde únicamente: OK"}]}]},
-        site_name="Estrecho Ormuz pilot",
+        site_name="StraitWatch pilot",
     )
     try:
         with opener(request, timeout=timeout) as response:
@@ -500,21 +535,33 @@ def _validate_candidate(
     facts: dict[str, Any],
     fallbacks: dict[str, dict[str, Any]],
     sources_by_section: dict[str, dict[str, list[str]]],
+    diagnostics: dict[str, str] | None = None,
 ) -> tuple[dict[str, dict[str, Any]] | None, str]:
-    allowed_numbers = _numbers(facts) | {"24"}
+    # Deterministic fallbacks may contain trusted derived values (for example,
+    # source/topic counts) that are not serialized as literal numbers in the
+    # factual packet. They are valid baselines; unseen model numbers are not.
+    allowed_numbers = _numbers(facts) | _numbers(fallbacks) | {"24"}
     allowed_acronyms = _acronyms(facts) | _acronyms(fallbacks)
     allowed_sources = _allowed_source_names(facts, sources_by_section)
+    fallback_text = json.dumps(fallbacks, ensure_ascii=False).casefold()
+    for canonical, aliases in _SOURCE_ALIASES.items():
+        if any(re.search(rf"(?<!\w){re.escape(alias.casefold())}(?!\w)", fallback_text) for alias in aliases):
+            allowed_sources.add(canonical)
+    corpus_payload = {"facts": facts, "fallbacks": fallbacks, "sources": sources_by_section}
     allowed_corpus = json.dumps(
-        {"facts": facts, "fallbacks": fallbacks, "sources": sources_by_section},
+        corpus_payload,
         ensure_ascii=False,
         sort_keys=True,
-    )
+    ) + " " + " ".join(_text_values(corpus_payload))
     allowed_status_markers = _semantic_markers(facts)
-    allowed_date_words = _date_words(facts)
+    allowed_date_words = _date_words(facts) | _date_words(fallbacks)
     if not isinstance(candidate, dict) or set(candidate) != set(fallbacks):
+        if diagnostics is not None:
+            diagnostics.update({"language": "all", "reason": "candidate-schema"})
         return None, "schema-mismatch"
     validated: dict[str, dict[str, Any]] = {}
     for language, fallback in fallbacks.items():
+        language_diagnostics: dict[str, str] = {}
         draft = _validate_language_draft(
             candidate.get(language),
             fallback,
@@ -526,8 +573,12 @@ def _validate_candidate(
             allowed_corpus,
             allowed_status_markers,
             allowed_date_words,
+            language_diagnostics,
         )
         if draft is None:
+            if diagnostics is not None:
+                diagnostics.update({"language": language, **language_diagnostics})
+                diagnostics.setdefault("reason", "unknown")
             return None, f"validation-{language}"
         validated[language] = draft
     return validated, "ok"
@@ -543,6 +594,7 @@ def _editorial_prompt(
     languages = ", ".join(fallbacks)
     section_order = {language: list(sources_by_section.get(language, {})) for language in fallbacks}
     source_contract = {language: sources_by_section.get(language, {}) for language in fallbacks}
+    fallback_json = json.dumps(fallbacks, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return (
         f"Edita una crónica para {site_name}. Idiomas requeridos: {languages}. "
         "Trabaja EXCLUSIVAMENTE con el paquete factual JSON incluido al final. No navegues, no uses "
@@ -556,7 +608,12 @@ def _editorial_prompt(
         f"secciones: {json.dumps(section_order, ensure_ascii=False)}. En cada sección menciona al menos una de "
         f"estas fuentes permitidas: {json.dumps(source_contract, ensure_ascii=False)}. "
         "Cada idioma debe sumar entre 230 y 1.250 palabras. Incluye 2 o 3 párrafos en situation, "
-        "1 o 2 en meaning y 3 o 4 elementos concretos en watch.\\n\\n"
+        "1 o 2 en meaning y 3 o 4 elementos concretos en watch. Usa el BORRADOR LOCAL VALIDADO como "
+        "base segura: mejora claridad o fluidez solo cuando puedas hacerlo sin añadir cifras, fechas, nombres, "
+        "siglas, estados, atribuciones ni certezas nuevas. Si una mejora puede infringir una restricción, "
+        "conserva exactamente ese campo del borrador local. El borrador es material editorial de partida, no "
+        "una fuente adicional.\\n\\n"
+        f"BORRADOR LOCAL VALIDADO:\\n{fallback_json}\\n\\n"
         f"PAQUETE FACTUAL:\\n{facts_json}"
     )
 
@@ -599,6 +656,7 @@ def generate_editorial_drafts(
     schema = _response_schema(fallbacks)
 
     gemini_status: str | None = None
+    gemini_validation_diagnostics: dict[str, str] = {}
     if gemini_key:
         chosen_gemini_model = free_gemini_model_name(gemini_model)
         attempts.append({"provider": "gemini", "model": chosen_gemini_model})
@@ -607,6 +665,11 @@ def generate_editorial_drafts(
             "systemInstruction": {"parts": [{"text": SYSTEM_INSTRUCTION}]},
             "generationConfig": {
                 "maxOutputTokens": MAX_OUTPUT_TOKENS,
+                "temperature": 0.15,
+                # Keep the generateContent-compatible fields while the newer
+                # responseFormat envelope is still rolling out across models.
+                "responseMimeType": "application/json",
+                "responseJsonSchema": schema,
             },
         }
         gemini_request = _gemini_request(
@@ -621,7 +684,11 @@ def generate_editorial_drafts(
             raw_content = _extract_gemini_content(envelope).strip()
             candidate = json.loads(raw_content)
             validated, gemini_status = _validate_candidate(
-                candidate, facts=facts, fallbacks=fallbacks, sources_by_section=sources_by_section
+                candidate,
+                facts=facts,
+                fallbacks=fallbacks,
+                sources_by_section=sources_by_section,
+                diagnostics=gemini_validation_diagnostics,
             )
             if validated is not None:
                 _set_trace(trace, facts=facts, provider="gemini", status="ok", attempts=attempts)
@@ -631,7 +698,14 @@ def generate_editorial_drafts(
 
     if not openrouter_key:
         status = f"gemini-{gemini_status or 'no-key'}"
-        _set_trace(trace, facts=facts, provider="rules", status=status, attempts=attempts)
+        _set_trace(
+            trace,
+            facts=facts,
+            provider="rules",
+            status=status,
+            attempts=attempts,
+            validation_diagnostics=gemini_validation_diagnostics,
+        )
         return safe_fallbacks, "rules", status
 
     chosen_model = free_model_name(model)

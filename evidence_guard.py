@@ -255,7 +255,7 @@ def main() -> int:
     parser.add_argument("--status", type=Path, default=Path("status.json"))
     parser.add_argument("--previous", type=Path, required=True)
     parser.add_argument("--review", type=Path, default=Path("editorial-review.json"))
-    parser.add_argument("--aliases", type=Path, default=Path("source_aliases.json"))
+    parser.add_argument("--aliases", type=Path, default=Path("source-registry.json"))
     parser.add_argument("--change-file", type=Path)
     parser.add_argument("--rollback-unsafe", action="store_true", default=True)
     parser.add_argument("--fail-unsafe", action="store_true")

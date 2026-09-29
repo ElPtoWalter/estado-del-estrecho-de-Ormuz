@@ -15,6 +15,13 @@ from __future__ import annotations
 
 from journal_evidence import classify_headline, identity, reading, section_note
 from free_editorial_ai import factual_packet_digest, generate_editorial_drafts
+from straitwatch_core import (
+    SourceRegistry,
+    canonical_url,
+    factual_packet,
+    normalize_title,
+    title_similarity,
+)
 
 import argparse
 import email.utils
@@ -49,6 +56,7 @@ MAX_NEWS = 40
 MAX_ARCHIVE = 180
 MATERIAL_THRESHOLD = 4
 EDITORIAL_VERSION = 11
+SOURCE_REGISTRY = SourceRegistry.from_path(Path(__file__).resolve().parent / "source-registry.json")
 
 TRUSTED_SOURCES = {
     "reuters": 5,
@@ -154,6 +162,7 @@ class NewsItem:
     topic: str
     query: str
     analytical: bool = False
+    source_id: str = ""
 
 
 def utc_now() -> datetime:
@@ -295,6 +304,9 @@ def build_editorial_context(
 
 
 def source_tier(name: str) -> int:
+    canonical = SOURCE_REGISTRY.resolve(name)
+    if canonical.source_id != "unknown":
+        return canonical.tier
     key = norm(name).lower().strip(" .")
     if key in TRUSTED_SOURCES:
         return TRUSTED_SOURCES[key]
@@ -363,7 +375,8 @@ def fetch_news(now: datetime) -> tuple[list[NewsItem], list[str]]:
             pub = parse_date(node.findtext("pubDate"))
             source_node = node.find("source")
             source = norm(source_node.text if source_node is not None else "")
-            tier = source_tier(source)
+            canonical = SOURCE_REGISTRY.resolve(source, link)
+            tier = canonical.tier if canonical.source_id != "unknown" else source_tier(source)
             if tier <= 0 or not title or pub < cutoff:
                 continue
             if "hormuz" not in title.lower() and "hormuz" not in query.lower():
@@ -371,13 +384,14 @@ def fetch_news(now: datetime) -> tuple[list[NewsItem], list[str]]:
             results.append(
                 NewsItem(
                     title=title,
-                    source=source,
-                    url=link,
+                    source=canonical.canonical_name if canonical.source_id != "unknown" else source,
+                    url=canonical_url(link),
                     published_at=iso_z(pub),
                     tier=tier,
                     topic=topic_for(title),
                     query=query,
                     analytical=bool(QUESTION_OR_ANALYSIS.search(title)),
+                    source_id=canonical.source_id,
                 )
             )
 
@@ -387,14 +401,27 @@ def fetch_news(now: datetime) -> tuple[list[NewsItem], list[str]]:
 def dedupe_news(items: list[NewsItem]) -> list[NewsItem]:
     output: list[NewsItem] = []
     seen: set[str] = set()
+    seen_url_titles: set[tuple[str, str]] = set()
     for item in sorted(items, key=lambda x: (parse_date(x.published_at), x.tier), reverse=True):
+        canonical = SOURCE_REGISTRY.resolve(item.source, item.url)
+        if canonical.source_id != "unknown":
+            item.source = canonical.canonical_name
+            item.source_id = canonical.source_id
+            item.tier = min(item.tier, canonical.tier)
+        item.url = canonical_url(item.url)
         key = article_key(item)
-        fuzzy = re.sub(r"\W+", " ", item.title.lower()).strip()
-        fuzzy = " ".join(fuzzy.split()[:12])
-        if key in seen or fuzzy in seen:
+        url_title = (item.url, normalize_title(item.title))
+        if key in seen or (item.url and url_title in seen_url_titles):
+            continue
+        if any(
+            item.source_id == previous.source_id
+            and title_similarity(item.title, previous.title) >= 0.90
+            for previous in output
+        ):
             continue
         seen.add(key)
-        seen.add(fuzzy)
+        if item.url:
+            seen_url_titles.add(url_title)
         output.append(item)
     return output
 
@@ -408,20 +435,22 @@ def evidence_as_news(status: dict[str, Any], now: datetime) -> list[NewsItem]:
         title = norm(raw.get("title"))
         source = norm(raw.get("source_name"))
         pub = parse_date(raw.get("published_at") or raw.get("observed_at"))
-        tier = source_tier(source)
+        canonical = SOURCE_REGISTRY.resolve(source, raw.get("source_url"))
+        tier = canonical.tier if canonical.source_id != "unknown" else source_tier(source)
         url = norm(raw.get("source_url"))
         if not title or tier <= 0 or pub < cutoff or pub > now or not re.match(r"^https?://[^/\s]+", url):
             continue
         output.append(
             NewsItem(
                 title=title,
-                source=source,
-                url=url,
+                source=canonical.canonical_name if canonical.source_id != "unknown" else source,
+                url=canonical_url(url),
                 published_at=iso_z(pub),
                 tier=tier,
                 topic=topic_for(title),
                 query="legacy evidence",
                 analytical=bool(QUESTION_OR_ANALYSIS.search(title)),
+                source_id=canonical.source_id,
             )
         )
     return output
@@ -481,7 +510,22 @@ def traffic_snapshot_html(operational: dict[str, Any], lang: str) -> str:
     )
 
 
-def state_fingerprint(status: dict[str, Any], operational: dict[str, Any]) -> dict[str, Any]:
+def state_fingerprint(
+    status: dict[str, Any],
+    operational: dict[str, Any],
+    event_store: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    events = event_store.get("events", []) if isinstance(event_store, dict) else []
+    compact_events = [
+        {
+            "event_id": event.get("event_id"),
+            "verification_status": event.get("verification_status"),
+            "importance": event.get("importance", 0),
+            "operational_impact": event.get("operational_impact"),
+        }
+        for event in events[:30]
+        if isinstance(event, dict) and event.get("event_id")
+    ]
     return {
         "legacy_status": status.get("status"),
         "legacy_operational": status.get("operational_status"),
@@ -489,6 +533,8 @@ def state_fingerprint(status: dict[str, Any], operational: dict[str, Any]) -> di
         "v7_state": operational.get("state") if operational else None,
         "v7_confidence": operational.get("confidence") if operational else None,
         "dimensions": operational.get("dimensions") if operational else None,
+        "events": compact_events,
+        "event_ids": [event["event_id"] for event in compact_events],
     }
 
 
@@ -506,9 +552,45 @@ def material_score(current: dict[str, Any], previous: dict[str, Any], new_items:
     if changed:
         score += 4
         reasons.append("Cambian dimensiones: " + ", ".join(sorted(changed)))
+    # Older fingerprints predate the event layer. Establish that baseline
+    # silently instead of inventing a material change during an upgrade.
+    events_initialized = "events" in previous
+    previous_events = {
+        event.get("event_id"): event
+        for event in previous.get("events", [])
+        if isinstance(event, dict) and event.get("event_id")
+    }
+    new_verified_events = [
+        event for event in current.get("events", [])
+        if events_initialized
+        and isinstance(event, dict)
+        and event.get("event_id") not in previous_events
+        and event.get("verification_status") in {"CONFIRMED_PRIMARY", "CONFIRMED_MULTI_SOURCE"}
+        and int(event.get("importance") or 0) >= 60
+    ]
+    if new_verified_events:
+        score += 5
+        reasons.append(f"{len(new_verified_events)} acontecimiento(s) nuevo(s), verificado(s) y material(es)")
+    strengthened = [
+        event for event in current.get("events", [])
+        if events_initialized
+        and isinstance(event, dict)
+        and event.get("event_id") in previous_events
+        and event.get("verification_status") in {"CONFIRMED_PRIMARY", "CONFIRMED_MULTI_SOURCE"}
+        and previous_events[event.get("event_id")].get("verification_status") not in {"CONFIRMED_PRIMARY", "CONFIRMED_MULTI_SOURCE"}
+    ]
+    if strengthened:
+        score += 3
+        reasons.append(f"{len(strengthened)} acontecimiento(s) gana(n) verificación suficiente")
     if not reasons:
         reasons.append("Sin cambio de clasificación: más titulares no justifican otra URL histórica")
     return score, reasons
+
+
+def edition_mode_for(score: int, material: bool) -> str:
+    if not material:
+        return "brief"
+    return "highlight" if score >= 8 else "article"
 
 def confidence_label(value: str, lang: str) -> str:
     mapping = {
@@ -644,6 +726,7 @@ def editorial_drafts(
     current_fp: dict[str, Any],
     local_dt: datetime,
     editorial: dict[str, Any],
+    event_store: dict[str, Any] | None = None,
 ) -> tuple[dict[str, dict[str, Any]], str, str, dict[str, Any]]:
     fallbacks = {
         lang: fallback_editorial_draft(
@@ -685,23 +768,23 @@ def editorial_drafts(
                 item.source for item in ai_items if item.topic == topic and item.source
             ))
 
-    public_status_keys = (
-        "status", "operational_status", "confidence", "summary_es", "summary_en", "checked_at"
-    )
-    public_operational_keys = (
-        "state", "label_es", "label_en", "summary_es", "summary_en", "confidence",
-        "dimensions", "dimension_labels_es", "dimension_labels_en", "carried_forward",
-    )
-    facts = {
-        "edition_date": local_dt.date().isoformat(),
-        "monitor": {key: status.get(key) for key in public_status_keys if status.get(key) is not None},
-        "operational_assessment": {
-            key: operational.get(key) for key in public_operational_keys if operational.get(key) is not None
-        },
-        "comparison_with_previous_edition": {
+    event_store = event_store if isinstance(event_store, dict) else {"events": [], "verification_summary": {}}
+    facts = factual_packet(
+        monitor=status,
+        operational_assessment=operational,
+        event_store=event_store,
+        comparison={
             "es": change_paragraph(current_fp, previous_fp, "es"),
             "en": change_paragraph(current_fp, previous_fp, "en"),
         },
+        known_limits=[
+            str(editorial.get("limit_es") or ""),
+            str(editorial.get("limit_en") or ""),
+        ],
+        watch_items=watchlist(status, operational, "es") + watchlist(status, operational, "en"),
+    )
+    facts.update({
+        "edition_date": local_dt.date().isoformat(),
         "editorial_context": {
             key: value for key, value in editorial.items()
             if key not in {"signal"} and isinstance(value, (str, int, float, bool, type(None)))
@@ -710,6 +793,7 @@ def editorial_drafts(
             {
                 "title": item.title,
                 "source": item.source,
+                "source_id": item.source_id or SOURCE_REGISTRY.resolve(item.source, item.url).source_id,
                 "published_at": item.published_at,
                 "topic": item.topic,
                 "analytical_headline": item.analytical,
@@ -718,11 +802,20 @@ def editorial_drafts(
             }
             for item in ai_items
         ],
-    }
+    })
+    event_ids = [event.get("event_id") for event in facts.get("events", []) if isinstance(event, dict) and event.get("event_id")]
+    source_ids = [source.get("source_id") for source in facts.get("sources", []) if isinstance(source, dict) and source.get("source_id")]
+    digest = factual_packet_digest(facts)
     if insufficient_sources:
         return fallbacks, "rules", "insufficient-sources", {
             "validator_version": 2,
-            "factual_packet_sha256": factual_packet_digest(facts),
+            "factual_packet_sha256": digest,
+            "factual_packet_hash": digest,
+            "event_ids": event_ids,
+            "source_ids": source_ids,
+            "verification_summary": facts.get("verification_summary", {}),
+            "timestamp": iso_z(local_dt.astimezone(timezone.utc)),
+            "fallback_used": True,
             "provider": "rules",
             "status": "insufficient-sources",
             "attempts": [],
@@ -736,6 +829,14 @@ def editorial_drafts(
         sources_by_section=sources_by_section,
         trace=trace,
     )
+    trace.setdefault("validator_version", 2)
+    trace.setdefault("factual_packet_sha256", digest)
+    trace["factual_packet_hash"] = trace.get("factual_packet_sha256") or digest
+    trace["event_ids"] = event_ids
+    trace["source_ids"] = source_ids
+    trace["verification_summary"] = facts.get("verification_summary", {})
+    trace["timestamp"] = iso_z(local_dt.astimezone(timezone.utc))
+    trace["fallback_used"] = engine != "gemini"
     return drafts, engine, assistant_status, trace
 
 
@@ -767,12 +868,15 @@ def change_paragraph(
         if cur_dims.get(key) != prev_dims.get(key):
             changed.append(key)
     state_changed = current_fp.get("v7_state") != previous_fp.get("v7_state") or current_fp.get("legacy_status") != previous_fp.get("legacy_status")
+    new_events = set(current_fp.get("event_ids") or []) - set(previous_fp.get("event_ids") or [])
     if lang == "es":
         if state_changed:
             return "La principal diferencia frente a la edición anterior está en la propia clasificación operativa: el balance de evidencias ha desplazado el diagnóstico. La hemeroteca conserva la edición previa para documentar la evolución."
         if changed:
             labels = {"passage":"paso físico", "traffic":"tráfico", "access":"acceso", "risk":"riesgo", "legal":"marco político/legal"}
             return "El estado general no cambia, pero sí lo hacen algunas dimensiones: " + ", ".join(labels[x] for x in changed) + ". Esto evita tratar como idénticas dos jornadas que comparten etiqueta pero no condiciones operativas."
+        if new_events:
+            return f"El diagnóstico general no cambia, pero se incorporan {len(new_events)} acontecimiento(s) nuevo(s) al registro verificable. Solo los que superan el umbral de verificación pueden influir en la lectura operativa."
         return "Frente a la edición anterior no aparece un cambio material en la clasificación. La continuidad, sin embargo, no equivale a normalidad: la evaluación mantiene separados el nivel de tráfico, las restricciones y el riesgo."
     else:
         if state_changed:
@@ -780,6 +884,8 @@ def change_paragraph(
         if changed:
             labels = {"passage":"physical passage", "traffic":"traffic", "access":"access", "risk":"risk", "legal":"political/legal framework"}
             return "The headline state is unchanged, but some dimensions have moved: " + ", ".join(labels[x] for x in changed) + ". This prevents two days with the same label from being treated as operationally identical."
+        if new_events:
+            return f"The headline assessment is unchanged, but {len(new_events)} new event(s) have entered the verifiable record. Only events that pass the verification threshold may affect the operational assessment."
         return "There is no material change in the classification from the previous edition. Continuity does not mean normality: traffic intensity, restrictions and risk remain separate variables."
 
 
@@ -1007,9 +1113,9 @@ def render_page(
         else "This digest uses local rules and automated headline selection. Full article texts are not automatically read or verified, and no per-edition human review is claimed. Feed dates may reflect updates rather than event dates. Different publisher names do not guarantee independent reporting."
     )
     triad = f'''<section class="journal-triad" aria-label="{'Capas de lectura' if lang == 'es' else 'Reading layers'}">
-<article><span>{'BASE OBSERVABLE' if lang == 'es' else 'OBSERVABLE BASE'}</span><strong>{safe(state_label)}</strong><p>{'Diagnóstico del observatorio con confianza' if lang == 'es' else 'Observatory assessment with'} {safe(confidence_label(confidence, lang))}{'' if lang == 'es' else ' confidence'}.</p></article>
-<article><span>{'CAMBIO' if lang == 'es' else 'CHANGE'}</span><strong>{'Desde la referencia anterior' if lang == 'es' else 'Since the previous reference'}</strong><p>{safe(change)}</p></article>
-<article><span>{'LÍMITE' if lang == 'es' else 'LIMIT'}</span><strong>{'Lo que aún no sabemos' if lang == 'es' else 'What remains unknown'}</strong><p>{safe(limit)}</p></article>
+<article><span>{'QUÉ SABEMOS' if lang == 'es' else 'WHAT WE KNOW'}</span><strong>{safe(state_label)}</strong><p>{'Diagnóstico del observatorio con confianza' if lang == 'es' else 'Observatory assessment with'} {safe(confidence_label(confidence, lang))}{'' if lang == 'es' else ' confidence'}.</p></article>
+<article><span>{'QUÉ HA CAMBIADO' if lang == 'es' else 'WHAT CHANGED'}</span><strong>{'Desde la referencia anterior' if lang == 'es' else 'Since the previous reference'}</strong><p>{safe(change)}</p></article>
+<article><span>{'QUÉ NO SABEMOS' if lang == 'es' else 'WHAT WE DO NOT KNOW'}</span><strong>{'Límites actuales' if lang == 'es' else 'Current limits'}</strong><p>{safe(limit)}</p></article>
 </section>'''
 
     return f'''<!DOCTYPE html>
@@ -1153,6 +1259,9 @@ def main() -> int:
     if not isinstance(status, dict) or not status.get("status"):
         raise SystemExit("status.json no contiene un estado válido.")
     operational = get_operational(status, root)
+    event_store = load_json(root / "events.json", {"events": [], "verification_summary": {}})
+    if not isinstance(event_store, dict):
+        event_store = {"events": [], "verification_summary": {}}
     previous_state = load_json(root / "journal-state.json", {})
     if not isinstance(previous_state, dict):
         previous_state = {}
@@ -1181,16 +1290,30 @@ def main() -> int:
     if not previous_state:
         new_items = news[:12]
 
-    current_fp = state_fingerprint(status, operational)
+    current_fp = state_fingerprint(status, operational, event_store)
     score, reasons = material_score(current_fp, previous_fp, new_items)
-    independent = {item.source.lower() for item in new_items if not item.analytical}
-    material = score >= MATERIAL_THRESHOLD and len(independent) >= 2
+    independent = {
+        item.source_id or SOURCE_REGISTRY.resolve(item.source, item.url).source_id
+        for item in new_items if not item.analytical
+    } - {"", "unknown"}
+    previous_event_ids = set(previous_fp.get("event_ids") or [])
+    current_events = event_store.get("events") if isinstance(event_store.get("events"), list) else []
+    primary_material_event = "events" in previous_fp and any(
+        isinstance(event, dict)
+        and event.get("event_id") not in previous_event_ids
+        and event.get("verification_status") in {"CONFIRMED_PRIMARY", "CONFIRMED_MULTI_SOURCE"}
+        and int(event.get("importance") or 0) >= 60
+        for event in current_events
+    )
+    material = score >= MATERIAL_THRESHOLD and (len(independent) >= 2 or primary_material_event)
+    edition_mode = edition_mode_for(score, material)
 
     date_iso = local_now.date().isoformat()
     generated_at = iso_z(now)
     editorial = build_editorial_context(root, news, new_items, local_now)
     drafts, editor_engine, ai_status, editorial_trace = editorial_drafts(
-        status, operational, news, new_items, previous_fp, current_fp, local_now, editorial
+        status, operational, news, new_items, previous_fp, current_fp, local_now, editorial,
+        event_store,
     )
     draft_es, draft_en = drafts["es"], drafts["en"]
     title_es = norm(draft_es.get("headline")) or headline_for(status, operational, news, "es")
@@ -1232,6 +1355,7 @@ def main() -> int:
         "material_score": score,
         "material_reasons": reasons,
         "material_archive": material,
+        "edition_mode": edition_mode,
         "new_articles": len(new_items),
         "source_brands": len(independent),
         "topics": dict(Counter(item.topic for item in new_items)),
@@ -1239,8 +1363,16 @@ def main() -> int:
         "news": [asdict(item) for item in news[:15]],
         "fetch_errors": fetch_errors,
         "editor_engine": editor_engine,
+        "assistant_status": ai_status,
         "editor_assistant_status": ai_status,
         "editorial_trace": editorial_trace,
+        "validator_version": editorial_trace.get("validator_version"),
+        "factual_packet_hash": editorial_trace.get("factual_packet_hash") or editorial_trace.get("factual_packet_sha256"),
+        "event_ids": editorial_trace.get("event_ids", []),
+        "source_ids": editorial_trace.get("source_ids", []),
+        "timestamp": editorial_trace.get("timestamp") or generated_at,
+        "fallback_used": bool(editorial_trace.get("fallback_used")),
+        "verification_summary": editorial_trace.get("verification_summary", {}),
         "editorial": {k: v for k, v in editorial.items() if k != "signal"},
         "url_es": f"{BASE_URL}/diario.html",
         "url_en": f"{BASE_URL}/en-diary.html",

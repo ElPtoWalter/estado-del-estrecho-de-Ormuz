@@ -8,6 +8,7 @@ from free_editorial_ai import (
     DEFAULT_GEMINI_MODEL,
     GEMINI_API_BASE,
     SYSTEM_INSTRUCTION,
+    _named_entities,
     free_gemini_model_name,
     free_model_name,
     generate_editorial_drafts,
@@ -173,6 +174,17 @@ class FreeEditorialAITests(unittest.TestCase):
         self.assertNotIn("clave-gemini", captured["request"].full_url)
         self.assertNotIn("clave-gemini", captured["request"].data.decode("utf-8"))
 
+    def test_gemini_request_uses_structured_output_and_validated_baseline(self):
+        (_, engine, status), captured = self.call_gemini(valid_draft())
+        self.assertEqual((engine, status), ("gemini", "ok"))
+        payload = json.loads(captured["request"].data.decode("utf-8"))
+        generation_config = payload["generationConfig"]
+        self.assertEqual(generation_config["responseMimeType"], "application/json")
+        self.assertFalse(generation_config["responseJsonSchema"]["additionalProperties"])
+        prompt = payload["contents"][0]["parts"][0]["text"]
+        self.assertIn("BORRADOR LOCAL VALIDADO", prompt)
+        self.assertIn(self.fallback["headline"], prompt)
+
     def test_gemini_uses_free_default_model(self):
         (_, engine, status), captured = self.call_gemini(valid_draft(), gemini_model="not-allowed")
         self.assertEqual((engine, status), ("gemini", "ok"))
@@ -181,6 +193,27 @@ class FreeEditorialAITests(unittest.TestCase):
     def test_unseen_number_rejects_response(self):
         candidate = valid_draft()
         candidate["meaning"][0] += " La muestra incluiría 77 casos."
+        trace = {}
+        (_, engine, status), _ = self.call_gemini(candidate, trace=trace)
+        self.assertEqual((engine, status), ("rules", "gemini-validation-es"))
+        self.assertEqual(trace["validation_diagnostics"], {"language": "es", "reason": "unseen-number"})
+
+    def test_trusted_fallback_may_keep_derived_values_sources_and_sentence_boundaries(self):
+        self.fallback["deck"] += " La selección incluye 7 referencias del Estrecho. Las fuentes siguen separadas."
+        self.fallback["watch"][0] = "Comprobar nuevos avisos oficiales de JMIC sobre navegación y puertos."
+        candidate = json.loads(json.dumps(self.fallback, ensure_ascii=False))
+        (_, engine, status), _ = self.call_openrouter({"es": candidate})
+        self.assertEqual((engine, status), ("openrouter-free", "ok"))
+
+    def test_negated_normality_does_not_change_an_uncertain_state(self):
+        self.fallback["meaning"][0] += " Esta selección no demuestra normalidad."
+        candidate = json.loads(json.dumps(self.fallback, ensure_ascii=False))
+        (_, engine, status), _ = self.call_openrouter({"es": candidate})
+        self.assertEqual((engine, status), ("openrouter-free", "ok"))
+
+    def test_asserted_normality_is_rejected_for_an_uncertain_state(self):
+        candidate = valid_draft()
+        candidate["meaning"][0] += " El corredor opera con normalidad."
         (_, engine, status), _ = self.call_openrouter({"es": candidate})
         self.assertEqual((engine, status), ("rules", "validation-es"))
 
@@ -327,6 +360,20 @@ class FreeEditorialAITests(unittest.TestCase):
         (_, engine, status), _ = self.call_openrouter({"es": candidate})
         self.assertEqual((engine, status), ("rules", "validation-es"))
 
+    def test_unseen_entity_diagnostic_identifies_only_the_rejected_value(self):
+        candidate = valid_draft()
+        candidate["meaning"][0] += " Maritime Zeta Group mantiene la evaluación."
+        trace = {}
+        (_, engine, status), _ = self.call_gemini(candidate, trace=trace)
+        self.assertEqual((engine, status), ("rules", "gemini-validation-es"))
+        self.assertEqual(trace["validation_diagnostics"]["reason"], "unseen-entity")
+        self.assertEqual(trace["validation_diagnostics"]["value"], "maritime zeta group")
+
+    def test_entity_detection_does_not_cross_a_sentence_boundary(self):
+        entities = _named_entities("Euronews. Un análisis posterior mantiene el límite. Maritime Zeta Group aparece después.")
+        self.assertNotIn("euronews. un", entities)
+        self.assertIn("maritime zeta group", entities)
+
     def test_unknown_single_word_attribution_is_rejected(self):
         candidate = valid_draft()
         candidate["meaning"][0] += " Según Acme, la tendencia ya estaría confirmada."
@@ -402,12 +449,15 @@ class FreeEditorialAITests(unittest.TestCase):
         self.assertNotIn("gemini-de-prueba", captured["request"].data.decode("utf-8"))
         self.assertEqual(captured["request"].headers.get("X-goog-api-key"), "gemini-de-prueba")
 
-    def test_pilot_workflow_is_manual_read_only_and_non_publishing(self):
+    def test_pilot_workflow_is_pr_scoped_read_only_and_non_publishing(self):
         workflow = (
             Path(__file__).parent / ".github" / "workflows" / "pilot-gemini-phase1.yml"
         ).read_text(encoding="utf-8")
         self.assertIn("workflow_dispatch:", workflow)
-        self.assertNotIn("pull_request:", workflow)
+        self.assertIn("pull_request:", workflow)
+        self.assertIn("branches: [codex/phase1-closure-ormuz]", workflow)
+        self.assertIn("github.event_name == 'push'", workflow)
+        self.assertIn("head.repo.full_name == github.repository", workflow)
         self.assertIn("contents: read", workflow)
         self.assertIn("python -m unittest discover -v", workflow)
         self.assertIn("python pilot_gemini_phase1.py", workflow)

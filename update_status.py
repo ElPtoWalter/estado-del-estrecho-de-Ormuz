@@ -42,7 +42,10 @@ from typing import Any, Iterable
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
+from straitwatch_core import SourceRegistry, canonical_url, normalize_title
+
 ROOT = Path(__file__).resolve().parent
+SOURCE_REGISTRY = SourceRegistry.from_path(ROOT / "source-registry.json")
 try:
     MADRID = ZoneInfo("Europe/Madrid")
 except Exception:  # Windows environments may not bundle the IANA database.
@@ -51,7 +54,6 @@ STATUS_FILE = ROOT / "status.json"
 HISTORY_FILE = ROOT / "history.json"
 CONFIG_FILE = ROOT / "config.json"
 FEED_FILE = ROOT / "feed.xml"
-SITEMAP_FILE = ROOT / "sitemap.xml"
 INDEX_ES = ROOT / "index.html"
 INDEX_EN = ROOT / "en.html"
 HISTORY_ES = ROOT / "historial.html"
@@ -293,6 +295,17 @@ def source_profile(
     source_url: str = "",
     article_url: str = "",
 ) -> SourceProfile | None:
+    canonical = SOURCE_REGISTRY.resolve(source_name, source_url or article_url)
+    if canonical.source_id != "unknown":
+        return SourceProfile(
+            canonical.source_id,
+            canonical.canonical_name,
+            canonical.tier,
+            canonical.weight,
+            canonical.domains,
+            canonical.aliases,
+            canonical.official,
+        )
     # ORMUZ_V3_FINAL_GUARD: evita que "ona" coincida dentro de "national".
     for url in (source_url, article_url):
         host = urlparse(url).netloc.lower().removeprefix("www.")
@@ -708,8 +721,24 @@ def deduplicate_articles(articles: Iterable[dict[str, Any]]) -> list[dict[str, A
     result: list[dict[str, Any]] = []
     seen_titles: set[str] = set()
     seen_source_title: set[tuple[str, str]] = set()
+    seen_urls: set[str] = set()
     for article in ordered:
-        key = normalized_key(article.get("title", ""))
+        profile = source_profile(
+            str(article.get("source_name") or ""),
+            str(article.get("url") or ""),
+            str(article.get("url") or ""),
+        )
+        if profile:
+            article["source_id"] = profile.source_id
+            article["source_name"] = profile.name
+            article["tier"] = min(int(article.get("tier") or profile.tier), profile.tier)
+            article["official"] = profile.official
+        url_key = canonical_url(article.get("url"))
+        if url_key:
+            article["url"] = url_key
+            if url_key in seen_urls:
+                continue
+        key = normalize_title(article.get("title", ""))
         if not key:
             continue
         source_key = (article.get("source_id", ""), key)
@@ -721,6 +750,8 @@ def deduplicate_articles(articles: Iterable[dict[str, Any]]) -> list[dict[str, A
             continue
         seen_source_title.add(source_key)
         seen_titles.add(key)
+        if url_key:
+            seen_urls.add(url_key)
         result.append(article)
     return result
 
@@ -1422,40 +1453,6 @@ def build_feed(history: list[dict[str, Any]], base_url: str) -> str:
 
 
 
-def build_sitemap(base_url: str, dynamic_lastmod: str) -> str:
-    pages = (
-        ("", dynamic_lastmod, "daily", "1.0"),
-        ("en.html", dynamic_lastmod, "daily", "0.9"),
-        ("historial.html", dynamic_lastmod, "daily", "0.9"),
-        ("en-history.html", dynamic_lastmod, "daily", "0.8"),
-        ("metodologia.html", "2026-07-12", "monthly", "0.8"),
-        ("en-methodology.html", "2026-07-12", "monthly", "0.7"),
-        ("importancia.html", "2026-07-12", "monthly", "0.8"),
-        ("en-importance.html", "2026-07-12", "monthly", "0.7"),
-        ("fuentes.html", "2026-07-12", "monthly", "0.7"),
-        ("en-sources.html", "2026-07-12", "monthly", "0.6"),
-        ("alertas.html", "2026-07-12", "monthly", "0.7"),
-        ("en-alerts.html", "2026-07-12", "monthly", "0.6"),
-        ("privacidad.html", "2026-07-12", "yearly", "0.3"),
-        ("en-privacy.html", "2026-07-12", "yearly", "0.3"),
-    )
-    rows = []
-    for path, lastmod, changefreq, priority in pages:
-        rows.append(
-            f"  <url>\n"
-            f"    <loc>{xml_escape(base_url + path)}</loc>\n"
-            f"    <lastmod>{lastmod}</lastmod>\n"
-            f"    <changefreq>{changefreq}</changefreq>\n"
-            f"    <priority>{priority}</priority>\n"
-            f"  </url>"
-        )
-    return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        + "\n".join(rows)
-        + '\n</urlset>\n'
-    )
-
 def write_change_file(previous: dict[str, Any], payload: dict[str, Any], history_changed: bool, config: dict[str, Any]) -> None:
     path_value = os.environ.get("CHANGE_FILE")
     if not path_value:
@@ -1551,7 +1548,6 @@ def run_update() -> int:
     if not base_url.endswith("/"):
         base_url += "/"
     atomic_write_text(FEED_FILE, build_feed(history, base_url))
-    atomic_write_text(SITEMAP_FILE, build_sitemap(base_url, str(payload.get("checked_at", ""))[:10]))
     update_html(payload, history)
     write_change_file(previous, payload, history_changed, config)
 

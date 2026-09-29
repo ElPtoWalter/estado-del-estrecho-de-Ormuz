@@ -100,12 +100,37 @@ class Publisher:
     name: str
     tier: int
     official: bool
+    source_id: str = "unknown"
 
 
 def load_publishers(path: Path | None = None) -> dict[str, Publisher]:
-    path = path or ROOT / "source_aliases.json"
+    path = path or ROOT / "source-registry.json"
     payload = load_json(path, {}) or {}
     result: dict[str, Publisher] = {}
+    canonical_rows = payload.get("sources", []) if isinstance(payload, dict) else []
+    if isinstance(canonical_rows, list):
+        for row in canonical_rows:
+            if not isinstance(row, dict):
+                continue
+            name = normalized_space(row.get("canonical_name") or row.get("name"))
+            source_id = normalized_space(row.get("source_id") or row.get("id")) or "unknown"
+            if not name:
+                continue
+            publisher = Publisher(
+                name=name,
+                tier=max(1, min(5, int(row.get("tier", 1)))),
+                official=bool(row.get("official")),
+                source_id=source_id,
+            )
+            aliases = [name, source_id, *(row.get("aliases") or []), *(row.get("domains") or [])]
+            if row.get("domain"):
+                aliases.append(row["domain"])
+            for alias in aliases:
+                key = normalized_key(alias)
+                if key:
+                    result[key] = publisher
+        if result:
+            return result
     for section, official in (("official_publishers", True), ("publishers", False)):
         entries = payload.get(section, {})
         if not isinstance(entries, dict):
@@ -117,6 +142,7 @@ def load_publishers(path: Path | None = None) -> dict[str, Publisher]:
                 name=normalized_space(data["name"]),
                 tier=max(1, min(5, int(data.get("tier", 1)))),
                 official=official,
+                source_id=normalized_key(data.get("source_id") or data.get("name")).replace(" ", "_"),
             )
     return result
 
@@ -161,6 +187,7 @@ def normalize_evidence_source(item: dict[str, Any], aliases: dict[str, Publisher
         bool(item.get("official")),
     )
     item["source_name"] = chosen.name
+    item["source_id"] = chosen.source_id
     try:
         current_tier = int(item.get("tier", chosen.tier))
     except (TypeError, ValueError):

@@ -10,7 +10,7 @@ FIELDS = ("at", "status", "operational_status", "confidence")
 
 
 def records(root):
-    raw = json.loads((root / "history.json").read_text())
+    raw = json.loads((root / "history.json").read_text(encoding="utf-8"))
     return sorted([{key: str(row.get(key) or "UNKNOWN") for key in FIELDS}
                    for row in raw if isinstance(row, dict)], key=lambda row: row["at"])
 
@@ -27,7 +27,7 @@ def build_reports(root):
     changed = sum(a["status"] != b["status"] for a, b in zip(data, data[1:]))
     same = max(0, total - 1 - changed)
     valid = sum(row["at"] != "UNKNOWN" for row in data)
-    status = json.loads((root / "status.json").read_text())
+    status = json.loads((root / "status.json").read_text(encoding="utf-8"))
     checked = html.escape(str(status.get("checked_at") or "sin fecha"))
     period = " → ".join(html.escape(row["at"][:10]) for row in (data[0], data[-1])) if data else "—"
     pct = round(100 * uncertain / total, 1) if total else 0

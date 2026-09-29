@@ -1,30 +1,36 @@
 name: Piloto Gemini · Fase 1
 
 on:
+  push:
+    branches: [codex/phase1-closure-ormuz]
+  pull_request:
+    branches: [main]
+    types: [opened, reopened]
   workflow_dispatch:
     inputs:
       ref:
         description: Rama experimental que se validará sin publicar
         required: true
-        default: phase1-gemini-newsroom
+        default: codex/phase1-closure-ormuz
         type: string
 
 permissions:
   contents: read
 
 concurrency:
-  group: pilot-gemini-phase1-${{ inputs.ref }}
+  group: pilot-gemini-phase1-${{ github.event.pull_request.number || inputs.ref || github.ref_name }}
   cancel-in-progress: true
 
 jobs:
   controlled-pilot:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Descargar la rama seleccionada
         uses: actions/checkout@v6
         with:
-          ref: ${{ inputs.ref }}
+          ref: ${{ github.event.pull_request.head.sha || inputs.ref || github.sha }}
           fetch-depth: 1
 
       - name: Configurar Python
@@ -40,8 +46,18 @@ jobs:
           python -m py_compile free_editorial_ai.py generate_daily_journal.py pilot_gemini_phase1.py test_free_editorial_ai.py
           python -m unittest discover -v
 
-      - name: Comprobar conexión mínima con Gemini
+      - name: Comparar LOCAL con Gemini sobre el mismo paquete factual real
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-        run: python pilot_gemini_phase1.py
+          OPENROUTER_API_KEY: ""
+        run: python pilot_gemini_phase1.py --output "${{ runner.temp }}/ormuz-pilot-report.json"
+
+      - name: Subir informe aislado del piloto
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: piloto-ormuz-${{ github.run_number }}
+          path: ${{ runner.temp }}/ormuz-pilot-report.json
+          if-no-files-found: warn
+          retention-days: 14

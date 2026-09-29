@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "source_id": "ukmto",
+      "canonical_name": "UKMTO",
+      "aliases": ["UKMTO", "UK Maritime Trade Operations"],
+      "domain": "ukmto.org",
+      "domains": ["ukmto.org"],
+      "tier": 5,
+      "official": true,
+      "weight": 5.0
+    },
+    {
+      "source_id": "imo",
+      "canonical_name": "IMO",
+      "aliases": ["IMO", "International Maritime Organization"],
+      "domain": "imo.org",
+      "domains": ["imo.org"],
+      "tier": 5,
+      "official": true,
+      "weight": 5.0
+    },
+    {
+      "source_id": "marad",
+      "canonical_name": "U.S. MARAD",
+      "aliases": ["U.S. MARAD", "US MARAD", "MARAD", "US Maritime Administration"],
+      "domain": "maritime.dot.gov",
+      "domains": ["maritime.dot.gov"],
+      "tier": 5,
+      "official": true,
+      "weight": 5.0
+    },
+    {
+      "source_id": "jmic",
+      "canonical_name": "JMIC",
+      "aliases": ["JMIC", "Joint Maritime Information Center"],
+      "domain": "combinedmaritimeforces.com",
+      "domains": ["combinedmaritimeforces.com"],
+      "tier": 5,
+      "official": true,
+      "weight": 5.0
+    },
+    {
+      "source_id": "centcom",
+      "canonical_name": "U.S. CENTCOM",
+      "aliases": ["U.S. CENTCOM", "US CENTCOM", "CENTCOM"],
+      "domain": "centcom.mil",
+      "domains": ["centcom.mil"],
+      "tier": 5,
+      "official": true,
+      "weight": 4.8
+    },
+    {
+      "source_id": "us_navy",
+      "canonical_name": "U.S. Navy",
+      "aliases": ["U.S. Navy", "US Navy"],
+      "domain": "navy.mil",
+      "domains": ["navy.mil"],
+      "tier": 5,
+      "official": true,
+      "weight": 4.8
+    },
+    {
+      "source_id": "oman_news",
+      "canonical_name": "Oman News Agency",
+      "aliases": ["Oman News Agency", "ONA"],
+      "domain": "omannews.gov.om",
+      "domains": ["omannews.gov.om"],
+      "tier": 4,
+      "official": true,
+      "weight": 4.0
+    },
+    {
+      "source_id": "reuters",
+      "canonical_name": "Reuters",
+      "aliases": ["Reuters", "Reuters.com", "reuters.com"],
+      "domain": "reuters.com",
+      "domains": ["reuters.com"],
+      "tier": 4,
+      "official": false,
+      "weight": 4.0
+    },
+    {
+      "source_id": "ap",
+      "canonical_name": "Associated Press",
+      "aliases": ["Associated Press", "The Associated Press", "AP", "AP News", "apnews.com"],
+      "domain": "apnews.com",
+      "domains": ["apnews.com"],
+      "tier": 4,
+      "official": false,
+      "weight": 4.0
+    },
+    {
+      "source_id": "lloyds_list",
+      "canonical_name": "Lloyd's List",
+      "aliases": ["Lloyd's List", "Lloyds List", "lloydslist.com"],
+      "domain": "lloydslist.com",
+      "domains": ["lloydslist.com"],
+      "tier": 4,
+      "official": false,
+      "weight": 4.0
+    },
+    {
+      "source_id": "tradewinds",
+      "canonical_name": "TradeWinds",
+      "aliases": ["TradeWinds", "TradeWinds News", "tradewindsnews.com"],
+      "domain": "tradewindsnews.com",
+      "domains": ["tradewindsnews.com"],
+      "tier": 4,
+      "official": false,
+      "weight": 3.8
+    },
+    {
+      "source_id": "kpler",
+      "canonical_name": "Kpler",
+      "aliases": ["Kpler", "kpler.com"],
+      "domain": "kpler.com",
+      "domains": ["kpler.com"],
+      "tier": 4,
+      "official": false,
+      "weight": 3.8
+    },
+    {
+      "source_id": "sp_global",
+      "canonical_name": "S&P Global",
+      "aliases": ["S&P Global", "S&P Global Commodity Insights", "spglobal.com"],
+      "domain": "spglobal.com",
+      "domains": ["spglobal.com"],
+      "tier": 4,
+      "official": false,
+      "weight": 3.8
+    },
+    {
+      "source_id": "bbc",
+      "canonical_name": "BBC",
+      "aliases": ["BBC", "BBC News", "BBC.com", "bbc.com"],
+      "domain": "bbc.com",
+      "domains": ["bbc.com", "bbc.co.uk"],
+      "tier": 3,
+      "official": false,
+      "weight": 3.2
+    },
+    {
+      "source_id": "ft",
+      "canonical_name": "Financial Times",
+      "aliases": ["Financial Times", "FT", "ft.com"],
+      "domain": "ft.com",
+      "domains": ["ft.com"],
+      "tier": 3,
+      "official": false,
+      "weight": 3.2
+    },
+    {
+      "source_id": "bloomberg",
+      "canonical_name": "Bloomberg",
+      "aliases": ["Bloomberg", "Bloomberg.com", "BNN Bloomberg", "bloomberg.com"],
+      "domain": "bloomberg.com",
+      "domains": ["bloomberg.com"],
+      "tier": 3,
+      "official": false,
+      "weight": 3.2
+    },
+    {
+      "source_id": "guardian",
+      "canonical_name": "The Guardian",
+      "aliases": ["The Guardian", "Guardian", "theguardian.com"],
+      "domain": "theguardian.com",
+      "domains": ["theguardian.com"],
+      "tier": 3,
+      "official": false,
+      "weight": 2.9
+    },
+    {
+      "source_id": "cnn",
+      "canonical_name": "CNN",
+      "aliases": ["CNN", "CNN.com", "cnn.com"],
+      "domain": "cnn.com",
+      "domains": ["cnn.com"],
+      "tier": 2,
+      "official": false,
+      "weight": 2.5
+    },
+    {
+      "source_id": "cnbc",
+      "canonical_name": "CNBC",
+      "aliases": ["CNBC", "CNBC.com", "cnbc.com"],
+      "domain": "cnbc.com",
+      "domains": ["cnbc.com"],
+      "tier": 2,
+      "official": false,
+      "weight": 2.5
+    },
+    {
+      "source_id": "aljazeera",
+      "canonical_name": "Al Jazeera",
+      "aliases": ["Al Jazeera", "AlJazeera", "AlJazeera.com", "aljazeera.com"],
+      "domain": "aljazeera.com",
+      "domains": ["aljazeera.com"],
+      "tier": 2,
+      "official": false,
+      "weight": 2.4
+    },
+    {
+      "source_id": "euronews",
+      "canonical_name": "Euronews",
+      "aliases": ["Euronews", "Euronews.com", "euronews.com"],
+      "domain": "euronews.com",
+      "domains": ["euronews.com"],
+      "tier": 2,
+      "official": false,
+      "weight": 2.2
+    },
+    {
+      "source_id": "national_security_journal",
+      "canonical_name": "National Security Journal",
+      "aliases": ["National Security Journal", "nationalsecurityjournal.org"],
+      "domain": "nationalsecurityjournal.org",
+      "domains": ["nationalsecurityjournal.org"],
+      "tier": 2,
+      "official": false,
+      "weight": 2.1
+    },
+    {
+      "source_id": "sunday_guardian",
+      "canonical_name": "The Sunday Guardian",
+      "aliases": ["The Sunday Guardian", "Sunday Guardian", "sundayguardianlive.com"],
+      "domain": "sundayguardianlive.com",
+      "domains": ["sundayguardianlive.com"],
+      "tier": 2,
+      "official": false,
+      "weight": 2.0
+    },
+    {
+      "source_id": "marinelink",
+      "canonical_name": "MarineLink",
+      "aliases": ["MarineLink", "marinelink.com"],
+      "domain": "marinelink.com",
+      "domains": ["marinelink.com"],
+      "tier": 2,
+      "official": false,
+      "weight": 2.0
+    }
+  ]
+}
