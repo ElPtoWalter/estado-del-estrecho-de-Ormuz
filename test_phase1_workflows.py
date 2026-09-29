@@ -49,6 +49,10 @@ class Phase1WorkflowTests(unittest.TestCase):
         for value in forbidden:
             self.assertNotIn(value, combined)
 
+    def test_pilot_does_not_run_twice_for_branch_updates(self) -> None:
+        workflow = self.text("pilot-gemini-phase1.yml")
+        self.assertIn("types: [opened, reopened]", workflow)
+
 
 if __name__ == "__main__":
     unittest.main()

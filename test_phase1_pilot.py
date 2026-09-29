@@ -45,6 +45,22 @@ class Phase1PilotTests(unittest.TestCase):
         self.assertFalse(report["published"])
         self.assertTrue(report["checks"]["same_factual_packet"])
 
+    def test_failure_diagnostics_are_actionable_and_do_not_include_drafts(self) -> None:
+        report = {
+            "checks": {"same_factual_packet": True, "gemini_selected": False},
+            "gemini": {
+                "engine": "rules",
+                "assistant_status": "gemini-validation-es",
+                "attempts": [{"provider": "gemini", "model": "gemini-2.5-flash-lite", "raw": "secret"}],
+                "drafts": {"es": {"headline": "private response"}},
+            },
+        }
+        diagnostics = pilot.safe_failure_diagnostics(report)
+        self.assertEqual(diagnostics["failed_checks"], ["gemini_selected"])
+        self.assertEqual(diagnostics["gemini_status"], "gemini-validation-es")
+        self.assertNotIn("raw", diagnostics["attempts"][0])
+        self.assertNotIn("drafts", diagnostics)
+
 
 if __name__ == "__main__":
     unittest.main()

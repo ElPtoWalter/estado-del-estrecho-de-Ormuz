@@ -5,6 +5,7 @@ on:
     branches: [codex/phase1-closure-ormuz]
   pull_request:
     branches: [main]
+    types: [opened, reopened]
   workflow_dispatch:
     inputs:
       ref:

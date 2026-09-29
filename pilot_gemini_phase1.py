@@ -128,6 +128,24 @@ def run_pilot(root: Path) -> dict[str, Any]:
     }
 
 
+def safe_failure_diagnostics(report: dict[str, Any]) -> dict[str, Any]:
+    """Return actionable pilot metadata without prompts, responses or secrets."""
+    checks = report.get("checks") if isinstance(report.get("checks"), dict) else {}
+    gemini = report.get("gemini") if isinstance(report.get("gemini"), dict) else {}
+    attempts = gemini.get("attempts") if isinstance(gemini.get("attempts"), list) else []
+    safe_attempts = [
+        {key: str(item[key]) for key in ("provider", "model") if key in item}
+        for item in attempts
+        if isinstance(item, dict)
+    ]
+    return {
+        "failed_checks": sorted(str(key) for key, passed in checks.items() if not passed),
+        "gemini_engine": str(gemini.get("engine") or ""),
+        "gemini_status": str(gemini.get("assistant_status") or ""),
+        "attempts": safe_attempts,
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent)
@@ -147,6 +165,8 @@ def main() -> int:
         + ("OK" if report["passed"] else "FALLO")
         + f" · packet={report['factual_packet_hash']} · publicación=no"
     )
+    if not report["passed"]:
+        print("Diagnóstico seguro: " + json.dumps(safe_failure_diagnostics(report), ensure_ascii=False, sort_keys=True))
     return 0 if report["passed"] else 1
 
 
