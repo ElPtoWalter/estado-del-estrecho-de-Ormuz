@@ -231,6 +231,11 @@ def _allowed_source_names(
         for item in selected:
             if isinstance(item, dict) and item.get("source"):
                 allowed.add(_canonical_source(str(item["source"])))
+    event_sources = facts.get("sources")
+    if isinstance(event_sources, list):
+        for item in event_sources:
+            if isinstance(item, dict) and (item.get("source_name") or item.get("name")):
+                allowed.add(_canonical_source(str(item.get("source_name") or item.get("name"))))
     for language in sources_by_section.values():
         for sources in language.values():
             for source in sources:
@@ -260,7 +265,26 @@ def _has_unknown_attribution(text: str, allowed: set[str]) -> bool:
 
 def _semantic_markers(value: Any) -> set[str]:
     text = json.dumps(value, ensure_ascii=False, sort_keys=True) if not isinstance(value, str) else value
-    return {name for name, pattern in STATUS_PATTERNS.items() if pattern.search(text)}
+    markers: set[str] = set()
+    for name, pattern in STATUS_PATTERNS.items():
+        for match in pattern.finditer(text):
+            clause = re.split(r"[.;:\n]", text[max(0, match.start() - 64):match.start()])[-1]
+            if re.search(r"\b(?:no|sin|tampoco|not|without|neither|nor)\b", clause, re.I):
+                continue
+            markers.add(name)
+            break
+    return markers
+
+
+def _text_values(value: Any):
+    if isinstance(value, str):
+        yield value
+    elif isinstance(value, dict):
+        for item in value.values():
+            yield from _text_values(item)
+    elif isinstance(value, list):
+        for item in value:
+            yield from _text_values(item)
 
 
 def _date_words(value: Any) -> set[str]:
@@ -501,16 +525,24 @@ def _validate_candidate(
     fallbacks: dict[str, dict[str, Any]],
     sources_by_section: dict[str, dict[str, list[str]]],
 ) -> tuple[dict[str, dict[str, Any]] | None, str]:
-    allowed_numbers = _numbers(facts) | {"24"}
+    # Deterministic fallbacks may contain trusted derived values (for example,
+    # source/topic counts) that are not serialized as literal numbers in the
+    # factual packet. They are valid baselines; unseen model numbers are not.
+    allowed_numbers = _numbers(facts) | _numbers(fallbacks) | {"24"}
     allowed_acronyms = _acronyms(facts) | _acronyms(fallbacks)
     allowed_sources = _allowed_source_names(facts, sources_by_section)
+    fallback_text = json.dumps(fallbacks, ensure_ascii=False).casefold()
+    for canonical, aliases in _SOURCE_ALIASES.items():
+        if any(re.search(rf"(?<!\w){re.escape(alias.casefold())}(?!\w)", fallback_text) for alias in aliases):
+            allowed_sources.add(canonical)
+    corpus_payload = {"facts": facts, "fallbacks": fallbacks, "sources": sources_by_section}
     allowed_corpus = json.dumps(
-        {"facts": facts, "fallbacks": fallbacks, "sources": sources_by_section},
+        corpus_payload,
         ensure_ascii=False,
         sort_keys=True,
-    )
+    ) + " " + " ".join(_text_values(corpus_payload))
     allowed_status_markers = _semantic_markers(facts)
-    allowed_date_words = _date_words(facts)
+    allowed_date_words = _date_words(facts) | _date_words(fallbacks)
     if not isinstance(candidate, dict) or set(candidate) != set(fallbacks):
         return None, "schema-mismatch"
     validated: dict[str, dict[str, Any]] = {}

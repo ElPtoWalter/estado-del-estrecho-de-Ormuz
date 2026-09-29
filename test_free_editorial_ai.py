@@ -195,6 +195,25 @@ class FreeEditorialAITests(unittest.TestCase):
         (_, engine, status), _ = self.call_openrouter({"es": candidate})
         self.assertEqual((engine, status), ("rules", "validation-es"))
 
+    def test_trusted_fallback_may_keep_derived_values_sources_and_sentence_boundaries(self):
+        self.fallback["deck"] += " La selección incluye 7 referencias del Estrecho. Las fuentes siguen separadas."
+        self.fallback["watch"][0] = "Comprobar nuevos avisos oficiales de JMIC sobre navegación y puertos."
+        candidate = json.loads(json.dumps(self.fallback, ensure_ascii=False))
+        (_, engine, status), _ = self.call_openrouter({"es": candidate})
+        self.assertEqual((engine, status), ("openrouter-free", "ok"))
+
+    def test_negated_normality_does_not_change_an_uncertain_state(self):
+        self.fallback["meaning"][0] += " Esta selección no demuestra normalidad."
+        candidate = json.loads(json.dumps(self.fallback, ensure_ascii=False))
+        (_, engine, status), _ = self.call_openrouter({"es": candidate})
+        self.assertEqual((engine, status), ("openrouter-free", "ok"))
+
+    def test_asserted_normality_is_rejected_for_an_uncertain_state(self):
+        candidate = valid_draft()
+        candidate["meaning"][0] += " El corredor opera con normalidad."
+        (_, engine, status), _ = self.call_openrouter({"es": candidate})
+        self.assertEqual((engine, status), ("rules", "validation-es"))
+
     def test_missing_required_source_rejects_response(self):
         candidate = valid_draft()
         candidate["sections"][0]["paragraph"] = candidate["sections"][0]["paragraph"].replace("Reuters", "el medio")
