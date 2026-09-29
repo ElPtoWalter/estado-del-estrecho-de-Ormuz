@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-29T14:02:27Z",
-  "last_success_at": "2026-09-29T14:02:27Z",
+  "checked_at": "2026-09-29T14:29:49Z",
+  "last_success_at": "2026-09-29T14:29:49Z",
   "last_change_at": "2026-09-28T20:41:51Z",
   "verification_ok": true,
   "stale": false,
@@ -16,39 +16,40 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "KOTC tanker struck in Strait of Hormuz - Lloyd's List",
+      "title": "KOTC tanker struck in Strait of Hormuz - lloydslist.com",
       "source_name": "Lloyd's List",
       "source_id": "lloyds_list",
       "source_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWEdMUWNaVkJjQWtVaXFBLXZrOUd3WFhwam9uRGJKME5Hd2JKcnBBQ3lYZmlvRmdwclpHNnoyWC1HYUNNRDdpbXBoNjRUR2o3dXZOUUJnZk1HY0liem5ScWpmNjVIbFFXYjY1UTlWaFlBS3YwMDdjcEdEQldQV0VMMQ",
       "published_at": "2026-09-29T12:24:45Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-29T14:02:27Z"
+      "observed_at": "2026-09-29T14:29:49Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Thousands of drivers strike in the Philippines over rising fuel prices",
+      "title": "Iran touts Hormuz attacks as oil flows increase despite tensions - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_id": "aljazeera",
-      "source_url": "https://aljazeera.com/news/2026/9/29/thousands-of-drivers-strike-in-the-philippines-over-rising-fuel-prices",
-      "published_at": "2026-09-29T09:30:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcHFndWVQUVpiSnAwM0EtTUdVSVZvSERZZnZkQUswTVRETVpIdWJtU1VrRFpzdUxWNUplbUI3Z2F6UEFZdk43NWN4R1llRVJOMjNDV1oxNTF3dTJOOUdEQVVDT0JLdVpwa1J2UU9mMm5iczcwaEpubnR1WEIzdnBUWE9xVlJtdlIwZTc2YXpGWW5RU1RWdnUxa1B4ODB1RFNUd2lXdlZVazbSAa4BQVVfeXFMT3hIUnlIQUNRSU9pbnFSNTh4cnc0LXRiV3M2OE9VeFNab2FneWpIMUVoaTJvd1dpYnhfUkRRODJRcDNmcmZrRHpFcVhKWHlzTUYtdk0yaGc4YWxOQzVRQlhDOUJXLXdmQjNiMkhyaWZMM0lKZzY0QlRWeGlsMUFtQUt3T0lPNk42bmxnNFhjNWRmc3NUYTI0VGs2N2RjanVvNVZUek5uV0Y1c2dOdDhB",
+      "published_at": "2026-09-28T17:46:06Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-29T14:02:27Z"
+      "observed_at": "2026-09-29T14:29:49Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 6.4
+      "risk": 5.8
     },
     "independent_sources": {
       "open": 0,
@@ -56,8 +57,8 @@
       "declared": 0,
       "risk": 2
     },
-    "articles_considered": 46,
-    "signals_considered": 6,
+    "articles_considered": 42,
+    "signals_considered": 5,
     "current_cycle_evidence": 2,
     "evidence_display_mode": "current",
     "evidence_archive_size": 34,
@@ -75,14 +76,14 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "KOTC tanker struck in Strait of Hormuz - Lloyd's List",
+      "title": "KOTC tanker struck in Strait of Hormuz - lloydslist.com",
       "source_name": "Lloyd's List",
       "source_id": "lloyds_list",
       "source_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWEdMUWNaVkJjQWtVaXFBLXZrOUd3WFhwam9uRGJKME5Hd2JKcnBBQ3lYZmlvRmdwclpHNnoyWC1HYUNNRDdpbXBoNjRUR2o3dXZOUUJnZk1HY0liem5ScWpmNjVIbFFXYjY1UTlWaFlBS3YwMDdjcEdEQldQV0VMMQ",
       "published_at": "2026-09-29T12:24:45Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-29T14:02:27Z"
+      "observed_at": "2026-09-29T14:29:49Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -451,7 +452,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-29T14:03:36Z",
+    "generated_at": "2026-09-29T14:31:05Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -485,14 +486,14 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 13.691,
+      "passage": 14.991,
       "closure": 0,
       "traffic_reduction": 3.0,
       "access_restriction": 4.02,
       "risk": 43.28
     },
     "source_counts": {
-      "passage": 7,
+      "passage": 8,
       "closure": 0,
       "primary_sources": 3
     },
@@ -505,7 +506,7 @@
     "evidence": [
       {
         "kind": "RISK_SEVERE",
-        "title": "KOTC tanker struck in Strait of Hormuz - Lloyd's List",
+        "title": "KOTC tanker struck in Strait of Hormuz - lloydslist.com",
         "source": "Lloyd's List",
         "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWEdMUWNaVkJjQWtVaXFBLXZrOUd3WFhwam9uRGJKME5Hd2JKcnBBQ3lYZmlvRmdwclpHNnoyWC1HYUNNRDdpbXBoNjRUR2o3dXZOUUJnZk1HY0liem5ScWpmNjVIbFFXYjY1UTlWaFlBS3YwMDdjcEdEQldQV0VMMQ",
         "published_at": "2026-09-29T12:24:45Z",
@@ -539,7 +540,7 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "The week in charts: Iran’s ship attacks show strategy of disruption not discrimination | Abu Dhabi emerges as container shipping’s Hormuz shuttle operator - Lloyd's List",
+        "title": "The week in charts: Iran’s ship attacks show strategy of disruption not discrimination | Abu Dhabi emerges as container shipping’s Hormuz shuttle operator - lloydslist.com",
         "source": "Lloyd's List",
         "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxOVUF6UHJGQXpvT1ZBdjA1UldYNHg4WVhUVVNSdDlDbVVVNU5pQ0NDOWR5N3FNR3BicEhlLUNMdXRFQU1DbzZ3aE92Yl9yNEgxbUQxRnhKN2VySEQwWmVPcmpzTlZBaV9zQ0VMWGxCRVFpbFFITmw5YlFTMV84ZkhiZFJmRHZBaWhnTEFaNXpoNklmMnFlcEFiR24zVndyWEljekxxS3IxYXU2TTloTmktd0RlM1l3RGcwUHdGUVBYNkxFZm5zNUZLcEtxbjhiWVJHMEVlZEl4TkFUUk9vTF9xV2F5MVdJNU1sbmJuOFJRejNfcVlUdFJ6b010ZklwMlJXdU92a2tBdXpjR0g2cVVhZFpIYWhtQQ",
         "published_at": "2026-09-28T10:21:47Z",
@@ -576,7 +577,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-29T14:03:36Z",
+        "published_at": "2026-09-29T14:31:05Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -596,7 +597,7 @@
         "published_at": "2026-09-28T17:46:06Z",
         "tier": 2,
         "weight": 2.4,
-        "provider": "Google News RSS",
+        "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
@@ -624,8 +625,8 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Fire breaks out on vessel hit by projectile in Strait of Hormuz: UK maritime agency - Anadolu Ajansı",
-        "source": "Anadolu Ajansı",
+        "title": "Fire breaks out on vessel hit by projectile in Strait of Hormuz: UK maritime agency - aa.com.tr",
+        "source": "aa.com.tr",
         "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQUZqQVE2dVVDUy1kM1VFaVBMX1BzYXJ3TnhHVExjNkxXR2syekhkeDg0WGhraDFJLThGb2VIYTVIZG5PWnkyVlkwSVFUM0RXQ0NxRmpPVXFPZ0pBNmVxYXFXM2lhalktVXR4ZU1Idl9aNEtUYjlQNDRLUlRHa1BLVUUwZU90NW5NTU5fNWV6TG1xZEM4M3J4MExnbk9EWm8zYlhoX3R0R0hDUFdGUXlaajRHT0Q0bkZEZlh6VGxPZHI2a3RUQkE",
         "published_at": "2026-09-29T13:52:18Z",
         "tier": 1,
@@ -655,12 +656,12 @@
       "evt_392c7f27860bfb54",
       "evt_dabda4295aaf89af",
       "evt_e6acd400a33adfce",
+      "evt_0a976ab236db92b8",
       "evt_8004b519e82623f5",
       "evt_be4dc6b39ae650fc",
       "evt_9d25d2c71f4f04a9",
       "evt_31138361dc837582",
-      "evt_1b3ff18e6de1826d",
-      "evt_b03191cccaaf4ed8"
+      "evt_1b3ff18e6de1826d"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 2,
@@ -668,16 +669,16 @@
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 5,
       "SINGLE_SOURCE": 17,
-      "UNCONFIRMED": 22,
-      "TOTAL": 46
+      "UNCONFIRMED": 23,
+      "TOTAL": 47
     },
     "diagnostics": {
-      "signals_considered": 49,
+      "signals_considered": 50,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 46,
-      "article_count_after_deduplication": 79,
+      "event_count": 47,
+      "article_count_after_deduplication": 81,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -689,6 +690,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-09-29T14:03:36Z"
+    "generated_at": "2026-09-29T14:31:05Z"
   }
 }
