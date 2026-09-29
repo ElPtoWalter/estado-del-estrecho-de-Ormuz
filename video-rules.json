@@ -1,0 +1,40 @@
+{
+  "rule_id": "VIDEO_RULESET_V1",
+  "thresholds": {
+    "daily_summary_min": 55,
+    "explainer_min": 65,
+    "breaking_min": 85,
+    "exceptional_information_min": 95
+  },
+  "daily_summary": {
+    "minimum_verified_events": 1,
+    "maximum_per_site_date": 1
+  },
+  "freshness": {
+    "maximum_event_age_hours": 96,
+    "future_tolerance_seconds": 300
+  },
+  "duration": {
+    "words_per_minute": 150,
+    "breaking": {"target_seconds": 35, "minimum_words": 50, "maximum_words": 110},
+    "explainer": {"target_seconds": 60, "minimum_words": 100, "maximum_words": 220},
+    "daily_summary": {"target_seconds": 60, "minimum_words": 110, "maximum_words": 170}
+  },
+  "verified_statuses": ["VERIFIED_PRIMARY", "VERIFIED_MULTISOURCE"],
+  "allowed_visual_intents": [
+    "presenter", "map", "chart", "timeline", "source-card",
+    "status-card", "text-card"
+  ],
+  "hard_blocker_codes": [
+    "BELOW_VIDEO_THRESHOLD",
+    "ONLY_DECLARATIONS",
+    "SINGLE_SOURCE",
+    "UNCONFIRMED_EVENT",
+    "UNRESOLVED_CONFLICT",
+    "STALE_SOURCES",
+    "STALE_OPERATIONAL_CONTEXT",
+    "NO_MATERIAL_CHANGE",
+    "DUPLICATE_PACKAGE",
+    "INVALID_FACTUAL_PACKAGE"
+  ]
+}

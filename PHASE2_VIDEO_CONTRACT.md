@@ -1,6 +1,6 @@
 # Contrato de datos de vídeo — Fase 2
 
-Versión del contrato: `1.0.0`
+Versión del contrato: `2.0.0`
 Estado: aprobado como interfaz futura; implementación fuera de alcance de la Fase 1.
 
 ## 1. Objetivo y límites
@@ -26,7 +26,7 @@ La recomendación de vídeo es una salida determinista del sistema editorial, no
 
 ```json
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "package_id": "video-package:<site>:<edition_date>:<content_hash>",
   "site": "ormuz|gibraltar",
   "language_set": ["es", "en"],
@@ -106,7 +106,9 @@ La recomendación de vídeo es una salida determinista del sistema editorial, no
 }
 ```
 
-Los campos indicados son obligatorios, aunque admitan `null` o listas vacías. Se serializan con claves ordenadas, UTF-8 y fechas ISO 8601 en UTC. `content_hash` se calcula sobre el objeto canónico sin el propio campo `content_hash`.
+Los campos indicados son obligatorios, aunque admitan `null` o listas vacías. Se serializan con claves ordenadas, UTF-8 y fechas ISO 8601 en UTC.
+
+Para evitar una dependencia circular entre los dos campos derivados, `content_hash` se calcula sobre el objeto canónico excluyendo `content_hash` y `package_id`. Después se construye `package_id` como `video-package:<site>:<edition_date>:<content_hash>`. Ningún otro campo se excluye del hash.
 
 ## 4. Reglas deterministas de recomendación
 
@@ -140,3 +142,8 @@ Queda expresamente fuera de la Fase 1 integrar o llamar a ElevenLabs, PixVerse, 
 ## 8. Evolución del contrato
 
 Los cambios compatibles incrementan la versión menor y solo podrán añadir campos opcionales. Eliminar o reinterpretar campos, cambiar enumeraciones o relajar garantías exige versión mayor. Los consumidores declaran las versiones que aceptan y rechazan cualquier versión desconocida. Las migraciones deben mantener pruebas de contrato idénticas en Ormuz y Gibraltar.
+
+### Historial de versiones
+
+- `2.0.0`: elimina la circularidad normativa del identificador y el hash. El hash excluye los dos campos derivados (`content_hash` y `package_id`) y el identificador se genera después a partir del hash.
+- `1.0.0`: contrato aprobado durante el cierre de la Fase 1.
