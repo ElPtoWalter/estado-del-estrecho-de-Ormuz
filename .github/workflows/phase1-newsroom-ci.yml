@@ -2,7 +2,7 @@ name: Fase 1 Newsroom CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, codex/phase1-closure-ormuz]
     paths:
       - "**.py"
       - "**.cjs"

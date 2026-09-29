@@ -408,6 +408,8 @@ class FreeEditorialAITests(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("workflow_dispatch:", workflow)
         self.assertIn("pull_request:", workflow)
+        self.assertIn("branches: [codex/phase1-closure-ormuz]", workflow)
+        self.assertIn("github.event_name == 'push'", workflow)
         self.assertIn("head.repo.full_name == github.repository", workflow)
         self.assertIn("contents: read", workflow)
         self.assertIn("python -m unittest discover -v", workflow)
