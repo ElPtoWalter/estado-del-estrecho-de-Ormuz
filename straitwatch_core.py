@@ -476,30 +476,51 @@ def _event_match(article: dict[str, Any], members: list[dict[str, Any]]) -> bool
     return False
 
 
-def _prior_event_id(members: list[dict[str, Any]], previous_events: Iterable[dict[str, Any]]) -> tuple[str, str] | None:
+def _prior_event_id(
+    members: list[dict[str, Any]],
+    previous_events: Iterable[dict[str, Any]],
+    *,
+    excluded_event_ids: Iterable[str] = (),
+) -> tuple[str, str] | None:
     member_urls = {item["url"] for item in members if item["url"]}
     member_titles = [item["title"] for item in members]
+    excluded = set(excluded_event_ids)
     for previous in previous_events:
         if not isinstance(previous, dict):
+            continue
+        previous_event_id = normalize_text(previous.get("event_id"))
+        if not previous_event_id or previous_event_id in excluded:
             continue
         prior_articles = previous.get("articles") if isinstance(previous.get("articles"), list) else []
         prior_urls = {canonical_url(item.get("url")) for item in prior_articles if isinstance(item, dict) and item.get("url")}
         if member_urls & prior_urls:
-            return normalize_text(previous.get("event_id")), normalize_text(previous.get("first_seen"))
+            return previous_event_id, normalize_text(previous.get("first_seen"))
         prior_titles = [normalize_text(item.get("title")) for item in prior_articles if isinstance(item, dict)]
         if any(title_similarity(left, right) >= 0.78 for left in member_titles for right in prior_titles):
-            return normalize_text(previous.get("event_id")), normalize_text(previous.get("first_seen"))
+            return previous_event_id, normalize_text(previous.get("first_seen"))
     return None
 
 
-def _new_event_id(members: list[dict[str, Any]], first_seen: str) -> str:
+def _new_event_id(
+    members: list[dict[str, Any]],
+    first_seen: str,
+    *,
+    occupied_event_ids: Iterable[str] = (),
+) -> str:
     tokens: set[str] = set()
     for item in members:
         tokens.update(_content_tokens(item["title_key"]))
     topic = sorted({item["topic"] for item in members})[0]
     day = parse_datetime(first_seen).date().isoformat()
-    seed = f"{topic}|{day}|{' '.join(sorted(tokens)[:10])}"
-    return "evt_" + hashlib.sha256(seed.encode("utf-8")).hexdigest()[:16]
+    base_seed = f"{topic}|{day}|{' '.join(sorted(tokens)[:10])}"
+    occupied = set(occupied_event_ids)
+    collision_index = 0
+    while True:
+        seed = base_seed if collision_index == 0 else f"{base_seed}|{collision_index}"
+        candidate = "evt_" + hashlib.sha256(seed.encode("utf-8")).hexdigest()[:16]
+        if candidate not in occupied:
+            return candidate
+        collision_index += 1
 
 
 def _importance(articles: list[dict[str, Any]], verification: str, operational_impact: str) -> int:
@@ -547,15 +568,23 @@ def aggregate_events(
 
     events: list[dict[str, Any]] = []
     previous_list = list(previous_events)
-    reused_previous_ids: set[str] = set()
+    previous_event_ids = {
+        normalize_text(previous.get("event_id"))
+        for previous in previous_list
+        if isinstance(previous, dict) and normalize_text(previous.get("event_id"))
+    }
+    used_event_ids: set[str] = set()
     for members in clusters:
         members.sort(key=lambda item: parse_datetime(item["published_at"]))
         first_seen = next((item["published_at"] for item in members if item["published_at"]), generated_at or "")
         last_seen = next((item["published_at"] for item in reversed(members) if item["published_at"]), first_seen)
-        prior = _prior_event_id(members, previous_list)
-        event_id = prior[0] if prior and prior[0] and prior[0] not in reused_previous_ids else _new_event_id(members, first_seen)
-        if prior and event_id == prior[0]:
-            reused_previous_ids.add(event_id)
+        prior = _prior_event_id(members, previous_list, excluded_event_ids=used_event_ids)
+        event_id = prior[0] if prior else _new_event_id(
+            members,
+            first_seen,
+            occupied_event_ids=previous_event_ids | used_event_ids,
+        )
+        used_event_ids.add(event_id)
         if prior and event_id == prior[0] and prior[1]:
             first_seen = prior[1]
         verification = _verification(members)

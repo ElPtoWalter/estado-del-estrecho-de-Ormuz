@@ -129,6 +129,42 @@ class EventTests(unittest.TestCase):
         ], REGISTRY, first["events"], generated_at="2026-09-28T10:00:00Z")
         self.assertEqual(first["events"][0]["event_id"], updated["events"][0]["event_id"])
 
+    def test_event_ids_remain_unique_when_historical_ids_collide(self) -> None:
+        older = article(
+            "Naval patrol reports a security exercise near Hormuz",
+            "Reuters",
+            "https://reuters.com/older",
+            published_at="2026-09-10T08:00:00Z",
+            topic="security",
+        )
+        newer = article(
+            "Insurers publish a new risk assessment for Hormuz",
+            "BBC",
+            "https://bbc.com/newer",
+            published_at="2026-09-20T08:00:00Z",
+            topic="security",
+        )
+        colliding_id = aggregate_events([newer], REGISTRY)["events"][0]["event_id"]
+        previous_events = [
+            {
+                "event_id": colliding_id,
+                "first_seen": older["published_at"],
+                "articles": [{"url": older["source_url"], "title": older["title"]}],
+            },
+            {
+                "event_id": colliding_id,
+                "first_seen": newer["published_at"],
+                "articles": [{"url": newer["source_url"], "title": newer["title"]}],
+            },
+        ]
+
+        store = aggregate_events([older, newer], REGISTRY, previous_events)
+        event_ids = [event["event_id"] for event in store["events"]]
+
+        self.assertEqual(len(event_ids), 2)
+        self.assertEqual(len(event_ids), len(set(event_ids)))
+        self.assertIn(colliding_id, event_ids)
+
     def test_tier_one_hint_cannot_be_operationally_eligible(self) -> None:
         rows = [article(
             "Traffic halted through Hormuz",
