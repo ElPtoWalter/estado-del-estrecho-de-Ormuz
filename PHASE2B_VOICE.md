@@ -1,27 +1,37 @@
-# Fase 2B · Voz
+# Fase 2B · Voz con ElevenLabs
 
-## Resultado implementado
+## Resultado
 
-La Fase 2B incorpora una síntesis local reproducible sobre la salida validada de Fase 2A:
+La cadena queda así:
 
-`video-package` validado → guion validado → `voice-package` → eSpeak NG local → WAV + manifiesto → validación técnica → escucha humana.
+`video-package` validado → guion validado → `voice-package` sellado → ElevenLabs → WAV + manifiesto → validación técnica → escucha humana.
 
-No se modifica la Fase 1 ni la decisión audiovisual. La voz no recibe artículos, claves, acceso a Internet ni capacidad editorial.
+ElevenLabs sustituye a eSpeak como sintetizador del piloto. Se usa `eleven_multilingual_v2` en español, salida PCM a 24 kHz y una voz elegida mediante variable de repositorio. No se ha habilitado clonación ni publicación.
 
-## Piloto seguro
+## Configuración necesaria en cada repositorio
 
-El workflow `Piloto manual · Fase 2B Voz` solo puede iniciarse manualmente. Usa permisos `contents: read`, instala eSpeak NG desde los repositorios de Ubuntu, ejecuta las pruebas y guarda durante 14 días exactamente ocho artefactos temporales. No hace commit, despliegue ni publicación.
+1. Crear una clave de ElevenLabs restringida a Text to Speech y con límite de créditos.
+2. Guardarla como secreto de Actions `ELEVENLABS_API_KEY`.
+3. Guardar el identificador de la voz española como variable de Actions `ELEVENLABS_VOICE_ID_ES`.
+4. Abrir `Piloto manual · Fase 2B Voz`, marcar la confirmación de consumo y ejecutar.
 
-El piloto selecciona un candidato real actual de Fase 2A o, si no existe, una fixture histórica real claramente etiquetada. Genera el guion local determinista, no llama a Gemini ni a OpenRouter y no necesita secretos.
+La clave no debe guardarse en archivos, variables normales, incidencias, artefactos ni mensajes.
+
+## Seguridad operativa
+
+El workflow es exclusivamente manual y de solo lectura. Las pruebas usan audio PCM simulado y no llaman a ElevenLabs. Solo el paso de piloto recibe el secreto.
+
+Si faltan configuración, créditos, conectividad o una respuesta PCM válida, la ejecución falla sin crear un audio falso. Los artefactos se conservan 14 días y siguen limitados a los ocho archivos aprobados.
 
 ## Criterio de salida
 
-Un piloto técnico es verde cuando:
+Un piloto es técnicamente válido cuando:
 
-1. paquete de vídeo y guion pasan los validadores de Fase 2A;
-2. el paquete de voz pasa su contrato;
-3. eSpeak NG genera un WAV no vacío y con señal;
-4. hash, formato, duración y enlaces del manifiesto pasan;
-5. los únicos artefactos son los ocho permitidos.
+1. las entradas de Fase 2A son válidas;
+2. el paquete de voz conserva texto, orden y trazabilidad;
+3. ElevenLabs devuelve PCM válido;
+4. el WAV cumple formato, duración, señal y hashes;
+5. ningún secreto aparece en las salidas;
+6. los únicos artefactos son los ocho permitidos.
 
-Todavía queda una acción humana no automatizable: escuchar `audio-local.wav` y decidir si pronunciación, pausas y ritmo son aceptables. `PASS` técnico no equivale a autorización de publicación.
+Después debe escucharse `audio-elevenlabs.wav`. El `PASS` técnico no equivale a autorización de publicación.

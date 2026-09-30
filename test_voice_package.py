@@ -7,20 +7,23 @@ from phase2_video.script import generate_local_script
 from phase2_voice.package import build_voice_package
 from phase2_voice.schema import voice_content_hash
 from test_video_support import package
-from test_voice_support import voice_fixture
+from test_voice_support import TEST_VOICE_ID, voice_fixture
 
 
 class VoicePackageTests(unittest.TestCase):
     def test_package_is_deterministic_and_closed(self):
         video, script, left = voice_fixture()
-        right = build_voice_package(video, script)
+        right = build_voice_package(video, script, voice_id=TEST_VOICE_ID)
         self.assertEqual(left, right)
         self.assertEqual(left["content_hash"], voice_content_hash(left))
         self.assertTrue(left["voice_package_id"].endswith(left["content_hash"]))
         self.assertTrue(left["human_review_required"])
         self.assertFalse(left["publication_allowed"])
         self.assertFalse(left["voice_profile"]["cloning"])
-        self.assertFalse(left["voice_profile"]["network_required"])
+        self.assertTrue(left["voice_profile"]["network_required"])
+        self.assertFalse(left["voice_profile"]["deterministic_mode"])
+        self.assertEqual(left["voice_profile"]["engine"], "elevenlabs")
+        self.assertEqual(left["voice_profile"]["model_id"], "eleven_multilingual_v2")
 
     def test_exact_script_order_and_traceability_are_preserved(self):
         _, script, voice = voice_fixture()
@@ -37,10 +40,10 @@ class VoicePackageTests(unittest.TestCase):
 
     def test_language_profiles_are_explicit_and_change_identity(self):
         video = package()
-        es = build_voice_package(video, generate_local_script(video, language="es"))
-        en = build_voice_package(video, generate_local_script(video, language="en"))
-        self.assertEqual(es["voice_profile"]["voice"], "es")
-        self.assertEqual(en["voice_profile"]["voice"], "en-gb")
+        es = build_voice_package(video, generate_local_script(video, language="es"), voice_id=TEST_VOICE_ID)
+        en = build_voice_package(video, generate_local_script(video, language="en"), voice_id="uvwxyzABCDEFGHIJKLMN")
+        self.assertEqual(es["voice_profile"]["voice"], TEST_VOICE_ID)
+        self.assertEqual(en["voice_profile"]["voice"], "uvwxyzABCDEFGHIJKLMN")
         self.assertNotEqual(es["content_hash"], en["content_hash"])
 
     def test_invalid_script_is_blocked_before_voice(self):
@@ -48,7 +51,13 @@ class VoicePackageTests(unittest.TestCase):
         script = generate_local_script(video)
         script["package_id"] = "wrong"
         with self.assertRaisesRegex(ValueError, "invalid-video-script"):
-            build_voice_package(video, script)
+            build_voice_package(video, script, voice_id=TEST_VOICE_ID)
+
+    def test_missing_voice_configuration_fails_closed(self):
+        video = package()
+        script = generate_local_script(video)
+        with self.assertRaisesRegex(ValueError, "voice-not-configured"):
+            build_voice_package(video, script, voice_id="")
 
 
 if __name__ == "__main__":

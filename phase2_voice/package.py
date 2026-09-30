@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import copy
 import json
+import os
+import re
 from pathlib import Path
 from typing import Any
 
@@ -20,6 +22,7 @@ from .schema import (
 
 
 RULES_PATH = Path(__file__).resolve().parent.parent / "voice-rules.json"
+VOICE_ID_PATTERN = re.compile(r"[A-Za-z0-9_-]{20,64}")
 
 
 def load_voice_rules(path: Path | str = RULES_PATH) -> dict[str, Any]:
@@ -27,6 +30,36 @@ def load_voice_rules(path: Path | str = RULES_PATH) -> dict[str, Any]:
     if rules.get("rule_id") != VOICE_RULE_VERSION:
         raise ValueError("unsupported-voice-rules")
     return rules
+
+
+def resolve_voice_profile(
+    config: dict[str, Any],
+    language: str,
+    *,
+    voice_id: str | None = None,
+) -> dict[str, Any]:
+    """Resolve a public ElevenLabs voice id without serializing credentials."""
+    source = (config.get("profiles") or {}).get(language)
+    if not isinstance(source, dict):
+        raise ValueError("unsupported-voice-language")
+    environment_name = str(source.get("voice_env") or "")
+    resolved_voice = str(voice_id or os.environ.get(environment_name) or "").strip()
+    if not VOICE_ID_PATTERN.fullmatch(resolved_voice):
+        raise ValueError("elevenlabs-voice-not-configured")
+    profile = copy.deepcopy(source)
+    profile.pop("voice_env", None)
+    profile["voice"] = resolved_voice
+    if (
+        profile.get("engine") != "elevenlabs"
+        or profile.get("model_id") != "eleven_multilingual_v2"
+        or profile.get("output_format") != "pcm_24000"
+        or profile.get("sample_rate_hz") != 24000
+        or profile.get("cloning") is not False
+        or profile.get("network_required") is not True
+        or profile.get("deterministic_mode") is not False
+    ):
+        raise ValueError("unsafe-voice-profile")
+    return profile
 
 
 def narration_segments(script: dict[str, Any]) -> list[dict[str, Any]]:
@@ -74,6 +107,7 @@ def build_voice_package(
     script: dict[str, Any],
     *,
     rules: dict[str, Any] | None = None,
+    voice_id: str | None = None,
 ) -> dict[str, Any]:
     """Create a deterministic package; invalid upstream data is never repaired."""
     config = rules or load_voice_rules()
@@ -87,16 +121,7 @@ def build_voice_package(
         raise ValueError("video-not-recommended")
 
     language = str(script.get("language") or "")
-    profile_source = (config.get("profiles") or {}).get(language)
-    if not isinstance(profile_source, dict):
-        raise ValueError("unsupported-voice-language")
-    profile = copy.deepcopy(profile_source)
-    if (
-        profile.get("engine") != "espeak-ng"
-        or profile.get("cloning") is not False
-        or profile.get("network_required") is not False
-    ):
-        raise ValueError("unsafe-voice-profile")
+    profile = resolve_voice_profile(config, language, voice_id=voice_id)
 
     segments = narration_segments(script)
     text = "\n".join(segment["text"] for segment in segments)

@@ -13,10 +13,13 @@ from phase2_voice.schema import AUDIO_MANIFEST_SCHEMA_VERSION, VOICE_RENDERER_VE
 from test_video_support import package
 
 
+TEST_VOICE_ID = "abcdefghijklmnopqrst"
+
+
 def voice_fixture(language: str = "es"):
     video = package()
     script = generate_local_script(video, language=language)
-    voice = build_voice_package(video, script)
+    voice = build_voice_package(video, script, voice_id=TEST_VOICE_ID)
     return video, script, voice
 
 
@@ -46,8 +49,10 @@ def audio_manifest(voice: dict, path: Path) -> dict:
         "script_id": voice["script_id"],
         "text_sha256": voice["narration"]["text_sha256"],
         "engine": voice["voice_profile"]["engine"],
-        "engine_version": "eSpeak NG text-to-speech: 1.52.0",
+        "engine_version": "v1",
         "voice": voice["voice_profile"]["voice"],
+        "model_id": voice["voice_profile"]["model_id"],
+        "output_format": voice["voice_profile"]["output_format"],
         "audio_file": path.name,
         "audio_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
         "audio_bytes": path.stat().st_size,
@@ -56,25 +61,11 @@ def audio_manifest(voice: dict, path: Path) -> dict:
         "channels": audio["channels"],
         "sample_width_bits": audio["sample_width_bits"],
         "rendered_at": "2026-09-30T10:00:00Z",
-        "network_used": False,
+        "network_used": True,
         "cloning_used": False,
     }
 
 
-def fake_render_runner(command, **kwargs):
-    if "--version" in command:
-        class VersionResult:
-            returncode = 0
-            stdout = "eSpeak NG text-to-speech: 1.52.0  Data at: C:\\private\\engine-data\n"
-            stderr = ""
-
-        return VersionResult()
-    output = Path(command[command.index("-w") + 1])
-    write_wav(output)
-
-    class Result:
-        returncode = 0
-        stdout = ""
-        stderr = ""
-
-    return Result()
+def fake_elevenlabs_requester(url, body, headers, timeout):
+    frame_count = 24000 * 21
+    return 200, {"content-type": "audio/pcm"}, b"\xe8\x03" * frame_count

@@ -11,7 +11,7 @@ from typing import Any
 from phase2_video.schema import SCRIPT_SCHEMA_VERSION, parse_utc
 from phase2_video.validator import validate_package, validate_script
 
-from .package import load_voice_rules, narration_segments
+from .package import load_voice_rules, narration_segments, resolve_voice_profile
 from .render import inspect_wav
 from .schema import (
     AUDIO_MANIFEST_KEYS,
@@ -88,17 +88,24 @@ def validate_voice_package(
 
     profile = voice_package.get("voice_profile")
     if _exact_keys(profile, VOICE_PROFILE_KEYS, "VOICE_PROFILE_SCHEMA", errors):
-        expected_profile = (config.get("profiles") or {}).get(str(script.get("language") or ""))
+        try:
+            expected_profile = resolve_voice_profile(
+                config,
+                str(script.get("language") or ""),
+                voice_id=str(profile.get("voice") or ""),
+            )
+        except ValueError:
+            expected_profile = None
         if profile != expected_profile:
             errors.append("VOICE_PROFILE_CHANGED")
-        if profile.get("engine") != "espeak-ng":
+        if profile.get("engine") != "elevenlabs":
             errors.append("VOICE_ENGINE_NOT_ALLOWED")
         if profile.get("cloning") is not False:
             errors.append("VOICE_CLONING_ENABLED")
-        if profile.get("network_required") is not False:
-            errors.append("VOICE_NETWORK_ENABLED")
-        if profile.get("deterministic_mode") is not True:
-            errors.append("VOICE_NONDETERMINISTIC")
+        if profile.get("network_required") is not True:
+            errors.append("VOICE_NETWORK_DISABLED")
+        if profile.get("deterministic_mode") is not False:
+            errors.append("VOICE_DETERMINISM_MISDECLARED")
 
     expected_segments = narration_segments(script)
     narration = voice_package.get("narration")
@@ -204,13 +211,15 @@ def validate_audio(
         "text_sha256": (voice_package.get("narration") or {}).get("text_sha256"),
         "engine": (voice_package.get("voice_profile") or {}).get("engine"),
         "voice": (voice_package.get("voice_profile") or {}).get("voice"),
+        "model_id": (voice_package.get("voice_profile") or {}).get("model_id"),
+        "output_format": (voice_package.get("voice_profile") or {}).get("output_format"),
         "audio_file": path.name,
     }
     for key, value in expected.items():
         if manifest.get(key) != value:
             errors.append("AUDIO_MANIFEST_LINK_MISMATCH")
-    if manifest.get("network_used") is not False:
-        errors.append("AUDIO_NETWORK_USED")
+    if manifest.get("network_used") is not True:
+        errors.append("AUDIO_NETWORK_NOT_USED")
     if manifest.get("cloning_used") is not False:
         errors.append("AUDIO_CLONING_USED")
     try:

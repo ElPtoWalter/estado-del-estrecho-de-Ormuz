@@ -22,14 +22,14 @@ OUTPUT_NAMES = {
     "video-package.json",
     "script.json",
     "voice-package.json",
-    "audio-local.wav",
+    "audio-elevenlabs.wav",
     "audio-manifest.json",
     "validation-voice-package.json",
     "validation-audio.json",
     "preview.md",
 }
 SECRET_PATTERN = re.compile(
-    r"(?:AIza[0-9A-Za-z_-]{20,}|sk-or-v1-[0-9A-Za-z]{20,}|"
+    r"(?:AIza[0-9A-Za-z_-]{20,}|sk-or-v1-[0-9A-Za-z]{20,}|sk_[0-9A-Za-z_-]{20,}|"
     r"(?:api[_-]?key|authorization|bearer|secret|password)\s*[:=]\s*['\"]?[A-Za-z0-9_-]{12,})",
     re.I,
 )
@@ -56,13 +56,14 @@ def render_preview(
         f"Procedencia: `{metadata['fixture_source']}`", "",
         f"Paquete de vídeo: `{voice_package['video_package_id']}`", "",
         f"Guion: `{voice_package['script_id']}`", "",
-        f"Motor local: **{profile['engine']}**", "",
+        f"Proveedor: **{profile['engine']}**", "",
+        f"Modelo: **{profile['model_id']}**", "",
         f"Voz: **{profile['voice']}**", "",
         f"Duración: **{manifest['duration_seconds']:.2f} s**", "",
         f"Audio: **{manifest['sample_rate_hz']} Hz · {manifest['channels']} canal · {manifest['sample_width_bits']} bit**", "",
         f"Validación del paquete: **{package_validation['validation_status']}**", "",
         f"Validación técnica del audio: **{audio_validation['validation_status']}**", "",
-        "Red utilizada para sintetizar: **NO**", "",
+        "Red utilizada para sintetizar: **SÍ · solo ElevenLabs**", "",
         "Clonación de voz: **NO**", "",
         "Publicación: **NO**", "",
         "Revisión humana obligatoria: **SÍ**", "",
@@ -96,6 +97,7 @@ def run_pilot(
     output_dir: Path,
     *,
     renderer: Callable[..., dict[str, Any]] = render_voice_package,
+    voice_id: str | None = None,
 ) -> dict[str, Any]:
     root = root.resolve()
     output_dir = output_dir.resolve()
@@ -113,12 +115,12 @@ def run_pilot(
         raise RuntimeError("pilot-video-package-invalid")
     if validate_script(video_package, script)["validation_status"] != "PASS":
         raise RuntimeError("pilot-video-script-invalid")
-    voice_package = build_voice_package(video_package, script)
+    voice_package = build_voice_package(video_package, script, voice_id=voice_id)
     package_validation = validate_voice_package(video_package, script, voice_package)
     if package_validation["validation_status"] != "PASS":
         raise RuntimeError("pilot-voice-package-invalid:" + ",".join(package_validation["validation_errors"]))
 
-    audio_path = output_dir / "audio-local.wav"
+    audio_path = output_dir / "audio-elevenlabs.wav"
     manifest = renderer(voice_package, audio_path)
     audio_validation = validate_audio(voice_package, manifest, audio_path)
     preview = render_preview(voice_package, manifest, package_validation, audio_validation, metadata)

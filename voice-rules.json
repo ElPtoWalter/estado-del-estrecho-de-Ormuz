@@ -1,29 +1,35 @@
 {
-  "rule_id": "VOICE_RULESET_V1",
+  "rule_id": "VOICE_RULESET_V2",
   "profiles": {
     "es": {
-      "engine": "espeak-ng",
-      "voice": "es",
-      "speed_wpm": 150,
-      "pitch": 50,
-      "word_gap_ms": 0,
-      "amplitude": 100,
-      "deterministic_mode": true,
+      "engine": "elevenlabs",
+      "voice_env": "ELEVENLABS_VOICE_ID_ES",
+      "model_id": "eleven_multilingual_v2",
+      "output_format": "pcm_24000",
+      "sample_rate_hz": 24000,
+      "stability": 0.55,
+      "similarity_boost": 0.75,
+      "style": 0.0,
+      "use_speaker_boost": true,
+      "deterministic_mode": false,
       "cloning": false,
-      "network_required": false,
-      "license": "GPL-3.0-or-later"
+      "network_required": true,
+      "license": "ElevenLabs paid commercial terms"
     },
     "en": {
-      "engine": "espeak-ng",
-      "voice": "en-gb",
-      "speed_wpm": 150,
-      "pitch": 50,
-      "word_gap_ms": 0,
-      "amplitude": 100,
-      "deterministic_mode": true,
+      "engine": "elevenlabs",
+      "voice_env": "ELEVENLABS_VOICE_ID_EN",
+      "model_id": "eleven_multilingual_v2",
+      "output_format": "pcm_24000",
+      "sample_rate_hz": 24000,
+      "stability": 0.55,
+      "similarity_boost": 0.75,
+      "style": 0.0,
+      "use_speaker_boost": true,
+      "deterministic_mode": false,
       "cloning": false,
-      "network_required": false,
-      "license": "GPL-3.0-or-later"
+      "network_required": true,
+      "license": "ElevenLabs paid commercial terms"
     }
   },
   "audio": {

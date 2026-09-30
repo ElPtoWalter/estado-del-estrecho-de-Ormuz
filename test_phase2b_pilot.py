@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pilot_phase2b_voice as pilot
 from phase2_voice.render import render_voice_package
-from test_voice_support import fake_render_runner
+from test_voice_support import TEST_VOICE_ID, fake_elevenlabs_requester
 
 
 ROOT = Path(__file__).resolve().parent
@@ -15,8 +15,8 @@ def fake_renderer(voice_package, output_path):
     return render_voice_package(
         voice_package,
         output_path,
-        which=lambda name: "/usr/bin/espeak-ng",
-        runner=fake_render_runner,
+        api_key="x" * 24,
+        requester=fake_elevenlabs_requester,
     )
 
 
@@ -25,7 +25,9 @@ class Phase2BVoicePilotTests(unittest.TestCase):
         output = ROOT.parent / "phase2b-pilot-test-output-ormuz"
         output.mkdir(exist_ok=True)
         try:
-            result = pilot.run_pilot(ROOT, "ormuz", output, renderer=fake_renderer)
+            result = pilot.run_pilot(
+                ROOT, "ormuz", output, renderer=fake_renderer, voice_id=TEST_VOICE_ID,
+            )
             self.assertTrue(result["historical_fixture"])
             self.assertEqual(result["voice_package_validation"], "PASS")
             self.assertEqual(result["audio_validation"], "PASS")
@@ -43,20 +45,27 @@ class Phase2BVoicePilotTests(unittest.TestCase):
 
     def test_outputs_inside_repository_are_rejected(self):
         with self.assertRaisesRegex(ValueError, "outside-repository"):
-            pilot.run_pilot(ROOT, "ormuz", ROOT / "phase2b-output", renderer=fake_renderer)
+            pilot.run_pilot(
+                ROOT,
+                "ormuz",
+                ROOT / "phase2b-output",
+                renderer=fake_renderer,
+                voice_id=TEST_VOICE_ID,
+            )
 
-    def test_workflow_is_manual_read_only_local_and_non_publishing(self):
+    def test_workflow_is_manual_read_only_paid_guarded_and_non_publishing(self):
         text = (ROOT / ".github" / "workflows" / "pilot-phase2b-voice.yml").read_text(encoding="utf-8")
         lowered = text.casefold()
         self.assertIn("workflow_dispatch:", text)
         self.assertIn("contents: read", text)
-        self.assertIn("espeak-ng", lowered)
+        self.assertIn("secrets.elevenlabs_api_key", lowered)
+        self.assertIn("vars.elevenlabs_voice_id_es", lowered)
+        self.assertIn("confirm_paid_synthesis", lowered)
         self.assertNotIn("pull_request:", text)
         self.assertNotIn("push:", text)
-        self.assertNotIn("secrets.", lowered)
         for forbidden in (
             "git commit", "git push", "youtube", "tiktok", "instagram",
-            "elevenlabs", "voice cloning", "gemini_api_key", "openrouter_api_key",
+            "voice cloning", "gemini_api_key", "openrouter_api_key",
         ):
             self.assertNotIn(forbidden, lowered)
 

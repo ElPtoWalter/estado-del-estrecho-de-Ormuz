@@ -1,4 +1,4 @@
-"""Deterministic, non-publishing voice stage for StraitWatch Phase 2B."""
+"""Traceable, human-gated voice stage for StraitWatch Phase 2B."""
 
 from .package import build_voice_package, load_voice_rules
 from .render import render_voice_package

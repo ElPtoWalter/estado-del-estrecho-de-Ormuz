@@ -10,11 +10,11 @@ from typing import Any
 from phase2_video.schema import canonical_json
 
 
-VOICE_PACKAGE_SCHEMA_VERSION = "1.0.0"
-AUDIO_MANIFEST_SCHEMA_VERSION = "1.0.0"
-VOICE_VALIDATOR_VERSION = "1.0.0"
-VOICE_RENDERER_VERSION = "1.0.0"
-VOICE_RULE_VERSION = "VOICE_RULESET_V1"
+VOICE_PACKAGE_SCHEMA_VERSION = "2.0.0"
+AUDIO_MANIFEST_SCHEMA_VERSION = "2.0.0"
+VOICE_VALIDATOR_VERSION = "2.0.0"
+VOICE_RENDERER_VERSION = "2.0.0"
+VOICE_RULE_VERSION = "VOICE_RULESET_V2"
 
 VOICE_PACKAGE_KEYS = {
     "schema_version", "voice_package_id", "video_package_id",
@@ -24,7 +24,8 @@ VOICE_PACKAGE_KEYS = {
     "content_hash",
 }
 VOICE_PROFILE_KEYS = {
-    "engine", "voice", "speed_wpm", "pitch", "word_gap_ms", "amplitude",
+    "engine", "voice", "model_id", "output_format", "sample_rate_hz",
+    "stability", "similarity_boost", "style", "use_speaker_boost",
     "deterministic_mode", "cloning", "network_required", "license",
 }
 NARRATION_KEYS = {"text", "text_sha256", "segments"}
@@ -40,7 +41,7 @@ AUDIO_CONSTRAINT_KEYS = {
 AUDIO_MANIFEST_KEYS = {
     "schema_version", "renderer_version", "voice_package_id",
     "voice_content_hash", "script_id", "text_sha256", "engine",
-    "engine_version", "voice",
+    "engine_version", "voice", "model_id", "output_format",
     "audio_file", "audio_sha256", "audio_bytes", "duration_seconds",
     "sample_rate_hz", "channels", "sample_width_bits", "rendered_at",
     "network_used", "cloning_used",

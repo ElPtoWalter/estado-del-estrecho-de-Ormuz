@@ -37,22 +37,22 @@ class VoiceValidatorTests(unittest.TestCase):
         report = validate_voice_package(video, script, changed)
         self.assertIn("NARRATION_TRACE_CHANGED", report["validation_errors"])
 
-    def test_publication_cloning_and_network_cannot_be_enabled(self):
+    def test_publication_cloning_and_required_network_cannot_be_changed(self):
         video, script, voice = voice_fixture()
         changed = copy.deepcopy(voice)
         changed["publication_allowed"] = True
         changed["voice_profile"]["cloning"] = True
-        changed["voice_profile"]["network_required"] = True
+        changed["voice_profile"]["network_required"] = False
         report = validate_voice_package(video, script, changed)
         self.assertIn("PUBLICATION_ENABLED", report["validation_errors"])
         self.assertIn("VOICE_CLONING_ENABLED", report["validation_errors"])
-        self.assertIn("VOICE_NETWORK_ENABLED", report["validation_errors"])
+        self.assertIn("VOICE_NETWORK_DISABLED", report["validation_errors"])
 
     def test_real_wav_and_manifest_pass(self):
         _, _, voice = voice_fixture()
         directory = test_output("phase2b-validator-green-test")
         try:
-            path = directory / "audio-local.wav"
+            path = directory / "audio-elevenlabs.wav"
             write_wav(path)
             manifest = audio_manifest(voice, path)
             report = validate_audio(voice, manifest, path)
@@ -65,7 +65,7 @@ class VoiceValidatorTests(unittest.TestCase):
         _, _, voice = voice_fixture()
         directory = test_output("phase2b-validator-red-test")
         try:
-            path = directory / "audio-local.wav"
+            path = directory / "audio-elevenlabs.wav"
             write_wav(path, silent=True)
             manifest = audio_manifest(voice, path)
             manifest["audio_sha256"] = "0" * 64
@@ -81,7 +81,7 @@ class VoiceValidatorTests(unittest.TestCase):
         changed["narration"]["text"] += " Alteración."
         directory = test_output("phase2b-validator-integrity-test")
         try:
-            path = directory / "audio-local.wav"
+            path = directory / "audio-elevenlabs.wav"
             write_wav(path)
             report = validate_audio(changed, audio_manifest(changed, path), path)
             self.assertIn("VOICE_PACKAGE_INTEGRITY", report["validation_errors"])

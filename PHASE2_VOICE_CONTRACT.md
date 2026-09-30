@@ -1,85 +1,69 @@
 # Contrato de voz — Fase 2B
 
-Versión del contrato: `1.0.0`
-Estado: piloto local, sin publicación.
+Versión del contrato: `2.0.0`
+Estado: piloto manual con ElevenLabs, sin publicación.
 
 ## 1. Finalidad y límites
 
-La etapa de voz transforma exclusivamente un guion de Fase 2A ya validado en audio. No decide hechos, estado operativo, importancia, recomendación audiovisual ni redacción. No consulta Internet, no altera el texto, no clona voces, no usa un proveedor de pago y no publica.
+La etapa transforma exclusivamente un guion validado de Fase 2A en audio. No decide hechos, estado operativo, importancia ni redacción. El texto enviado al proveedor coincide exactamente con el texto sellado en `voice-package`.
 
-La entrada obligatoria es la pareja exacta `video-package` + `script`. Si cualquiera falla su validador de Fase 2A, no se construye el paquete de voz.
+La integración autorizada usa la API de ElevenLabs. Requiere red y consume créditos, pero no clona voces, no publica y no dispone de permisos de escritura en el repositorio. Cualquier fallo de credencial, cuota, red, formato o validación detiene el piloto; no existe fallback silencioso.
 
-## 2. Sobre normativo del paquete
+## 2. Perfil permitido
+
+`VOICE_RULESET_V2` admite estos parámetros cerrados:
 
 ```json
 {
-  "schema_version": "1.0.0",
-  "voice_package_id": "voice-package:<site>:<language>:<content_hash>",
-  "video_package_id": "video-package:...",
-  "video_content_hash": "sha256",
-  "script_id": "video-script:...",
-  "script_schema_version": "1.0.0",
-  "site": "ormuz|gibraltar",
-  "language": "es|en",
-  "video_type": "breaking|explainer|daily_summary",
-  "generated_at": "UTC ISO 8601",
-  "voice_profile": {
-    "engine": "espeak-ng",
-    "voice": "es|en-gb",
-    "speed_wpm": 150,
-    "pitch": 50,
-    "word_gap_ms": 0,
-    "amplitude": 100,
-    "deterministic_mode": true,
-    "cloning": false,
-    "network_required": false,
-    "license": "GPL-3.0-or-later"
-  },
-  "narration": {
-    "text": "texto exacto enviado al sintetizador",
-    "text_sha256": "sha256",
-    "segments": []
-  },
-  "audio_constraints": {
-    "format": "wav",
-    "channels": 1,
-    "sample_width_bits": 16,
-    "min_sample_rate_hz": 16000,
-    "max_sample_rate_hz": 48000,
-    "minimum_duration_seconds": 20,
-    "maximum_duration_seconds": 150
-  },
-  "human_review_required": true,
-  "publication_allowed": false,
-  "content_hash": "sha256"
+  "engine": "elevenlabs",
+  "voice": "<voice_id resuelto>",
+  "model_id": "eleven_multilingual_v2",
+  "output_format": "pcm_24000",
+  "sample_rate_hz": 24000,
+  "stability": 0.55,
+  "similarity_boost": 0.75,
+  "style": 0.0,
+  "use_speaker_boost": true,
+  "deterministic_mode": false,
+  "cloning": false,
+  "network_required": true,
+  "license": "ElevenLabs paid commercial terms"
 }
 ```
 
-Cada segmento conserva su `segment_id`, texto, hash y referencias `fact_ids`, `statement_ids` y `source_ids`. El orden es `hook` → escenas → `outro`. Cambiar, reordenar, añadir u omitir texto invalida el paquete.
+El identificador de voz se toma de `ELEVENLABS_VOICE_ID_ES` o `ELEVENLABS_VOICE_ID_EN`. Se incorpora al paquete y a su hash para impedir que una voz cambie sin alterar la identidad del candidato.
 
-`content_hash` se calcula sobre JSON canónico UTF-8, con claves ordenadas, excluyendo solo los campos derivados `content_hash` y `voice_package_id`. El identificador se construye después a partir de ese hash.
+La credencial `ELEVENLABS_API_KEY` se lee únicamente en tiempo de ejecución. Nunca forma parte del paquete, manifiesto, vista previa, artefactos ni mensajes de error.
 
-## 3. Síntesis y manifiesto
+## 3. Síntesis y trazabilidad
 
-`VOICE_RULESET_V1` admite únicamente eSpeak NG local con argumentos fijos. El texto se entrega por entrada estándar y la salida es WAV PCM mono de 16 bits. No existe fallback silencioso: si el ejecutable no está disponible o falla, el piloto falla explícitamente.
+La petición se envía a `POST /v1/text-to-speech/:voice_id` con `output_format=pcm_24000`. El cuerpo contiene solo el texto sellado, el modelo y los ajustes de voz autorizados. La respuesta PCM se encapsula localmente como WAV mono de 16 bits a 24 kHz.
 
-El manifiesto registra motor, versión exacta del motor, voz, identificadores de entrada, hash del texto, hash y tamaño del WAV, duración, frecuencia, canales, profundidad, hora de renderizado y los invariantes `network_used: false` y `cloning_used: false`.
+El manifiesto registra:
 
-## 4. Validación y revisión humana
+- identificadores y hashes de entrada;
+- proveedor, versión de API, modelo, voz y formato;
+- hash, tamaño, duración y propiedades técnicas del WAV;
+- `network_used: true` y `cloning_used: false`;
+- hora UTC de renderizado.
 
-El validador comprueba:
+No se serializan cabeceras, credenciales ni el cuerpo de error del proveedor.
 
-- identidad y hashes de todos los eslabones;
-- texto y orden exactos del guion;
-- trazabilidad de cada escena;
-- perfil local permitido;
-- formato, canales, profundidad, frecuencia y duración;
-- existencia, tamaño, hash e información técnica del WAV;
-- presencia de señal no nula;
-- ausencia de red, clonación y permiso de publicación.
+## 4. Controles de coste y secretos
 
-Estas comprobaciones no demuestran por sí solas que cada palabra se oiga correctamente. Pronunciación, ritmo, naturalidad y correspondencia audible completa exigen escucha humana. La aprobación humana sigue siendo obligatoria incluso cuando ambos validadores devuelven `PASS`.
+El workflow solo admite `workflow_dispatch`, tiene `contents: read` y exige marcar `confirm_paid_synthesis`. Antes de llamar a la API comprueba que existan:
 
-## 5. Evolución
+- secreto: `ELEVENLABS_API_KEY`;
+- variable: `ELEVENLABS_VOICE_ID_ES`.
 
-Los cambios compatibles aumentan versión menor y añaden campos opcionales. Relajar la revisión humana, permitir publicación, red, clonación o proveedores distintos exige contrato mayor, autorización separada y nuevas pruebas. Ormuz y Gibraltar deben conservar el mismo contrato y el mismo núcleo.
+La clave debe restringirse a Text to Speech y tener un límite de créditos en ElevenLabs. Las pruebas unitarias usan un proveedor simulado y no consumen red ni créditos.
+
+## 5. Validación y revisión humana
+
+Los validadores comprueban identidad, texto, orden, trazabilidad, perfil, modelo, voz, formato, duración, señal y hashes. También verifican que la red se declaró y utilizó, que la clonación permanece desactivada y que la publicación sigue bloqueada.
+
+La salida técnica `PASS` no autoriza publicar. Pronunciación, acento, pausas, naturalidad y correspondencia audible completa requieren escucha humana del archivo `audio-elevenlabs.wav`.
+
+## 6. Evolución
+
+Cambiar modelo, voz, parámetros, formato, proveedor, clonación, publicación o ejecución automática exige actualizar contrato y pruebas. Ormuz y Gibraltar deben conservar el mismo núcleo y el mismo contrato.
