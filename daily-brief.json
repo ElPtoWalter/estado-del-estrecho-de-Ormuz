@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-30T16:03:35Z",
+    "generated_at": "2026-09-30T20:57:34Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -77,37 +77,37 @@
       "traffic": "REDUCED",
       "access": "RESTRICTED",
       "risk": "EXTREME",
-      "legal": "OPEN_LEGAL"
+      "legal": "DISPUTED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Restringido",
       "risk": "Extremo",
-      "legal": "Sin cierre formal reconocido"
+      "legal": "Régimen disputado"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Restricted",
       "risk": "Extreme",
-      "legal": "No recognised formal closure"
+      "legal": "Disputed regime"
     },
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 11.185,
+      "passage": 11.109,
       "closure": 0,
       "traffic_reduction": 3.15,
-      "access_restriction": 0.9,
-      "risk": 67.94
+      "access_restriction": 3.88,
+      "risk": 65.672
     },
     "source_counts": {
       "passage": 6,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-09-29T20:40:00Z",
+    "latest_confirmed_transit_at": "2026-09-29T20:57:44Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -187,7 +187,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-30T16:03:35Z",
+        "published_at": "2026-09-30T20:57:34Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -218,77 +218,77 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Iran touts Hormuz attacks as oil flows increase despite tensions - aljazeera.com",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcHFndWVQUVpiSnAwM0EtTUdVSVZvSERZZnZkQUswTVRETVpIdWJtU1VrRFpzdUxWNUplbUI3Z2F6UEFZdk43NWN4R1llRVJOMjNDV1oxNTF3dTJOOUdEQVVDT0JLdVpwa1J2UU9mMm5iczcwaEpubnR1WEIzdnBUWE9xVlJtdlIwZTc2YXpGWW5RU1RWdnUxa1B4ODB1RFNUd2lXdlZVazbSAa4BQVVfeXFMT3hIUnlIQUNRSU9pbnFSNTh4cnc0LXRiV3M2OE9VeFNab2FneWpIMUVoaTJvd1dpYnhfUkRRODJRcDNmcmZrRHpFcVhKWHlzTUYtdk0yaGc4YWxOQzVRQlhDOUJXLXdmQjNiMkhyaWZMM0lKZzY0QlRWeGlsMUFtQUt3T0lPNk42bmxnNFhjNWRmc3NUYTI0VGs2N2RjanVvNVZUek5uV0Y1c2dOdDhB",
-        "published_at": "2026-09-28T17:46:06Z",
+        "title": "Four vessels struck in Hormuz in 24 hours - Seatrade Maritime News",
+        "source": "Seatrade Maritime News",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcVpBeS1VdkNydDI5dzY4NXFSX3lrVi1yWGZ4bmszYTFHUEhuOVU0VTFDYlowSVFseFV6bGhrNEZSeEIxcmpwSmRyWW5vX3c4VWZVRnktNGRrR0hZZlBuQnQyM0oyV2xiR0t4WGNFLXRJdXZqaXE1ellIbHBzdzFJN3BGS1lqZ2VYRUE3Ng",
+        "published_at": "2026-09-30T16:11:53Z",
         "tier": 2,
-        "weight": 2.4,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 2.16,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Iran touts Hormuz attacks as oil flows increase despite tensions - Al Jazeera",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcHFndWVQUVpiSnAwM0EtTUdVSVZvSERZZnZkQUswTVRETVpIdWJtU1VrRFpzdUxWNUplbUI3Z2F6UEFZdk43NWN4R1llRVJOMjNDV1oxNTF3dTJOOUdEQVVDT0JLdVpwa1J2UU9mMm5iczcwaEpubnR1WEIzdnBUWE9xVlJtdlIwZTc2YXpGWW5RU1RWdnUxa1B4ODB1RFNUd2lXdlZVazbSAa4BQVVfeXFMT3hIUnlIQUNRSU9pbnFSNTh4cnc0LXRiV3M2OE9VeFNab2FneWpIMUVoaTJvd1dpYnhfUkRRODJRcDNmcmZrRHpFcVhKWHlzTUYtdk0yaGc4YWxOQzVRQlhDOUJXLXdmQjNiMkhyaWZMM0lKZzY0QlRWeGlsMUFtQUt3T0lPNk42bmxnNFhjNWRmc3NUYTI0VGs2N2RjanVvNVZUek5uV0Y1c2dOdDhB",
-        "published_at": "2026-09-28T17:46:06Z",
-        "tier": 2,
-        "weight": 2.4,
+        "weight": 2.0,
         "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 2.16,
+        "effective_weight": 2.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Economic toll of Iran war ‘unbearable,’ Qatar warns as talks continue - Euronews.com",
+        "source": "Euronews",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQb1FBVklaZ3FlQTRJWXl3TS02c09qLXBsZU53bmVIVWd4Y2dqLXZfaFAtSGtKUE5iYWliWE5DdF94akJVWnRST0V1QlJia1VfdGNBeUZTQWVjTHlxYVN6Wjczc1lZV1V6bkpRTlRQNnRKLURLVkhEbjdCczRHYnhmYWdiYjZJTFJzaEJnc1piMlZkTEhqWkUwbklndVFrYnFTejZRSU00a0ptbXhhdlNkYw",
+        "published_at": "2026-09-29T15:27:39Z",
+        "tier": 2,
+        "weight": 2.2,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 1.98,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
       }
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
-      "evt_2c602055ab00dd19",
       "evt_79c79899440326e0",
+      "evt_7500a9412c556967",
+      "evt_1432070dfee4558e",
+      "evt_2c602055ab00dd19",
       "evt_7028da54f76e7e63",
       "evt_0d6a20a8ad1f50ad",
-      "evt_f0a2b1017c2433d0",
-      "evt_1ab82b58248cc869",
-      "evt_41b6ccb7972ec985",
+      "evt_bb4f297520e6edcd",
+      "evt_39dfd8aa833a9e42",
       "evt_dabda4295aaf89af",
       "evt_4f3dd47cd1b854ac",
       "evt_4376b5637389e29a",
+      "evt_9fdbb841518b572d",
       "evt_18272f2f0e08d27f",
       "evt_dab545e413c293d8",
       "evt_5c0295ad9e8285a6",
       "evt_015a11e0bd79d6c0",
       "evt_94c6df07f60940c1",
       "evt_8823ed77daa88274",
-      "evt_3ef4700519952002",
-      "evt_98c18512ff7e9ebc",
-      "evt_e4a7f81f1cad9112"
+      "evt_3ef4700519952002"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 2,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 4,
-      "SINGLE_SOURCE": 20,
+      "SINGLE_SOURCE": 21,
       "UNCONFIRMED": 23,
-      "TOTAL": 49
+      "TOTAL": 50
     },
     "diagnostics": {
-      "signals_considered": 71,
+      "signals_considered": 72,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 49,
-      "article_count_after_deduplication": 99,
+      "event_count": 50,
+      "article_count_after_deduplication": 100,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-09-30T16:03:35Z"
+    "generated_at": "2026-09-30T20:57:34Z"
   }
 }
