@@ -1,0 +1,43 @@
+{
+  "rule_id": "VOICE_RULESET_V1",
+  "profiles": {
+    "es": {
+      "engine": "espeak-ng",
+      "voice": "es",
+      "speed_wpm": 150,
+      "pitch": 50,
+      "word_gap_ms": 0,
+      "amplitude": 100,
+      "deterministic_mode": true,
+      "cloning": false,
+      "network_required": false,
+      "license": "GPL-3.0-or-later"
+    },
+    "en": {
+      "engine": "espeak-ng",
+      "voice": "en-gb",
+      "speed_wpm": 150,
+      "pitch": 50,
+      "word_gap_ms": 0,
+      "amplitude": 100,
+      "deterministic_mode": true,
+      "cloning": false,
+      "network_required": false,
+      "license": "GPL-3.0-or-later"
+    }
+  },
+  "audio": {
+    "format": "wav",
+    "channels": 1,
+    "sample_width_bits": 16,
+    "min_sample_rate_hz": 16000,
+    "max_sample_rate_hz": 48000
+  },
+  "duration": {
+    "breaking": {"minimum_seconds": 8, "maximum_seconds": 75},
+    "explainer": {"minimum_seconds": 20, "maximum_seconds": 150},
+    "daily_summary": {"minimum_seconds": 20, "maximum_seconds": 120}
+  },
+  "publication_allowed": false,
+  "human_review_required": true
+}
