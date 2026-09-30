@@ -80,6 +80,23 @@ def _request_elevenlabs(
         raise RuntimeError("voice-provider-unavailable:elevenlabs") from exc
 
 
+def _elevenlabs_error_code(response_body: bytes) -> str:
+    """Return only a provider error identifier, never its free-form message."""
+    try:
+        payload = json.loads(response_body.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        return ""
+    detail = payload.get("detail") if isinstance(payload, dict) else None
+    if not isinstance(detail, dict):
+        return ""
+    for key in ("status", "code", "type"):
+        value = detail.get(key)
+        if isinstance(value, str) and value:
+            safe = "".join(character for character in value if character.isalnum() or character in "_-")
+            return safe[:80]
+    return ""
+
+
 def render_voice_package(
     voice_package: dict[str, Any],
     output_path: Path | str,
@@ -152,7 +169,9 @@ def render_voice_package(
         timeout,
     )
     if status != 200:
-        raise RuntimeError(f"voice-provider-http-error:elevenlabs:{status}")
+        error_code = _elevenlabs_error_code(pcm)
+        suffix = f":{error_code}" if error_code else ""
+        raise RuntimeError(f"voice-provider-http-error:elevenlabs:{status}{suffix}")
     content_type = str(response_headers.get("content-type") or "").casefold()
     if content_type and not (
         content_type.startswith("audio/") or content_type.startswith("application/octet-stream")

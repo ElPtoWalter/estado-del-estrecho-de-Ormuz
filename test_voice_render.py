@@ -100,6 +100,36 @@ class VoiceRenderTests(unittest.TestCase):
         finally:
             remove_output(directory)
 
+    def test_provider_error_exposes_only_safe_machine_code(self):
+        _, _, voice = voice_fixture()
+        directory = test_output("phase2b-render-provider-code-test")
+        try:
+            output = directory / "voice.wav"
+            response = {
+                "detail": {
+                    "status": "invalid_voice_id",
+                    "message": "unsafe provider detail must remain private",
+                }
+            }
+            with self.assertRaisesRegex(
+                RuntimeError,
+                r"http-error:elevenlabs:400:invalid_voice_id$",
+            ) as caught:
+                render_voice_package(
+                    voice,
+                    output,
+                    api_key=UNIT_TEST_API_KEY,
+                    requester=lambda url, body, headers, timeout: (
+                        400,
+                        {},
+                        json.dumps(response).encode("utf-8"),
+                    ),
+                )
+            self.assertNotIn("unsafe provider detail", str(caught.exception))
+            self.assertFalse(output.exists())
+        finally:
+            remove_output(directory)
+
 
 if __name__ == "__main__":
     unittest.main()
