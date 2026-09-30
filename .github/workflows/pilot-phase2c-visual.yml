@@ -1,0 +1,41 @@
+name: Piloto manual · Fase 2C Storyboard visual
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phase2c-visual-pilot-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar la rama seleccionada
+        uses: actions/checkout@v6
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Ejecutar pruebas de Fase 2C
+        run: |
+          python -m py_compile pilot_phase2c_visual.py phase2_visual/*.py
+          python -m unittest -v test_visual_storyboard.py test_visual_render.py test_visual_validator.py test_phase2c_pilot.py
+
+      - name: Generar storyboard y gráficos originales de Ormuz
+        run: python pilot_phase2c_visual.py --site ormuz --output-dir "${{ runner.temp }}/phase2c-visual"
+
+      - name: Guardar los artefactos temporales para revisión humana
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: phase2c-visual-ormuz-${{ github.run_number }}
+          path: ${{ runner.temp }}/phase2c-visual
+          if-no-files-found: error
+          retention-days: 14
