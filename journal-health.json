@@ -1,30 +1,38 @@
 {
   "version": 11,
-  "generated_at": "2026-09-29T14:04:10Z",
+  "generated_at": "2026-09-30T11:24:04Z",
   "ok": true,
-  "date": "2026-09-29",
-  "material_score": 4,
-  "material_archive": true,
-  "news_considered": 34,
-  "new_articles": 30,
-  "source_brands": 9,
+  "date": "2026-09-30",
+  "material_score": 0,
+  "material_archive": false,
+  "news_considered": 29,
+  "new_articles": 15,
+  "source_brands": 10,
   "fetch_errors": [],
   "operational_intelligence_used": true,
-  "editor_engine": "rules",
-  "editor_assistant_status": "no-key",
+  "editor_engine": "gemini",
+  "editor_assistant_status": "ok",
   "editorial_trace": {
     "validator_version": 2,
-    "factual_packet_sha256": "f6a2e5c92f62ddfb76a23efcf467672518e61d37bd9a991884cef7a4d7f36842",
-    "provider": "rules",
-    "status": "no-key",
-    "attempts": [],
-    "factual_packet_hash": "f6a2e5c92f62ddfb76a23efcf467672518e61d37bd9a991884cef7a4d7f36842",
+    "factual_packet_sha256": "e0d1481d835ff8af061ca6a6fea4a2faa91fa0d727839d3b6475a94501d1d29a",
+    "provider": "gemini",
+    "status": "ok",
+    "attempts": [
+      {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite"
+      }
+    ],
+    "factual_packet_hash": "e0d1481d835ff8af061ca6a6fea4a2faa91fa0d727839d3b6475a94501d1d29a",
     "event_ids": [
       "evt_c26f87164bf1ec62",
+      "evt_9fdbb841518b572d",
       "evt_5c0295ad9e8285a6",
+      "evt_015a11e0bd79d6c0",
       "evt_94c6df07f60940c1",
       "evt_8823ed77daa88274",
-      "evt_392c7f27860bfb54",
+      "evt_3ef4700519952002",
+      "evt_e4a7f81f1cad9112",
       "evt_31138361dc837582",
       "evt_f9397a2d790ffe9f",
       "evt_537765baca3d6786",
@@ -36,10 +44,7 @@
       "evt_bf19ae993fa0b683",
       "evt_bc4aec9ce0e18d69",
       "evt_b28785a76b2e5e18",
-      "evt_9c935d73b582575a",
-      "evt_520d08cdcedd7f30",
-      "evt_88cd246c4bbbbb48",
-      "evt_7f636394a58ea287"
+      "evt_9c935d73b582575a"
     ],
     "source_ids": [
       "aljazeera",
@@ -57,12 +62,12 @@
       "CONFIRMED_MULTI_SOURCE": 2,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 5,
-      "SINGLE_SOURCE": 17,
-      "UNCONFIRMED": 22,
-      "TOTAL": 46
+      "DECLARATION_ONLY": 4,
+      "SINGLE_SOURCE": 19,
+      "UNCONFIRMED": 28,
+      "TOTAL": 53
     },
-    "timestamp": "2026-09-29T14:04:10Z",
-    "fallback_used": true
+    "timestamp": "2026-09-30T11:24:04Z",
+    "fallback_used": false
   }
 }
