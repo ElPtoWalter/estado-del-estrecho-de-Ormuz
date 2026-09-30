@@ -54,7 +54,7 @@ No se serializan cabeceras, credenciales ni el cuerpo de error del proveedor.
 El workflow solo admite `workflow_dispatch`, tiene `contents: read` y exige marcar `confirm_paid_synthesis`. Antes de llamar a la API comprueba que existan:
 
 - secreto: `ELEVENLABS_API_KEY`;
-- variable: `ELEVENLABS_VOICE_ID_ES`.
+- secreto: `ELEVENLABS_VOICE_ID_ES`.
 
 La clave debe restringirse a Text to Speech y tener un límite de créditos en ElevenLabs. Las pruebas unitarias usan un proveedor simulado y no consumen red ni créditos.
 

@@ -12,7 +12,7 @@ ElevenLabs sustituye a eSpeak como sintetizador del piloto. Se usa `eleven_multi
 
 1. Crear una clave de ElevenLabs restringida a Text to Speech y con límite de créditos.
 2. Guardarla como secreto de Actions `ELEVENLABS_API_KEY`.
-3. Guardar el identificador de la voz española como variable de Actions `ELEVENLABS_VOICE_ID_ES`.
+3. Guardar el identificador de la voz española como secreto de Actions `ELEVENLABS_VOICE_ID_ES`.
 4. Abrir `Piloto manual · Fase 2B Voz`, marcar la confirmación de consumo y ejecutar.
 
 La clave no debe guardarse en archivos, variables normales, incidencias, artefactos ni mensajes.

@@ -59,7 +59,7 @@ class Phase2BVoicePilotTests(unittest.TestCase):
         self.assertIn("workflow_dispatch:", text)
         self.assertIn("contents: read", text)
         self.assertIn("secrets.elevenlabs_api_key", lowered)
-        self.assertIn("vars.elevenlabs_voice_id_es", lowered)
+        self.assertIn("secrets.elevenlabs_voice_id_es", lowered)
         self.assertIn("confirm_paid_synthesis", lowered)
         self.assertNotIn("pull_request:", text)
         self.assertNotIn("push:", text)

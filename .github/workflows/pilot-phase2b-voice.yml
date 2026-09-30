@@ -38,7 +38,7 @@ jobs:
       - name: Comprobar configuración de ElevenLabs sin mostrar secretos
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-          ELEVENLABS_VOICE_ID_ES: ${{ vars.ELEVENLABS_VOICE_ID_ES }}
+          ELEVENLABS_VOICE_ID_ES: ${{ secrets.ELEVENLABS_VOICE_ID_ES }}
         run: |
           test -n "$ELEVENLABS_API_KEY" || { echo "::error::Falta el secreto ELEVENLABS_API_KEY"; exit 1; }
           test -n "$ELEVENLABS_VOICE_ID_ES" || { echo "::error::Falta la variable ELEVENLABS_VOICE_ID_ES"; exit 1; }
@@ -46,7 +46,7 @@ jobs:
       - name: Ejecutar piloto aislado de Ormuz con ElevenLabs
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-          ELEVENLABS_VOICE_ID_ES: ${{ vars.ELEVENLABS_VOICE_ID_ES }}
+          ELEVENLABS_VOICE_ID_ES: ${{ secrets.ELEVENLABS_VOICE_ID_ES }}
         run: python pilot_phase2b_voice.py --site ormuz --output-dir "${{ runner.temp }}/phase2b-voice"
 
       - name: Guardar exclusivamente los artefactos temporales del piloto
