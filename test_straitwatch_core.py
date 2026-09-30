@@ -3,7 +3,7 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from straitwatch_core import SourceRegistry, aggregate_events, deduplicate_articles, factual_packet
+from straitwatch_core import SourceRegistry, aggregate_events, deduplicate_articles, factual_packet, parse_datetime
 
 
 ROOT = Path(__file__).resolve().parent
@@ -164,6 +164,30 @@ class EventTests(unittest.TestCase):
         self.assertEqual(len(event_ids), 2)
         self.assertEqual(len(event_ids), len(set(event_ids)))
         self.assertIn(colliding_id, event_ids)
+
+    def test_backdated_update_never_inverts_event_timeline(self) -> None:
+        initial = aggregate_events([
+            article(
+                "Insurers update their Hormuz risk assessment",
+                "Reuters",
+                "https://reuters.com/risk-update",
+                published_at="2026-09-29T12:27:15Z",
+                topic="security",
+            ),
+        ], REGISTRY)
+        updated = aggregate_events([
+            article(
+                "Insurers update their Hormuz risk assessment",
+                "Reuters",
+                "https://reuters.com/risk-update",
+                published_at="2026-09-29T12:08:00Z",
+                topic="security",
+            ),
+        ], REGISTRY, initial["events"])
+
+        event = updated["events"][0]
+        self.assertEqual(event["first_seen"], "2026-09-29T12:08:00Z")
+        self.assertLessEqual(parse_datetime(event["first_seen"]), parse_datetime(event["last_seen"]))
 
     def test_tier_one_hint_cannot_be_operationally_eligible(self) -> None:
         rows = [article(

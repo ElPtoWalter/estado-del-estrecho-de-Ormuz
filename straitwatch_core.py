@@ -586,7 +586,7 @@ def aggregate_events(
         )
         used_event_ids.add(event_id)
         if prior and event_id == prior[0] and prior[1]:
-            first_seen = prior[1]
+            first_seen = min((first_seen, prior[1]), key=parse_datetime)
         verification = _verification(members)
         classification = _event_classification(members)
         operational_impact = _operational_impact(members, verification)
