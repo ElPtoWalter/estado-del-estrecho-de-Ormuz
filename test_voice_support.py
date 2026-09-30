@@ -65,7 +65,7 @@ def fake_render_runner(command, **kwargs):
     if "--version" in command:
         class VersionResult:
             returncode = 0
-            stdout = "eSpeak NG text-to-speech: 1.52.0\n"
+            stdout = "eSpeak NG text-to-speech: 1.52.0  Data at: C:\\private\\engine-data\n"
             stderr = ""
 
         return VersionResult()

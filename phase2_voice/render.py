@@ -115,7 +115,7 @@ def render_voice_package(
     version_lines = str(version_result.stdout or "").strip().splitlines()
     if not version_lines:
         raise RuntimeError("voice-engine-version-unavailable")
-    engine_version = version_lines[0][:200]
+    engine_version = version_lines[0].split(" Data at:", 1)[0].strip()[:200]
     command = [
         resolved,
         "-b", "1",
