@@ -46,6 +46,7 @@ def audio_manifest(voice: dict, path: Path) -> dict:
         "script_id": voice["script_id"],
         "text_sha256": voice["narration"]["text_sha256"],
         "engine": voice["voice_profile"]["engine"],
+        "engine_version": "eSpeak NG text-to-speech: 1.52.0",
         "voice": voice["voice_profile"]["voice"],
         "audio_file": path.name,
         "audio_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
@@ -61,11 +62,19 @@ def audio_manifest(voice: dict, path: Path) -> dict:
 
 
 def fake_render_runner(command, **kwargs):
+    if "--version" in command:
+        class VersionResult:
+            returncode = 0
+            stdout = "eSpeak NG text-to-speech: 1.52.0\n"
+            stderr = ""
+
+        return VersionResult()
     output = Path(command[command.index("-w") + 1])
     write_wav(output)
 
     class Result:
         returncode = 0
+        stdout = ""
         stderr = ""
 
     return Result()

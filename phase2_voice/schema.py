@@ -39,7 +39,8 @@ AUDIO_CONSTRAINT_KEYS = {
 }
 AUDIO_MANIFEST_KEYS = {
     "schema_version", "renderer_version", "voice_package_id",
-    "voice_content_hash", "script_id", "text_sha256", "engine", "voice",
+    "voice_content_hash", "script_id", "text_sha256", "engine",
+    "engine_version", "voice",
     "audio_file", "audio_sha256", "audio_bytes", "duration_seconds",
     "sample_rate_hz", "channels", "sample_width_bits", "rendered_at",
     "network_used", "cloning_used",

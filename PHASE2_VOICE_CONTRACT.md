@@ -63,7 +63,7 @@ Cada segmento conserva su `segment_id`, texto, hash y referencias `fact_ids`, `s
 
 `VOICE_RULESET_V1` admite únicamente eSpeak NG local con argumentos fijos. El texto se entrega por entrada estándar y la salida es WAV PCM mono de 16 bits. No existe fallback silencioso: si el ejecutable no está disponible o falla, el piloto falla explícitamente.
 
-El manifiesto registra motor, voz, identificadores de entrada, hash del texto, hash y tamaño del WAV, duración, frecuencia, canales, profundidad, hora de renderizado y los invariantes `network_used: false` y `cloning_used: false`.
+El manifiesto registra motor, versión exacta del motor, voz, identificadores de entrada, hash del texto, hash y tamaño del WAV, duración, frecuencia, canales, profundidad, hora de renderizado y los invariantes `network_used: false` y `cloning_used: false`.
 
 ## 4. Validación y revisión humana
 

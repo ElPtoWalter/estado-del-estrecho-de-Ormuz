@@ -101,6 +101,21 @@ def render_voice_package(
     if output.suffix.casefold() != ".wav":
         raise ValueError("voice-output-must-be-wav")
     output.parent.mkdir(parents=True, exist_ok=True)
+    version_result = runner(
+        [resolved, "--version"],
+        text=True,
+        encoding="utf-8",
+        capture_output=True,
+        timeout=min(timeout, 15.0),
+        check=False,
+        shell=False,
+    )
+    if version_result.returncode != 0:
+        raise RuntimeError("voice-engine-version-unavailable")
+    version_lines = str(version_result.stdout or "").strip().splitlines()
+    if not version_lines:
+        raise RuntimeError("voice-engine-version-unavailable")
+    engine_version = version_lines[0][:200]
     command = [
         resolved,
         "-b", "1",
@@ -137,6 +152,7 @@ def render_voice_package(
         "script_id": voice_package["script_id"],
         "text_sha256": voice_package["narration"]["text_sha256"],
         "engine": profile["engine"],
+        "engine_version": engine_version,
         "voice": profile["voice"],
         "audio_file": output.name,
         "audio_sha256": _audio_sha256(output),

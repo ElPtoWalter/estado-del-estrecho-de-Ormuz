@@ -51,6 +51,7 @@ class VoiceRenderTests(unittest.TestCase):
             self.assertEqual(captured["command"][captured["command"].index("-w") + 1], str(output.resolve()))
             self.assertFalse(manifest["network_used"])
             self.assertFalse(manifest["cloning_used"])
+            self.assertIn("1.52.0", manifest["engine_version"])
             self.assertEqual(manifest["audio_file"], "voice.wav")
         finally:
             remove_output(directory)

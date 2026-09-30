@@ -195,6 +195,8 @@ def validate_audio(
         errors.append("AUDIO_MANIFEST_VERSION")
     if manifest.get("renderer_version") != VOICE_RENDERER_VERSION:
         errors.append("AUDIO_RENDERER_VERSION")
+    if not isinstance(manifest.get("engine_version"), str) or not manifest["engine_version"].strip():
+        errors.append("AUDIO_ENGINE_VERSION")
     expected = {
         "voice_package_id": voice_package.get("voice_package_id"),
         "voice_content_hash": voice_package.get("content_hash"),
