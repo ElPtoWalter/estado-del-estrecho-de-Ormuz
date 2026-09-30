@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-30T08:56:22Z",
+  "generated_at": "2026-09-30T16:03:35Z",
   "events": [
     {
       "event_id": "evt_c26f87164bf1ec62",
       "topic": "security",
       "first_seen": "2026-09-28T21:26:33Z",
-      "last_seen": "2026-09-30T08:56:22Z",
+      "last_seen": "2026-09-30T16:03:35Z",
       "headline": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "classification": "OPERATIONAL_SIGNAL",
       "verification_status": "SINGLE_SOURCE",
@@ -30,7 +30,7 @@
           "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
           "title_key": "lloyd s list hormuz crisis monitor reports severe extreme shipping risk",
           "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-          "published_at": "2026-09-30T08:56:22Z",
+          "published_at": "2026-09-30T16:03:35Z",
           "observed_at": "",
           "source_id": "lloyds_list",
           "source_name": "Lloyd's List",
@@ -49,195 +49,57 @@
       "operational_eligible": false
     },
     {
-      "event_id": "evt_f0a2b1017c2433d0",
-      "topic": "security",
-      "first_seen": "2026-09-30T04:31:30Z",
-      "last_seen": "2026-09-30T04:31:30Z",
-      "headline": "Fishermen make surprise naval mine discovery in Strait of Hormuz - rudaw.net",
-      "classification": "OPERATIONAL_SIGNAL",
-      "verification_status": "UNCONFIRMED",
-      "verification_reason": "The available records do not meet the confirmation threshold.",
+      "event_id": "evt_2c602055ab00dd19",
+      "topic": "risk_restriction",
+      "first_seen": "2026-09-30T14:51:26Z",
+      "last_seen": "2026-09-30T14:51:26Z",
+      "headline": "Trio of Hormuz attacks disclosed as US-Iran ceasefire talks fail - Lloyd's List",
+      "classification": "FACT",
+      "verification_status": "SINGLE_SOURCE",
+      "verification_reason": "Supported by one usable source; independent corroboration is pending.",
       "sources": [
         {
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
+          "source_id": "lloyds_list",
+          "source_name": "Lloyd's List",
+          "source_domain": "lloydslist.com",
+          "tier": 4,
           "official": false,
-          "weight": 1.0
+          "weight": 4.0
         }
       ],
       "source_ids": [
-        "unknown"
+        "lloyds_list"
       ],
       "articles": [
         {
-          "article_id": "art_2a561be0070dbe59",
-          "title": "Fishermen make surprise naval mine discovery in Strait of Hormuz - rudaw.net",
-          "title_key": "fishermen make surprise naval mine discovery in strait of hormuz",
-          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9fV2lCdDZ1MDY0TnpCVWJ1Y3IyYkItV3RYaUVsOFd0bURhYmtMUUhVanpPM20xX0thUWR5aThkNE1nQThLZGVieENkWHN3ZDZNc3VFT0JjcHhtM1NvSkhXM1RsNA",
-          "published_at": "2026-09-30T04:31:30Z",
-          "observed_at": "",
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
+          "article_id": "art_51b36bea1e34057f",
+          "title": "Trio of Hormuz attacks disclosed as US-Iran ceasefire talks fail - Lloyd's List",
+          "title_key": "trio of hormuz attacks disclosed as us iran ceasefire talks fail",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxObVVRcEJtdGxhT1hSX1E2WDM2UldOU0RGQ3FfZkthb0pTZDhaTXFxYWFMMFUzQlNIWTVFekFlNnVqVXNfNWJUNUoxckVJc2o2M0xuSDVCUW02QlFpNGxFUmFwdmJZYmxHZkVneHBlSHVVZk9RNFZ2alRhYWd3dnpnWllxNUVSOFpSWTJ4dTVIMjJXdlJiYlJqQ0JXTUhxajJnUHlz",
+          "published_at": "2026-09-30T14:51:26Z",
+          "observed_at": "2026-09-30T16:02:50Z",
+          "source_id": "lloyds_list",
+          "source_name": "Lloyd's List",
+          "source_domain": "lloydslist.com",
+          "tier": 4,
           "official": false,
-          "weight": 1.0,
-          "topic": "security",
-          "classification": "OPERATIONAL_SIGNAL",
-          "signal": "RISK_SEVERE",
+          "weight": 4.0,
+          "topic": "risk_restriction",
+          "classification": "FACT",
+          "signal": "RISK_RESTRICTION",
           "description": ""
         }
       ],
-      "importance": 55,
-      "operational_impact": "POTENTIAL",
-      "operational_eligible": false
-    },
-    {
-      "event_id": "evt_1ab82b58248cc869",
-      "topic": "security",
-      "first_seen": "2026-09-30T02:52:34Z",
-      "last_seen": "2026-09-30T02:52:34Z",
-      "headline": "Why The Strait Of Hormuz Attack Changes Everything For Global Shipping - ИФЗ РАН",
-      "classification": "ANALYSIS",
-      "verification_status": "UNCONFIRMED",
-      "verification_reason": "The available records do not meet the confirmation threshold.",
-      "sources": [
-        {
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0
-        }
-      ],
-      "source_ids": [
-        "unknown"
-      ],
-      "articles": [
-        {
-          "article_id": "art_7866604e1bb1ec8c",
-          "title": "Why The Strait Of Hormuz Attack Changes Everything For Global Shipping - ИФЗ РАН",
-          "title_key": "why the strait of hormuz attack changes everything for global shipping",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbmVJcGtoY1dTMEhnTTFoWUU3VU1mckRXWUFCcmNNaUdkcGlDN01IM3NTcmVZQkVoeXJKUzRsZ242YlprVWh2MldMQndSZTlmeGJBQzhmSUx6OExqSWlGbFJvMm53VHRsNVk4SEpST0w3YTZGTG1BSXMxM0lrbU9PTUJ3UVdkSWc",
-          "published_at": "2026-09-30T02:52:34Z",
-          "observed_at": "",
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0,
-          "topic": "security",
-          "classification": "ANALYSIS",
-          "signal": "RISK_SEVERE",
-          "description": ""
-        }
-      ],
-      "importance": 17,
+      "importance": 43,
       "operational_impact": "CONTEXT",
-      "operational_eligible": false
-    },
-    {
-      "event_id": "evt_39dfd8aa833a9e42",
-      "topic": "maritime",
-      "first_seen": "2026-09-29T20:57:44Z",
-      "last_seen": "2026-09-29T20:57:44Z",
-      "headline": "US official: 60 ships crossed the Strait of Hormuz Wednesday. - Marine Link",
-      "classification": "OPERATIONAL_SIGNAL",
-      "verification_status": "UNCONFIRMED",
-      "verification_reason": "The available records do not meet the confirmation threshold.",
-      "sources": [
-        {
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0
-        }
-      ],
-      "source_ids": [
-        "unknown"
-      ],
-      "articles": [
-        {
-          "article_id": "art_08b4433dc5b84911",
-          "title": "US official: 60 ships crossed the Strait of Hormuz Wednesday. - Marine Link",
-          "title_key": "us official 60 ships crossed the strait of hormuz wednesday marine link",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQNGxpRjljNGlOdW1FVmV6aFBoU29ObzFXRzFvdE9SMTF1R2lMekZOOC1ISkVRck1XX1ZORkJQemFhMlU1N2FpeC1aM25SaENlb3FseWpkc3JjRnpYSkFFNDRMVGtXandLazc3VW1paVNVbnRsaU5Semp3ZnhuQ1Rnc0VMSEZFTlhjSmFCdTdLa2xWbEFfeEN6NHA2RldBei1qWHdXeUFQVQ",
-          "published_at": "2026-09-29T20:57:44Z",
-          "observed_at": "",
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0,
-          "topic": "maritime",
-          "classification": "OPERATIONAL_SIGNAL",
-          "signal": "TRANSIT_CONFIRMED",
-          "description": ""
-        }
-      ],
-      "importance": 55,
-      "operational_impact": "POTENTIAL",
-      "operational_eligible": false
-    },
-    {
-      "event_id": "evt_dabda4295aaf89af",
-      "topic": "maritime",
-      "first_seen": "2026-09-29T08:01:00Z",
-      "last_seen": "2026-09-29T20:40:00Z",
-      "headline": "IRGC spokesman: Hormuz is closed, any vessel attempting transit will be damaged - کوردستان 24",
-      "classification": "OPERATIONAL_SIGNAL",
-      "verification_status": "UNCONFIRMED",
-      "verification_reason": "The available records do not meet the confirmation threshold.",
-      "sources": [
-        {
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0
-        }
-      ],
-      "source_ids": [
-        "unknown"
-      ],
-      "articles": [
-        {
-          "article_id": "art_69dbf8b44f287eca",
-          "title": "IRGC spokesman: Hormuz is closed, any vessel attempting transit will be damaged - کوردستان 24",
-          "title_key": "irgc spokesman hormuz is closed any vessel attempting transit will be damaged 24",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNcDlEWC1XWGlGTnY3cTZ4dnpud25PMGFON1hqWTFSelc5T0k5X2hmbDZBWUJ6YjNNUlJTRTJTcm80YlZ4cklydFdmWFFaNWJ4b0FZYnVucWNlbmZ1dEZXSW5SR2d6ekJNU2tQT25SN2VDNmVzYXQ2RU9RRkVNbDllOF9lX1Fwb1JOVkNDM1JyTVZWZkwwQVhGcGFkdHd1OXpHSi03ZUoxbmRrNXhpd2pJQWlOWkI2eDhxck5zb05n",
-          "published_at": "2026-09-29T20:40:00Z",
-          "observed_at": "",
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0,
-          "topic": "maritime",
-          "classification": "OPERATIONAL_SIGNAL",
-          "signal": "TRANSIT_CONFIRMED",
-          "description": ""
-        }
-      ],
-      "importance": 55,
-      "operational_impact": "POTENTIAL",
       "operational_eligible": false
     },
     {
       "event_id": "evt_79c79899440326e0",
       "topic": "security",
       "first_seen": "2026-09-27T10:24:27Z",
-      "last_seen": "2026-09-29T17:29:27Z",
-      "headline": "Eight US Marines injured by an Iranian missile in the Strait of Hormuz; Pentagon keeps the attack under wraps - صوت الإمارات",
+      "last_seen": "2026-09-30T14:18:45Z",
+      "headline": "Oil tanker hit by unknown projectile in Strait of Hormuz: Maritime agency - AZƏRTAC – Azərbaycan Dövlət İnformasiya Agentliyi",
       "classification": "OPERATIONAL_SIGNAL",
       "verification_status": "UNCONFIRMED",
       "verification_reason": "The available records do not meet the confirmation threshold.",
@@ -328,11 +190,11 @@
           "description": ""
         },
         {
-          "article_id": "art_53d560110b9a796b",
-          "title": "Several US Marines wounded in Iran attack: American media - Mehr News Agency",
-          "title_key": "several us marines wounded in iran attack american media mehr news agency",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOYWVqWVgwM1BlVTRhUlAtOU9CeHBrcms4V0FPUlY0SlI3cWVPWnBUZktmY05mS1A3Zy1MNTY1SUNmZGNLSTltMGl4X3dRWGFyQ05pTkJ0S21iU3BVRnZzZEZZR1JUNEpwNUtQby1yUUMyR2JiVk95a2VERUVzWlVrZFp6cDRQY285RTRNNU9vdUtjZzdHOWhz",
-          "published_at": "2026-09-28T04:02:00Z",
+          "article_id": "art_84df1aa872becd56",
+          "title": "Eight US Marines injured in Iranian attack in Strait of Hormuz — Jerusalem Post - UA.NEWS",
+          "title_key": "eight us marines injured in iranian attack in strait of hormuz jerusalem post ua news",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQRzF1bHdieXBRSlZqTmhDTll0TDFXT3gxVVd6QUlyYjVaWk8tc2c5VG1LWFJsQkRHZTB3bVFiWmUwOWFHcnpPVnlpZXQ0bk9WMzkwb2N1TWdZeWNqVkhFenFRcEoyLTZsRE1fcFQxdlVyV0tEQWdFS2pLcm1YblFTcVduekV4UkdCNm5OYmdyZXh5aVVOc2I5OTR0dG5fU2ZFMmlDZlpaZE1QZnRFTDl0bVNMM24",
+          "published_at": "2026-09-28T04:08:43Z",
           "observed_at": "",
           "source_id": "unknown",
           "source_name": "Unknown source",
@@ -346,11 +208,29 @@
           "description": ""
         },
         {
-          "article_id": "art_84df1aa872becd56",
-          "title": "Eight US Marines injured in Iranian attack in Strait of Hormuz — Jerusalem Post - UA.NEWS",
-          "title_key": "eight us marines injured in iranian attack in strait of hormuz jerusalem post ua news",
-          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQRzF1bHdieXBRSlZqTmhDTll0TDFXT3gxVVd6QUlyYjVaWk8tc2c5VG1LWFJsQkRHZTB3bVFiWmUwOWFHcnpPVnlpZXQ0bk9WMzkwb2N1TWdZeWNqVkhFenFRcEoyLTZsRE1fcFQxdlVyV0tEQWdFS2pLcm1YblFTcVduekV4UkdCNm5OYmdyZXh5aVVOc2I5OTR0dG5fU2ZFMmlDZlpaZE1QZnRFTDl0bVNMM24",
-          "published_at": "2026-09-28T04:08:43Z",
+          "article_id": "art_a7bcfd18cc40b588",
+          "title": "8 US marines injured in Iranian missile attack on vessel in Strait of Hormuz: Report - WION",
+          "title_key": "8 us marines injured in iranian missile attack on vessel in strait of hormuz report wion",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPTHBUa3pfMTNIbFJOZnEySjdQbVB5MGEtM01QdUtsNVU2aHR6RlhvcEQ3UTczbXRvT29kUjdYd1RHdmlWN1FGYlhlM3FWZmxvaTBOSzNfdlRWZVVGZUIyU0NKaUVnS1doM0VmeE1jLTRycXAxU0VUQTVaaUx0SXlJZmd0MGFkSHktdTVzbGEzSHFUNm1UT3FpSVhndmllZm9ULTQ2d1JmVzNfWXVqMkVDQXM0WXNYbUJWemp5UG5SNkt2cHpTbGfSAcsBQVVfeXFMUHc0OFVEZ0txRXJyMjVUem9fWWtNU3N1NUVZNkZXMEY3ZnAyODE2TXVsSG1uUV9WYWFKMm5HUW9Wb3ZIQzFZa3pnZThCMUlHRkdCM3BPUnF1bnA0MDBOZEtCWENndFpReEpmbTRkcGd1QmNPVERqQ2RMSFFGYmhfQU45d2ZZc3BLbjhSSUdXQ3BRWVgtem9tVEtHc3FZendtSjFpSFh5YlUxWkxOM2ZoMl82Sl8xcFVmZUFMakJSeU1zM0NBWmMzaV9XOTQ",
+          "published_at": "2026-09-28T05:03:00Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_9f260a79bd0ef177",
+          "title": "Eight US Marines injured in recent Iranian attack near Strait of Hormuz: Report - PressTV",
+          "title_key": "eight us marines injured in recent iranian attack near strait of hormuz report presstv",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQR0gzY0lsN2x2dzNCbzFSdUpHX2FPZXNVQTlYNDBhQTNSZVVWdHN3X2xMdHhxbmpSeGFsbmNKMlRIaWVmUW1ISVBhekd1OWQ3UFAxdUF4WWtqaWxTMlhOQUlYZXhfNHRUUlBQbGkyRTZTSi01R1NpU2J5bG5pYjZoWlRJeWY3VmNSdVBwNHctX2VhTTN1SEpmQUxtN3g5U1dqRkJ3",
+          "published_at": "2026-09-28T05:27:00Z",
           "observed_at": "",
           "source_id": "unknown",
           "source_name": "Unknown source",
@@ -400,11 +280,11 @@
           "description": ""
         },
         {
-          "article_id": "art_93e7beabbbc0f6ad",
-          "title": "Eight US Marines injured in Iranian attack in Hormuz as number of wounded service members surges to 861 - The Economic Times",
-          "title_key": "eight us marines injured in iranian attack in hormuz as number of wounded service members surges to 861 the economic times",
-          "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQSnVKYnd1Z1k5RF8wZ2l6QVdZVEpxVUE4OVQ1clVjU1REOGNWNWlCRmMxZUN1NmNYNHc3MnFpSDBXSnpHNHo3TUsxS3JiZ2Y4N1l4bmFFV09XT0NLWWExbTdRWFhjdkpJSXI1ZTVQSzZ6emhzUldwaU1Sa253dXlMYWVHai1rRHdNTkdmQUtmN2dCV0dvcDNyMXljclJTRGE5THVldUJxc21qdHQxRjJlNkhSdWpHWVJ3VlliLXR3UFJCQzZiTGU3Y3ZPOFpxYURrbm8xMDREQnpJbzh5QkF5R08wUTBMSXFmNDZKSHBPLXNfcFk5RlhzODhjOVNNQdIB_gFBVV95cUxQSnVKYnd1Z1k5RF8wZ2l6QVdZVEpxVUE4OVQ1clVjU1REOGNWNWlCRmMxZUN1NmNYNHc3MnFpSDBXSnpHNHo3TUsxS3JiZ2Y4N1l4bmFFV09XT0NLWWExbTdRWFhjdkpJSXI1ZTVQSzZ6emhzUldwaU1Sa253dXlMYWVHai1rRHdNTkdmQUtmN2dCV0dvcDNyMXljclJTRGE5THVldUJxc21qdHQxRjJlNkhSdWpHWVJ3VlliLXR3UFJCQzZiTGU3Y3ZPOFpxYURrbm8xMDREQnpJbzh5QkF5R08wUTBMSXFmNDZKSHBPLXNfcFk5RlhzODhjOVNNQQ",
-          "published_at": "2026-09-28T07:32:00Z",
+          "article_id": "art_f13c973495e001fc",
+          "title": "8 US marines injured in Iranian missile attack in Strait of Hormuz: report - Muslim Network TV",
+          "title_key": "8 us marines injured in iranian missile attack in strait of hormuz report muslim network tv",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYlNpeWF1VmxYamxycHdiUUFZc212eTdlenA5MVNielk0MWg2UUpOUWdWREpFTkFnODZFNHBkSmktdmlNQ1JKcENQanhuZS1YeFJvTXVIVkFyakZwVjFqRzA3WjVBR3VlN2NEWktIblNiUDYyVHFIR05hRU9vSGNIeDA1ZHhzajFYcUZXYktTT3FmNmlLbG9Fb01wRlpHak1ObW51bjFR",
+          "published_at": "2026-09-28T08:40:41Z",
           "observed_at": "",
           "source_id": "unknown",
           "source_name": "Unknown source",
@@ -560,6 +440,588 @@
           "classification": "OPERATIONAL_SIGNAL",
           "signal": "RISK_SEVERE",
           "description": ""
+        },
+        {
+          "article_id": "art_6f264185eaad350a",
+          "title": "US shares Israeli assessment of possible Iran attack before election - report - Iran International",
+          "title_key": "us shares israeli assessment of possible iran attack before election report iran international",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB4cEFjVHo4SWJCVjhJbUFibkc4VzhpWWtwNjFsRk42akYxbVJjMkJBclNkZDU0bE1ORVRadFJpdFhnQ3NUX2ZPYUR6R2hjNVdJNlE",
+          "published_at": "2026-09-29T17:53:40Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_d7b4ed57cb04cbf3",
+          "title": "Tanker struck by unknown projectile in Strait of Hormuz, UKMTO says - Iran International",
+          "title_key": "tanker struck by unknown projectile in strait of hormuz ukmto says iran international",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1qM3VpdDFHTXJzWTNLVzViblhBTm5vODEyMWQzdFduWHhoZnZjTXZGajMwc3RNZUw3ejJjM1ozLVVuVTQyMHZIcFZ3QVA",
+          "published_at": "2026-09-30T09:37:07Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_d780840d8b1013b5",
+          "title": "Unknown projectile hit a tanker in Hormuz: UKMTO - Mehr News Agency",
+          "title_key": "unknown projectile hit a tanker in hormuz ukmto mehr news agency",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUldGcHBpby05d3pCQ1lNZS1FLXItVmRodkl4eUw5UVA3TmZJY3diWXVoV1FLNW5LdUZBdXJYN2thTDlVcXlxampKVFM4NU9zTzlLQ1lWZW1QSklhZV9fRXlGRHhPeW5XRU5UaVBfdmxQeUc5aGFQYmRkOTRjekZ0cHpDQkgtTTF5V2Nv",
+          "published_at": "2026-09-30T10:06:00Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_8e57b276b2e24c2c",
+          "title": "UKMTO Reports Oil Tanker Hit by Projectile in Strait of Hormuz - dailybeirut.com",
+          "title_key": "ukmto reports oil tanker hit by projectile in strait of hormuz",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNV0c4T09MUElsMFExR0h4WEdEUEJ4TzlEeEV4V1BKc2xBUk9GODFfdEZnM1pLUmRkaVd3Y001VDRaekRSUTY5Mk1TOHE4U21YanZNUkNub0hNQVlpN21tZElWYUd1Nldrdi1ZR2ozc1NXdGhvc2dtaGFRRE8zd290RnZVN3NMUS1tNkNOY1k1bU5RR2dSMDFOQ1FrUGw",
+          "published_at": "2026-09-30T10:10:15Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_f2680ffd3f221b98",
+          "title": "UKMTO says tanker struck by unidentified projectile in Hormuz - Roya News",
+          "title_key": "ukmto says tanker struck by unidentified projectile in hormuz roya news",
+          "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBPb1lvaTBaS3dPb3A3bmRDc2NaeDhFQlcxWXdsZTlXOE8tbkVwT2RTT1dMOXFpdGNiOUxyaUVULUxCVGpNb3hBRw",
+          "published_at": "2026-09-30T10:21:29Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_a1da76efb49bb218",
+          "title": "Tanker struck by unknown projectile in Strait of Hormuz, UKMTO says - Apa.az",
+          "title_key": "tanker struck by unknown projectile in strait of hormuz ukmto says apa az",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNaFdHNnBjNXZGQm9STGFpSVV0R3J3OWpyd1NMLU9TdU80bmRJVU9tdkZxR0JETnJmZF83Vkw2RkxSU0o2ckc3blUzNkk0ZnNLaHE3S3hyZWI0RDA2WDFZaWEwZnhjUDZqZkE3M2FlNElTbkQxNHhOU09jc1V3b2syc0JQbnJkQldSOWJWbVB4eWpuWGlWaFU2N0doTVk",
+          "published_at": "2026-09-30T10:39:00Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_5be25650f63a02a7",
+          "title": "UKMTO reports LNG tanker struck in Hormuz - Breakingthenews.net",
+          "title_key": "ukmto reports lng tanker struck in hormuz",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZTQ0R3R6aE5rYVdudk04ZkFQMTY3Z2JJV1NxMkhfUGdXSlpPcHhlbWlkdHpjRlFuTW4wTXljZWZYNWhpaTJMWkpfMENET09UN0I5bUEyOC1xOGNxcjVCQ2pvZi0tR0xmNi1kSV8wTkFjQ2ZZWm9mdmNocjlkdUlIVHQ2QjVKellzY3AwMGJpSQ",
+          "published_at": "2026-09-30T10:40:00Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_a0ee24bbccc39f3c",
+          "title": "Oil tanker hit by unknown projectile in Strait of Hormuz: UKMTO - Latest news from Azerbaijan",
+          "title_key": "oil tanker hit by unknown projectile in strait of hormuz ukmto latest news from azerbaijan",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQR3E0QXQ1NmNEYTQtX19rd1AzMWlqYXhGUXpBTmpwZkJXYUdKY2tZQWhMS2NPUHZMZ0hlUzlaYU11YnQ1NmtwaktJTWctN0E3RnFqUmw4Wms0Y3RveGRBalhaZ1VSaDlFcDdqX09PZ1Y2QnI5YWJteEFGR3JQd056VTJZUENUOEU0T3lj",
+          "published_at": "2026-09-30T11:03:38Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_b0c9d5347e3068a4",
+          "title": "Oil tanker hit by unknown projectile in Strait of Hormuz: Maritime agency - AZƏRTAC – Azərbaycan Dövlət İnformasiya Agentliyi",
+          "title_key": "oil tanker hit by unknown projectile in strait of hormuz maritime agency az rtac az rbaycan dovl t informasiya agentliyi",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxObDkzOFh0WF92em8xYkExbXQ1UXd1SlNEMlFUeFh3Z2Nya2FJZXVaaHlFSmxzMlRCemJEUmlWQTBHVjM0YURWVGF3dXNrV1RBZjN1S1lvNUt1Vk1zVHBqTmFndFpTTm1naXZKa3pOVnBPbnpreFlLR1RRa25nTXF2SlRIa2ZmUmZ1d3dsdHk0NmdVbWJBRW1PRko3UlZ4ZVA5Z0J6ZURjMjlkMjFW",
+          "published_at": "2026-09-30T11:16:00Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_58a3462537b5ce28",
+          "title": "Ship Catches Fire After Being Hit By Unknown Projectile In Strait Of Hormuz - Marine Insight",
+          "title_key": "ship catches fire after being hit by unknown projectile in strait of hormuz marine insight",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQYUhFTmJOTHJfbXZqS2JDWlo4bXdKQmZUXzFlZFR3aERwZHM1ZV9qLW9yYUVyNzhTZUJlaXRsSExKaVliRmc4V1EzS0lJTGhJR3FsQVlLZTlaYWoyN2RUdHEwak1HUmlTYWVhZFU3ZGZJRU9tQVlHRjN4VlJyQ0hxMldWOVRLNnp5SE5XMTJuMmhkSVZUd1pISVBPTjZKOF94Q09PT0dfSHZBUQ",
+          "published_at": "2026-09-30T11:38:14Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_de2b74dabfba6d55",
+          "title": "UKMTO reports three tankers struck in Strait of Hormuz - Intellinews",
+          "title_key": "ukmto reports three tankers struck in strait of hormuz intellinews",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNMm5mZ2NrUy1lTmFoM0FhZnhwODBLX1lJbjZvdlJyb0twSzA3djM4dzJLcVJqWExPNHRTY2RNR05HdGF4NDRVZWZTcnpFdnRELVFaWUx2aEt2OWdDal93akRiSEkzRDNpME9KNXZodTBNLTltRGJGUmpXYl83UDNhWjQ5ekZfQ25vc09JMENKUXZIVFkzcXc3cnVzYkJRMUtnd05USA",
+          "published_at": "2026-09-30T11:50:18Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_cc498723aad12052",
+          "title": "Strait Of Hormuz Incident: Vessel Catches Fire After ‘Unknown Projectile’ Hit - ABP Live English",
+          "title_key": "strait of hormuz incident vessel catches fire after unknown projectile hit abp live english",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOYkI4eXg2TmIwSFNWMnZXVktPbjNjazFqRkhmUkNGLV82TldiVDBrTjI1RWpmOGd1a3RZVm1xSlNyZC1zMTZvVUJJMmdkekljbWNySVVGbzBFNFVIVHo3RnkycGlWY2tUWnlhSUJIWEEtaVQyVnl4YW44VjZsYUMtSU5BaFRHNXlHM1lYR0pnRXlXMHphNHhfMXUwRDRGQUNYTkRhQ1JzNnpaVDRkMG1uMTNjVE00aVpqbmfSAb8BQVVfeXFMUHF5aVNxQ1hJLWNoNkExUHNoYnNNWXluT3ROMHhzdk12LVF3WGtuLWtRN2xZYUJiUTBMNjdtMnZveFB6VW9CTjdoWXp0WEtrT0pjbUJ2MWxxY3lhbWVSVkdFQjgwOHRWbWkyS1haTFJIYzBxRnFRYzB0LWhadDZWRVRZNms5TkEzeGJlbE9MTGZ2VWI5Q0s0a1ktUmZtcUFTQkRlVXhCSnVKa1BoWk41REJfWWl4Y0NOUUFfRktKZkk",
+          "published_at": "2026-09-30T12:28:10Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_f037ea0e9a479da8",
+          "title": "Iran’s IRGC says it attacks ships daily in Strait of Hormuz - Middle East Eye",
+          "title_key": "iran s irgc says it attacks ships daily in strait of hormuz middle east eye",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPT1M3T2R2SHM5X1ZxdVdwT2hnaHZwV2t1RFJub21FenZ1eWxWcDBlb0VzamVZcjN3UV81N1UyT1l4RHZMT0ZNcnZKU1lUeGRlOFN6WUZYN0JrS0JRbG5Fc2YxTVc1R3U5X0l1THByX00wejRFX3NUSW9PUWE2N2dXWTk5RWlXMjd3V0x3QmtKUVE5RHU0TlN4OFMzZ3RjYi1vY00wTkgwMEF2VlE0Ync",
+          "published_at": "2026-09-30T12:41:00Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_eef96e6eaf8573bf",
+          "title": "Unknown projectile strikes crude oil tanker in Strait of Hormuz - AzerNews",
+          "title_key": "unknown projectile strikes crude oil tanker in strait of hormuz azernews",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9LTGNZcFZuZXdSaXgyQzEwdEJEeFlWbHlGRFR2b0F0MHVvWWpnd3RfMGEtejJfMi0zRVN5SENQVXd1Sjk0c3lITXdBUUl0bHh0SlJ1Rg",
+          "published_at": "2026-09-30T12:56:00Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_92812daa4a737c8b",
+          "title": "One More Tanker struck by unknown projectile in Strait of Hormuz: UKMTO - Arab Times Kuwait News",
+          "title_key": "one more tanker struck by unknown projectile in strait of hormuz ukmto arab times kuwait news",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPNGZCNEk5NkFlVXU4YU5JVXJqX3pXcV9FX25vZVotOEFSU0xrZTRuLWlCTlBDTk56Y3VURWRJQldPcEM1ZmZXOXVfQVhBLTFWTVpLb3hBaVVtUTlKRnFKSGJHN2lZS01mNjZpQjJHY0ZMQ0lwN2RFeHNCWWVFcEh5Z280WFRwejZjRkpRTjllRHl0RS1vMkJLT193WERNVGl4V2ZQazJBWjF4S1pk",
+          "published_at": "2026-09-30T13:23:12Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_1ca4b17b0aa65cba",
+          "title": "Three ships struck by unknown projectiles in Strait of Hormuz, UKMTO says - Aaj English TV",
+          "title_key": "three ships struck by unknown projectiles in strait of hormuz ukmto says aaj english tv",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOLXY3dzQ2aER3dTMzNW5UTXJISGpvUUZ3QUIwVG9fMTJFUVVHZjNnRDRERExQZTdYbWFPWlE4eGtpYjRVY1ZPYTBheDllZW14MnlyODlfZWtfNEc1ZmtrZjBUQjZocy02QW5uY0Juc3BwOW5ZaFRxcjAtUGJyMDB4Nm5Ld2hkanNCY2NzZ1Z2UjN1U01mbkJrcUhSeUtiZ3FKQm9FclQ3MmZKWldBdjNv",
+          "published_at": "2026-09-30T14:18:45Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        }
+      ],
+      "importance": 55,
+      "operational_impact": "POTENTIAL",
+      "operational_eligible": false
+    },
+    {
+      "event_id": "evt_7028da54f76e7e63",
+      "topic": "security",
+      "first_seen": "2026-09-29T12:22:39Z",
+      "last_seen": "2026-09-30T14:17:54Z",
+      "headline": "Two Tankers Struck in Strait of Hormuz Amid US-Iran Navigation Dispute - Palestine Chronicle",
+      "classification": "OPERATIONAL_SIGNAL",
+      "verification_status": "UNCONFIRMED",
+      "verification_reason": "The available records do not meet the confirmation threshold.",
+      "sources": [
+        {
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0
+        }
+      ],
+      "source_ids": [
+        "unknown"
+      ],
+      "articles": [
+        {
+          "article_id": "art_1ec970cc184cae94",
+          "title": "‘Try It’: Iran Warns US Against New Attack as Hormuz Talks Continue - Palestine Chronicle",
+          "title_key": "try it iran warns us against new attack as hormuz talks continue palestine chronicle",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQRDhxVEVSUmRoVTBWMV91bllINUg3dFlTWTNTc2dYZV9yck5FSkh4TmJjbzFXdk1vMjFMX0hOdWk5SHNhajl3OWRHaWpiVC05WFFHRG9zTjdmSkNEM1pvajNjakQ4Q0tsVW1HWVJuMUdzd3BGeWZlUXk4Tkx2UkF3eFNLM1NVZlhWcy1aT0VfaWhDLWhmUWdta1dsbmpRXzN2enc",
+          "published_at": "2026-09-29T12:22:39Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        },
+        {
+          "article_id": "art_78279b1ae77a17d4",
+          "title": "Two Tankers Struck in Strait of Hormuz Amid US-Iran Navigation Dispute - Palestine Chronicle",
+          "title_key": "two tankers struck in strait of hormuz amid us iran navigation dispute palestine chronicle",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOa3l3VEtndDhhQ3U0OHliWTQ0S1NpMkF5QXJRd0MzR0VwYnFFaDBBdmtOMFJ6NjRSYkx1eUNHbUNOSEM5cXZxX1JBc2N4LWVPNDZET1JsNU5kdWJxSTh2MTg3UWROR2tiT3hudUhfRXJadmh5R3dSZWNIc3JkMlg5djlIZ0dOVTRpZEYzODJHX1hrRUdTcUNPdUFDUU41Q2ZXNmowRUZYTDE0UQ",
+          "published_at": "2026-09-30T14:17:54Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        }
+      ],
+      "importance": 55,
+      "operational_impact": "POTENTIAL",
+      "operational_eligible": false
+    },
+    {
+      "event_id": "evt_0d6a20a8ad1f50ad",
+      "topic": "risk_restriction",
+      "first_seen": "2026-09-30T10:22:18Z",
+      "last_seen": "2026-09-30T10:22:18Z",
+      "headline": "Several ships attacked in Strait of Hormuz as Iran launches fresh strikes - TradeWinds News",
+      "classification": "OPERATIONAL_SIGNAL",
+      "verification_status": "SINGLE_SOURCE",
+      "verification_reason": "Supported by one usable source; independent corroboration is pending.",
+      "sources": [
+        {
+          "source_id": "tradewinds",
+          "source_name": "TradeWinds",
+          "source_domain": "tradewindsnews.com",
+          "tier": 4,
+          "official": false,
+          "weight": 3.8
+        }
+      ],
+      "source_ids": [
+        "tradewinds"
+      ],
+      "articles": [
+        {
+          "article_id": "art_6618b7fc265d3df2",
+          "title": "Several ships attacked in Strait of Hormuz as Iran launches fresh strikes - TradeWinds News",
+          "title_key": "several ships attacked in strait of hormuz as iran launches fresh strikes",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNY1N3bGJZcmZKdVdrak1oSmF5dENlMHAyN2YxZWNmSEE1VDdxMy1mOWN6Wi1Ia3VzRzVUZWJyRzJrQTMxM3JMSEs5NEFKVDNtVi0zNWFFUnFJZHBFV2N6VU5JUXJzWEtoWHhyZmIySUVteG96NlhzcnE2RmtsT25UaWVlZ01TUk1kMnE0U3EwT01uQjY4UHRneEtEMTZrd0lWczEtd3lma1FZazBMbFdYQ2VlQjdCYVRVWTVSV3oyOTU5OXdvZXc",
+          "published_at": "2026-09-30T10:22:18Z",
+          "observed_at": "2026-09-30T16:02:50Z",
+          "source_id": "tradewinds",
+          "source_name": "TradeWinds",
+          "source_domain": "tradewindsnews.com",
+          "tier": 4,
+          "official": false,
+          "weight": 3.8,
+          "topic": "risk_restriction",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_RESTRICTION",
+          "description": ""
+        }
+      ],
+      "importance": 63,
+      "operational_impact": "POTENTIAL",
+      "operational_eligible": false
+    },
+    {
+      "event_id": "evt_f0a2b1017c2433d0",
+      "topic": "security",
+      "first_seen": "2026-09-30T04:31:30Z",
+      "last_seen": "2026-09-30T04:31:30Z",
+      "headline": "Fishermen make surprise naval mine discovery in Strait of Hormuz - Rudaw",
+      "classification": "OPERATIONAL_SIGNAL",
+      "verification_status": "UNCONFIRMED",
+      "verification_reason": "The available records do not meet the confirmation threshold.",
+      "sources": [
+        {
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0
+        }
+      ],
+      "source_ids": [
+        "unknown"
+      ],
+      "articles": [
+        {
+          "article_id": "art_a08c59ce2b1f26f7",
+          "title": "Fishermen make surprise naval mine discovery in Strait of Hormuz - Rudaw",
+          "title_key": "fishermen make surprise naval mine discovery in strait of hormuz rudaw",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFByeUJMVjhQYVlCbTVXdlBjY29GeF95bUpwU2dZNGRXMFpGMVVyT3pLX3BTRkZybV9vZGo2ZFFjeUVLTkZKMmZmX1ZVZUJDeGNIWVdXUmQwX3lDNGJCU1E",
+          "published_at": "2026-09-30T04:31:30Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        }
+      ],
+      "importance": 55,
+      "operational_impact": "POTENTIAL",
+      "operational_eligible": false
+    },
+    {
+      "event_id": "evt_1ab82b58248cc869",
+      "topic": "security",
+      "first_seen": "2026-09-30T02:52:34Z",
+      "last_seen": "2026-09-30T02:52:34Z",
+      "headline": "Why The Strait Of Hormuz Attack Changes Everything For Globa - ИФЗ РАН",
+      "classification": "ANALYSIS",
+      "verification_status": "UNCONFIRMED",
+      "verification_reason": "The available records do not meet the confirmation threshold.",
+      "sources": [
+        {
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0
+        }
+      ],
+      "source_ids": [
+        "unknown"
+      ],
+      "articles": [
+        {
+          "article_id": "art_7866604e1bb1ec8c",
+          "title": "Why The Strait Of Hormuz Attack Changes Everything For Globa - ИФЗ РАН",
+          "title_key": "why the strait of hormuz attack changes everything for globa",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbmVJcGtoY1dTMEhnTTFoWUU3VU1mckRXWUFCcmNNaUdkcGlDN01IM3NTcmVZQkVoeXJKUzRsZ242YlprVWh2MldMQndSZTlmeGJBQzhmSUx6OExqSWlGbFJvMm53VHRsNVk4SEpST0w3YTZGTG1BSXMxM0lrbU9PTUJ3UVdkSWc",
+          "published_at": "2026-09-30T02:52:34Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "ANALYSIS",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        }
+      ],
+      "importance": 17,
+      "operational_impact": "CONTEXT",
+      "operational_eligible": false
+    },
+    {
+      "event_id": "evt_41b6ccb7972ec985",
+      "topic": "security",
+      "first_seen": "2026-09-29T23:01:20Z",
+      "last_seen": "2026-09-29T23:01:20Z",
+      "headline": "News Content Hub - VLCC reportedly struck during Hormuz transit, causing fire on board - rivieramm.com",
+      "classification": "RUMOR",
+      "verification_status": "UNCONFIRMED",
+      "verification_reason": "The available records do not meet the confirmation threshold.",
+      "sources": [
+        {
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0
+        }
+      ],
+      "source_ids": [
+        "unknown"
+      ],
+      "articles": [
+        {
+          "article_id": "art_fc84abb3826a3cf3",
+          "title": "News Content Hub - VLCC reportedly struck during Hormuz transit, causing fire on board - rivieramm.com",
+          "title_key": "news content hub vlcc reportedly struck during hormuz transit causing fire on board",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQSkRyZnpTb3JkWnhfMDg4U1paNWViZm9obTdLS2gyOGZyYW5ITXdKSG9wd2Jtem9CVVVKQzg1MWpSeGFJQTJlVXFTTEFEREl1Q3ZBRndjLVQ4VkVLc1BneFNtOTFsWmhQcjFvOGlCQVN1Wkg2TWtkaFpXZjNVVFgxSFVqd055aXhoeGdHV0FnLVF6SlpMbC0tenJZZDRGVDZLVkItYkQ2cFp5SG1BNlBWb3ZrSjBieUFNalBnNg",
+          "published_at": "2026-09-29T23:01:20Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "security",
+          "classification": "RUMOR",
+          "signal": "RISK_SEVERE",
+          "description": ""
+        }
+      ],
+      "importance": 5,
+      "operational_impact": "NONE",
+      "operational_eligible": false
+    },
+    {
+      "event_id": "evt_dabda4295aaf89af",
+      "topic": "maritime",
+      "first_seen": "2026-09-29T08:01:00Z",
+      "last_seen": "2026-09-29T20:40:00Z",
+      "headline": "IRGC spokesman: Hormuz is closed, any vessel attempting transit will be damaged - کوردستان 24",
+      "classification": "OPERATIONAL_SIGNAL",
+      "verification_status": "UNCONFIRMED",
+      "verification_reason": "The available records do not meet the confirmation threshold.",
+      "sources": [
+        {
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0
+        }
+      ],
+      "source_ids": [
+        "unknown"
+      ],
+      "articles": [
+        {
+          "article_id": "art_69dbf8b44f287eca",
+          "title": "IRGC spokesman: Hormuz is closed, any vessel attempting transit will be damaged - کوردستان 24",
+          "title_key": "irgc spokesman hormuz is closed any vessel attempting transit will be damaged 24",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNcDlEWC1XWGlGTnY3cTZ4dnpud25PMGFON1hqWTFSelc5T0k5X2hmbDZBWUJ6YjNNUlJTRTJTcm80YlZ4cklydFdmWFFaNWJ4b0FZYnVucWNlbmZ1dEZXSW5SR2d6ekJNU2tQT25SN2VDNmVzYXQ2RU9RRkVNbDllOF9lX1Fwb1JOVkNDM1JyTVZWZkwwQVhGcGFkdHd1OXpHSi03ZUoxbmRrNXhpd2pJQWlOWkI2eDhxck5zb05n",
+          "published_at": "2026-09-29T20:40:00Z",
+          "observed_at": "",
+          "source_id": "unknown",
+          "source_name": "Unknown source",
+          "source_domain": "",
+          "tier": 1,
+          "official": false,
+          "weight": 1.0,
+          "topic": "maritime",
+          "classification": "OPERATIONAL_SIGNAL",
+          "signal": "TRANSIT_CONFIRMED",
+          "description": ""
         }
       ],
       "importance": 55,
@@ -595,52 +1057,6 @@
           "title_key": "kuwaiti tanker struck in the strait of hormuz the maritime executive",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVnJPNnhzRzdOX3JYTDdHbE55YVhuMDZXQVpZaEw4TU9oZlhhNDRnVjhPSGZKeV82VDdBOVBYQmw1OGFlOXVMUHNxS2xKWFpQcU51RkpZTV9BaXhGTkZ0eEVhdkZQa0xfV0tPRC13VFlLdFRuX1RXcmFJOEVSX3hMR2JxTGJWZGlvdmpTaQ",
           "published_at": "2026-09-29T17:15:56Z",
-          "observed_at": "",
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0,
-          "topic": "security",
-          "classification": "OPERATIONAL_SIGNAL",
-          "signal": "RISK_SEVERE",
-          "description": ""
-        }
-      ],
-      "importance": 55,
-      "operational_impact": "POTENTIAL",
-      "operational_eligible": false
-    },
-    {
-      "event_id": "evt_ea190757075c339f",
-      "topic": "security",
-      "first_seen": "2026-09-29T16:09:00Z",
-      "last_seen": "2026-09-29T16:09:00Z",
-      "headline": "Survivors of Hormuz attack back in Manila - manilatimes.net",
-      "classification": "OPERATIONAL_SIGNAL",
-      "verification_status": "UNCONFIRMED",
-      "verification_reason": "The available records do not meet the confirmation threshold.",
-      "sources": [
-        {
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0
-        }
-      ],
-      "source_ids": [
-        "unknown"
-      ],
-      "articles": [
-        {
-          "article_id": "art_cd67df516969d645",
-          "title": "Survivors of Hormuz attack back in Manila - manilatimes.net",
-          "title_key": "survivors of hormuz attack back in manila",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUzAxN083MlV6UmlxNWMxMnU5VXBYQ09fanpPcjUwWGoyWmdHVkh6VEZKNGwtLWpEWnlYMnFOSzVseDRXRVpTLWFoNWFvUjNObzkta0ZoNHR6R1p5d3NWRnpoMjJSTWRYa2pPWkhuV0E3OU5aeDV0REpBOWp4cjNGOWRjU1dlbWtKWC1ORVRCa0F2aWFFMjFHem5qSmJMZ3ZkZ1R6WWJxM2NOQdIBrwFBVV95cUxNS1ZtdlpzLWxVRExGaDJRSXdqMmhab2M3ZlRkWHdtVWQ4c0txS3J0TWVrSktlRmRfRElCNWhMQm43MXpxZnhiY1hQcm9TMS0ya2dZM1lrckF0Y0pLWTJILTJ2SVlTUVI1MVN6X0MyZnFmbUdKSGFLMmFac2dXbXYzWm5CZ0ViSW9FYWNPVGY5dHo1Sy15blpVT0hzYUNQYktLZ3hhZ2pIbU9BbFl3bDB3",
-          "published_at": "2026-09-29T16:09:00Z",
           "observed_at": "",
           "source_id": "unknown",
           "source_name": "Unknown source",
@@ -701,52 +1117,6 @@
         }
       ],
       "importance": 55,
-      "operational_impact": "POTENTIAL",
-      "operational_eligible": false
-    },
-    {
-      "event_id": "evt_9fdbb841518b572d",
-      "topic": "maritime",
-      "first_seen": "2026-09-29T15:27:39Z",
-      "last_seen": "2026-09-29T15:27:39Z",
-      "headline": "Economic toll of Iran war ‘unbearable,’ Qatar warns as talks continue - Euronews.com",
-      "classification": "OPERATIONAL_SIGNAL",
-      "verification_status": "SINGLE_SOURCE",
-      "verification_reason": "Supported by one usable source; independent corroboration is pending.",
-      "sources": [
-        {
-          "source_id": "euronews",
-          "source_name": "Euronews",
-          "source_domain": "euronews.com",
-          "tier": 2,
-          "official": false,
-          "weight": 2.2
-        }
-      ],
-      "source_ids": [
-        "euronews"
-      ],
-      "articles": [
-        {
-          "article_id": "art_0117009c5e090412",
-          "title": "Economic toll of Iran war ‘unbearable,’ Qatar warns as talks continue - Euronews.com",
-          "title_key": "economic toll of iran war unbearable qatar warns as talks continue",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQb1FBVklaZ3FlQTRJWXl3TS02c09qLXBsZU53bmVIVWd4Y2dqLXZfaFAtSGtKUE5iYWliWE5DdF94akJVWnRST0V1QlJia1VfdGNBeUZTQWVjTHlxYVN6Wjczc1lZV1V6bkpRTlRQNnRKLURLVkhEbjdCczRHYnhmYWdiYjZJTFJzaEJnc1piMlZkTEhqWkUwbklndVFrYnFTejZRSU00a0ptbXhhdlNkYw",
-          "published_at": "2026-09-29T15:27:39Z",
-          "observed_at": "",
-          "source_id": "euronews",
-          "source_name": "Euronews",
-          "source_domain": "euronews.com",
-          "tier": 2,
-          "official": false,
-          "weight": 2.2,
-          "topic": "maritime",
-          "classification": "OPERATIONAL_SIGNAL",
-          "signal": "ACCESS_RESTRICTED",
-          "description": ""
-        }
-      ],
-      "importance": 63,
       "operational_impact": "POTENTIAL",
       "operational_eligible": false
     },
@@ -910,11 +1280,11 @@
           "description": ""
         },
         {
-          "article_id": "art_44b9c85fd6244091",
+          "article_id": "art_0bbf481711a463cc",
           "title": "Fire breaks out on vessel hit by projectile in Strait of Hormuz: UK maritime agency - Anadolu Ajansı",
           "title_key": "fire breaks out on vessel hit by projectile in strait of hormuz uk maritime agency anadolu ajans",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQUZqQVE2dVVDUy1kM1VFaVBMX1BzYXJ3TnhHVExjNkxXR2syekhkeDg0WGhraDFJLThGb2VIYTVIZG5PWnkyVlkwSVFUM0RXQ0NxRmpPVXFPZ0pBNmVxYXFXM2lhalktVXR4ZU1Idl9aNEtUYjlQNDRLUlRHa1BLVUUwZU90NW5NTU5fNWV6TG1xZEM4M3J4MExnbk9EWm8zYlhoX3R0R0hDUFdGUXlaajRHT0Q0bkZEZlh6VGxPZHI2a3RUQkE",
-          "published_at": "2026-09-29T13:52:18Z",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbVdxNG8zeTFpTE9ybDRtRUZiOHFJV0pYYjhVcFktZEFsVi1hNDJwbmpnZE1LNnYtdDdpTmxpS25pVmlLR2lFQ0lTTjhsOVpOMDlQdDhaVi1nUHVCQkhkSVE2cmN5eW9lbUFQMTRybFlGNTdBNXdRUFpLTVFtVTBBaVN3N2hyalhUaHZ6c1RuNzd1cDlaZ0lfSG1aUmRCcmJoWTl4LWlpaUVEQV9ma19PVkdZQ2Zwa3NZTmxYa0JOQmw",
+          "published_at": "2026-09-29T13:50:55Z",
           "observed_at": "",
           "source_id": "unknown",
           "source_name": "Unknown source",
@@ -975,20 +1345,11 @@
           "tier": 4,
           "official": false,
           "weight": 4.0
-        },
-        {
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0
         }
       ],
       "source_ids": [
         "euronews",
-        "reuters",
-        "unknown"
+        "reuters"
       ],
       "articles": [
         {
@@ -1004,24 +1365,6 @@
           "tier": 4,
           "official": false,
           "weight": 4.0,
-          "topic": "maritime",
-          "classification": "OPERATIONAL_SIGNAL",
-          "signal": "TRANSIT_CONFIRMED",
-          "description": ""
-        },
-        {
-          "article_id": "art_15b80ee628fa8515",
-          "title": "Qatar-linked LNG tanker traffic through Strait of Hormuz picks up - وكالة الأنباء السورية – سانا",
-          "title_key": "qatar linked lng tanker traffic through strait of hormuz picks up",
-          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1GRzl0S2o2YTdxY1A1X1AzOWZEdU1namVKWk41U1A2dEFGaGpsVXpOTlVVcnhiRUxxM0ROUE5YcndlZU4xZElzN3NmU2Q",
-          "published_at": "2026-09-28T11:59:19Z",
-          "observed_at": "",
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0,
           "topic": "maritime",
           "classification": "OPERATIONAL_SIGNAL",
           "signal": "TRANSIT_CONFIRMED",
@@ -1046,7 +1389,7 @@
           "description": ""
         }
       ],
-      "importance": 69,
+      "importance": 66,
       "operational_impact": "POTENTIAL",
       "operational_eligible": false
     },
@@ -1055,7 +1398,7 @@
       "topic": "maritime",
       "first_seen": "2026-09-29T01:30:00Z",
       "last_seen": "2026-09-29T12:58:09Z",
-      "headline": "Oil prices fall as crude exports recover at Saudi Arabia's Red Sea ports - CNBC",
+      "headline": "Oil prices fall as crude exports recover at Saudi Arabia's Red Sea ports - cnbc.com",
       "classification": "OPERATIONAL_SIGNAL",
       "verification_status": "SINGLE_SOURCE",
       "verification_reason": "Supported by one usable source; independent corroboration is pending.",
@@ -1084,7 +1427,7 @@
       "articles": [
         {
           "article_id": "art_818dfa0767259d72",
-          "title": "Oil prices fall as crude exports recover at Saudi Arabia's Red Sea ports - CNBC",
+          "title": "Oil prices fall as crude exports recover at Saudi Arabia's Red Sea ports - cnbc.com",
           "title_key": "oil prices fall as crude exports recover at saudi arabia s red sea ports",
           "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9kSktEczQ1cU5VX0RyU21RTFFyVFlsSFJyMkhBYmtjSGtxMk5uT0FqMjFSSzkyUk1VY0pFNHpRaW51dWN2bVpnRU1YX0U2by1oRDRJTkNhekFncUhicGlLdEd5YzhSenE0R3NyY0h6VmNUczhwWEs3Y0930gF_QVVfeXFMTThHUHBKazFqa1M4UUh0THhoN1JBUkFxOURNQlpxbXRHeVBzNThjaDlXZVNRS1NPVnFVMEpfWGFzQm1nX1JCRThpWjhXMS1HRzlUUG5ESGtkRHowU3E3U1FPbXlIRDMxc1M2ZHFiTDVFTm5UVzRoTkUtRnhTM0xMSQ",
           "published_at": "2026-09-29T01:30:00Z",
@@ -1166,52 +1509,6 @@
         }
       ],
       "importance": 63,
-      "operational_impact": "POTENTIAL",
-      "operational_eligible": false
-    },
-    {
-      "event_id": "evt_7028da54f76e7e63",
-      "topic": "security",
-      "first_seen": "2026-09-29T12:22:39Z",
-      "last_seen": "2026-09-29T12:22:39Z",
-      "headline": "‘Try It’: Iran Warns US Against New Attack as Hormuz Talks Continue - Palestine Chronicle",
-      "classification": "OPERATIONAL_SIGNAL",
-      "verification_status": "UNCONFIRMED",
-      "verification_reason": "The available records do not meet the confirmation threshold.",
-      "sources": [
-        {
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0
-        }
-      ],
-      "source_ids": [
-        "unknown"
-      ],
-      "articles": [
-        {
-          "article_id": "art_1ec970cc184cae94",
-          "title": "‘Try It’: Iran Warns US Against New Attack as Hormuz Talks Continue - Palestine Chronicle",
-          "title_key": "try it iran warns us against new attack as hormuz talks continue palestine chronicle",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQRDhxVEVSUmRoVTBWMV91bllINUg3dFlTWTNTc2dYZV9yck5FSkh4TmJjbzFXdk1vMjFMX0hOdWk5SHNhajl3OWRHaWpiVC05WFFHRG9zTjdmSkNEM1pvajNjakQ4Q0tsVW1HWVJuMUdzd3BGeWZlUXk4Tkx2UkF3eFNLM1NVZlhWcy1aT0VfaWhDLWhmUWdta1dsbmpRXzN2enc",
-          "published_at": "2026-09-29T12:22:39Z",
-          "observed_at": "",
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0,
-          "topic": "security",
-          "classification": "OPERATIONAL_SIGNAL",
-          "signal": "RISK_SEVERE",
-          "description": ""
-        }
-      ],
-      "importance": 55,
       "operational_impact": "POTENTIAL",
       "operational_eligible": false
     },
@@ -1538,52 +1835,6 @@
       "operational_eligible": false
     },
     {
-      "event_id": "evt_9d25d2c71f4f04a9",
-      "topic": "maritime",
-      "first_seen": "2026-09-28T19:49:45Z",
-      "last_seen": "2026-09-28T19:49:45Z",
-      "headline": "Vessel Transit in Strait of Hormuz Drops to Two in 24 Hours - Data Portuaria",
-      "classification": "OPERATIONAL_SIGNAL",
-      "verification_status": "UNCONFIRMED",
-      "verification_reason": "The available records do not meet the confirmation threshold.",
-      "sources": [
-        {
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0
-        }
-      ],
-      "source_ids": [
-        "unknown"
-      ],
-      "articles": [
-        {
-          "article_id": "art_dafa956bfb693bf3",
-          "title": "Vessel Transit in Strait of Hormuz Drops to Two in 24 Hours - Data Portuaria",
-          "title_key": "vessel transit in strait of hormuz drops to two in 24 hours data portuaria",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPLXNTckp6UFAtVWhSaGdFcDRDZFJieUoxMW82WWNQWVF6WlpnREZ3c2FlSFZfQUFrbHZULUx5ek1jMHE2a2ZNRjdJNU9IODdHNFM3SGxjOE83aDNlaGJPem15NzFySGlQNDA5UzE0Tk1kMHlkaFVFS3Q3UmcyNnZJOXVYakZQVW9hdjFhbUZPRHpvWkptVVczOXhmOGdhQkx6R19oenkxRVN4cW1oekRtX2Frb1dWeVZ3Rnc",
-          "published_at": "2026-09-28T19:49:45Z",
-          "observed_at": "",
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0,
-          "topic": "maritime",
-          "classification": "OPERATIONAL_SIGNAL",
-          "signal": "TRANSIT_CONFIRMED",
-          "description": ""
-        }
-      ],
-      "importance": 55,
-      "operational_impact": "POTENTIAL",
-      "operational_eligible": false
-    },
-    {
       "event_id": "evt_31138361dc837582",
       "topic": "risk_restriction",
       "first_seen": "2026-09-28T19:45:00Z",
@@ -1768,52 +2019,6 @@
       "operational_eligible": false
     },
     {
-      "event_id": "evt_6999cb988530a3af",
-      "topic": "security",
-      "first_seen": "2026-09-28T08:20:07Z",
-      "last_seen": "2026-09-28T08:20:07Z",
-      "headline": "Hormuz and Bab el-Mandeb traffic rebounds amid renewed maritime attacks - Data Portuaria",
-      "classification": "OPERATIONAL_SIGNAL",
-      "verification_status": "UNCONFIRMED",
-      "verification_reason": "The available records do not meet the confirmation threshold.",
-      "sources": [
-        {
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0
-        }
-      ],
-      "source_ids": [
-        "unknown"
-      ],
-      "articles": [
-        {
-          "article_id": "art_d6ac00884b83ccb8",
-          "title": "Hormuz and Bab el-Mandeb traffic rebounds amid renewed maritime attacks - Data Portuaria",
-          "title_key": "hormuz and bab el mandeb traffic rebounds amid renewed maritime attacks data portuaria",
-          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPaGFwTGpfdk5vYTFDWFh3ZTA0SzF4dzQwSmZyXy1EZi1NRThxZUs2OWZoVUJQczM2OFJhbm9vWEhpV2t1X3AwcDNrR3lOdTRjSURSTlZteFdYMlJqa2R4UHhQNkN6NnZ4ZkllMk9xMHNQQUVwQjRLcEFDUEVIZ2pxUEVyVUEwcG1RQ054VlBYbm83ZU1XXzVmUzUtVnN4X2FnTjgzOVQ3ZWRpZThEOXRuQ2hoV0U1alJPM2NDRVU2ek9weGo3U1lVem5BdlNCTFR1QVl3",
-          "published_at": "2026-09-28T08:20:07Z",
-          "observed_at": "",
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0,
-          "topic": "security",
-          "classification": "OPERATIONAL_SIGNAL",
-          "signal": "RISK_SEVERE",
-          "description": ""
-        }
-      ],
-      "importance": 55,
-      "operational_impact": "POTENTIAL",
-      "operational_eligible": false
-    },
-    {
       "event_id": "evt_4a62072c746ea084",
       "topic": "maritime",
       "first_seen": "2026-09-28T05:18:00Z",
@@ -1949,98 +2154,6 @@
       ],
       "importance": 17,
       "operational_impact": "CONTEXT",
-      "operational_eligible": false
-    },
-    {
-      "event_id": "evt_47c7c0feb42d0568",
-      "topic": "security",
-      "first_seen": "2026-09-27T08:20:00Z",
-      "last_seen": "2026-09-27T08:20:00Z",
-      "headline": "Shipping slows through Strait of Hormuz after tanker attacks | Gulf Times - Gulf Times",
-      "classification": "OPERATIONAL_SIGNAL",
-      "verification_status": "UNCONFIRMED",
-      "verification_reason": "The available records do not meet the confirmation threshold.",
-      "sources": [
-        {
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0
-        }
-      ],
-      "source_ids": [
-        "unknown"
-      ],
-      "articles": [
-        {
-          "article_id": "art_86d7f0ab013fb709",
-          "title": "Shipping slows through Strait of Hormuz after tanker attacks | Gulf Times - Gulf Times",
-          "title_key": "shipping slows through strait of hormuz after tanker attacks gulf times gulf times",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQeW9VekdBLXRhWGhYWTBZNFNNVzBETDY3dmt1c0xUTDZrRFZ4ZnBJN0FsZ0NoTDlFOTQ4aEV1akl6NUYxSjF5NzJBaVRWQTJ0UzVHZXh3WW9WdF9hR0t2YXZkeE0xYjhsVmVKOTB1SzFnTVZtV2pEdV9reTM0M09yUDJyMmprbWExZzFRUVB1T3NXQjFzNm1uLU5CeTlWbFpxV3pYU3dwTDFHempkcXNHV9IBtgFBVV95cUxQNUdOcmlMc09rNlgzQU10eDh2SW8zZUMxdXFuakJ6YmFQTzZGZXp3amt1VjkzQUFJMWNDYXJ0Z2tER09FRk1STU9qLVpPRU01Y1RmWG5aOC1OWl92ZlR6cy1jMUF2M0F3RXgwNUZIUlBzekdKZHREb1F3d0FhTkJWV0NDMUJBTGRENldLLTVxWjVZcEcyOG1obnZQRHhrZUNmWWJlX29KM01GZFFScU8zRWlta2J1Zw",
-          "published_at": "2026-09-27T08:20:00Z",
-          "observed_at": "",
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0,
-          "topic": "security",
-          "classification": "OPERATIONAL_SIGNAL",
-          "signal": "RISK_SEVERE",
-          "description": ""
-        }
-      ],
-      "importance": 55,
-      "operational_impact": "POTENTIAL",
-      "operational_eligible": false
-    },
-    {
-      "event_id": "evt_95959b41315db47d",
-      "topic": "maritime",
-      "first_seen": "2026-09-26T21:35:00Z",
-      "last_seen": "2026-09-26T21:35:00Z",
-      "headline": "Iran warns of restrictions on ships using unauthorised Hormuz routes - Middle East Eye",
-      "classification": "OPERATIONAL_SIGNAL",
-      "verification_status": "UNCONFIRMED",
-      "verification_reason": "The available records do not meet the confirmation threshold.",
-      "sources": [
-        {
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0
-        }
-      ],
-      "source_ids": [
-        "unknown"
-      ],
-      "articles": [
-        {
-          "article_id": "art_14a2e3498f2a73f6",
-          "title": "Iran warns of restrictions on ships using unauthorised Hormuz routes - Middle East Eye",
-          "title_key": "iran warns of restrictions on ships using unauthorised hormuz routes middle east eye",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOQjJJb1AwMTZSU2lVNjRRQ05rUmlYWVpEdGFxQ2xvcVh0VzFmOFFoamlzUnhxb0V2WWVVejRjRlUzSE5BbDdZNGF4ZUpqQ1Qzazk5eERKdU5ZeTFyWW8tX3Q0NHB6aHhCa1Nyak5IR2RXYVBwWDNQTDNUZHQ5U0tWYjhTT1otYjkwTGZ6UkVLbWhkSExiMXZLZmUxN3R6ZlZfamp6UjBBTUEyWGR6WnlxcXFKWG9jeG8wZ0pv",
-          "published_at": "2026-09-26T21:35:00Z",
-          "observed_at": "",
-          "source_id": "unknown",
-          "source_name": "Unknown source",
-          "source_domain": "",
-          "tier": 1,
-          "official": false,
-          "weight": 1.0,
-          "topic": "maritime",
-          "classification": "OPERATIONAL_SIGNAL",
-          "signal": "ACCESS_RESTRICTED",
-          "description": ""
-        }
-      ],
-      "importance": 55,
-      "operational_impact": "POTENTIAL",
       "operational_eligible": false
     },
     {
@@ -3121,10 +3234,10 @@
     "CONFIRMED_PRIMARY": 0,
     "CONFLICTING": 0,
     "DECLARATION_ONLY": 4,
-    "SINGLE_SOURCE": 19,
-    "UNCONFIRMED": 28,
-    "TOTAL": 53
+    "SINGLE_SOURCE": 20,
+    "UNCONFIRMED": 23,
+    "TOTAL": 49
   },
-  "article_count": 86,
-  "event_count": 53
+  "article_count": 99,
+  "event_count": 49
 }
