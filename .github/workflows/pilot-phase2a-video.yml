@@ -1,0 +1,55 @@
+name: Piloto manual · Fase 2A Video Intelligence
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phase2a-video-pilot-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar la rama seleccionada
+        uses: actions/checkout@v6
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Ejecutar pruebas de Fase 2A
+        env:
+          GEMINI_API_KEY: ""
+          OPENROUTER_API_KEY: ""
+        run: |
+          python -m py_compile pilot_phase2a_video.py phase2_video/*.py
+          python -m unittest -v test_video_rules.py test_video_package.py test_video_script.py test_video_validator.py test_phase2a_pilot.py
+
+      - name: Ejecutar piloto aislado de Ormuz
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          DIARIO_FREE_AI_MODEL: ${{ vars.DIARIO_FREE_AI_MODEL }}
+        run: python pilot_phase2a_video.py --site ormuz --output-dir "${{ runner.temp }}/phase2a-video"
+
+      - name: Guardar exclusivamente los artefactos temporales del piloto
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: phase2a-video-ormuz-${{ github.run_number }}
+          path: |
+            ${{ runner.temp }}/phase2a-video/video-package.json
+            ${{ runner.temp }}/phase2a-video/script-local.json
+            ${{ runner.temp }}/phase2a-video/script-gemini.json
+            ${{ runner.temp }}/phase2a-video/validation-local.json
+            ${{ runner.temp }}/phase2a-video/validation-gemini.json
+            ${{ runner.temp }}/phase2a-video/preview.md
+          if-no-files-found: error
+          retention-days: 14
