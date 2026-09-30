@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-09-30T02:19:08Z",
-  "last_success_at": "2026-09-30T02:19:08Z",
+  "checked_at": "2026-09-30T08:55:29Z",
+  "last_success_at": "2026-09-30T08:55:29Z",
   "last_change_at": "2026-09-28T20:41:51Z",
   "verification_ok": true,
   "stale": false,
@@ -23,7 +23,7 @@
       "published_at": "2026-09-29T12:24:45Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-30T02:19:08Z"
+      "observed_at": "2026-09-30T08:55:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -34,7 +34,7 @@
       "published_at": "2026-09-29T08:54:02Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-30T02:19:08Z"
+      "observed_at": "2026-09-30T08:55:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -45,21 +45,22 @@
       "published_at": "2026-09-28T17:46:06Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-09-30T02:19:08Z"
+      "observed_at": "2026-09-30T08:55:29Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 8.82
+      "risk": 7.17
     },
     "independent_sources": {
       "open": 0,
@@ -67,11 +68,11 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 38,
-    "signals_considered": 5,
+    "articles_considered": 37,
+    "signals_considered": 4,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
-    "evidence_archive_size": 35,
+    "evidence_archive_size": 34,
     "evidence_archive_days": 14
   },
   "evidence_context": {
@@ -93,7 +94,7 @@
       "published_at": "2026-09-29T12:24:45Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-30T02:19:08Z"
+      "observed_at": "2026-09-30T08:55:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -115,7 +116,7 @@
       "published_at": "2026-09-29T08:54:02Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-09-30T02:19:08Z"
+      "observed_at": "2026-09-30T08:55:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -457,23 +458,12 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-09-18T19:54:38Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Saudi offers more crude via Oman loading after pipeline attacks, sources say - Reuters",
-      "source_name": "Reuters",
-      "source_id": "reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPNHd3ZXRacHUwZzJ0NlI1cnlrQmhnaXJRNWRZRTFXdnQzTUJ2azZ1X09DOXVUa0ZBalBYNlBpRVJ2X3YtczUwbmJjYjJXZGtjZFdVWEZ5YVVzUUJIOWRaZXdYa29xUjF0d25oMC1uZzlOc0JHSUFVOV9iNkxLbGRRdUNwSzcwZDZaRFhFck9uckhQVzdJN2k1aDdVTEFzYlJGTnl1ajlkQWUwVnljanR1ZHJzdl9XZkt2OXg5NThqSm5ib3ZuSnc",
-      "published_at": "2026-09-16T04:42:00Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-09-18T16:40:01Z"
     }
   ],
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-09-30T02:19:32Z",
+    "generated_at": "2026-09-30T08:56:22Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -507,18 +497,18 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 13.628,
+      "passage": 15.735,
       "closure": 0,
       "traffic_reduction": 3.25,
       "access_restriction": 3.72,
-      "risk": 45.72
+      "risk": 47.06
     },
     "source_counts": {
-      "passage": 7,
+      "passage": 8,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-09-29T20:40:00Z",
+    "latest_confirmed_transit_at": "2026-09-29T20:57:44Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -561,7 +551,7 @@
       },
       {
         "kind": "TRANSIT_CONFIRMED",
-        "title": "Qatar-linked LNG traffic through Hormuz strait picks up despite conflict - reuters.com",
+        "title": "Qatar-linked LNG traffic through Hormuz strait picks up despite conflict - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWGJVSUk3X2d2T1ZVNjM0UmE0RTRXZEpvMWwyaXNrbFkzeWFEWG9RUTlLMFhyaUJ5NjJKb01FTEcyMXYtaXc4V29xRnc1WWJqeDZrQzlZZ2h3cUM0ZGhjWDJUQ0tiTFVJUzNlNjJPRVJSSTJYWUlhejNDeHFZeGRNS2M1YlNvbG1oaXZnaXo1VHJPeWxvTzJab1U4Zk5mb3IxeWR0QUhtbjZjYnlyUU8wVmRNZ1BBX3VpS2IzYlRvdS11QQ",
         "published_at": "2026-09-28T09:33:23Z",
@@ -581,7 +571,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-09-30T02:19:32Z",
+        "published_at": "2026-09-30T08:56:22Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -664,6 +654,9 @@
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
+      "evt_f0a2b1017c2433d0",
+      "evt_1ab82b58248cc869",
+      "evt_39dfd8aa833a9e42",
       "evt_dabda4295aaf89af",
       "evt_79c79899440326e0",
       "evt_4f3dd47cd1b854ac",
@@ -675,31 +668,28 @@
       "evt_5c0295ad9e8285a6",
       "evt_015a11e0bd79d6c0",
       "evt_94c6df07f60940c1",
-      "evt_554f7d58a5468c83",
-      "evt_39d3ecfb2d1fd917",
+      "evt_7028da54f76e7e63",
       "evt_8823ed77daa88274",
       "evt_3ef4700519952002",
-      "evt_e4a7f81f1cad9112",
-      "evt_0a976ab236db92b8",
-      "evt_be4dc6b39ae650fc",
-      "evt_31138361dc837582"
+      "evt_98c18512ff7e9ebc",
+      "evt_e4a7f81f1cad9112"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 2,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 5,
+      "DECLARATION_ONLY": 4,
       "SINGLE_SOURCE": 19,
-      "UNCONFIRMED": 19,
-      "TOTAL": 45
+      "UNCONFIRMED": 28,
+      "TOTAL": 53
     },
     "diagnostics": {
-      "signals_considered": 52,
+      "signals_considered": 57,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 45,
-      "article_count_after_deduplication": 83,
+      "event_count": 53,
+      "article_count_after_deduplication": 86,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -711,6 +701,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-09-30T02:19:32Z"
+    "generated_at": "2026-09-30T08:56:22Z"
   }
 }
