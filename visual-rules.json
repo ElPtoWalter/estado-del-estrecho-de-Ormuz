@@ -1,0 +1,45 @@
+{
+  "rule_id": "VISUAL_RULESET_V1",
+  "frame": {
+    "aspect_ratio": "9:16",
+    "width_px": 1080,
+    "height_px": 1920,
+    "fps": 30
+  },
+  "timeline": {
+    "minimum_scene_ms": 3000
+  },
+  "rights": {
+    "policy": "generated_original_only",
+    "status": "cleared",
+    "credit": "StraitWatch · gráfico original generado localmente",
+    "allowed_uses": ["internal_preview"]
+  },
+  "intent_resolution": {
+    "presenter": "status-card",
+    "map": "schematic-map",
+    "chart": "metric-card-or-text-card",
+    "timeline": "timeline",
+    "source-card": "source-card",
+    "status-card": "status-card",
+    "text-card": "text-card"
+  },
+  "themes": {
+    "ormuz": {
+      "background": "#061622",
+      "panel": "#0D2A3A",
+      "accent": "#35D0C6",
+      "signal": "#F0B44D",
+      "text": "#F4F8FA",
+      "muted": "#AFC2CC"
+    },
+    "gibraltar": {
+      "background": "#07182D",
+      "panel": "#102F50",
+      "accent": "#4BA9FF",
+      "signal": "#F29E4C",
+      "text": "#F5F8FC",
+      "muted": "#B5C7DA"
+    }
+  }
+}
