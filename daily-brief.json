@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-01T00:47:44Z",
+    "generated_at": "2026-10-01T07:40:53Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -96,18 +96,18 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 12.149,
+      "passage": 11.969,
       "closure": 0,
-      "traffic_reduction": 3.15,
-      "access_restriction": 1.78,
-      "risk": 65.672
+      "traffic_reduction": 1.95,
+      "access_restriction": 1.68,
+      "risk": 67.512
     },
     "source_counts": {
-      "passage": 6,
+      "passage": 7,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-09-29T20:57:44Z",
+    "latest_confirmed_transit_at": "2026-10-01T07:01:58Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -187,7 +187,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-01T00:47:44Z",
+        "published_at": "2026-10-01T07:40:53Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -198,23 +198,6 @@
         "effective_weight": 3.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "TRAFFIC_REDUCED",
-        "title": "Oil prices fall as crude exports recover at Saudi Arabia's Red Sea ports - cnbc.com",
-        "source": "CNBC",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9kSktEczQ1cU5VX0RyU21RTFFyVFlsSFJyMkhBYmtjSGtxMk5uT0FqMjFSSzkyUk1VY0pFNHpRaW51dWN2bVpnRU1YX0U2by1oRDRJTkNhekFncUhicGlLdEd5YzhSenE0R3NyY0h6VmNUczhwWEs3Y0930gF_QVVfeXFMTThHUHBKazFqa1M4UUh0THhoN1JBUkFxOURNQlpxbXRHeVBzNThjaDlXZVNRS1NPVnFVMEpfWGFzQm1nX1JCRThpWjhXMS1HRzlUUG5ESGtkRHowU3E3U1FPbXlIRDMxc1M2ZHFiTDVFTm5UVzRoTkUtRnhTM0xMSQ",
-        "published_at": "2026-09-29T01:30:00Z",
-        "tier": 2,
-        "weight": 2.5,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 2.25,
-        "kind_label_es": "Tráfico reducido",
-        "kind_label_en": "Reduced traffic"
       },
       {
         "kind": "RISK_SEVERE",
@@ -249,27 +232,44 @@
         "effective_weight": 1.98,
         "kind_label_es": "Tránsito confirmado",
         "kind_label_en": "Confirmed transit"
+      },
+      {
+        "kind": "TRAFFIC_REDUCED",
+        "title": "Oil prices fall as crude exports recover at Saudi Arabia's Red Sea ports - CNBC",
+        "source": "CNBC",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9kSktEczQ1cU5VX0RyU21RTFFyVFlsSFJyMkhBYmtjSGtxMk5uT0FqMjFSSzkyUk1VY0pFNHpRaW51dWN2bVpnRU1YX0U2by1oRDRJTkNhekFncUhicGlLdEd5YzhSenE0R3NyY0h6VmNUczhwWEs3Y0930gF_QVVfeXFMTThHUHBKazFqa1M4UUh0THhoN1JBUkFxOURNQlpxbXRHeVBzNThjaDlXZVNRS1NPVnFVMEpfWGFzQm1nX1JCRThpWjhXMS1HRzlUUG5ESGtkRHowU3E3U1FPbXlIRDMxc1M2ZHFiTDVFTm5UVzRoTkUtRnhTM0xMSQ",
+        "published_at": "2026-09-29T01:30:00Z",
+        "tier": 2,
+        "weight": 2.5,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 1.95,
+        "kind_label_es": "Tráfico reducido",
+        "kind_label_en": "Reduced traffic"
       }
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
-      "evt_79c79899440326e0",
+      "evt_dab545e413c293d8",
+      "evt_b7643519932c759c",
       "evt_7500a9412c556967",
       "evt_1432070dfee4558e",
       "evt_2c602055ab00dd19",
       "evt_696f075e54c3dd74",
-      "evt_dab545e413c293d8",
       "evt_0d6a20a8ad1f50ad",
       "evt_bb4f297520e6edcd",
       "evt_41b6ccb7972ec985",
       "evt_39dfd8aa833a9e42",
       "evt_dabda4295aaf89af",
+      "evt_168837455cc6f0bb",
       "evt_4f3dd47cd1b854ac",
       "evt_4376b5637389e29a",
       "evt_18272f2f0e08d27f",
       "evt_ebb07b4e0f2cad75",
       "evt_5c0295ad9e8285a6",
-      "evt_015a11e0bd79d6c0",
       "evt_94c6df07f60940c1",
       "evt_7028da54f76e7e63"
     ],
@@ -283,12 +283,12 @@
       "TOTAL": 53
     },
     "diagnostics": {
-      "signals_considered": 72,
+      "signals_considered": 75,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
       "event_count": 53,
-      "article_count_after_deduplication": 99,
+      "article_count_after_deduplication": 97,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-01T00:47:44Z"
+    "generated_at": "2026-10-01T07:40:53Z"
   }
 }
