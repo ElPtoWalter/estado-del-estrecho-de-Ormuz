@@ -1,0 +1,36 @@
+name: Fase 2B · Contrato Gemini y regresiones sin API
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "phase2_voice/**"
+      - "voice-pronunciation.json"
+      - "pilot_phase2b_voice.py"
+      - "test_phase2b_voice.py"
+      - "PHASE2B_*.md"
+      - ".github/workflows/phase2b-voice-ci.yml"
+      - ".github/workflows/pilot-phase2b-voice.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GEMINI_API_KEY: ""
+      OPENROUTER_API_KEY: ""
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Compilar y ejecutar todas las pruebas de regresión
+        run: |
+          python -m compileall -q phase2_voice pilot_phase2b_voice.py test_phase2b_voice.py
+          python -m unittest discover -v
+      - name: Interfaz pública intacta
+        run: node --test test_public_ui.cjs

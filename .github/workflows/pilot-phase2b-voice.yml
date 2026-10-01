@@ -1,0 +1,77 @@
+name: Piloto manual · Fase 2B Gemini TTS
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phase2b-gemini-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SITE: ormuz
+      GEMINI_TTS_MODEL: ${{ vars.GEMINI_TTS_MODEL || 'gemini-3.8-flash-tts' }}
+      GEMINI_TTS_VOICE_ES: ${{ vars.GEMINI_TTS_VOICE_ES || 'Charon' }}
+      GEMINI_TTS_VOICE_EN: ${{ vars.GEMINI_TTS_VOICE_EN || 'Charon' }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Pruebas sin red ni claves
+        env:
+          GEMINI_API_KEY: ""
+          OPENROUTER_API_KEY: ""
+        run: python -m unittest -v test_phase2b_voice.py test_video_rules.py test_video_package.py test_video_script.py test_video_validator.py test_phase2a_pilot.py
+
+      - name: Preparar y revalidar material real de Fase 2A
+        id: input
+        run: |
+          python pilot_phase2b_voice.py --site "$SITE" --output-dir "${{ runner.temp }}/phase2b-voice" --prepare-only
+          python -c 'import json, os; p=json.load(open(os.environ["RUNNER_TEMP"]+"/phase2b-voice/voice-input.json")); print("job_id="+p["voice_job_id"].split(":")[-1])' >> "$GITHUB_OUTPUT"
+
+      - name: Reutilizar solo el WAV y sus metadatos vinculados a este job
+        id: cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ${{ runner.temp }}/phase2b-voice/audio-gemini.wav
+            ${{ runner.temp }}/phase2b-voice/audio-metadata.json
+          key: phase2b-gemini-v1-${{ env.SITE }}-${{ steps.input.outputs.job_id }}
+
+      - name: Generar o revalidar la voz Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python pilot_phase2b_voice.py --site "$SITE" --package "${{ runner.temp }}/phase2b-voice/video-package.json" --script "${{ runner.temp }}/phase2b-voice/script.json" --fixture-metadata "${{ runner.temp }}/phase2b-voice/validation-report.json" --output-dir "${{ runner.temp }}/phase2b-voice"
+
+      - name: Guardar únicamente audio técnicamente válido para evitar repetir llamadas
+        if: success() && steps.cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ${{ runner.temp }}/phase2b-voice/audio-gemini.wav
+            ${{ runner.temp }}/phase2b-voice/audio-metadata.json
+          key: phase2b-gemini-v1-${{ env.SITE }}-${{ steps.input.outputs.job_id }}
+
+      - name: Conservar candidatos temporales para revisión humana
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: phase2b-gemini-${{ env.SITE }}-${{ github.run_number }}
+          path: |
+            ${{ runner.temp }}/phase2b-voice/voice-input.json
+            ${{ runner.temp }}/phase2b-voice/audio-gemini.wav
+            ${{ runner.temp }}/phase2b-voice/audio-metadata.json
+            ${{ runner.temp }}/phase2b-voice/validation-report.json
+            ${{ runner.temp }}/phase2b-voice/preview.md
+            ${{ runner.temp }}/phase2b-voice/video-package.json
+            ${{ runner.temp }}/phase2b-voice/script.json
+          if-no-files-found: error
+          retention-days: 14
