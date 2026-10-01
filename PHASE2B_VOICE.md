@@ -196,7 +196,8 @@ ausente puede comprobarse preparación y pruebas pero no crear voz ficticia.
 
 Los pilotos Gemini originales tienen PASS en ambos estrechos; una audición
 regional adicional de Gibraltar tiene PASS y aprobación humana de la voz.
-La elección está aplicada a ambos borradores, sin merge. No se atribuye a Ormuz
-una audición regional que no se ha generado. No iniciar automatización
+La elección está aplicada a ambos borradores, sin merge. El piloto regional
+posterior de Ormuz también tiene PASS remoto/local y un WAV escuchable de 51,28 s;
+su revisión humana específica sigue pendiente. No iniciar automatización
 recurrente, publicar o modificar Fase 2C con este encargo. Cada pieza conserva
 su propia revisión editorial/auditiva pendiente antes de cualquier publicación.

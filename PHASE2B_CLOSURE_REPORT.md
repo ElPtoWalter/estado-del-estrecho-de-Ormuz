@@ -10,7 +10,9 @@ conserva intacta, con su perfil experimental y su job original; no se regenera
 ni se cambia su metadata histórica PENDING. Véase `PHASE2B_CASTILIAN_APPROVAL.md`.
 
 Esta aprobación es de voz/acento, no un permiso de merge, publicación o inicio
-de vídeo. No hay nuevo piloto regional de Ormuz: los resultados que siguen son
+de vídeo. El piloto regional posterior de Ormuz obtuvo PASS remoto/local y un
+WAV de 51,28 s; su escucha específica sigue pendiente. La trazabilidad figura
+en `PHASE2B_CASTILIAN_APPROVAL.md`. Los resultados de la tabla que sigue son
 el registro histórico de los primeros pilotos Charon, no del nuevo perfil.
 Cada audio futuro mantiene revisión humana PENDING; ASR sigue NOT_RUN.
 
