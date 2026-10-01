@@ -146,9 +146,20 @@ modelos grandes en cada ejecución o commitear pesos, WAVs o cachés.
 Workflow `pilot-phase2b-voice.yml`: **solo workflow_dispatch**, contents:read,
 sin push, schedule, publicación, permisos de escritura o integración en main.
 Artefactos temporales por 14 días, caché por job solo de WAV + metadatos PASS.
-Reutiliza la selección real de Fase 2A, incluidos históricos claramente rotulados.
-No convierte fixturas históricas en noticias actuales. Genera el guion local
-2A validado, sin nueva llamada de IA editorial. También acepta guion 2A existente.
+Consume los paquetes y guiones reales de Fase 2A congelados en
+`phase2b-pilot-fixtures.json`, con commit y procedencia, revalidados de nuevo.
+Ambos históricos están claramente rotulados y no se presentan como noticias
+actuales. No regenera el guion ni hace una nueva llamada editorial.
+También acepta cualquier paquete + guion 2A existente que pase validación.
+
+La rotación del registro vivo de Ormuz eliminó el evento que usaban dos pruebas
+antiguas 2A/2C. Sus harnesses ahora alimentan el mismo paquete histórico real
+congelado, no datos inventados ni criterios menos exigentes. Las funciones de
+producción, selección, decisiones y validadores 2A/2C no se modifican. Se conserva
+el fallo previo en el informe; no se oculta excluyéndolo de la suite completa.
+El piloto manual 2B ejecuta pruebas del contrato/validadores; las comprobaciones
+estáticas del workflow 2A se ejecutan en CI final, donde su fichero está intacto,
+no contra la copia temporal usada para dispatch.
 
 GitHub no permite registrar un workflow nuevo por dispatch hasta que existe en
 la rama predeterminada. Para verificar sin merge se usa una rama temporal con

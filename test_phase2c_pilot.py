@@ -3,8 +3,10 @@ from __future__ import annotations
 import shutil
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import pilot_phase2c_visual as pilot
+from phase2_voice.fixtures import load_pilot_fixture
 
 
 ROOT = Path(__file__).resolve().parent
@@ -15,7 +17,9 @@ class Phase2CVisualPilotTests(unittest.TestCase):
         output = ROOT.parent / "phase2c-pilot-test-output-ormuz"
         output.mkdir(exist_ok=True)
         try:
-            result = pilot.run_pilot(ROOT, "ormuz", output)
+            # Real historic input must not disappear when live events rotate.
+            with patch.object(pilot, "select_package", return_value=(load_pilot_fixture("ormuz")[0], load_pilot_fixture("ormuz")[2])):
+                result = pilot.run_pilot(ROOT, "ormuz", output)
             self.assertTrue(result["historical_fixture"])
             self.assertEqual(result["validation_status"], "PASS")
             self.assertFalse(result["publication_allowed"])

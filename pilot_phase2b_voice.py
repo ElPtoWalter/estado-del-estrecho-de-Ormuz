@@ -8,10 +8,9 @@ import json
 import tempfile
 from pathlib import Path
 
-from phase2_video.script import generate_local_script
+from phase2_voice.fixtures import load_pilot_fixture
 from phase2_voice.pipeline import run_voice_job
 from phase2_voice.schema import VoiceError
-from pilot_phase2a_video import select_package
 
 
 def main() -> int:
@@ -35,10 +34,9 @@ def main() -> int:
             if args.fixture_metadata:
                 fixture = json.loads(args.fixture_metadata.read_text(encoding="utf-8"))["fixture"]
         else:
-            # Reuses the audited Phase 2A real-fixture selection and deterministic
-            # script generator. No new text-generation call or invented fixture.
-            package, fixture = select_package(args.root, args.site)
-            script = generate_local_script(package)
+            # Real validated Phase 2A pilots frozen before the live event store
+            # rotates. No rewritten script, invented fixture or editorial call.
+            package, script, fixture = load_pilot_fixture(args.site)
         if package.get("site") != args.site:
             raise VoiceError("SITE_MISMATCH")
         report = run_voice_job(package, script, output, repo_root=args.root, fixture=fixture, prepare_only=args.prepare_only)

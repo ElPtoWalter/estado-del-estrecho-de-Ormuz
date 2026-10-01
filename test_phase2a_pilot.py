@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import pilot_phase2a_video as pilot
+from phase2_voice.fixtures import load_pilot_fixture
 
 
 ROOT = Path(__file__).resolve().parent
@@ -18,7 +19,7 @@ class Phase2APilotTests(unittest.TestCase):
         try:
             with patch.dict(
                 os.environ, {"GEMINI_API_KEY": "", "OPENROUTER_API_KEY": ""}, clear=False
-            ):
+            ), patch.object(pilot, "select_package", return_value=(load_pilot_fixture("ormuz")[0], load_pilot_fixture("ormuz")[2])):
                 result = pilot.run_pilot(ROOT, "ormuz", output)
             self.assertTrue(result["historical_fixture"])
             self.assertEqual(result["local"], "PASS")

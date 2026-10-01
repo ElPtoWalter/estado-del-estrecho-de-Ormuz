@@ -29,7 +29,7 @@ jobs:
         env:
           GEMINI_API_KEY: ""
           OPENROUTER_API_KEY: ""
-        run: python -m unittest -v test_phase2b_voice.py test_video_rules.py test_video_package.py test_video_script.py test_video_validator.py test_phase2a_pilot.py
+        run: python -m unittest -v test_phase2b_voice.py test_video_rules.py test_video_package.py test_video_script.py test_video_validator.py
 
       - name: Preparar y revalidar material real de Fase 2A
         id: input

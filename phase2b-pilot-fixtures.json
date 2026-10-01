@@ -1,0 +1,350 @@
+{
+  "schema_version": "1.0.0",
+  "fixtures": {
+    "gibraltar": {
+      "provenance": {
+        "historical_fixture": true,
+        "fixture_source": "ope-history.json + observatory-history.json",
+        "fixture_event_id": "evt_f8bb3598c0009a65",
+        "source_commit": "6a3c8cc8605c821eb0da260f2f5dd7ba7729b26b"
+      },
+      "package": {
+        "schema_version": "2.0.0",
+        "package_id": "video-package:gibraltar:2026-08-15:373719d6c596966392fa0cdd50afe86720aca9c0f5be4020124fe87c4ebfb97b",
+        "site": "gibraltar",
+        "language_set": [
+          "es",
+          "en"
+        ],
+        "generated_at": "2026-08-15T13:45:21Z",
+        "edition_date": "2026-08-15",
+        "content_kind": "event",
+        "event_id": "evt_f8bb3598c0009a65",
+        "importance": 89,
+        "video_recommended": true,
+        "video_type": "breaking",
+        "video_recommendation": {
+          "rule_id": "VIDEO_RULESET_V1",
+          "reason_codes": [
+            "PRIMARY_VERIFICATION",
+            "MATERIAL_OPERATIONAL_CHANGE",
+            "HIGH_IMPORTANCE",
+            "BREAKING_CANDIDATE"
+          ],
+          "decided_by": "deterministic_rules",
+          "human_review_required": true
+        },
+        "headlines": {
+          "es": "Protección Civil registró 57024 pasajeros, 14140 vehículos y 173 rotaciones en la OPE del 14 de agosto de 2026",
+          "en": "Spanish Civil Protection recorded 57024 passengers, 14140 vehicles and 173 rotations in the Strait Crossing Operation on 14 August 2026"
+        },
+        "verified_facts": [
+          {
+            "fact_id": "fact-ede995afcea194f9",
+            "text_es": "Protección Civil registró 57024 pasajeros, 14140 vehículos y 173 rotaciones en la OPE del 14 de agosto de 2026",
+            "text_en": "Spanish Civil Protection recorded 57024 passengers, 14140 vehicles and 173 rotations in the Strait Crossing Operation on 14 August 2026",
+            "event_id": "evt_f8bb3598c0009a65",
+            "verification_status": "VERIFIED_PRIMARY",
+            "source_ids": [
+              "proteccion_civil_es"
+            ],
+            "observed_at": "2026-08-14T21:00:00Z"
+          }
+        ],
+        "statements": [],
+        "sources": [
+          {
+            "source_id": "proteccion_civil_es",
+            "canonical_name": "Protección Civil España",
+            "url": "https://proteccioncivil.es/documents/20121/0/20260814_InformeOPE.pdf",
+            "published_at": "2026-08-14T21:00:00Z",
+            "tier": "official",
+            "official": true,
+            "rights_status": "link_and_factual_reference_only"
+          }
+        ],
+        "operational_context": {
+          "state": "normal",
+          "confidence": "low",
+          "dimensions": {
+            "state_label": "NORMALIDAD OPERATIVA",
+            "ope_metrics": {
+              "news_24h": 18,
+              "news_sources": 34,
+              "seismic_24h": 1,
+              "seismic_7d": 1,
+              "seismic_30d": 2,
+              "seismic_max_30d": 5.2,
+              "ope_report_date": "2026-08-14",
+              "ope_passengers_day": 57024,
+              "ope_vehicles_day": 14140,
+              "ope_rotations_day": 173,
+              "diary_date": "2026-08-15",
+              "diary_source_count": 7
+            }
+          },
+          "as_of": "2026-08-15T13:45:21Z",
+          "health": "healthy"
+        },
+        "what_changed": [
+          "El parte oficial de la OPE del 14 de agosto quedó incorporado al observatorio histórico."
+        ],
+        "what_we_know": [
+          "Protección Civil registró 57024 pasajeros, 14140 vehículos y 173 rotaciones en la OPE del 14 de agosto de 2026"
+        ],
+        "what_we_dont_know": [
+          "La instantánea compacta no conservó un nivel explícito de confianza; el piloto usa confianza baja.",
+          "El informe diario no es un contador de tráfico en tiempo real."
+        ],
+        "watch_next_24h": [
+          "El siguiente parte oficial de Protección Civil y cualquier aviso portuario.",
+          "Cambios verificados en la continuidad de las rutas marítimas."
+        ],
+        "visual_assets": [],
+        "content_hash": "373719d6c596966392fa0cdd50afe86720aca9c0f5be4020124fe87c4ebfb97b"
+      },
+      "script": {
+        "schema_version": "1.0.0",
+        "script_id": "video-script:840caadad38667fb6436d68ccc7267c094b88156f81c0a52e7cbd37052da7a29",
+        "package_id": "video-package:gibraltar:2026-08-15:373719d6c596966392fa0cdd50afe86720aca9c0f5be4020124fe87c4ebfb97b",
+        "package_content_hash": "373719d6c596966392fa0cdd50afe86720aca9c0f5be4020124fe87c4ebfb97b",
+        "language": "es",
+        "video_type": "breaking",
+        "target_seconds": 35,
+        "estimated_words": 105,
+        "headline": "Protección Civil registró 57024 pasajeros, 14140 vehículos y 173 rotaciones en la OPE del 14 de agosto de 2026",
+        "hook": "Estas son las claves verificadas y la incertidumbre que todavía permanece abierta.",
+        "scenes": [
+          {
+            "scene_id": "scene-01",
+            "voiceover": "El principal hecho verificado de esta actualización es: Protección Civil registró 57024 pasajeros, 14140 vehículos y 173 rotaciones en la OPE del 14 de agosto de 2026",
+            "fact_ids": [
+              "fact-ede995afcea194f9"
+            ],
+            "statement_ids": [],
+            "source_ids": [
+              "proteccion_civil_es"
+            ],
+            "visual_intent": "source-card",
+            "on_screen_text": "Protección Civil registró 57024 pasajeros, 14140 vehículos y 173 rotaciones en la OPE del 14 de agosto de 2026"
+          },
+          {
+            "scene_id": "scene-02",
+            "voiceover": "El estado operativo canónico es normalidad operativa, con confianza baja. Esta evaluación procede de la Fase Uno y no se recalcula para el vídeo.",
+            "fact_ids": [
+              "fact-ede995afcea194f9"
+            ],
+            "statement_ids": [],
+            "source_ids": [
+              "proteccion_civil_es"
+            ],
+            "visual_intent": "status-card",
+            "on_screen_text": "normalidad operativa"
+          },
+          {
+            "scene_id": "scene-03",
+            "voiceover": "Esto es lo que todavía no sabemos: La instantánea compacta no conservó un nivel explícito de confianza; el piloto usa confianza baja. La incertidumbre permanece abierta y no debe presentarse como una conclusión.",
+            "fact_ids": [
+              "fact-ede995afcea194f9"
+            ],
+            "statement_ids": [],
+            "source_ids": [
+              "proteccion_civil_es"
+            ],
+            "visual_intent": "text-card",
+            "on_screen_text": "La instantánea compacta no conservó un nivel explícito de confianza; el piloto usa confianza baja."
+          }
+        ],
+        "outro": "Seguimos vigilando el estrecho con información atribuida y verificada.",
+        "generated_by": "rules"
+      }
+    },
+    "ormuz": {
+      "provenance": {
+        "historical_fixture": true,
+        "fixture_source": "events.json + operational-intelligence-history.json",
+        "fixture_event_id": "evt_bbed29e448ae2014",
+        "source_commit": "14fefea665ff02a88f41b337494abd69f4f91ee2"
+      },
+      "package": {
+        "schema_version": "2.0.0",
+        "package_id": "video-package:ormuz:2026-09-21:c62123682b8782326e7bf81dd49aa5fada7220933a8e36a6419891f2ac78b8e0",
+        "site": "ormuz",
+        "language_set": [
+          "es",
+          "en"
+        ],
+        "generated_at": "2026-09-21T05:20:48Z",
+        "edition_date": "2026-09-21",
+        "content_kind": "event",
+        "event_id": "evt_bbed29e448ae2014",
+        "importance": 72,
+        "video_recommended": true,
+        "video_type": "explainer",
+        "video_recommendation": {
+          "rule_id": "VIDEO_RULESET_V1",
+          "reason_codes": [
+            "MULTISOURCE_VERIFICATION",
+            "HIGH_IMPORTANCE"
+          ],
+          "decided_by": "deterministic_rules",
+          "human_review_required": true
+        },
+        "headlines": {
+          "es": "Iran and US trade threats after Houthi attacks escalate regional conflict - reuters.com",
+          "en": "Iran and US trade threats after Houthi attacks escalate regional conflict - reuters.com"
+        },
+        "verified_facts": [
+          {
+            "fact_id": "fact-a0b4364f38881c5f",
+            "text_es": "Iran and US trade threats after Houthi attacks escalate regional conflict - reuters.com",
+            "text_en": "Iran and US trade threats after Houthi attacks escalate regional conflict - reuters.com",
+            "event_id": "evt_bbed29e448ae2014",
+            "verification_status": "VERIFIED_MULTISOURCE",
+            "source_ids": [
+              "bloomberg",
+              "reuters"
+            ],
+            "observed_at": "2026-09-20T17:46:57Z"
+          }
+        ],
+        "statements": [],
+        "sources": [
+          {
+            "source_id": "bloomberg",
+            "canonical_name": "Bloomberg",
+            "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOZ05FeTc2Zjg4WHMxeU5TX1NYODRQZVZheVhVVWE0VUs5cFo1UC1sYVFqSkFnLUF2YjdMREZ4NnFNTkZXTF9yeDFEY2luNmNJUzROVzUzN2xKaHFaRVU2ZV9oRmdpOWNxZ3NNX2Jrajd4Q0JjRlc1Y2NoREVsMWdiWVlLUy1kcjBHWGhJZEp0ZjJuWUxnV0N1bWFMMHhTR1o4MHJFMFhkOWEtenU2YnFvckMyTjByTjcwcDh2a3BUbkxtc1pkbFZUd21kOHY",
+            "published_at": "2026-09-17T19:56:15Z",
+            "tier": "trusted_media",
+            "official": false,
+            "rights_status": "link_and_factual_reference_only"
+          },
+          {
+            "source_id": "reuters",
+            "canonical_name": "Reuters",
+            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOdWJkS01sRHBUcXZGZVVoTy1zVU04amJ0VUc3WnZ4UkVZd25TTTR6RGY1ZkV5OUtGZzFULVNDcEo4MzlZMmNkamt0VjR5VHg3YzRDaWhEOFAtZklDbFpGSXpCeE9BeGR3UWp3aFN1MVp2aUMyZE93ZnFUN0VTdzdkZGJnMDdrOFNtc1lhZC1UQlNDWFl3dGRWdjZwYkc2SHJGelBn",
+            "published_at": "2026-09-20T17:46:57Z",
+            "tier": "trusted_media",
+            "official": false,
+            "rights_status": "link_and_factual_reference_only"
+          }
+        ],
+        "operational_context": {
+          "state": "OPEN_SEVERELY_RESTRICTED",
+          "confidence": "medium",
+          "dimensions": {
+            "passage": "PASSAGE_CONFIRMED",
+            "traffic": "SEVERELY_REDUCED",
+            "access": "SELECTIVE",
+            "risk": "EXTREME",
+            "legal": "CLOSURE_CLAIMED"
+          },
+          "as_of": "2026-09-21T05:20:48Z",
+          "health": "degraded"
+        },
+        "what_changed": [
+          "El evento verificado se incorporó a esta instantánea histórica."
+        ],
+        "what_we_know": [
+          "Iran and US trade threats after Houthi attacks escalate regional conflict - reuters.com"
+        ],
+        "what_we_dont_know": [
+          "La instantánea histórica no conserva el sobre completo de salud de fuentes.",
+          "Una declaración no sustituye una confirmación operativa."
+        ],
+        "watch_next_24h": [
+          "Nuevas confirmaciones operativas y avisos marítimos oficiales.",
+          "Corroboración independiente de cualquier cambio material."
+        ],
+        "visual_assets": [],
+        "content_hash": "c62123682b8782326e7bf81dd49aa5fada7220933a8e36a6419891f2ac78b8e0"
+      },
+      "script": {
+        "schema_version": "1.0.0",
+        "script_id": "video-script:6dddb8b7362bdd2530a3bb8e35f330e8d038b3c3ca734561ca00c441acb86588",
+        "package_id": "video-package:ormuz:2026-09-21:c62123682b8782326e7bf81dd49aa5fada7220933a8e36a6419891f2ac78b8e0",
+        "package_content_hash": "c62123682b8782326e7bf81dd49aa5fada7220933a8e36a6419891f2ac78b8e0",
+        "language": "es",
+        "video_type": "explainer",
+        "target_seconds": 60,
+        "estimated_words": 128,
+        "headline": "Iran and US trade threats after Houthi attacks escalate regional conflict - reuters.com",
+        "hook": "Estas son las claves verificadas y la incertidumbre que todavía permanece abierta.",
+        "scenes": [
+          {
+            "scene_id": "scene-01",
+            "voiceover": "El principal hecho verificado de esta actualización es: Iran and US trade threats after Houthi attacks escalate regional conflict - reuters.com",
+            "fact_ids": [
+              "fact-a0b4364f38881c5f"
+            ],
+            "statement_ids": [],
+            "source_ids": [
+              "bloomberg",
+              "reuters"
+            ],
+            "visual_intent": "source-card",
+            "on_screen_text": "Iran and US trade threats after Houthi attacks escalate regional conflict - reuters.com"
+          },
+          {
+            "scene_id": "scene-02",
+            "voiceover": "El estado operativo canónico es abierto con tránsito muy restringido, con confianza media. Esta evaluación procede de la Fase Uno y no se recalcula para el vídeo.",
+            "fact_ids": [
+              "fact-a0b4364f38881c5f"
+            ],
+            "statement_ids": [],
+            "source_ids": [
+              "bloomberg",
+              "reuters"
+            ],
+            "visual_intent": "status-card",
+            "on_screen_text": "abierto con tránsito muy restringido"
+          },
+          {
+            "scene_id": "scene-03",
+            "voiceover": "Frente a la edición anterior: El evento verificado se incorporó a esta instantánea histórica.",
+            "fact_ids": [
+              "fact-a0b4364f38881c5f"
+            ],
+            "statement_ids": [],
+            "source_ids": [
+              "bloomberg",
+              "reuters"
+            ],
+            "visual_intent": "timeline",
+            "on_screen_text": "El evento verificado se incorporó a esta instantánea histórica."
+          },
+          {
+            "scene_id": "scene-04",
+            "voiceover": "Esto es lo que todavía no sabemos: La instantánea histórica no conserva el sobre completo de salud de fuentes. La incertidumbre permanece abierta y no debe presentarse como una conclusión.",
+            "fact_ids": [
+              "fact-a0b4364f38881c5f"
+            ],
+            "statement_ids": [],
+            "source_ids": [
+              "bloomberg",
+              "reuters"
+            ],
+            "visual_intent": "text-card",
+            "on_screen_text": "La instantánea histórica no conserva el sobre completo de salud de fuentes."
+          },
+          {
+            "scene_id": "scene-05",
+            "voiceover": "Durante las próximas veinticuatro horas, el monitor vigilará: Nuevas confirmaciones operativas y avisos marítimos oficiales.",
+            "fact_ids": [
+              "fact-a0b4364f38881c5f"
+            ],
+            "statement_ids": [],
+            "source_ids": [
+              "bloomberg",
+              "reuters"
+            ],
+            "visual_intent": "map",
+            "on_screen_text": "Nuevas confirmaciones operativas y avisos marítimos oficiales."
+          }
+        ],
+        "outro": "Seguimos vigilando el estrecho con información atribuida y verificada.",
+        "generated_by": "rules"
+      }
+    }
+  }
+}

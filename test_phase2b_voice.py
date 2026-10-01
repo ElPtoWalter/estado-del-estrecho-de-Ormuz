@@ -21,6 +21,7 @@ from unittest.mock import Mock, patch
 from phase2_video.script import generate_local_script
 from phase2_voice.audio import inspect_audio, native_wav, wrap_pcm
 from phase2_voice.gemini import ENDPOINT, HTTP_CODES, render_gemini, request_payload
+from phase2_voice.fixtures import load_pilot_fixture
 from phase2_voice.input import build_voice_input, speech_safe, validate_voice_input
 from phase2_voice.local import DeferredLocalEngine
 from phase2_voice.pipeline import audit_output, make_metadata, run_voice_job
@@ -366,6 +367,15 @@ class VoiceTests(unittest.TestCase):
         self.assertNotIn("contents: write", text)
         self.assertNotIn("ELEVENLABS", text)
         self.assertNotIn("deploy", text.lower())
+
+    def test_both_frozen_real_pilots_revalidated(self):
+        for site in ("ormuz", "gibraltar"):
+            package, script, fixture = load_pilot_fixture(site)
+            value = build_voice_input(package, script, config=self.config)
+            self.assertEqual(value["script_id"], script["script_id"])
+            self.assertTrue(fixture["historical_fixture"])
+            self.assertEqual(len(fixture["source_commit"]), 40)
+            self.assertEqual(package["site"], site)
 
 
 if __name__ == "__main__":
