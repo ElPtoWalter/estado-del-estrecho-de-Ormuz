@@ -1,5 +1,21 @@
 # PHASE2B_CLOSURE_REPORT · StraitWatch Gemini Voice
 
+## Actualización · 2 octubre 2026
+
+**Identidad vocal castellana aprobada por el usuario y adoptada en ambos
+borradores.** `es-es-advisor-2` / `straitwatch_es_v2` es el nuevo valor ES por
+defecto; Charon queda como alternativa explícita, no automática. Arquitectura
+3.1.0, 54 pruebas comunes. EN no cambia. La audición aprobada de Gibraltar se
+conserva intacta, con su perfil experimental y su job original; no se regenera
+ni se cambia su metadata histórica PENDING. Véase `PHASE2B_CASTILIAN_APPROVAL.md`.
+
+Esta aprobación es de voz/acento, no un permiso de merge, publicación o inicio
+de vídeo. No hay nuevo piloto regional de Ormuz: los resultados que siguen son
+el registro histórico de los primeros pilotos Charon, no del nuevo perfil.
+Cada audio futuro mantiene revisión humana PENDING; ASR sigue NOT_RUN.
+
+## Informe histórico original · 1 octubre 2026
+
 Fecha: 1 octubre 2026, UTC. Resultado: **IMPLEMENTACIÓN Y PILOTOS TÉCNICOS COMPLETOS; APROBACIÓN AUDITIVA PENDIENTE**.
 
 No se ha fusionado ningún PR, publicado audio o modificado las webs. No se inicia
@@ -185,4 +201,3 @@ aplazado; ASR opcional no implementada; revisar cuota/tier antes de recurrencia.
 
 **Parar aquí. No fusionar, publicar ni continuar integración audiovisual hasta
 que el usuario apruebe la escucha y dé una nueva instrucción.**
-

@@ -17,7 +17,7 @@ jobs:
     env:
       SITE: ormuz
       GEMINI_TTS_MODEL: ${{ vars.GEMINI_TTS_MODEL || 'gemini-3.8-flash-tts' }}
-      GEMINI_TTS_VOICE_ES: ${{ vars.GEMINI_TTS_VOICE_ES || 'Charon' }}
+      GEMINI_TTS_VOICE_ES: ${{ vars.GEMINI_TTS_VOICE_ES || 'es-es-advisor-2' }}
       GEMINI_TTS_VOICE_EN: ${{ vars.GEMINI_TTS_VOICE_EN || 'Charon' }}
     steps:
       - uses: actions/checkout@v6

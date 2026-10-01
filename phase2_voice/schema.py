@@ -11,8 +11,10 @@ from typing import Any
 from phase2_video.schema import canonical_json
 
 VOICE_SCHEMA_VERSION = "1.0.0"
-CONTRACT_VERSION = "3.0.0"  # Supersedes the unmerged provider-specific v2 experiment.
+CONTRACT_VERSION = "3.1.0"  # Approved regional voice; existing v1 artifacts remain valid.
 VALIDATOR_VERSION = "1.0.0"
+CASTILIAN_VOICE = "es-es-advisor-2"
+DEFAULT_VOICES = {"es": CASTILIAN_VOICE, "en": "Charon"}
 ALLOWED_MODELS = {"gemini-3.8-flash-tts", "gemini-3.8-flash-lite-tts"}
 ALLOWED_VOICES = {
     "Zephyr", "Puck", "Charon", "Kore", "Fenrir", "Leda", "Orus", "Aoede",
@@ -20,6 +22,7 @@ ALLOWED_VOICES = {
     "Despina", "Erinome", "Algenib", "Rasalgethi", "Laomedeia", "Achernar",
     "Alnilam", "Schedar", "Gacrux", "Pulcherrima", "Achird", "Zubenelgenubi",
     "Vindemiatrix", "Sadachbia", "Sadaltager", "Sulafat",
+    CASTILIAN_VOICE,
 }
 PROFILES = {
     "es": {
@@ -32,6 +35,18 @@ PROFILES = {
         "intended_identity": "Adult masculine, neutral professional news narrator; not an imitation. Not auditioned.",
         "style": "Neutral British English news narration. Serious, natural, clear diction, controlled pace and moderate authority. No drama, advertising delivery or imitation of a person.",
     },
+}
+CASTILIAN_PROFILE = {
+    "profile_id": "straitwatch_es_v2", "locale": "es-ES",
+    "intended_identity": "Adult masculine neutral Spain Spanish newsroom narrator, using the approved prebuilt Castilian regional voice. Not a person imitation.",
+    "style": "Locución informativa neutral, seria, sobria y natural. Dicción clara y ritmo controlado. Sin dramatización ni tono publicitario.",
+}
+# Retain the exact audited profile so the accepted WAV can still be validated
+# without relabelling its job/hash or requiring a new synthesis request.
+CASTILIAN_AUDITION_PROFILE = {
+    "profile_id": "straitwatch_es_castilian_audition_v1", "locale": "es-ES",
+    "intended_identity": "Adult masculine neutral Spain Spanish newsroom narrator, using a prebuilt regional catalog voice. Not a person imitation; audition pending.",
+    "style": CASTILIAN_PROFILE["style"],
 }
 DEFAULT_RULES = Path(__file__).resolve().parent.parent / "voice-pronunciation.json"
 
@@ -48,18 +63,28 @@ def digest(value: Any) -> str:
     return hashlib.sha256(canonical_json(value).encode("utf-8")).hexdigest()
 
 
-def voice_config(language: str, *, model: str | None = None, voice: str | None = None) -> dict:
+def voice_config(language: str, *, model: str | None = None, voice: str | None = None, profile_id: str | None = None) -> dict:
     if language not in PROFILES:
         raise VoiceError("UNSUPPORTED_LANGUAGE")
     model = model or os.getenv("GEMINI_TTS_MODEL") or "gemini-3.8-flash-tts"
-    voice = voice or os.getenv(f"GEMINI_TTS_VOICE_{language.upper()}") or "Charon"
+    voice = voice or os.getenv(f"GEMINI_TTS_VOICE_{language.upper()}") or DEFAULT_VOICES[language]
     if model not in ALLOWED_MODELS:
         raise VoiceError("MODEL_NOT_ALLOWED")
     if voice not in ALLOWED_VOICES:
         raise VoiceError("VOICE_NOT_ALLOWED")
+    if voice == CASTILIAN_VOICE:
+        if language != "es":
+            raise VoiceError("VOICE_LANGUAGE_MISMATCH")
+        profile = CASTILIAN_PROFILE
+        if profile_id == CASTILIAN_AUDITION_PROFILE["profile_id"]:
+            profile = CASTILIAN_AUDITION_PROFILE
+    else:
+        profile = PROFILES[language]
+    if profile_id is not None and profile_id != profile["profile_id"]:
+        raise VoiceError("PROFILE_NOT_ALLOWED_FOR_VOICE")
     return {
         "provider": "gemini", "model": model, "voice": voice,
-        "language": language, **PROFILES[language],
+        "language": language, **profile,
         "request_version": "gemini-interactions-tts-v1",
         "output_format": "wav_pcm16_native", "automatic_model_fallback": False,
         "local_fallback": "deferred-not-configured",
@@ -69,7 +94,7 @@ def voice_config(language: str, *, model: str | None = None, voice: str | None =
 def validate_config(config: dict, language: str) -> None:
     if not isinstance(config, dict):
         raise VoiceError("INVALID_CONFIG")
-    expected = voice_config(language, model=config.get("model", "invalid"), voice=config.get("voice", "invalid"))
+    expected = voice_config(language, model=config.get("model", "invalid"), voice=config.get("voice", "invalid"), profile_id=config.get("profile_id", "invalid"))
     if config != expected:
         raise VoiceError("INVALID_CONFIG")
 

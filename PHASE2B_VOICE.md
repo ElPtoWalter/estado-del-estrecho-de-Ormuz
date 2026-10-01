@@ -1,6 +1,6 @@
 # StraitWatch · Fase 2B Gemini Voice
 
-Contrato de arquitectura **3.0.0**. Artefactos `voice-input` y metadatos **1.0.0**.
+Contrato de arquitectura **3.1.0**. Artefactos `voice-input` y metadatos **1.0.0**.
 Sustituye el contrato experimental 2.0.0, nunca integrado, ligado a ElevenLabs.
 No modifica Fase 1, Fase 2A, Fase 2C existente, decisiones operativas, datos públicos
 ni páginas web. No produce vídeo ni publica audio. Revisión humana obligatoria.
@@ -27,7 +27,7 @@ Proveedor único remoto: Gemini. REST Interactions API, una petición síncrona,
 | --- | --- | --- |
 | `GEMINI_API_KEY` | secreto existente | obligatorio para síntesis, nunca en artefactos |
 | `GEMINI_TTS_MODEL` | `gemini-3.8-flash-tts` | solo este y `gemini-3.8-flash-lite-tts` |
-| `GEMINI_TTS_VOICE_ES` | `Charon` | catálogo cerrado de voces predefinidas |
+| `GEMINI_TTS_VOICE_ES` | `es-es-advisor-2` | voz regional predefinida es-ES aprobada |
 | `GEMINI_TTS_VOICE_EN` | `Charon` | misma lista; estructura EN, no audicionada |
 
 Modelo seleccionado explícitamente por calidad. Google documenta nivel gratuito
@@ -53,12 +53,25 @@ Fuentes oficiales consultadas:
 
 ## Voz editorial común
 
-`straitwatch_es_v1`: intención de voz adulta masculina, español peninsular,
-profesional, neutral, sobria, natural, autoridad moderada y ritmo controlado.
-Se utiliza Charon predefinida, descrita por Google como informativa. La identidad
-percibida, el acento y la calidad requieren escucha: **no se garantiza que el
-prompt consiga todos los atributos**. No se diseña, clona ni imita a una persona.
-Ormuz y Gibraltar comparten exactamente configuración, módulos y pruebas.
+`straitwatch_es_v2`: voz regional predefinida `es-es-advisor-2`, masculino,
+es-ES, acento de catálogo Castilian Spanish. El usuario escuchó la muestra de
+Gibraltar y aprobó esta voz el 2 octubre 2026 («me encanta»). El perfil comparte
+voz e instrucciones exactas de esa audición, sin diseñar, clonar o imitar a una
+persona. Ormuz y Gibraltar comparten configuración, módulos y pruebas.
+
+Charon / `straitwatch_es_v1` se conserva como alternativa seleccionable
+explícitamente, **nunca como fallback automático**. EN continúa en Charon, sin
+audición inglesa. Las combinaciones de voz regional española con EN y de perfil
+incompatible se rechazan. No se consulta el catálogo en cada generación.
+
+La muestra aceptada conserva su perfil experimental
+`straitwatch_es_castilian_audition_v1`, IDs, metadatos y bytes originales; no se
+reetiqueta como un nuevo job ni se sintetiza otra vez. Los validadores admiten
+ese perfil histórico y el legado Charon. El perfil de uso v2 tiene identidad
+propia, pero envía al proveedor exactamente la misma voz y estilo aprobados.
+La aprobación de identidad/acento no aprueba automáticamente futuros guiones,
+cifras o pronunciaciones: cada audio nuevo sigue en revisión humana PENDING.
+Trazabilidad completa en `PHASE2B_CASTILIAN_APPROVAL.md`.
 
 Las instrucciones están en `speech_metadata.style`, NO en el texto pronunciado.
 Se especifica un ritmo orientativo según palabras y objetivo, sin cortar,
@@ -181,6 +194,9 @@ ausente puede comprobarse preparación y pruebas pero no crear voz ficticia.
 
 ## Puerta de salida
 
-Un piloto Gemini PASS en cada estrecho, un WAV audible de cada uno, informes y
-PRs sin merge. Después **parar para aprobación auditiva del usuario**. No iniciar
-automatización recurrente, publicar o modificar Fase 2C con este encargo.
+Los pilotos Gemini originales tienen PASS en ambos estrechos; una audición
+regional adicional de Gibraltar tiene PASS y aprobación humana de la voz.
+La elección está aplicada a ambos borradores, sin merge. No se atribuye a Ormuz
+una audición regional que no se ha generado. No iniciar automatización
+recurrente, publicar o modificar Fase 2C con este encargo. Cada pieza conserva
+su propia revisión editorial/auditiva pendiente antes de cualquier publicación.

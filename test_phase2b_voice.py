@@ -364,6 +364,7 @@ class VoiceTests(unittest.TestCase):
         self.assertNotIn("  push:", text)
         self.assertNotIn("  schedule:", text)
         self.assertIn("contents: read", text)
+        self.assertIn("vars.GEMINI_TTS_VOICE_ES || 'es-es-advisor-2'", text)
         self.assertNotIn("contents: write", text)
         self.assertNotIn("ELEVENLABS", text)
         self.assertNotIn("deploy", text.lower())
@@ -376,6 +377,42 @@ class VoiceTests(unittest.TestCase):
             self.assertTrue(fixture["historical_fixture"])
             self.assertEqual(len(fixture["source_commit"]), 40)
             self.assertEqual(package["site"], site)
+
+    @patch.dict(os.environ, {"GEMINI_TTS_VOICE_ES": "", "GEMINI_TTS_VOICE_EN": ""})
+    def test_approved_castilian_default_shared_by_both_sites(self):
+        for site in ("ormuz", "gibraltar"):
+            package, script, fixture = load_pilot_fixture(site)
+            value = build_voice_input(package, script)
+            self.assertEqual(value["voice_config"]["voice"], "es-es-advisor-2")
+            self.assertEqual(value["voice_config"]["profile_id"], "straitwatch_es_v2")
+            self.assertEqual(value["language"], "es")
+        self.assertEqual(voice_config("en")["voice"], "Charon")
+
+    def test_legacy_charon_profile_preserved(self):
+        config = voice_config("es", voice="Charon")
+        self.assertEqual(config["profile_id"], "straitwatch_es_v1")
+        validate_voice_input(self.package, self.script, self.value)
+
+    def test_accepted_audition_profile_preserved_without_rebinding(self):
+        from phase2_voice.schema import CASTILIAN_AUDITION_PROFILE
+        config = voice_config("es", voice="es-es-advisor-2", profile_id=CASTILIAN_AUDITION_PROFILE["profile_id"])
+        value = build_voice_input(self.package, self.script, config=config)
+        validate_voice_input(self.package, self.script, value)
+        self.assertEqual(config["profile_id"], "straitwatch_es_castilian_audition_v1")
+        current = build_voice_input(self.package, self.script, config=voice_config("es", voice="es-es-advisor-2"))
+        self.assertNotEqual(value["voice_job_id"], current["voice_job_id"])
+        self.assertEqual(request_payload(value), request_payload(current))
+
+    def test_regional_voice_profiles_fail_closed(self):
+        self.assert_code("VOICE_LANGUAGE_MISMATCH", lambda: voice_config("en", voice="es-es-advisor-2"))
+        self.assert_code("PROFILE_NOT_ALLOWED_FOR_VOICE", lambda: voice_config("es", voice="Charon", profile_id="straitwatch_es_v2"))
+        self.assert_code("PROFILE_NOT_ALLOWED_FOR_VOICE", lambda: voice_config("es", voice="es-es-advisor-2", profile_id="straitwatch_es_v1"))
+
+    def test_new_audio_remains_pending_even_with_approved_voice_identity(self):
+        value = build_voice_input(self.package, self.script, config=voice_config("es", voice="es-es-advisor-2"))
+        report = self.report(metadata=make_metadata(value, self.audio), value=value)
+        self.assertEqual(report["validation_status"], "PASS")
+        self.assertEqual(report["human_review_status"], "PENDING")
 
 
 if __name__ == "__main__":
