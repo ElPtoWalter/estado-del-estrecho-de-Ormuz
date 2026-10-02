@@ -9,8 +9,9 @@ a la duración real del WAV, sin cortar, acelerar o volver a sintetizar voz.
 
 El usuario aprobó los pilotos y autorizó un proceso manual repetible en ambos
 proyectos. Prefirió aplazar el pulido visual y la sincronización fina.
-No hay autorización de merge, publicación, distribución social, avatar,
-generación recurrente o activación de facturación.
+El 02/10/2026 el usuario autorizó revisar y fusionar las dependencias para
+habilitar el montaje manual en main. Esta autorización no incluye publicación,
+distribución social, avatar, generación recurrente ni activación de facturación.
 
 Código y pruebas comunes idénticos en ambos repositorios:
 `phase2_montage.py`, `test_phase2d_montage.py`, `requirements-montage.txt`.
@@ -92,9 +93,21 @@ sin commit/push/deploy, sin publicar. Entrega artefactos internos durante 14 dí
 ejecuta regresiones sin API, pruebas de caché con tono sintético (no voz humana)
 y montaje de un WAV ya existente para probar la integración. No llama a TTS.
 
-Los workflows nuevos quedan propuestos en una rama dependiente de los PR de
-voz, todavía en borrador. El botón manual en main requiere que sus dependencias
-y esta integración se revisen y fusionen: no se fusiona nada automáticamente.
+Los workflows se prepararon en una rama dependiente de los PR de voz y se
+validaron sin API antes de solicitar la integración. El usuario autorizó
+explícitamente la revisión y fusión el 02/10/2026. Orden de activación: primero
+la dependencia de voz y después la integración de montaje, conservando las
+noticias actuales de main. El botón manual estará disponible cuando el workflow
+forme parte de la rama por defecto; no se lanza ninguna generación al fusionar.
+
+Historial, validaciones y estado de fusión:
+- Ormuz: [voz #14](https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/pull/14)
+  y [montaje #15](https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/pull/15).
+- Gibraltar: [voz #18](https://github.com/ElPtoWalter/Gibraltar-Watch/pull/18)
+  y [montaje #19](https://github.com/ElPtoWalter/Gibraltar-Watch/pull/19).
+
+Los artefactos siguen siendo internos e históricos: fusionar infraestructura
+no aprueba la transcripción ni autoriza publicar una pieza.
 
 Audios de comprobación, sin síntesis nueva:
 - Ormuz: run 36980491324, artefacto phase2b-gemini-ormuz-5,
