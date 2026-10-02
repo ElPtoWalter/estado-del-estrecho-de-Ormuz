@@ -8,8 +8,11 @@ on:
       - "voice-pronunciation.json"
       - "phase2b-pilot-fixtures.json"
       - "pilot_phase2b_voice.py"
+      - "prepare_phase2a_ormuz_es.py"
+      - "test_phase2a_editorial.py"
       - "test_phase2b_voice.py"
       - "PHASE2B_*.md"
+      - "PHASE2A_ORMUZ_ES_REVISION.md"
       - ".github/workflows/phase2b-voice-ci.yml"
       - ".github/workflows/pilot-phase2b-voice.yml"
   workflow_dispatch:
@@ -31,7 +34,7 @@ jobs:
           python-version: "3.12"
       - name: Compilar y ejecutar todas las pruebas de regresión
         run: |
-          python -m compileall -q phase2_voice pilot_phase2b_voice.py test_phase2b_voice.py
+          python -m compileall -q phase2_voice pilot_phase2b_voice.py test_phase2b_voice.py prepare_phase2a_ormuz_es.py test_phase2a_editorial.py
           python -m unittest discover -v
       - name: Interfaz pública intacta
         run: node --test test_public_ui.cjs

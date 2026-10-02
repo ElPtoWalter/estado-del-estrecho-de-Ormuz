@@ -29,12 +29,13 @@ jobs:
         env:
           GEMINI_API_KEY: ""
           OPENROUTER_API_KEY: ""
-        run: python -m unittest -v test_phase2b_voice.py test_video_rules.py test_video_package.py test_video_script.py test_video_validator.py
+        run: python -m unittest -v test_phase2a_editorial.py test_phase2b_voice.py test_video_rules.py test_video_package.py test_video_script.py test_video_validator.py
 
       - name: Preparar y revalidar material real de Fase 2A
         id: input
         run: |
-          python pilot_phase2b_voice.py --site "$SITE" --output-dir "${{ runner.temp }}/phase2b-voice" --prepare-only
+          python prepare_phase2a_ormuz_es.py --output-dir "${{ runner.temp }}/phase2a-editorial-es"
+          python pilot_phase2b_voice.py --site "$SITE" --package "${{ runner.temp }}/phase2a-editorial-es/video-package.json" --script "${{ runner.temp }}/phase2a-editorial-es/script.json" --fixture-metadata "${{ runner.temp }}/phase2a-editorial-es/validation-report.json" --output-dir "${{ runner.temp }}/phase2b-voice" --prepare-only
           python -c 'import json, os; p=json.load(open(os.environ["RUNNER_TEMP"]+"/phase2b-voice/voice-input.json")); print("job_id="+p["voice_job_id"].split(":")[-1])' >> "$GITHUB_OUTPUT"
 
       - name: Reutilizar solo el WAV y sus metadatos vinculados a este job

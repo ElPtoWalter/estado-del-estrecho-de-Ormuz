@@ -1,5 +1,14 @@
 # PHASE2B_CLOSURE_REPORT · StraitWatch Gemini Voice
 
+## Revisión editorial posterior · Ormuz en castellano
+
+El usuario autorizó corregir el titular inglés en Fase 2A y regenerar solo
+Ormuz. Se conservan fuentes, EN original, verificación, estado e incertidumbre;
+paquete y guion nuevos pasan 2A sin relajar validadores. El piloto manual se
+alimenta de esos artefactos, sin alterar el texto desde TTS. Documentación en
+`PHASE2A_ORMUZ_ES_REVISION.md`. Los informes y duraciones inferiores son de
+audiciones anteriores, no se atribuyen al nuevo job. No merge ni publicación.
+
 ## Actualización · 2 octubre 2026
 
 **Identidad vocal castellana aprobada por el usuario y adoptada en ambos

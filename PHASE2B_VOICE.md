@@ -194,6 +194,11 @@ ausente puede comprobarse preparación y pruebas pero no crear voz ficticia.
 
 ## Puerta de salida
 
+El usuario autorizó una revisión editorial ES del titular de Ormuz. El piloto
+manual de este repo consume ahora la pareja nueva revalidada por Fase 2A; la
+fixture y los masters originales siguen intactos. No es una traducción ni una
+limpieza dentro de TTS. Véase `PHASE2A_ORMUZ_ES_REVISION.md`. Gibraltar no cambia.
+
 Los pilotos Gemini originales tienen PASS en ambos estrechos; una audición
 regional adicional de Gibraltar tiene PASS y aprobación humana de la voz.
 La elección está aplicada a ambos borradores, sin merge. El piloto regional
