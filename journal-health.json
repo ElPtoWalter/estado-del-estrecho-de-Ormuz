@@ -1,20 +1,20 @@
 {
   "version": 11,
-  "generated_at": "2026-10-01T11:51:00Z",
+  "generated_at": "2026-10-02T11:22:57Z",
   "ok": true,
-  "date": "2026-10-01",
+  "date": "2026-10-02",
   "material_score": 4,
   "material_archive": true,
-  "news_considered": 23,
-  "new_articles": 20,
-  "source_brands": 7,
+  "news_considered": 25,
+  "new_articles": 15,
+  "source_brands": 8,
   "fetch_errors": [],
   "operational_intelligence_used": true,
   "editor_engine": "gemini",
   "editor_assistant_status": "ok",
   "editorial_trace": {
     "validator_version": 2,
-    "factual_packet_sha256": "6d9c7e9688ec6378b29e1154e56b2ae9b59ef421c55aff094e8f7427e0b9e7ce",
+    "factual_packet_sha256": "658deb8e88fe1ea85a673c87fa8a3b10c8feb8abeee187963eb7eec89f1021ac",
     "provider": "gemini",
     "status": "ok",
     "attempts": [
@@ -23,11 +23,12 @@
         "model": "gemini-3.5-flash-lite"
       }
     ],
-    "factual_packet_hash": "6d9c7e9688ec6378b29e1154e56b2ae9b59ef421c55aff094e8f7427e0b9e7ce",
+    "factual_packet_hash": "658deb8e88fe1ea85a673c87fa8a3b10c8feb8abeee187963eb7eec89f1021ac",
     "event_ids": [
       "evt_c26f87164bf1ec62",
-      "evt_2c602055ab00dd19",
       "evt_0d6a20a8ad1f50ad",
+      "evt_e7b4caaf98630e9a",
+      "evt_2c602055ab00dd19",
       "evt_5c0295ad9e8285a6",
       "evt_94c6df07f60940c1",
       "evt_8823ed77daa88274",
@@ -43,11 +44,11 @@
       "evt_c1a404e1569ed437",
       "evt_f3222a70c26defbb",
       "evt_bf19ae993fa0b683",
-      "evt_bc4aec9ce0e18d69",
-      "evt_b28785a76b2e5e18"
+      "evt_bc4aec9ce0e18d69"
     ],
     "source_ids": [
       "aljazeera",
+      "bloomberg",
       "cnbc",
       "euronews",
       "guardian",
@@ -55,18 +56,19 @@
       "national_security_journal",
       "reuters",
       "sunday_guardian",
-      "tradewinds"
+      "tradewinds",
+      "unknown"
     ],
     "verification_summary": {
-      "CONFIRMED_MULTI_SOURCE": 1,
+      "CONFIRMED_MULTI_SOURCE": 0,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 4,
-      "SINGLE_SOURCE": 21,
-      "UNCONFIRMED": 27,
-      "TOTAL": 53
+      "SINGLE_SOURCE": 22,
+      "UNCONFIRMED": 28,
+      "TOTAL": 54
     },
-    "timestamp": "2026-10-01T11:51:00Z",
+    "timestamp": "2026-10-02T11:22:57Z",
     "fallback_used": false
   }
 }
