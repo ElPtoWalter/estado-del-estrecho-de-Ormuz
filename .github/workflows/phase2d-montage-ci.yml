@@ -1,0 +1,64 @@
+name: Fase 2D · Integración de montaje y regresiones sin TTS
+
+on:
+  pull_request:
+    branches: [main, phase2b-gemini-tts]
+    paths:
+      - "phase2_montage.py"
+      - "test_phase2d_montage.py"
+      - "requirements-montage.txt"
+      - "PHASE2D_MANUAL_MONTAGE.md"
+      - ".github/workflows/phase2d-montage-ci.yml"
+      - ".github/workflows/pilot-phase2d-montage.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SITE: ormuz
+      GEMINI_API_KEY: ""
+      OPENROUTER_API_KEY: ""
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Preparar herramientas locales de montaje
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg librsvg2-bin fonts-liberation2
+          python -m pip install -r requirements-montage.txt
+      - name: Compilar y ejecutar todas las regresiones
+        run: |
+          python -m compileall -q phase2_montage.py test_phase2d_montage.py
+          python -m unittest discover -v
+      - name: Interfaz pública sin cambios
+        run: node --test test_public_ui.cjs
+      - name: Descargar solo un artefacto de voz ya existente
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: '36980491324'
+          SOURCE_ARTIFACT: phase2b-gemini-ormuz-5
+        run: |
+          set -euo pipefail
+          [[ "$SOURCE_RUN_ID" =~ ^[0-9]+$ ]]
+          [[ "$SOURCE_ARTIFACT" =~ ^[a-zA-Z0-9_.-]+$ ]]
+          gh run download "$SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" --name "$SOURCE_ARTIFACT" --dir "$RUNNER_TEMP/phase2d-source"
+      - name: Revalidar audio y generar preview interna sin TTS
+        env:
+          EXPECTED_WAV_SHA256: 0f65d86951e4f855ad5f2a032fa2d582268b9bf18d7be5b5a34356892cf6d259
+        run: |
+          python phase2_montage.py --site "$SITE" --input-dir "$RUNNER_TEMP/phase2d-source" --output-dir "$RUNNER_TEMP/phase2d-preview" --expected-audio-sha256 "$EXPECTED_WAV_SHA256"
+      - name: Entregar preview temporal con subtítulos y comprobaciones
+        uses: actions/upload-artifact@v7
+        with:
+          name: phase2d-montage-ormuz-${{ github.run_id }}
+          path: ${{ runner.temp }}/phase2d-preview/
+          if-no-files-found: error
+          retention-days: 14

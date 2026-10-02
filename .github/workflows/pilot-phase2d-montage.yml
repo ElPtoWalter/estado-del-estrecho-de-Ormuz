@@ -1,0 +1,71 @@
+name: Piloto manual · Montaje de vídeo sin nueva voz
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Run de voz existente de este mismo repositorio
+        required: true
+        type: string
+        default: '36980491324'
+      source_artifact:
+        description: Nombre exacto del artefacto de voz existente
+        required: true
+        type: string
+        default: 'phase2b-gemini-ormuz-5'
+      expected_audio_sha256:
+        description: SHA256 esperado del WAV para confirmar la pieza
+        required: true
+        type: string
+        default: '0f65d86951e4f855ad5f2a032fa2d582268b9bf18d7be5b5a34356892cf6d259'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: phase2d-manual-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  montage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SITE: ormuz
+      GEMINI_API_KEY: ""
+      OPENROUTER_API_KEY: ""
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Preparar herramientas locales de montaje
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg librsvg2-bin fonts-liberation2
+          python -m pip install -r requirements-montage.txt
+      - name: Pruebas sin llamadas a proveedores
+        run: python -m unittest -v test_phase2d_montage.py
+      - name: Descargar solo un artefacto de voz ya existente
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          SOURCE_ARTIFACT: ${{ inputs.source_artifact }}
+        run: |
+          set -euo pipefail
+          [[ "$SOURCE_RUN_ID" =~ ^[0-9]+$ ]]
+          [[ "$SOURCE_ARTIFACT" =~ ^[a-zA-Z0-9_.-]+$ ]]
+          gh run download "$SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" --name "$SOURCE_ARTIFACT" --dir "$RUNNER_TEMP/phase2d-source"
+      - name: Revalidar audio y generar preview interna sin TTS
+        env:
+          EXPECTED_WAV_SHA256: ${{ inputs.expected_audio_sha256 }}
+        run: |
+          python phase2_montage.py --site "$SITE" --input-dir "$RUNNER_TEMP/phase2d-source" --output-dir "$RUNNER_TEMP/phase2d-preview" --expected-audio-sha256 "$EXPECTED_WAV_SHA256"
+      - name: Entregar preview temporal con subtítulos y comprobaciones
+        uses: actions/upload-artifact@v7
+        with:
+          name: phase2d-montage-ormuz-${{ github.run_id }}
+          path: ${{ runner.temp }}/phase2d-preview/
+          if-no-files-found: error
+          retention-days: 14
