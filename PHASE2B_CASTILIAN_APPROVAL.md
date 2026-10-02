@@ -1,5 +1,11 @@
 # StraitWatch · Aprobación de identidad vocal castellana
 
+Actualización posterior: el usuario autorizó corregir el titular inglés desde
+Fase 2A y regenerar solo Ormuz. Esa nueva pieza tiene PASS remoto/local y 52,04 s;
+su escucha específica sigue PENDING. La fuente original y los masters previos
+no se sobrescriben. Trazabilidad en `PHASE2A_ORMUZ_ES_REVISION.md`. Los resultados
+de las audiciones iniciales descritos abajo conservan su valor histórico.
+
 Fecha de aprobación: 2 octubre 2026. Evidencia humana: el usuario respondió
 «me encanta» después de escuchar la audición regional de Gibraltar. Alcance:
 elección de esa voz/acento como identidad común de Ormuz y Gibraltar.

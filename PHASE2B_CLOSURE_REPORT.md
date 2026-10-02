@@ -9,6 +9,12 @@ alimenta de esos artefactos, sin alterar el texto desde TTS. Documentación en
 `PHASE2A_ORMUZ_ES_REVISION.md`. Los informes y duraciones inferiores son de
 audiciones anteriores, no se atribuyen al nuevo job. No merge ni publicación.
 
+Nuevo piloto revisado PASS remoto y local: WAV de 52,04 s, mismo modelo, voz y
+perfil castellanos. 113 pruebas locales PASS y CI completa de la base de código
+en verde. Los cuatro masters anteriores mantienen sus hashes. La nueva pieza
+sigue en revisión auditiva humana PENDING; ASR NOT_RUN. No se ha regenerado
+Gibraltar ni modificado su borrador.
+
 ## Actualización · 2 octubre 2026
 
 **Identidad vocal castellana aprobada por el usuario y adoptada en ambos

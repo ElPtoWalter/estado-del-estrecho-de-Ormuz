@@ -57,3 +57,24 @@ Gibraltar no se modifican. No se repite ninguna síntesis de Gibraltar.
 model fallback, cortes o aceleración. Los masters anteriores quedan intactos.
 Histórico del 21 septiembre: no se presenta como actualidad. PASS es técnico;
 escucha de la nueva pieza PENDING y transcripción acústica/ASR NOT_RUN.
+
+## Resultado del piloto revisado
+
+[Ejecución manual PASS](https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/actions/runs/36980491324),
+commit temporal `97ce68e62b3385d810c23ed00b8deb37564a5c14`, base de implementación
+`3c13bc16566340d6a1a34830eb67304df67881b7`. Validación local independiente del
+artefacto descargado también PASS; nuevo paquete, guion, entrada y procedencia
+coinciden exactamente con la revisión 2A y el job preparado.
+
+WAV nativo PCM16 mono 24 kHz: 52,04 s frente a 60 s (-13,27%), 2503988 bytes,
+1248960 frames, RMS -21,405 dBFS, clipping 0. Master SHA256:
+`0f65d86951e4f855ad5f2a032fa2d582268b9bf18d7be5b5a34356892cf6d259`.
+Una única petición Gemini; cache_hit false. No se conoce el tier de la cuenta
+ni se afirma coste facturado cero. Los cuatro masters anteriores se preservan.
+
+113 pruebas locales de revisión/voz/contratos 2A PASS. La CI completa Linux
+de la base de código también pasa:
+[regresiones 2B](https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/actions/runs/36980413578),
+[Fase 1](https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/actions/runs/36980413479).
+La revisión auditiva humana sigue pendiente: no se afirma coincidencia de
+transcripción acústica sin ASR o escucha. No merge ni publicación.
