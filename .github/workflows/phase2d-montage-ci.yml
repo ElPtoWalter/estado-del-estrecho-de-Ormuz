@@ -24,6 +24,7 @@ jobs:
       SITE: ormuz
       GEMINI_API_KEY: ""
       OPENROUTER_API_KEY: ""
+    steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
         with:
