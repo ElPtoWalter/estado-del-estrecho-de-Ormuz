@@ -152,6 +152,10 @@ class MontageTests(unittest.TestCase):
         self.assertEqual(value["voice_config"]["profile_id"], "straitwatch_es_castilian_audition_v1")
 
     def test_manual_workflow_has_no_generation_keys_or_schedule(self):
+        for name in ("pilot-phase2d-montage.yml", "phase2d-montage-ci.yml"):
+            workflow = (montage.REPO_ROOT / ".github/workflows" / name).read_text(encoding="utf-8")
+            self.assertIn("\n    steps:\n      - uses: actions/checkout@v6\n", workflow)
+            self.assertNotIn('\n      OPENROUTER_API_KEY: ""\n      - uses:', workflow)
         text = (montage.REPO_ROOT / ".github/workflows/pilot-phase2d-montage.yml").read_text(encoding="utf-8")
         self.assertIn("workflow_dispatch:", text)
         self.assertIn("contents: read", text)
@@ -189,6 +193,9 @@ class MontageTests(unittest.TestCase):
             self.assertEqual(first["montage_id"], second["montage_id"])
             self.assertEqual((source / "audio-gemini.wav").read_bytes(), self.material["gibraltar"][-1])
             self.assertEqual(first["delivery"]["source_samples"], 35 * 24000)
+            self.assertEqual(first["delivery"]["compared_samples"], 35 * 24000)
+            self.assertGreaterEqual(first["delivery"]["decoded_samples"], first["delivery"]["source_samples"])
+            self.assertLessEqual(first["delivery"]["decoded_samples"] - first["delivery"]["source_samples"], 2048)
             metadata = montage.read_json(output / "source/audio-metadata.json")
             self.assertEqual(metadata["human_review_status"], "PENDING")
             (output / "subtitles.srt").write_text("corrupt", encoding="utf-8")
