@@ -368,6 +368,7 @@ def check_delivery(root, montage, original_path):
         original = array.array("h", source.readframes(source.getnframes()))
     if not len(original) <= len(decoded) <= len(original) + 2048:
         fail("DELIVERY_AUDIO_SAMPLES")
+    decoded_sample_count = len(decoded)
     decoded = decoded[:len(original)]
     count = len(original)
     a_sum, b_sum = sum(original), sum(decoded)
@@ -380,7 +381,7 @@ def check_delivery(root, montage, original_path):
     return {"video_seconds": float(video["duration"]), "audio_seconds": float(audio["duration"]),
             "video_frames": int(video["nb_read_frames"]), "audio_correlation": correlation,
             "dimensions": [1080, 1920], "fps": FPS, "source_samples": len(original),
-            "decoded_samples": len(decoded), "container": info}
+            "decoded_samples": decoded_sample_count, "compared_samples": count, "container": info}
 
 
 def verify_bundle(root, expected_plan, package, script, original_path):
