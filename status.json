@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-10-03T08:30:47Z",
-  "last_success_at": "2026-10-03T08:30:47Z",
+  "checked_at": "2026-10-03T13:38:05Z",
+  "last_success_at": "2026-10-03T13:38:05Z",
   "last_change_at": "2026-09-28T20:41:51Z",
   "verification_ok": true,
   "stale": false,
@@ -16,6 +16,17 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "U . S . looks to boost Mideast buildup as Trump warns of new Iran strikes",
+      "source_name": "CNBC",
+      "source_id": "cnbc",
+      "source_url": "https://cnbc.com/2026/10/02/us-iran-war-trump-hormuz-.html",
+      "published_at": "2026-10-02T06:51:41Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-10-03T13:38:05Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Iran Claims Its Forces Attacked Nineteen Vessels Over Two Days, Shortly Before Four More Tankers Were Hit Near Hormuz - National Security Journal",
       "source_name": "National Security Journal",
       "source_id": "national_security_journal",
@@ -23,18 +34,7 @@
       "published_at": "2026-10-01T19:34:51Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-03T08:30:47Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Drone-hit Black Sea oil terminal reveals impact of Ukrainian attacks - TradeWinds News",
-      "source_name": "TradeWinds",
-      "source_id": "tradewinds",
-      "source_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxORVFqR2lEZzRJZkRaMkU2UUxETHMxU1J6cm1jdVBsRWNDUXdGdFg5VGZnVXZ3ZFo3YktLaDlMd3NfTmdQcFlVUXJ6VE9CelVCZThUVkFLRl9QbDNHTFJ2VVVaMnV3UXM0Q202SmV6a1hzajRJd1ZxN2lVZHVFc25yUFlGSkt4UUh2UVFwZDVHUDRTRUo1UjZuREE3bXVwU2ZiQ0NqRDNiR2Q0OFlEOG9JY204d1FRSW5tUzRj",
-      "published_at": "2026-10-01T14:35:18Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-10-03T08:30:47Z"
+      "observed_at": "2026-10-03T13:38:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -45,7 +45,7 @@
       "published_at": "2026-10-01T09:35:39Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-03T08:30:47Z"
+      "observed_at": "2026-10-03T13:38:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -56,7 +56,7 @@
       "published_at": "2026-09-30T14:51:26Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-03T08:30:47Z"
+      "observed_at": "2026-10-03T13:38:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -67,40 +67,50 @@
       "published_at": "2026-09-30T12:42:02Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-03T08:30:47Z"
+      "observed_at": "2026-10-03T13:38:05Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Several ships attacked in Strait of Hormuz as Iran launches fresh strikes - TradeWinds News",
+      "source_name": "TradeWinds",
+      "source_id": "tradewinds",
+      "source_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNY1N3bGJZcmZKdVdrak1oSmF5dENlMHAyN2YxZWNmSEE1VDdxMy1mOWN6Wi1Ia3VzRzVUZWJyRzJrQTMxM3JMSEs5NEFKVDNtVi0zNWFFUnFJZHBFV2N6VU5JUXJzWEtoWHhyZmIySUVteG96NlhzcnE2RmtsT25UaWVlZ01TUk1kMnE0U3EwT01uQjY4UHRneEtEMTZrd0lWczEtd3lma1FZazBMbFdYQ2VlQjdCYVRVWTVSV3oyOTU5OXdvZXc",
+      "published_at": "2026-09-30T10:22:18Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-10-03T13:38:05Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 8.305
+      "risk": 9.02
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5
+      "risk": 6
     },
-    "articles_considered": 30,
-    "signals_considered": 8,
-    "current_cycle_evidence": 5,
+    "articles_considered": 34,
+    "signals_considered": 6,
+    "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
-    "evidence_archive_size": 34,
+    "evidence_archive_size": 33,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-10-01T19:34:51Z",
-    "current_cycle_count": 5,
+    "as_of": "2026-10-02T06:51:41Z",
+    "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -116,7 +126,7 @@
       "published_at": "2026-10-02T06:51:41Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-02T23:11:15Z"
+      "observed_at": "2026-10-03T13:38:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -127,7 +137,7 @@
       "published_at": "2026-10-01T19:34:51Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-03T08:30:47Z"
+      "observed_at": "2026-10-03T13:38:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -149,7 +159,7 @@
       "published_at": "2026-10-01T09:35:39Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-03T08:30:47Z"
+      "observed_at": "2026-10-03T13:38:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -160,7 +170,7 @@
       "published_at": "2026-09-30T14:51:26Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-03T08:30:47Z"
+      "observed_at": "2026-10-03T13:38:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -182,7 +192,7 @@
       "published_at": "2026-09-30T10:22:18Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-03T02:16:20Z"
+      "observed_at": "2026-10-03T13:38:05Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -469,23 +479,12 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-09-21T05:20:15Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US-Israel-Iran War Latest Live News: UN Security Council Condemns Houthi Missile Attacks, Warns Of Wider Conflict, Maritime Security & Global Trade Risks; Check Arms Embargo & Latest Yemen Update - The Sunday Guardian",
-      "source_name": "The Sunday Guardian",
-      "source_id": "sunday_guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxQSUczZ2dMd212VmxCdTdSQ05jWEwtbjl3Z2h0Y2pxTmRENEhoV1lTaTV0ODUwYXhmZGwwUkQyU2drazJBVnoxQ1EzdEFYeUVJRnVsVHdwUXdVOFgtaHBOT1NLTjZwaG5vY0dyQ2R4d1dkZjk4SlMtU2JELVZaZlZTRkRDZW5FbUJHeHo5bzdMLUc0TTMyMFcxa1BvZ0h5cnB0NFRyLVRmSGRfQm53Znl6bFZWQkY1S2w2T01hV0J1Yl9vRl9qeEZlUW9RTFF1ZUozajFkVzFGMnd6MVhQR3Q4a2R2Mjl5LWFETDdPLXRUSkF0czRWSkZrSndOLUo0OEJRTWJHRTlXZzlfSjZwQWFoLWxVSHFJS0M3aGFranJyR29fUHFrVHI3ZTBELWdIUzFYYjR0Vjk2YWRoYy1pMS1uZ09lbnB1M0tsOTZXdV9OaU02YURRM1Zz0gHXAkFVX3lxTFBJRzNnZ0x3bXZWbEJ1N1JDTmNYTC1uOXdnaHRjanFOZEQ0SGhXWVNpNXQ4NTBheGZkbDBSRDJTZ2trMkFWejFDUTN0QVh5RUlGdWxUd3BRd1U4WC1ocE5PU0tONnBobm9jR3JDZHh3V2RmOThKUy1TYkQtVlpmVlNGRENlbkVtQkd4ejlvN0wtRzRNMzIwVzFrUG9nSHlycHQ0VHItVGZIZF9CbndmeXpsVlZCRjVLbDZPTWFXQnViX29GX2p4RmVRb1FMUXVlSjNqMWRXMUYyd3oxWFBHdDhrZHYyOXktYURMN08tdFRKQXRzNFZKRmtKd04tSjQ4QlFNYkdFOVdnOV9KNnBBYWgtbFVIcUlLQzdoYWtqcnJHb19QcWtUcjdlMEQtZ0hTMVhiNHRWOTZhZGhjLWkxLW5nT2VucHUzS2w5Nld1X05pTTZhRFEzVnM",
-      "published_at": "2026-09-19T13:07:41Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-20T18:59:48Z"
     }
   ],
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-03T08:31:33Z",
+    "generated_at": "2026-10-03T13:38:21Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -519,14 +518,14 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 6.598,
+      "passage": 3.928,
       "closure": 0,
       "traffic_reduction": 1.035,
-      "access_restriction": 3.58,
-      "risk": 96.81
+      "access_restriction": 3.36,
+      "risk": 90.25
     },
     "source_counts": {
-      "passage": 6,
+      "passage": 4,
       "closure": 0,
       "primary_sources": 2
     },
@@ -546,23 +545,6 @@
         "tier": 4,
         "weight": 3.8,
         "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.8,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Drone-hit Black Sea oil terminal reveals impact of Ukrainian attacks - TradeWinds News",
-        "source": "TradeWinds",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxORVFqR2lEZzRJZkRaMkU2UUxETHMxU1J6cm1jdVBsRWNDUXdGdFg5VGZnVXZ3ZFo3YktLaDlMd3NfTmdQcFlVUXJ6VE9CelVCZThUVkFLRl9QbDNHTFJ2VVVaMnV3UXM0Q202SmV6a1hzajRJd1ZxN2lVZHVFc25yUFlGSkt4UUh2UVFwZDVHUDRTRUo1UjZuREE3bXVwU2ZiQ0NqRDNiR2Q0OFlEOG9JY204d1FRSW5tUzRj",
-        "published_at": "2026-10-01T14:35:18Z",
-        "tier": 4,
-        "weight": 3.8,
-        "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
@@ -593,7 +575,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-03T08:31:33Z",
+        "published_at": "2026-10-03T13:38:21Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -602,23 +584,6 @@
         "traffic_count": null,
         "traffic_average": null,
         "effective_weight": 3.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "KOTC tanker struck in Strait of Hormuz - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWEdMUWNaVkJjQWtVaXFBLXZrOUd3WFhwam9uRGJKME5Hd2JKcnBBQ3lYZmlvRmdwclpHNnoyWC1HYUNNRDdpbXBoNjRUR2o3dXZOUUJnZk1HY0liem5ScWpmNjVIbFFXYjY1UTlWaFlBS3YwMDdjcEdEQldQV0VMMQ",
-        "published_at": "2026-09-29T12:24:14Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 2.48,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -672,29 +637,63 @@
         "effective_weight": 1.8,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Four vessels struck in Hormuz in 24 hours - Seatrade Maritime News",
+        "source": "Seatrade Maritime News",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcVpBeS1VdkNydDI5dzY4NXFSX3lrVi1yWGZ4bmszYTFHUEhuOVU0VTFDYlowSVFseFV6bGhrNEZSeEIxcmpwSmRyWW5vX3c4VWZVRnktNGRrR0hZZlBuQnQyM0oyV2xiR0t4WGNFLXRJdXZqaXE1ellIbHBzdzFJN3BGS1lqZ2VYRUE3Ng",
+        "published_at": "2026-09-30T16:11:53Z",
+        "tier": 2,
+        "weight": 2.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 1.56,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "FORMAL_CLOSURE_CLAIM",
+        "title": "Iran Just Got Handed a Defeat in Hormuz: Crude Exports Are Back to Prewar Levels Even After Tehran Repeatedly Declared It Closed - National Security Journal",
+        "source": "National Security Journal",
+        "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQd0hJQVZhNDlOWG9VR2xsMkMxTjJxaDJjcXJZOUlqS3B1RWlNbXR6S1R3aF9jZk1JMmZMUHFyMnd3Z1VVT2o0Ui00UnlIWUFsdlZfb1lkcTRhQUFNQ1g5REwwMlFoY3hmLURoeGdVbW95aWNtR3BuQ0pURVFTWTJ2b0JscVRyRDh4SEhrRnJCX2hFNmJHQ0lYNXhqaUxSWkxJc3hOZUpnS2ZEUjFGZG9KOXo5aFd1ZDdBTUdvMlVoblQxdE9pTGNlT0VraGRfTzdKOFA4Q2w3azYwY2hVMUN3U1NkTFAyak5vVjlvTERWd1B5a3NsMEI4",
+        "published_at": "2026-10-01T15:32:25Z",
+        "tier": 2,
+        "weight": 1.47,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 1.323,
+        "kind_label_es": "Declaración de cierre",
+        "kind_label_en": "Closure declaration"
       }
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
+      "evt_51e2fbc52cfbe7b3",
       "evt_bc42e52fd335bb74",
       "evt_696f075e54c3dd74",
-      "evt_93ca52f8ab11ec29",
       "evt_51bda117858b048b",
-      "evt_9a660d34d58cd552",
+      "evt_bdcb58ab7815ec4e",
+      "evt_b5db0c07f7faa032",
       "evt_14a8206ad23327a5",
       "evt_367f223bbe75b0d2",
       "evt_faff5097e4256779",
       "evt_e0e67f9fde7848dd",
       "evt_fa35976b9b5db4eb",
+      "evt_9a660d34d58cd552",
       "evt_44865a63cd7df3c7",
-      "evt_7baedc64a75da866",
-      "evt_9a9595424d520f7d",
       "evt_b871fce120178091",
       "evt_bb4f297520e6edcd",
       "evt_a9fed6c6fefa9133",
-      "evt_8bc316aa32c0b454",
-      "evt_1cff3bd7fd0a46b8",
-      "evt_f5d9931ffbf45c5d"
+      "evt_93ca52f8ab11ec29",
+      "evt_7baedc64a75da866",
+      "evt_8bc316aa32c0b454"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 0,
@@ -702,16 +701,16 @@
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 6,
       "SINGLE_SOURCE": 21,
-      "UNCONFIRMED": 31,
-      "TOTAL": 58
+      "UNCONFIRMED": 30,
+      "TOTAL": 57
     },
     "diagnostics": {
-      "signals_considered": 103,
+      "signals_considered": 100,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 58,
-      "article_count_after_deduplication": 127,
+      "event_count": 57,
+      "article_count_after_deduplication": 125,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -723,6 +722,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-03T08:31:33Z"
+    "generated_at": "2026-10-03T13:38:21Z"
   }
 }
