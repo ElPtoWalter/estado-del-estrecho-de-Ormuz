@@ -23,8 +23,10 @@ la generación inglesa conserva su comportamiento anterior.
   larga bloquean el guion antes de llamar al proveedor.
 - El fallback local se valida de verdad; no se devuelve un PASS ficticio.
 - La entrada de voz 1.1 conserva los tipos de evidencia y referencias de contexto.
-  «Hutíes» queda señalado para escucha humana, sin cambiar una palabra por
-  «judíes» ni alterar el texto editorial con una pronunciación no aprobada.
+  El usuario pidió y aprobó la h muda de «hutíes» el 04/10/2026: los nuevos
+  guiones españoles envían «utíes» únicamente a TTS. Guion, gráficos y subtítulos
+  conservan «hutíes». La regla no se aplica a 1.0 ni altera audios anteriores;
+  un diccionario explícito sigue teniendo prioridad.
 - Los gráficos distinguen contexto, hechos, declaraciones e incertidumbre.
 
 ## Fuentes de contexto
@@ -40,8 +42,13 @@ fechas ni cifras al estado del estrecho.
 ## Límites y activación
 
 Integración para uso interno, con publicación audiovisual desactivada.
-No se han habilitado costes, automatizado publicaciones ni generado voz
-con este contrato. El guion 1.1 crea una nueva
+No se han habilitado costes ni automatizado publicaciones. Se ha generado
+una primera muestra histórica de Ormuz con este contrato y una sola petición
+Gemini en nivel gratuito verificado. La pronunciación fue aprobada por el
+usuario. Esa aprobación es independiente de la revisión íntegra de cada
+vídeo y no autoriza publicación automática ni presentar una muestra
+histórica como noticia actual.
+El guion 1.1 crea una nueva
 identidad: nunca reutilizar un audio si su transcripción no coincide exactamente.
 
 La duración por palabras y el storyboard son estimaciones. Los subtítulos finales
