@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-10-03T21:41:17Z",
-  "last_success_at": "2026-10-03T21:41:17Z",
+  "checked_at": "2026-10-04T01:56:08Z",
+  "last_success_at": "2026-10-04T01:56:08Z",
   "last_change_at": "2026-09-28T20:41:51Z",
   "verification_ok": true,
   "stale": false,
@@ -23,18 +23,7 @@
       "published_at": "2026-10-03T20:33:10Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-03T21:41:17Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "U . S . looks to boost Mideast buildup as Trump warns of new Iran strikes",
-      "source_name": "CNBC",
-      "source_id": "cnbc",
-      "source_url": "https://cnbc.com/2026/10/02/us-iran-war-trump-hormuz-.html",
-      "published_at": "2026-10-02T06:51:41Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-10-03T21:41:17Z"
+      "observed_at": "2026-10-04T01:56:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -45,29 +34,29 @@
       "published_at": "2026-10-01T19:34:51Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-03T21:41:17Z"
+      "observed_at": "2026-10-04T01:56:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Tanker Congestion Shunts Vital Oil Transfers Farther From Hormuz - Bloomberg.com",
+      "title": "Tanker Congestion Shunts Vital Oil Transfers Farther From Hormuz - bloomberg.com",
       "source_name": "Bloomberg",
       "source_id": "bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPSkdNeFFtOENDUy1TdGZwaGQwekQtR1NBbV9Tcm5mTFhYZ0ZoVXlEWVY0NlpjSzJfdU9vbExKc3ZBTXFDcUw5MGswUExQYUxmQ0l0NkVXd2pzR0pUUC1QYkNGZF92YnliMDRJcEVaZ1VxWGt6ZVVDbjNobFFLRDhPSXVBQzlmdVRKY0tmTTNYR2UwZ2VMVjg0Vi1EZWRPem8xM0JuckJ1cjRwZ05Rc0ZIdlZOOXpYZw",
       "published_at": "2026-10-01T09:35:39Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-03T21:41:17Z"
+      "observed_at": "2026-10-04T01:56:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Trio of Hormuz attacks disclosed as US-Iran ceasefire talks fail - lloydslist.com",
+      "title": "Trio of Hormuz attacks disclosed as US-Iran ceasefire talks fail - Lloyd's List",
       "source_name": "Lloyd's List",
       "source_id": "lloyds_list",
       "source_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxObVVRcEJtdGxhT1hSX1E2WDM2UldOU0RGQ3FfZkthb0pTZDhaTXFxYWFMMFUzQlNIWTVFekFlNnVqVXNfNWJUNUoxckVJc2o2M0xuSDVCUW02QlFpNGxFUmFwdmJZYmxHZkVneHBlSHVVZk9RNFZ2alRhYWd3dnpnWllxNUVSOFpSWTJ4dTVIMjJXdlJiYlJqQ0JXTUhxajJnUHlz",
       "published_at": "2026-09-30T14:51:26Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-03T21:41:17Z"
+      "observed_at": "2026-10-04T01:56:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,31 +67,32 @@
       "published_at": "2026-09-30T10:22:18Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-03T21:41:17Z"
+      "observed_at": "2026-10-04T01:56:08Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 9.02
+      "risk": 7.645
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 6
+      "risk": 5
     },
-    "articles_considered": 34,
-    "signals_considered": 7,
-    "current_cycle_evidence": 6,
+    "articles_considered": 26,
+    "signals_considered": 6,
+    "current_cycle_evidence": 5,
     "evidence_display_mode": "current",
     "evidence_archive_size": 35,
     "evidence_archive_days": 14
@@ -110,7 +100,7 @@
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-10-03T20:33:10Z",
-    "current_cycle_count": 6,
+    "current_cycle_count": 5,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -126,7 +116,7 @@
       "published_at": "2026-10-03T20:33:10Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-03T21:41:17Z"
+      "observed_at": "2026-10-04T01:56:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -159,7 +149,7 @@
       "published_at": "2026-10-01T19:34:51Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-03T21:41:17Z"
+      "observed_at": "2026-10-04T01:56:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -174,25 +164,25 @@
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Tanker Congestion Shunts Vital Oil Transfers Farther From Hormuz - Bloomberg.com",
+      "title": "Tanker Congestion Shunts Vital Oil Transfers Farther From Hormuz - bloomberg.com",
       "source_name": "Bloomberg",
       "source_id": "bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPSkdNeFFtOENDUy1TdGZwaGQwekQtR1NBbV9Tcm5mTFhYZ0ZoVXlEWVY0NlpjSzJfdU9vbExKc3ZBTXFDcUw5MGswUExQYUxmQ0l0NkVXd2pzR0pUUC1QYkNGZF92YnliMDRJcEVaZ1VxWGt6ZVVDbjNobFFLRDhPSXVBQzlmdVRKY0tmTTNYR2UwZ2VMVjg0Vi1EZWRPem8xM0JuckJ1cjRwZ05Rc0ZIdlZOOXpYZw",
       "published_at": "2026-10-01T09:35:39Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-03T21:41:17Z"
+      "observed_at": "2026-10-04T01:56:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Trio of Hormuz attacks disclosed as US-Iran ceasefire talks fail - lloydslist.com",
+      "title": "Trio of Hormuz attacks disclosed as US-Iran ceasefire talks fail - Lloyd's List",
       "source_name": "Lloyd's List",
       "source_id": "lloyds_list",
       "source_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxObVVRcEJtdGxhT1hSX1E2WDM2UldOU0RGQ3FfZkthb0pTZDhaTXFxYWFMMFUzQlNIWTVFekFlNnVqVXNfNWJUNUoxckVJc2o2M0xuSDVCUW02QlFpNGxFUmFwdmJZYmxHZkVneHBlSHVVZk9RNFZ2alRhYWd3dnpnWllxNUVSOFpSWTJ4dTVIMjJXdlJiYlJqQ0JXTUhxajJnUHlz",
       "published_at": "2026-09-30T14:51:26Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-03T21:41:17Z"
+      "observed_at": "2026-10-04T01:56:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -214,7 +204,7 @@
       "published_at": "2026-09-30T10:22:18Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-03T21:41:17Z"
+      "observed_at": "2026-10-04T01:56:08Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -506,7 +496,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-03T21:41:37Z",
+    "generated_at": "2026-10-04T01:56:43Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -542,16 +532,16 @@
     "scores": {
       "passage": 2.837,
       "closure": 0,
-      "traffic_reduction": 1.56,
-      "access_restriction": 3.98,
-      "risk": 87.378
+      "traffic_reduction": 0.78,
+      "access_restriction": 3.86,
+      "risk": 87.718
     },
     "source_counts": {
       "passage": 3,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-10-02T11:57:00Z",
+    "latest_confirmed_transit_at": "2026-10-02T23:27:59Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -580,7 +570,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-03T21:41:37Z",
+        "published_at": "2026-10-04T01:56:43Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -594,7 +584,7 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Trio of Hormuz attacks disclosed as US-Iran ceasefire talks fail - lloydslist.com",
+        "title": "Trio of Hormuz attacks disclosed as US-Iran ceasefire talks fail - Lloyd's List",
         "source": "Lloyd's List",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxObVVRcEJtdGxhT1hSX1E2WDM2UldOU0RGQ3FfZkthb0pTZDhaTXFxYWFMMFUzQlNIWTVFekFlNnVqVXNfNWJUNUoxckVJc2o2M0xuSDVCUW02QlFpNGxFUmFwdmJZYmxHZkVneHBlSHVVZk9RNFZ2alRhYWd3dnpnWllxNUVSOFpSWTJ4dTVIMjJXdlJiYlJqQ0JXTUhxajJnUHlz",
         "published_at": "2026-09-30T14:51:26Z",
@@ -656,7 +646,7 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 2.0,
+        "effective_weight": 1.8,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -697,16 +687,14 @@
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
-      "evt_e92e4839a47eac66",
-      "evt_bc42e52fd335bb74",
-      "evt_96a9747e77454935",
-      "evt_51e2fbc52cfbe7b3",
-      "evt_64338a6ab890f52b",
       "evt_51bda117858b048b",
+      "evt_e92e4839a47eac66",
+      "evt_51e2fbc52cfbe7b3",
       "evt_9a660d34d58cd552",
-      "evt_766d5da47e4c379c",
+      "evt_64338a6ab890f52b",
+      "evt_bc42e52fd335bb74",
+      "evt_2826398d9f838beb",
       "evt_367f223bbe75b0d2",
-      "evt_fa35976b9b5db4eb",
       "evt_44865a63cd7df3c7",
       "evt_b871fce120178091",
       "evt_d2003ea914c88b92",
@@ -715,23 +703,25 @@
       "evt_7baedc64a75da866",
       "evt_8bc316aa32c0b454",
       "evt_b5db0c07f7faa032",
-      "evt_bb4f297520e6edcd"
+      "evt_bb4f297520e6edcd",
+      "evt_9a9595424d520f7d",
+      "evt_0d6a20a8ad1f50ad"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 0,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 5,
-      "SINGLE_SOURCE": 23,
+      "SINGLE_SOURCE": 22,
       "UNCONFIRMED": 23,
-      "TOTAL": 51
+      "TOTAL": 50
     },
     "diagnostics": {
       "signals_considered": 98,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 51,
+      "event_count": 50,
       "article_count_after_deduplication": 125,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
@@ -744,6 +734,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-03T21:41:37Z"
+    "generated_at": "2026-10-04T01:56:43Z"
   }
 }
