@@ -62,16 +62,16 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-04T14:57:25Z",
+    "generated_at": "2026-10-04T18:47:08Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
     "operational_label_en": "Physical passage exists, but flows are severely degraded",
-    "confidence": "MEDIA",
-    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
-    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+    "confidence": "BAJA",
+    "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
+    "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
@@ -253,45 +253,51 @@
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
-      "evt_cd7c018c8fd45ffc",
-      "evt_34e890900d368497",
       "evt_a9fed6c6fefa9133",
-      "evt_0d3923051c26a964",
-      "evt_5468cef7c00d9561",
-      "evt_2d2316bdc1bac965",
-      "evt_70cce61c0388fd65",
-      "evt_92962a06fd7932c5",
-      "evt_3e76fafbe1c3c471",
       "evt_e92e4839a47eac66",
-      "evt_9c19967364ead176",
-      "evt_bc42e52fd335bb74",
-      "evt_51bda117858b048b",
-      "evt_2826398d9f838beb",
-      "evt_367f223bbe75b0d2",
-      "evt_44865a63cd7df3c7",
-      "evt_9a660d34d58cd552",
-      "evt_93ca52f8ab11ec29",
-      "evt_7baedc64a75da866"
+      "evt_0d6a20a8ad1f50ad",
+      "evt_6bd4dbab7e25c5b1",
+      "evt_e7b4caaf98630e9a",
+      "evt_2c602055ab00dd19",
+      "evt_f9397a2d790ffe9f",
+      "evt_4f3dd47cd1b854ac",
+      "evt_8823ed77daa88274",
+      "evt_3ef4700519952002",
+      "evt_e4a7f81f1cad9112",
+      "evt_31138361dc837582",
+      "evt_f909c300a21d929b",
+      "evt_537765baca3d6786",
+      "evt_cac0100496718988",
+      "evt_e4779201fa0b21a2",
+      "evt_a918fe1d9bef295e",
+      "evt_e405a484105a62c6",
+      "evt_c1a404e1569ed437"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 0,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 6,
-      "SINGLE_SOURCE": 21,
-      "UNCONFIRMED": 23,
-      "TOTAL": 50
+      "DECLARATION_ONLY": 5,
+      "SINGLE_SOURCE": 19,
+      "UNCONFIRMED": 3,
+      "TOTAL": 27
     },
     "diagnostics": {
-      "signals_considered": 96,
-      "provider_errors": [],
+      "signals_considered": 2,
+      "provider_errors": [
+        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
+        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
+        "Google News: HTTPError: HTTP Error 503: Service Unavailable",
+        "Google News: HTTPError: HTTP Error 503: Service Unavailable"
+      ],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 50,
-      "article_count_after_deduplication": 121,
+      "event_count": 27,
+      "article_count_after_deduplication": 36,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-    }
+    },
+    "carried_forward": true
   },
   "canonical_assessment": {
     "engine": "operational-intelligence-v7",
@@ -299,7 +305,7 @@
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
-    "confidence": "MEDIA",
-    "generated_at": "2026-10-04T14:57:25Z"
+    "confidence": "BAJA",
+    "generated_at": "2026-10-04T18:47:08Z"
   }
 }
