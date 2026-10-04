@@ -35,6 +35,24 @@ def speech_safe(text: str) -> None:
         raise VoiceError("UNSAFE_SPOKEN_TEXT")
 
 
+def default_pronunciation(script: dict) -> dict:
+    """Reviewed h-mute rule for new Spanish scripts; legacy hashes stay intact."""
+    rules = load_pronunciation()
+    if script.get("schema_version") != "1.1.0" or script.get("language") != "es":
+        return rules
+    # Explicit dictionaries and historical jobs remain authoritative. Never
+    # replace a configured rule or use phonetic spelling in editorial text.
+    if any(row["language"] == "es" and row["term"].casefold() == "hutíes" for row in rules["overrides"]):
+        return rules
+    rules["version"] = "STRAITWATCH_HUTIES_USER_RULE_20261004"
+    rules["review_terms"] = sorted(set(rules["review_terms"]) | {"utíes"})
+    rules["overrides"].append({
+        "language": "es", "term": "hutíes", "spoken": "utíes", "human_reviewed": True,
+        "review_note": "El usuario rechazó jutíes y pidió utíes, con h muda, el 04/10/2026. Regla fonética revisada por el usuario; audio candidato NO aprobado.",
+    })
+    return rules
+
+
 def pronunciation_text(text: str, rules: dict, language: str) -> tuple[str, list[dict]]:
     """One-pass substitution; an override cannot cascade into another override."""
     rows = [row for row in rules["overrides"] if row["language"] == language]
@@ -57,7 +75,7 @@ def build_voice_input(package: dict, script: dict, *, config: dict | None = None
     language = script["language"]
     config = copy.deepcopy(config if config is not None else voice_config(language))
     validate_config(config, language)
-    rules = copy.deepcopy(pronunciation if pronunciation is not None else load_pronunciation())
+    rules = copy.deepcopy(pronunciation if pronunciation is not None else default_pronunciation(script))
     validate_pronunciation(rules)
     all_refs = {key: sorted({ref for scene in script["scenes"] for ref in scene[key]}) for key in ("fact_ids", "statement_ids", "source_ids")}
     raw = [
@@ -106,3 +124,4 @@ def validate_voice_input(package: dict, script: dict, value: dict, *, pronunciat
     expected = build_voice_input(package, script, config=value.get("voice_config"), pronunciation=pronunciation)
     if value != expected:
         raise VoiceError("VOICE_INPUT_MISMATCH")
+

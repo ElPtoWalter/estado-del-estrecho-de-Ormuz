@@ -10,6 +10,8 @@ from phase2_video.script import generate_local_script, generate_script
 from phase2_video.validator import validate_script
 from phase2_voice.fixtures import load_pilot_fixture
 from phase2_voice.input import build_voice_input, validate_voice_input
+from phase2_voice.schema import load_pronunciation
+from phase2_voice.gemini import request_payload
 from phase2_visual.storyboard import build_storyboard
 from phase2_visual.validator import validate_storyboard
 from test_video_support import event, package, reseal_script
@@ -68,10 +70,40 @@ class PlainEditorialTests(unittest.TestCase):
         self.assertEqual(validate_script(value, script)["validation_status"], "PASS")
         voice = build_voice_input(value, script)
         self.assertEqual(voice["schema_version"], "1.1.0")
-        self.assertIn("hutíes", voice["pending_pronunciation_review"])
+        self.assertIn("utíes", voice["pending_pronunciation_review"])
         self.assertEqual(voice["editorial_context"], script["editorial_context"])
-        self.assertEqual(voice["full_editorial_text"], voice["full_text_for_tts"])
+        self.assertEqual(voice["full_editorial_text"].replace("hutíes", "utíes"), voice["full_text_for_tts"])
+        self.assertIn("hutíes", voice["full_editorial_text"])
+        self.assertEqual(len(voice["pronunciation_changes"]), 2)
+        self.assertTrue(voice["human_review_required"])
         validate_voice_input(value, script, voice)
+
+    def test_huties_h_mute_does_not_change_editorial_or_provider_style(self):
+        value = fixture("Se registró una reducción del tráfico tras ataques hutíes.")
+        script = generate_local_script(value)
+        original = copy.deepcopy(script)
+        voice = build_voice_input(value, script)
+        self.assertEqual(script, original)
+        payload = request_payload(voice)
+        self.assertIn("utíes", payload["input"][0]["content"][0]["text"])
+        self.assertNotIn("hutíes", payload["input"][0]["content"][0]["text"])
+        self.assertEqual(voice["voice_config"]["profile_id"], "straitwatch_es_v2")
+        self.assertEqual(voice["voice_config"]["voice"], "es-es-advisor-2")
+        self.assertFalse(voice["editorial_context"]["publication_allowed"])
+
+    def test_legacy_voice_identity_uses_unchanged_pronunciation_dictionary(self):
+        value, script, _ = load_pilot_fixture("ormuz")
+        original = build_voice_input(value, script, pronunciation=load_pronunciation())
+        self.assertEqual(build_voice_input(value, script), original)
+        self.assertEqual(original["pronunciation_version"], "STRAITWATCH_PRONUNCIATION_V1")
+        self.assertEqual(original["pronunciation_changes"], [])
+
+    def test_explicit_pronunciation_dictionary_takes_precedence(self):
+        value = fixture("Se registró una reducción del tráfico tras ataques hutíes.")
+        script = generate_local_script(value)
+        voice = build_voice_input(value, script, pronunciation=load_pronunciation())
+        self.assertEqual(voice["full_editorial_text"], voice["full_text_for_tts"])
+        self.assertEqual(voice["pronunciation_changes"], [])
 
     def test_context_definition_cannot_be_altered_or_extended(self):
         value = fixture("Se registró una reducción del tráfico tras ataques hutíes.")
@@ -187,4 +219,5 @@ class PlainEditorialTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
 

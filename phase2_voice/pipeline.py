@@ -11,8 +11,8 @@ from pathlib import Path
 
 from .audio import inspect_audio
 from .gemini import render_gemini
-from .input import build_voice_input
-from .schema import VoiceError, digest, load_pronunciation
+from .input import build_voice_input, default_pronunciation
+from .schema import VoiceError, digest
 from .validator import IDENTITY_KEYS, segment_map, validate_audio
 
 SECRET_PATTERN = re.compile(r"AIza[0-9A-Za-z_-]{20,}|(?:api[_-]?key|authorization|bearer|secret|password)\s*[:=]\s*['\"]?[A-Za-z0-9_-]{12,}", re.I)
@@ -89,7 +89,7 @@ def run_voice_job(package: dict, script: dict, output_dir: Path, *, repo_root: P
     output_dir, repo_root = output_dir.resolve(), repo_root.resolve()
     if output_dir == repo_root or output_dir.is_relative_to(repo_root):
         raise VoiceError("OUTPUT_MUST_BE_OUTSIDE_REPOSITORY")
-    rules = pronunciation if pronunciation is not None else load_pronunciation()
+    rules = pronunciation if pronunciation is not None else default_pronunciation(script)
     value = build_voice_input(package, script, config=config, pronunciation=rules)
     # Audit everything before writing anything; a credential cannot enter an artifact.
     for item in (package, script, value, fixture or {}):
@@ -151,3 +151,4 @@ def run_voice_job(package: dict, script: dict, output_dir: Path, *, repo_root: P
         return report
     finally:
         lock.unlink(missing_ok=True)
+
