@@ -61,6 +61,8 @@ class VoiceTests(unittest.TestCase):
     def setUp(self):
         self.package = test_package()
         self.script = generate_local_script(self.package)
+        # The new clear script follows content duration, not a fixed minute.
+        self.audio = tone(seconds=self.script["target_seconds"])
         self.config = voice_config("es", model="gemini-3.8-flash-tts", voice="Charon")
         self.rules = load_pronunciation()
         self.value = build_voice_input(self.package, self.script, config=self.config)
@@ -167,7 +169,7 @@ class VoiceTests(unittest.TestCase):
         self.assertEqual(self.report()["transcript_validation"], "NOT_RUN")
 
     def test_native_48k_pass(self):
-        data = tone(rate=48000)
+        data = tone(seconds=self.script["target_seconds"], rate=48000)
         self.assertEqual(self.report(data, make_metadata(self.value, data))["validation_status"], "PASS")
 
     def test_duration_mismatch_not_corrected(self):

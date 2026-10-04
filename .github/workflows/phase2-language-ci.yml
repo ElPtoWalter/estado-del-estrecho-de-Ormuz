@@ -1,0 +1,33 @@
+name: Fase 2 · Lenguaje claro sin API
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "phase2_video/**"
+      - "phase2_voice/**"
+      - "phase2_visual/**"
+      - "test_video_*.py"
+      - "test_phase2*.py"
+      - "test_visual_*.py"
+      - ".github/workflows/phase2-language-ci.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GEMINI_API_KEY: ""
+      OPENROUTER_API_KEY: ""
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Validar contratos, compatibilidad, voz y gráficos sin llamadas externas
+        run: |
+          python -m compileall -q phase2_video phase2_voice phase2_visual
+          python -m unittest test_video_editorial test_video_script test_video_validator test_video_package test_video_rules test_phase2b_voice test_visual_storyboard test_visual_validator test_visual_render
+
+

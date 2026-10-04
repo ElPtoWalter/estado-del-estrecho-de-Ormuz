@@ -88,13 +88,26 @@ def _editorial_text(
     on_screen = str(scene.get("on_screen_text") or "").strip()
     headline = on_screen or str(script.get("headline") or "").strip()
     source_names = _source_names(package, _copy_list(scene.get("source_ids")))
+    if script.get("schema_version") == "1.1.0":
+        role = scene.get("evidence_kind")
+        if role == "background":
+            refs = set(scene.get("context_ids") or [])
+            names = " · ".join(row["source_name"] for row in script["editorial_context"]["background"] if row["context_id"] in refs)
+            return "PARA ENTENDERLO", headline, names, "Contexto general, no una noticia nueva"
+        if role == "uncertainty":
+            return "QUÉ NO SABEMOS", headline, "Falta información para completar la evaluación", "No damos por seguro lo que no está confirmado"
+        if role == "watch":
+            return "QUÉ VIGILAMOS", headline, "Próximas confirmaciones", "Sin anticipar un resultado"
+        if role == "attributed":
+            return "DECLARACIÓN", headline, source_names, "No es un hecho verificado"
     if template == "source-card":
         return "HECHO VERIFICADO", headline, source_names or "Fuente trazada en el paquete", "Consulta la fuente original"
     if template == "status-card":
         state = str(context.get("state") or "").strip()
         state_label = _STATE_LABELS.get(state.upper(), state.replace("_", " ").strip().title())
         confidence = _CONFIDENCE_LABELS.get(str(context.get("confidence") or "").casefold(), "no indicada")
-        return "ESTADO OPERATIVO", state_label, f"Confianza {confidence}", "Evaluación heredada de Fase 1"
+        footer = "Evaluación con la información disponible" if script.get("schema_version") == "1.1.0" else "Evaluación heredada de Fase 1"
+        return "ESTADO OPERATIVO", state_label, f"Confianza {confidence}", footer
     if template == "timeline":
         return "QUÉ HA CAMBIADO", headline, "Comparación con la edición anterior", "Cambio trazado y validado"
     if template == "schematic-map":

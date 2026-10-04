@@ -7,6 +7,7 @@ from unittest.mock import patch
 
 import pilot_phase2c_visual as pilot
 from phase2_voice.fixtures import load_pilot_fixture
+from prepare_phase2a_ormuz_es import revise_editorial_input
 
 
 ROOT = Path(__file__).resolve().parent
@@ -16,9 +17,11 @@ class Phase2CVisualPilotTests(unittest.TestCase):
     def test_real_historical_fixture_builds_green_local_visuals(self):
         output = ROOT.parent / "phase2c-pilot-test-output-ormuz"
         output.mkdir(exist_ok=True)
+        original, original_script, provenance = load_pilot_fixture("ormuz")
+        spanish_package, _, _ = revise_editorial_input(original, original_script)
         try:
             # Real historic input must not disappear when live events rotate.
-            with patch.object(pilot, "select_package", return_value=(load_pilot_fixture("ormuz")[0], load_pilot_fixture("ormuz")[2])):
+            with patch.object(pilot, "select_package", return_value=(spanish_package, provenance)):
                 result = pilot.run_pilot(ROOT, "ormuz", output)
             self.assertTrue(result["historical_fixture"])
             self.assertEqual(result["validation_status"], "PASS")

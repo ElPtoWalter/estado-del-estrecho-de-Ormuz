@@ -86,6 +86,17 @@ def build_voice_input(package: dict, script: dict, *, config: dict | None = None
         "pending_pronunciation_review": [term for term in rules["review_terms"] if re.search(r"(?<!\w)" + re.escape(term) + r"(?!\w)", full_text, re.I)],
         "human_review_required": True,
     }
+    # Opt-in only for new scripts: legacy pronunciation hashes/cache keys are
+    # unchanged. Keep background citations separate from news in voice input.
+    if script.get("schema_version") == "1.1.0":
+        value["schema_version"] = "1.1.0"
+        value["editorial_context"] = copy.deepcopy(script["editorial_context"])
+        value["scene_evidence"] = [{
+            "scene_id": scene["scene_id"], "evidence_kind": scene["evidence_kind"],
+            "context_ids": list(scene["context_ids"]), "package_fields": list(scene["package_fields"]),
+        } for scene in script["scenes"]]
+        if re.search(r"\bhut[ií]es\b", full_text, re.I):
+            value["pending_pronunciation_review"] = sorted(set(value["pending_pronunciation_review"]) | {"hutíes"})
     return {**value, "voice_job_id": "voice-job:" + digest(value)}
 
 
