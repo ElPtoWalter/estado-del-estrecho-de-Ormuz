@@ -343,6 +343,11 @@ def validate_script(
     errors: list[str] = []
     if not isinstance(script, dict):
         return _report("script", "", ["SCRIPT_SCHEMA"])
+    # Explicit version dispatch: old fixtures/cached voice jobs remain 1.0.
+    # Background context is only accepted by the separately typed 1.1 contract.
+    if script.get("schema_version") == "1.1.0":
+        from .editorial import validate_clear_script
+        return validate_clear_script(package, script, rules=rules or load_rules())
     identity = str(script.get("script_id") or "")
     config = rules or load_rules()
     if set(script) != SCRIPT_KEYS or script.get("schema_version") != SCRIPT_SCHEMA_VERSION:

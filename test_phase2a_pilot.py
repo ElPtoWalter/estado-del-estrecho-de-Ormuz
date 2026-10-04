@@ -7,6 +7,7 @@ from unittest.mock import patch
 
 import pilot_phase2a_video as pilot
 from phase2_voice.fixtures import load_pilot_fixture
+from prepare_phase2a_ormuz_es import revise_editorial_input
 
 
 ROOT = Path(__file__).resolve().parent
@@ -16,10 +17,12 @@ class Phase2APilotTests(unittest.TestCase):
     def test_real_historical_fixture_builds_a_green_isolated_pilot(self):
         output = ROOT.parent / "phase2a-pilot-test-output-ormuz"
         output.mkdir(exist_ok=True)
+        original, original_script, provenance = load_pilot_fixture("ormuz")
+        spanish_package, _, _ = revise_editorial_input(original, original_script)
         try:
             with patch.dict(
                 os.environ, {"GEMINI_API_KEY": "", "OPENROUTER_API_KEY": ""}, clear=False
-            ), patch.object(pilot, "select_package", return_value=(load_pilot_fixture("ormuz")[0], load_pilot_fixture("ormuz")[2])):
+            ), patch.object(pilot, "select_package", return_value=(spanish_package, provenance)):
                 result = pilot.run_pilot(ROOT, "ormuz", output)
             self.assertTrue(result["historical_fixture"])
             self.assertEqual(result["local"], "PASS")

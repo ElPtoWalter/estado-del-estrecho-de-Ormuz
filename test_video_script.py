@@ -27,8 +27,10 @@ class VideoScriptTests(unittest.TestCase):
         report = validate_script(self.package, script)
         self.assertEqual(report["validation_status"], "PASS", report)
         self.assertGreaterEqual(len(script["scenes"]), 3)
-        self.assertTrue(all(scene["fact_ids"] for scene in script["scenes"]))
-        self.assertTrue(all(scene["source_ids"] for scene in script["scenes"]))
+        news = [scene for scene in script["scenes"] if scene["evidence_kind"] == "news"]
+        self.assertTrue(all(scene["fact_ids"] and scene["source_ids"] for scene in news))
+        self.assertTrue(all(scene["fact_ids"] or scene["statement_ids"] or
+                            scene["context_ids"] or scene["package_fields"] for scene in script["scenes"]))
         self.assertEqual(script["generated_by"], "rules")
 
     def test_local_script_supports_both_languages(self):
@@ -60,7 +62,7 @@ class VideoScriptTests(unittest.TestCase):
         report = validate_script(breaking_package, script)
         self.assertEqual(report["validation_status"], "PASS", report)
         self.assertLessEqual(script["estimated_words"], 110)
-        self.assertTrue(any("no sabemos" in scene["voiceover"] for scene in script["scenes"]))
+        self.assertTrue(any(scene["evidence_kind"] == "uncertainty" for scene in script["scenes"]))
 
     def test_valid_gemini_script_is_selected_and_locally_sealed(self):
         candidate = generate_local_script(self.package)

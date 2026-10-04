@@ -143,6 +143,10 @@ def generate_local_script(
     if language not in package.get("language_set", []):
         raise ValueError("unsupported-script-language")
 
+    if language == "es":
+        from .editorial import generate_clear_script
+        return generate_clear_script(package, rules=config)
+
     template = _language_templates(language)
     facts = package.get("verified_facts", [])
     statements = package.get("statements", [])
@@ -248,8 +252,14 @@ def _openrouter_model(value: str | None) -> str:
 def _prompt(package: dict[str, Any], language: str, baseline: dict[str, Any]) -> str:
     return (
         "Write one restrained audiovisual script in " + language + ". "
-        "Every scene voiceover must cite at least one existing fact_id or statement_id and only its matching source_ids. "
-        "Statements must remain explicitly attributed. Keep the exact package_id, hash, video_type and target duration. "
+        "For schema 1.1, preserve editorial_context and all background/state/uncertainty/watch scenes EXACTLY. "
+        "Only paraphrase news or attributed scenes, keeping their own evidence references. "
+        "Use short sentences and everyday words. Never add implementation jargon, filler, causal inference or invented definitions. "
+        "Background definitions are NOT evidence for a news claim. Preserve framing, numbers, units, dates and confidence. "
+        "Every NEWS or ATTRIBUTED scene must cite existing fact_id or statement_id and only matching source_ids. "
+        "For schema 1.0 every scene must cite evidence; for 1.1 other scenes use typed context/package-field references. "
+        "Statements must remain explicitly attributed. Keep the exact package_id, hash and video_type. "
+        "Duration in 1.1 is calculated locally from actual words, never padded. "
         "Use only the permitted visual_intent values. Do not add facts, numbers, dates, entities, places, URLs or certainty. "
         "The local baseline demonstrates the exact JSON shape; improve naturalness without weakening traceability.\n"
         "CLOSED_VIDEO_PACKAGE_JSON:\n" + canonical_json(package) + "\n"
@@ -321,12 +331,14 @@ def _seal_remote_candidate(
     *,
     package: dict[str, Any],
     provider: str,
+    baseline: dict[str, Any],
+    rules: dict[str, Any],
 ) -> dict[str, Any]:
     """Stamp local derived fields without repairing factual model output."""
     if not isinstance(candidate, dict):
         raise TypeError("candidate-not-object")
     expected = {
-        "schema_version": SCRIPT_SCHEMA_VERSION,
+        "schema_version": baseline["schema_version"],
         "package_id": package["package_id"],
         "package_content_hash": package["content_hash"],
         "video_type": package["video_type"],
@@ -337,6 +349,9 @@ def _seal_remote_candidate(
     sealed = copy.deepcopy(candidate)
     sealed["generated_by"] = provider
     sealed["estimated_words"] = _words(_spoken(sealed))
+    if sealed["schema_version"] == "1.1.0":
+        from .editorial import target_seconds
+        sealed["target_seconds"] = target_seconds(sealed["estimated_words"], rules, sealed["video_type"])
     sealed["script_id"] = script_id(sealed)
     return sealed
 
@@ -356,6 +371,10 @@ def generate_script(
     """Try Gemini, then existing free OpenRouter, then deterministic rules."""
     config = rules or load_rules()
     baseline = generate_local_script(package, language=language, rules=config)
+    baseline_report = validate_script(package, baseline, rules=config)
+    if baseline_report["validation_status"] != "PASS":
+        # Never claim an invalid rules fallback passed or send it to TTS.
+        raise ValueError("invalid-local-script:" + ",".join(baseline_report["validation_errors"]))
     prompt = _prompt(package, language, baseline)
     attempts: list[dict[str, Any]] = []
     key_gemini = gemini_key if gemini_key is not None else os.getenv("GEMINI_API_KEY", "")
@@ -371,7 +390,8 @@ def generate_script(
         attempt: dict[str, Any] = {"provider": provider, "model": model}
         try:
             raw_candidate = caller(key=key, model=model, prompt=prompt, timeout=timeout, transport=transport)
-            candidate = _seal_remote_candidate(raw_candidate, package=package, provider=provider)
+            candidate = _seal_remote_candidate(raw_candidate, package=package, provider=provider,
+                                               baseline=baseline, rules=config)
             report = validate_script(package, candidate, rules=config)
             if report["validation_status"] == "PASS":
                 attempt["status"] = "ok"
@@ -397,6 +417,6 @@ def generate_script(
         "generated_by": "rules",
         "fallback_used": True,
         "attempts": attempts,
-        "validation_status": "PASS",
-        "validation_errors": [],
+        "validation_status": baseline_report["validation_status"],
+        "validation_errors": baseline_report["validation_errors"],
     }
