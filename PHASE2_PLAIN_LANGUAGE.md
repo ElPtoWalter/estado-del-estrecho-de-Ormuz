@@ -45,7 +45,9 @@ Integración para uso interno, con publicación audiovisual desactivada.
 No se han habilitado costes ni automatizado publicaciones. Se ha generado
 una primera muestra histórica de Ormuz con este contrato y una sola petición
 Gemini en nivel gratuito verificado. La pronunciación fue aprobada por el
-usuario; la revisión completa del vídeo y su publicación siguen pendientes.
+usuario. Esa aprobación es independiente de la revisión íntegra de cada
+vídeo y no autoriza publicación automática ni presentar una muestra
+histórica como noticia actual.
 El guion 1.1 crea una nueva
 identidad: nunca reutilizar un audio si su transcripción no coincide exactamente.
 
@@ -67,4 +69,3 @@ Antes de usar un resultado: exigir CI verde y aprobar el guion/audio.
 Integrar el cambio sobre main no aprueba ni publica una pieza audiovisual.
 El léxico se amplía con una referencia
 primaria y pruebas nuevas; nunca con definiciones inventadas por el modelo.
-

@@ -124,4 +124,3 @@ def validate_voice_input(package: dict, script: dict, value: dict, *, pronunciat
     expected = build_voice_input(package, script, config=value.get("voice_config"), pronunciation=pronunciation)
     if value != expected:
         raise VoiceError("VOICE_INPUT_MISMATCH")
-

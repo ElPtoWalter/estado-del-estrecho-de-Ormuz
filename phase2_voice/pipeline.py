@@ -151,4 +151,3 @@ def run_voice_job(package: dict, script: dict, output_dir: Path, *, repo_root: P
         return report
     finally:
         lock.unlink(missing_ok=True)
-
