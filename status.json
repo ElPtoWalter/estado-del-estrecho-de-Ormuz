@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-10-05T16:20:57Z",
-  "last_success_at": "2026-10-05T16:20:57Z",
+  "checked_at": "2026-10-05T22:52:14Z",
+  "last_success_at": "2026-10-05T22:52:14Z",
   "last_change_at": "2026-10-04T22:27:58Z",
   "verification_ok": true,
   "stale": false,
@@ -20,10 +20,10 @@
       "source_name": "TradeWinds",
       "source_id": "tradewinds",
       "source_url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOS0NjSWNxaFV1ZF9aSUk0bmdwTU9VTWZrQWlJYkd1a1kyTDdQNzFqT2Nxbjh1d0ZvT2Q5YlVlWkp1c1BhQ2NFcDVZSlA4d0I1cDhCNWxMcFZ3blYwdXRWY01PSEo3RlhrQzNUaWQ1U2NFcVlFWGY1VmtabW1NSHpGSUxDQUVQZnRpeE9vcm40bkRoR3RTZlEtdWc4Y2tEbjlya0lvV2ZPSnRvdzBkZDFzeE9YNjNKdkZWblFNYw",
-      "published_at": "2026-10-05T16:06:13Z",
+      "published_at": "2026-10-05T22:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-05T16:20:57Z"
+      "observed_at": "2026-10-05T22:52:14Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -34,33 +34,32 @@
       "published_at": "2026-10-05T01:09:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-05T16:20:57Z"
+      "observed_at": "2026-10-05T22:52:14Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "All U.S. bombers leave UK air base on concerns of suspected terror plots; more tankers struck near Iran in the Middle East - CNBC",
+      "title": "All U.S. bombers leave UK air base on concerns of suspected terror plots; more tankers struck near Iran in the Middle East - cnbc.com",
       "source_name": "CNBC",
       "source_id": "cnbc",
       "source_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQUjEwRGxoTll0b2ZCWkRZZl9iUzBKblN5TXJNM0Y5RXpZUmYwMW1YVW0wcFZYcEl1UTk0Q3VpTl9qZXBtYkg1QzdBWDZIa0wwdWZJZ0tsbU5DbHg1LWhOR2hCWWRzUVV4Qy1wd1pWVW9ZQ3NrdmE4RkpJUkRJYXk0ekNzVXQzalpLY3AtUU1mb3FlcnRnc1BEUi1KaDVEUWFiVUhF0gGoAUFVX3lxTFBMNDgyNFd0ZWdGbHlrRGNsUEtGbUx2ci1KakxlMXpuRks0Nl9jY2pjdC1pTkRVYXJRajFmdVZqaHVQZ2lmTmtzVkJaM1JnWWI3VlBTZHhYMDBRUjd5R0NzNEZ0S2w5bVJ5NkpvZHZqaWFPd0V0T2FrX1V1bW1vaFpiYUYtNHJoYko3ZTNXQW1ZTVV1RlNGN2ZZRmJvWUZiUWFxcGNRSWJ0UA",
       "published_at": "2026-10-04T12:02:51Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-05T16:20:57Z"
+      "observed_at": "2026-10-05T22:52:14Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 9.275
+      "risk": 8.675
     },
     "independent_sources": {
       "open": 0,
@@ -68,16 +67,16 @@
       "declared": 0,
       "risk": 3
     },
-    "articles_considered": 24,
-    "signals_considered": 4,
+    "articles_considered": 30,
+    "signals_considered": 6,
     "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
-    "evidence_archive_size": 33,
+    "evidence_archive_size": 32,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-10-05T16:06:13Z",
+    "as_of": "2026-10-05T22:30:00Z",
     "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -91,10 +90,10 @@
       "source_name": "TradeWinds",
       "source_id": "tradewinds",
       "source_url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOS0NjSWNxaFV1ZF9aSUk0bmdwTU9VTWZrQWlJYkd1a1kyTDdQNzFqT2Nxbjh1d0ZvT2Q5YlVlWkp1c1BhQ2NFcDVZSlA4d0I1cDhCNWxMcFZ3blYwdXRWY01PSEo3RlhrQzNUaWQ1U2NFcVlFWGY1VmtabW1NSHpGSUxDQUVQZnRpeE9vcm40bkRoR3RTZlEtdWc4Y2tEbjlya0lvV2ZPSnRvdzBkZDFzeE9YNjNKdkZWblFNYw",
-      "published_at": "2026-10-05T16:06:13Z",
+      "published_at": "2026-10-05T22:30:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-05T16:20:57Z"
+      "observed_at": "2026-10-05T22:52:14Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -105,7 +104,7 @@
       "published_at": "2026-10-05T01:09:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-05T16:20:57Z"
+      "observed_at": "2026-10-05T22:52:14Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -142,14 +141,14 @@
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "All U.S. bombers leave UK air base on concerns of suspected terror plots; more tankers struck near Iran in the Middle East - CNBC",
+      "title": "All U.S. bombers leave UK air base on concerns of suspected terror plots; more tankers struck near Iran in the Middle East - cnbc.com",
       "source_name": "CNBC",
       "source_id": "cnbc",
       "source_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQUjEwRGxoTll0b2ZCWkRZZl9iUzBKblN5TXJNM0Y5RXpZUmYwMW1YVW0wcFZYcEl1UTk0Q3VpTl9qZXBtYkg1QzdBWDZIa0wwdWZJZ0tsbU5DbHg1LWhOR2hCWWRzUVV4Qy1wd1pWVW9ZQ3NrdmE4RkpJUkRJYXk0ekNzVXQzalpLY3AtUU1mb3FlcnRnc1BEUi1KaDVEUWFiVUhF0gGoAUFVX3lxTFBMNDgyNFd0ZWdGbHlrRGNsUEtGbUx2ci1KakxlMXpuRks0Nl9jY2pjdC1pTkRVYXJRajFmdVZqaHVQZ2lmTmtzVkJaM1JnWWI3VlBTZHhYMDBRUjd5R0NzNEZ0S2w5bVJ5NkpvZHZqaWFPd0V0T2FrX1V1bW1vaFpiYUYtNHJoYko3ZTNXQW1ZTVV1RlNGN2ZZRmJvWUZiUWFxcGNRSWJ0UA",
       "published_at": "2026-10-04T12:02:51Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-05T16:20:57Z"
+      "observed_at": "2026-10-05T22:52:14Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -436,23 +435,12 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-09-27T01:41:32Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US-Israel-Iran War Latest Live News: JD Vance Says Oil, Gas Continue to Flow Through Strait of Hormuz Despite Iranian Attacks on Shipping; Check Latest Update - The Sunday Guardian",
-      "source_name": "The Sunday Guardian",
-      "source_id": "sunday_guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOeVRvRDc0MzlSTlZpUTVmR1FpeFJ1WkZjZzNrSTZhbnllZHM0dnZqRWV0bUNMZkttYWsxc1FqUTgySUx4QUg2WDFjZHMxZTh4dU1GYlJWTnVoR1Q2dnRCUWVXNnR2b3duUjdubXNTb2oxV3pPQlJfUmtyZUlyRHhldWhOQXR4S0pVVGM3dU4zbW14a1pHeUhNVDBFNDJHbW5VYVU3T1Q3eWRhLURpZEVYNGNoalNVU2NoRnpibkFyYkNzcEppazUzcE5XVjEwYjYtTWZrNjNJeEhubk9MN3Yycmh2NlZ4MFYyVkYxVHpITTFOekFaSWQ1OGVrSkpSLS1wdGNNZXNnLTRoUnBlUlY2d0IzbFBLNTlzVUVFMUp4SDRIcFdpN1lr0gGsAkFVX3lxTE56WktNZ0tXWV9peEF6MExHWERsTmlTRWZ1OUxLR2pkSGhJQ0Z2MEtxN2RWOGZJSGFNb3dJNjF2Qmk3Wnd4c0Y3enhwbHlvSFBXamVBTGNNMThLeU01V1NTY0VqeHNMdWFGeW1sRUdYRk9VRElGa3FUVlcxX1BVaTlDaFV3QWkxZEFnMmo1UlQwMWJaMzdoazl4VkRKZHVJVk9MMXdqRzM4YmZJMDBrdVNTbHUxeGVmYkRXUlVmeEFiMlFDTk9DcHdoMFhNQlZidTZXZVRfYVpkaE9uX19leFdaWGZtSmkxVnZQR0w3bWxmajBiSmtfQXNZSkNXWDBKOFBzcVUtSnpfYU5vblRsbWptSnhPY1E1Sm1vNk12emN0U0FaVTE0QndlX19MUw",
-      "published_at": "2026-09-21T18:39:27Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-22T05:17:57Z"
     }
   ],
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-05T16:21:38Z",
+    "generated_at": "2026-10-05T22:52:58Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -486,14 +474,14 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 7.172,
+      "passage": 4.487,
       "closure": 0,
       "traffic_reduction": 3.9,
-      "access_restriction": 3.3,
-      "risk": 73.014
+      "access_restriction": 2.4,
+      "risk": 88.526
     },
     "source_counts": {
-      "passage": 7,
+      "passage": 3,
       "closure": 0,
       "primary_sources": 3
     },
@@ -526,7 +514,7 @@
         "title": "Iran ramps up Strait of Hormuz attacks with 11 ships hit in a week - TradeWinds News",
         "source": "TradeWinds",
         "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOS0NjSWNxaFV1ZF9aSUk0bmdwTU9VTWZrQWlJYkd1a1kyTDdQNzFqT2Nxbjh1d0ZvT2Q5YlVlWkp1c1BhQ2NFcDVZSlA4d0I1cDhCNWxMcFZ3blYwdXRWY01PSEo3RlhrQzNUaWQ1U2NFcVlFWGY1VmtabW1NSHpGSUxDQUVQZnRpeE9vcm40bkRoR3RTZlEtdWc4Y2tEbjlya0lvV2ZPSnRvdzBkZDFzeE9YNjNKdkZWblFNYw",
-        "published_at": "2026-10-05T16:06:13Z",
+        "published_at": "2026-10-05T22:30:00Z",
         "tier": 4,
         "weight": 3.8,
         "provider": "legacy-engine",
@@ -535,6 +523,23 @@
         "traffic_count": null,
         "traffic_average": null,
         "effective_weight": 3.8,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Six-week-old Dynacom tanker hit and damaged in latest Hormuz attack - TradeWinds News",
+        "source": "TradeWinds",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPTExtdi1ZRV9Zek1BM0ctUTFiSzVFZy1ldW1acDVWNURGd1pIMWhESWttdHZmR2dPVm15Z0VZLVhMNXo2ZWFsdWpqWFRMNnVoTjVtZ0lZWnpyX0FyQTZsbHVvNEVzLTJWd0dNVVhuOHBrZTFlUGtvYi0xNDN5dDJFOG5wX2J0dzdJRF83MGhjMlFrdnhVVE9OZUpuQ01FSXk0QVczRXNHNFpNemllTzBsVDNsNmtLVHBKZVE",
+        "published_at": "2026-10-04T15:25:11Z",
+        "tier": 4,
+        "weight": 3.8,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.42,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -560,7 +565,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-05T16:21:38Z",
+        "published_at": "2026-10-05T22:52:58Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -571,6 +576,23 @@
         "effective_weight": 3.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Is Iran charging a toll to allow oil traffic through Hormuz? - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPYnBJWDdQN21OVE55MVZsLUFoMmIxTVBpZXgtNWpGR3o4U1liTUFzYWU2ODhTM24yeWh1Mm5NOWlEcXZTWHU0RGNRaUhvSjF4b2FRajZSajdGWWJwcXRpZzFBWjlfYkJSeTl4M1BrNUxVdHFUUGtfNHdNLXVmTHhPbzMyZ1BvVldXSEFZR2VBeUlPRWhudXMtdlpjbk9INTRRSUHSAacBQVVfeXFMTml3NXBicnEzMEw0NXFQTktsODdqcG1FcUszd1FjMmJlUjdGczk3c0JvS3pPTkVNYUk4RTB4dWV0Nl9XYXlhazJZU2pyYjRnUUFKZHhEVVBfbjNKVFhJWXM1UlVvTzVIWWxWMWE2dS1VaEszTUtFMzhmakFobGdVcU15dWphMlRMRXZZdUtkZ01SYmpTZDhZZmxEZjN3V1M3VjVBdnVJanM",
+        "published_at": "2026-10-05T21:55:31Z",
+        "tier": 2,
+        "weight": 2.4,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 2.4,
+        "kind_label_es": "Acceso restringido",
+        "kind_label_en": "Restricted access"
       },
       {
         "kind": "RISK_SEVERE",
@@ -585,30 +607,13 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 2.964,
+        "effective_weight": 2.356,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Is Iran charging a toll to allow oil traffic through Hormuz? - aljazeera.com",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPYnBJWDdQN21OVE55MVZsLUFoMmIxTVBpZXgtNWpGR3o4U1liTUFzYWU2ODhTM24yeWh1Mm5NOWlEcXZTWHU0RGNRaUhvSjF4b2FRajZSajdGWWJwcXRpZzFBWjlfYkJSeTl4M1BrNUxVdHFUUGtfNHdNLXVmTHhPbzMyZ1BvVldXSEFZR2VBeUlPRWhudXMtdlpjbk9INTRRSUHSAacBQVVfeXFMTml3NXBicnEzMEw0NXFQTktsODdqcG1FcUszd1FjMmJlUjdGczk3c0JvS3pPTkVNYUk4RTB4dWV0Nl9XYXlhazJZU2pyYjRnUUFKZHhEVVBfbjNKVFhJWXM1UlVvTzVIWWxWMWE2dS1VaEszTUtFMzhmakFobGdVcU15dWphMlRMRXZZdUtkZ01SYmpTZDhZZmxEZjN3V1M3VjVBdnVJanM",
-        "published_at": "2026-10-05T13:18:45Z",
-        "tier": 2,
-        "weight": 2.4,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 2.4,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
-      },
-      {
         "kind": "RISK_SEVERE",
-        "title": "All U.S. bombers leave UK air base on concerns of suspected terror plots; more tankers struck near Iran in the Middle East - CNBC",
+        "title": "All U.S. bombers leave UK air base on concerns of suspected terror plots; more tankers struck near Iran in the Middle East - cnbc.com",
         "source": "CNBC",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQUjEwRGxoTll0b2ZCWkRZZl9iUzBKblN5TXJNM0Y5RXpZUmYwMW1YVW0wcFZYcEl1UTk0Q3VpTl9qZXBtYkg1QzdBWDZIa0wwdWZJZ0tsbU5DbHg1LWhOR2hCWWRzUVV4Qy1wd1pWVW9ZQ3NrdmE4RkpJUkRJYXk0ekNzVXQzalpLY3AtUU1mb3FlcnRnc1BEUi1KaDVEUWFiVUhF0gGoAUFVX3lxTFBMNDgyNFd0ZWdGbHlrRGNsUEtGbUx2ci1KakxlMXpuRks0Nl9jY2pjdC1pTkRVYXJRajFmdVZqaHVQZ2lmTmtzVkJaM1JnWWI3VlBTZHhYMDBRUjd5R0NzNEZ0S2w5bVJ5NkpvZHZqaWFPd0V0T2FrX1V1bW1vaFpiYUYtNHJoYko3ZTNXQW1ZTVV1RlNGN2ZZRmJvWUZiUWFxcGNRSWJ0UA",
         "published_at": "2026-10-04T12:02:51Z",
@@ -622,46 +627,29 @@
         "effective_weight": 2.25,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "FORMAL_CLOSURE_CLAIM",
-        "title": "Iran says Hormuz to remain closed until US meets conditions - aljazeera.com",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNdEpOSExlamJ6VFM3V3hVMXl2M09LVHYxQnZpUHV6bXZuRkJmM3ljVHA0NFpQTmJ2WS1uZzhQVjAxVUJJYUZXeE5rMTVZMkdma3Z0a2NWUU9qRGJXZlhkSFYyVkVINHE1NjR6bklmTmxZUWdWNS1qaXc0cTNnU0xtZWV2QTRubWoyakdyMDNIUm9KcmpfSy1Jb3Nrb09mTEVMbjBlYVFybGNaa0JFOFhF0gG0AUFVX3lxTE12RHNGM054RWlsaVJaeEgtRWlIUDNKVWN0N0JLQmRfOHA1MU5SUVhXV1pjM1RKRlY2YjVkZlkyaG5vaDhWa0Fhd2hDeVZGMXRYcm5odHB1RWZ1eWJGeEZxRnZrWVNib2FvZHFySGVnNjdqTHlmUVJLdThHZHkwYk14ajdNWlptejNOYnhNR3dacmZMTWlLRDdGMFpkczBqcTBWZlN5UnlSUTV6a3NsWFBvY0djdQ",
-        "published_at": "2026-10-04T11:12:01Z",
-        "tier": 2,
-        "weight": 1.68,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.512,
-        "kind_label_es": "Declaración de cierre",
-        "kind_label_en": "Closure declaration"
       }
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
       "evt_1b8920575104ed9a",
-      "evt_c5ffaaf5c4b338c8",
-      "evt_e04552a57be812d2",
+      "evt_13766381c024dcda",
+      "evt_fa7d925820c14785",
       "evt_ff39dd1d42ce9f78",
-      "evt_cef5ca51c9c7757a",
       "evt_dfa8d21a09c0a331",
       "evt_01816bc8be988a0a",
-      "evt_e92e4839a47eac66",
-      "evt_13766381c024dcda",
-      "evt_f92007c62bf05517",
+      "evt_94eafb57271d0575",
+      "evt_0e9c503e939f29aa",
+      "evt_7b205abfbeada994",
+      "evt_87a31db23b206c99",
+      "evt_e04552a57be812d2",
+      "evt_b99098964df089bf",
+      "evt_556fdbc8ca9e9a2e",
+      "evt_4b1ef6cc693875a5",
+      "evt_fb9a082a6fcd269d",
+      "evt_c5ffaaf5c4b338c8",
+      "evt_b6374e1bb4354114",
       "evt_9bf64141a298e482",
-      "evt_3f6b0b285f632cc7",
-      "evt_d2117786b68fbe25",
-      "evt_c86b8d178b5b4074",
-      "evt_2298923de91aca14",
-      "evt_4a2c399505dafc03",
-      "evt_1ec245966750b0c0",
-      "evt_360a1a5b6ddc763c",
-      "evt_9d491160814dc680"
+      "evt_cef5ca51c9c7757a"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 1,
@@ -669,16 +657,16 @@
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 3,
       "SINGLE_SOURCE": 20,
-      "UNCONFIRMED": 28,
-      "TOTAL": 52
+      "UNCONFIRMED": 31,
+      "TOTAL": 55
     },
     "diagnostics": {
-      "signals_considered": 92,
+      "signals_considered": 101,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 52,
-      "article_count_after_deduplication": 118,
+      "event_count": 55,
+      "article_count_after_deduplication": 124,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -690,6 +678,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-05T16:21:38Z"
+    "generated_at": "2026-10-05T22:52:58Z"
   }
 }
