@@ -1,26 +1,26 @@
 {
   "version": 2,
-  "generated_at": "2026-10-06T10:43:14Z",
+  "generated_at": "2026-10-06T17:22:21Z",
   "overall": "HEALTHY",
   "source_health": {
     "state": "HEALTHY",
-    "checked_at": "2026-10-06T10:42:36Z",
-    "last_success_at": "2026-10-06T10:42:36Z",
+    "checked_at": "2026-10-06T17:22:05Z",
+    "last_success_at": "2026-10-06T17:22:05Z",
     "verification_ok": true,
     "stale": false
   },
   "pipeline_health": {
     "state": "HEALTHY",
     "events_schema_valid": true,
-    "event_count": 54,
+    "event_count": 56,
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 1,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 3,
+      "DECLARATION_ONLY": 4,
       "SINGLE_SOURCE": 21,
-      "UNCONFIRMED": 29,
-      "TOTAL": 54
+      "UNCONFIRMED": 30,
+      "TOTAL": 56
     },
     "canonical_engine": "operational-intelligence-v7"
   },
@@ -30,15 +30,15 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-06T10:43:14Z",
+    "generated_at": "2026-10-06T17:22:21Z",
     "carried_forward": false
   },
   "legacy_monitor": {
     "role": "internal_diagnostic",
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "confidence": "MEDIA",
-    "checked_at": "2026-10-06T10:42:36Z",
+    "confidence": "ALTA",
+    "checked_at": "2026-10-06T17:22:05Z",
     "last_change_at": "2026-10-04T22:27:58Z",
     "verification_ok": true,
     "stale": false,
