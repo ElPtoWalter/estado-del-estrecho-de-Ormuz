@@ -1,20 +1,20 @@
 {
   "version": 11,
-  "generated_at": "2026-10-05T12:42:56Z",
+  "generated_at": "2026-10-06T12:14:46Z",
   "ok": true,
-  "date": "2026-10-05",
-  "material_score": 3,
-  "material_archive": false,
-  "news_considered": 29,
-  "new_articles": 25,
-  "source_brands": 8,
+  "date": "2026-10-06",
+  "material_score": 5,
+  "material_archive": true,
+  "news_considered": 25,
+  "new_articles": 13,
+  "source_brands": 6,
   "fetch_errors": [],
   "operational_intelligence_used": true,
   "editor_engine": "gemini",
   "editor_assistant_status": "ok",
   "editorial_trace": {
     "validator_version": 2,
-    "factual_packet_sha256": "c2c3d33292bf7d1766351f9005b0bb998a25005c02cf60fd16f2252551dc061c",
+    "factual_packet_sha256": "8ee1a8a985ca765eb339a320e53eeb8d97174a875187a95840cbc3c7d1e35c4f",
     "provider": "gemini",
     "status": "ok",
     "attempts": [
@@ -23,15 +23,18 @@
         "model": "gemini-3.5-flash-lite"
       }
     ],
-    "factual_packet_hash": "c2c3d33292bf7d1766351f9005b0bb998a25005c02cf60fd16f2252551dc061c",
+    "factual_packet_hash": "8ee1a8a985ca765eb339a320e53eeb8d97174a875187a95840cbc3c7d1e35c4f",
     "event_ids": [
       "evt_c26f87164bf1ec62",
-      "evt_d137a5ac0397312d",
+      "evt_1b8920575104ed9a",
       "evt_dfa8d21a09c0a331",
-      "evt_e92e4839a47eac66",
+      "evt_8233bd47bcd03274",
+      "evt_ff39dd1d42ce9f78",
+      "evt_0e9c503e939f29aa",
+      "evt_1ec245966750b0c0",
       "evt_4a2c399505dafc03",
-      "evt_7e3eaa86300718e7",
       "evt_a9fed6c6fefa9133",
+      "evt_7b6eb78e827251b1",
       "evt_0d6a20a8ad1f50ad",
       "evt_6bd4dbab7e25c5b1",
       "evt_e7b4caaf98630e9a",
@@ -41,16 +44,12 @@
       "evt_8823ed77daa88274",
       "evt_3ef4700519952002",
       "evt_e4a7f81f1cad9112",
-      "evt_31138361dc837582",
-      "evt_537765baca3d6786",
-      "evt_e4779201fa0b21a2",
-      "evt_a918fe1d9bef295e"
+      "evt_31138361dc837582"
     ],
     "source_ids": [
       "aljazeera",
       "bloomberg",
       "cnbc",
-      "guardian",
       "lloyds_list",
       "national_security_journal",
       "reuters",
@@ -64,10 +63,10 @@
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 3,
       "SINGLE_SOURCE": 21,
-      "UNCONFIRMED": 25,
-      "TOTAL": 50
+      "UNCONFIRMED": 29,
+      "TOTAL": 54
     },
-    "timestamp": "2026-10-05T12:42:56Z",
+    "timestamp": "2026-10-06T12:14:46Z",
     "fallback_used": false
   }
 }
