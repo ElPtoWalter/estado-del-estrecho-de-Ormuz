@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-10-10T01:09:05Z",
-  "last_success_at": "2026-10-10T01:09:05Z",
+  "checked_at": "2026-10-10T07:41:00Z",
+  "last_success_at": "2026-10-10T07:41:00Z",
   "last_change_at": "2026-10-04T22:27:58Z",
   "verification_ok": true,
   "stale": false,
@@ -23,7 +23,7 @@
       "published_at": "2026-10-09T18:01:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-10T01:09:05Z"
+      "observed_at": "2026-10-10T07:41:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -34,7 +34,7 @@
       "published_at": "2026-10-09T15:10:55Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-10T01:09:05Z"
+      "observed_at": "2026-10-10T07:41:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -45,7 +45,7 @@
       "published_at": "2026-10-09T15:04:30Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-10T01:09:05Z"
+      "observed_at": "2026-10-10T07:41:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -56,7 +56,7 @@
       "published_at": "2026-10-08T16:50:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-10T01:09:05Z"
+      "observed_at": "2026-10-10T07:41:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -67,7 +67,7 @@
       "published_at": "2026-10-08T13:23:29Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-10T01:09:05Z"
+      "observed_at": "2026-10-10T07:41:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,7 +78,7 @@
       "published_at": "2026-10-08T10:34:48Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-10T01:09:05Z"
+      "observed_at": "2026-10-10T07:41:00Z"
     }
   ],
   "diagnostics": {
@@ -90,10 +90,10 @@
       "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
     ],
     "scores": {
-      "open": 1.8,
+      "open": 1.5,
       "closed": 0,
       "declared": 0,
-      "risk": 17.43
+      "risk": 15.57
     },
     "independent_sources": {
       "open": 1,
@@ -101,8 +101,8 @@
       "declared": 0,
       "risk": 9
     },
-    "articles_considered": 50,
-    "signals_considered": 21,
+    "articles_considered": 47,
+    "signals_considered": 20,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 48,
@@ -127,7 +127,7 @@
       "published_at": "2026-10-09T18:01:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-10T01:09:05Z"
+      "observed_at": "2026-10-10T07:41:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -138,7 +138,7 @@
       "published_at": "2026-10-09T15:10:55Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-10T01:09:05Z"
+      "observed_at": "2026-10-10T07:41:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -149,7 +149,7 @@
       "published_at": "2026-10-09T15:04:30Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-10T01:09:05Z"
+      "observed_at": "2026-10-10T07:41:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -204,7 +204,7 @@
       "published_at": "2026-10-08T16:50:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-10T01:09:05Z"
+      "observed_at": "2026-10-10T07:41:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -226,7 +226,7 @@
       "published_at": "2026-10-08T13:23:29Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-10T01:09:05Z"
+      "observed_at": "2026-10-10T07:41:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -248,7 +248,7 @@
       "published_at": "2026-10-08T10:34:48Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-10T01:09:05Z"
+      "observed_at": "2026-10-10T07:41:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -650,7 +650,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-10T01:09:41Z",
+    "generated_at": "2026-10-10T07:41:36Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -684,18 +684,18 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 18.569,
+      "passage": 19.739,
       "closure": 0,
       "traffic_reduction": 1.797,
-      "access_restriction": 3.6,
-      "risk": 119.66
+      "access_restriction": 4.6,
+      "risk": 110.264
     },
     "source_counts": {
       "passage": 14,
       "closure": 0,
       "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-10-09T23:39:01Z",
+    "latest_confirmed_transit_at": "2026-10-10T05:19:37Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -755,40 +755,6 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOdnAtMmE4Vi10TWlqTFQ0MkFXdzJCNlQzYlFSbXBkOVg5YW9Qd0YwcG5vZnVQS21ETGdLVnllV2RxRFZmZUZyaV8xZWtzVXNLMUxVV1BhQXc3Qm4wVjFaOTB4US1mR0MwWmxoTzdvSV9tUmxvbkx6cWppUkZPMnpHaXNPWjBTMmhBN1p5NDhmSkI1VWtiNEJQcjJLbEJPa2Jhc1VqLWNhR19JcEFkZk5kTmRjaEFnUQ",
-        "published_at": "2026-10-08T03:39:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.6,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Final mobile messages reveal fears of seafarers killed in US missile attack - TradeWinds News",
-        "source": "TradeWinds",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdHVxQ0NiSmJTMi1vSF9aWDkzX3NYQVZ1MXY3NVdBNzNiUDR1ektEVGc3MHNCdmhDTzhTdGoxelRCVTBjR044c2tETXBHYzg2ZjdYY1NfbGFOUHdQdExLYkRRM1hHaWFzeUQzTHh2LW1CZTN5MHV5dzFocnBpQVRSZUhwUXNMWTVSdE9aSkxrNTFCVU51akVoSGpPamd1cVdHdEtwVGQ3R18yU0FOVkt4SFUtOG4tY3UxTGdqQWN5eWRncXNVNl9iYQ",
-        "published_at": "2026-10-08T06:38:37Z",
-        "tier": 4,
-        "weight": 3.8,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.42,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
         "title": "Iran attacks tankers beyond Strait of Hormuz - Financial Times",
         "source": "Financial Times",
         "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPTHpvdlEyOU5Sdk1wZThacFU0dW56MTIzLTJKN1lydVZrS212dTJteVdHakpxX1VvYVIzdXFzcE12OUhhbDZNaTlzczJIMktDS0Z2c3dGaTNXRlpRSVR3dldvTUhuUlNJdUREVlptTWxiV1NYbkZXdXF5a1BiTGhxQWFrWHU",
@@ -801,6 +767,23 @@
         "traffic_count": null,
         "traffic_average": null,
         "effective_weight": 3.2,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOdnAtMmE4Vi10TWlqTFQ0MkFXdzJCNlQzYlFSbXBkOVg5YW9Qd0YwcG5vZnVQS21ETGdLVnllV2RxRFZmZUZyaV8xZWtzVXNLMUxVV1BhQXc3Qm4wVjFaOTB4US1mR0MwWmxoTzdvSV9tUmxvbkx6cWppUkZPMnpHaXNPWjBTMmhBN1p5NDhmSkI1VWtiNEJQcjJLbEJPa2Jhc1VqLWNhR19JcEFkZk5kTmRjaEFnUQ",
+        "published_at": "2026-10-08T03:45:11Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.12,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -826,7 +809,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-10T01:09:41Z",
+        "published_at": "2026-10-10T07:41:36Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -837,46 +820,63 @@
         "effective_weight": 3.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Trump Says US Won’t Attack Iran Before Midterm Elections - Bloomberg.com",
+        "source": "Bloomberg",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONDhxR0dqUFA0azE1VWJaVzJNckpWSDRZVUU1eVdac0V1VXlIYTNtTHhZZ2R2eDBjUlRZNkZ1elppSVptYXE4T3FKZkdSNDRBTDFFNDVaeUVWa2hva3huNlNxXzJFU20yZHR4ZUxzM1lUM0d2MzJTUGlvV2ZmWklzNk9uM3kyMDB3MjBOeTdIbEhLOFhjSEI3d0hSaXJEeGdfQk1uc0psR1MzaGFBNFhYUUxINExPQQ",
+        "published_at": "2026-10-08T22:10:59Z",
+        "tier": 3,
+        "weight": 3.2,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 2.88,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
-      "evt_36679bcef554ab59",
       "evt_04509198ff4e565b",
-      "evt_94d5fd2bed5baeb0",
-      "evt_8659a973ef40169a",
+      "evt_36679bcef554ab59",
+      "evt_8e6f1e7c5a7c5350",
+      "evt_cc10c0140107ff08",
       "evt_de4fa87f41a79ca0",
-      "evt_da1ddcee5dfdc643",
+      "evt_8a45b82b1ebd86ac",
       "evt_42e4c93eec155b5e",
+      "evt_f03225166bb79c7c",
+      "evt_254d543fffd85134",
       "evt_3c0826f1855cade5",
       "evt_41d32cbd6308a1a3",
-      "evt_f6cb1f9bdf6106dd",
       "evt_c20a47c1d36dee8f",
       "evt_93fe93ca10e5cdff",
       "evt_2c130a782b97ae97",
       "evt_2d1c534255f7163c",
       "evt_10e8494f4737dfe3",
+      "evt_da1ddcee5dfdc643",
       "evt_be40e7a3ee377309",
-      "evt_45480510aedc738a",
-      "evt_2e1af4705e056f54",
-      "evt_bb45e62a071c80e9"
+      "evt_45480510aedc738a"
     ],
     "verification_summary": {
-      "CONFIRMED_MULTI_SOURCE": 6,
+      "CONFIRMED_MULTI_SOURCE": 4,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 2,
-      "SINGLE_SOURCE": 23,
-      "UNCONFIRMED": 21,
-      "TOTAL": 52
+      "SINGLE_SOURCE": 24,
+      "UNCONFIRMED": 20,
+      "TOTAL": 50
     },
     "diagnostics": {
-      "signals_considered": 119,
+      "signals_considered": 117,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 52,
-      "article_count_after_deduplication": 133,
+      "event_count": 50,
+      "article_count_after_deduplication": 131,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -888,6 +888,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-10T01:09:41Z"
+    "generated_at": "2026-10-10T07:41:36Z"
   }
 }
