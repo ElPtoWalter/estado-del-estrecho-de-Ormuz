@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-10-10T19:27:57Z",
-  "last_success_at": "2026-10-10T19:27:57Z",
+  "checked_at": "2026-10-10T22:52:21Z",
+  "last_success_at": "2026-10-10T22:52:21Z",
   "last_change_at": "2026-10-04T22:27:58Z",
   "verification_ok": true,
   "stale": false,
@@ -23,7 +23,7 @@
       "published_at": "2026-10-09T18:01:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-10T19:27:57Z"
+      "observed_at": "2026-10-10T22:52:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -34,7 +34,7 @@
       "published_at": "2026-10-09T15:10:55Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-10T19:27:57Z"
+      "observed_at": "2026-10-10T22:52:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -45,7 +45,7 @@
       "published_at": "2026-10-09T15:04:30Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-10T19:27:57Z"
+      "observed_at": "2026-10-10T22:52:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -56,7 +56,7 @@
       "published_at": "2026-10-08T16:50:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-10T19:27:57Z"
+      "observed_at": "2026-10-10T22:52:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -67,7 +67,7 @@
       "published_at": "2026-10-08T16:23:25Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-10T19:27:57Z"
+      "observed_at": "2026-10-10T22:52:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,33 +78,34 @@
       "published_at": "2026-10-08T13:23:29Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-10T19:27:57Z"
+      "observed_at": "2026-10-10T22:52:21Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
-      "open": 1.5,
+      "open": 1.1,
       "closed": 0,
       "declared": 0,
-      "risk": 16.41
+      "risk": 15.255
     },
     "independent_sources": {
       "open": 1,
       "closed": 0,
       "declared": 0,
-      "risk": 10
+      "risk": 9
     },
-    "articles_considered": 52,
-    "signals_considered": 19,
+    "articles_considered": 50,
+    "signals_considered": 18,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
-    "evidence_archive_size": 48,
+    "evidence_archive_size": 47,
     "evidence_archive_days": 14
   },
   "evidence_context": {
@@ -126,7 +127,7 @@
       "published_at": "2026-10-09T18:01:09Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-10T19:27:57Z"
+      "observed_at": "2026-10-10T22:52:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -137,7 +138,7 @@
       "published_at": "2026-10-09T15:10:55Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-10T19:27:57Z"
+      "observed_at": "2026-10-10T22:52:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -148,7 +149,7 @@
       "published_at": "2026-10-09T15:04:30Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-10T19:27:57Z"
+      "observed_at": "2026-10-10T22:52:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -203,7 +204,7 @@
       "published_at": "2026-10-08T16:50:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-10T19:27:57Z"
+      "observed_at": "2026-10-10T22:52:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -214,7 +215,7 @@
       "published_at": "2026-10-08T16:23:25Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-10T19:27:57Z"
+      "observed_at": "2026-10-10T22:52:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -225,7 +226,7 @@
       "published_at": "2026-10-08T13:23:29Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-10T19:27:57Z"
+      "observed_at": "2026-10-10T22:52:21Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -633,23 +634,12 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-09-27T14:13:47Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Saudi FM accuses Iran of 'flagrant attacks' and condemns Houthis at UNGA - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_id": "aljazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNMVd3S3Q5YjB3NVUxQlo4bFVxTFpXVnVyRjZLS25yZXM4c3BLMmlVbmdjZm9LX0UzOHV1OU0xXy1qcEJIS2VxbmN5dk5rbnp0a3JWWFZvM3RVeHdDQl9iZ1RKWjVPdW05MnpfNGVHRHFmdk4wcWdoMk9RRnJyVm1NeVNtMVRxeGM4NUprVkNpQlRrRV9GZk1lcmdRVVdWNnVzR2ZCVHE5dGV2d3ZnQlJDSFF2dUU3dkpGY3lISXZn0gHDAUFVX3lxTE1PMWtfbUpZaThoVnptdDRhcDJYUWxLZVFMaXBjbEdtaEhmUUFVczJfRF9wcHM0VVFRazFKVkIzZlBUTW14NTNwb1U2UVBFdjZXaFpRempjQXUtaE03ZDByTEkwa1BFYnh5LW85WGJtQ1N5RGZpeU5RbmtxbG4tZElfS3RVdUhuSF9uRENZRXA5bmQzQndYb2RENEN0UjltamxjWkRvV1pndlMwYjZHQjVlaFFxWFVmcG5odnlSbEFrNkQybw",
-      "published_at": "2026-09-26T19:43:43Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-09-28T05:45:24Z"
     }
   ],
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-10T19:28:17Z",
+    "generated_at": "2026-10-10T22:52:48Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -683,18 +673,18 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 17.061,
+      "passage": 16.796,
       "closure": 0,
-      "traffic_reduction": 2.493,
-      "access_restriction": 4.12,
-      "risk": 102.896
+      "traffic_reduction": 1.493,
+      "access_restriction": 4.02,
+      "risk": 102.092
     },
     "source_counts": {
       "passage": 14,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-10-10T08:35:00Z",
+    "latest_confirmed_transit_at": "2026-10-10T19:41:00Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -774,7 +764,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-10T19:28:17Z",
+        "published_at": "2026-10-10T22:52:48Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -816,7 +806,7 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 2.88,
+        "effective_weight": 2.496,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -840,42 +830,42 @@
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
-      "evt_9408de7213714ccb",
-      "evt_fd0d4ed2b994957a",
-      "evt_e7c70a492de00d31",
       "evt_f440ce02cd176781",
-      "evt_36679bcef554ab59",
-      "evt_04509198ff4e565b",
-      "evt_2d0d19c454ec404d",
+      "evt_fd0d4ed2b994957a",
+      "evt_c280c8fc45ef32af",
+      "evt_9408de7213714ccb",
+      "evt_e7c70a492de00d31",
+      "evt_da1ddcee5dfdc643",
       "evt_93fe93ca10e5cdff",
-      "evt_254d543fffd85134",
+      "evt_2d0d19c454ec404d",
+      "evt_dd2200707def0e7f",
       "evt_be40e7a3ee377309",
+      "evt_cc10c0140107ff08",
       "evt_de4fa87f41a79ca0",
       "evt_8a45b82b1ebd86ac",
       "evt_42e4c93eec155b5e",
+      "evt_36679bcef554ab59",
       "evt_f03225166bb79c7c",
-      "evt_dd2200707def0e7f",
+      "evt_c2a74e48c43a2bd8",
       "evt_3c0826f1855cade5",
-      "evt_c20a47c1d36dee8f",
-      "evt_2c130a782b97ae97",
-      "evt_10e8494f4737dfe3"
+      "evt_c20a47c1d36dee8f"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 4,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 2,
-      "SINGLE_SOURCE": 24,
+      "SINGLE_SOURCE": 22,
       "UNCONFIRMED": 22,
-      "TOTAL": 52
+      "TOTAL": 50
     },
     "diagnostics": {
-      "signals_considered": 122,
+      "signals_considered": 120,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 52,
-      "article_count_after_deduplication": 140,
+      "event_count": 50,
+      "article_count_after_deduplication": 139,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -887,6 +877,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-10T19:28:17Z"
+    "generated_at": "2026-10-10T22:52:48Z"
   }
 }
