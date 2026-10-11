@@ -1,50 +1,50 @@
 {
   "version": 11,
-  "generated_at": "2026-10-10T11:24:35Z",
+  "generated_at": "2026-10-11T11:38:04Z",
   "ok": true,
-  "date": "2026-10-10",
-  "material_score": 9,
+  "date": "2026-10-11",
+  "material_score": 12,
   "material_archive": true,
-  "news_considered": 19,
-  "new_articles": 11,
-  "source_brands": 6,
+  "news_considered": 10,
+  "new_articles": 6,
+  "source_brands": 3,
   "fetch_errors": [],
   "operational_intelligence_used": true,
-  "editor_engine": "rules",
-  "editor_assistant_status": "gemini-http-503",
+  "editor_engine": "gemini",
+  "editor_assistant_status": "ok",
   "editorial_trace": {
     "validator_version": 2,
-    "factual_packet_sha256": "bdbda3df345c2b07e856b0f68643750d5a29c96018f36d37a67751580a62f766",
-    "provider": "rules",
-    "status": "gemini-http-503",
+    "factual_packet_sha256": "9f76b1ce8be531831976e8196a3633ae3ae9490b5d0fcf84ec9d268dedff88f4",
+    "provider": "gemini",
+    "status": "ok",
     "attempts": [
       {
         "provider": "gemini",
         "model": "gemini-3.5-flash-lite"
       }
     ],
-    "factual_packet_hash": "bdbda3df345c2b07e856b0f68643750d5a29c96018f36d37a67751580a62f766",
+    "factual_packet_hash": "9f76b1ce8be531831976e8196a3633ae3ae9490b5d0fcf84ec9d268dedff88f4",
     "event_ids": [
       "evt_c26f87164bf1ec62",
+      "evt_3c84326b496c5902",
       "evt_8a45b82b1ebd86ac",
-      "evt_254d543fffd85134",
+      "evt_c2a74e48c43a2bd8",
       "evt_3c0826f1855cade5",
       "evt_2c130a782b97ae97",
-      "evt_da1ddcee5dfdc643",
-      "evt_be40e7a3ee377309",
+      "evt_04509198ff4e565b",
+      "evt_ead5d8a572296a80",
       "evt_45480510aedc738a",
-      "evt_7334489b3c7fa598",
-      "evt_66ccf2eda5eb438f",
       "evt_fe2764d1b579a11a",
-      "evt_94d5fd2bed5baeb0",
-      "evt_21175ed08ee8420b",
+      "evt_36679bcef554ab59",
+      "evt_fd0d4ed2b994957a",
       "evt_6367edb8480f8d35",
       "evt_127c7bd80b7f334e",
       "evt_64d4ad00fee06492",
-      "evt_bb5a11ef21533df6",
+      "evt_dd2200707def0e7f",
       "evt_360a1a5b6ddc763c",
       "evt_a9fed6c6fefa9133",
-      "evt_0d6a20a8ad1f50ad"
+      "evt_0d6a20a8ad1f50ad",
+      "evt_6bd4dbab7e25c5b1"
     ],
     "source_ids": [
       "aljazeera",
@@ -67,11 +67,11 @@
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 2,
-      "SINGLE_SOURCE": 24,
-      "UNCONFIRMED": 20,
-      "TOTAL": 50
+      "SINGLE_SOURCE": 22,
+      "UNCONFIRMED": 28,
+      "TOTAL": 56
     },
-    "timestamp": "2026-10-10T11:24:35Z",
-    "fallback_used": true
+    "timestamp": "2026-10-11T11:38:04Z",
+    "fallback_used": false
   }
 }
