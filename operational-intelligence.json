@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-10-11T20:31:13Z",
+  "generated_at": "2026-10-11T23:53:27Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -34,14 +34,14 @@
   "traffic_ratio_estimate": null,
   "traffic_snapshot": null,
   "scores": {
-    "passage": 15.96,
+    "passage": 15.734,
     "closure": 0,
     "traffic_reduction": 0.62,
-    "access_restriction": 11.32,
-    "risk": 102.824
+    "access_restriction": 10.42,
+    "risk": 107.072
   },
   "source_counts": {
-    "passage": 16,
+    "passage": 15,
     "closure": 0,
     "primary_sources": 2
   },
@@ -49,7 +49,7 @@
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "confidence": "MEDIA"
+    "confidence": "ALTA"
   },
   "evidence": [
     {
@@ -57,7 +57,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-10-11T20:31:13Z",
+      "published_at": "2026-10-11T23:53:27Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -66,6 +66,23 @@
       "traffic_count": null,
       "traffic_average": null,
       "effective_weight": 3.0,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Brent crude remains above $105 a barrel as Houthi, tanker attacks continue in West Asia - CNBC TV18",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxNWFI1MTViS1FHNjFJTFF3cFpKZ044ZU5UZHRQQkVnWGRHbUhOY2U5aWJXdWJlbVJoa21HWEFhbTEzQXdGUWlsNEwwdUJwTTlYdTdVNElRSEVLc0FVUVl2Vk1qS1JDaVZObXh4ZWVqallnbHVaUFREdnB3UjhrdU9MMENWUjJEQm5ubVpBTVJTYktpcFk3Yl9kY3c4Z0VZNFp5SlRlTFVEQjFYM3pPYzRiOUp3UzNpQmpBeU42WWpRMWdDSGcxZ0dyV0xyQ1RPWHBpUWEtZTlkRjlyV2JWb1RhTUtQbE1nM2hLV2MwX1d4VVlGa3RLTVhvZVdqZ0pmWlRxZ2taSUhJYk50ODRCekHSAZMCQVVfeXFMUEFTWWJhTDNuNVZYQVRUVVJoWWhybW1scEJ2SEdhU3R4b1M4SWVZN29wem5OSXRvUnkzMGNyQl9PUU5fZHQ1VFVtWnZNZFNHSFBUWldnQWg0WVFSaUkyZnpWdWtSeFR1N2t0X0JtU0JHNmswZEJxR0tESlNBdHBId211T2tSU2JNOE1NOFZFS2tPSlFKQ3NFaENTUXNOODFZSF91VWlIeE5ZcHFZMEhpZWhwQnkycS1mSHVIdHBGanZjMGNWMi02WG1sMWRiQ0c4cWwxSmljeFRER3o3SGtlTlgxNkxsb0wxcjExVUpKTlBMVDhDSmw1RFZWTkZFVHY3Q1ZGcEV0TDJHdUVDelhkeWF4Vzg",
+      "published_at": "2026-10-11T23:09:34Z",
+      "tier": 2,
+      "weight": 2.5,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "traffic_count": null,
+      "traffic_average": null,
+      "effective_weight": 2.5,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -88,26 +105,9 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Trump Says US Won’t Attack Iran Before Midterm Elections - Bloomberg.com",
-      "source": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONDhxR0dqUFA0azE1VWJaVzJNckpWSDRZVUU1eVdac0V1VXlIYTNtTHhZZ2R2eDBjUlRZNkZ1elppSVptYXE4T3FKZkdSNDRBTDFFNDVaeUVWa2hva3huNlNxXzJFU20yZHR4ZUxzM1lUM0d2MzJTUGlvV2ZmWklzNk9uM3kyMDB3MjBOeTdIbEhLOFhjSEI3d0hSaXJEeGdfQk1uc0psR1MzaGFBNFhYUUxINExPQQ",
-      "published_at": "2026-10-08T22:10:59Z",
-      "tier": 3,
-      "weight": 3.2,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "traffic_count": null,
-      "traffic_average": null,
-      "effective_weight": 2.496,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
       "title": "Hormuz tanker attacks hit seven-month high as Iran seeks to undermine Middle East Gulf export recovery - Lloyd's List",
       "source": "Lloyd's List",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOSmNfSTNsMExhOEk0aEcxZndmUVlVVnhBcXpFYmdyOGhyWG9kaDRjeDlDTlJWSy02T1E4bEptNGQ4VVp0a0FpNTB5YUs0eTMxemV3SDV1SnFzNEZMTjZJLXo5Z1NMZ1ZsMGVYcUtscEdPSEpRLWN3N1FUaFNiVjBxQlBnVkltNzU5eDF6QUFRSk9jMnRLR0RCMnotamkyTUprMmk5dUlDU0tMb0hZNjBva3ptbjYxVzJ3MURKdC1lbnBMUW9aOFJOM29jcHRJR2pnSFhmTWN3",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNYjgtelVnWDNMQV9CY2F2M3o3ZzQzcTFoVDZxTTV1WkFiWTBnbjNkamNpeDNDVFZUdDVSdjJxMTFNa3NhVkw3WGdYU0U4d1o4UWtmNG1ncnFpN0prb0FiYlBpbmxKaUowdU5mVGtLMi10bTBLQjR3YmFPYzNoajBsaHJjbDlSdjVEZENIb1Fua2NOVWFhNWZYU05SWFNiMzd5TWRNQTRMeUNLRzhnb0dnUElTdlNsLU9tNGRaRnhUa01VdGE5VEE",
       "published_at": "2026-10-08T16:23:25Z",
       "tier": 4,
       "weight": 4.0,
@@ -191,42 +191,42 @@
   ],
   "event_ids": [
     "evt_c26f87164bf1ec62",
-    "evt_a1f1a9496b152925",
-    "evt_d3807c42a1313a2f",
+    "evt_accdeb4081c315cc",
+    "evt_ffaa93ca1860ffa4",
+    "evt_70b1bee7bfa259a3",
+    "evt_c1239e220de45692",
     "evt_021d84f1a5e402dd",
     "evt_b48400d47c0ff54a",
+    "evt_2aad5dacac51f345",
+    "evt_d3807c42a1313a2f",
+    "evt_d702cdc17cb5b695",
     "evt_1008fdf2f2390325",
     "evt_bb45e62a071c80e9",
     "evt_f59228e3f37a100c",
     "evt_bd92a0800de12369",
     "evt_364c93937faa4784",
     "evt_9d4fe925d0844464",
-    "evt_3c84326b496c5902",
-    "evt_a2668fb9f4894a71",
-    "evt_70b1bee7bfa259a3",
+    "evt_5252e5e939bcb203",
+    "evt_28e5e80932f0e665",
     "evt_208ba56a27bb3455",
-    "evt_ffaa93ca1860ffa4",
-    "evt_8a46ddee3dc92c7c",
-    "evt_c280c8fc45ef32af",
-    "evt_ead5d8a572296a80",
-    "evt_357839e45eba9a30"
+    "evt_a1f1a9496b152925"
   ],
   "verification_summary": {
     "CONFIRMED_MULTI_SOURCE": 4,
     "CONFIRMED_PRIMARY": 0,
     "CONFLICTING": 0,
     "DECLARATION_ONLY": 1,
-    "SINGLE_SOURCE": 23,
-    "UNCONFIRMED": 28,
-    "TOTAL": 56
+    "SINGLE_SOURCE": 24,
+    "UNCONFIRMED": 29,
+    "TOTAL": 58
   },
   "diagnostics": {
-    "signals_considered": 132,
+    "signals_considered": 133,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
-    "event_count": 56,
-    "article_count_after_deduplication": 154,
+    "event_count": 58,
+    "article_count_after_deduplication": 155,
     "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
     "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
   }
