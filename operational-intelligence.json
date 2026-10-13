@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-10-12T23:09:56Z",
+  "generated_at": "2026-10-13T03:47:07Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -34,18 +34,18 @@
   "traffic_ratio_estimate": null,
   "traffic_snapshot": null,
   "scores": {
-    "passage": 7.854,
+    "passage": 6.554,
     "closure": 0,
-    "traffic_reduction": 3.0,
-    "access_restriction": 14.66,
-    "risk": 101.394
+    "traffic_reduction": 2.9,
+    "access_restriction": 14.54,
+    "risk": 101.534
   },
   "source_counts": {
-    "passage": 6,
+    "passage": 5,
     "closure": 0,
     "primary_sources": 3
   },
-  "latest_confirmed_transit_at": "2026-10-12T02:41:27Z",
+  "latest_confirmed_transit_at": "2026-10-11T17:00:20Z",
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -142,7 +142,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-10-12T23:09:56Z",
+      "published_at": "2026-10-13T03:47:07Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -191,25 +191,25 @@
   ],
   "event_ids": [
     "evt_c26f87164bf1ec62",
+    "evt_1d50c519dda981f5",
+    "evt_f044ba536c6d5cac",
+    "evt_ffaa93ca1860ffa4",
     "evt_c1239e220de45692",
     "evt_4c83fd1eb46a409b",
-    "evt_1b1d7bdcb0b21a8a",
     "evt_cdeee2e1f2e81080",
+    "evt_a1793c91c64cef63",
     "evt_80ebf4cd0191ecd8",
     "evt_81dbeaf6b06450fe",
     "evt_493621ae6bd05b2a",
-    "evt_ffaa93ca1860ffa4",
     "evt_a9a789db8533185d",
-    "evt_f044ba536c6d5cac",
-    "evt_1d50c519dda981f5",
+    "evt_1b1d7bdcb0b21a8a",
     "evt_92e687ee3ac889f5",
-    "evt_ad693cac16999d01",
     "evt_accdeb4081c315cc",
     "evt_b36bba126fc29797",
     "evt_3e409618029b8fdd",
-    "evt_57faa6a1c7544569",
     "evt_08ba1a4aa01c1ad4",
-    "evt_4fdefc4f93775fda"
+    "evt_4fdefc4f93775fda",
+    "evt_cecc182ee0f52a3c"
   ],
   "verification_summary": {
     "CONFIRMED_MULTI_SOURCE": 3,
@@ -217,16 +217,16 @@
     "CONFLICTING": 0,
     "DECLARATION_ONLY": 2,
     "SINGLE_SOURCE": 27,
-    "UNCONFIRMED": 26,
-    "TOTAL": 58
+    "UNCONFIRMED": 25,
+    "TOTAL": 57
   },
   "diagnostics": {
-    "signals_considered": 114,
+    "signals_considered": 113,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
-    "event_count": 58,
-    "article_count_after_deduplication": 149,
+    "event_count": 57,
+    "article_count_after_deduplication": 148,
     "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
     "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
   }
