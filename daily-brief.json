@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-14T02:07:06Z",
+    "generated_at": "2026-10-14T07:58:10Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -77,43 +77,60 @@
       "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "DISPUTED"
+      "legal": "CLOSURE_CLAIMED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Régimen disputado"
+      "legal": "Cierre declarado por una parte"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "Disputed regime"
+      "legal": "Closure claimed by one party"
     },
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 7.046,
+      "passage": 12.61,
       "closure": 0,
       "traffic_reduction": 5.5,
-      "access_restriction": 19.612,
-      "risk": 117.992
+      "access_restriction": 20.58,
+      "risk": 126.612
     },
     "source_counts": {
-      "passage": 5,
+      "passage": 7,
       "closure": 0,
-      "primary_sources": 4
+      "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-10-13T17:27:29Z",
+    "latest_confirmed_transit_at": "2026-10-14T05:52:17Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "ALTA"
     },
     "evidence": [
+      {
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "Oil prices rise as Iran deploys new tactics to target ships transiting Hormuz - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxON0hPaGRDOW9haXRKcUJ3WVU5dVdwSjB2ZzNMZTVWd0lRYV9ZUjRNRTI4VjVXeERGeW1XVU1GanZidjZneXhKeFh1dWM0OUJ6ZGltVXFXdHJNVk52MDN5M3NvRnhUUWN6aEFiSldFUWxfeHNPYmQ2R21JMGlhaUNaWEFNckc0T0ItSFpYcHA3MmM4UUdnTVd0VFg0NWhtbm91MllPWllha0pqdVBjZlRldDgxaG5PclVud0xtNQ",
+        "published_at": "2026-10-14T01:27:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
+      },
       {
         "kind": "RISK_SEVERE",
         "title": "Iran shifting tactics to step up attacks on shipping before US vote, officials say - Reuters",
@@ -130,23 +147,6 @@
         "effective_weight": 4.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_ELEVATED",
-        "title": "Iran increases threat to Strait of Hormuz shipping, and other Middle East developments - AP News",
-        "source": "Associated Press",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZjZtVDJsR2JiRDFvUWtYR0Jvei1EVklHd2VjRGxUbTZ3MlZmME4yVWhkN1ppU2JMN3NTWFk3X1B4eElWSkhiazYwb0tvMi1NMklRemNiN0F3c21ZX0NybmtxY211bEc5MXNsVkNndjN5MjRjSTUtbUpUVEZlc1hiMkx6Y2h3Z1k2Y0VpcG1vWmEtc1lwN2pnbHhqcGYyVmhGb3FTVA",
-        "published_at": "2026-10-13T23:29:00Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo elevado",
-        "kind_label_en": "Elevated risk"
       },
       {
         "kind": "ACCESS_RESTRICTED",
@@ -166,40 +166,6 @@
         "kind_label_en": "Restricted access"
       },
       {
-        "kind": "RISK_SEVERE",
-        "title": "Iran takes VHF Channel 16 complaint to IMO as Hormuz attacks reach highest intensity of conflict - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNV1ZSUWhJVVRIYWJ6emVKN2diNl9idmk2eC1HRDZRMlJEZ3RWMDk5OXBZc0FXN3hoTExFV05NUXhWVS00dzhva2w5Y1laNWdRazRBUVZaSGFJZm1KR1BhM1lyOU1VdkI0U1Vaa3l1bXMzeTI0VEhydnZrN2ZpbjVTTC1xYUtmTDA5WXJmZDJDa2ZpdEJxNTVYcTJMVkd6dFRWa2cxX0k2cnlid0FhUmN5MlpESHczVVJUblJQcWNHNUxtUVdZNTk3ckhURF9IUQ",
-        "published_at": "2026-10-13T12:42:15Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Two more Hormuz attacks confirmed by UK maritime authorities - TradeWinds News",
-        "source": "TradeWinds",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOcDdDN096RlBmb3FWYzVaX1g2MUNYMVhtRC1TaG1pUWdoUEJkMkxmeXlJSHE5NWpUQm5hZUNMR3Z1ZWdnd1VRQlJkcllxY29FeTRMWmRsTVhuRnNybEk2a19IYmxlOWVrTXAybFZxNmloc05OOTZfR1B2Wm1iaHBLQ1pTTlNVak5XZ1RZS25kaEdhOWJzcXhocXBfc2xTYV9GZmVpeDMxcFRXQ1ptRGNxVFBnQWpzd0k",
-        "published_at": "2026-10-13T19:59:23Z",
-        "tier": 4,
-        "weight": 3.8,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.8,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
         "kind": "ACCESS_RESTRICTED",
         "title": "Sixty countries back declaration opposing strait tolls - Reuters",
         "source": "Reuters",
@@ -215,6 +181,40 @@
         "effective_weight": 3.6,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Hormuz attacks spread beyond transit corridor as tanker struck at Omani anchorage - Lloyd's List",
+        "source": "Lloyd's List",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdEVSWWlLT215YUlzdmpnWXc4TnpfNXRMZHBQRVhlUHlZYTRrMUc5Q25nRmVHTEhXYTRuZmQ4THJJUVNycWJCSTJaa29jSEEwT0VOOVlfOWlOYjZLMlFjM2hQYW9BUUxrSEpudERhdTRFNG5SSXhneUQtdExMLU1yMlhETjFLSzVlTExWUG9DakwyemxGalhPdlZhelFLdGhGdGFlU1RpQnVhTDNhZ1RFYk1SRE11WmFXZEE",
+        "published_at": "2026-10-12T10:25:28Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.6,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "UK authorities cite three more attacks in Hormuz - TradeWinds News",
+        "source": "TradeWinds",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZE5iYVhwMVNwSlNLNll5T2lZdXZWeUhKMXVETlgzcDNnVnpkY0d6TWpUellMUkFpVS15bk1GTm5PY0d0aS1GT005NEtOSGEyejJzM2JEcTZDWVEza0o3cTBwa0R1R1JJa29qVktlOW5DVE1tMzFtYXJpOWlKeHdVUThHRmZJMjBPd0NHa3VwTGtZc3Qtb2pEVDRhMVR5SGNl",
+        "published_at": "2026-10-12T22:54:57Z",
+        "tier": 4,
+        "weight": 3.8,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.42,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       },
       {
         "kind": "RISK_SEVERE",
@@ -253,42 +253,42 @@
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
-      "evt_f22119f822428e02",
-      "evt_cabf467c19c77e7c",
-      "evt_cb3e0dec7da03b2e",
-      "evt_ffaa93ca1860ffa4",
-      "evt_7aba807268aab2a9",
-      "evt_9e051355e035ea7e",
-      "evt_25527130594c8a61",
-      "evt_a1793c91c64cef63",
-      "evt_aafc2f68060b4948",
-      "evt_b2293d0565deca2d",
-      "evt_85bdf9fe08c1e223",
-      "evt_f044ba536c6d5cac",
+      "evt_5f05dfd5ae03d8b2",
+      "evt_92e687ee3ac889f5",
+      "evt_dd17b2568e5d1d52",
       "evt_493621ae6bd05b2a",
-      "evt_617c960eae7f7722",
-      "evt_e3c2c9fc628298fb",
-      "evt_c094bd706f2a334a",
-      "evt_0ea5afd87b71d50c",
-      "evt_deb4577601d642f6",
-      "evt_f86b4048d2244a9c"
+      "evt_4ee1a7ec3dce3c5c",
+      "evt_5dca083d3fb8e9fd",
+      "evt_64a76937ed439cad",
+      "evt_f22119f822428e02",
+      "evt_46a6d6e3f9368035",
+      "evt_b2b2de3ceb15f757",
+      "evt_cb3e0dec7da03b2e",
+      "evt_bb45e62a071c80e9",
+      "evt_cabf467c19c77e7c",
+      "evt_11045584d06e1a1d",
+      "evt_ffaa93ca1860ffa4",
+      "evt_25527130594c8a61",
+      "evt_7aba807268aab2a9",
+      "evt_aafc2f68060b4948",
+      "evt_b2293d0565deca2d"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 3,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 5,
-      "SINGLE_SOURCE": 31,
-      "UNCONFIRMED": 29,
-      "TOTAL": 68
+      "DECLARATION_ONLY": 4,
+      "SINGLE_SOURCE": 29,
+      "UNCONFIRMED": 35,
+      "TOTAL": 71
     },
     "diagnostics": {
-      "signals_considered": 132,
+      "signals_considered": 148,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 68,
-      "article_count_after_deduplication": 164,
+      "event_count": 71,
+      "article_count_after_deduplication": 180,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-14T02:07:06Z"
+    "generated_at": "2026-10-14T07:58:10Z"
   }
 }
