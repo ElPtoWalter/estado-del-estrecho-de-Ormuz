@@ -1,57 +1,65 @@
 {
   "version": 11,
-  "generated_at": "2026-10-14T10:38:46Z",
+  "generated_at": "2026-10-15T10:22:08Z",
   "ok": true,
-  "date": "2026-10-14",
-  "material_score": 4,
+  "date": "2026-10-15",
+  "material_score": 12,
   "material_archive": true,
-  "news_considered": 18,
-  "new_articles": 15,
-  "source_brands": 7,
+  "news_considered": 39,
+  "new_articles": 32,
+  "source_brands": 12,
   "fetch_errors": [],
   "operational_intelligence_used": true,
-  "editor_engine": "gemini",
-  "editor_assistant_status": "ok",
+  "editor_engine": "rules",
+  "editor_assistant_status": "gemini-validation-es",
   "editorial_trace": {
     "validator_version": 2,
-    "factual_packet_sha256": "33e4c41d0b9281c82053455ae04d8f809f950caee0d99c669378593c51666c96",
-    "provider": "gemini",
-    "status": "ok",
+    "factual_packet_sha256": "db7caf8ec49bcb47ffa828c969aaf976ffa9ac5b82269addfbeb9f4056d7e420",
+    "provider": "rules",
+    "status": "gemini-validation-es",
     "attempts": [
       {
         "provider": "gemini",
         "model": "gemini-3.5-flash-lite"
       }
     ],
-    "factual_packet_hash": "33e4c41d0b9281c82053455ae04d8f809f950caee0d99c669378593c51666c96",
+    "validation_diagnostics": {
+      "language": "es",
+      "reason": "unsupported-certainty"
+    },
+    "factual_packet_hash": "db7caf8ec49bcb47ffa828c969aaf976ffa9ac5b82269addfbeb9f4056d7e420",
     "event_ids": [
       "evt_c26f87164bf1ec62",
+      "evt_23eae069cd8a4d42",
+      "evt_fbac61f9ce13553e",
       "evt_493621ae6bd05b2a",
-      "evt_bb45e62a071c80e9",
+      "evt_deb4577601d642f6",
+      "evt_c78a45fb231809c9",
+      "evt_83fffc3fb1113788",
+      "evt_cc4be5550a4d7fd9",
+      "evt_b2fde2aa94942ed7",
+      "evt_5f05dfd5ae03d8b2",
       "evt_11045584d06e1a1d",
       "evt_85bdf9fe08c1e223",
       "evt_c094bd706f2a334a",
-      "evt_deb4577601d642f6",
       "evt_9d5cca6dc232b5b9",
-      "evt_78fb8f41fa9eb65f",
       "evt_1b1d7bdcb0b21a8a",
+      "evt_a7e66069688675d2",
       "evt_fb455b46d41597af",
       "evt_85c085a4414d020b",
       "evt_c1239e220de45692",
-      "evt_03bd5b8e3d21bbf3",
-      "evt_95bda3186b0a0e82",
-      "evt_cdeee2e1f2e81080",
-      "evt_b36bba126fc29797",
-      "evt_cecc182ee0f52a3c",
-      "evt_9d4fe925d0844464",
-      "evt_8a45b82b1ebd86ac"
+      "evt_03bd5b8e3d21bbf3"
     ],
     "source_ids": [
       "aljazeera",
+      "ap",
+      "bbc",
       "bloomberg",
       "cnbc",
+      "cnn",
       "euronews",
       "ft",
+      "guardian",
       "lloyds_list",
       "reuters",
       "sunday_guardian",
@@ -59,15 +67,15 @@
       "unknown"
     ],
     "verification_summary": {
-      "CONFIRMED_MULTI_SOURCE": 3,
+      "CONFIRMED_MULTI_SOURCE": 6,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 4,
-      "SINGLE_SOURCE": 29,
-      "UNCONFIRMED": 35,
-      "TOTAL": 71
+      "DECLARATION_ONLY": 5,
+      "SINGLE_SOURCE": 26,
+      "UNCONFIRMED": 30,
+      "TOTAL": 67
     },
-    "timestamp": "2026-10-14T10:38:46Z",
-    "fallback_used": false
+    "timestamp": "2026-10-15T10:22:08Z",
+    "fallback_used": true
   }
 }
