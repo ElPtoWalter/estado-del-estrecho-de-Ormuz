@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-10-17T14:22:01Z",
+  "generated_at": "2026-10-17T17:29:30Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -15,33 +15,33 @@
     "traffic": "REDUCED",
     "access": "SELECTIVE",
     "risk": "EXTREME",
-    "legal": "DISPUTED"
+    "legal": "CLOSURE_CLAIMED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
     "access": "Selectivo / condicionado",
     "risk": "Extremo",
-    "legal": "Régimen disputado"
+    "legal": "Cierre declarado por una parte"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
     "access": "Selective / conditional",
     "risk": "Extreme",
-    "legal": "Disputed regime"
+    "legal": "Closure claimed by one party"
   },
   "traffic_ratio_estimate": null,
   "traffic_snapshot": null,
   "scores": {
-    "passage": 8.801,
+    "passage": 7.995,
     "closure": 0,
     "traffic_reduction": 6.34,
-    "access_restriction": 13.88,
-    "risk": 160.446
+    "access_restriction": 10.54,
+    "risk": 154.888
   },
   "source_counts": {
-    "passage": 6,
+    "passage": 5,
     "closure": 0,
     "primary_sources": 3
   },
@@ -88,6 +88,23 @@
     },
     {
       "kind": "RISK_SEVERE",
+      "title": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNVlQtcHJibXBpYWEwWTQ4dFdfWUFJbTVteGY0WThGcTFybEdUTERvVG9DcGdoY09vUjh0TG1QeG5zMWx0LTFvV09teVNXY1NLdXZVNlpuMVBIV3pndWJKWVBRdENjLVd0dnVwdUxPTHFPU002S0ZqR0lkcjgyNVl2ZFFXc05MdTJHenM3LVNUSlBUb1RyeDVxY3VTdUxEamxrbS1OXzJJR3o3SlltandncHAwVXFNSTFYcmJXblh2U25vN2xMMW1ibQ",
+      "published_at": "2026-10-16T11:13:21Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "Google News RSS",
+      "details": "",
+      "traffic_ratio": null,
+      "traffic_count": null,
+      "traffic_average": null,
+      "effective_weight": 3.6,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
+    },
+    {
+      "kind": "RISK_SEVERE",
       "title": "Oil prices gain on attacks in Saudi Arabia, Iran's new tactics to target tankers - Reuters",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxON0hPaGRDOW9haXRKcUJ3WVU5dVdwSjB2ZzNMZTVWd0lRYV9ZUjRNRTI4VjVXeERGeW1XVU1GanZidjZneXhKeFh1dWM0OUJ6ZGltVXFXdHJNVk52MDN5M3NvRnhUUWN6aEFiSldFUWxfeHNPYmQ2R21JMGlhaUNaWEFNckc0T0ItSFpYcHA3MmM4UUdnTVd0VFg0NWhtbm91MllPWllha0pqdVBjZlRldDgxaG5PclVud0xtNQ",
@@ -105,27 +122,10 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Containership sinks in Strait of Hormuz as attacks on shipping intensify - Lloyd's List",
-      "source": "Lloyd's List",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdVVWdVFRbGdFS1BlMjB1a0JfZXVocHVObWJKeXZTbHVLbzVsTnZQcmlUQ3lWV3NCLWNKUG9HMHdRRV9kNU0yVTR6cTVYbFduSC1OMkNwazhKYkc4dWFaU091eW1ENHVVWGZCdVY4a0hvbU53QnpfQTE0RG1kTm1XcC1OWkhwU052UUpJSzJicEgwZFpxMjc4eXlZdXJWQlhSUEg5X2VCYWQ4ZzJXZFE",
-      "published_at": "2026-10-14T15:05:32Z",
-      "tier": 4,
-      "weight": 4.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "traffic_count": null,
-      "traffic_average": null,
-      "effective_weight": 3.12,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-10-17T14:22:01Z",
+      "published_at": "2026-10-17T17:29:30Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -134,23 +134,6 @@
       "traffic_count": null,
       "traffic_average": null,
       "effective_weight": 3.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "Capesize bulker said to be sinking three weeks after Strait of Hormuz attack - TradeWinds News",
-      "source": "TradeWinds",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNVl92NkxKRUotRWVlVXAwaGdYMmhKTGo5T2lHT05IOWRKTDhWTW1ZY0JjNlMyb0d4WjlocEx6a0lRZUNOYTBTc0tSay1xeGs5ZkQtN3RrX21laUZIN2pZdFlWRG5aU1lycV93UXlERjNrSFpqNVdMLXFlLUxxMHRWX3lpSGotbzFUdkxOeGtWS0hNbXBZS1dHUTZBN0liOEZkOE01bkNvcmhoNE1TUTNISC1kZzJ4elZISVFXRGNTTXlhSldYeUE",
-      "published_at": "2026-10-14T14:40:28Z",
-      "tier": 4,
-      "weight": 3.8,
-      "provider": "legacy-engine",
-      "details": "",
-      "traffic_ratio": null,
-      "traffic_count": null,
-      "traffic_average": null,
-      "effective_weight": 2.964,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -175,7 +158,7 @@
       "kind": "TRAFFIC_REDUCED",
       "title": "Ship attack reports near Hormuz reach record high as oil exports slow - BBC",
       "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5vbTJaWk05Ny1JSFlaa1RLTTV4QkdUX21kdXRkdUhRT1dvZmI1RGdMZ3hQdjlTM2JELXc1aXZ0Y3hVQlhMY3RXYXpIUVYwa08zVVFaUEdzU3AtaVU",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0tX0lUUUZkSGJKWXUyb0drR0dsY0M5ZDZ3Q091QlYxSjg2cWJIekZYWEVlb2VRNGFNdWxKX1ZaWnpYajlibzEtQ2FWTjVxUHBqbEJrby1tWUJrWng1Y1E",
       "published_at": "2026-10-16T05:00:17Z",
       "tier": 3,
       "weight": 3.2,
@@ -187,46 +170,63 @@
       "effective_weight": 2.88,
       "kind_label_es": "Tráfico reducido",
       "kind_label_en": "Reduced traffic"
+    },
+    {
+      "kind": "ACCESS_RESTRICTED",
+      "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
+      "source": "Lloyd's List",
+      "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+      "published_at": "2026-10-17T17:29:30Z",
+      "tier": 4,
+      "weight": 2.6,
+      "provider": "Lloyd's List hot topic",
+      "details": "",
+      "traffic_ratio": null,
+      "traffic_count": null,
+      "traffic_average": null,
+      "effective_weight": 2.6,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
     }
   ],
   "event_ids": [
     "evt_c26f87164bf1ec62",
-    "evt_3617f8a0a46e199a",
-    "evt_2878a3a7d147970c",
+    "evt_4283dc0833874123",
     "evt_68a98fd8c3b701c7",
+    "evt_2878a3a7d147970c",
+    "evt_ac526b212816b7ec",
+    "evt_481627c65098e7ae",
+    "evt_15440c0bd445215d",
     "evt_f97ebc72f7628eba",
     "evt_691fcf9284fe8caf",
     "evt_b2f9ead2f957bd1c",
     "evt_460ba4cde42da829",
     "evt_cfc8b4d179aec781",
     "evt_4a7375cadd22d6c8",
-    "evt_fa35a790eba4a850",
-    "evt_089676272d8eb1b6",
+    "evt_3617f8a0a46e199a",
     "evt_fe5be2bdd4ed0905",
+    "evt_d370fb7530e034bd",
     "evt_528a9eb35e92a65d",
-    "evt_12a6faab3b59ae9e",
     "evt_153dae984d3677e1",
-    "evt_4283dc0833874123",
     "evt_f97e43525713657d",
-    "evt_fb92bfc79e0884f8",
-    "evt_834ddbe2fd1e7faf"
+    "evt_fb92bfc79e0884f8"
   ],
   "verification_summary": {
     "CONFIRMED_MULTI_SOURCE": 5,
     "CONFIRMED_PRIMARY": 0,
     "CONFLICTING": 0,
     "DECLARATION_ONLY": 6,
-    "SINGLE_SOURCE": 30,
-    "UNCONFIRMED": 37,
-    "TOTAL": 78
+    "SINGLE_SOURCE": 29,
+    "UNCONFIRMED": 32,
+    "TOTAL": 72
   },
   "diagnostics": {
-    "signals_considered": 165,
+    "signals_considered": 157,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
-    "event_count": 78,
-    "article_count_after_deduplication": 202,
+    "event_count": 72,
+    "article_count_after_deduplication": 192,
     "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
     "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
   }
