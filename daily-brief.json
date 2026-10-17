@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-17T06:02:59Z",
+    "generated_at": "2026-10-17T11:06:26Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -96,14 +96,14 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 11.037,
+      "passage": 8.931,
       "closure": 0,
-      "traffic_reduction": 5.96,
-      "access_restriction": 14.02,
-      "risk": 152.394
+      "traffic_reduction": 6.34,
+      "access_restriction": 14.4,
+      "risk": 153.334
     },
     "source_counts": {
-      "passage": 8,
+      "passage": 6,
       "closure": 0,
       "primary_sources": 4
     },
@@ -130,23 +130,6 @@
         "effective_weight": 4.0,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Hormuz ship attacks hit record as Iran broadens campaign against commercial shipping - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPd21FY0RkaFBsVzhOVHE0T0dFemZsdGVpdF95M2NoVDNqNUZUQmtrZGEyY2pNMDQ0LTAzQ0dONEl5QkpVQ0swendtVGtwM0VRYW5Ga2lWV2Y0NkVyLWdUc2F6UUNTaUVoOGN5cE5OdTFZS1hYUUZOUFB3MWpjRWduNG1tLXZFLUpMQUdFbjVzTi1yY01vdUJrcEVLNndVU1FvdmdEZlk2MkxaaEsxSzFSLWI3SENxSG0zNWZRcXZ3",
-        "published_at": "2026-10-15T14:34:07Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.6,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       },
       {
         "kind": "RISK_SEVERE",
@@ -221,7 +204,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-17T06:02:59Z",
+        "published_at": "2026-10-17T11:06:26Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -249,46 +232,63 @@
         "effective_weight": 2.964,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "TRAFFIC_REDUCED",
+        "title": "Ship attack reports near Hormuz reach record high as oil exports slow - BBC",
+        "source": "BBC",
+        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5vbTJaWk05Ny1JSFlaa1RLTTV4QkdUX21kdXRkdUhRT1dvZmI1RGdMZ3hQdjlTM2JELXc1aXZ0Y3hVQlhMY3RXYXpIUVYwa08zVVFaUEdzU3AtaVU",
+        "published_at": "2026-10-16T05:00:17Z",
+        "tier": 3,
+        "weight": 3.2,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 2.88,
+        "kind_label_es": "Tráfico reducido",
+        "kind_label_en": "Reduced traffic"
       }
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
-      "evt_576033262b363d51",
-      "evt_3617f8a0a46e199a",
-      "evt_db934b318a4d8215",
-      "evt_fb92bfc79e0884f8",
+      "evt_460ba4cde42da829",
+      "evt_cfc8b4d179aec781",
+      "evt_4a7375cadd22d6c8",
+      "evt_2035115e020cf278",
       "evt_fa35a790eba4a850",
+      "evt_089676272d8eb1b6",
+      "evt_fe5be2bdd4ed0905",
+      "evt_528a9eb35e92a65d",
+      "evt_c406154a9ab0e994",
+      "evt_153dae984d3677e1",
+      "evt_f97e43525713657d",
+      "evt_3617f8a0a46e199a",
+      "evt_fb92bfc79e0884f8",
+      "evt_834ddbe2fd1e7faf",
       "evt_b2f9ead2f957bd1c",
-      "evt_2738f846bc750cf4",
       "evt_1a4ec3eca9aff4ce",
       "evt_2026ca8291019733",
       "evt_6f254bb42750af38",
-      "evt_c406154a9ab0e994",
-      "evt_acf92d913c811ee7",
-      "evt_b6e9fa30edb6220a",
-      "evt_761b430b65f9fe4b",
-      "evt_184573309931c2ad",
-      "evt_b689a1756de2734b",
-      "evt_44b99471143b33bb",
-      "evt_937e3bad9fa61537",
-      "evt_089676272d8eb1b6"
+      "evt_acf92d913c811ee7"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 4,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 6,
-      "SINGLE_SOURCE": 27,
-      "UNCONFIRMED": 38,
-      "TOTAL": 75
+      "SINGLE_SOURCE": 26,
+      "UNCONFIRMED": 34,
+      "TOTAL": 70
     },
     "diagnostics": {
-      "signals_considered": 160,
+      "signals_considered": 156,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 75,
-      "article_count_after_deduplication": 192,
+      "event_count": 70,
+      "article_count_after_deduplication": 193,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-17T06:02:59Z"
+    "generated_at": "2026-10-17T11:06:26Z"
   }
 }
