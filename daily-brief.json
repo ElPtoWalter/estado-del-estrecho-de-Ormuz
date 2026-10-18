@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-18T05:01:54Z",
+    "generated_at": "2026-10-18T09:50:02Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -96,14 +96,14 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 8.775,
+      "passage": 7.983,
       "closure": 0,
-      "traffic_reduction": 4.896,
-      "access_restriction": 9.28,
-      "risk": 146.512
+      "traffic_reduction": 3.116,
+      "access_restriction": 9.56,
+      "risk": 146.912
     },
     "source_counts": {
-      "passage": 5,
+      "passage": 6,
       "closure": 0,
       "primary_sources": 3
     },
@@ -128,6 +128,23 @@
         "traffic_count": null,
         "traffic_average": null,
         "effective_weight": 4.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Small boat team targets VLCC in grenade attack off Saudi Arabia - TradeWinds News",
+        "source": "TradeWinds",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOcDJVQm1Dd0VfZ3ctSm1QTGxyWThYMUF2S2M2MVpQTnVPWFdkZG1lT3hnbFJ6aVFaZ0VpZWdnMmhGeFJGUXRyT1JxUmZ6TGtWSlN4RXdiSXpaSHk3M0gydVlGUWNrc3lnWjUydl9RTXZ2RjJmMGVsYU0zdUxFcW9xNDMzRjlhYmdWTm55TnRUc2V3UVpONU9KeE9iMzNRNng4",
+        "published_at": "2026-10-17T19:30:17Z",
+        "tier": 4,
+        "weight": 3.8,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.8,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -170,7 +187,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-18T05:01:54Z",
+        "published_at": "2026-10-18T09:50:02Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -183,28 +200,11 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "RISK_SEVERE",
-        "title": "Reported ship attacks near Strait of Hormuz hit record high - BBC",
-        "source": "BBC",
-        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBPSTZselVNM19WVnY0NWx4M0JpbnRnVGl0Nm1NS0tsY2tqTTNLalVNMkxGWFNHbGR0T3JuLXpaLTVHeDczRFBxUmJlOU1CZXZrUUhONy1TOGs",
-        "published_at": "2026-10-16T06:15:34Z",
-        "tier": 3,
-        "weight": 3.2,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 2.88,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
         "kind": "ACCESS_RESTRICTED",
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-18T05:01:54Z",
+        "published_at": "2026-10-18T09:50:02Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -234,61 +234,61 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "TRAFFIC_REDUCED",
-        "title": "Ship attack reports near Hormuz reach record high as oil exports slow - BBC",
+        "kind": "RISK_SEVERE",
+        "title": "Reported ship attacks near Strait of Hormuz hit record high - BBC",
         "source": "BBC",
-        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0tX0lUUUZkSGJKWXUyb0drR0dsY0M5ZDZ3Q091QlYxSjg2cWJIekZYWEVlb2VRNGFNdWxKX1ZaWnpYajlibzEtQ2FWTjVxUHBqbEJrby1tWUJrWng1Y1E",
-        "published_at": "2026-10-16T05:00:17Z",
+        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBPSTZselVNM19WVnY0NWx4M0JpbnRnVGl0Nm1NS0tsY2tqTTNLalVNMkxGWFNHbGR0T3JuLXpaLTVHeDczRFBxUmJlOU1CZXZrUUhONy1TOGs",
+        "published_at": "2026-10-16T06:15:34Z",
         "tier": 3,
         "weight": 3.2,
-        "provider": "Google News RSS",
+        "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
         "effective_weight": 2.496,
-        "kind_label_es": "Tráfico reducido",
-        "kind_label_en": "Reduced traffic"
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
-      "evt_1e73962291e12e26",
-      "evt_15440c0bd445215d",
       "evt_0db55940db306499",
-      "evt_b2f9ead2f957bd1c",
-      "evt_ac526b212816b7ec",
-      "evt_0b48b13c38f9fd58",
-      "evt_f97ebc72f7628eba",
+      "evt_15440c0bd445215d",
       "evt_16d131aa3f6bf4f0",
+      "evt_32b453d5fc2e40cb",
+      "evt_1e73962291e12e26",
+      "evt_26640d747f76ac23",
+      "evt_ac526b212816b7ec",
+      "evt_b2f9ead2f957bd1c",
+      "evt_74d2ff7166a8ce3c",
+      "evt_62dcd3ceddbe7bf1",
       "evt_f8708bc448c5235a",
       "evt_9c858f35d79dfea7",
       "evt_68a98fd8c3b701c7",
-      "evt_10d56052f57d2c88",
       "evt_481627c65098e7ae",
-      "evt_9e773b8cd6c13b41",
+      "evt_f97ebc72f7628eba",
       "evt_691fcf9284fe8caf",
       "evt_460ba4cde42da829",
       "evt_cfc8b4d179aec781",
-      "evt_4a7375cadd22d6c8",
-      "evt_6f22a9861d51daed"
+      "evt_2878a3a7d147970c"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 5,
-      "SINGLE_SOURCE": 29,
-      "UNCONFIRMED": 30,
-      "TOTAL": 69
+      "DECLARATION_ONLY": 6,
+      "SINGLE_SOURCE": 28,
+      "UNCONFIRMED": 29,
+      "TOTAL": 68
     },
     "diagnostics": {
-      "signals_considered": 154,
+      "signals_considered": 152,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 69,
-      "article_count_after_deduplication": 188,
+      "event_count": 68,
+      "article_count_after_deduplication": 184,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-18T05:01:54Z"
+    "generated_at": "2026-10-18T09:50:02Z"
   }
 }
