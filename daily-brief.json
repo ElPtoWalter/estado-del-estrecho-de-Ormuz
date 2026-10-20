@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-20T01:13:14Z",
+    "generated_at": "2026-10-20T06:29:33Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -77,33 +77,33 @@
       "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "DISPUTED"
+      "legal": "CLOSURE_CLAIMED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Régimen disputado"
+      "legal": "Cierre declarado por una parte"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "Disputed regime"
+      "legal": "Closure claimed by one party"
     },
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 12.069,
+      "passage": 8.909,
       "closure": 0,
-      "traffic_reduction": 2.984,
-      "access_restriction": 7.76,
-      "risk": 112.422
+      "traffic_reduction": 1.9,
+      "access_restriction": 7.6,
+      "risk": 106.076
     },
     "source_counts": {
-      "passage": 11,
+      "passage": 9,
       "closure": 0,
       "primary_sources": 3
     },
@@ -114,23 +114,6 @@
       "confidence": "ALTA"
     },
     "evidence": [
-      {
-        "kind": "RISK_SEVERE",
-        "title": "UAE-owned VLCC abandoned as attacks spread across Middle East Gulf - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNazMtVTFoRmRPX0xLZzdzeUc5YnBURTZiR2c4ZmthUXNDSFdFZUtqS1hKRFROV2FNLVlzOFBjdEJWOUYydGxQOWVGWEgwVXY2akl0a01FNmduWnFsaE5XanM0NGpHVW12cDBwZ1Y5RGpPQmY3YldZQnd3bEh6QkFkdHVNTy05dkwtZ005UENNcHBVZnFlUjlhd2RKMUxNNmtwNVJBVmdn",
-        "published_at": "2026-10-19T12:17:30Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
       {
         "kind": "RISK_SEVERE",
         "title": "Increased Strait of Hormuz attacks hamper growing LPG shuttle trade - Kpler",
@@ -170,7 +153,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-20T01:13:14Z",
+        "published_at": "2026-10-20T06:29:33Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -204,7 +187,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-20T01:13:14Z",
+        "published_at": "2026-10-20T06:29:33Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -249,29 +232,46 @@
         "effective_weight": 2.48,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Egypt to provide 'necessary' support to Saudi Arabia amid Houthi attacks - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNdE1va1c1b1lELXRZM0w2akJhSzhDTlZVNXhyZ2JiT1RrRGQ2MlN2M09BazE3Snp4MFpUN1VaX3ViZnJrNjUxa2h0OUJOcWpDSmNVTUJQYk16VE5vMnkyT3dwaVFpZEN3UTFkd3pyUjBYcUVkaGxkak05bFFNZkp3M0hTOU1lY0NzdmU3Z0ltZUptclNhY1ZUR1hTb2NUT2FtQzhvU9IBqgFBVV95cUxNLWF0M0dkVUhrblpKX0d0RTN2NWJVV2NpbWh3UWFKNHhUSXFkQ3p1R0RKem45LWNZNHJCRUZlQUxKOENQS1U3bGZhOGhyeFFlVVJRMmtzeUxUTjZJTnVnM2RYcTNITmFQVjdoSXdENXRDdnlLREhKYUxhd21NeUVPM3h3Tm5oTnh2dW45ekluTE9jSFBmaE5OVU8tOTNpVTZjMG1tVE4xWXRudw",
+        "published_at": "2026-10-18T11:49:25Z",
+        "tier": 2,
+        "weight": 2.4,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 2.16,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_c26f87164bf1ec62",
+      "evt_9b97ab3030e3ee43",
       "evt_222c1450a4f28007",
       "evt_96be0339416829ad",
+      "evt_22499970156142af",
       "evt_849d08aa09bc5694",
       "evt_ee788eea13958a34",
       "evt_5155424e2e08208a",
       "evt_779db1995fa7487a",
       "evt_6f91a78fa5dc3230",
       "evt_865ea8bc3dd2afc9",
-      "evt_f5b6575084bfce5a",
+      "evt_3fc76006c1f1c407",
+      "evt_162592e168451aae",
       "evt_f3f976984626a132",
       "evt_be349aa345dbdfe1",
       "evt_f2d6a0c42da75f9a",
       "evt_da9bcd1c55d3940a",
       "evt_a40c63c9c63ccfb4",
       "evt_0857ee6fc99f34fc",
-      "evt_3f7eb21e0f08cc57",
-      "evt_74d2ff7166a8ce3c",
-      "evt_084275c5a57c7638",
-      "evt_f94cddf6da6d246d"
+      "evt_f5b6575084bfce5a"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 4,
@@ -279,16 +279,16 @@
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 6,
       "SINGLE_SOURCE": 26,
-      "UNCONFIRMED": 31,
-      "TOTAL": 67
+      "UNCONFIRMED": 32,
+      "TOTAL": 68
     },
     "diagnostics": {
-      "signals_considered": 128,
+      "signals_considered": 125,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 67,
-      "article_count_after_deduplication": 161,
+      "event_count": 68,
+      "article_count_after_deduplication": 159,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-20T01:13:14Z"
+    "generated_at": "2026-10-20T06:29:33Z"
   }
 }
