@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-10-21T15:31:00Z",
-  "last_success_at": "2026-10-21T15:31:00Z",
+  "checked_at": "2026-10-21T19:30:50Z",
+  "last_success_at": "2026-10-21T19:30:50Z",
   "last_change_at": "2026-10-18T17:29:40Z",
   "verification_ok": true,
   "stale": false,
@@ -16,6 +16,17 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "How Ukraine drone strikes on Russia crippled the world second largest diesel supplier",
+      "source_name": "CNBC",
+      "source_id": "cnbc",
+      "source_url": "https://cnbc.com/2026/10/21/ukraine-russia-drone-diesel-refinery-trump-putin-zelenskyy.html",
+      "published_at": "2026-10-21T15:30:38Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-10-21T19:30:50Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Middle East Oil Flows Near Prewar Levels Defy Hormuz Attacks - Bloomberg.com",
       "source_name": "Bloomberg",
       "source_id": "bloomberg",
@@ -23,7 +34,7 @@
       "published_at": "2026-10-21T13:59:42Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-21T15:31:00Z"
+      "observed_at": "2026-10-21T19:30:50Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -34,7 +45,7 @@
       "published_at": "2026-10-20T16:34:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-21T15:31:00Z"
+      "observed_at": "2026-10-21T19:30:50Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -45,7 +56,7 @@
       "published_at": "2026-10-19T17:44:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-21T15:31:00Z"
+      "observed_at": "2026-10-21T19:30:50Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -56,7 +67,7 @@
       "published_at": "2026-10-18T22:27:16Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-21T15:31:00Z"
+      "observed_at": "2026-10-21T19:30:50Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -67,42 +78,30 @@
       "published_at": "2026-10-18T06:19:58Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-21T15:31:00Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran says two tankers catch fire after hitting mines in Strait of Hormuz - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_id": "aljazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQcEhpeXZhQ20xWmZjb3p1eUJRVEFVSi1QbWJnUFZpRE05QmJUd0hhMU9OQmlqMmxPemhUTGN3ZmF5YlU0LUxkaF85M2JEVEpRT1FaMVAzaV8xNTBNeGk1YUlIRVNzRFNQVkpfY3FwWllQeWU3Mmk0NEpVaV90Tkp2ZnRzQ2xaZzQ2OGRLbUp1dUVNenlPUFVuQUVGRUVKSUZRbDVVR3hjZElfSFNONWhieWF5S0_SAboBQVVfeXFMT2UzSjBRSnAybzdRcU9NRWpyV0V5SU4xT1g2LWlTNWlraWJDeFBMSDlSbGVNc093MmJCOTROSjQ5bE50Uk1WSVVMNDZGN2VRWVkyRjdFdmV3QzliaGtBci1FcjRTbll0UmZQZmJTT0tXR05oVGdjRlU3Z1FvcTNUWXVPY0drS1BvamFZdWkyU0w0QU5oSjAwTnFBU0hNc2Z6dC1yUk1ma0dDNGpZX2RuVmxEZzhrUUI4bHhn",
-      "published_at": "2026-10-18T02:02:44Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-10-21T15:31:00Z"
+      "observed_at": "2026-10-21T19:30:50Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 10.535
+      "risk": 13.035
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 6
+      "risk": 7
     },
-    "articles_considered": 21,
-    "signals_considered": 7,
+    "articles_considered": 25,
+    "signals_considered": 8,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -110,7 +109,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-10-21T13:59:42Z",
+    "as_of": "2026-10-21T15:30:38Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -120,6 +119,17 @@
   "evidence_archive": [
     {
       "signal": "RISK_RESTRICTION",
+      "title": "How Ukraine drone strikes on Russia crippled the world second largest diesel supplier",
+      "source_name": "CNBC",
+      "source_id": "cnbc",
+      "source_url": "https://cnbc.com/2026/10/21/ukraine-russia-drone-diesel-refinery-trump-putin-zelenskyy.html",
+      "published_at": "2026-10-21T15:30:38Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-10-21T19:30:50Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Middle East Oil Flows Near Prewar Levels Defy Hormuz Attacks - Bloomberg.com",
       "source_name": "Bloomberg",
       "source_id": "bloomberg",
@@ -127,7 +137,7 @@
       "published_at": "2026-10-21T13:59:42Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-21T15:31:00Z"
+      "observed_at": "2026-10-21T19:30:50Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -138,7 +148,7 @@
       "published_at": "2026-10-20T16:34:26Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-21T15:31:00Z"
+      "observed_at": "2026-10-21T19:30:50Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -182,7 +192,7 @@
       "published_at": "2026-10-19T17:44:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-21T15:31:00Z"
+      "observed_at": "2026-10-21T19:30:50Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -766,23 +776,12 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-10-09T16:28:55Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters",
-      "source_name": "Reuters",
-      "source_id": "reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPMzlOYkh2NkF3OTFOQ0g5RFdjT0VSZXU4Y0U1cDREQnltUF9XM2VBVlk1bER5cTNTS00yaWctcDdnTjI3TG1jeWVxV3JIT2ctb1JVLVg4Nm13aENfNmlQSVQ2dHZLS2dabVYyYXQydWFEQ25SQVY1UkFORHd6djNHUHFkVEpwa3d6WkRiMy15SFRwV3l4anZiSXQ2YmR2bmxWZFhYTFE1YVNBRnc1ZG0tbHJDT1RacGJ6VmRhV3RnQ3g5UmZvdE5xZ3RB",
-      "published_at": "2026-10-08T23:44:35Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-10-09T16:28:55Z"
     }
   ],
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-21T15:31:48Z",
+    "generated_at": "2026-10-21T19:31:33Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -797,35 +796,35 @@
       "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "CLOSURE_CLAIMED"
+      "legal": "DISPUTED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Cierre declarado por una parte"
+      "legal": "Régimen disputado"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "Closure claimed by one party"
+      "legal": "Disputed regime"
     },
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 10.013,
+      "passage": 8.427,
       "closure": 0,
       "traffic_reduction": 2.0,
-      "access_restriction": 5.58,
-      "risk": 72.158
+      "access_restriction": 5.68,
+      "risk": 73.77
     },
     "source_counts": {
-      "passage": 7,
+      "passage": 6,
       "closure": 0,
-      "primary_sources": 2
+      "primary_sources": 3
     },
     "latest_confirmed_transit_at": "2026-10-20T21:42:56Z",
     "legacy_engine": {
@@ -834,6 +833,23 @@
       "confidence": "ALTA"
     },
     "evidence": [
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Greek and Kuwaiti product tankers identified as latest targets in Gulf attack - TradeWinds News",
+        "source": "TradeWinds",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPZ21US1NJSG1PR2VYTFZDX1ZOb1lOdmY4UUYwekJMWE5MNGtnOC1Zdy1ZLVhfZlNRbE5sTWZDOGMwaGppWjNQcW83Qk9nZVpMSFhVeFd3cmFnampGYXZmdjdINm9XeGZzcGhSRHE5Y3pNa3pjellmNE96R2JOQWNDZGVGbVphMTEybWFpcG8tbDlHdl9qZ2NUMURvX0hPUmxUZEJlSXZUSnFsaWlqZl8zMVJFRXhMVjhYdHVJSldneVA4MExua3Z6TlFCNA",
+        "published_at": "2026-10-21T11:30:24Z",
+        "tier": 4,
+        "weight": 3.8,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.8,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
       {
         "kind": "RISK_SEVERE",
         "title": "Middle East Oil Flows Near Prewar Levels Defy Hormuz Attacks - Bloomberg.com",
@@ -873,7 +889,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-21T15:31:48Z",
+        "published_at": "2026-10-21T19:31:33Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -915,7 +931,7 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 2.61,
+        "effective_weight": 2.262,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -932,7 +948,7 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 2.2,
+        "effective_weight": 1.98,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -952,63 +968,46 @@
         "effective_weight": 1.56,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Iran says two tankers catch fire after hitting mines in Strait of Hormuz - Al Jazeera",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQcEhpeXZhQ20xWmZjb3p1eUJRVEFVSi1QbWJnUFZpRE05QmJUd0hhMU9OQmlqMmxPemhUTGN3ZmF5YlU0LUxkaF85M2JEVEpRT1FaMVAzaV8xNTBNeGk1YUlIRVNzRFNQVkpfY3FwWllQeWU3Mmk0NEpVaV90Tkp2ZnRzQ2xaZzQ2OGRLbUp1dUVNenlPUFVuQUVGRUVKSUZRbDVVR3hjZElfSFNONWhieWF5S0_SAboBQVVfeXFMT2UzSjBRSnAybzdRcU9NRWpyV0V5SU4xT1g2LWlTNWlraWJDeFBMSDlSbGVNc093MmJCOTROSjQ5bE50Uk1WSVVMNDZGN2VRWVkyRjdFdmV3QzliaGtBci1FcjRTbll0UmZQZmJTT0tXR05oVGdjRlU3Z1FvcTNUWXVPY0drS1BvamFZdWkyU0w0QU5oSjAwTnFBU0hNc2Z6dC1yUk1ma0dDNGpZX2RuVmxEZzhrUUI4bHhn",
-        "published_at": "2026-10-18T02:02:44Z",
-        "tier": 2,
-        "weight": 2.4,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.488,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_83c523cf06f27c56",
       "evt_5abb7789bae731a1",
+      "evt_93736154962b7b44",
+      "evt_120d8850a8cdc3c9",
+      "evt_1ec8a9755832a4cc",
+      "evt_191fa6dfbbcb1dc5",
       "evt_c9bd038a9f62d60b",
       "evt_da9bcd1c55d3940a",
       "evt_1c438c5e679e6952",
       "evt_4072dfa3065efd14",
       "evt_6f91a78fa5dc3230",
       "evt_97dc8bdfadc48f73",
+      "evt_1cbd53034f90a5fa",
+      "evt_7c85187eab32f956",
       "evt_0a26b48385075966",
-      "evt_5f1594c374a97fbf",
-      "evt_191fa6dfbbcb1dc5",
-      "evt_93736154962b7b44",
+      "evt_cfe8ed8975351617",
       "evt_33d4d7596ee1b703",
-      "evt_e4d88f3acb5114de",
       "evt_46b90d9375f11505",
       "evt_5e95127fd2b86d94",
-      "evt_003c58d12146a63d",
-      "evt_d7f24f87fe0dd00b",
-      "evt_81cc592e8fd37f3a",
-      "evt_dee49c4dc2ef18f9"
+      "evt_003c58d12146a63d"
     ],
     "verification_summary": {
-      "CONFIRMED_MULTI_SOURCE": 6,
+      "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 9,
-      "SINGLE_SOURCE": 23,
+      "DECLARATION_ONLY": 6,
+      "SINGLE_SOURCE": 26,
       "UNCONFIRMED": 36,
-      "TOTAL": 74
+      "TOTAL": 73
     },
     "diagnostics": {
-      "signals_considered": 89,
+      "signals_considered": 83,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 74,
-      "article_count_after_deduplication": 132,
+      "event_count": 73,
+      "article_count_after_deduplication": 128,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -1020,6 +1019,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-21T15:31:48Z"
+    "generated_at": "2026-10-21T19:31:33Z"
   }
 }
