@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-21T22:38:22Z",
+    "generated_at": "2026-10-22T01:44:37Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -96,11 +96,11 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 8.375,
+      "passage": 7.361,
       "closure": 0,
       "traffic_reduction": 1.62,
       "access_restriction": 4.56,
-      "risk": 87.51
+      "risk": 85.17
     },
     "source_counts": {
       "passage": 7,
@@ -136,7 +136,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-21T22:38:22Z",
+        "published_at": "2026-10-22T01:44:37Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -218,6 +218,23 @@
       },
       {
         "kind": "RISK_SEVERE",
+        "title": "IRGC mines set tankers ablaze as Tehran threatens expanded attacks - Euronews.com",
+        "source": "Euronews",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPM1NjaWw5bENySTVjWDFiMEtuOWJKeVVEX1pfSE9zX0lNWXZITFNCM012ekd2NGhGY01BdVNHcjdjeERJMXRnR2xmRTFXa1lUeUZRQk85dmQyNnFuMUR4aGdVelY3ME1fZFJzdW9ybXdTdElUSFhOMEt4Z24ySVFER0F4ZHRiZ3FCRjhNVThnaVYyTGVHLUo1Y29kX3g2b0wwbjhWSQ",
+        "published_at": "2026-10-20T16:34:26Z",
+        "tier": 2,
+        "weight": 2.2,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 1.98,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
         "title": "Iran says two tankers catch fire after hitting mines in Strait of Hormuz - Al Jazeera",
         "source": "Al Jazeera",
         "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQcEhpeXZhQ20xWmZjb3p1eUJRVEFVSi1QbWJnUFZpRE05QmJUd0hhMU9OQmlqMmxPemhUTGN3ZmF5YlU0LUxkaF85M2JEVEpRT1FaMVAzaV8xNTBNeGk1YUlIRVNzRFNQVkpfY3FwWllQeWU3Mmk0NEpVaV90Tkp2ZnRzQ2xaZzQ2OGRLbUp1dUVNenlPUFVuQUVGRUVKSUZRbDVVR3hjZElfSFNONWhieWF5S0_SAboBQVVfeXFMT2UzSjBRSnAybzdRcU9NRWpyV0V5SU4xT1g2LWlTNWlraWJDeFBMSDlSbGVNc093MmJCOTROSjQ5bE50Uk1WSVVMNDZGN2VRWVkyRjdFdmV3QzliaGtBci1FcjRTbll0UmZQZmJTT0tXR05oVGdjRlU3Z1FvcTNUWXVPY0drS1BvamFZdWkyU0w0QU5oSjAwTnFBU0hNc2Z6dC1yUk1ma0dDNGpZX2RuVmxEZzhrUUI4bHhn",
@@ -230,23 +247,6 @@
         "traffic_count": null,
         "traffic_average": null,
         "effective_weight": 1.488,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "UKMTO struggling to accurately report Hormuz attacks - Seatrade Maritime News",
-        "source": "Seatrade Maritime News",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNd0txcjlBREt4bllRaGVZRE5mN0tKc09teUY4MUlKU24yRG9aQjJqWDM3X3NEd2NuaUZQdTB3LXVTVU1VakI3NGxtSnpqdElFQU5GMHdTZWVBSVRERS14UzE0SDk5S0lZbU5hTnBpalFLY2FnTmwwa0pRM0ZPaWlfVkRtOEVLWVoxTmU1RmE3N0hjN3RVcDNCVFFfNA",
-        "published_at": "2026-10-18T22:37:57Z",
-        "tier": 2,
-        "weight": 2.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.24,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       }
@@ -268,10 +268,10 @@
       "evt_0a26b48385075966",
       "evt_33d4d7596ee1b703",
       "evt_46b90d9375f11505",
-      "evt_5abb7789bae731a1",
       "evt_dee49c4dc2ef18f9",
       "evt_abe3207c9897fd4e",
-      "evt_602c2e26ae3ffddb"
+      "evt_278bea2484cd2f04",
+      "evt_9f8839dbb151cb3a"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 5,
@@ -279,16 +279,16 @@
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 6,
       "SINGLE_SOURCE": 25,
-      "UNCONFIRMED": 32,
-      "TOTAL": 68
+      "UNCONFIRMED": 34,
+      "TOTAL": 70
     },
     "diagnostics": {
-      "signals_considered": 101,
+      "signals_considered": 97,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 68,
-      "article_count_after_deduplication": 144,
+      "event_count": 70,
+      "article_count_after_deduplication": 140,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-21T22:38:22Z"
+    "generated_at": "2026-10-22T01:44:37Z"
   }
 }
