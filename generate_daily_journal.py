@@ -671,6 +671,22 @@ def _journal_topics(news: list[NewsItem]) -> list[str]:
     return topics or ["maritime"]
 
 
+def editorial_headlines(operational, items, new_items, local_dt, fallbacks):
+    """Bounded headlines from the assessment or a dated, attributed literal claim."""
+    options = {lang: [fallbacks[lang]['headline']] for lang in ('es', 'en')}
+    if operational.get('state') == 'OPEN_SEVERELY_RESTRICTED':
+        options['es'].insert(0, 'Ormuz mantiene un tránsito muy restringido en la última evaluación')
+        options['en'].insert(0, 'Hormuz transit remains severely restricted in the latest assessment')
+        new_keys = {article_key(item) for item in new_items}
+        for item in items:
+            if (article_key(item) in new_keys and parse_date(item.published_at).astimezone(MADRID).date() == local_dt.date()
+                    and re.search(r'\b(?:oil|crude)\b.*\bfive[\s-]+month high\b', item.title, re.I)):
+                options['es'].insert(0, f'{item.source} sitúa el petróleo en máximos de cinco meses; Ormuz mantiene restricciones')
+                options['en'].insert(0, f'{item.source} reports a five-month oil high as Hormuz remains restricted')
+                break
+    return options
+
+
 def fallback_editorial_draft(
     status: dict[str, Any],
     operational: dict[str, Any],
@@ -778,6 +794,9 @@ def editorial_drafts(
             add_ai_item(representative)
     for item in usable:
         add_ai_item(item)
+    headline_options = editorial_headlines(operational, ai_items, new_items, local_dt, fallbacks)
+    for lang in ('es', 'en'):
+        fallbacks[lang]['headline'] = headline_options[lang][0]
 
     sources_by_section: dict[str, dict[str, list[str]]] = {"es": {}, "en": {}}
     for lang in ("es", "en"):
@@ -817,6 +836,7 @@ def editorial_drafts(
         "edition_date": local_dt.date().isoformat(),
         "primary_context": editorial.get('primary_context', []),
         "editorial_brief": {
+            "headline_options": headline_options,
             "mode": "continuity" if previous_fp.get('v7_state') == current_fp.get('v7_state') else "assessment_change",
             "headline": "Describe the actual assessment change or continuity. Any press news claim in the headline must name its reporting publisher; include its date if older than this edition. Do not state a market move as a current independent observation.",
             "deck": "Lead on one concrete attributed news detail (not another paraphrase of the open/restricted assessment). Do not enumerate publishers.",
@@ -1139,6 +1159,10 @@ def render_page(
 
     dim_labels = dimensions(operational, lang)
     checked_at = status.get('checked_at') or operational.get('generated_at') or ''
+    stale_note = ''
+    if checked_at and (local_dt - parse_date(checked_at)).total_seconds() > 6 * 3600:
+        stale_note = ('La comprobación tiene más de seis horas; esta edición no describe tráfico en directo.'
+                      if lang == 'es' else 'The check is over six hours old; this edition does not describe live traffic.')
     metric_names = {
         "es": {"passage": "Paso físico", "traffic": "Tráfico", "access": "Acceso", "risk": "Riesgo"},
         "en": {"passage": "Physical passage", "traffic": "Traffic", "access": "Access", "risk": "Risk"},
@@ -1251,6 +1275,7 @@ def render_page(
 <div><span>{'Diagnóstico al cierre de edición' if lang == 'es' else 'Assessment at publication time'}</span><strong>{safe(state_label)}</strong><small>{'Confianza' if lang == 'es' else 'Confidence'}: {safe(confidence_label(confidence, lang))}</small><small>{'Comprobación' if lang == 'es' else 'Checked'}: <time datetime="{safe(checked_at)}">{safe(checked_at)}</time></small></div>
 <div class="journal-metrics">{metrics}</div>
 </section>
+<p class="journal-source-stamp">{safe(stale_note)}</p>
 {traffic_snapshot_html(operational, lang)}
 {situation_html}
 <p><a href="{'/datos-propios-monitor-ormuz.html' if lang == 'es' else '/en-monitor-original-data-report.html'}">{'Análisis propio: qué mide realmente el historial del monitor' if lang == 'es' else 'Original analysis: what the monitor archive actually measures'}</a></p>

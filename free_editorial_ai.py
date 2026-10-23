@@ -510,6 +510,10 @@ def _validate_language_draft(
     watch = _list_of_text(draft.get("watch"), 3, 4, 28, 360)
     if not all((headline, deck, situation, meaning, watch)):
         return reject("required-field-shape")
+    headline_options = facts.get('editorial_brief', {}).get('headline_options', {})
+    allowed_headlines = [value for values in headline_options.values() for value in values]
+    if allowed_headlines and headline not in allowed_headlines:
+        return reject('headline-provenance-options')
     for field_name, text in (('headline', headline), ('deck', deck)):
         if facts.get('editorial_brief') and re.search(r'precios?|crudo|petr[oó]leo|oil prices?|Brent', text, re.I):
             if not any(_mentions_source(text, item.get('source', '')) for item in facts.get('selected_sources', []) if item.get('source')):
@@ -933,6 +937,9 @@ def generate_editorial_drafts(
         style_revision=style_revision,
     )
     schema = _response_schema(fallbacks)
+    for language, options in facts.get('editorial_brief', {}).get('headline_options', {}).items():
+        if language in schema['properties']:
+            schema['properties'][language]['properties']['headline']['enum'] = options
 
     gemini_status: str | None = None
     gemini_validation_diagnostics: dict[str, str] = {}

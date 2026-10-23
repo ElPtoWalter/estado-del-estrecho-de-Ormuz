@@ -18,6 +18,17 @@ ROOT = Path(__file__).parent
 
 
 class JournalRevisionTests(unittest.TestCase):
+    def test_news_headline_requires_the_literal_claim_a_new_reference_and_its_date(self):
+        item = journal.NewsItem('Oil hits five - month high amid supply fears', 'The Guardian',
+            'https://example.org/oil', '2026-10-23T13:27:04Z', 3, 'energy', '')
+        now = datetime(2026, 10, 23, 20, tzinfo=journal.MADRID)
+        base = {lang: {'headline': 'A sufficiently long operational headline'} for lang in ('es', 'en')}
+        op = {'state': 'OPEN_SEVERELY_RESTRICTED'}
+        options = journal.editorial_headlines(op, [item], [item], now, base)
+        self.assertTrue(options['es'][0].startswith('The Guardian'))
+        self.assertNotIn('The Guardian', journal.editorial_headlines(op, [item], [], now, base)['es'][0])
+        tomorrow = datetime(2026, 10, 24, 20, tzinfo=journal.MADRID)
+        self.assertNotIn('The Guardian', journal.editorial_headlines(op, [item], [item], tomorrow, base)['es'][0])
     def revision_fixture(self, unsafe_second=False, with_context=False):
         status = {'checked_at': '2026-10-23T13:44:37Z', 'status': 'INCIERTO'}
         op = {'state': 'OPEN_SEVERELY_RESTRICTED', 'label_es': 'ABIERTO · TRÁNSITO MUY RESTRINGIDO',
