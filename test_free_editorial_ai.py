@@ -415,6 +415,22 @@ class FreeEditorialAITests(unittest.TestCase):
                 (_, engine, _), _ = self.call_gemini(candidate)
                 self.assertEqual(engine, expected)
 
+    def test_translated_place_requires_the_same_place_in_the_packet(self):
+        candidate = valid_draft()
+        candidate['meaning'][0] += ' La referencia enlazada describe el contexto de Oriente Medio.'
+        (_, engine, _), _ = self.call_gemini(candidate)
+        self.assertEqual(engine, 'rules')
+        self.facts['selected_sources'][0]['title'] = 'Middle East shipping update'
+        (_, engine, status), _ = self.call_gemini(candidate)
+        self.assertEqual((engine, status), ('gemini', 'ok'))
+
+    def test_place_translation_cannot_authorize_a_new_organisation(self):
+        self.facts['selected_sources'][0]['title'] = 'Middle East shipping update'
+        candidate = valid_draft()
+        candidate['meaning'][0] += ' Maritime Zeta Group describe el contexto de Oriente Medio.'
+        (_, engine, _), _ = self.call_gemini(candidate)
+        self.assertEqual(engine, 'rules')
+
     def test_unknown_single_word_attribution_is_rejected(self):
         candidate = valid_draft()
         candidate["meaning"][0] += " Según Acme, la tendencia ya estaría confirmada."

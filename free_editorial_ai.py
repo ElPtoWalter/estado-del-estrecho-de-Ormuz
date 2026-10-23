@@ -32,7 +32,7 @@ FREE_GEMINI_MODELS = frozenset({
 })
 MAX_FACT_BYTES = 48_000
 MAX_OUTPUT_TOKENS = 4_096
-VALIDATOR_VERSION = 5
+VALIDATOR_VERSION = 6
 
 SYSTEM_INSTRUCTION = (
     "Eres un redactor especializado en información marítima y energética. Escribe con claridad y "
@@ -326,6 +326,21 @@ MONTH_NAMES = (
 )
 MONTH_NUMBER = {name: number for number, names in enumerate(MONTH_NAMES, 1) for name in names}
 MONTH_RE = '|'.join(MONTH_NUMBER)
+GEOGRAPHIC_NAMES = (
+    ('oriente medio', 'middle east'), ('estrecho de ormuz', 'strait of hormuz'),
+    ('estados unidos', 'united states'), ('reino unido', 'united kingdom'),
+    ('unión europea', 'european union'), ('golfo pérsico', 'persian gulf'), ('mar rojo', 'red sea'),
+)
+
+
+def _entity_supported(entity: str, corpus: str) -> bool:
+    if entity in corpus.casefold():
+        return True
+    # A translation denotes the same supplied place; it does not authorize new places.
+    for pair in GEOGRAPHIC_NAMES:
+        if entity in pair and any(re.search(rf'(?<!\w){re.escape(name)}(?!\w)', corpus, re.I) for name in pair):
+            return True
+    return False
 
 
 def _packet_dates(value: Any) -> set[date]:
@@ -487,7 +502,7 @@ def _validate_language_draft(
     if UNSUPPORTED_CERTAINTY_PATTERN.search(prose):
         return reject("unsupported-certainty")
     for entity in _named_entities(prose):
-        if entity not in allowed_corpus.casefold():
+        if not _entity_supported(entity, allowed_corpus):
             return reject("unseen-entity", entity)
     return normalized
 
@@ -667,6 +682,7 @@ def _editorial_prompt(
     section_order = {language: list(sources_by_section.get(language, {})) for language in fallbacks}
     source_contract = {language: sources_by_section.get(language, {}) for language in fallbacks}
     fallback_json = json.dumps(fallbacks, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    naming_context = [pair for pair in GEOGRAPHIC_NAMES if any(re.search(rf'(?<!\w){re.escape(name)}(?!\w)', facts_json, re.I) for name in pair)]
     return (
         f"Edita una crónica para {site_name}. Idiomas requeridos: {languages}. "
         "Trabaja EXCLUSIVAMENTE con el paquete factual JSON incluido al final. No navegues, no uses "
@@ -677,6 +693,7 @@ def _editorial_prompt(
         "No inventes cifras, fechas, personas, organismos, lugares, citas, causas, consecuencias ni fuentes. "
         "Conserva literalmente los nombres de personas, organismos y medios tal como aparecen en el paquete. "
         "No traduzcas nombres propios ni desarrolles siglas por conocimiento previo; si falta una denominación, omítela. "
+        f"Para lugares ya mencionados, solo se permiten estas equivalencias de nombre: {json.dumps(naming_context, ensure_ascii=False)}. No añaden acontecimientos ni lugares al paquete. "
         "No copies titulares completos. Distingue hechos, declaraciones, análisis y límites. Mantén tono neutral, "
         "sobrio y no sensacionalista. Devuelve solo JSON conforme al esquema. Mantén exactamente este orden de "
         f"secciones: {json.dumps(section_order, ensure_ascii=False)}. En cada sección menciona al menos una de "
