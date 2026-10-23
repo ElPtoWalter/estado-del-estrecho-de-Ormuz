@@ -18,6 +18,17 @@
   const year = document.getElementById("currentYear");
   if (year) year.textContent = String(new Date().getFullYear());
 
+  document.querySelectorAll("[data-snapshot-at]").forEach(note => {
+    if (!note.dataset.snapshotAt) return;
+    const at = Date.parse(note.dataset.snapshotAt);
+    if (Number.isFinite(at) && Date.now() - at > 6 * 3600000) {
+      note.classList.toggle("is-stale", true);
+      note.textContent = es
+        ? "La última comprobación tiene más de 6 horas. Esta instantánea puede estar desactualizada; consulta las fuentes y su fecha."
+        : "The last check is over 6 hours old. This snapshot may be outdated; check the sources and their dates.";
+    }
+  });
+
   const normalize = value => String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   const search = document.getElementById("archiveSearch");
   const source = document.getElementById("archiveSource");

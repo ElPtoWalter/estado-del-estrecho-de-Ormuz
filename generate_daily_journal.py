@@ -5,7 +5,7 @@ Objetivo
 --------
 Crear una crónica diaria legible y trazable a partir de datos ya publicados por
 el monitor y de un barrido prudente de noticias recientes. La edición en vivo
-se actualiza todos los días; solo se crea una URL histórica indexable cuando
+se actualiza todos los días; solo se crea una URL histórica no indexable cuando
 hay novedad material suficiente. Una capa gratuita opcional puede pulir el
 texto sobre un paquete factual cerrado, pero el borrador local sigue siendo la
 salida garantizada. Los titulares interrogativos, de opinión o puramente
@@ -14,7 +14,7 @@ especulativos nunca se convierten en hechos.
 from __future__ import annotations
 
 from journal_evidence import classify_headline, identity, reading, section_note
-from free_editorial_ai import factual_packet_digest, generate_editorial_drafts
+from free_editorial_ai import factual_packet_digest, generate_editorial_drafts, editorial_quality_report
 from straitwatch_core import (
     SourceRegistry,
     canonical_url,
@@ -613,9 +613,8 @@ def date_label(dt: datetime, lang: str) -> str:
 def headline_for(status: dict[str, Any], operational: dict[str, Any], new_items: list[NewsItem], lang: str) -> str:
     if operational.get("carried_forward"):
         return "Ormuz: titulares nuevos, tránsito sin nueva confirmación" if lang == "es" else "Hormuz: new headlines, no fresh transit confirmation"
-    topic = dominant_topic(new_items)
-    focus = TOPIC_LABELS[lang].get(topic, TOPIC_LABELS[lang]["other"]).lower()
-    return f"Ormuz: {focus}, evidencia y límites" if lang == "es" else f"Hormuz: {focus}, evidence and limits"
+    label, _, _ = display_state(status, operational, lang)
+    return f"Ormuz: {label.lower()}" if lang == "es" else f"Hormuz: {label.lower()}"
 
 def interpret_item(item: NewsItem, lang: str) -> str | None:
     # Explain evidentiary limits, never manufacture a summary from keywords.
@@ -697,11 +696,11 @@ def fallback_editorial_draft(
             watch.append(item)
     meaning = (
         [
-            "La lectura útil no procede de contar titulares, sino de comprobar si fuentes distintas describen el mismo cambio y si ese cambio coincide con el diagnóstico operativo del monitor."
+            "El diagnóstico describe las condiciones de paso documentadas. Los efectos sobre el suministro, los fletes o los seguros necesitan datos propios de cada mercado; no se deducen de la clasificación del estrecho."
         ]
         if lang == "es"
         else [
-            "The useful reading does not come from counting headlines, but from checking whether separate sources describe the same change and whether it matches the monitor's operational assessment."
+            "The assessment describes documented passage conditions. Effects on supply, freight or insurance require data for each market; they cannot be inferred from the strait classification."
         ]
     )
     return {
@@ -816,6 +815,7 @@ def editorial_drafts(
             "verification_summary": facts.get("verification_summary", {}),
             "timestamp": iso_z(local_dt.astimezone(timezone.utc)),
             "fallback_used": True,
+            "editorial_quality": {lang: editorial_quality_report(fallbacks[lang], fallbacks[lang]) for lang in ('es', 'en')},
             "provider": "rules",
             "status": "insufficient-sources",
             "attempts": [],
@@ -837,6 +837,7 @@ def editorial_drafts(
     trace["verification_summary"] = facts.get("verification_summary", {})
     trace["timestamp"] = iso_z(local_dt.astimezone(timezone.utc))
     trace["fallback_used"] = engine != "gemini"
+    trace["editorial_quality"] = {lang: editorial_quality_report(drafts[lang], fallbacks[lang]) for lang in ('es', 'en')}
     return drafts, engine, assistant_status, trace
 
 
@@ -845,12 +846,12 @@ def build_lead(status: dict[str, Any], operational: dict[str, Any], local_dt: da
     checked = status.get("checked_at") or "—"
     carried = operational.get("carried_forward")
     if lang == "es":
-        return (f"Última consulta del monitor: {checked}. {summary} "
+        return (f"{summary} La comprobación que respalda esta edición está fechada {checked}. "
                 + ("Las dimensiones mostradas se arrastran del diagnóstico anterior: no son una nueva comprobación de tránsito. " if carried else "")
-                + "Este parte clasifica titulares y separa su alcance de la evidencia operativa; no sustituye la lectura de las fuentes originales.")
-    return (f"Latest monitor check: {checked}. {summary} "
+                + "Los titulares enlazados se atribuyen a sus medios y no acreditan por sí solos un cambio de estado.")
+    return (f"{summary} The check supporting this edition is dated {checked}. "
             + ("Displayed dimensions are carried forward from the previous assessment, not a fresh transit observation. " if carried else "")
-            + "This digest classifies headlines and distinguishes their scope from operational evidence; it does not replace the original sources.")
+            + "Linked headlines are attributed to their publishers and do not by themselves establish a state change.")
 
 def change_paragraph(
     current_fp: dict[str, Any], previous_fp: dict[str, Any], lang: str
@@ -1104,9 +1105,9 @@ def render_page(
     desk = editorial_dashboard(editorial, lang)
     limit = editorial.get("limit_es" if lang == "es" else "limit_en") or ""
     method_note = (
-        "La síntesis se redacta con asistencia externa gratuita sobre un paquete factual cerrado. La herramienta no busca noticias, no elige fuentes y no decide el estado. La salida se descarta si altera secciones, omite atribuciones o incorpora cifras que no estaban en los datos seleccionados."
+        "Parte automatizado con asistencia de IA sobre un paquete factual cerrado; no implica revisión humana de esta edición. La herramienta no busca noticias, no elige fuentes y no decide el estado. La salida se descarta si altera secciones, omite atribuciones o incorpora cifras que no estaban en los datos seleccionados."
         if editor_engine in {"gemini", "openrouter-free"} and lang == "es"
-        else "The synthesis uses a free external writing assistant over a closed factual packet. The tool does not search for news, choose sources or determine the status. Its output is discarded if it changes sections, omits attribution or introduces figures absent from the selected data."
+        else "Automated digest with AI assistance over a closed factual packet; this does not imply human review of this edition. The tool does not search for news, choose sources or determine the status. Its output is discarded if it changes sections, omits attribution or introduces figures absent from the selected data."
         if editor_engine in {"gemini", "openrouter-free"}
         else "Este parte se compone mediante reglas locales y selección automática de titulares. No se ha leído ni verificado automáticamente el texto íntegro de cada noticia, ni se atribuye una revisión humana a cada edición. La fecha de un feed puede corresponder a una actualización, no al momento del hecho. Las marcas de medios diferentes tampoco garantizan investigación independiente. Para el análisis propio y reproducible, consulta el informe de datos del monitor."
         if lang == "es"
@@ -1192,28 +1193,52 @@ def archive_page(items: list[dict[str, Any]], lang: str) -> str:
     return f'''<!DOCTYPE html><html lang="{lang}"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>{'Archivo de El Diario de Ormuz' if es else 'Hormuz Daily Archive'}</title><meta name="description" content="{'Archivo de ediciones materiales de El Diario de Ormuz.' if es else 'Archive of material Hormuz Daily editions.'}"/><meta name="robots" content="index,follow,max-image-preview:large"/><link rel="canonical" href="{canonical}"/><link rel="alternate" hreflang="{lang}" href="{canonical}"/><link rel="alternate" hreflang="{'en' if es else 'es'}" href="{alt}"/><link rel="stylesheet" href="/styles.css"/><link rel="stylesheet" href="/v11.css"/><link rel="stylesheet" href="/diario-v8.css?v=20260831-9"/></head><body class="journal-page"> <header class="journal-header"><div class="journal-header-inner"><a class="journal-brand" href="{'/' if es else '/en.html'}"><strong>ESTRECHO ORMUZ</strong><small>{'El Diario de Ormuz' if es else 'Hormuz Daily'}</small></a>{nav(lang)}</div></header><main class="journal-main"><section class="journal-archive-hero"><span class="section-kicker">{'HEMEROTECA · CUADERNOS DE ORMUZ' if es else 'ARCHIVE · HORMUZ LOGS'}</span><h1>{'El Diario de Ormuz' if es else 'Hormuz Daily'}</h1><p>{'Los partes conservan las referencias y el diagnóstico de cada edición. Las nuevas entradas exigen un cambio de clasificación y referencias nuevas de al menos dos medios; no se presentan como reportajes verificados ni como páginas indexables.' if es else 'Digests preserve each edition’s references and assessment. New archive entries require a changed classification and new references from at least two publishers; they are not presented as verified reporting or indexable articles.'}</p></section><section class="journal-archive-grid">{''.join(cards) if cards else '<p>Aún no hay ediciones archivadas.</p>' if es else '<p>No archived editions yet.</p>'}</section></main></body></html>'''
 
 
-def feed_xml(items: list[dict[str, Any]], generated_at: str) -> str:
+def feed_editions(root: Path, latest: dict[str, Any], archive: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Include daily snapshots without manufacturing historical article URLs."""
+    by_date = {}
+    for path in sorted((root / "journal-data").glob("????-??-??.json"), reverse=True)[:30]:
+        item = load_json(path, {})
+        if isinstance(item, dict) and item.get("date"):
+            by_date[item["date"]] = item
+    by_date[latest["date"]] = latest
+    for item in archive:
+        if isinstance(item, dict) and item.get("date"):
+            by_date[item["date"]] = item
+    return sorted(by_date.values(), key=lambda item: item["date"], reverse=True)[:30]
+
+
+def feed_xml(items: list[dict[str, Any]], generated_at: str, lang: str = "es") -> str:
+    es = lang == "es"
+    filename = "diario-feed.xml" if es else "diary-feed.xml"
+    title = "El Diario de Ormuz" if es else "Hormuz Daily"
+    page = "diario.html" if es else "en-diary.html"
     entries = []
     for item in items[:30]:
         entries.append(
-            f'''  <entry>\n    <title>{html.escape(item.get('title_es','El Diario de Ormuz'))}</title>\n    <id>{html.escape(item.get('url_es',''))}</id>\n    <link href="{html.escape(item.get('url_es',''))}"/>\n    <updated>{html.escape(item.get('generated_at',generated_at))}</updated>\n    <summary>{html.escape(item.get('summary_es',''))}</summary>\n  </entry>'''
+            f'''  <entry>\n    <title>{html.escape(item.get('date', '') + ' · ' + item.get('title_' + lang, title))}</title>\n    <id>{BASE_URL}/edition/{html.escape(item.get('date', ''))}/{lang}</id>\n    <link href="{html.escape(item.get('url_' + lang, BASE_URL + '/' + page), quote=True)}"/>\n    <updated>{html.escape(item.get('generated_at',generated_at))}</updated>\n    <summary>{html.escape(item.get('summary_' + lang,''))}</summary>\n  </entry>'''
         )
-    return f'''<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n  <title>El Diario de Ormuz</title>\n  <id>{BASE_URL}/diario-feed.xml</id>\n  <link href="{BASE_URL}/diario-feed.xml" rel="self"/>\n  <link href="{BASE_URL}/diario.html"/>\n  <updated>{generated_at}</updated>\n{chr(10).join(entries)}\n</feed>\n'''
+    return f'''<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{lang}">\n  <title>{title}</title>\n  <id>{BASE_URL}/{filename}</id>\n  <link href="{BASE_URL}/{filename}" rel="self"/>\n  <link href="{BASE_URL}/{page}"/>\n  <updated>{generated_at}</updated>\n{chr(10).join(entries)}\n</feed>\n'''
+
+
+def home_teaser_html(lang: str, edition: dict[str, Any]) -> str:
+    es = lang == "es"
+    title = edition.get("title_es" if es else "title_en") or ("El Diario de Ormuz" if es else "Hormuz Daily")
+    summary = edition.get("summary_es" if es else "summary_en") or ""
+    block = f'''<!-- JOURNAL_V8_HOME_START -->
+<section class="content-section journal-home-v8" aria-labelledby="journal-home-title">
+  <div><span class="section-kicker">{'EL DIARIO DE ORMUZ' if es else 'HORMUZ DAILY'}</span><h2 id="journal-home-title">{safe(title)}</h2><p>{safe(summary)}</p><div class="journal-home-meta"><span>{safe(edition.get('date'))}</span><span>{'Parte automatizado · fuentes enlazadas' if es else 'Automated digest · linked sources'}</span></div></div>
+  <aside><strong>{'Última edición disponible' if es else 'Latest available edition'}</strong><p>{'Noticias, tráfico, seguridad, diplomacia, energía y qué vigilar durante las próximas 24 horas.' if es else 'News, traffic, security, diplomacy, energy and what to watch over the next 24 hours.'}</p><a class="button primary" href="{'/diario.html' if es else '/en-diary.html'}">{'Leer la crónica completa' if es else 'Read the full edition'}</a><a class="text-link" href="{'/diario/' if es else '/diary/'}">{'Ver hemeroteca →' if es else 'Open archive →'}</a></aside>
+</section>
+<!-- JOURNAL_V8_HOME_END -->'''
+    return block
 
 
 def patch_home_teaser(path: Path, lang: str, edition: dict[str, Any]) -> None:
     if not path.exists():
         return
     text = path.read_text(encoding="utf-8")
+    block = home_teaser_html(lang, edition)
     es = lang == "es"
-    title = edition.get("title_es" if es else "title_en") or ("El Diario de Ormuz" if es else "Hormuz Daily")
-    summary = edition.get("summary_es" if es else "summary_en") or ""
-    block = f'''<!-- JOURNAL_V8_HOME_START -->
-<section class="content-section journal-home-v8" aria-labelledby="journal-home-title">
-  <div><span class="section-kicker">{'EL DIARIO DE ORMUZ' if es else 'HORMUZ DAILY'}</span><h2 id="journal-home-title">{safe(title)}</h2><p>{safe(summary)}</p><div class="journal-home-meta"><span>{safe(edition.get('date'))}</span><span>{'Crónica diaria · fuentes verificables' if es else 'Daily briefing · verifiable sources'}</span></div></div>
-  <aside><strong>{'Edición de hoy' if es else 'Today’s edition'}</strong><p>{'Noticias, tráfico, seguridad, diplomacia, energía y qué vigilar durante las próximas 24 horas.' if es else 'News, traffic, security, diplomacy, energy and what to watch over the next 24 hours.'}</p><a class="button primary" href="{'/diario.html' if es else '/en-diary.html'}">{'Leer la crónica completa' if es else 'Read the full edition'}</a><a class="text-link" href="{'/diario/' if es else '/diary/'}">{'Ver hemeroteca →' if es else 'Open archive →'}</a></aside>
-</section>
-<!-- JOURNAL_V8_HOME_END -->'''
     marker = re.compile(r'<!-- JOURNAL_V8_HOME_START -->.*?<!-- JOURNAL_V8_HOME_END -->', re.I | re.S)
     if marker.search(text):
         text = marker.sub(block, text, count=1)
@@ -1413,7 +1438,9 @@ def main() -> int:
 
     stable_write(root / "diario" / "index.html", archive_page(archive, "es"))
     stable_write(root / "diary" / "index.html", archive_page(archive, "en"))
-    stable_write(root / "diario-feed.xml", feed_xml(archive, generated_at))
+    feed_items = feed_editions(root, edition, archive)
+    stable_write(root / "diario-feed.xml", feed_xml(feed_items, generated_at))
+    stable_write(root / "diary-feed.xml", feed_xml(feed_items, generated_at, "en"))
 
     patch_home_teaser(root / "index.html", "es", edition)
     patch_home_teaser(root / "en.html", "en", edition)

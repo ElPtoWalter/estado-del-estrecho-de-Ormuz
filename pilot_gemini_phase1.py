@@ -16,6 +16,9 @@ from pathlib import Path
 from typing import Any, Iterator
 
 import generate_daily_journal as journal
+from free_editorial_ai import editorial_quality_report
+from publication_quality import apply_policy
+import re
 
 
 @contextmanager
@@ -106,6 +109,7 @@ def run_pilot(root: Path) -> dict[str, Any]:
         "factual_packet_hash": local_hash,
         "checks": checks,
         "passed": all(checks.values()),
+        "editorial_quality": {lang: editorial_quality_report(gemini_drafts[lang], local_drafts[lang]) for lang in ('es', 'en')},
         "local": {
             "engine": local_engine,
             "assistant_status": local_status,
@@ -150,10 +154,40 @@ def safe_failure_diagnostics(report: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def write_previews(report: dict[str, Any], root: Path, output: Path) -> None:
+    """Render the pilot as standalone HTML, away from the source/publication tree."""
+    output = output.resolve()
+    if output.is_relative_to(root.resolve()):
+        raise ValueError("Pilot previews must be outside the source repository")
+    output.mkdir(parents=True, exist_ok=True)
+    status = journal.load_json(root / 'status.json', {})
+    operational = journal.get_operational(status, root)
+    events = journal.load_json(root / 'events.json', {})
+    previous = journal.load_json(root / 'journal-state.json', {}).get('fingerprint', {})
+    fingerprint = journal.state_fingerprint(status, operational, events)
+    now = journal.parse_date(report['timestamp']).astimezone(journal.MADRID)
+    news = load_news(journal.load_json(root / 'journal-latest.json', {}))
+    context = journal.build_editorial_context(root, news, [], now)
+    styles = '\n'.join((root / name).read_text(encoding='utf-8') for name in ('styles.css', 'v11.css', 'diario-v8.css'))
+    for lang in ('es', 'en'):
+        page = journal.render_page(status=status, operational=operational, news=news, new_items=[],
+            previous_fp=previous, current_fp=fingerprint, local_dt=now, lang=lang,
+            canonical=journal.BASE_URL + ('/diario.html' if lang == 'es' else '/en-diary.html'),
+            archive=False, material_score_value=0, material_reasons=[], editorial=context,
+            draft=report['gemini']['drafts'][lang], editor_engine=report['gemini']['engine'])
+        page = apply_policy(page, 'diario/preview.html')
+        page = re.sub(r'<link\b[^>]*rel="stylesheet"[^>]*>', '', page)
+        page = page.replace('</head>', '<style>' + styles + '</style></head>', 1)
+        label = 'PRUEBA NO PUBLICADA' if lang == 'es' else 'UNPUBLISHED PREVIEW'
+        page = page.replace('<main id="contenido" class="journal-main">', f'<main id="contenido" class="journal-main"><p role="note"><strong>{label}</strong> · {report["timestamp"]}</p>', 1)
+        (output / f'preview-{lang}.html').write_text(page, encoding='utf-8')
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--preview-dir", type=Path)
     args = parser.parse_args()
     try:
         report = run_pilot(args.root.resolve())
@@ -164,6 +198,8 @@ def main() -> int:
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(text, encoding="utf-8")
+    if args.preview_dir:
+        write_previews(report, args.root.resolve(), args.preview_dir)
     print(
         "Piloto Gemini: "
         + ("OK" if report["passed"] else "FALLO")

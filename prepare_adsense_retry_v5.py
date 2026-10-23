@@ -470,7 +470,10 @@ def validate(policy: dict[str, Any]) -> dict[str, Any]:
         **policy,
         "warnings": warnings,
         "errors": errors,
-        "ready_for_resubmission": not errors,
+        "local_checks_passed": not errors,
+        "ready_for_resubmission": False,
+        "account_approval": "not_verified",
+        "external_checks_pending": ["AdSense account and rejection reason", "Certified CMP and consent behaviour", "Publisher legal identity"],
     }
     write(
         REPORT,

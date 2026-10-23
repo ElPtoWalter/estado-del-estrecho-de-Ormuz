@@ -1,4 +1,30 @@
-# Estado del estrecho de Ormuz · versión 3
+# Estado del estrecho de Ormuz
+
+## Operación actual (octubre de 2026)
+
+El monitor, el diario y el despliegue están separados. El monitor consulta fuentes; el diario redacta desde un paquete factual cerrado; `build_public_site.py` construye la única superficie que debe publicarse: `_site/`. No publiques la raíz del repositorio.
+
+- `update-status.yml`: monitor programado; no ejecuta la redacción diaria.
+- `diario-ormuz.yml`: edición de las 07:50 Europe/Madrid y recuperación a las 12:25 y 16:25 UTC, con idempotencia por fecha. Conserva fallback, archivo selectivo y `noindex` para partes automáticos.
+- `pilot_gemini_phase1.py`: compara Gemini con el borrador local sin publicar. `--preview-dir` guarda HTML autónomo fuera del repositorio. El informe distingue seguridad factual y señales de calidad de escritura.
+- `deploy-public.yml`: publica solo desde `main` y después de validar la superficie pública.
+- `monetization.json`: publicidad programática desactivada hasta verificar cuenta, CMP e identificación del titular. No acredita aprobación de Google.
+- `editorial-reviews.json`: revisiones de originales vinculadas al SHA-256 exacto del borrador. Nunca convierte un parte automático en un artículo revisado.
+
+Validación antes de proponer cambios:
+
+```sh
+python -m unittest discover -v
+python -m unittest discover -s tests -v
+node --test test_public_ui.cjs test_own_projects.cjs
+python build_public_site.py
+python check_public_links.py _site
+python validate_site.py --root .
+```
+
+Consulta [la auditoría y el procedimiento editorial](docs/OBSERVATORIO_AUDITORIA_2026-10-23.md). Los apartados de instalación que siguen describen versiones históricas: las mejoras nuevas se revisan en una PR y requieren autorización antes de fusionar o desplegar.
+
+## Referencia histórica: versión 3
 
 Web estática bilingüe para GitHub Pages con actualización automática, historial, metodología pública, alertas y notificación IndexNow.
 

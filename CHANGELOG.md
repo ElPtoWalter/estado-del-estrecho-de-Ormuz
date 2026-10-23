@@ -1,3 +1,11 @@
+## 2026-10-23 · Observatorio, publicación y distribución
+
+- Portada compacta con dimensiones canónicas y aviso de antigüedad; no cambia el motor operativo.
+- Transparencia sobre automatización, límite de anuncios por cuenta y política prudente de indexación.
+- RSS diario bilingüe con instantáneas no materiales, recuperación programada e IndexNow público reparado.
+- Hreflang completo, sitemap compartido sin fechas artificiales y enlaces de contexto.
+- Revisión de originales por huella de contenido y piloto Gemini con previsualización aislada y evaluación de plantilla.
+- Rutas públicas acotadas, guardas de rama para producción y ampliación de CI.
 
 ## 3.1 · Radar AIS y comunicación provisional
 

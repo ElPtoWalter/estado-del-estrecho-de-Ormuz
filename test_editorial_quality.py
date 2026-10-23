@@ -58,7 +58,8 @@ class EditorialQualityTests(unittest.TestCase):
             self.assertIn(filename, report["ad_free_pages"])
             self.assertNotIn(filename, report["monetized_pages"])
             self.assertNotIn("adsbygoogle", (root / filename).read_text(encoding="utf-8"))
-        self.assertTrue(report["ready_for_resubmission"])
+        self.assertFalse(report["ready_for_resubmission"])
+        self.assertEqual(report["account_approval"], "not_verified")
         self.assertEqual(report["errors"], [])
         self.assertIn("pub-1713078636060241", ads_txt)
 

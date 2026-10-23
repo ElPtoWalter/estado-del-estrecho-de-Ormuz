@@ -14,6 +14,15 @@ on:
   pull_request:
     branches: [main]
     paths:
+      - "publication_quality.py"
+      - "monetization.json"
+      - "editorial-reviews.json"
+      - "test_observatory_contracts.py"
+      - "build_sitemap.py"
+      - "monitor_report.py"
+      - "public-ui.js"
+      - "own_projects.py"
+      - "test_own_projects.*"
       - "free_editorial_ai.py"
       - "straitwatch_core.py"
       - "source-registry.json"
@@ -61,6 +70,8 @@ jobs:
         run: |
           python -m py_compile free_editorial_ai.py generate_daily_journal.py pilot_gemini_phase1.py pilot_phase2a_video.py straitwatch_core.py operational_intelligence_v7.py postprocess_evidence.py generate_health.py build_public_site.py test_free_editorial_ai.py test_straitwatch_core.py phase2_video/*.py
       - name: Pruebas editoriales
-        run: python -m unittest discover -v
+        run: |
+          python -m unittest discover -v
+          python -m unittest discover -s tests -v
       - name: Pruebas de interfaz pública
-        run: node --test test_public_ui.cjs
+        run: node --test test_public_ui.cjs test_own_projects.cjs

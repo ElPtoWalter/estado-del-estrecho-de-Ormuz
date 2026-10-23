@@ -6,6 +6,9 @@ on:
     # el propio generador ejecuta solo la ventana local correcta y una vez al día.
     - cron: "50 5 * * *"
     - cron: "50 6 * * *"
+    # Recuperación: el generador omite la fecha si ya está completa.
+    - cron: "25 12 * * *"
+    - cron: "25 16 * * *"
   workflow_dispatch:
 
 permissions:
@@ -17,6 +20,7 @@ concurrency:
 
 jobs:
   newsroom:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -77,6 +81,7 @@ jobs:
             journal-social-draft.json \
             events.json \
             diario-feed.xml \
+            diary-feed.xml \
             index.html \
             en.html \
             sitemap.xml \
