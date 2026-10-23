@@ -5,6 +5,25 @@ import re
 from datetime import date
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 
+# Lexical translations of a supplied headline, not additional reporting.
+# The first matching concrete subject is a minimum grounding check, not NLI.
+HEADLINE_ANCHORS = (
+    (r'\boil spill\b', ('vertido', 'derrame', 'oil spill')),
+    (r'\bengine rooms?\b', ('sala de máquinas', 'salas de máquinas', 'motores', 'engine room')),
+    (r'\bBrent\b', ('Brent',)),
+    (r'\bimports?\b', ('importaciones', 'imports')),
+    (r'\bceasefire\b', ('alto el fuego', 'tregua', 'ceasefire')),
+    (r'\bblockade\b', ('bloqueo', 'blockade')),
+    (r'\btankers?\b', ('petrolero', 'petroleros', 'tanker', 'tankers')),
+    (r'\bships?\b|\bvessels?\b', ('buque', 'buques', 'barco', 'barcos', 'ship', 'ships', 'vessel', 'vessels')),
+)
+
+
+def headline_grounding(title):
+    anchors = next((list(names) for pattern, names in HEADLINE_ANCHORS if re.search(pattern, title, re.I)), [])
+    declaration = bool(re.search(r'\bIran(?:\x27s [\w ]+)? (?:says|warns|claims|urges)\b', title, re.I))
+    return {'anchors': anchors, 'iran_declaration': declaration}
+
 
 def primary_context(root, edition_date):
     """Reviewed, dated factual paraphrases; never scrape or trust arbitrary URLs."""
@@ -43,6 +62,8 @@ def primary_context(root, edition_date):
 
 
 def classify_headline(title):
+    if re.search(r'\boil spill\b|\bvertido\b|\bderrame\b', title, re.I):
+        return 'maritime'
     # Subject first: an oil-price story about strikes is still a market story.
     if re.search(r"^(?:oil|crude|brent|wti|gas|petróleo|crudo)\b", title, re.I):
         return "energy"
@@ -90,7 +111,7 @@ def reading(topic, lang):
 
 
 def section_note(topic, items, lang):
-    relevant = [item for item in items if item.topic == topic and not item.analytical][:2]
+    relevant = [item for item in items if item.topic == topic and not item.analytical and item.tier >= 3][:2]
     if not relevant:
         return "Sin titulares seleccionados en este ámbito; no se añade una conclusión nueva." if lang == "es" else "No selected headlines in this area; no new conclusion is added."
     sources = ", ".join(dict.fromkeys(item.source for item in relevant))

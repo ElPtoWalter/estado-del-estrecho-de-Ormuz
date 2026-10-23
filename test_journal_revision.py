@@ -9,13 +9,16 @@ from pathlib import Path
 import generate_daily_journal as journal
 from check_public_links import check
 from free_editorial_ai import editorial_quality_report, _normalize_supplied_names, _validate_candidate, _entity_supported
-from journal_evidence import primary_context
+from journal_evidence import primary_context, classify_headline
 from test_free_editorial_ai import valid_draft
 
 ROOT = Path(__file__).parent
 
 
 class JournalRevisionTests(unittest.TestCase):
+    def test_a_spill_story_is_not_mistaken_for_an_oil_price_report(self):
+        self.assertEqual(classify_headline('Oil spill hits beaches as tanker attacks multiply'), 'maritime')
+        self.assertEqual(classify_headline('Oil prices rise after tanker attacks'), 'energy')
     def test_repeat_detector_compares_fields_not_just_the_template(self):
         draft = valid_draft()
         draft['situation'][0] = draft['deck']
@@ -54,7 +57,23 @@ class JournalRevisionTests(unittest.TestCase):
         diagnostics = {}
         self.assertIsNone(_validate_candidate({'es': draft}, facts=facts, fallbacks={'es': valid_draft()},
             sources_by_section={'es': {'Tráfico': ['Reuters']}}, diagnostics=diagnostics)[0])
-        self.assertEqual(diagnostics['reason'], 'historical-context-period-missing')
+        self.assertEqual(diagnostics['reason'], 'required-dated-primary-context')
+
+    def test_generic_market_prose_cannot_replace_a_spill_headline(self):
+        draft = valid_draft()
+        draft['sections'][0]['paragraph'] = 'Euronews ha informado de que los precios del petróleo y el suministro global continúan condicionados por las incidencias en las rutas energéticas.'
+        facts = {'editorial_brief': {'mode': 'continuity'}, 'selected_sources': [
+            {'source': 'Euronews', 'title': 'Oil spill hits beaches', 'grounding': {'anchors': ['vertido', 'derrame', 'oil spill']}}]}
+        diagnostics = {}
+        self.assertIsNone(_validate_candidate({'es': draft}, facts=facts, fallbacks={'es': valid_draft()},
+            sources_by_section={'es': {'Tráfico': ['Euronews']}}, diagnostics=diagnostics)[0])
+        self.assertEqual(diagnostics['reason'], 'section-headline-grounding')
+
+    def test_rephrased_assessment_in_lead_is_an_editorial_flag(self):
+        draft = valid_draft()
+        draft['deck'] = 'La navegación mantiene tránsitos confirmados y restricciones de seguridad.'
+        draft['situation'][0] = 'Los tránsitos comerciales sufren restricciones de seguridad durante la jornada.'
+        self.assertIn('assessment_repeated_in_lead', editorial_quality_report(draft, {})['flags'])
 
     def test_a_number_elsewhere_in_packet_does_not_authorize_another_publishers_claim(self):
         draft = valid_draft()

@@ -32,7 +32,7 @@ FREE_GEMINI_MODELS = frozenset({
 })
 MAX_FACT_BYTES = 48_000
 MAX_OUTPUT_TOKENS = 4_096
-VALIDATOR_VERSION = 8
+VALIDATOR_VERSION = 9
 
 SYSTEM_INSTRUCTION = (
     "Eres un redactor especializado en información marítima y energética. Escribe con claridad y "
@@ -131,6 +131,12 @@ def editorial_quality_report(draft: dict[str, Any], baseline: dict[str, Any]) ->
             sentences.append((position, tokens))
     if repeated:
         flags.append('repeated_sentence_across_fields')
+    assessment_topics = (r'paso f[ií]sico|tr[aá]nsit|physical passage|commercial transit',
+                         r'restring|reduc|below normal|inferior.*normal|restricted', r'seguridad|security')
+    deck_topics = {i for i, pattern in enumerate(assessment_topics) if re.search(pattern, str(draft.get('deck', '')), re.I)}
+    lead_topics = {i for i, pattern in enumerate(assessment_topics) if re.search(pattern, str((draft.get('situation') or [''])[0]), re.I)}
+    if len(deck_topics & lead_topics) >= 2:
+        flags.append('assessment_repeated_in_lead')
     lowered_name = any(re.search(rf'(?<!\w){re.escape(name.lower())}(?!\w)', text)
                        for pair in GEOGRAPHIC_NAMES for name in pair if any(c.isupper() for c in name))
     if lowered_name:
@@ -522,6 +528,15 @@ def _validate_language_draft(
                        if _canonical_source(item.get('source', '')) in section_sources]
             if _numbers(paragraph) - (_numbers(records) | _numbers(fallback['sections'][position]['paragraph'])):
                 return reject('section-number-provenance')
+            if paragraph != fallback['sections'][position]['paragraph']:
+                mentioned = [item for item in records if _mentions_source(paragraph, item.get('source', ''))]
+                anchored = [item for item in mentioned if item.get('grounding', {}).get('anchors')]
+                if anchored and not any(any(re.search(rf'(?<!\w){re.escape(term)}(?!\w)', paragraph, re.I)
+                                            for term in item['grounding']['anchors']) for item in anchored):
+                    return reject('section-headline-grounding')
+                if mentioned and all(item.get('grounding', {}).get('iran_declaration') for item in mentioned):
+                    if not re.search(r'\b(?:Irán|Iran)\b', paragraph) or not re.search(r'\b(?:afirma|afirmó|dice|dijo|sostiene|advierte|advirtió|says|said|claims|claimed|warns|warned)\b', paragraph, re.I):
+                        return reject('declaration-speaker-missing')
         sections.append({"title": title, "paragraph": paragraph})
 
     normalized = {
@@ -555,6 +570,12 @@ def _validate_language_draft(
     if UNSUPPORTED_CERTAINTY_PATTERN.search(prose):
         return reject("unsupported-certainty")
     for context in facts.get('primary_context', []):
+        meaning_text = ' '.join(meaning)
+        if not _mentions_source(meaning_text, context['source']) or context['reference_period'] not in meaning_text:
+            return reject('required-dated-primary-context')
+        supplied_quantities = _numbers(context.get('fact_en', '')) - {context['reference_period']}
+        if supplied_quantities and not (_numbers(meaning_text) & supplied_quantities):
+            return reject('required-primary-context-quantity')
         for block in [headline, deck, *situation, *meaning, *(s['paragraph'] for s in sections)]:
             if _mentions_source(block, context['source']) and context['reference_period'] not in block:
                 return reject('historical-context-period-missing')

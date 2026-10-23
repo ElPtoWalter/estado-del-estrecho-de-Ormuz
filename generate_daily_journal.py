@@ -13,7 +13,7 @@ especulativos nunca se convierten en hechos.
 """
 from __future__ import annotations
 
-from journal_evidence import classify_headline, identity, reading, section_note, primary_context
+from journal_evidence import classify_headline, identity, reading, section_note, primary_context, headline_grounding
 from free_editorial_ai import factual_packet_digest, generate_editorial_drafts, editorial_quality_report, VALIDATOR_VERSION
 from straitwatch_core import (
     SourceRegistry,
@@ -666,7 +666,7 @@ def relevance_audit(item: NewsItem, new_items: list[NewsItem]) -> dict[str, Any]
 
 
 def _journal_topics(news: list[NewsItem]) -> list[str]:
-    counts = Counter(item.topic for item in news if item.topic in TOPIC_PATTERNS and not item.analytical)
+    counts = Counter(item.topic for item in news if item.topic in TOPIC_PATTERNS and not item.analytical and item.tier >= 3)
     topics = [topic for topic, _ in counts.most_common()]
     return topics or ["maritime"]
 
@@ -752,7 +752,7 @@ def editorial_drafts(
         context_items = editorial.get('primary_context', [])
         if context_items:
             fallbacks[lang]['meaning'] = [context_items[0]['fact_' + lang] + ' ' + context_items[0]['limit_' + lang]]
-    usable = [item for item in news if not item.analytical]
+    usable = [item for item in news if not item.analytical and item.tier >= 3]
     independent = {item.source.casefold() for item in usable if item.source}
     insufficient_sources = len(usable) < 2 or len(independent) < 2
 
@@ -807,10 +807,10 @@ def editorial_drafts(
         "editorial_brief": {
             "mode": "continuity" if previous_fp.get('v7_state') == current_fp.get('v7_state') else "assessment_change",
             "headline": "Describe the actual assessment change or continuity. A press claim is not a confirmed development; retain its speaker and date.",
-            "deck": "One news angle and its relevance; do not copy the assessment summary or enumerate publishers.",
-            "situation": "Two distinct short paragraphs: the dated attributed news; then what is verified versus still unconfirmed. Do not repeat the deck.",
-            "sections": "Each paragraph develops one different supplied news item. Do not merge claims belonging to different publishers or turn hypothetical headlines into incidents.",
-            "meaning": "Use dated primary_context as historical perspective, not as today's traffic or a loss estimate. Explain one consequence conditionally, without repeating the situation.",
+            "deck": "Lead on one concrete attributed news detail (not another paraphrase of the open/restricted assessment). Do not enumerate publishers.",
+            "situation": "Two distinct short paragraphs: chronology/publication dates of the supplied references; then the exact scope of verification. Do not paraphrase the deck or repeat the assessment summary.",
+            "sections": "Each paragraph develops one concrete supplied news detail, retaining a specific grounding anchor. Use a different story from the deck/situation. For an Iranian declaration name Iran as speaker (Iran says / Irán afirma), and attribute the reporting publisher separately. Do not merge different stories or turn hypothetical headlines into incidents.",
+            "meaning": "When primary_context exists, include its named source, reference period and a concrete supplied quantity. This is mandatory historical perspective, not today's traffic or a loss estimate. No generic placeholder about important flows. With no context, add no external background.",
             "watch": "Three concrete pending checks, with no predictions or repetition of the assessment.",
             "evidence_rule": "Use selected_sources only as attributed headline reports. events preserve the monitor audit, not a license to assert every event as confirmed. primary_context is historical and must name its period.",
         },
@@ -824,6 +824,7 @@ def editorial_drafts(
                 "source": item.source,
                 "url": item.url,
                 "basis": "headline_only_not_independent_fact_confirmation",
+                "grounding": headline_grounding(item.title),
                 "source_id": item.source_id or SOURCE_REGISTRY.resolve(item.source, item.url).source_id,
                 "published_at": item.published_at,
                 "topic": item.topic,
@@ -1113,7 +1114,7 @@ def render_page(
     for topic in topics:
         section_title = TOPIC_LABELS[lang][topic]
         paragraph = section_drafts.get(section_title) or section_paragraph(topic, news, lang)
-        relevant = [x for x in news if x.topic == topic and not x.analytical]
+        relevant = [x for x in news if x.topic == topic and not x.analytical and x.tier >= 3]
         link_cards = ""
         for item in relevant[:4]:
             link_cards += (
