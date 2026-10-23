@@ -6,6 +6,10 @@ on:
     # el propio generador ejecuta solo la ventana local correcta y una vez al día.
     - cron: "50 5 * * *"
     - cron: "50 6 * * *"
+    # Recuperación si GitHub retrasa o pierde la ventana de la mañana.
+    # generate_daily_journal.py --scheduled comprueba last_date y evita duplicados.
+    - cron: "25 12 * * *"
+    - cron: "25 16 * * *"
   workflow_dispatch:
 
 permissions:
