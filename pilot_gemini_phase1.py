@@ -183,7 +183,8 @@ def write_previews(report: dict[str, Any], root: Path, output: Path) -> None:
         page = re.sub(r'href="/(?!/)([^\"]*)"', lambda match: 'href="' + journal.BASE_URL + '/' + match.group(1) + '"', page)
         for peer in ('es', 'en'):
             published = '/diario.html' if peer == 'es' else '/en-diary.html'
-            page = page.replace('href="' + journal.BASE_URL + published + '"', 'href="preview-' + peer + '.html"')
+            page = re.sub(r'(<a\b[^>]*\bhref=")' + re.escape(journal.BASE_URL + published) + '"',
+                          lambda match: match.group(1) + 'preview-' + peer + '.html"', page)
         label = 'PRUEBA NO PUBLICADA' if lang == 'es' else 'UNPUBLISHED PREVIEW'
         page = page.replace('<main id="contenido" class="journal-main">', f'<main id="contenido" class="journal-main"><p role="note"><strong>{label}</strong> · {report["timestamp"]}</p>', 1)
         (output / f'preview-{lang}.html').write_text(page, encoding='utf-8')
