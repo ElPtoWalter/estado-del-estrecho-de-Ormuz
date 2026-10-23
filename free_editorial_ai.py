@@ -143,9 +143,14 @@ def editorial_quality_report(draft: dict[str, Any], baseline: dict[str, Any]) ->
                        for pair in GEOGRAPHIC_NAMES for name in pair if any(c.isupper() for c in name))
     if lowered_name:
         flags.append('proper_name_case')
+    weights = {'repeated_sentence_across_fields': 5, 'assessment_repeated_in_lead': 5,
+               'unchanged_deck': 3, 'proper_name_case': 4, 'generic_headline': 2,
+               'near_identical_to_local_template': 3, 'thin_narrative': 1}
+    blocking_flags = [flag for flag in flags if flag != 'thin_narrative']
     return {"word_count": len(text.split()), "template_similarity": round(similarity, 3),
             "repeated_sentence_pairs": repeated, "flags": flags,
-            "style_checks_passed": not flags, "human_editorial_assessment_required": True}
+            "style_penalty": sum(weights.get(flag, 1) for flag in flags), 'blocking_flags': blocking_flags,
+            "style_checks_passed": not blocking_flags, "human_editorial_assessment_required": True}
 
 
 def _draft_schema(section_titles: list[str]) -> dict[str, Any]:
@@ -586,8 +591,10 @@ def _validate_language_draft(
         meaning_text = ' '.join(meaning)
         if not _mentions_source(meaning_text, context['source']) or context['reference_period'] not in meaning_text:
             return reject('required-dated-primary-context')
-        supplied_quantities = _numbers(context.get('fact_en', '')) - {context['reference_period']}
-        if supplied_quantities and not (_numbers(meaning_text) & supplied_quantities):
+        def decimal_form(number):
+            return number.replace(',', '.') if re.fullmatch(r'\d+,\d{1,2}', number) else number
+        supplied_quantities = {decimal_form(number) for number in _numbers(context.get('fact_en', ''))} - {context['reference_period']}
+        if supplied_quantities and not ({decimal_form(number) for number in _numbers(meaning_text)} & supplied_quantities):
             return reject('required-primary-context-quantity')
         for block in [headline, deck, *situation, *meaning, *(s['paragraph'] for s in sections)]:
             if _mentions_source(block, context['source']) and context['reference_period'] not in block:

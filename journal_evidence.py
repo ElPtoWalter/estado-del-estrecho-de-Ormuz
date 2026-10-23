@@ -58,7 +58,7 @@ def primary_context(root, edition_date):
         if item.get('review_sha256') != digest:
             continue
         output.append({**item, 'reviewed_at': data['reviewed_at']})
-    return output[:3]
+    return output[:2]
 
 
 def classify_headline(title):

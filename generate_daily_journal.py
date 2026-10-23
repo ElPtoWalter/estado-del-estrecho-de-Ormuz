@@ -751,7 +751,7 @@ def editorial_drafts(
     for lang in ('es', 'en'):
         context_items = editorial.get('primary_context', [])
         if context_items:
-            fallbacks[lang]['meaning'] = [context_items[0]['fact_' + lang] + ' ' + context_items[0]['limit_' + lang]]
+            fallbacks[lang]['meaning'] = [item['fact_' + lang] + ' ' + item['limit_' + lang] for item in context_items[:2]]
     usable = [item for item in news if not item.analytical and item.tier >= 3]
     independent = {item.source.casefold() for item in usable if item.source}
     insufficient_sources = len(usable) < 2 or len(independent) < 2
@@ -892,10 +892,13 @@ def editorial_drafts(
             allow_field_fallback=True, candidate_capture=response_capture,
             style_revision={'drafts': drafts, 'problems': {lang: quality['flags'] for lang, quality in initial_quality.items()}},
         )
+        for lang in ('es', 'en'):
+            if initial_quality[lang]['style_checks_passed']:
+                revised[lang] = drafts[lang]
         checked, _ = _validate_candidate(revised, facts=facts, fallbacks=fallbacks, sources_by_section=sources_by_section)
         revised_quality = {lang: editorial_quality_report(revised[lang], fallbacks[lang]) for lang in ('es', 'en')}
         adopted = (revision_engine == 'gemini' and checked is not None
-                   and sum(len(item['flags']) for item in revised_quality.values()) < sum(len(item['flags']) for item in initial_quality.values()))
+                   and sum(item['style_penalty'] for item in revised_quality.values()) < sum(item['style_penalty'] for item in initial_quality.values()))
         if adopted:
             drafts = checked
             assistant_status = ('partial-fallback' if assistant_status == 'partial-fallback' or revision_status == 'partial-fallback' else 'ok')
@@ -1124,8 +1127,8 @@ def render_page(
     topics = _journal_topics(news)
     date_text = date_label(local_dt, lang)
     byline = "Estrecho Ormuz · selección automática" if lang == "es" else "Estrecho Ormuz · automated selection"
-    minutes = max(3, min(7, 2 + len(topics)))
-    read_time = f"Lectura: {minutes} min" if lang == "es" else f"Reading time: {minutes} min"
+    minutes = max(1, (editorial_quality_report(draft, fallback)['word_count'] + 199) // 200)
+    read_time = f"Lectura estimada: {minutes} min" if lang == "es" else f"Estimated reading time: {minutes} min"
     kicker = "EL DIARIO DE ORMUZ" if lang == "es" else "HORMUZ DAILY"
     edition = editorial.get("label_es" if lang == "es" else "label_en") or ("Edición de la mañana" if lang == "es" else "Morning edition")
     archive_note = (
@@ -1135,6 +1138,7 @@ def render_page(
     )
 
     dim_labels = dimensions(operational, lang)
+    checked_at = status.get('checked_at') or operational.get('generated_at') or ''
     metric_names = {
         "es": {"passage": "Paso físico", "traffic": "Tráfico", "access": "Acceso", "risk": "Riesgo"},
         "en": {"passage": "Physical passage", "traffic": "Traffic", "access": "Access", "risk": "Risk"},
@@ -1244,7 +1248,7 @@ def render_page(
 <div class="journal-byline"><span>{safe(byline)}</span><span>{read_time}</span><span>{safe(archive_note)}</span></div>
 </header>
 <section class="journal-status-card">
-<div><span>{'Diagnóstico al cierre de edición' if lang == 'es' else 'Assessment at publication time'}</span><strong>{safe(state_label)}</strong><small>{'Confianza' if lang == 'es' else 'Confidence'}: {safe(confidence_label(confidence, lang))}</small></div>
+<div><span>{'Diagnóstico al cierre de edición' if lang == 'es' else 'Assessment at publication time'}</span><strong>{safe(state_label)}</strong><small>{'Confianza' if lang == 'es' else 'Confidence'}: {safe(confidence_label(confidence, lang))}</small><small>{'Comprobación' if lang == 'es' else 'Checked'}: <time datetime="{safe(checked_at)}">{safe(checked_at)}</time></small></div>
 <div class="journal-metrics">{metrics}</div>
 </section>
 {traffic_snapshot_html(operational, lang)}

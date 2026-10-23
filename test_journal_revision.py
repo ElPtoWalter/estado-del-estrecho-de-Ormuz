@@ -96,11 +96,12 @@ class JournalRevisionTests(unittest.TestCase):
             original = json.loads((ROOT / 'editorial-context.json').read_text(encoding='utf-8'))
             path = root / 'editorial-context.json'
             path.write_text(json.dumps(original), encoding='utf-8')
-            self.assertEqual(len(primary_context(root, date(2026, 10, 23))), 1)
+            self.assertEqual(len(primary_context(root, date(2026, 10, 23))), 2)
             self.assertEqual(primary_context(root, date(2026, 10, 22)), [])
             original['items'][0]['fact_es'] += ' An unreviewed extra claim.'
             path.write_text(json.dumps(original), encoding='utf-8')
-            self.assertEqual(primary_context(root, date(2026, 10, 23)), [])
+            remaining = primary_context(root, date(2026, 10, 23))
+            self.assertEqual([item['id'] for item in remaining], ['eia-hormuz-bypass-2025'])
 
     def test_historical_primary_source_needs_its_period_in_the_same_block(self):
         draft = valid_draft()
