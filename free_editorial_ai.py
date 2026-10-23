@@ -31,7 +31,7 @@ FREE_GEMINI_MODELS = frozenset({
 })
 MAX_FACT_BYTES = 48_000
 MAX_OUTPUT_TOKENS = 4_096
-VALIDATOR_VERSION = 2
+VALIDATOR_VERSION = 3
 
 SYSTEM_INSTRUCTION = (
     "Eres un redactor especializado en información marítima y energética. Escribe con claridad y "
@@ -316,7 +316,9 @@ def _named_entities(text: str) -> set[str]:
     entities: set[str] = set()
     for match in ENTITY_PATTERN.finditer(text):
         entity = re.sub(r"\s+", " ", match.group(0)).strip()
-        entity = re.sub(r"^(?:El|La|Los|Las|The)\s+", "", entity)
+        # Attribution syntax is not part of an organisation's proper name.
+        # The remaining name still passes the same corpus and source checks.
+        entity = re.sub(r"^(?:El|La|Los|Las|The|Según)\s+", "", entity)
         if len(entity.split()) >= 2:
             entities.add(entity.casefold())
     return entities

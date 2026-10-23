@@ -14,7 +14,7 @@ especulativos nunca se convierten en hechos.
 from __future__ import annotations
 
 from journal_evidence import classify_headline, identity, reading, section_note
-from free_editorial_ai import factual_packet_digest, generate_editorial_drafts, editorial_quality_report
+from free_editorial_ai import factual_packet_digest, generate_editorial_drafts, editorial_quality_report, VALIDATOR_VERSION
 from straitwatch_core import (
     SourceRegistry,
     canonical_url,
@@ -807,7 +807,7 @@ def editorial_drafts(
     digest = factual_packet_digest(facts)
     if insufficient_sources:
         return fallbacks, "rules", "insufficient-sources", {
-            "validator_version": 2,
+            "validator_version": VALIDATOR_VERSION,
             "factual_packet_sha256": digest,
             "factual_packet_hash": digest,
             "event_ids": event_ids,
@@ -829,7 +829,7 @@ def editorial_drafts(
         sources_by_section=sources_by_section,
         trace=trace,
     )
-    trace.setdefault("validator_version", 2)
+    trace.setdefault("validator_version", VALIDATOR_VERSION)
     trace.setdefault("factual_packet_sha256", digest)
     trace["factual_packet_hash"] = trace.get("factual_packet_sha256") or digest
     trace["event_ids"] = event_ids

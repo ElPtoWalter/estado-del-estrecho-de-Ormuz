@@ -374,6 +374,20 @@ class FreeEditorialAITests(unittest.TestCase):
         self.assertNotIn("euronews. un", entities)
         self.assertIn("maritime zeta group", entities)
 
+    def test_legitimate_attribution_does_not_create_an_unseen_entity(self):
+        self.facts['selected_sources'].append({'source': 'Associated Press', 'title': 'Shipping reference'})
+        candidate = valid_draft()
+        candidate['meaning'][0] += ' Según Associated Press, la referencia debe leerse con el contexto del parte.'
+        (_, engine, status), _ = self.call_gemini(candidate)
+        self.assertEqual((engine, status), ('gemini', 'ok'))
+
+    def test_attribution_prefix_does_not_allow_an_invented_organisation(self):
+        candidate = valid_draft()
+        candidate['meaning'][0] += ' Según Maritime Zeta Group, la referencia debe leerse con el contexto del parte.'
+        (_, engine, status), _ = self.call_gemini(candidate)
+        self.assertEqual((engine, status), ('rules', 'gemini-validation-es'))
+        self.assertIn('maritime zeta group', _named_entities('Según Maritime Zeta Group, la referencia sigue pendiente.'))
+
     def test_unknown_single_word_attribution_is_rejected(self):
         candidate = valid_draft()
         candidate["meaning"][0] += " Según Acme, la tendencia ya estaría confirmada."

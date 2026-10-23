@@ -829,6 +829,10 @@ def sanitize_html(document: str, filename: str) -> str:
     document = strip_adsense(document, filename)
     metadata = sitemap.MetaParser()
     metadata.feed(document)
+    if filename in {"embed.html", "en-embed.html"}:
+        for language, page in (("es", "embed.html"), ("en", "en-embed.html")):
+            if language not in metadata.alternates:
+                document = re.sub(r'</head>', f'<link rel="alternate" hreflang="{language}" href="{DOMAIN}/{page}"></head>', document, count=1, flags=re.I)
     if metadata.canonical and lang not in metadata.alternates and ('en' if lang == 'es' else 'es') in metadata.alternates:
         document = re.sub(r'</head>', f'<link rel="alternate" hreflang="{lang}" href="{html.escape(metadata.canonical, quote=True)}"></head>', document, count=1, flags=re.I)
     if filename in ARTICLE_PAGES['ormuz'] and 'data-related-guides' not in document:
