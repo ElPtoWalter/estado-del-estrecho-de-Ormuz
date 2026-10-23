@@ -18,6 +18,16 @@ ROOT = Path(__file__).parent
 
 
 class JournalRevisionTests(unittest.TestCase):
+    def test_model_cannot_expand_the_trusted_verification_scope(self):
+        draft = valid_draft()
+        facts = {'editorial_brief': {'verified_situation': {'es': list(draft['situation'])}}}
+        changed = copy.deepcopy(draft)
+        changed['situation'][0] = 'Se verificaron de forma independiente todos los avisos marítimos y los ataques de la jornada.'
+        diagnostics = {}
+        self.assertIsNone(_validate_candidate({'es': changed}, facts=facts, fallbacks={'es': draft},
+            sources_by_section={'es': {'Tráfico': ['Reuters']}}, diagnostics=diagnostics)[0])
+        self.assertEqual(diagnostics['reason'], 'verification-scope-provenance')
+
     def test_deck_repeated_as_part_of_a_longer_section_is_flagged(self):
         draft = valid_draft()
         draft['deck'] = 'The Guardian reports a five-month oil high as fears grow that the United States will renew strikes on Iran.'

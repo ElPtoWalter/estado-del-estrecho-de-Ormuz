@@ -763,6 +763,12 @@ def _validate_candidate(
             if diagnostics is not None:
                 diagnostics.update({'language': language, 'reason': 'headline-provenance-options'})
             return None, f'validation-{language}'
+        verified_situation = facts.get('editorial_brief', {}).get('verified_situation', {}).get(language)
+        if verified_situation and (not isinstance(language_candidate, dict)
+                                   or language_candidate.get('situation') != verified_situation):
+            if diagnostics is not None:
+                diagnostics.update({'language': language, 'reason': 'verification-scope-provenance'})
+            return None, f'validation-{language}'
         draft = _validate_language_draft(
             _normalize_supplied_names(candidate.get(language), facts, language),
             fallback,
@@ -907,8 +913,8 @@ def _editorial_prompt(
         f"PAQUETE FACTUAL:\\n{facts_json}"
         + ("\n\nPLAN DE EDICION OBLIGATORIO: sigue editorial_brief. Usa el único titular permitido por idioma. "
            "La entradilla desarrolla deck_story, con su fecha de publicación y doble atribución si es una declaración. "
-           "No vuelvas a contar esa noticia en sections. En situation da fechas de las referencias y el alcance de su "
-           "comprobación; el estado operativo ya figura en una tarjeta aparte, no lo repitas. "
+           "No vuelvas a contar esa noticia en sections. Copia situation de verified_situation para ese idioma: "
+           "el alcance de la verificación y las fechas son metadatos del sistema, no prosa que puedas ampliar. "
            "En meaning incorpora los DOS registros primarios, cada uno con su período y cantidad. "
            "Evita frases genéricas sobre tensiones, mercados o incidentes: usa detalles suministrados."
            if journal_mode else "")

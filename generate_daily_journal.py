@@ -687,6 +687,18 @@ def editorial_headlines(operational, items, new_items, local_dt, fallbacks):
     return options
 
 
+def journal_scope(items, local_dt, lang):
+    """Publication chronology and verification scope are trusted metadata."""
+    dates = sorted(parse_date(item.published_at).astimezone(MADRID) for item in items)
+    first = date_label(dates[0] if dates else local_dt, lang)
+    last = date_label(dates[-1] if dates else local_dt, lang)
+    if lang == 'es':
+        return [f'La selección reúne referencias publicadas entre el {first} y el {last}. Las fechas de publicación no acreditan por sí solas cuándo ocurrió cada hecho.',
+                'Esta edición resume titulares atribuidos; no verifica de forma independiente los sucesos que describen. El corte operativo del monitor figura aparte, con su propia hora y nivel de confianza.']
+    return [f'The selected reports were published between {first} and {last}. Publication dates do not establish when each reported event took place.',
+            'This edition summarises attributed headlines; it does not independently verify the events they describe. The monitor assessment appears separately, with its own timestamp and confidence level.']
+
+
 def fallback_editorial_draft(
     status: dict[str, Any],
     operational: dict[str, Any],
@@ -803,6 +815,7 @@ def editorial_drafts(
                       and topic_counts[item.topic] > 1), None)
     for lang in ('es', 'en'):
         fallbacks[lang]['headline'] = headline_options[lang][0]
+        fallbacks[lang]['situation'] = journal_scope(ai_items, local_dt, lang)
 
     sources_by_section: dict[str, dict[str, list[str]]] = {"es": {}, "en": {}}
     for lang in ("es", "en"):
@@ -843,6 +856,7 @@ def editorial_drafts(
         "primary_context": editorial.get('primary_context', []),
         "editorial_brief": {
             "headline_options": headline_options,
+            "verified_situation": {lang: fallbacks[lang]['situation'] for lang in ('es', 'en')},
             "deck_story": ({'source': deck_item.source, 'title': deck_item.title,
                             'published_at': deck_item.published_at} if deck_item else None),
             "mode": "continuity" if previous_fp.get('v7_state') == current_fp.get('v7_state') else "assessment_change",
