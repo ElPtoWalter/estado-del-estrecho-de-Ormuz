@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-10-23T01:49:08Z",
-  "last_success_at": "2026-10-23T01:49:08Z",
+  "checked_at": "2026-10-23T07:52:17Z",
+  "last_success_at": "2026-10-23T07:52:17Z",
   "last_change_at": "2026-10-18T17:29:40Z",
   "verification_ok": true,
   "stale": false,
@@ -16,14 +16,14 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Oil Rises as Deadly Saudi Attacks Fan Middle East Supply Fears - Bloomberg.com",
-      "source_name": "Bloomberg",
-      "source_id": "bloomberg",
-      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcGpORlFHazhXTnJBNnc2TndhSzgzUGRSLXd1Zm9fb0xKRzJZTUs1NGRPdE9McUpmZFlFenhNaGYwOGNIREM5NXRMMTZ4VXg5clJDaWFqcGRKRDRBSUh1bUpLenQ4ZTdyQi1qT1p3RjhRT0V6UVdUdGFuLWJxakVvMHRRanRvUGduVXA1bkZmaWlNRHFlOEdhVFhxTHAzUQ",
-      "published_at": "2026-10-22T19:11:55Z",
-      "tier": 3,
+      "title": "Top Five Maritime Threats Across The Gulf",
+      "source_name": "MarineLink",
+      "source_id": "marinelink",
+      "source_url": "https://marinelink.com/news/top-five-maritime-threats-across-gulf-543846",
+      "published_at": "2026-10-22T21:00:00Z",
+      "tier": 2,
       "official": false,
-      "observed_at": "2026-10-23T01:49:08Z"
+      "observed_at": "2026-10-23T07:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -34,7 +34,7 @@
       "published_at": "2026-10-22T16:10:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-23T01:49:08Z"
+      "observed_at": "2026-10-23T07:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -45,7 +45,7 @@
       "published_at": "2026-10-22T11:44:40Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-23T01:49:08Z"
+      "observed_at": "2026-10-23T07:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -56,7 +56,7 @@
       "published_at": "2026-10-22T00:46:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-23T01:49:08Z"
+      "observed_at": "2026-10-23T07:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -67,46 +67,67 @@
       "published_at": "2026-10-21T14:10:19Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-23T01:49:08Z"
+      "observed_at": "2026-10-23T07:52:17Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Iran Strikes More Ship Engine Rooms in Ramp-Up of Hormuz Attacks - Bloomberg.com",
+      "source_name": "Bloomberg",
+      "source_id": "bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTlRkaTdpQkFkLURTYU9EZ3BxS3JEN0IxUWtDS0lRUzdQOWNZOVg2QklicnJJUENvYWxZMVBKYndJRm5KWS12LWY1blg1Z1Y3RGEtNUJfMmdoWnpONTNQV05mbS1vRUJFTEROUTBxWTV4VVpKei1YamZLZ1lsMmxlSWlTX1V5UTVLMk4zWXNMcWRZVHA5d1F1MTVZLTRnWEE0cVQ5T19oT0Uxa0YwUnRpYTBGdjlIZw",
+      "published_at": "2026-10-20T12:31:30Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-10-23T07:52:17Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 13.665
+      "risk": 13.325
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 5
+      "risk": 6
     },
-    "articles_considered": 28,
+    "articles_considered": 29,
     "signals_considered": 8,
-    "current_cycle_evidence": 5,
+    "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-10-22T19:11:55Z",
-    "current_cycle_count": 5,
+    "as_of": "2026-10-22T21:00:00Z",
+    "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
     "description_en": "Publishable signals found during the latest verification cycle."
   },
   "evidence_archive": [
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Top Five Maritime Threats Across The Gulf",
+      "source_name": "MarineLink",
+      "source_id": "marinelink",
+      "source_url": "https://marinelink.com/news/top-five-maritime-threats-across-gulf-543846",
+      "published_at": "2026-10-22T21:00:00Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-10-23T07:52:17Z"
+    },
     {
       "signal": "RISK_RESTRICTION",
       "title": "Oil Rises as Deadly Saudi Attacks Fan Middle East Supply Fears - Bloomberg.com",
@@ -138,7 +159,7 @@
       "published_at": "2026-10-22T16:10:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-23T01:49:08Z"
+      "observed_at": "2026-10-23T07:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -160,7 +181,7 @@
       "published_at": "2026-10-22T11:44:40Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-23T01:49:08Z"
+      "observed_at": "2026-10-23T07:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -171,7 +192,7 @@
       "published_at": "2026-10-22T00:46:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-23T01:49:08Z"
+      "observed_at": "2026-10-23T07:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -193,7 +214,7 @@
       "published_at": "2026-10-21T14:10:19Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-23T01:49:08Z"
+      "observed_at": "2026-10-23T07:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -226,7 +247,7 @@
       "published_at": "2026-10-20T12:31:30Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-22T18:44:38Z"
+      "observed_at": "2026-10-23T07:52:17Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -755,23 +776,12 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-10-14T07:57:35Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "US-Israel-Iran War Latest Live News: 'Trump Has Teamed Up With Smugglers' – Rezaei Accuses US and UAE of Oil Operations in Hormuz as IRGC Reports Supertanker Mine Strike - The Sunday Guardian",
-      "source_name": "The Sunday Guardian",
-      "source_id": "sunday_guardian",
-      "source_url": "https://news.google.com/rss/articles/CBMiuAJBVV95cUxNZTBGQWR0R1ozcHJMLU1sRzNJeDJRQWtQWEZEZ2hDOWt4b0IzelFVMXlKZHZYNklneU14UWZIREgtLUhzSjRKd2hrcUl0LWN0RFBTYWlrd3ViTGhSSktjNmtlemFGTzVDeXJELWNsWHpmLWtfaWVBcURhMklUMVpMdWZOa1VfbVFGRkZqdmhjQ1JMRThZVDZtQm1hMnQ4Rm9vZUxyYmtKS0dEMTlxZ29kTTR1M19iNEtjWlNyM0tic1FpQjJPX0NiSFFDRll1cENXbnJUNjJzbXBVTU1YR2ZQaXk3SjhLQTJ3cHFDRHdWd1hpM0FkeGVIRnNVNnZDN2JzQ0haOTRUVTVJYnh6S3RGR2dsbUZvcGFpcmZHRnZRNzk1RjkyaXFuWGlrN3VJS2VmZ3RLaFlaTkTSAbgCQVVfeXFMTWUwRkFkdEdaM3ByTC1NbEczSXgyUUFrUFhGRGdoQzlreG9CM3pRVTF5SmR2WDZJZ3lNeFFmSERILS1Ic0o0Sndoa3FJdC1jdERQU2Fpa3d1YkxoUkpLYzZrZXphRk81Q3lyRC1jbFh6Zi1rX2llQXFEYTJJVDFaTHVmTmtVX21RRkZGanZoY0NSTEU4WVQ2bUJtYTJ0OEZvb2VMcmJrSktHRDE5cWdvZE00dTNfYjRLY1pTcjNLYnNRaUIyT19DYkhRQ0ZZdXBDV25yVDYyc21wVU1NWEdmUGl5N0o4S0Eyd3BxQ0R3VndYaTNBZHhlSEZzVTZ2Qzdic0NIWjk0VFU1SWJ4ekt0RkdnbG1Gb3BhaXJmR0Z2UTc5NUY5Mmlxblhpazd1SUtlZmd0S2hZWk5E",
-      "published_at": "2026-10-12T09:36:16Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-10-13T03:46:19Z"
     }
   ],
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-23T01:49:45Z",
+    "generated_at": "2026-10-23T07:52:50Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -805,18 +815,18 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 1.695,
+      "passage": 3.406,
       "closure": 0,
       "traffic_reduction": 2.0,
-      "access_restriction": 0.9,
-      "risk": 80.768
+      "access_restriction": 1.68,
+      "risk": 73.484
     },
     "source_counts": {
-      "passage": 2,
+      "passage": 3,
       "closure": 0,
       "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-10-22T10:09:30Z",
+    "latest_confirmed_transit_at": "2026-10-23T05:04:00Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -859,27 +869,10 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Oil Rises as Deadly Saudi Attacks Fan Middle East Supply Fears - Bloomberg.com",
-        "source": "Bloomberg",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcGpORlFHazhXTnJBNnc2TndhSzgzUGRSLXd1Zm9fb0xKRzJZTUs1NGRPdE9McUpmZFlFenhNaGYwOGNIREM5NXRMMTZ4VXg5clJDaWFqcGRKRDRBSUh1bUpLenQ4ZTdyQi1qT1p3RjhRT0V6UVdUdGFuLWJxakVvMHRRanRvUGduVXA1bkZmaWlNRHFlOEdhVFhxTHAzUQ",
-        "published_at": "2026-10-22T19:11:55Z",
-        "tier": 3,
-        "weight": 3.2,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.2,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-23T01:49:45Z",
+        "published_at": "2026-10-23T07:52:50Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -910,18 +903,18 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Middle East Oil Flows Near Prewar Levels Defy Hormuz Attacks - Bloomberg.com",
+        "title": "Iran Strikes More Ship Engine Rooms in Ramp-Up of Hormuz Attacks - Bloomberg.com",
         "source": "Bloomberg",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVTZkLUl6WUxDbU5jQ0VIX0RIR0xiRkdiQTBOS1pUYjM5TEstN0M2WjhhLTFtZGMxckx3cnVPckR6bFhxbWptSjc1ZjJ5Vy02YldETk9qemJJR3UxZWgxVjhCVjRlQkt6SmV4OU9vZFlZekRqc3ZEaHBJcWMtWDNkbDVKYmR0SjlubzUwSzdWWXRFSmFzdkZKazc5MDFIV0kwczdCVVlOcld3QnNoWExNUA",
-        "published_at": "2026-10-21T13:59:42Z",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTlRkaTdpQkFkLURTYU9EZ3BxS3JEN0IxUWtDS0lRUzdQOWNZOVg2QklicnJJUENvYWxZMVBKYndJRm5KWS12LWY1blg1Z1Y3RGEtNUJfMmdoWnpONTNQV05mbS1vRUJFTEROUTBxWTV4VVpKei1YamZLZ1lsMmxlSWlTX1V5UTVLMk4zWXNMcWRZVHA5d1F1MTVZLTRnWEE0cVQ5T19oT0Uxa0YwUnRpYTBGdjlIZw",
+        "published_at": "2026-10-20T12:31:30Z",
         "tier": 3,
         "weight": 3.2,
-        "provider": "Google News RSS",
+        "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 2.88,
+        "effective_weight": 2.496,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -958,45 +951,62 @@
         "effective_weight": 1.798,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Middle East latest: Saudi-led coalition intercepts wave of overnight attacks - The National",
+        "source": "The National",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNbGlZSGtHQXg4UjIzanpId3ViZ1RxS25adzVXLUM0cU9KdUwzSDJsOTduTENaN201SjVFd09IZGJUTmpRMDcwYWJZc1BBTGpXWDRuNTBSbWhZWWU3LUxOdkc4QlNTeXhmVUdEcTB6czBvQ3NwMkFMelZTbEY2NHFLRi1LRkU0RTk2WGRhblhjY0VQQQ",
+        "published_at": "2026-10-23T07:33:10Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_83c523cf06f27c56",
-      "evt_936fb08696a7e649",
       "evt_327cec00ed844da3",
+      "evt_daee2bff24cd929e",
+      "evt_1ffc2f1f8006d27c",
+      "evt_936fb08696a7e649",
       "evt_d753ce57760789d4",
+      "evt_c5a3bf5a9ff44779",
       "evt_2145e9943025e2eb",
-      "evt_437f41dfb8fec653",
       "evt_9d9b7a89a8e6afaf",
       "evt_83d881e7675690ad",
       "evt_62afb7152782d748",
+      "evt_f471cc7186a5243e",
       "evt_cc89fc847f518ffe",
-      "evt_ae8705cd682b349d",
+      "evt_702bedec531f09bd",
       "evt_7e12ca7fc3ca3836",
       "evt_817bcc308c408c91",
       "evt_f38b4c743341cfc0",
-      "evt_1ac0e0b72a1b7b9c",
       "evt_d0d62d2b656f7040",
-      "evt_7a0e34c9dea09422",
       "evt_e6a9080904602140",
-      "evt_0e0b8f8d5e573fb8",
-      "evt_7c47ee2fbe778f5c"
+      "evt_0e0b8f8d5e573fb8"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 6,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 6,
-      "SINGLE_SOURCE": 22,
+      "DECLARATION_ONLY": 7,
+      "SINGLE_SOURCE": 23,
       "UNCONFIRMED": 32,
-      "TOTAL": 66
+      "TOTAL": 68
     },
     "diagnostics": {
       "signals_considered": 76,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 66,
+      "event_count": 68,
       "article_count_after_deduplication": 127,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
@@ -1009,6 +1019,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-23T01:49:45Z"
+    "generated_at": "2026-10-23T07:52:50Z"
   }
 }
