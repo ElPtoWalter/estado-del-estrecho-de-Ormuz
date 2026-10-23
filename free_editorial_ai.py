@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import copy
 import difflib
+from datetime import date
 import hashlib
 import json
 import os
@@ -31,7 +32,7 @@ FREE_GEMINI_MODELS = frozenset({
 })
 MAX_FACT_BYTES = 48_000
 MAX_OUTPUT_TOKENS = 4_096
-VALIDATOR_VERSION = 4
+VALIDATOR_VERSION = 5
 
 SYSTEM_INSTRUCTION = (
     "Eres un redactor especializado en información marítima y energética. Escribe con claridad y "
@@ -314,7 +315,42 @@ def _text_values(value: Any):
 
 def _date_words(value: Any) -> set[str]:
     text = json.dumps(value, ensure_ascii=False, sort_keys=True) if not isinstance(value, str) else value
+    text = re.sub(r'(?<!\d\s)\bmay\b(?!\s+\d)', '', text)  # English modal, not the month.
     return {match.group(0).casefold() for match in DATE_WORD_PATTERN.finditer(text)}
+
+
+MONTH_NAMES = (
+    ('enero', 'january'), ('febrero', 'february'), ('marzo', 'march'), ('abril', 'april'),
+    ('mayo', 'may'), ('junio', 'june'), ('julio', 'july'), ('agosto', 'august'),
+    ('septiembre', 'september'), ('octubre', 'october'), ('noviembre', 'november'), ('diciembre', 'december'),
+)
+MONTH_NUMBER = {name: number for number, names in enumerate(MONTH_NAMES, 1) for name in names}
+MONTH_RE = '|'.join(MONTH_NUMBER)
+
+
+def _packet_dates(value: Any) -> set[date]:
+    result = set()
+    for text in _text_values(value):
+        for literal in re.findall(r'\b\d{4}-\d{2}-\d{2}(?=T|\b)', text):
+            try:
+                result.add(date.fromisoformat(literal))
+            except ValueError:
+                pass
+    return result
+
+
+def _natural_dates_supported(prose: str, allowed: set[date]) -> bool:
+    patterns = (
+        rf'\b(\d{{1,2}})(?:st|nd|rd|th)?\s+(?:de\s+)?({MONTH_RE})(?:\s+(?:de\s+)?(\d{{4}}))?\b',
+        rf'\b({MONTH_RE})\s+(\d{{1,2}})(?:st|nd|rd|th)?(?:,?\s+(\d{{4}}))?\b',
+    )
+    for position, pattern in enumerate(patterns):
+        for match in re.finditer(pattern, prose, re.I):
+            first, second, year = match.groups()
+            day, month = (int(first), MONTH_NUMBER[second.casefold()]) if position == 0 else (int(second), MONTH_NUMBER[first.casefold()])
+            if not any(d.day == day and d.month == month and (not year or d.year == int(year)) for d in allowed):
+                return False
+    return True
 
 
 def _named_entities(text: str) -> set[str]:
@@ -445,6 +481,8 @@ def _validate_language_draft(
     if _semantic_markers(prose) - allowed_status_markers:
         return reject("semantic-state")
     if _date_words(prose) - allowed_date_words:
+        return reject("unseen-date")
+    if not _natural_dates_supported(prose, _packet_dates(facts) | _packet_dates(fallback)):
         return reject("unseen-date")
     if UNSUPPORTED_CERTAINTY_PATTERN.search(prose):
         return reject("unsupported-certainty")
@@ -583,6 +621,8 @@ def _validate_candidate(
     ) + " " + " ".join(_text_values(corpus_payload))
     allowed_status_markers = _semantic_markers(facts)
     allowed_date_words = _date_words(facts) | _date_words(fallbacks)
+    for known_date in _packet_dates(facts) | _packet_dates(fallbacks):
+        allowed_date_words.update(MONTH_NAMES[known_date.month - 1])
     if not isinstance(candidate, dict) or set(candidate) != set(fallbacks):
         if diagnostics is not None:
             diagnostics.update({"language": "all", "reason": "candidate-schema"})

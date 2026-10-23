@@ -405,6 +405,16 @@ class FreeEditorialAITests(unittest.TestCase):
                 (_, engine, status), _ = self.call_gemini(candidate)
                 self.assertEqual((engine, status), ('rules', 'gemini-validation-es'))
 
+    def test_known_iso_date_can_be_written_naturally_without_authorizing_other_dates(self):
+        self.facts['edition_date'] = '2026-10-23'
+        self.facts['selected_sources'][0]['published_at'] = '2026-10-22T08:00:00Z'
+        for literal, expected in [('23 de octubre de 2026', 'gemini'), ('22 de octubre de 2026', 'gemini'), ('23 de enero de 2026', 'rules'), ('10 de octubre de 2026', 'rules')]:
+            with self.subTest(literal=literal):
+                candidate = valid_draft()
+                candidate['meaning'][0] += f' La fecha de esta edición es {literal}.'
+                (_, engine, _), _ = self.call_gemini(candidate)
+                self.assertEqual(engine, expected)
+
     def test_unknown_single_word_attribution_is_rejected(self):
         candidate = valid_draft()
         candidate["meaning"][0] += " Según Acme, la tendencia ya estaría confirmada."
