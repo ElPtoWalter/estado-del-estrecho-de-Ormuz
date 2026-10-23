@@ -127,14 +127,18 @@ def editorial_quality_report(draft: dict[str, Any], baseline: dict[str, Any]) ->
             if len(tokens) < 12:
                 continue
             for old_position, old_tokens in sentences:
-                if position != old_position and difflib.SequenceMatcher(None, tokens, old_tokens, autojunk=False).ratio() >= .86:
+                matcher = difflib.SequenceMatcher(None, tokens, old_tokens, autojunk=False)
+                shared = sum(block.size for block in matcher.get_matching_blocks())
+                contained = (shared / min(len(tokens), len(old_tokens)) >= .85
+                             and matcher.find_longest_match().size >= 6)
+                if position != old_position and (matcher.ratio() >= .86 or contained):
                     repeated.append([old_position, position])
                     break
             sentences.append((position, tokens))
     if repeated:
         flags.append('repeated_sentence_across_fields')
     assessment_topics = (r'paso f[ií]sico|tr[aá]nsit|physical passage|commercial transit',
-                         r'restring|reduc|below normal|inferior.*normal|restricted', r'seguridad|security')
+                         r'restring|restric|degrad|limitad|reduc|below normal|inferior.*normal|restricted', r'seguridad|security')
     deck_topics = {i for i, pattern in enumerate(assessment_topics) if re.search(pattern, str(draft.get('deck', '')), re.I)}
     lead_topics = {i for i, pattern in enumerate(assessment_topics) if re.search(pattern, str((draft.get('situation') or [''])[0]), re.I)}
     if len(deck_topics & lead_topics) >= 2:
@@ -752,6 +756,13 @@ def _validate_candidate(
     validated: dict[str, dict[str, Any]] = {}
     for language, fallback in fallbacks.items():
         language_diagnostics: dict[str, str] = {}
+        permitted_headlines = facts.get('editorial_brief', {}).get('headline_options', {}).get(language, [])
+        language_candidate = candidate.get(language)
+        if permitted_headlines and (not isinstance(language_candidate, dict)
+                                    or language_candidate.get('headline') not in permitted_headlines):
+            if diagnostics is not None:
+                diagnostics.update({'language': language, 'reason': 'headline-provenance-options'})
+            return None, f'validation-{language}'
         draft = _validate_language_draft(
             _normalize_supplied_names(candidate.get(language), facts, language),
             fallback,
@@ -894,6 +905,13 @@ def _editorial_prompt(
         f"BORRADOR LOCAL VALIDADO (referencia estructural; no copiar):\\n{fallback_json}\\n\\n"
         + revision_instruction +
         f"PAQUETE FACTUAL:\\n{facts_json}"
+        + ("\n\nPLAN DE EDICION OBLIGATORIO: sigue editorial_brief. Usa el único titular permitido por idioma. "
+           "La entradilla desarrolla deck_story, con su fecha de publicación y doble atribución si es una declaración. "
+           "No vuelvas a contar esa noticia en sections. En situation da fechas de las referencias y el alcance de su "
+           "comprobación; el estado operativo ya figura en una tarjeta aparte, no lo repitas. "
+           "En meaning incorpora los DOS registros primarios, cada uno con su período y cantidad. "
+           "Evita frases genéricas sobre tensiones, mercados o incidentes: usa detalles suministrados."
+           if journal_mode else "")
     )
 
 def generate_editorial_drafts(

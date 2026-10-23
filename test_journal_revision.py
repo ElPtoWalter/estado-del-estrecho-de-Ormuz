@@ -18,6 +18,22 @@ ROOT = Path(__file__).parent
 
 
 class JournalRevisionTests(unittest.TestCase):
+    def test_deck_repeated_as_part_of_a_longer_section_is_flagged(self):
+        draft = valid_draft()
+        draft['deck'] = 'The Guardian reports a five-month oil high as fears grow that the United States will renew strikes on Iran.'
+        draft['sections'][0]['paragraph'] = ('The Guardian reports a five-month oil high amid fears that the United States will renew strikes on Iran, '
+            'while Reuters notes that oil prices have reached a five-month high as Houthi attacks stoke Middle East supply fears.')
+        self.assertIn('repeated_sentence_across_fields', editorial_quality_report(draft, {})['flags'])
+
+    def test_language_cannot_use_another_languages_headline(self):
+        draft = valid_draft()
+        facts = {'editorial_brief': {'headline_options': {'es': ['Titular español de la edición con atribución'],
+                                                        'en': [draft['headline']]}}}
+        diagnostics = {}
+        self.assertIsNone(_validate_candidate({'es': draft}, facts=facts, fallbacks={'es': draft},
+            sources_by_section={'es': {'Tráfico': ['Reuters']}}, diagnostics=diagnostics)[0])
+        self.assertEqual(diagnostics['reason'], 'headline-provenance-options')
+
     def test_news_headline_requires_the_literal_claim_a_new_reference_and_its_date(self):
         item = journal.NewsItem('Oil hits five - month high amid supply fears', 'The Guardian',
             'https://example.org/oil', '2026-10-23T13:27:04Z', 3, 'energy', '')

@@ -795,6 +795,12 @@ def editorial_drafts(
     for item in usable:
         add_ai_item(item)
     headline_options = editorial_headlines(operational, ai_items, new_items, local_dt, fallbacks)
+    # The editor selects the best supported angle; the model must not fall back
+    # to a generic operational label when a dated attributed novelty exists.
+    headline_options = {lang: values[:1] for lang, values in headline_options.items()}
+    topic_counts = Counter(item.topic for item in ai_items)
+    deck_item = next((item for item in ai_items if item.topic != topics[0]
+                      and topic_counts[item.topic] > 1), None)
     for lang in ('es', 'en'):
         fallbacks[lang]['headline'] = headline_options[lang][0]
 
@@ -837,12 +843,14 @@ def editorial_drafts(
         "primary_context": editorial.get('primary_context', []),
         "editorial_brief": {
             "headline_options": headline_options,
+            "deck_story": ({'source': deck_item.source, 'title': deck_item.title,
+                            'published_at': deck_item.published_at} if deck_item else None),
             "mode": "continuity" if previous_fp.get('v7_state') == current_fp.get('v7_state') else "assessment_change",
             "headline": "Describe the actual assessment change or continuity. Any press news claim in the headline must name its reporting publisher; include its date if older than this edition. Do not state a market move as a current independent observation.",
-            "deck": "Lead on one concrete attributed news detail (not another paraphrase of the open/restricted assessment). Do not enumerate publishers.",
+            "deck": "If deck_story is supplied, paraphrase that story with publisher, speaker and publication date; reserve it for the deck only. Otherwise lead on the dated scope of the update. Never repeat the operational assessment or the headline story.",
             "situation": "Two distinct short paragraphs: chronology/publication dates of the supplied references; then the exact scope of verification. Do not paraphrase the deck or repeat the assessment summary.",
-            "sections": "Each paragraph develops one concrete supplied news detail, retaining a specific grounding anchor. Use a different story from the deck/situation. For an Iranian declaration name Iran as speaker (Iran says / Irán afirma), and attribute the reporting publisher separately. Do not merge different stories or turn hypothetical headlines into incidents.",
-            "meaning": "When primary_context exists, include its named source, reference period and a concrete supplied quantity, plus its supplied limit: it does not measure today's traffic or supply losses. No generic placeholder about important flows. With no context, add no external background.",
+            "sections": "Each paragraph develops the remaining supplied stories in that topic, with publication dates. Do not reuse deck_story: use the other source in its topic instead. Retain a concrete headline detail and each statement's own attribution. For an Iranian declaration name Iran as speaker. Do not merge different stories or turn hypothetical headlines into incidents.",
+            "meaning": "Include BOTH primary_context records when supplied: each needs its source, own reference period, supplied quantity AND supplied limit. Distinguish the 2024 flow baseline from the June 2025 bypass estimate. They are not today's measurements. With no primary_context, add no external background.",
             "watch": "Three concrete pending checks, with no predictions or repetition of the assessment.",
             "evidence_rule": "Use selected_sources only as attributed headline reports. events preserve the monitor audit, not a license to assert every event as confirmed. primary_context is historical and must name its period.",
         },
