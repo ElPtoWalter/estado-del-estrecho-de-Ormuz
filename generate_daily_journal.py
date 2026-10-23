@@ -740,6 +740,7 @@ def editorial_drafts(
     editorial: dict[str, Any],
     event_store: dict[str, Any] | None = None,
     *, packet_capture: dict[str, Any] | None = None,
+    response_capture: dict[str, Any] | None = None,
 ) -> tuple[dict[str, dict[str, Any]], str, str, dict[str, Any]]:
     fallbacks = {
         lang: fallback_editorial_draft(
@@ -862,6 +863,7 @@ def editorial_drafts(
         sources_by_section=sources_by_section,
         trace=trace,
         allow_field_fallback=True,
+        candidate_capture=response_capture,
     )
     trace.setdefault("validator_version", VALIDATOR_VERSION)
     trace.setdefault("factual_packet_sha256", digest)

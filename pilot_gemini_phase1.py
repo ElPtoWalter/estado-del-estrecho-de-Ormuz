@@ -84,10 +84,12 @@ def run_pilot(root: Path) -> dict[str, Any]:
     if not gemini_key:
         raise RuntimeError("GEMINI_API_KEY is not configured for the isolated pilot")
     validation_inputs = {}
+    response_capture = {}
     with temporary_environment({"OPENROUTER_API_KEY": None}):
         gemini_drafts, gemini_engine, gemini_status, gemini_trace = journal.editorial_drafts(
             status, operational, news, [], previous_fp, current_fp, now, editorial, event_store,
             packet_capture=validation_inputs,
+            response_capture=response_capture,
         )
 
     local_hash = local_trace.get("factual_packet_hash") or local_trace.get("factual_packet_sha256")
@@ -118,6 +120,7 @@ def run_pilot(root: Path) -> dict[str, Any]:
         "editorial_quality": quality,
         "style_checks_passed": all(item['style_checks_passed'] for item in quality.values()),
         "validation_inputs": validation_inputs,
+        "unaccepted_generation_for_diagnosis_only": response_capture,
         "preview_snapshot": {'status': status, 'operational': operational, 'previous': previous_fp,
                              'fingerprint': current_fp, 'news': [journal.asdict(item) for item in news],
                              'editorial': {key: value for key, value in editorial.items() if key != 'signal'}},

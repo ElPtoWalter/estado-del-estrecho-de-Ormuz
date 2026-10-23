@@ -7,7 +7,8 @@ from datetime import date
 from pathlib import Path
 
 import generate_daily_journal as journal
-from free_editorial_ai import editorial_quality_report, _normalize_supplied_names, _validate_candidate
+from check_public_links import check
+from free_editorial_ai import editorial_quality_report, _normalize_supplied_names, _validate_candidate, _entity_supported
 from journal_evidence import primary_context
 from test_free_editorial_ai import valid_draft
 
@@ -29,6 +30,9 @@ class JournalRevisionTests(unittest.TestCase):
         self.assertEqual(result['headline'], 'Ormuz y Oriente Medio: seguimiento de Irán')
         self.assertEqual(result['meaning'], value['meaning'])
         self.assertEqual(_normalize_supplied_names('oriente medio', {}, 'es'), 'oriente medio')
+        self.assertTrue(_entity_supported('estados unidos', 'Iran warns US about shipping'))
+        self.assertFalse(_entity_supported('estados unidos', 'Shipping report from Reuters'))
+        self.assertEqual(_normalize_supplied_names('U.S. CENTCOM', {'title': 'US alert'}, 'en'), 'U.S. CENTCOM')
 
     def test_primary_context_is_dated_and_bound_to_the_reviewed_text(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -68,6 +72,22 @@ class JournalRevisionTests(unittest.TestCase):
                 'url_en': journal.BASE_URL + '/en-diary.html'}
         for lang in ('es', 'en'):
             self.assertNotIn('<entry>', journal.feed_xml([item], '2026-10-23T00:00:00Z', lang))
+
+    def test_public_artifact_checks_historical_links_noindex_and_ad_exclusion(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / 'index.html').write_text('<html><body>Home</body></html>', encoding='utf-8')
+            item = {'date': '2026-10-22', 'url_es': journal.BASE_URL + '/diario/2026-10-22.html'}
+            (root / 'diario-feed.xml').write_text(journal.feed_xml([item], '2026-10-23T00:00:00Z'), encoding='utf-8')
+            self.assertTrue(any('missing historical' in error for error in check(root)))
+            (root / 'diario').mkdir()
+            page = root / 'diario/2026-10-22.html'
+            page.write_text('<html><head><meta name="robots" content="noindex,follow"></head><body>Archive</body></html>', encoding='utf-8')
+            self.assertEqual(check(root), [])
+            page.write_text('<html><body>adsbygoogle</body></html>', encoding='utf-8')
+            errors = check(root)
+            self.assertTrue(any('noindex' in error for error in errors))
+            self.assertTrue(any('advertising' in error for error in errors))
 
 
 if __name__ == '__main__':

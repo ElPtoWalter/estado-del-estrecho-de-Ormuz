@@ -356,6 +356,12 @@ GEOGRAPHIC_NAMES = (
     ('Arabia Saudí', 'Saudi Arabia'), ('Emiratos Árabes Unidos', 'United Arab Emirates'),
     ('Ormuz', 'Hormuz'),
 )
+GEOGRAPHIC_ABBREVIATIONS = {'United States': ('US', 'U.S.', 'EE.UU.'), 'United Kingdom': ('UK', 'U.K.')}
+
+
+def _geography_supplied(pair, corpus):
+    names = (*pair, *GEOGRAPHIC_ABBREVIATIONS.get(pair[1], ()))
+    return any(re.search(rf'(?<!\w){re.escape(name)}(?!\w)', corpus, re.I) for name in names)
 
 
 def _entity_supported(entity: str, corpus: str) -> bool:
@@ -363,7 +369,7 @@ def _entity_supported(entity: str, corpus: str) -> bool:
         return True
     # A translation denotes the same supplied place; it does not authorize new places.
     for pair in GEOGRAPHIC_NAMES:
-        if entity.casefold() in {name.casefold() for name in pair} and any(re.search(rf'(?<!\w){re.escape(name)}(?!\w)', corpus, re.I) for name in pair):
+        if entity.casefold() in {name.casefold() for name in pair} and _geography_supplied(pair, corpus):
             return True
     return False
 
@@ -371,7 +377,7 @@ def _entity_supported(entity: str, corpus: str) -> bool:
 def _normalize_supplied_names(value: Any, facts: dict[str, Any], language: str) -> Any:
     """Correct spelling/case of the same supplied places; add no new entities."""
     corpus = ' '.join(_text_values(facts))
-    pairs = [pair for pair in GEOGRAPHIC_NAMES if any(re.search(rf'(?<!\w){re.escape(name)}(?!\w)', corpus, re.I) for name in pair)]
+    pairs = [pair for pair in GEOGRAPHIC_NAMES if _geography_supplied(pair, corpus)]
     if isinstance(value, str):
         for pair in pairs:
             target = pair[0] if language == 'es' else pair[1]
@@ -788,7 +794,7 @@ def _editorial_prompt(
     journal_mode = isinstance(json.loads(facts_json).get('editorial_brief'), dict)
     if journal_mode:
         fallback_json = json.dumps({'notice': 'The local fallback is deliberately withheld to avoid copying its prose. Use editorial_brief and the response schema; only the factual packet supplies facts.'})
-    naming_context = [pair for pair in GEOGRAPHIC_NAMES if any(re.search(rf'(?<!\w){re.escape(name)}(?!\w)', facts_json, re.I) for name in pair)]
+    naming_context = [pair for pair in GEOGRAPHIC_NAMES if _geography_supplied(pair, facts_json)]
     return (
         f"Edita una crónica para {site_name}. Idiomas requeridos: {languages}. "
         "Trabaja EXCLUSIVAMENTE con el paquete factual JSON incluido al final. No navegues, no uses "
@@ -846,6 +852,7 @@ def generate_editorial_drafts(
     opener: Callable[..., Any] = urllib.request.urlopen,
     trace: dict[str, Any] | None = None,
     allow_field_fallback: bool = False,
+    candidate_capture: dict[str, Any] | None = None,
 ) -> tuple[dict[str, dict[str, Any]], str, str]:
     """Return validated drafts, preferring free-tier Gemini and falling back safely."""
     safe_fallbacks = copy.deepcopy(fallbacks)
@@ -898,6 +905,8 @@ def generate_editorial_drafts(
                 envelope = json.loads(response.read().decode("utf-8"))
             raw_content = _extract_gemini_content(envelope).strip()
             candidate = json.loads(raw_content)
+            if candidate_capture is not None:
+                candidate_capture['drafts'] = copy.deepcopy(candidate)
             validated, gemini_status = _validate_candidate(
                 candidate,
                 facts=facts,
