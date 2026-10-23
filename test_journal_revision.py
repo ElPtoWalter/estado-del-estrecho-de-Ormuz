@@ -18,6 +18,17 @@ ROOT = Path(__file__).parent
 
 
 class JournalRevisionTests(unittest.TestCase):
+    def test_record_in_a_month_does_not_establish_a_monthly_comparison(self):
+        draft = valid_draft()
+        draft['deck'] = 'Reuters informó de un récord mensual en octubre en el recuento de ataques a buques del estrecho.'
+        inputs = {'facts': {'selected_sources': [{'source': 'Reuters', 'title': 'Ship attacks hit record high in October', 'published_at': '2026-10-23T14:59:43Z'}]},
+                  'fallbacks': {'es': valid_draft()}, 'sources_by_section': {'es': {'Tráfico': ['Reuters']}}}
+        diagnostics = {}
+        self.assertIsNone(_validate_candidate({'es': draft}, **inputs, diagnostics=diagnostics)[0])
+        self.assertEqual(diagnostics['reason'], 'unsupported-record-period')
+        draft['deck'] = draft['deck'].replace('récord mensual', 'récord')
+        self.assertIsNotNone(_validate_candidate({'es': draft}, **inputs)[0])
+
     def test_model_cannot_expand_the_trusted_verification_scope(self):
         draft = valid_draft()
         facts = {'editorial_brief': {'verified_situation': {'es': list(draft['situation'])}}}

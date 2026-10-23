@@ -32,7 +32,7 @@ FREE_GEMINI_MODELS = frozenset({
 })
 MAX_FACT_BYTES = 48_000
 MAX_OUTPUT_TOKENS = 4_096
-VALIDATOR_VERSION = 9
+VALIDATOR_VERSION = 10
 
 SYSTEM_INSTRUCTION = (
     "Eres un redactor especializado en información marítima y energética. Escribe con claridad y "
@@ -522,6 +522,14 @@ def _validate_language_draft(
         if facts.get('editorial_brief') and re.search(r'precios?|crudo|petr[oó]leo|oil prices?|Brent', text, re.I):
             if not any(_mentions_source(text, item.get('source', '')) for item in facts.get('selected_sources', []) if item.get('source')):
                 return reject(field_name + '-claim-attribution')
+    # A record "in October" does not establish a monthly comparison window.
+    for text in [headline, deck, *situation, *meaning,
+                 *(str(section.get('paragraph', '')) for section in draft.get('sections', []) if isinstance(section, dict))]:
+        if re.search(r'\b(?:r[eé]cord|m[aá]ximo)\s+mensual\b|\bmonthly\s+(?:record|high)\b', text, re.I):
+            records = [item for item in facts.get('selected_sources', [])
+                       if _mentions_source(text, item.get('source', ''))]
+            if not records or not any(re.search(r'\bmonthly\b|\bmensual\b', item.get('title', ''), re.I) for item in records):
+                return reject('unsupported-record-period')
 
     expected_titles = [
         str(section.get("title", ""))
@@ -895,6 +903,8 @@ def _editorial_prompt(
         "Atribuye cada oración solo al medio cuyo titular la respalda, no a todos los medios de la sección. "
         "Conserva el autor de una declaración: 'Iran says' es una afirmación de Iran, no una comprobación del medio. "
         "Atribuye los titulares y las declaraciones; su fecha de publicación no acredita la del hecho. "
+        "No amplíes el período de comparación de un récord: 'record high in October' permite 'récord en octubre', "
+        "no 'récord mensual' ni 'monthly record' sin esa especificación en la fuente. "
         "No afirmes observaciones AIS ni comprobaciones primarias ausentes del paquete. "
         "Explica consecuencias energéticas o económicas solo cuando estén respaldadas; no rellenes "
         "secciones sin información. Escribe castellano periodístico natural y adapta el inglés. "

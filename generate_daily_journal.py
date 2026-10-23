@@ -923,7 +923,7 @@ def editorial_drafts(
     initial_quality = {lang: editorial_quality_report(drafts[lang], fallbacks[lang]) for lang in ('es', 'en')}
     # One bounded style revision, with the same facts and original safety gate.
     # No OpenRouter retry in this extra pass and no third Gemini request.
-    if engine == 'gemini' and any(item['flags'] for item in initial_quality.values()):
+    if engine == 'gemini' and any(item['blocking_flags'] for item in initial_quality.values()):
         initial_trace = dict(trace)
         if response_capture is not None:
             response_capture['first_drafts'] = response_capture.get('drafts', {})

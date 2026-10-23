@@ -10,6 +10,8 @@ El monitor, el diario y el despliegue están separados. El monitor consulta fuen
 - `deploy-public.yml`: publica solo desde `main` y después de validar la superficie pública.
 - `monetization.json`: publicidad programática desactivada hasta verificar cuenta, CMP e identificación del titular. No acredita aprobación de Google.
 - `editorial-reviews.json`: revisiones de originales vinculadas al SHA-256 exacto del borrador. Nunca convierte un parte automático en un artículo revisado.
+- `editorial-context.json`: contexto primario fechado y atribuido, con derechos y huella del texto revisado. No es información operativa en directo. Los cambios invalidan su huella hasta una nueva comprobación de la fuente.
+- RSS ES/EN: cada entrada exige un archivo HTML de esa fecha e idioma. Si falta, se omite; nunca se redirige una noticia antigua al diario dinámico.
 
 Validación antes de proponer cambios:
 
@@ -23,6 +25,8 @@ python validate_site.py --root .
 ```
 
 Consulta [la auditoría y el procedimiento editorial](docs/OBSERVATORIO_AUDITORIA_2026-10-23.md). Los apartados de instalación que siguen describen versiones históricas: las mejoras nuevas se revisan en una PR y requieren autorización antes de fusionar o desplegar.
+
+La [revisión de cierre de la PR #19](docs/CIERRE_PR19_DIARIO_RSS.md) detalla el diario Gemini, contexto primario, RSS permanente y verificaciones externas pendientes de publicidad.
 
 ## Referencia histórica: versión 3
 

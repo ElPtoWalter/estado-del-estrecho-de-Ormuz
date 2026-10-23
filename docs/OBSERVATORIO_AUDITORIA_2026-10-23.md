@@ -1,5 +1,7 @@
 # Estrecho Ormuz — auditoría y versión de desarrollo
 
+> Registro de la entrega inicial. Para el estado vigente del diario, los enlaces permanentes del RSS y el cierre de la PR #19, consultar [la revisión posterior](CIERRE_PR19_DIARIO_RSS.md). Los resultados históricos que siguen no certifican la versión actual.
+
 23 de octubre de 2026. Base inspeccionada: `2b0163a58f169c6708c0a9ee4904abd97107da10`. Repositorio público, 536 archivos versionados al inicio y 24 workflows. Se conserva GitHub Pages, el dominio y el motor operativo. No se han cambiado estados, evidencias ni credenciales por iniciativa de esta auditoría. No se autoriza con este documento una fusión o un despliegue. Al cerrar se incorpora `main` hasta `d55ed5bed4e31377f575ca785809b528ac76e54a`, una publicación automática del diario ocurrida durante el trabajo: se conserva íntegra, se resuelve el único conflicto del feed regenerando ambos idiomas y se repiten pruebas y compilación. La muestra controlada conserva su instantánea anterior y su hash; no se presenta como sustitución de esa publicación.
 
 ## A. Diagnóstico priorizado
