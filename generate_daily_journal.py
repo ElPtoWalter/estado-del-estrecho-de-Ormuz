@@ -14,7 +14,7 @@ especulativos nunca se convierten en hechos.
 from __future__ import annotations
 
 from journal_evidence import classify_headline, identity, reading, section_note, primary_context, headline_grounding
-from free_editorial_ai import factual_packet_digest, generate_editorial_drafts, editorial_quality_report, VALIDATOR_VERSION
+from free_editorial_ai import factual_packet_digest, generate_editorial_drafts, editorial_quality_report, VALIDATOR_VERSION, _validate_candidate
 from straitwatch_core import (
     SourceRegistry,
     canonical_url,
@@ -878,6 +878,35 @@ def editorial_drafts(
         allow_field_fallback=True,
         candidate_capture=response_capture,
     )
+    initial_quality = {lang: editorial_quality_report(drafts[lang], fallbacks[lang]) for lang in ('es', 'en')}
+    # One bounded style revision, with the same facts and original safety gate.
+    # No OpenRouter retry in this extra pass and no third Gemini request.
+    if engine == 'gemini' and any(item['flags'] for item in initial_quality.values()):
+        initial_trace = dict(trace)
+        if response_capture is not None:
+            response_capture['first_drafts'] = response_capture.get('drafts', {})
+        revision_trace = {}
+        revised, revision_engine, revision_status = generate_editorial_drafts(
+            site_name='Estrecho Ormuz', site_url=BASE_URL, facts=facts, fallbacks=drafts,
+            sources_by_section=sources_by_section, trace=revision_trace, api_key='',
+            allow_field_fallback=True, candidate_capture=response_capture,
+            style_revision={'drafts': drafts, 'problems': {lang: quality['flags'] for lang, quality in initial_quality.items()}},
+        )
+        checked, _ = _validate_candidate(revised, facts=facts, fallbacks=fallbacks, sources_by_section=sources_by_section)
+        revised_quality = {lang: editorial_quality_report(revised[lang], fallbacks[lang]) for lang in ('es', 'en')}
+        adopted = (revision_engine == 'gemini' and checked is not None
+                   and sum(len(item['flags']) for item in revised_quality.values()) < sum(len(item['flags']) for item in initial_quality.values()))
+        if adopted:
+            drafts = checked
+            assistant_status = ('partial-fallback' if assistant_status == 'partial-fallback' or revision_status == 'partial-fallback' else 'ok')
+            trace.clear()
+            trace.update(revision_trace)
+        trace['attempts'] = initial_trace.get('attempts', []) + revision_trace.get('attempts', [])
+        trace['initial_field_fallbacks'] = initial_trace.get('field_fallbacks', [])
+        trace['initial_validation_diagnostics'] = initial_trace.get('validation_diagnostics', {})
+        trace['style_revision'] = {'attempted': True, 'adopted': adopted, 'initial_quality': initial_quality,
+                                   'candidate_quality': revised_quality, 'valid_against_original_packet': checked is not None,
+                                   'same_factual_packet': revision_trace.get('factual_packet_sha256') == digest}
     trace.setdefault("validator_version", VALIDATOR_VERSION)
     trace.setdefault("factual_packet_sha256", digest)
     trace["factual_packet_hash"] = trace.get("factual_packet_sha256") or digest

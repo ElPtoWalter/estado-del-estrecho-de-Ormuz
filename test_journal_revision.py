@@ -3,14 +3,14 @@ import copy
 import json
 import tempfile
 import unittest
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from unittest.mock import patch
 
 import generate_daily_journal as journal
 import pilot_gemini_phase1 as pilot
 from check_public_links import check
-from free_editorial_ai import editorial_quality_report, _normalize_supplied_names, _validate_candidate, _entity_supported
+from free_editorial_ai import editorial_quality_report, _normalize_supplied_names, _validate_candidate, _entity_supported, factual_packet_digest
 from journal_evidence import primary_context, classify_headline
 from test_free_editorial_ai import valid_draft
 
@@ -18,6 +18,47 @@ ROOT = Path(__file__).parent
 
 
 class JournalRevisionTests(unittest.TestCase):
+    def revision_fixture(self, unsafe_second=False):
+        status = {'checked_at': '2026-10-23T13:44:37Z', 'status': 'INCIERTO'}
+        op = {'state': 'OPEN_SEVERELY_RESTRICTED', 'label_es': 'ABIERTO · TRÁNSITO MUY RESTRINGIDO',
+              'label_en': 'OPEN · SEVERELY RESTRICTED TRANSIT', 'confidence': 'MEDIA',
+              'summary_es': 'Hay tránsitos comerciales confirmados, pero el flujo permanece muy reducido y sujeto a restricciones severas de seguridad.',
+              'summary_en': 'Commercial transits are confirmed, but flows remain reduced and subject to severe security restrictions.',
+              'dimensions': {'traffic': 'REDUCED', 'risk': 'EXTREME'}}
+        news = [journal.NewsItem('Shipping traffic update', source, f'https://example.org/{i}',
+                                 '2026-10-23T13:00:00Z', 4, 'maritime', '')
+                for i, source in enumerate(('Reuters', 'Associated Press'))]
+        calls = []
+        def fake(**kwargs):
+            calls.append(kwargs)
+            kwargs['trace'].update({'factual_packet_sha256': factual_packet_digest(kwargs['facts']),
+                                     'attempts': [{'provider': 'gemini', 'model': 'test-model'}]})
+            draft = copy.deepcopy(kwargs['fallbacks'])
+            if len(calls) == 2 and unsafe_second:
+                draft['es']['headline'] = 'El estrecho está cerrado y todo el tráfico permanece detenido'
+                draft['es']['deck'] = 'La clasificación se ha sustituido por un cierre completo del corredor y de la navegación comercial.'
+                return draft, 'gemini', 'ok'
+            return draft, ('gemini' if len(calls) == 1 else 'rules'), ('ok' if len(calls) == 1 else 'timeout')
+        fp = {'v7_state': op['state'], 'dimensions': op['dimensions']}
+        with patch.object(journal, 'generate_editorial_drafts', side_effect=fake):
+            result = journal.editorial_drafts(status, op, news, [], fp, fp,
+                datetime(2026, 10, 23, 20, tzinfo=journal.MADRID), {})
+        return calls, result
+
+    def test_style_revision_is_bounded_and_failure_keeps_the_safe_edition(self):
+        calls, result = self.revision_fixture()
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(calls[1]['api_key'], '')
+        self.assertEqual(calls[0]['facts'], calls[1]['facts'])
+        self.assertFalse(result[3]['style_revision']['adopted'])
+        self.assertEqual(result[0], calls[0]['fallbacks'])
+
+    def test_style_revision_cannot_override_operational_safety(self):
+        calls, result = self.revision_fixture(unsafe_second=True)
+        self.assertEqual(len(calls), 2)
+        self.assertFalse(result[3]['style_revision']['valid_against_original_packet'])
+        self.assertFalse(result[3]['style_revision']['adopted'])
+        self.assertNotIn('todo el tráfico permanece detenido', result[0]['es']['headline'])
     def test_preview_never_reads_changed_data_when_a_snapshot_is_present(self):
         state = {'checked_at': '2026-10-23T13:44:37Z', 'summary_es': 'Instantánea original fechada', 'summary_en': 'Original dated snapshot'}
         snapshot = {'status': state, 'operational': {}, 'previous': {}, 'fingerprint': {}, 'news': [], 'editorial': {}}

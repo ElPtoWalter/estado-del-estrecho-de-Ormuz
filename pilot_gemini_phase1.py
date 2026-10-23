@@ -141,6 +141,8 @@ def run_pilot(root: Path) -> dict[str, Any]:
             "attempts": gemini_trace.get("attempts", []),
             "validation_diagnostics": gemini_trace.get("validation_diagnostics", {}),
             "field_fallbacks": gemini_trace.get("field_fallbacks", []),
+            "initial_field_fallbacks": gemini_trace.get('initial_field_fallbacks', []),
+            "style_revision": gemini_trace.get('style_revision', {}),
             "drafts": gemini_drafts,
         },
         "trace": {

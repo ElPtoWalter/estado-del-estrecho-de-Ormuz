@@ -114,6 +114,8 @@ def editorial_quality_report(draft: dict[str, Any], baseline: dict[str, Any]) ->
         flags.append("generic_headline")
     if draft.get('deck') == baseline.get('deck'):
         flags.append("unchanged_deck")
+    if len(text.split()) < 280:
+        flags.append('thin_narrative')
     blocks = [str(draft.get('deck', '')), *draft.get('situation', []),
               *(str(s.get('paragraph', '')) for s in draft.get('sections', []) if isinstance(s, dict)),
               *draft.get('meaning', [])]
@@ -818,6 +820,7 @@ def _editorial_prompt(
     facts_json: str,
     fallbacks: dict[str, dict[str, Any]],
     sources_by_section: dict[str, dict[str, list[str]]],
+    style_revision: dict[str, Any] | None = None,
 ) -> str:
     languages = ", ".join(fallbacks)
     section_order = {language: list(sources_by_section.get(language, {})) for language in fallbacks}
@@ -827,6 +830,17 @@ def _editorial_prompt(
     if journal_mode:
         fallback_json = json.dumps({'notice': 'The local fallback is deliberately withheld to avoid copying its prose. Use editorial_brief and the response schema; only the factual packet supplies facts.'})
     naming_context = [pair for pair in GEOGRAPHIC_NAMES if _geography_supplied(pair, facts_json)]
+    revision_instruction = ''
+    if style_revision:
+        revision_instruction = (
+            'REVISION EDITORIAL UNICA: corrige solo los problemas señalados en el borrador ya validado que sigue. '
+            'Conserva las noticias concretas, fuentes, fechas y el contexto histórico correcto. '
+            'No añadas hechos. Puedes mantener íntegro el idioma que ya supera los controles. '
+            'El titular y la entradilla ingleses deben atribuir las noticias de prensa, tener al menos 28 y 80 caracteres '
+            'respectivamente, y no repetir el diagnóstico en situation. Apunta a 300–380 palabras por idioma '
+            'con detalles ya suministrados y límites precisos, sin relleno. Devuelve la edición bilingüe completa. '
+            + json.dumps(style_revision, ensure_ascii=False) + '\n\n'
+        )
     return (
         f"Edita una crónica para {site_name}. Idiomas requeridos: {languages}. "
         "Trabaja EXCLUSIVAMENTE con el paquete factual JSON incluido al final. No navegues, no uses "
@@ -866,6 +880,7 @@ def _editorial_prompt(
         "El borrador no es una fuente adicional. Si el material no permite desarrollar una noticia, "
         "expresa esa limitación con brevedad y sin inventar contenido.\\n\\n"
         f"BORRADOR LOCAL VALIDADO (referencia estructural; no copiar):\\n{fallback_json}\\n\\n"
+        + revision_instruction +
         f"PAQUETE FACTUAL:\\n{facts_json}"
     )
 
@@ -885,6 +900,7 @@ def generate_editorial_drafts(
     trace: dict[str, Any] | None = None,
     allow_field_fallback: bool = False,
     candidate_capture: dict[str, Any] | None = None,
+    style_revision: dict[str, Any] | None = None,
 ) -> tuple[dict[str, dict[str, Any]], str, str]:
     """Return validated drafts, preferring free-tier Gemini and falling back safely."""
     safe_fallbacks = copy.deepcopy(fallbacks)
@@ -906,6 +922,7 @@ def generate_editorial_drafts(
         facts_json=facts_json,
         fallbacks=fallbacks,
         sources_by_section=sources_by_section,
+        style_revision=style_revision,
     )
     schema = _response_schema(fallbacks)
 
