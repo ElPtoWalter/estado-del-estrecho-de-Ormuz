@@ -62,8 +62,13 @@ ENTITY_PATTERN = re.compile(
     r"(?:[A-ZÁÉÍÓÚÜÑ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ&.'’-]*[A-Za-zÁÉÍÓÚÜÑáéíóúüñ&'’-]|[A-Z]{2,})){1,5}\b"
 )
 
+REPORTING_ATTRIBUTION_PREFIX = (
+    r"(?i:(?:informaciones?|informes?|noticias?|reportajes?|cr[oó]nicas?|an[aá]lisis|"
+    r"datos|declaraciones?|reporting|reports?|news|statements?)\s+(?:de|from|by))"
+)
 ATTRIBUTION_PATTERN = re.compile(
-    r"\b(?i:seg[uú]n|informaciones de|de acuerdo con|according to|reported by|informa(?:n)?|reports? from)\s+"
+    r"\b(?:(?i:seg[uú]n|de acuerdo con|according to|reported by|informa(?:n)?|reports? from)|"
+    + REPORTING_ATTRIBUTION_PREFIX + r")\s+"
     r"(?:el|la|los|las|the)?\s*([A-ZÁÉÍÓÚÜÑ][\wÁÉÍÓÚÜÑáéíóúüñ&.'’-]*"
     r"(?:\s+(?:[A-ZÁÉÍÓÚÜÑ][\wÁÉÍÓÚÜÑáéíóúüñ&.'’-]*|de|del|of|the)){0,5})",
 )
@@ -319,7 +324,7 @@ def _named_entities(text: str) -> set[str]:
         # Attribution syntax is not part of an organisation's proper name.
         # The remaining name still passes the same corpus and source checks.
         entity = re.sub(r"^(?:El|La|Los|Las|The|Según)\s+", "", entity)
-        entity = re.sub(r"^Informaciones de\s+", "", entity)
+        entity = re.sub(r"^" + REPORTING_ATTRIBUTION_PREFIX + r"\s+", "", entity)
         if len(entity.split()) >= 2:
             entities.add(entity.casefold())
     return entities

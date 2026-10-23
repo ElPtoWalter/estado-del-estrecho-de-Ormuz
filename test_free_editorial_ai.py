@@ -390,16 +390,20 @@ class FreeEditorialAITests(unittest.TestCase):
 
     def test_reporting_noun_is_not_part_of_an_authorized_source_name(self):
         self.facts['selected_sources'].append({'source': 'Associated Press', 'title': 'Shipping reference'})
-        candidate = valid_draft()
-        candidate['meaning'][0] += ' Informaciones de Associated Press describen el contexto de la referencia enlazada.'
-        (_, engine, status), _ = self.call_gemini(candidate)
-        self.assertEqual((engine, status), ('gemini', 'ok'))
+        for prefix in ('Informaciones de', 'Informes de', 'Datos de', 'Reports from'):
+            with self.subTest(prefix=prefix):
+                candidate = valid_draft()
+                candidate['meaning'][0] += f' {prefix} Associated Press describen el contexto de la referencia enlazada.'
+                (_, engine, status), _ = self.call_gemini(candidate)
+                self.assertEqual((engine, status), ('gemini', 'ok'))
 
     def test_reporting_noun_does_not_allow_an_unknown_single_word_source(self):
-        candidate = valid_draft()
-        candidate['meaning'][0] += ' Informaciones de Acme describen el contexto de la referencia enlazada.'
-        (_, engine, status), _ = self.call_gemini(candidate)
-        self.assertEqual((engine, status), ('rules', 'gemini-validation-es'))
+        for prefix in ('Informaciones de', 'Informes de', 'Datos de', 'Reports from'):
+            with self.subTest(prefix=prefix):
+                candidate = valid_draft()
+                candidate['meaning'][0] += f' {prefix} Acme describen el contexto de la referencia enlazada.'
+                (_, engine, status), _ = self.call_gemini(candidate)
+                self.assertEqual((engine, status), ('rules', 'gemini-validation-es'))
 
     def test_unknown_single_word_attribution_is_rejected(self):
         candidate = valid_draft()
