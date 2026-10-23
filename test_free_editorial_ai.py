@@ -388,6 +388,19 @@ class FreeEditorialAITests(unittest.TestCase):
         self.assertEqual((engine, status), ('rules', 'gemini-validation-es'))
         self.assertIn('maritime zeta group', _named_entities('Según Maritime Zeta Group, la referencia sigue pendiente.'))
 
+    def test_reporting_noun_is_not_part_of_an_authorized_source_name(self):
+        self.facts['selected_sources'].append({'source': 'Associated Press', 'title': 'Shipping reference'})
+        candidate = valid_draft()
+        candidate['meaning'][0] += ' Informaciones de Associated Press describen el contexto de la referencia enlazada.'
+        (_, engine, status), _ = self.call_gemini(candidate)
+        self.assertEqual((engine, status), ('gemini', 'ok'))
+
+    def test_reporting_noun_does_not_allow_an_unknown_single_word_source(self):
+        candidate = valid_draft()
+        candidate['meaning'][0] += ' Informaciones de Acme describen el contexto de la referencia enlazada.'
+        (_, engine, status), _ = self.call_gemini(candidate)
+        self.assertEqual((engine, status), ('rules', 'gemini-validation-es'))
+
     def test_unknown_single_word_attribution_is_rejected(self):
         candidate = valid_draft()
         candidate["meaning"][0] += " Según Acme, la tendencia ya estaría confirmada."

@@ -31,7 +31,7 @@ FREE_GEMINI_MODELS = frozenset({
 })
 MAX_FACT_BYTES = 48_000
 MAX_OUTPUT_TOKENS = 4_096
-VALIDATOR_VERSION = 3
+VALIDATOR_VERSION = 4
 
 SYSTEM_INSTRUCTION = (
     "Eres un redactor especializado en información marítima y energética. Escribe con claridad y "
@@ -63,7 +63,7 @@ ENTITY_PATTERN = re.compile(
 )
 
 ATTRIBUTION_PATTERN = re.compile(
-    r"\b(?i:seg[uú]n|de acuerdo con|according to|reported by|informa(?:n)?|reports? from)\s+"
+    r"\b(?i:seg[uú]n|informaciones de|de acuerdo con|according to|reported by|informa(?:n)?|reports? from)\s+"
     r"(?:el|la|los|las|the)?\s*([A-ZÁÉÍÓÚÜÑ][\wÁÉÍÓÚÜÑáéíóúüñ&.'’-]*"
     r"(?:\s+(?:[A-ZÁÉÍÓÚÜÑ][\wÁÉÍÓÚÜÑáéíóúüñ&.'’-]*|de|del|of|the)){0,5})",
 )
@@ -319,6 +319,7 @@ def _named_entities(text: str) -> set[str]:
         # Attribution syntax is not part of an organisation's proper name.
         # The remaining name still passes the same corpus and source checks.
         entity = re.sub(r"^(?:El|La|Los|Las|The|Según)\s+", "", entity)
+        entity = re.sub(r"^Informaciones de\s+", "", entity)
         if len(entity.split()) >= 2:
             entities.add(entity.casefold())
     return entities
