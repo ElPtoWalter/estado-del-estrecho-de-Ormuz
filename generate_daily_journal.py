@@ -931,7 +931,7 @@ def watchlist(status: dict[str, Any], operational: dict[str, Any], lang: str) ->
 
 def make_sources(items: list[NewsItem], lang: str) -> str:
     rows = []
-    for item in items[:10]:
+    for item in items[:MAX_NEWS]:
         when = parse_date(item.published_at).astimezone(MADRID).strftime("%d/%m · %H:%M")
         tag = TOPIC_LABELS[lang].get(item.topic, TOPIC_LABELS[lang]["other"])
         note = " · análisis/titular no usado como hecho" if lang == "es" and item.analytical else " · analysis/headline not used as fact" if lang == "en" and item.analytical else ""
@@ -1090,9 +1090,9 @@ def render_page(
     for topic in topics:
         section_title = TOPIC_LABELS[lang][topic]
         paragraph = section_drafts.get(section_title) or section_paragraph(topic, news, lang)
-        relevant = [x for x in news if x.topic == topic]
+        relevant = [x for x in news if x.topic == topic and not x.analytical]
         link_cards = ""
-        for item in relevant[:2]:
+        for item in relevant[:4]:
             link_cards += (
                 f'<a class="journal-news-link" href="{safe(item.url)}" target="_blank" rel="noopener noreferrer">'
                 f'<span>{safe(item.source)}</span><strong>{safe(item.title)}</strong></a>'

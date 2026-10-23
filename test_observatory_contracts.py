@@ -16,6 +16,13 @@ from own_projects import eligible
 
 
 class ObservatoryContracts(unittest.TestCase):
+    def test_sources_beyond_first_ten_remain_auditable(self):
+        items = [journal.NewsItem(title=f'Headline {i}', url=f'https://example.org/{i}',
+                    source='Reuters', published_at='2026-10-23T07:00:00Z',
+                    tier=4, topic='energy', query='test') for i in range(12)]
+        for lang in ('es', 'en'):
+            self.assertIn('https://example.org/11', journal.make_sources(items, lang))
+
     def test_cached_publisher_mismatch_cannot_enter_the_factual_news_selection(self):
         item = journal.NewsItem('Iran says ships damaged - Epping Forest Guardian', 'The Guardian',
                                 'https://news.google.com/rss/articles/example', '2026-10-22T08:00:00Z', 3, 'maritime', '')
