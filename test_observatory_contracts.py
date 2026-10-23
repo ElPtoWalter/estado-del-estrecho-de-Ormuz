@@ -103,7 +103,7 @@ class ObservatoryContracts(unittest.TestCase):
             self.assertFalse(original_review_valid(page, candidate))
         self.assertIn('noindex', apply_policy(page, 'original.html'))
 
-    def test_non_material_daily_snapshot_appears_once_in_both_feeds(self):
+    def test_only_existing_historical_pages_enter_each_language_feed(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             (root / 'journal-data').mkdir()
@@ -112,6 +112,10 @@ class ObservatoryContracts(unittest.TestCase):
                     'summary_es': 'Instantánea española.', 'summary_en': 'English snapshot.',
                     'url_es': 'https://estrechoormuz.com/diario.html', 'url_en': 'https://estrechoormuz.com/en-diary.html'}
             (root / 'journal-data' / '2026-10-22.json').write_text(json.dumps(item), encoding='utf-8')
+            self.assertEqual(journal.feed_editions(root, item, []), [])
+            for folder_name in ('diario', 'diary'):
+                (root / folder_name).mkdir()
+                (root / folder_name / '2026-10-22.html').write_text('Archived edition', encoding='utf-8')
             items = journal.feed_editions(root, item, [])
             self.assertEqual(len(items), 1)
             for lang in ('es', 'en'):
@@ -120,6 +124,9 @@ class ObservatoryContracts(unittest.TestCase):
                 self.assertEqual(len(entries), 1)
                 self.assertTrue(entries[0].find('{http://www.w3.org/2005/Atom}id').text.endswith('/' + lang))
                 self.assertEqual(entries[0].find('{http://www.w3.org/2005/Atom}summary').text, item['summary_' + lang])
+                self.assertIn('/2026-10-22.html', entries[0].find('{http://www.w3.org/2005/Atom}link').get('href'))
+            (root / 'diary' / '2026-10-22.html').unlink()
+            self.assertEqual(len(ET.fromstring(journal.feed_xml(journal.feed_editions(root, item, []), item['generated_at'], 'en')).findall('{http://www.w3.org/2005/Atom}entry')), 0)
 
     def test_same_day_schedule_does_not_duplicate_editions(self):
         with tempfile.TemporaryDirectory() as folder:

@@ -7,6 +7,7 @@ on:
       - "**.py"
       - "**.cjs"
       - "source-registry.json"
+      - "editorial-context.json"
       - "PHASE2_VIDEO_CONTRACT.md"
       - "PHASE2A_VIDEO_INTELLIGENCE.md"
       - "video-rules.json"
@@ -15,6 +16,9 @@ on:
     branches: [main]
     paths:
       - "publication_quality.py"
+      - "editorial-context.json"
+      - "journal_evidence.py"
+      - "test_journal_revision.py"
       - "monetization.json"
       - "editorial-reviews.json"
       - "test_observatory_contracts.py"

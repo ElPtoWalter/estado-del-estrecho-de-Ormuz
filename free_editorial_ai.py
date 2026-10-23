@@ -32,7 +32,7 @@ FREE_GEMINI_MODELS = frozenset({
 })
 MAX_FACT_BYTES = 48_000
 MAX_OUTPUT_TOKENS = 4_096
-VALIDATOR_VERSION = 7
+VALIDATOR_VERSION = 8
 
 SYSTEM_INSTRUCTION = (
     "Eres un redactor especializado en información marítima y energética. Escribe con claridad y "
@@ -114,8 +114,30 @@ def editorial_quality_report(draft: dict[str, Any], baseline: dict[str, Any]) ->
         flags.append("generic_headline")
     if draft.get('deck') == baseline.get('deck'):
         flags.append("unchanged_deck")
+    blocks = [str(draft.get('deck', '')), *draft.get('situation', []),
+              *(str(s.get('paragraph', '')) for s in draft.get('sections', []) if isinstance(s, dict)),
+              *draft.get('meaning', [])]
+    sentences = []
+    repeated = []
+    for position, block in enumerate(blocks):
+        for sentence in re.split(r'(?<=[.!?])\s+', block):
+            tokens = re.findall(r'\w+', sentence.casefold())
+            if len(tokens) < 12:
+                continue
+            for old_position, old_tokens in sentences:
+                if position != old_position and difflib.SequenceMatcher(None, tokens, old_tokens, autojunk=False).ratio() >= .86:
+                    repeated.append([old_position, position])
+                    break
+            sentences.append((position, tokens))
+    if repeated:
+        flags.append('repeated_sentence_across_fields')
+    lowered_name = any(re.search(rf'(?<!\w){re.escape(name.lower())}(?!\w)', text)
+                       for pair in GEOGRAPHIC_NAMES for name in pair if any(c.isupper() for c in name))
+    if lowered_name:
+        flags.append('proper_name_case')
     return {"word_count": len(text.split()), "template_similarity": round(similarity, 3),
-            "flags": flags, "human_editorial_assessment_required": True}
+            "repeated_sentence_pairs": repeated, "flags": flags,
+            "style_checks_passed": not flags, "human_editorial_assessment_required": True}
 
 
 def _draft_schema(section_titles: list[str]) -> dict[str, Any]:
@@ -252,7 +274,7 @@ def _allowed_source_names(
     sources_by_section: dict[str, dict[str, list[str]]],
 ) -> set[str]:
     allowed: set[str] = set()
-    selected = facts.get("selected_sources")
+    selected = list(facts.get("selected_sources") or []) + list(facts.get('primary_context') or [])
     if isinstance(selected, list):
         for item in selected:
             if isinstance(item, dict) and item.get("source"):
@@ -327,9 +349,12 @@ MONTH_NAMES = (
 MONTH_NUMBER = {name: number for number, names in enumerate(MONTH_NAMES, 1) for name in names}
 MONTH_RE = '|'.join(MONTH_NUMBER)
 GEOGRAPHIC_NAMES = (
-    ('oriente medio', 'middle east'), ('estrecho de ormuz', 'strait of hormuz'),
-    ('estados unidos', 'united states'), ('reino unido', 'united kingdom'),
-    ('unión europea', 'european union'), ('golfo pérsico', 'persian gulf'), ('mar rojo', 'red sea'),
+    ('Oriente Medio', 'Middle East'), ('estrecho de Ormuz', 'Strait of Hormuz'),
+    ('Estados Unidos', 'United States'), ('Reino Unido', 'United Kingdom'),
+    ('Unión Europea', 'European Union'), ('golfo Pérsico', 'Persian Gulf'), ('mar Rojo', 'Red Sea'),
+    ('Irán', 'Iran'), ('Catar', 'Qatar'), ('Francia', 'France'),
+    ('Arabia Saudí', 'Saudi Arabia'), ('Emiratos Árabes Unidos', 'United Arab Emirates'),
+    ('Ormuz', 'Hormuz'),
 )
 
 
@@ -338,9 +363,26 @@ def _entity_supported(entity: str, corpus: str) -> bool:
         return True
     # A translation denotes the same supplied place; it does not authorize new places.
     for pair in GEOGRAPHIC_NAMES:
-        if entity in pair and any(re.search(rf'(?<!\w){re.escape(name)}(?!\w)', corpus, re.I) for name in pair):
+        if entity.casefold() in {name.casefold() for name in pair} and any(re.search(rf'(?<!\w){re.escape(name)}(?!\w)', corpus, re.I) for name in pair):
             return True
     return False
+
+
+def _normalize_supplied_names(value: Any, facts: dict[str, Any], language: str) -> Any:
+    """Correct spelling/case of the same supplied places; add no new entities."""
+    corpus = ' '.join(_text_values(facts))
+    pairs = [pair for pair in GEOGRAPHIC_NAMES if any(re.search(rf'(?<!\w){re.escape(name)}(?!\w)', corpus, re.I) for name in pair)]
+    if isinstance(value, str):
+        for pair in pairs:
+            target = pair[0] if language == 'es' else pair[1]
+            for name in pair:
+                value = re.sub(rf'(?<!\w){re.escape(name)}(?!\w)', lambda match: target, value, flags=re.I)
+        return value
+    if isinstance(value, list):
+        return [_normalize_supplied_names(item, facts, language) for item in value]
+    if isinstance(value, dict):
+        return {key: (_normalize_supplied_names(item, facts, language) if key != 'title' else item) for key, item in value.items()}
+    return value
 
 
 def _packet_dates(value: Any) -> set[date]:
@@ -469,6 +511,11 @@ def _validate_language_draft(
         section_sources = {_canonical_source(source) for source in required_sources}
         if section_sources and _has_unknown_attribution(paragraph, section_sources):
             return reject("section-attribution")
+        if facts.get('editorial_brief'):
+            records = [item for item in facts.get('selected_sources', [])
+                       if _canonical_source(item.get('source', '')) in section_sources]
+            if _numbers(paragraph) - (_numbers(records) | _numbers(fallback['sections'][position]['paragraph'])):
+                return reject('section-number-provenance')
         sections.append({"title": title, "paragraph": paragraph})
 
     normalized = {
@@ -501,6 +548,10 @@ def _validate_language_draft(
         return reject("unseen-date")
     if UNSUPPORTED_CERTAINTY_PATTERN.search(prose):
         return reject("unsupported-certainty")
+    for context in facts.get('primary_context', []):
+        for block in [headline, deck, *situation, *meaning, *(s['paragraph'] for s in sections)]:
+            if _mentions_source(block, context['source']) and context['reference_period'] not in block:
+                return reject('historical-context-period-missing')
     for entity in _named_entities(prose):
         if not _entity_supported(entity, allowed_corpus):
             return reject("unseen-entity", entity)
@@ -650,7 +701,7 @@ def _validate_candidate(
     for language, fallback in fallbacks.items():
         language_diagnostics: dict[str, str] = {}
         draft = _validate_language_draft(
-            candidate.get(language),
+            _normalize_supplied_names(candidate.get(language), facts, language),
             fallback,
             sources_by_section.get(language, {}),
             allowed_numbers,
@@ -734,6 +785,9 @@ def _editorial_prompt(
     section_order = {language: list(sources_by_section.get(language, {})) for language in fallbacks}
     source_contract = {language: sources_by_section.get(language, {}) for language in fallbacks}
     fallback_json = json.dumps(fallbacks, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    journal_mode = isinstance(json.loads(facts_json).get('editorial_brief'), dict)
+    if journal_mode:
+        fallback_json = json.dumps({'notice': 'The local fallback is deliberately withheld to avoid copying its prose. Use editorial_brief and the response schema; only the factual packet supplies facts.'})
     naming_context = [pair for pair in GEOGRAPHIC_NAMES if any(re.search(rf'(?<!\w){re.escape(name)}(?!\w)', facts_json, re.I) for name in pair)]
     return (
         f"Edita una crónica para {site_name}. Idiomas requeridos: {languages}. "
@@ -773,7 +827,7 @@ def _editorial_prompt(
         "los límites metodológicos en un único apartado en vez de repetirlos en todas las secciones. "
         "El borrador no es una fuente adicional. Si el material no permite desarrollar una noticia, "
         "expresa esa limitación con brevedad y sin inventar contenido.\\n\\n"
-        f"BORRADOR LOCAL VALIDADO:\\n{fallback_json}\\n\\n"
+        f"BORRADOR LOCAL VALIDADO (referencia estructural; no copiar):\\n{fallback_json}\\n\\n"
         f"PAQUETE FACTUAL:\\n{facts_json}"
     )
 

@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Any, Iterator
 
 import generate_daily_journal as journal
-from free_editorial_ai import editorial_quality_report
+from free_editorial_ai import editorial_quality_report, _validate_candidate
 from publication_quality import apply_policy
 import re
 
@@ -83,18 +83,23 @@ def run_pilot(root: Path) -> dict[str, Any]:
     gemini_key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not gemini_key:
         raise RuntimeError("GEMINI_API_KEY is not configured for the isolated pilot")
+    validation_inputs = {}
     with temporary_environment({"OPENROUTER_API_KEY": None}):
         gemini_drafts, gemini_engine, gemini_status, gemini_trace = journal.editorial_drafts(
-            status, operational, news, [], previous_fp, current_fp, now, editorial, event_store
+            status, operational, news, [], previous_fp, current_fp, now, editorial, event_store,
+            packet_capture=validation_inputs,
         )
 
     local_hash = local_trace.get("factual_packet_hash") or local_trace.get("factual_packet_sha256")
     gemini_hash = gemini_trace.get("factual_packet_hash") or gemini_trace.get("factual_packet_sha256")
+    revalidated = (_validate_candidate(gemini_drafts, **validation_inputs)[0] is not None
+                   if validation_inputs else bool(gemini_trace.get('full_output_validated', gemini_status == 'ok')))
+    quality = {lang: editorial_quality_report(gemini_drafts[lang], local_drafts[lang]) for lang in ('es', 'en')}
     checks = {
         "same_factual_packet": bool(local_hash and local_hash == gemini_hash),
         "local_rules_ok": local_engine == "rules",
         "gemini_selected": gemini_engine == "gemini" and gemini_status in {"ok", "partial-fallback"},
-        "full_output_validated": bool(gemini_trace.get('full_output_validated', gemini_status == 'ok')),
+        "full_output_validated": revalidated,
         "validator_same_version": local_trace.get("validator_version") == gemini_trace.get("validator_version"),
         "event_ids_same": local_trace.get("event_ids") == gemini_trace.get("event_ids"),
         "source_ids_same": local_trace.get("source_ids") == gemini_trace.get("source_ids"),
@@ -110,7 +115,12 @@ def run_pilot(root: Path) -> dict[str, Any]:
         "factual_packet_hash": local_hash,
         "checks": checks,
         "passed": all(checks.values()),
-        "editorial_quality": {lang: editorial_quality_report(gemini_drafts[lang], local_drafts[lang]) for lang in ('es', 'en')},
+        "editorial_quality": quality,
+        "style_checks_passed": all(item['style_checks_passed'] for item in quality.values()),
+        "validation_inputs": validation_inputs,
+        "preview_snapshot": {'status': status, 'operational': operational, 'previous': previous_fp,
+                             'fingerprint': current_fp, 'news': [journal.asdict(item) for item in news],
+                             'editorial': {key: value for key, value in editorial.items() if key != 'signal'}},
         "local": {
             "engine": local_engine,
             "assistant_status": local_status,
@@ -162,14 +172,14 @@ def write_previews(report: dict[str, Any], root: Path, output: Path) -> None:
     if output.is_relative_to(root.resolve()):
         raise ValueError("Pilot previews must be outside the source repository")
     output.mkdir(parents=True, exist_ok=True)
-    status = journal.load_json(root / 'status.json', {})
-    operational = journal.get_operational(status, root)
-    events = journal.load_json(root / 'events.json', {})
-    previous = journal.load_json(root / 'journal-state.json', {}).get('fingerprint', {})
-    fingerprint = journal.state_fingerprint(status, operational, events)
+    snapshot = report.get('preview_snapshot', {})
+    status = snapshot.get('status') or journal.load_json(root / 'status.json', {})
+    operational = snapshot.get('operational') or journal.get_operational(status, root)
+    previous = snapshot.get('previous') or journal.load_json(root / 'journal-state.json', {}).get('fingerprint', {})
+    fingerprint = snapshot.get('fingerprint') or journal.state_fingerprint(status, operational, journal.load_json(root / 'events.json', {}))
     now = journal.parse_date(report['timestamp']).astimezone(journal.MADRID)
-    news = load_news(journal.load_json(root / 'journal-latest.json', {}))
-    context = journal.build_editorial_context(root, news, [], now)
+    news = load_news({'news': snapshot['news']} if 'news' in snapshot else journal.load_json(root / 'journal-latest.json', {}))
+    context = snapshot.get('editorial') or journal.build_editorial_context(root, news, [], now)
     styles = '\n'.join((root / name).read_text(encoding='utf-8') for name in ('styles.css', 'v11.css', 'diario-v8.css'))
     for lang in ('es', 'en'):
         page = journal.render_page(status=status, operational=operational, news=news, new_items=[],

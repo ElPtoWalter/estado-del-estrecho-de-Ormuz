@@ -13,7 +13,7 @@ especulativos nunca se convierten en hechos.
 """
 from __future__ import annotations
 
-from journal_evidence import classify_headline, identity, reading, section_note
+from journal_evidence import classify_headline, identity, reading, section_note, primary_context
 from free_editorial_ai import factual_packet_digest, generate_editorial_drafts, editorial_quality_report, VALIDATOR_VERSION
 from straitwatch_core import (
     SourceRegistry,
@@ -37,7 +37,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from collections import Counter
 from dataclasses import dataclass, asdict
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -273,8 +273,8 @@ def build_editorial_context(
     candidates = sorted(new_items or news, key=lambda item: (item.tier, parse_date(item.published_at)), reverse=True)
     signal = candidates[0] if candidates else None
     if not new_items:
-        limit_es = "No hay una noticia nueva de calidad suficiente para alterar la lectura. La edición se apoya en el último diagnóstico operativo válido."
-        limit_en = "There is no new high-quality report sufficient to alter the assessment. This edition relies on the latest valid operational diagnosis."
+        limit_es = "No se incorporan referencias nuevas respecto a la edición anterior; la fecha del titular no demuestra por sí sola cuándo ocurrió el hecho."
+        limit_en = "No new references are added relative to the previous edition; a headline's publication date does not establish when the event happened."
     elif len(sources) < 2:
         limit_es = "Las novedades no cuentan todavía con contraste entre dos fuentes independientes; se mantienen como señales y no como cambio confirmado."
         limit_en = "The new items are not yet supported by two independent sources; they remain signals rather than a confirmed change."
@@ -300,6 +300,7 @@ def build_editorial_context(
         "signal": signal,
         "limit_es": limit_es,
         "limit_en": limit_en,
+        "primary_context": primary_context(root, local_dt.date()),
     }
 
 
@@ -738,6 +739,7 @@ def editorial_drafts(
     local_dt: datetime,
     editorial: dict[str, Any],
     event_store: dict[str, Any] | None = None,
+    *, packet_capture: dict[str, Any] | None = None,
 ) -> tuple[dict[str, dict[str, Any]], str, str, dict[str, Any]]:
     fallbacks = {
         lang: fallback_editorial_draft(
@@ -745,6 +747,10 @@ def editorial_drafts(
         )
         for lang in ("es", "en")
     }
+    for lang in ('es', 'en'):
+        context_items = editorial.get('primary_context', [])
+        if context_items:
+            fallbacks[lang]['meaning'] = [context_items[0]['fact_' + lang] + ' ' + context_items[0]['limit_' + lang]]
     usable = [item for item in news if not item.analytical]
     independent = {item.source.casefold() for item in usable if item.source}
     insufficient_sources = len(usable) < 2 or len(independent) < 2
@@ -796,6 +802,17 @@ def editorial_drafts(
     )
     facts.update({
         "edition_date": local_dt.date().isoformat(),
+        "primary_context": editorial.get('primary_context', []),
+        "editorial_brief": {
+            "mode": "continuity" if previous_fp.get('v7_state') == current_fp.get('v7_state') else "assessment_change",
+            "headline": "Describe the actual assessment change or continuity. A press claim is not a confirmed development; retain its speaker and date.",
+            "deck": "One news angle and its relevance; do not copy the assessment summary or enumerate publishers.",
+            "situation": "Two distinct short paragraphs: the dated attributed news; then what is verified versus still unconfirmed. Do not repeat the deck.",
+            "sections": "Each paragraph develops one different supplied news item. Do not merge claims belonging to different publishers or turn hypothetical headlines into incidents.",
+            "meaning": "Use dated primary_context as historical perspective, not as today's traffic or a loss estimate. Explain one consequence conditionally, without repeating the situation.",
+            "watch": "Three concrete pending checks, with no predictions or repetition of the assessment.",
+            "evidence_rule": "Use selected_sources only as attributed headline reports. events preserve the monitor audit, not a license to assert every event as confirmed. primary_context is historical and must name its period.",
+        },
         "editorial_context": {
             key: value for key, value in editorial.items()
             if key not in {"signal"} and isinstance(value, (str, int, float, bool, type(None)))
@@ -804,6 +821,8 @@ def editorial_drafts(
             {
                 "title": item.title,
                 "source": item.source,
+                "url": item.url,
+                "basis": "headline_only_not_independent_fact_confirmation",
                 "source_id": item.source_id or SOURCE_REGISTRY.resolve(item.source, item.url).source_id,
                 "published_at": item.published_at,
                 "topic": item.topic,
@@ -816,6 +835,8 @@ def editorial_drafts(
     })
     event_ids = [event.get("event_id") for event in facts.get("events", []) if isinstance(event, dict) and event.get("event_id")]
     source_ids = [source.get("source_id") for source in facts.get("sources", []) if isinstance(source, dict) and source.get("source_id")]
+    if packet_capture is not None:
+        packet_capture.update({'facts': facts, 'fallbacks': fallbacks, 'sources_by_section': sources_by_section})
     digest = factual_packet_digest(facts)
     if insufficient_sources:
         return fallbacks, "rules", "insufficient-sources", {
@@ -859,10 +880,10 @@ def build_lead(status: dict[str, Any], operational: dict[str, Any], local_dt: da
     checked = status.get("checked_at") or "—"
     carried = operational.get("carried_forward")
     if lang == "es":
-        return (f"{summary} La comprobación que respalda esta edición está fechada {checked}. "
+        return (f"La comprobación que respalda esta edición está fechada {checked}. "
                 + ("Las dimensiones mostradas se arrastran del diagnóstico anterior: no son una nueva comprobación de tránsito. " if carried else "")
                 + "Los titulares enlazados se atribuyen a sus medios y no acreditan por sí solos un cambio de estado.")
-    return (f"{summary} The check supporting this edition is dated {checked}. "
+    return (f"The check supporting this edition is dated {checked}. "
             + ("Displayed dimensions are carried forward from the previous assessment, not a fresh transit observation. " if carried else "")
             + "Linked headlines are attributed to their publishers and do not by themselves establish a state change.")
 
@@ -1127,8 +1148,11 @@ def render_page(
         if lang == "es"
         else canonical.replace("/diary/", "/diario/").replace("/en-diary.html", "/diario.html")
     )
-    desk = editorial_dashboard(editorial, lang)
-    limit = editorial.get("limit_es" if lang == "es" else "limit_en") or ""
+    primary_sources_html = ''.join(
+        f'<li><a href="{safe(item["url"])}" target="_blank" rel="noopener noreferrer">{safe(item["source"])}</a>'
+        f' · {safe(item["published_at"])} · {"contexto histórico" if lang == "es" else "historical context"} {safe(item["reference_period"])}.'
+        f' {"Paráfrasis de Estrecho Ormuz; texto original y política de reutilización" if lang == "es" else "Paraphrase by Estrecho Ormuz; original text and reuse policy"}'
+        f' <a href="{safe(item["rights_url"])}">↗</a></li>' for item in editorial.get('primary_context', []))
     method_note = (
         "Parte automatizado con asistencia de IA sobre un paquete factual cerrado; no implica revisión humana de esta edición ni lectura íntegra de cada artículo. La herramienta no busca noticias, no elige fuentes y no decide el estado. Los fragmentos rechazados se sustituyen por el borrador local; la edición completa vuelve a superar los controles de hechos, cifras, fuentes y estados antes de publicarse."
         if editor_engine in {"gemini", "openrouter-free"} and lang == "es"
@@ -1138,12 +1162,6 @@ def render_page(
         if lang == "es"
         else "This digest uses local rules and automated headline selection. Full article texts are not automatically read or verified, and no per-edition human review is claimed. Feed dates may reflect updates rather than event dates. Different publisher names do not guarantee independent reporting."
     )
-    triad = f'''<section class="journal-triad" aria-label="{'Capas de lectura' if lang == 'es' else 'Reading layers'}">
-<article><span>{'QUÉ SABEMOS' if lang == 'es' else 'WHAT WE KNOW'}</span><strong>{safe(state_label)}</strong><p>{'Diagnóstico del observatorio con confianza' if lang == 'es' else 'Observatory assessment with'} {safe(confidence_label(confidence, lang))}{'' if lang == 'es' else ' confidence'}.</p></article>
-<article><span>{'QUÉ HA CAMBIADO' if lang == 'es' else 'WHAT CHANGED'}</span><strong>{'Desde la referencia anterior' if lang == 'es' else 'Since the previous reference'}</strong><p>{safe(change)}</p></article>
-<article><span>{'QUÉ NO SABEMOS' if lang == 'es' else 'WHAT WE DO NOT KNOW'}</span><strong>{'Límites actuales' if lang == 'es' else 'Current limits'}</strong><p>{safe(limit)}</p></article>
-</section>'''
-
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -1186,14 +1204,12 @@ def render_page(
 <div class="journal-metrics">{metrics}</div>
 </section>
 {traffic_snapshot_html(operational, lang)}
-{desk}
 {situation_html}
-{triad}
 <p><a href="{'/datos-propios-monitor-ormuz.html' if lang == 'es' else '/en-monitor-original-data-report.html'}">{'Análisis propio: qué mide realmente el historial del monitor' if lang == 'es' else 'Original analysis: what the monitor archive actually measures'}</a></p>
 {sections}
-<section class="journal-section journal-meaning"><h2>{'Qué significa esta combinación de señales' if lang == 'es' else 'What this combination of signals means'}</h2>{meaning_html}</section>
+<section class="journal-section journal-meaning"><h2>{'Contexto y alcance' if lang == 'es' else 'Context and implications'}</h2>{meaning_html}</section>
 <section class="journal-section journal-watch"><h2>{'Qué vigilar en las próximas 24 horas' if lang == 'es' else 'What to watch over the next 24 hours'}</h2><ul>{watch_html}</ul></section>
-<section class="journal-section journal-sources"><div class="journal-section-title"><div><span>{'Fuentes verificables' if lang == 'es' else 'Verifiable sources'}</span><h2>{'Referencias seleccionadas' if lang == 'es' else 'Selected references'}</h2></div></div><ul>{sources_html}</ul></section>
+<section class="journal-section journal-sources"><div class="journal-section-title"><div><span>{'Fuentes enlazadas' if lang == 'es' else 'Linked sources'}</span><h2>{'Referencias seleccionadas' if lang == 'es' else 'Selected references'}</h2></div></div><ul>{sources_html}{primary_sources_html}</ul></section>
 <section class="journal-method-note"><h2>{'Criterios editoriales de esta edición' if lang == 'es' else 'Editorial standards for this edition'}</h2><p>{safe(method_note)}</p><p>{safe(quality_note)}</p><details><summary>{'Criterio de hemeroteca' if lang == 'es' else 'Archive criteria'}</summary><ul>{reason_html}</ul></details></section>
 </article>
 </main>
@@ -1219,17 +1235,31 @@ def archive_page(items: list[dict[str, Any]], lang: str) -> str:
 
 
 def feed_editions(root: Path, latest: dict[str, Any], archive: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Include daily snapshots without manufacturing historical article URLs."""
+    """Only distribute snapshots whose dated HTML actually exists."""
     by_date = {}
     for path in sorted((root / "journal-data").glob("????-??-??.json"), reverse=True)[:30]:
         item = load_json(path, {})
         if isinstance(item, dict) and item.get("date"):
             by_date[item["date"]] = item
-    by_date[latest["date"]] = latest
+    if isinstance(latest, dict) and latest.get('date'):
+        by_date[latest['date']] = latest
     for item in archive:
         if isinstance(item, dict) and item.get("date"):
             by_date[item["date"]] = item
-    return sorted(by_date.values(), key=lambda item: item["date"], reverse=True)[:30]
+    permanent = []
+    for stamp, item in sorted(by_date.items(), reverse=True):
+        try:
+            if date.fromisoformat(stamp).isoformat() != stamp:
+                continue
+        except (ValueError, TypeError):
+            continue
+        edition = dict(item)
+        for lang, folder in (('es', 'diario'), ('en', 'diary')):
+            relative = f'{folder}/{stamp}.html'
+            edition['url_' + lang] = f'{BASE_URL}/{relative}' if (root / relative).is_file() else None
+        if edition['url_es'] or edition['url_en']:
+            permanent.append(edition)
+    return permanent[:30]
 
 
 def feed_xml(items: list[dict[str, Any]], generated_at: str, lang: str = "es") -> str:
@@ -1239,6 +1269,13 @@ def feed_xml(items: list[dict[str, Any]], generated_at: str, lang: str = "es") -
     page = "diario.html" if es else "en-diary.html"
     entries = []
     for item in items[:30]:
+        stamp = item.get('date', '')
+        folder = 'diario' if es else 'diary'
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', stamp):
+            continue
+        permalink = f'{BASE_URL}/{folder}/{stamp}.html'
+        if item.get('url_' + lang) != permalink:
+            continue  # Never send a dated entry to the mutable live diary.
         entries.append(
             f'''  <entry>\n    <title>{html.escape(item.get('date', '') + ' · ' + item.get('title_' + lang, title))}</title>\n    <id>{BASE_URL}/edition/{html.escape(item.get('date', ''))}/{lang}</id>\n    <link href="{html.escape(item.get('url_' + lang, BASE_URL + '/' + page), quote=True)}"/>\n    <updated>{html.escape(item.get('generated_at',generated_at))}</updated>\n    <summary>{html.escape(item.get('summary_' + lang,''))}</summary>\n  </entry>'''
         )

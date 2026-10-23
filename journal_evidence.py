@@ -1,7 +1,45 @@
 """Conservative headline handling. No article-body or live-traffic claims."""
 import hashlib
+import json
 import re
+from datetime import date
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
+
+
+def primary_context(root, edition_date):
+    """Reviewed, dated factual paraphrases; never scrape or trust arbitrary URLs."""
+    try:
+        data = json.loads((root / 'editorial-context.json').read_text(encoding='utf-8'))
+        reviewed = date.fromisoformat(data['reviewed_at'])
+        if reviewed > edition_date:
+            return []
+    except (OSError, ValueError, KeyError, TypeError):
+        return []
+    output = []
+    for item in data.get('items', []):
+        if not isinstance(item, dict):
+            continue
+        try:
+            published = date.fromisoformat(item['published_at'])
+            period = int(item['reference_period'])
+            if published > reviewed or period > published.year:
+                continue
+        except (KeyError, ValueError, TypeError):
+            continue
+        if (item.get('kind') != 'historical_context' or item.get('rights') != 'US-government-authored-text'
+                or item.get('source') != 'EIA'
+                or item.get('url') != 'https://www.eia.gov/todayinenergy/detail.php?id=65504'
+                or item.get('rights_url') != 'https://www.eia.gov/about/copyrights_reuse.php'):
+            continue
+        if not all(isinstance(item.get(key), str) and 20 <= len(item[key]) <= 600
+                   for key in ('fact_es', 'fact_en', 'limit_es', 'limit_en')):
+            continue
+        content = {key: value for key, value in item.items() if key != 'review_sha256'}
+        digest = hashlib.sha256(json.dumps(content, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode('utf-8')).hexdigest()
+        if item.get('review_sha256') != digest:
+            continue
+        output.append({**item, 'reviewed_at': data['reviewed_at']})
+    return output[:3]
 
 
 def classify_headline(title):
