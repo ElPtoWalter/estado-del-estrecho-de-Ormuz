@@ -18,7 +18,7 @@ ROOT = Path(__file__).parent
 
 
 class JournalRevisionTests(unittest.TestCase):
-    def revision_fixture(self, unsafe_second=False):
+    def revision_fixture(self, unsafe_second=False, with_context=False):
         status = {'checked_at': '2026-10-23T13:44:37Z', 'status': 'INCIERTO'}
         op = {'state': 'OPEN_SEVERELY_RESTRICTED', 'label_es': 'ABIERTO · TRÁNSITO MUY RESTRINGIDO',
               'label_en': 'OPEN · SEVERELY RESTRICTED TRANSIT', 'confidence': 'MEDIA',
@@ -42,7 +42,8 @@ class JournalRevisionTests(unittest.TestCase):
         fp = {'v7_state': op['state'], 'dimensions': op['dimensions']}
         with patch.object(journal, 'generate_editorial_drafts', side_effect=fake):
             result = journal.editorial_drafts(status, op, news, [], fp, fp,
-                datetime(2026, 10, 23, 20, tzinfo=journal.MADRID), {})
+                datetime(2026, 10, 23, 20, tzinfo=journal.MADRID),
+                {'primary_context': primary_context(ROOT, date(2026, 10, 23))} if with_context else {})
         return calls, result
 
     def test_style_revision_is_bounded_and_failure_keeps_the_safe_edition(self):
@@ -52,6 +53,13 @@ class JournalRevisionTests(unittest.TestCase):
         self.assertEqual(calls[0]['facts'], calls[1]['facts'])
         self.assertFalse(result[3]['style_revision']['adopted'])
         self.assertEqual(result[0], calls[0]['fallbacks'])
+
+    def test_complete_local_draft_with_two_periods_from_same_primary_source_is_valid(self):
+        calls, result = self.revision_fixture(with_context=True)
+        diagnostics = {}
+        valid, _ = _validate_candidate(result[0], facts=calls[0]['facts'], fallbacks=calls[0]['fallbacks'],
+            sources_by_section=calls[0]['sources_by_section'], diagnostics=diagnostics)
+        self.assertIsNotNone(valid, diagnostics)
 
     def test_style_revision_cannot_override_operational_safety(self):
         calls, result = self.revision_fixture(unsafe_second=True)

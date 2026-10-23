@@ -597,7 +597,8 @@ def _validate_language_draft(
         if supplied_quantities and not ({decimal_form(number) for number in _numbers(meaning_text)} & supplied_quantities):
             return reject('required-primary-context-quantity')
         for block in [headline, deck, *situation, *meaning, *(s['paragraph'] for s in sections)]:
-            if _mentions_source(block, context['source']) and context['reference_period'] not in block:
+            periods = {item['reference_period'] for item in facts.get('primary_context', []) if item['source'] == context['source']}
+            if _mentions_source(block, context['source']) and not any(period in block for period in periods):
                 return reject('historical-context-period-missing')
     for entity in _named_entities(prose):
         if not _entity_supported(entity, allowed_corpus):
