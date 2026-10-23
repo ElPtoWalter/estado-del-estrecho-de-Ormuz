@@ -62,3 +62,5 @@
 .journal-archive-card small{display:block;margin-top:8px;color:var(--journal-accent);font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
 @media(max-width:860px){.journal-desk{grid-template-columns:1fr 1fr}.journal-desk-signal{grid-column:1/-1}.journal-triad{grid-template-columns:1fr}.journal-triad article{border-bottom:1px solid var(--journal-line)}.journal-triad article:last-child{border-bottom:0}}
 @media(max-width:560px){.journal-desk{grid-template-columns:1fr}.journal-desk-signal{grid-column:auto}.journal-desk article{border-right:0;border-bottom:1px solid var(--journal-line)}.journal-desk article:last-child{border-bottom:0}.journal-status-card{border-radius:12px;padding:16px}.journal-triad article{padding:18px}}
+
+.journal-source-stamp{font-size:.85rem;line-height:1.6;color:var(--muted);border-left:2px solid var(--line);padding:.6rem 1rem;margin:1rem 0}

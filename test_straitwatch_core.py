@@ -30,6 +30,11 @@ def article(
 
 
 class SourceRegistryTests(unittest.TestCase):
+    def test_shared_words_do_not_merge_different_publishers(self):
+        self.assertEqual(REGISTRY.resolve('Epping Forest Guardian').source_id, 'unknown')
+        self.assertEqual(REGISTRY.resolve('Not Reuters Journal').source_id, 'unknown')
+        self.assertEqual(REGISTRY.resolve('The Guardian').source_id, 'guardian')
+        self.assertEqual(REGISTRY.resolve('Reuters - Reuters.com').source_id, 'reuters')
     def test_aliases_resolve_to_one_identity(self) -> None:
         ids = {
             REGISTRY.resolve(name).source_id

@@ -310,14 +310,16 @@ def source_tier(name: str) -> int:
     key = norm(name).lower().strip(" .")
     if key in TRUSTED_SOURCES:
         return TRUSTED_SOURCES[key]
-    for token, tier in TRUSTED_SOURCES.items():
-        if len(token) >= 5 and token in key:
-            return tier
     return 0
 
 
 def topic_for(title: str) -> str:
     return classify_headline(title)
+
+
+def analytical_headline(title: str) -> bool:
+    return bool(QUESTION_OR_ANALYSIS.search(title) or re.search(
+        r'\b(?:commentary|opinion|analysis|editorial)\s*:|\b(?:could|would|might|podr[ií]a|podr[ií]an)\b', title, re.I))
 
 def article_key(item: NewsItem | dict[str, Any]) -> str:
     if isinstance(item, NewsItem):
@@ -375,7 +377,8 @@ def fetch_news(now: datetime) -> tuple[list[NewsItem], list[str]]:
             pub = parse_date(node.findtext("pubDate"))
             source_node = node.find("source")
             source = norm(source_node.text if source_node is not None else "")
-            canonical = SOURCE_REGISTRY.resolve(source, link)
+            publisher_url = source_node.get('url', '') if source_node is not None else ''
+            canonical = SOURCE_REGISTRY.resolve(source, publisher_url or link)
             tier = canonical.tier if canonical.source_id != "unknown" else source_tier(source)
             if tier <= 0 or not title or pub < cutoff:
                 continue
@@ -390,7 +393,7 @@ def fetch_news(now: datetime) -> tuple[list[NewsItem], list[str]]:
                     tier=tier,
                     topic=topic_for(title),
                     query=query,
-                    analytical=bool(QUESTION_OR_ANALYSIS.search(title)),
+                    analytical=analytical_headline(title),
                     source_id=canonical.source_id,
                 )
             )
@@ -403,6 +406,15 @@ def dedupe_news(items: list[NewsItem]) -> list[NewsItem]:
     seen: set[str] = set()
     seen_url_titles: set[tuple[str, str]] = set()
     for item in sorted(items, key=lambda x: (parse_date(x.published_at), x.tier), reverse=True):
+        if urlparse(item.url).hostname == 'news.google.com' and ' - ' in item.title:
+            publisher = item.title.rsplit(' - ', 1)[-1].strip()
+            identified = SOURCE_REGISTRY.resolve(publisher)
+            if identified.source_id == 'unknown':
+                continue  # Preserve the raw cache; do not promote an ambiguous publisher.
+            item.source = identified.canonical_name
+            item.source_id = identified.source_id
+            item.tier = min(item.tier, identified.tier)
+        item.analytical = item.analytical or analytical_headline(item.title)
         canonical = SOURCE_REGISTRY.resolve(item.source, item.url)
         if canonical.source_id != "unknown":
             item.source = canonical.canonical_name
@@ -449,7 +461,7 @@ def evidence_as_news(status: dict[str, Any], now: datetime) -> list[NewsItem]:
                 tier=tier,
                 topic=topic_for(title),
                 query="legacy evidence",
-                analytical=bool(QUESTION_OR_ANALYSIS.search(title)),
+                analytical=analytical_headline(title),
                 source_id=canonical.source_id,
             )
         )
@@ -1025,8 +1037,20 @@ def render_page(
     state_label, _, confidence = display_state(status, operational, lang)
     change = change_paragraph(current_fp, previous_fp, lang)
     situation_items = draft.get("situation") if isinstance(draft.get("situation"), list) else fallback["situation"]
+    source_stamps = []
+    narrative = []
+    for item in situation_items:
+        text = norm(item)
+        if description and text.startswith(description):
+            remainder = text[len(description):].strip()
+            if remainder:
+                source_stamps.append(remainder)
+        elif text:
+            narrative.append(text)
     situation_html = "".join(
-        f'<p class="journal-lead">{safe(item)}</p>' for item in situation_items if norm(item)
+        f'<p class="journal-source-stamp">{safe(item)}</p>' for item in source_stamps
+    ) + "".join(
+        f'<p class="journal-lead">{safe(item)}</p>' for item in narrative
     )
     meaning_items = draft.get("meaning") if isinstance(draft.get("meaning"), list) else fallback["meaning"]
     meaning_html = "".join(f"<p>{safe(item)}</p>" for item in meaning_items if norm(item))
@@ -1106,9 +1130,9 @@ def render_page(
     desk = editorial_dashboard(editorial, lang)
     limit = editorial.get("limit_es" if lang == "es" else "limit_en") or ""
     method_note = (
-        "Parte automatizado con asistencia de IA sobre un paquete factual cerrado; no implica revisión humana de esta edición. La herramienta no busca noticias, no elige fuentes y no decide el estado. Los fragmentos rechazados se sustituyen por el borrador local; la edición completa vuelve a superar los controles de hechos, cifras, fuentes y estados antes de publicarse."
+        "Parte automatizado con asistencia de IA sobre un paquete factual cerrado; no implica revisión humana de esta edición ni lectura íntegra de cada artículo. La herramienta no busca noticias, no elige fuentes y no decide el estado. Los fragmentos rechazados se sustituyen por el borrador local; la edición completa vuelve a superar los controles de hechos, cifras, fuentes y estados antes de publicarse."
         if editor_engine in {"gemini", "openrouter-free"} and lang == "es"
-        else "Automated digest with AI assistance over a closed factual packet; this does not imply human review of this edition. The tool does not search for news, choose sources or determine the status. Rejected fragments use the local draft; the complete edition must pass the same checks for facts, figures, sources and states before publication."
+        else "Automated digest with AI assistance over a closed factual packet; this does not imply human review or full-article reading. The tool does not search for news, choose sources or determine the status. Rejected fragments use the local draft; the complete edition must pass the same checks for facts, figures, sources and states before publication."
         if editor_engine in {"gemini", "openrouter-free"}
         else "Este parte se compone mediante reglas locales y selección automática de titulares. No se ha leído ni verificado automáticamente el texto íntegro de cada noticia, ni se atribuye una revisión humana a cada edición. La fecha de un feed puede corresponder a una actualización, no al momento del hecho. Las marcas de medios diferentes tampoco garantizan investigación independiente. Para el análisis propio y reproducible, consulta el informe de datos del monitor."
         if lang == "es"

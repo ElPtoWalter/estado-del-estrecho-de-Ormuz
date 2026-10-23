@@ -16,8 +16,18 @@ from own_projects import eligible
 
 
 class ObservatoryContracts(unittest.TestCase):
+    def test_cached_publisher_mismatch_cannot_enter_the_factual_news_selection(self):
+        item = journal.NewsItem('Iran says ships damaged - Epping Forest Guardian', 'The Guardian',
+                                'https://news.google.com/rss/articles/example', '2026-10-22T08:00:00Z', 3, 'maritime', '')
+        self.assertEqual(journal.dedupe_news([item]), [])
+        self.assertEqual(journal.source_tier('Not Reuters Journal'), 0)
+
+    def test_hypotheses_and_commentary_remain_analytical(self):
+        self.assertTrue(journal.analytical_headline('Iran could drop mines into the Strait of Hormuz'))
+        self.assertTrue(journal.analytical_headline("COMMENTARY: Don't mistake an oil rebound for normality"))
+        self.assertFalse(journal.analytical_headline('Iran says seven vessels were damaged'))
     def test_private_previews_cannot_become_public_articles(self):
-        for name in ('work/preview.html', 'tests/report.html', '.private/index.html', '_audit/example.html'):
+        for name in ('work/preview.html', 'tests/report.html', '.private/index.html', '_audit/example.html', 'preview.html', 'private-notes.html', 'draft-analysis.html'):
             self.assertFalse(build.public_html_path(Path(name)), name)
         self.assertTrue(build.public_html_path(Path('diario/2026-10-22.html')))
         self.assertFalse(build.copy_asset(Path('monetization.json')))

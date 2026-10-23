@@ -757,6 +757,8 @@ def _editorial_prompt(
         "No abras todos los párrafos con 'según', 'el monitor' o 'las fuentes'. Evita muletillas "
         "como 'la lectura útil', 'esta combinación de señales' o 'la agenda informativa'. "
         "No conviertas varios medios que reproducen una misma agencia en comprobaciones independientes. "
+        "Atribuye cada oración solo al medio cuyo titular la respalda, no a todos los medios de la sección. "
+        "Conserva el autor de una declaración: 'Iran says' es una afirmación de Iran, no una comprobación del medio. "
         "Atribuye los titulares y las declaraciones; su fecha de publicación no acredita la del hecho. "
         "No afirmes observaciones AIS ni comprobaciones primarias ausentes del paquete. "
         "Explica consecuencias energéticas o económicas solo cuando estén respaldadas; no rellenes "

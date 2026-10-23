@@ -956,6 +956,8 @@ def copy_asset(path: Path) -> bool:
 
 def public_html_path(path: Path) -> bool:
     """Do not publish previews, diagnostics or HTML from arbitrary nested folders."""
+    if path.name in {"preview.html", "test.html", "panel-x.html", "offline.html"} or path.name.startswith(("draft-", "private-", "admin-", "test-")):
+        return False
     return (not any(part.startswith('.') for part in path.parts)
             and (len(path.parts) == 1 or
                  (len(path.parts) == 2 and path.parts[0] in {"diario", "diary", "briefs"})))

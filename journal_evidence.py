@@ -52,7 +52,7 @@ def reading(topic, lang):
 
 
 def section_note(topic, items, lang):
-    relevant = [item for item in items if item.topic == topic][:2]
+    relevant = [item for item in items if item.topic == topic and not item.analytical][:2]
     if not relevant:
         return "Sin titulares seleccionados en este ámbito; no se añade una conclusión nueva." if lang == "es" else "No selected headlines in this area; no new conclusion is added."
     sources = ", ".join(dict.fromkeys(item.source for item in relevant))

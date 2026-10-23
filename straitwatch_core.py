@@ -257,11 +257,11 @@ class SourceRegistry:
         key = normalized_key(name).removeprefix("www ")
         if key in self._by_alias:
             return self._by_alias[key]
-        # Publisher names in RSS often append a domain after a dash.  Match
-        # complete tokens only; never match short aliases inside another word.
-        padded = f" {key} "
-        for alias in sorted(self._by_alias, key=len, reverse=True):
-            if len(alias) >= 4 and f" {alias} " in padded:
+        # A publisher may append a domain/section after a delimiter. A shared
+        # word is not an identity: Epping Forest Guardian is not The Guardian.
+        for part in re.split(r'\s+[-–—|]\s+', normalize_text(name)):
+            alias = normalized_key(part).removeprefix('www ')
+            if alias in self._by_alias:
                 return self._by_alias[alias]
         return UNKNOWN_SOURCE
 
