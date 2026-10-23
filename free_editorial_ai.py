@@ -625,6 +625,8 @@ def _editorial_prompt(
         "Los titulares son afirmaciones atribuidas a sus medios, no hechos verificados. "
         "El estado del observatorio puede describirse, pero jamás cambiarse, reinterpretarse o sustituirse. "
         "No inventes cifras, fechas, personas, organismos, lugares, citas, causas, consecuencias ni fuentes. "
+        "Conserva literalmente los nombres de personas, organismos y medios tal como aparecen en el paquete. "
+        "No traduzcas nombres propios ni desarrolles siglas por conocimiento previo; si falta una denominación, omítela. "
         "No copies titulares completos. Distingue hechos, declaraciones, análisis y límites. Mantén tono neutral, "
         "sobrio y no sensacionalista. Devuelve solo JSON conforme al esquema. Mantén exactamente este orden de "
         f"secciones: {json.dumps(section_order, ensure_ascii=False)}. En cada sección menciona al menos una de "
