@@ -4,6 +4,7 @@
 
 from __future__ import annotations
 import html
+import hashlib
 import json
 import re
 import shutil
@@ -432,8 +433,9 @@ def render_history(history: Any, lang: str, limit: int) -> str:
             else "is-closed" if raw_status == "CERRADO"
             else "is-uncertain"
         )
+        event_id = item.get('id') or hashlib.sha256(str(item).encode('utf-8')).hexdigest()[:16]
         rows.append(
-            f'<article class="timeline-item {timeline_class}"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-content">'
+            f'<article id="{esc(event_id)}" class="timeline-item {timeline_class}"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-content">'
             f'<div class="timeline-head"><strong>{esc(label)}</strong>'
             f'<time>{esc(human_date(item.get("at"), lang))}</time></div>'
             f'<p>{esc(summary, "")}</p></div></article>'

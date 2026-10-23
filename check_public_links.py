@@ -88,7 +88,22 @@ def check(root):
                 if switch and document_key(urljoin(base, anchor['href'])) != document_key(alternate):
                     errors.append(f'{page.relative_to(root)}: language switch does not match its alternate: {anchor["href"]}')
     atom = {'a': 'http://www.w3.org/2005/Atom'}
-    for name, folder in (('diario-feed.xml', 'diario'), ('diary-feed.xml', 'diary')):
+    monitor_feed = root / 'feed.xml'
+    if monitor_feed.exists():
+        try:
+            entries = ET.parse(monitor_feed).findall('a:entry', atom)
+        except ET.ParseError:
+            errors.append('feed.xml: invalid Atom XML')
+            entries = []
+        history = root / 'historial.html'
+        for entry in entries:
+            link = entry.find('a:link', atom)
+            href = link.get('href', '') if link is not None else ''
+            url = urlsplit(href)
+            if (url.scheme != 'https' or url.netloc != 'estrechoormuz.com' or url.path != '/historial.html'
+                    or not url.fragment or history not in parsers or unquote(url.fragment) not in parsers[history].ids):
+                errors.append(f'feed.xml: monitor entry requires an existing history anchor: {href}')
+    for name, folder in (('diario-feed.xml', 'diario'), ('diary-feed.xml', 'diary'), ('daily-brief-feed.xml', 'briefs')):
         feed = root / name
         if not feed.exists():
             continue

@@ -3,11 +3,47 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from build_public_site import repair_public_navigation, professional_language
+from build_public_site import repair_public_navigation, professional_language, render_history
 from check_public_links import References, check
 
 
 class PostDeployNavigationTests(unittest.TestCase):
+    def test_brief_feed_excludes_snapshots_without_historical_html(self):
+        import xml.etree.ElementTree as ET
+        from generate_daily_brief import build_feed
+        item = {'date': '2026-10-22', 'generated_at': '2026-10-22T18:00:00Z', 'summary_es': 'Parte de esa fecha.'}
+        atom = {'a': 'http://www.w3.org/2005/Atom'}
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            self.assertEqual(ET.fromstring(build_feed([item], item['generated_at'], root=root)).findall('a:entry', atom), [])
+            (root / 'briefs').mkdir()
+            (root / 'briefs/2026-10-22.html').write_text('<html><head><meta name="robots" content="noindex,follow"></head><body>Parte de esa fecha.</body></html>')
+            feed = build_feed([item], item['generated_at'], root=root)
+            entry = ET.fromstring(feed).find('a:entry', atom)
+            self.assertEqual(entry.find('a:link', atom).get('href'), 'https://estrechoormuz.com/briefs/2026-10-22.html')
+            self.assertEqual(entry.findtext('a:id', namespaces=atom), 'https://estrechoormuz.com/parte-diario.html#2026-10-22')
+            (root / 'index.html').write_text('<html><body>Home</body></html>')
+            (root / 'daily-brief-feed.xml').write_text(feed, encoding='utf-8')
+            self.assertEqual(check(root), [])
+
+    def test_monitor_feed_retains_both_supplied_and_legacy_history_anchors(self):
+        from update_status import build_feed
+        records = [{'id': 'event-original', 'at': '2026-10-23T18:38:46Z', 'status': 'INCIERTO',
+                    'summary_es': 'Registro original.', 'summary_en': 'Original record.'},
+                   {'at': '2026-10-22T18:00:00Z', 'status': 'ABIERTO', 'summary_es': 'Registro previo.'}]
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / 'index.html').write_text('<html><body>Home</body></html>')
+            (root / 'feed.xml').write_text(build_feed(records, 'https://estrechoormuz.com/'), encoding='utf-8')
+            history = root / 'historial.html'
+            history.write_text('<html><body>History without anchors</body></html>')
+            self.assertEqual(len(check(root)), 2)
+            history.write_text('<html><body>' + render_history(records, 'es', 50) + '</body></html>', encoding='utf-8')
+            self.assertEqual(check(root), [])
+            self.assertIn('Registro original.', history.read_text(encoding='utf-8'))
+            parser = References(); parser.feed(render_history(records, 'en', 50))
+            self.assertIn('event-original', parser.ids)
+
     def test_archived_translation_keeps_the_date_and_body(self):
         page = ('<html lang="es"><head><link rel="alternate" hreflang="en" '
                 'href="https://estrechoormuz.com/diary/2026-10-22.html"></head>'
