@@ -98,6 +98,18 @@ class JournalRevisionTests(unittest.TestCase):
             sources_by_section={'es': {'Tráfico': ['Reuters']}}, diagnostics=diagnostics)[0])
         self.assertEqual(diagnostics['reason'], 'section-number-provenance')
 
+    def test_section_accepts_its_real_iso_publication_day_but_not_another_day(self):
+        facts = {'editorial_brief': {'mode': 'continuity'}, 'selected_sources': [
+            {'source': 'Reuters', 'title': 'Shipping traffic', 'published_at': '2026-10-23T13:27:04Z'}]}
+        candidate = valid_draft()
+        candidate['sections'][0]['paragraph'] += ' Reuters publicó esta referencia el 23 de octubre de 2026.'
+        inputs = {'facts': facts, 'fallbacks': {'es': valid_draft()}, 'sources_by_section': {'es': {'Tráfico': ['Reuters']}}}
+        self.assertIsNotNone(_validate_candidate({'es': candidate}, **inputs)[0])
+        candidate['sections'][0]['paragraph'] = candidate['sections'][0]['paragraph'].replace('23 de octubre', '24 de octubre')
+        diagnostics = {}
+        self.assertIsNone(_validate_candidate({'es': candidate}, **inputs, diagnostics=diagnostics)[0])
+        self.assertEqual(diagnostics['reason'], 'section-number-provenance')
+
     def test_live_diary_links_are_rejected_even_if_feed_xml_is_called_directly(self):
         item = {'date': '2026-10-22', 'url_es': journal.BASE_URL + '/diario.html',
                 'url_en': journal.BASE_URL + '/en-diary.html'}

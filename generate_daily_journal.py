@@ -807,6 +807,12 @@ def editorial_drafts(
                   'source_ids', 'operational_impact', 'operational_eligible')
     facts['events'] = [{key: event[key] for key in audit_keys if key in event} for event in facts['events']]
     facts['statements'] = [event for event in facts['events'] if event.get('classification') == 'DECLARATION']
+    facts['comparison_with_previous_edition'] = {
+        'previous_state': previous_fp.get('v7_state'), 'current_state': current_fp.get('v7_state'),
+        'state_changed': previous_fp.get('v7_state') != current_fp.get('v7_state'),
+        'changed_dimensions': [key for key, value in current_fp.get('dimensions', {}).items()
+                               if previous_fp.get('dimensions', {}).get(key) != value],
+    }
     facts.update({
         "edition_date": local_dt.date().isoformat(),
         "primary_context": editorial.get('primary_context', []),

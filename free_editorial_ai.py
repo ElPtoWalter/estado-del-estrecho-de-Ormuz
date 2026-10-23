@@ -151,9 +151,10 @@ def _draft_schema(section_titles: list[str]) -> dict[str, Any]:
         "type": "object",
         "additionalProperties": False,
         "properties": {
-            "headline": {"type": "string"},
-            "deck": {"type": "string"},
-            "situation": {"type": "array", "items": {"type": "string"}},
+            "headline": {"type": "string", "minLength": 28, "maxLength": 180, "description": "28 to 180 characters; a specific sourced headline, no invented news."},
+            "deck": {"type": "string", "minLength": 80, "maxLength": 520, "description": "80 to 520 characters. A distinct lead; name the publisher for any press claim."},
+            "situation": {"type": "array", "minItems": 2, "maxItems": 3,
+                          "items": {"type": "string", "minLength": 75, "maxLength": 1100}},
             "sections": {
                 "type": "array",
                 "items": {
@@ -161,13 +162,15 @@ def _draft_schema(section_titles: list[str]) -> dict[str, Any]:
                     "additionalProperties": False,
                     "properties": {
                         "title": {"type": "string", "enum": section_titles},
-                        "paragraph": {"type": "string"},
+                        "paragraph": {"type": "string", "minLength": 85, "maxLength": 1300, "description": "85 to 1300 characters. A concrete sourced news detail, retaining dates and original speaker."},
                     },
                     "required": ["title", "paragraph"],
                 },
             },
-            "meaning": {"type": "array", "items": {"type": "string"}},
-            "watch": {"type": "array", "items": {"type": "string"}},
+            "meaning": {"type": "array", "minItems": 1, "maxItems": 2,
+                        "items": {"type": "string", "minLength": 75, "maxLength": 1100}},
+            "watch": {"type": "array", "minItems": 3, "maxItems": 4,
+                      "items": {"type": "string", "minLength": 28, "maxLength": 360}},
         },
         "required": ["headline", "deck", "situation", "sections", "meaning", "watch"],
     }
@@ -500,9 +503,10 @@ def _validate_language_draft(
     watch = _list_of_text(draft.get("watch"), 3, 4, 28, 360)
     if not all((headline, deck, situation, meaning, watch)):
         return reject("required-field-shape")
-    if facts.get('editorial_brief') and re.search(r'precios?|crudo|petr[oó]leo|oil prices?|Brent', headline, re.I):
-        if not any(_mentions_source(headline, item.get('source', '')) for item in facts.get('selected_sources', []) if item.get('source')):
-            return reject('headline-claim-attribution')
+    for field_name, text in (('headline', headline), ('deck', deck)):
+        if facts.get('editorial_brief') and re.search(r'precios?|crudo|petr[oó]leo|oil prices?|Brent', text, re.I):
+            if not any(_mentions_source(text, item.get('source', '')) for item in facts.get('selected_sources', []) if item.get('source')):
+                return reject(field_name + '-claim-attribution')
 
     expected_titles = [
         str(section.get("title", ""))
@@ -529,7 +533,11 @@ def _validate_language_draft(
         if facts.get('editorial_brief'):
             records = [item for item in facts.get('selected_sources', [])
                        if _canonical_source(item.get('source', '')) in section_sources]
-            if _numbers(paragraph) - (_numbers(records) | _numbers(fallback['sections'][position]['paragraph'])):
+            section_numbers = _numbers(records) | _numbers(fallback['sections'][position]['paragraph'])
+            for known_date in _packet_dates(records):
+                section_numbers.update({str(known_date.day), str(known_date.month), str(known_date.year),
+                                        f'{known_date.day:02d}', f'{known_date.month:02d}'})
+            if _numbers(paragraph) - section_numbers:
                 return reject('section-number-provenance')
             if paragraph != fallback['sections'][position]['paragraph']:
                 mentioned = [item for item in records if _mentions_source(paragraph, item.get('source', ''))]

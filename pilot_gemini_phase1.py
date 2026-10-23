@@ -68,16 +68,19 @@ def run_pilot(root: Path) -> dict[str, Any]:
         raise RuntimeError("Missing real event store; run the monitor before the pilot")
     now = datetime.now(timezone.utc).astimezone(journal.MADRID)
     news = journal.dedupe_news(journal.evidence_as_news(status, now) + load_news(latest if isinstance(latest, dict) else {}))
+    seen = set(state.get('seen_keys', []) if isinstance(state, dict) else [])
+    seen.update(journal.article_key(item) for item in load_news(latest if isinstance(latest, dict) else {}))
+    new_items = [item for item in news if journal.article_key(item) not in seen]
     if not news:
         raise RuntimeError("Missing real newsroom references; run the daily generator before the pilot")
 
     previous_fp = state.get("fingerprint", {}) if isinstance(state, dict) else {}
     current_fp = journal.state_fingerprint(status, operational, event_store)
-    editorial = journal.build_editorial_context(root, news, [], now)
+    editorial = journal.build_editorial_context(root, news, new_items, now)
 
     with temporary_environment({"GEMINI_API_KEY": None, "OPENROUTER_API_KEY": None}):
         local_drafts, local_engine, local_status, local_trace = journal.editorial_drafts(
-            status, operational, news, [], previous_fp, current_fp, now, editorial, event_store
+            status, operational, news, new_items, previous_fp, current_fp, now, editorial, event_store
         )
 
     gemini_key = os.environ.get("GEMINI_API_KEY", "").strip()
@@ -87,7 +90,7 @@ def run_pilot(root: Path) -> dict[str, Any]:
     response_capture = {}
     with temporary_environment({"OPENROUTER_API_KEY": None}):
         gemini_drafts, gemini_engine, gemini_status, gemini_trace = journal.editorial_drafts(
-            status, operational, news, [], previous_fp, current_fp, now, editorial, event_store,
+            status, operational, news, new_items, previous_fp, current_fp, now, editorial, event_store,
             packet_capture=validation_inputs,
             response_capture=response_capture,
         )
@@ -123,6 +126,7 @@ def run_pilot(root: Path) -> dict[str, Any]:
         "unaccepted_generation_for_diagnosis_only": response_capture,
         "preview_snapshot": {'status': status, 'operational': operational, 'previous': previous_fp,
                              'fingerprint': current_fp, 'news': [journal.asdict(item) for item in news],
+                             'new_items': [journal.asdict(item) for item in new_items],
                              'editorial': {key: value for key, value in editorial.items() if key != 'signal'}},
         "local": {
             "engine": local_engine,
@@ -183,9 +187,10 @@ def write_previews(report: dict[str, Any], root: Path, output: Path) -> None:
     now = journal.parse_date(report['timestamp']).astimezone(journal.MADRID)
     news = load_news({'news': snapshot['news']} if 'news' in snapshot else journal.load_json(root / 'journal-latest.json', {}))
     context = snapshot['editorial'] if 'editorial' in snapshot else journal.build_editorial_context(root, news, [], now)
+    new_items = load_news({'news': snapshot.get('new_items', [])})
     styles = '\n'.join((root / name).read_text(encoding='utf-8') for name in ('styles.css', 'v11.css', 'diario-v8.css'))
     for lang in ('es', 'en'):
-        page = journal.render_page(status=status, operational=operational, news=news, new_items=[],
+        page = journal.render_page(status=status, operational=operational, news=news, new_items=new_items,
             previous_fp=previous, current_fp=fingerprint, local_dt=now, lang=lang,
             canonical=journal.BASE_URL + ('/diario.html' if lang == 'es' else '/en-diary.html'),
             archive=False, material_score_value=0, material_reasons=[], editorial=context,
