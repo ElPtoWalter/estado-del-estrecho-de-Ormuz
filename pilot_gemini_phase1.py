@@ -66,11 +66,11 @@ def run_pilot(root: Path) -> dict[str, Any]:
         raise RuntimeError("Missing current monitor or canonical operational assessment")
     if not isinstance(event_store, dict) or not event_store.get("events"):
         raise RuntimeError("Missing real event store; run the monitor before the pilot")
-    news = load_news(latest if isinstance(latest, dict) else {})
+    now = datetime.now(timezone.utc).astimezone(journal.MADRID)
+    news = journal.dedupe_news(journal.evidence_as_news(status, now) + load_news(latest if isinstance(latest, dict) else {}))
     if not news:
         raise RuntimeError("Missing real newsroom references; run the daily generator before the pilot")
 
-    now = datetime.now(timezone.utc).astimezone(journal.MADRID)
     previous_fp = state.get("fingerprint", {}) if isinstance(state, dict) else {}
     current_fp = journal.state_fingerprint(status, operational, event_store)
     editorial = journal.build_editorial_context(root, news, [], now)
@@ -176,13 +176,13 @@ def write_previews(report: dict[str, Any], root: Path, output: Path) -> None:
         raise ValueError("Pilot previews must be outside the source repository")
     output.mkdir(parents=True, exist_ok=True)
     snapshot = report.get('preview_snapshot', {})
-    status = snapshot.get('status') or journal.load_json(root / 'status.json', {})
-    operational = snapshot.get('operational') or journal.get_operational(status, root)
-    previous = snapshot.get('previous') or journal.load_json(root / 'journal-state.json', {}).get('fingerprint', {})
-    fingerprint = snapshot.get('fingerprint') or journal.state_fingerprint(status, operational, journal.load_json(root / 'events.json', {}))
+    status = snapshot['status'] if 'status' in snapshot else journal.load_json(root / 'status.json', {})
+    operational = snapshot['operational'] if 'operational' in snapshot else journal.get_operational(status, root)
+    previous = snapshot['previous'] if 'previous' in snapshot else journal.load_json(root / 'journal-state.json', {}).get('fingerprint', {})
+    fingerprint = snapshot['fingerprint'] if 'fingerprint' in snapshot else journal.state_fingerprint(status, operational, journal.load_json(root / 'events.json', {}))
     now = journal.parse_date(report['timestamp']).astimezone(journal.MADRID)
     news = load_news({'news': snapshot['news']} if 'news' in snapshot else journal.load_json(root / 'journal-latest.json', {}))
-    context = snapshot.get('editorial') or journal.build_editorial_context(root, news, [], now)
+    context = snapshot['editorial'] if 'editorial' in snapshot else journal.build_editorial_context(root, news, [], now)
     styles = '\n'.join((root / name).read_text(encoding='utf-8') for name in ('styles.css', 'v11.css', 'diario-v8.css'))
     for lang in ('es', 'en'):
         page = journal.render_page(status=status, operational=operational, news=news, new_items=[],

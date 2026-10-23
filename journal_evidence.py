@@ -14,7 +14,7 @@ HEADLINE_ANCHORS = (
     (r'\bimports?\b', ('importaciones', 'imports')),
     (r'\bceasefire\b', ('alto el fuego', 'tregua', 'ceasefire')),
     (r'\bblockade\b', ('bloqueo', 'blockade')),
-    (r'\btankers?\b', ('petrolero', 'petroleros', 'tanker', 'tankers')),
+    (r'\btankers?\b', ('petrolero', 'petroleros', 'buque cisterna', 'buques cisterna', 'tanker', 'tankers')),
     (r'\bships?\b|\bvessels?\b', ('buque', 'buques', 'barco', 'barcos', 'ship', 'ships', 'vessel', 'vessels')),
 )
 

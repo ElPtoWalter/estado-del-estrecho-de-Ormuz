@@ -5,8 +5,10 @@ import tempfile
 import unittest
 from datetime import date
 from pathlib import Path
+from unittest.mock import patch
 
 import generate_daily_journal as journal
+import pilot_gemini_phase1 as pilot
 from check_public_links import check
 from free_editorial_ai import editorial_quality_report, _normalize_supplied_names, _validate_candidate, _entity_supported
 from journal_evidence import primary_context, classify_headline
@@ -16,6 +18,16 @@ ROOT = Path(__file__).parent
 
 
 class JournalRevisionTests(unittest.TestCase):
+    def test_preview_never_reads_changed_data_when_a_snapshot_is_present(self):
+        state = {'checked_at': '2026-10-23T13:44:37Z', 'summary_es': 'Instantánea original fechada', 'summary_en': 'Original dated snapshot'}
+        snapshot = {'status': state, 'operational': {}, 'previous': {}, 'fingerprint': {}, 'news': [], 'editorial': {}}
+        drafts = {lang: journal.fallback_editorial_draft(state, {}, [], {}, {},
+                    journal.parse_date('2026-10-23T18:00:00Z'), lang) for lang in ('es', 'en')}
+        report = {'timestamp': '2026-10-23T18:00:00Z', 'preview_snapshot': snapshot,
+                  'gemini': {'engine': 'rules', 'drafts': drafts}}
+        with tempfile.TemporaryDirectory() as folder, patch.object(journal, 'load_json', side_effect=AssertionError('Mutable data read')):
+            pilot.write_previews(report, ROOT, Path(folder))
+            self.assertIn('2026-10-23T13:44:37Z', (Path(folder) / 'preview-es.html').read_text(encoding='utf-8'))
     def test_a_spill_story_is_not_mistaken_for_an_oil_price_report(self):
         self.assertEqual(classify_headline('Oil spill hits beaches as tanker attacks multiply'), 'maritime')
         self.assertEqual(classify_headline('Oil prices rise after tanker attacks'), 'energy')

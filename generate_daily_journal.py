@@ -801,16 +801,22 @@ def editorial_drafts(
         ],
         watch_items=watchlist(status, operational, "es") + watchlist(status, operational, "en"),
     )
+    # Preserve audit identities/verification while withholding historical event
+    # headlines and dates that must not become this edition's news narrative.
+    audit_keys = ('event_id', 'topic', 'classification', 'verification_status',
+                  'source_ids', 'operational_impact', 'operational_eligible')
+    facts['events'] = [{key: event[key] for key in audit_keys if key in event} for event in facts['events']]
+    facts['statements'] = [event for event in facts['events'] if event.get('classification') == 'DECLARATION']
     facts.update({
         "edition_date": local_dt.date().isoformat(),
         "primary_context": editorial.get('primary_context', []),
         "editorial_brief": {
             "mode": "continuity" if previous_fp.get('v7_state') == current_fp.get('v7_state') else "assessment_change",
-            "headline": "Describe the actual assessment change or continuity. A press claim is not a confirmed development; retain its speaker and date.",
+            "headline": "Describe the actual assessment change or continuity. Any press news claim in the headline must name its reporting publisher; include its date if older than this edition. Do not state a market move as a current independent observation.",
             "deck": "Lead on one concrete attributed news detail (not another paraphrase of the open/restricted assessment). Do not enumerate publishers.",
             "situation": "Two distinct short paragraphs: chronology/publication dates of the supplied references; then the exact scope of verification. Do not paraphrase the deck or repeat the assessment summary.",
             "sections": "Each paragraph develops one concrete supplied news detail, retaining a specific grounding anchor. Use a different story from the deck/situation. For an Iranian declaration name Iran as speaker (Iran says / Irán afirma), and attribute the reporting publisher separately. Do not merge different stories or turn hypothetical headlines into incidents.",
-            "meaning": "When primary_context exists, include its named source, reference period and a concrete supplied quantity. This is mandatory historical perspective, not today's traffic or a loss estimate. No generic placeholder about important flows. With no context, add no external background.",
+            "meaning": "When primary_context exists, include its named source, reference period and a concrete supplied quantity, plus its supplied limit: it does not measure today's traffic or supply losses. No generic placeholder about important flows. With no context, add no external background.",
             "watch": "Three concrete pending checks, with no predictions or repetition of the assessment.",
             "evidence_rule": "Use selected_sources only as attributed headline reports. events preserve the monitor audit, not a license to assert every event as confirmed. primary_context is historical and must name its period.",
         },

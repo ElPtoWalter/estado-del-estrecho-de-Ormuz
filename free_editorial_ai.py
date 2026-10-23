@@ -500,6 +500,9 @@ def _validate_language_draft(
     watch = _list_of_text(draft.get("watch"), 3, 4, 28, 360)
     if not all((headline, deck, situation, meaning, watch)):
         return reject("required-field-shape")
+    if facts.get('editorial_brief') and re.search(r'precios?|crudo|petr[oó]leo|oil prices?|Brent', headline, re.I):
+        if not any(_mentions_source(headline, item.get('source', '')) for item in facts.get('selected_sources', []) if item.get('source')):
+            return reject('headline-claim-attribution')
 
     expected_titles = [
         str(section.get("title", ""))
