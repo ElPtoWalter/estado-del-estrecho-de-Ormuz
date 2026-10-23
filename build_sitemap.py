@@ -24,7 +24,7 @@ XHTML_NS = "http://www.w3.org/1999/xhtml"
 ET.register_namespace("", SITEMAP_NS)
 ET.register_namespace("xhtml", XHTML_NS)
 
-EXCLUDED_FILES = {"404.html", "offline.html", "preview.html", "panel-x.html", "test.html"}
+EXCLUDED_FILES = {"404.html", "offline.html", "preview.html", "panel-x.html", "test.html", "google09e63d26dd2b5de4.html"}
 EXCLUDED_DIRS = {
     ".git",
     ".github",

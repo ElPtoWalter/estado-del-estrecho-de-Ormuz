@@ -51,13 +51,15 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           OPENROUTER_API_KEY: ""
-        run: python pilot_gemini_phase1.py --output "${{ runner.temp }}/ormuz-pilot-report.json"
+        run: python pilot_gemini_phase1.py --output "${{ runner.temp }}/ormuz-pilot-report.json" --preview-dir "${{ runner.temp }}/ormuz-pilot-preview"
 
       - name: Subir informe aislado del piloto
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: piloto-ormuz-${{ github.run_number }}
-          path: ${{ runner.temp }}/ormuz-pilot-report.json
+          path: |
+            ${{ runner.temp }}/ormuz-pilot-report.json
+            ${{ runner.temp }}/ormuz-pilot-preview
           if-no-files-found: warn
           retention-days: 14

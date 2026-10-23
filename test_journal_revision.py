@@ -1,0 +1,235 @@
+"""Editorial regressions: distinct prose, dated context and permanent distribution."""
+import copy
+import json
+import tempfile
+import unittest
+from datetime import date, datetime
+from pathlib import Path
+from unittest.mock import patch
+
+import generate_daily_journal as journal
+import pilot_gemini_phase1 as pilot
+from check_public_links import check
+from free_editorial_ai import editorial_quality_report, _normalize_supplied_names, _validate_candidate, _entity_supported, factual_packet_digest
+from journal_evidence import primary_context, classify_headline
+from test_free_editorial_ai import valid_draft
+
+ROOT = Path(__file__).parent
+
+
+class JournalRevisionTests(unittest.TestCase):
+    def test_record_in_a_month_does_not_establish_a_monthly_comparison(self):
+        draft = valid_draft()
+        draft['deck'] = 'Reuters informó de un récord mensual en octubre en el recuento de ataques a buques del estrecho.'
+        inputs = {'facts': {'selected_sources': [{'source': 'Reuters', 'title': 'Ship attacks hit record high in October', 'published_at': '2026-10-23T14:59:43Z'}]},
+                  'fallbacks': {'es': valid_draft()}, 'sources_by_section': {'es': {'Tráfico': ['Reuters']}}}
+        diagnostics = {}
+        self.assertIsNone(_validate_candidate({'es': draft}, **inputs, diagnostics=diagnostics)[0])
+        self.assertEqual(diagnostics['reason'], 'unsupported-record-period')
+        draft['deck'] = draft['deck'].replace('récord mensual', 'récord')
+        self.assertIsNotNone(_validate_candidate({'es': draft}, **inputs)[0])
+
+    def test_model_cannot_expand_the_trusted_verification_scope(self):
+        draft = valid_draft()
+        facts = {'editorial_brief': {'verified_situation': {'es': list(draft['situation'])}}}
+        changed = copy.deepcopy(draft)
+        changed['situation'][0] = 'Se verificaron de forma independiente todos los avisos marítimos y los ataques de la jornada.'
+        diagnostics = {}
+        self.assertIsNone(_validate_candidate({'es': changed}, facts=facts, fallbacks={'es': draft},
+            sources_by_section={'es': {'Tráfico': ['Reuters']}}, diagnostics=diagnostics)[0])
+        self.assertEqual(diagnostics['reason'], 'verification-scope-provenance')
+
+    def test_deck_repeated_as_part_of_a_longer_section_is_flagged(self):
+        draft = valid_draft()
+        draft['deck'] = 'The Guardian reports a five-month oil high as fears grow that the United States will renew strikes on Iran.'
+        draft['sections'][0]['paragraph'] = ('The Guardian reports a five-month oil high amid fears that the United States will renew strikes on Iran, '
+            'while Reuters notes that oil prices have reached a five-month high as Houthi attacks stoke Middle East supply fears.')
+        self.assertIn('repeated_sentence_across_fields', editorial_quality_report(draft, {})['flags'])
+
+    def test_language_cannot_use_another_languages_headline(self):
+        draft = valid_draft()
+        facts = {'editorial_brief': {'headline_options': {'es': ['Titular español de la edición con atribución'],
+                                                        'en': [draft['headline']]}}}
+        diagnostics = {}
+        self.assertIsNone(_validate_candidate({'es': draft}, facts=facts, fallbacks={'es': draft},
+            sources_by_section={'es': {'Tráfico': ['Reuters']}}, diagnostics=diagnostics)[0])
+        self.assertEqual(diagnostics['reason'], 'headline-provenance-options')
+
+    def test_news_headline_requires_the_literal_claim_a_new_reference_and_its_date(self):
+        item = journal.NewsItem('Oil hits five - month high amid supply fears', 'The Guardian',
+            'https://example.org/oil', '2026-10-23T13:27:04Z', 3, 'energy', '')
+        now = datetime(2026, 10, 23, 20, tzinfo=journal.MADRID)
+        base = {lang: {'headline': 'A sufficiently long operational headline'} for lang in ('es', 'en')}
+        op = {'state': 'OPEN_SEVERELY_RESTRICTED'}
+        options = journal.editorial_headlines(op, [item], [item], now, base)
+        self.assertTrue(options['es'][0].startswith('The Guardian'))
+        self.assertNotIn('The Guardian', journal.editorial_headlines(op, [item], [], now, base)['es'][0])
+        tomorrow = datetime(2026, 10, 24, 20, tzinfo=journal.MADRID)
+        self.assertNotIn('The Guardian', journal.editorial_headlines(op, [item], [item], tomorrow, base)['es'][0])
+    def revision_fixture(self, unsafe_second=False, with_context=False):
+        status = {'checked_at': '2026-10-23T13:44:37Z', 'status': 'INCIERTO'}
+        op = {'state': 'OPEN_SEVERELY_RESTRICTED', 'label_es': 'ABIERTO · TRÁNSITO MUY RESTRINGIDO',
+              'label_en': 'OPEN · SEVERELY RESTRICTED TRANSIT', 'confidence': 'MEDIA',
+              'summary_es': 'Hay tránsitos comerciales confirmados, pero el flujo permanece muy reducido y sujeto a restricciones severas de seguridad.',
+              'summary_en': 'Commercial transits are confirmed, but flows remain reduced and subject to severe security restrictions.',
+              'dimensions': {'traffic': 'REDUCED', 'risk': 'EXTREME'}}
+        news = [journal.NewsItem('Shipping traffic update', source, f'https://example.org/{i}',
+                                 '2026-10-23T13:00:00Z', 4, 'maritime', '')
+                for i, source in enumerate(('Reuters', 'Associated Press'))]
+        calls = []
+        def fake(**kwargs):
+            calls.append(kwargs)
+            kwargs['trace'].update({'factual_packet_sha256': factual_packet_digest(kwargs['facts']),
+                                     'attempts': [{'provider': 'gemini', 'model': 'test-model'}]})
+            draft = copy.deepcopy(kwargs['fallbacks'])
+            if len(calls) == 2 and unsafe_second:
+                draft['es']['headline'] = 'El estrecho está cerrado y todo el tráfico permanece detenido'
+                draft['es']['deck'] = 'La clasificación se ha sustituido por un cierre completo del corredor y de la navegación comercial.'
+                return draft, 'gemini', 'ok'
+            return draft, ('gemini' if len(calls) == 1 else 'rules'), ('ok' if len(calls) == 1 else 'timeout')
+        fp = {'v7_state': op['state'], 'dimensions': op['dimensions']}
+        with patch.object(journal, 'generate_editorial_drafts', side_effect=fake):
+            result = journal.editorial_drafts(status, op, news, [], fp, fp,
+                datetime(2026, 10, 23, 20, tzinfo=journal.MADRID),
+                {'primary_context': primary_context(ROOT, date(2026, 10, 23))} if with_context else {})
+        return calls, result
+
+    def test_style_revision_is_bounded_and_failure_keeps_the_safe_edition(self):
+        calls, result = self.revision_fixture()
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(calls[1]['api_key'], '')
+        self.assertEqual(calls[0]['facts'], calls[1]['facts'])
+        self.assertFalse(result[3]['style_revision']['adopted'])
+        self.assertEqual(result[0], calls[0]['fallbacks'])
+
+    def test_complete_local_draft_with_two_periods_from_same_primary_source_is_valid(self):
+        calls, result = self.revision_fixture(with_context=True)
+        diagnostics = {}
+        valid, _ = _validate_candidate(result[0], facts=calls[0]['facts'], fallbacks=calls[0]['fallbacks'],
+            sources_by_section=calls[0]['sources_by_section'], diagnostics=diagnostics)
+        self.assertIsNotNone(valid, diagnostics)
+
+    def test_style_revision_cannot_override_operational_safety(self):
+        calls, result = self.revision_fixture(unsafe_second=True)
+        self.assertEqual(len(calls), 2)
+        self.assertFalse(result[3]['style_revision']['valid_against_original_packet'])
+        self.assertFalse(result[3]['style_revision']['adopted'])
+        self.assertNotIn('todo el tráfico permanece detenido', result[0]['es']['headline'])
+    def test_preview_never_reads_changed_data_when_a_snapshot_is_present(self):
+        state = {'checked_at': '2026-10-23T13:44:37Z', 'summary_es': 'Instantánea original fechada', 'summary_en': 'Original dated snapshot'}
+        snapshot = {'status': state, 'operational': {}, 'previous': {}, 'fingerprint': {}, 'news': [], 'editorial': {}}
+        drafts = {lang: journal.fallback_editorial_draft(state, {}, [], {}, {},
+                    journal.parse_date('2026-10-23T18:00:00Z'), lang) for lang in ('es', 'en')}
+        report = {'timestamp': '2026-10-23T18:00:00Z', 'preview_snapshot': snapshot,
+                  'gemini': {'engine': 'rules', 'drafts': drafts}}
+        with tempfile.TemporaryDirectory() as folder, patch.object(journal, 'load_json', side_effect=AssertionError('Mutable data read')):
+            pilot.write_previews(report, ROOT, Path(folder))
+            self.assertIn('2026-10-23T13:44:37Z', (Path(folder) / 'preview-es.html').read_text(encoding='utf-8'))
+    def test_a_spill_story_is_not_mistaken_for_an_oil_price_report(self):
+        self.assertEqual(classify_headline('Oil spill hits beaches as tanker attacks multiply'), 'maritime')
+        self.assertEqual(classify_headline('Oil prices rise after tanker attacks'), 'energy')
+    def test_repeat_detector_compares_fields_not_just_the_template(self):
+        draft = valid_draft()
+        draft['situation'][0] = draft['deck']
+        quality = editorial_quality_report(draft, {})
+        self.assertIn('repeated_sentence_across_fields', quality['flags'])
+        self.assertFalse(quality['style_checks_passed'])
+
+    def test_typography_only_normalizes_places_already_in_the_packet(self):
+        facts = {'selected_sources': [{'title': 'Iran and the Strait of Hormuz in the Middle East'}]}
+        value = {'headline': 'ormuz y oriente medio: seguimiento de irán', 'meaning': ['Atlantis remains absent.']}
+        result = _normalize_supplied_names(value, facts, 'es')
+        self.assertEqual(result['headline'], 'Ormuz y Oriente Medio: seguimiento de Irán')
+        self.assertEqual(result['meaning'], value['meaning'])
+        self.assertEqual(_normalize_supplied_names('oriente medio', {}, 'es'), 'oriente medio')
+        self.assertTrue(_entity_supported('estados unidos', 'Iran warns US about shipping'))
+        self.assertFalse(_entity_supported('estados unidos', 'Shipping report from Reuters'))
+        self.assertEqual(_normalize_supplied_names('U.S. CENTCOM', {'title': 'US alert'}, 'en'), 'U.S. CENTCOM')
+
+    def test_primary_context_is_dated_and_bound_to_the_reviewed_text(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            original = json.loads((ROOT / 'editorial-context.json').read_text(encoding='utf-8'))
+            path = root / 'editorial-context.json'
+            path.write_text(json.dumps(original), encoding='utf-8')
+            self.assertEqual(len(primary_context(root, date(2026, 10, 23))), 2)
+            self.assertEqual(primary_context(root, date(2026, 10, 22)), [])
+            original['items'][0]['fact_es'] += ' An unreviewed extra claim.'
+            path.write_text(json.dumps(original), encoding='utf-8')
+            remaining = primary_context(root, date(2026, 10, 23))
+            self.assertEqual([item['id'] for item in remaining], ['eia-hormuz-bypass-2025'])
+
+    def test_historical_primary_source_needs_its_period_in_the_same_block(self):
+        draft = valid_draft()
+        draft['meaning'][0] += ' La EIA aporta una referencia histórica para interpretar la relevancia del corredor.'
+        facts = {'selected_sources': [{'source': 'Reuters'}],
+                 'primary_context': [{'source': 'EIA', 'reference_period': '2024'}]}
+        diagnostics = {}
+        self.assertIsNone(_validate_candidate({'es': draft}, facts=facts, fallbacks={'es': valid_draft()},
+            sources_by_section={'es': {'Tráfico': ['Reuters']}}, diagnostics=diagnostics)[0])
+        self.assertEqual(diagnostics['reason'], 'required-dated-primary-context')
+
+    def test_generic_market_prose_cannot_replace_a_spill_headline(self):
+        draft = valid_draft()
+        draft['sections'][0]['paragraph'] = 'Euronews ha informado de que los precios del petróleo y el suministro global continúan condicionados por las incidencias en las rutas energéticas.'
+        facts = {'editorial_brief': {'mode': 'continuity'}, 'selected_sources': [
+            {'source': 'Euronews', 'title': 'Oil spill hits beaches', 'grounding': {'anchors': ['vertido', 'derrame', 'oil spill']}}]}
+        diagnostics = {}
+        self.assertIsNone(_validate_candidate({'es': draft}, facts=facts, fallbacks={'es': valid_draft()},
+            sources_by_section={'es': {'Tráfico': ['Euronews']}}, diagnostics=diagnostics)[0])
+        self.assertEqual(diagnostics['reason'], 'section-headline-grounding')
+
+    def test_rephrased_assessment_in_lead_is_an_editorial_flag(self):
+        draft = valid_draft()
+        draft['deck'] = 'La navegación mantiene tránsitos confirmados y restricciones de seguridad.'
+        draft['situation'][0] = 'Los tránsitos comerciales sufren restricciones de seguridad durante la jornada.'
+        self.assertIn('assessment_repeated_in_lead', editorial_quality_report(draft, {})['flags'])
+
+    def test_a_number_elsewhere_in_packet_does_not_authorize_another_publishers_claim(self):
+        draft = valid_draft()
+        draft['sections'][0]['paragraph'] += ' Reuters calcula 77 unidades.'
+        facts = {'editorial_brief': {'mode': 'continuity'},
+                 'selected_sources': [{'source': 'Reuters', 'title': 'Shipping traffic'},
+                                      {'source': 'Bloomberg', 'title': '77 units in another story'}]}
+        diagnostics = {}
+        self.assertIsNone(_validate_candidate({'es': draft}, facts=facts, fallbacks={'es': valid_draft()},
+            sources_by_section={'es': {'Tráfico': ['Reuters']}}, diagnostics=diagnostics)[0])
+        self.assertEqual(diagnostics['reason'], 'section-number-provenance')
+
+    def test_section_accepts_its_real_iso_publication_day_but_not_another_day(self):
+        facts = {'editorial_brief': {'mode': 'continuity'}, 'selected_sources': [
+            {'source': 'Reuters', 'title': 'Shipping traffic', 'published_at': '2026-10-23T13:27:04Z'}]}
+        candidate = valid_draft()
+        candidate['sections'][0]['paragraph'] += ' Reuters publicó esta referencia el 23 de octubre de 2026.'
+        inputs = {'facts': facts, 'fallbacks': {'es': valid_draft()}, 'sources_by_section': {'es': {'Tráfico': ['Reuters']}}}
+        self.assertIsNotNone(_validate_candidate({'es': candidate}, **inputs)[0])
+        candidate['sections'][0]['paragraph'] = candidate['sections'][0]['paragraph'].replace('23 de octubre', '24 de octubre')
+        diagnostics = {}
+        self.assertIsNone(_validate_candidate({'es': candidate}, **inputs, diagnostics=diagnostics)[0])
+        self.assertEqual(diagnostics['reason'], 'section-number-provenance')
+
+    def test_live_diary_links_are_rejected_even_if_feed_xml_is_called_directly(self):
+        item = {'date': '2026-10-22', 'url_es': journal.BASE_URL + '/diario.html',
+                'url_en': journal.BASE_URL + '/en-diary.html'}
+        for lang in ('es', 'en'):
+            self.assertNotIn('<entry>', journal.feed_xml([item], '2026-10-23T00:00:00Z', lang))
+
+    def test_public_artifact_checks_historical_links_noindex_and_ad_exclusion(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / 'index.html').write_text('<html><body>Home</body></html>', encoding='utf-8')
+            item = {'date': '2026-10-22', 'url_es': journal.BASE_URL + '/diario/2026-10-22.html'}
+            (root / 'diario-feed.xml').write_text(journal.feed_xml([item], '2026-10-23T00:00:00Z'), encoding='utf-8')
+            self.assertTrue(any('missing historical' in error for error in check(root)))
+            (root / 'diario').mkdir()
+            page = root / 'diario/2026-10-22.html'
+            page.write_text('<html><head><meta name="robots" content="noindex,follow"></head><body>Archive</body></html>', encoding='utf-8')
+            self.assertEqual(check(root), [])
+            page.write_text('<html><body>adsbygoogle</body></html>', encoding='utf-8')
+            errors = check(root)
+            self.assertTrue(any('noindex' in error for error in errors))
+            self.assertTrue(any('advertising' in error for error in errors))
+
+
+if __name__ == '__main__':
+    unittest.main()

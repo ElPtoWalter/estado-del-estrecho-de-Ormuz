@@ -172,8 +172,8 @@ class DailyJournalV8Tests(unittest.TestCase):
             self.assertEqual(latest["editorial"]["version"], journal.EDITORIAL_VERSION)
             self.assertEqual(latest["editorial_trace"]["provider"], "rules")
             self.assertEqual(len(latest["editorial_trace"]["factual_packet_sha256"]), 64)
-            self.assertIn("LA SEÑAL DEL DÍA", (root / "diario.html").read_text(encoding="utf-8"))
-            self.assertIn("QUÉ NO SABEMOS", (root / "diario.html").read_text(encoding="utf-8"))
+            self.assertIn("Contexto y alcance", (root / "diario.html").read_text(encoding="utf-8"))
+            self.assertNotIn('class="journal-triad"', (root / "diario.html").read_text(encoding="utf-8"))
             self.assertIn("JOURNAL_V8_HOME_START", (root / "index.html").read_text(encoding="utf-8"))
 
 

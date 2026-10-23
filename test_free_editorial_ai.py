@@ -9,6 +9,7 @@ from free_editorial_ai import (
     GEMINI_API_BASE,
     SYSTEM_INSTRUCTION,
     _named_entities,
+    _validate_candidate,
     free_gemini_model_name,
     free_model_name,
     generate_editorial_drafts,
@@ -373,6 +374,92 @@ class FreeEditorialAITests(unittest.TestCase):
         entities = _named_entities("Euronews. Un análisis posterior mantiene el límite. Maritime Zeta Group aparece después.")
         self.assertNotIn("euronews. un", entities)
         self.assertIn("maritime zeta group", entities)
+
+    def test_legitimate_attribution_does_not_create_an_unseen_entity(self):
+        self.facts['selected_sources'].append({'source': 'Associated Press', 'title': 'Shipping reference'})
+        candidate = valid_draft()
+        candidate['meaning'][0] += ' Según Associated Press, la referencia debe leerse con el contexto del parte.'
+        (_, engine, status), _ = self.call_gemini(candidate)
+        self.assertEqual((engine, status), ('gemini', 'ok'))
+
+    def test_attribution_prefix_does_not_allow_an_invented_organisation(self):
+        candidate = valid_draft()
+        candidate['meaning'][0] += ' Según Maritime Zeta Group, la referencia debe leerse con el contexto del parte.'
+        (_, engine, status), _ = self.call_gemini(candidate)
+        self.assertEqual((engine, status), ('rules', 'gemini-validation-es'))
+        self.assertIn('maritime zeta group', _named_entities('Según Maritime Zeta Group, la referencia sigue pendiente.'))
+
+    def test_reporting_noun_is_not_part_of_an_authorized_source_name(self):
+        self.facts['selected_sources'].append({'source': 'Associated Press', 'title': 'Shipping reference'})
+        for prefix in ('Informaciones de', 'Informes de', 'Datos de', 'Reports from'):
+            with self.subTest(prefix=prefix):
+                candidate = valid_draft()
+                candidate['meaning'][0] += f' {prefix} Associated Press describen el contexto de la referencia enlazada.'
+                (_, engine, status), _ = self.call_gemini(candidate)
+                self.assertEqual((engine, status), ('gemini', 'ok'))
+
+    def test_reporting_noun_does_not_allow_an_unknown_single_word_source(self):
+        for prefix in ('Informaciones de', 'Informes de', 'Datos de', 'Reports from'):
+            with self.subTest(prefix=prefix):
+                candidate = valid_draft()
+                candidate['meaning'][0] += f' {prefix} Acme describen el contexto de la referencia enlazada.'
+                (_, engine, status), _ = self.call_gemini(candidate)
+                self.assertEqual((engine, status), ('rules', 'gemini-validation-es'))
+
+    def test_known_iso_date_can_be_written_naturally_without_authorizing_other_dates(self):
+        self.facts['edition_date'] = '2026-10-23'
+        self.facts['selected_sources'][0]['published_at'] = '2026-10-22T08:00:00Z'
+        for literal, expected in [('23 de octubre de 2026', 'gemini'), ('22 de octubre de 2026', 'gemini'), ('23 de enero de 2026', 'rules'), ('10 de octubre de 2026', 'rules')]:
+            with self.subTest(literal=literal):
+                candidate = valid_draft()
+                candidate['meaning'][0] += f' La fecha de esta edición es {literal}.'
+                (_, engine, _), _ = self.call_gemini(candidate)
+                self.assertEqual(engine, expected)
+
+    def test_translated_place_requires_the_same_place_in_the_packet(self):
+        candidate = valid_draft()
+        candidate['meaning'][0] += ' La referencia enlazada describe el contexto de Oriente Medio.'
+        (_, engine, _), _ = self.call_gemini(candidate)
+        self.assertEqual(engine, 'rules')
+        self.facts['selected_sources'][0]['title'] = 'Middle East shipping update'
+        (_, engine, status), _ = self.call_gemini(candidate)
+        self.assertEqual((engine, status), ('gemini', 'ok'))
+
+    def test_place_translation_cannot_authorize_a_new_organisation(self):
+        self.facts['selected_sources'][0]['title'] = 'Middle East shipping update'
+        candidate = valid_draft()
+        candidate['meaning'][0] += ' Maritime Zeta Group describe el contexto de Oriente Medio.'
+        (_, engine, _), _ = self.call_gemini(candidate)
+        self.assertEqual(engine, 'rules')
+
+    def test_optional_fragment_recovery_keeps_valid_writing_and_removes_bad_fact(self):
+        candidate = valid_draft()
+        candidate['headline'] = 'Las referencias marítimas delimitan el alcance del seguimiento'
+        candidate['meaning'][0] += ' La muestra incluye 77 casos.'
+        trace = {}
+        (drafts, engine, status), _ = self.call_gemini(candidate, allow_field_fallback=True, trace=trace)
+        self.assertEqual((engine, status), ('gemini', 'partial-fallback'))
+        self.assertEqual(drafts['es']['headline'], candidate['headline'])
+        self.assertEqual(drafts['es']['meaning'], self.fallback['meaning'])
+        self.assertNotIn('77', json.dumps(drafts))
+        self.assertIn('es.meaning.0', trace['field_fallbacks'])
+        validated, _ = _validate_candidate(drafts, facts=self.facts, fallbacks={'es':self.fallback}, sources_by_section=self.sources)
+        self.assertIsNotNone(validated)
+
+    def test_fragment_recovery_cannot_keep_an_altered_operational_state(self):
+        candidate = valid_draft()
+        candidate['headline'] = 'El estrecho está cerrado y el paso permanece interrumpido'
+        candidate['deck'] = 'Las referencias publicadas requieren una lectura prudente y no permiten modificar la clasificación operativa que conserva el seguimiento.'
+        (drafts, engine, status), _ = self.call_gemini(candidate, allow_field_fallback=True)
+        self.assertEqual((engine, status), ('gemini', 'partial-fallback'))
+        self.assertEqual(drafts['es']['headline'], self.fallback['headline'])
+        self.assertEqual(self.facts['monitor']['status'], 'INCIERTO')
+
+    def test_fragment_recovery_does_not_accept_a_changed_schema(self):
+        candidate = valid_draft()
+        candidate['extra'] = 'Unknown field'
+        (_, engine, _), _ = self.call_gemini(candidate, allow_field_fallback=True)
+        self.assertEqual(engine, 'rules')
 
     def test_unknown_single_word_attribution_is_rejected(self):
         candidate = valid_draft()
