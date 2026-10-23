@@ -607,6 +607,10 @@ def _validate_candidate(
     # source/topic counts) that are not serialized as literal numbers in the
     # factual packet. They are valid baselines; unseen model numbers are not.
     allowed_numbers = _numbers(facts) | _numbers(fallbacks) | {"24"}
+    # A day immediately before T in an ISO timestamp is still a supplied number.
+    for known_date in _packet_dates(facts) | _packet_dates(fallbacks):
+        allowed_numbers.update({str(known_date.day), str(known_date.month), str(known_date.year),
+                                f'{known_date.day:02d}', f'{known_date.month:02d}'})
     allowed_acronyms = _acronyms(facts) | _acronyms(fallbacks)
     allowed_sources = _allowed_source_names(facts, sources_by_section)
     fallback_text = json.dumps(fallbacks, ensure_ascii=False).casefold()
