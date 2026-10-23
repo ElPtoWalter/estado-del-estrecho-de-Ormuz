@@ -9,6 +9,7 @@ from free_editorial_ai import (
     GEMINI_API_BASE,
     SYSTEM_INSTRUCTION,
     _named_entities,
+    _validate_candidate,
     free_gemini_model_name,
     free_model_name,
     generate_editorial_drafts,
@@ -429,6 +430,35 @@ class FreeEditorialAITests(unittest.TestCase):
         candidate = valid_draft()
         candidate['meaning'][0] += ' Maritime Zeta Group describe el contexto de Oriente Medio.'
         (_, engine, _), _ = self.call_gemini(candidate)
+        self.assertEqual(engine, 'rules')
+
+    def test_optional_fragment_recovery_keeps_valid_writing_and_removes_bad_fact(self):
+        candidate = valid_draft()
+        candidate['headline'] = 'Las referencias marítimas delimitan el alcance del seguimiento'
+        candidate['meaning'][0] += ' La muestra incluye 77 casos.'
+        trace = {}
+        (drafts, engine, status), _ = self.call_gemini(candidate, allow_field_fallback=True, trace=trace)
+        self.assertEqual((engine, status), ('gemini', 'partial-fallback'))
+        self.assertEqual(drafts['es']['headline'], candidate['headline'])
+        self.assertEqual(drafts['es']['meaning'], self.fallback['meaning'])
+        self.assertNotIn('77', json.dumps(drafts))
+        self.assertIn('es.meaning.0', trace['field_fallbacks'])
+        validated, _ = _validate_candidate(drafts, facts=self.facts, fallbacks={'es':self.fallback}, sources_by_section=self.sources)
+        self.assertIsNotNone(validated)
+
+    def test_fragment_recovery_cannot_keep_an_altered_operational_state(self):
+        candidate = valid_draft()
+        candidate['headline'] = 'El estrecho está cerrado y el paso permanece interrumpido'
+        candidate['deck'] = 'Las referencias publicadas requieren una lectura prudente y no permiten modificar la clasificación operativa que conserva el seguimiento.'
+        (drafts, engine, status), _ = self.call_gemini(candidate, allow_field_fallback=True)
+        self.assertEqual((engine, status), ('gemini', 'partial-fallback'))
+        self.assertEqual(drafts['es']['headline'], self.fallback['headline'])
+        self.assertEqual(self.facts['monitor']['status'], 'INCIERTO')
+
+    def test_fragment_recovery_does_not_accept_a_changed_schema(self):
+        candidate = valid_draft()
+        candidate['extra'] = 'Unknown field'
+        (_, engine, _), _ = self.call_gemini(candidate, allow_field_fallback=True)
         self.assertEqual(engine, 'rules')
 
     def test_unknown_single_word_attribution_is_rejected(self):

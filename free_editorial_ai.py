@@ -32,7 +32,7 @@ FREE_GEMINI_MODELS = frozenset({
 })
 MAX_FACT_BYTES = 48_000
 MAX_OUTPUT_TOKENS = 4_096
-VALIDATOR_VERSION = 6
+VALIDATOR_VERSION = 7
 
 SYSTEM_INSTRUCTION = (
     "Eres un redactor especializado en información marítima y energética. Escribe con claridad y "
@@ -671,6 +671,58 @@ def _validate_candidate(
     return validated, "ok"
 
 
+def _recover_validated_fragments(candidate, *, facts, fallbacks, sources_by_section):
+    """Optional recovery: every edit and the final bilingual output use the same gate."""
+    if not isinstance(candidate, dict) or set(candidate) != set(fallbacks):
+        return None, []
+    current, _ = _validate_candidate(fallbacks, facts=facts, fallbacks=fallbacks, sources_by_section=sources_by_section)
+    if current is None:
+        return None, []
+    baseline = copy.deepcopy(current)
+    rejected = []
+
+    def accept(path, value):
+        nonlocal current
+        trial = copy.deepcopy(current)
+        node = trial
+        for key in path[:-1]:
+            node = node[key]
+        node[path[-1]] = value
+        validated, _ = _validate_candidate(trial, facts=facts, fallbacks=fallbacks, sources_by_section=sources_by_section)
+        if validated is None:
+            rejected.append('.'.join(map(str, path)))
+        else:
+            current = validated
+
+    for lang, fallback in fallbacks.items():
+        draft = candidate.get(lang)
+        if not isinstance(draft, dict) or set(draft) != set(fallback):
+            return None, []
+        sections = draft.get('sections')
+        if not isinstance(sections, list) or len(sections) != len(fallback['sections']):
+            return None, []
+        if any(not isinstance(section, dict) or set(section) != {'title', 'paragraph'}
+               or section['title'] != fallback['sections'][i]['title'] for i, section in enumerate(sections)):
+            return None, []
+        for field in ('headline', 'deck'):
+            accept([lang, field], draft[field])
+        for field in ('situation', 'meaning', 'watch'):
+            values = draft.get(field)
+            if not isinstance(values, list):
+                return None, []
+            if len(values) != len(current[lang][field]):
+                accept([lang, field], values)
+            else:
+                for i, value in enumerate(values):
+                    accept([lang, field, i], value)
+        for i, section in enumerate(sections):
+            accept([lang, 'sections', i, 'paragraph'], section['paragraph'])
+    final, _ = _validate_candidate(current, facts=facts, fallbacks=fallbacks, sources_by_section=sources_by_section)
+    if final is None or final == baseline or not rejected:
+        return None, []
+    return final, rejected
+
+
 def _editorial_prompt(
     *,
     site_name: str,
@@ -737,6 +789,7 @@ def generate_editorial_drafts(
     timeout: int = 45,
     opener: Callable[..., Any] = urllib.request.urlopen,
     trace: dict[str, Any] | None = None,
+    allow_field_fallback: bool = False,
 ) -> tuple[dict[str, dict[str, Any]], str, str]:
     """Return validated drafts, preferring free-tier Gemini and falling back safely."""
     safe_fallbacks = copy.deepcopy(fallbacks)
@@ -798,7 +851,19 @@ def generate_editorial_drafts(
             )
             if validated is not None:
                 _set_trace(trace, facts=facts, provider="gemini", status="ok", attempts=attempts)
+                if trace is not None:
+                    trace['full_output_validated'] = True
                 return validated, "gemini", "ok"
+            if allow_field_fallback:
+                recovered, rejected = _recover_validated_fragments(candidate, facts=facts,
+                    fallbacks=fallbacks, sources_by_section=sources_by_section)
+                if recovered is not None:
+                    _set_trace(trace, facts=facts, provider="gemini", status="partial-fallback", attempts=attempts,
+                               validation_diagnostics=gemini_validation_diagnostics)
+                    if trace is not None:
+                        trace['field_fallbacks'] = rejected
+                        trace['full_output_validated'] = True
+                    return recovered, "gemini", "partial-fallback"
         except Exception as exc:
             gemini_status = _status_code(exc)
 

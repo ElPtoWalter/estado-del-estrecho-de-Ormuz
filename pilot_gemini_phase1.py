@@ -93,7 +93,8 @@ def run_pilot(root: Path) -> dict[str, Any]:
     checks = {
         "same_factual_packet": bool(local_hash and local_hash == gemini_hash),
         "local_rules_ok": local_engine == "rules",
-        "gemini_selected": gemini_engine == "gemini" and gemini_status == "ok",
+        "gemini_selected": gemini_engine == "gemini" and gemini_status in {"ok", "partial-fallback"},
+        "full_output_validated": bool(gemini_trace.get('full_output_validated', gemini_status == 'ok')),
         "validator_same_version": local_trace.get("validator_version") == gemini_trace.get("validator_version"),
         "event_ids_same": local_trace.get("event_ids") == gemini_trace.get("event_ids"),
         "source_ids_same": local_trace.get("source_ids") == gemini_trace.get("source_ids"),
@@ -122,6 +123,7 @@ def run_pilot(root: Path) -> dict[str, Any]:
             "fallback_used": gemini_trace.get("fallback_used"),
             "attempts": gemini_trace.get("attempts", []),
             "validation_diagnostics": gemini_trace.get("validation_diagnostics", {}),
+            "field_fallbacks": gemini_trace.get("field_fallbacks", []),
             "drafts": gemini_drafts,
         },
         "trace": {

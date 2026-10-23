@@ -828,6 +828,7 @@ def editorial_drafts(
         fallbacks=fallbacks,
         sources_by_section=sources_by_section,
         trace=trace,
+        allow_field_fallback=True,
     )
     trace.setdefault("validator_version", VALIDATOR_VERSION)
     trace.setdefault("factual_packet_sha256", digest)
@@ -836,7 +837,7 @@ def editorial_drafts(
     trace["source_ids"] = source_ids
     trace["verification_summary"] = facts.get("verification_summary", {})
     trace["timestamp"] = iso_z(local_dt.astimezone(timezone.utc))
-    trace["fallback_used"] = engine != "gemini"
+    trace["fallback_used"] = engine != "gemini" or assistant_status == "partial-fallback"
     trace["editorial_quality"] = {lang: editorial_quality_report(drafts[lang], fallbacks[lang]) for lang in ('es', 'en')}
     return drafts, engine, assistant_status, trace
 
@@ -1105,9 +1106,9 @@ def render_page(
     desk = editorial_dashboard(editorial, lang)
     limit = editorial.get("limit_es" if lang == "es" else "limit_en") or ""
     method_note = (
-        "Parte automatizado con asistencia de IA sobre un paquete factual cerrado; no implica revisión humana de esta edición. La herramienta no busca noticias, no elige fuentes y no decide el estado. La salida se descarta si altera secciones, omite atribuciones o incorpora cifras que no estaban en los datos seleccionados."
+        "Parte automatizado con asistencia de IA sobre un paquete factual cerrado; no implica revisión humana de esta edición. La herramienta no busca noticias, no elige fuentes y no decide el estado. Los fragmentos rechazados se sustituyen por el borrador local; la edición completa vuelve a superar los controles de hechos, cifras, fuentes y estados antes de publicarse."
         if editor_engine in {"gemini", "openrouter-free"} and lang == "es"
-        else "Automated digest with AI assistance over a closed factual packet; this does not imply human review of this edition. The tool does not search for news, choose sources or determine the status. Its output is discarded if it changes sections, omits attribution or introduces figures absent from the selected data."
+        else "Automated digest with AI assistance over a closed factual packet; this does not imply human review of this edition. The tool does not search for news, choose sources or determine the status. Rejected fragments use the local draft; the complete edition must pass the same checks for facts, figures, sources and states before publication."
         if editor_engine in {"gemini", "openrouter-free"}
         else "Este parte se compone mediante reglas locales y selección automática de titulares. No se ha leído ni verificado automáticamente el texto íntegro de cada noticia, ni se atribuye una revisión humana a cada edición. La fecha de un feed puede corresponder a una actualización, no al momento del hecho. Las marcas de medios diferentes tampoco garantizan investigación independiente. Para el análisis propio y reproducible, consulta el informe de datos del monitor."
         if lang == "es"
