@@ -759,11 +759,11 @@ def rewrite_evidence_page(document: str, lang: str) -> str:
     if lang == "es":
         return document.replace(
             "Los datos proceden directamente de status.json y no se editan a mano.",
-            "El archivo se mantiene a partir de las evidencias verificadas por el observatorio."
+            "El archivo reúne señales seleccionadas automáticamente; su inclusión no acredita verificación humana de cada noticia."
         )
     return document.replace(
         "The data comes directly from status.json and is not manually edited.",
-        "The archive is maintained from evidence verified by the observatory."
+        "The archive collects automatically selected signals; inclusion does not establish human verification of every report."
     )
 
 def rewrite_data_report(document: str, lang: str) -> str:

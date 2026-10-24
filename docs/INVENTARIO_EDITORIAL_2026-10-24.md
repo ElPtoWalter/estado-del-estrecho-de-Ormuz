@@ -1,5 +1,7 @@
 # Inventario editorial completo · 24/10/2026
 
+> Actualización posterior de dependencias: la política de indexación de la entrega anterior (42 URLs) queda sustituida por la [revisión individual de las 32 URLs](REVISION_32_URLS_2026-10-24.md), que recupera 14 y propone 56. La navegación/RSS de #20 ya está integrada en la rama #21, todavía sin publicar. Las acciones de la tabla anterior se conservan como historial; prevalecen las decisiones del nuevo registro. [Estado y autorizaciones actuales](CIERRE_DEPENDENCIAS_2026-10-24.md).
+
 Base: artefacto y main `373545ee044e4fd40fd6899aa48dff990f8b1a1c`, 74 páginas con canonical y sin noindex en el HTML. Es indexabilidad técnica, no indexación acreditada en Search Console. Se revisan las 74, incluyendo páginas de servicio; el sitemap tampoco acredita valor editorial.
 
 Las palabras cuentan el cuerpo principal, retirando navegación, scripts y apartados laterales; son una señal descriptiva, **no un umbral de Google**. Traducciones ES/EN para lectores distintos no se consideran duplicados abusivos por ser traducciones. Se distinguen aportación identificable, síntesis, archivo agregado y servicio. Una aportación propia tampoco demuestra autoría humana, aprobación ni exactitud; `editorial-reviews.json` está vacío. No se atribuye a Google el rechazo de una URL concreta: el motivo global fue comunicado por el propietario.

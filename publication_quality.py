@@ -6,11 +6,18 @@ from datetime import datetime, timezone
 from urllib.parse import urlsplit
 
 
-# Specific editorial holds from the dated inventory, never a word-count rule.
-# They stay readable; noindex does not exempt them from AdSense's site review.
+# Individual decisions in docs/REVISION_32_URLS_2026-10-24.md.
+# SEO choices are provisional without Search Console; useful resources stay indexable.
+INDEXABLE_RESOURCES = {
+    "metodologia.html", "en-methodology.html", "fuentes.html", "en-sources.html",
+    "historial.html", "en-history.html", "evidencias.html", "en-evidence.html",
+    "embed.html", "en-embed.html",
+}
 EDITORIAL_HOLDS = {
-    "importancia.html", "en-importance.html",  # Generic summary without cited evidence.
     "como-afecta-ormuz-espana-europa.html", "en-how-hormuz-affects-spain-europe.html",
+}
+EDITORIAL_NOTES = EDITORIAL_HOLDS | {
+    "importancia.html", "en-importance.html",
     "puede-estar-abierto-ormuz-aunque-caiga-trafico.html", "en-can-hormuz-be-open-while-traffic-collapses.html",
 }
 
@@ -92,10 +99,11 @@ def apply_policy(document, path, *, programmatic_ads=False, review=None):
         document = document.replace(
             "Document review completed on 4 August 2026. Updated when source data materially change.",
             "Text dated 4 August 2026; no individual human review is documented.")
-    if utility:
+    if utility and name not in INDEXABLE_RESOURCES:
         document = set_noindex(document)
     if name in EDITORIAL_HOLDS and not reviewed_original:
         document = set_noindex(document)
+    if name in EDITORIAL_NOTES and not reviewed_original:
         note = ("Contexto pendiente de actualización editorial. No describe por sí solo la situación actual "
                 "ni acredita una revisión humana individual. Consulta el monitor y las fuentes fechadas." if es else
                 "Context awaiting an editorial update. It does not establish current conditions or an individual "

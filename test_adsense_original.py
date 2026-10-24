@@ -102,9 +102,44 @@ class ResearchChecks(unittest.TestCase):
         page='<html lang="es"><head><meta name="content-kind" content="original-draft"></head><body><main><p>Datos propios</p></main></body></html>'
         result=apply_policy(page,'datos-propios-monitor-ormuz.html',programmatic_ads=True)
         self.assertIn('noindex',result);self.assertIn('data-draft-disclosure',result)
-        result=apply_policy(page.replace('content-kind','other'),'importancia.html',programmatic_ads=True)
+        result=apply_policy(page.replace('content-kind','other'),'como-afecta-ormuz-espana-europa.html',programmatic_ads=True)
         self.assertIn('data-editorial-hold',result);self.assertIn('noindex',result)
-        self.assertEqual(apply_policy(result,'importancia.html').count('data-editorial-hold'),1)
+        self.assertEqual(apply_policy(result,'como-afecta-ormuz-espana-europa.html').count('data-editorial-hold'),1)
+
+    def test_useful_resources_keep_indexability_without_becoming_ad_inventory(self):
+        from publication_quality import INDEXABLE_RESOURCES
+        page='<html lang="es"><head><meta name="robots" content="index,follow"><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><main>Recurso útil</main></body></html>'
+        for path in INDEXABLE_RESOURCES:
+            result=apply_policy(page,path,programmatic_ads=True)
+            self.assertNotIn('noindex',result,path)
+            self.assertNotIn('adsbygoogle',result,path)
+            self.assertIn('content="disabled"',result,path)
+        for path in ('diario/2026-10-24.html','diary/2026-10-24.html','privacidad.html'):
+            result=apply_policy(page,path,programmatic_ads=True)
+            self.assertIn('noindex',result,path)
+            self.assertNotIn('adsbygoogle',result,path)
+
+    def test_context_warning_does_not_hide_a_useful_guide_or_claim_human_approval(self):
+        page='<html lang="es"><head><meta name="robots" content="index,follow"></head><body><main>Explicación del paso</main></body></html>'
+        for path in ('importancia.html','en-importance.html','puede-estar-abierto-ormuz-aunque-caiga-trafico.html','en-can-hormuz-be-open-while-traffic-collapses.html'):
+            result=apply_policy(page,path)
+            self.assertNotIn('noindex',result,path)
+            self.assertIn('data-editorial-hold',result,path)
+            self.assertNotIn('data-original-review',result,path)
+
+    def test_european_trade_value_is_not_a_physical_gas_volume(self):
+        import importlib.util
+        path=ROOT/'drafts/adsense-20261024/review_calculations.py'
+        spec=importlib.util.spec_from_file_location('draft_review_calculations',path)
+        module=importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        result=module.calculate()
+        self.assertEqual(result['eurostat']['rounded_news_percent'],8.9)
+        self.assertIn('VALUE',result['eurostat']['basis'])
+        self.assertAlmostEqual(result['spain']['map_ratio_percent'],1.7189354)
+        self.assertAlmostEqual(result['spain']['unreconciled_difference_gwh'],59.8403)
+        self.assertNotEqual(result['spain']['published_qatar_chart_percent'],result['spain']['map_ratio_percent'])
+        self.assertEqual(result['human_review'],'pending')
 
     def test_old_generator_stamp_is_not_a_human_review(self):
         page='<html><head></head><body><main>Revisión documental realizada el 4 de agosto de 2026. Se actualiza si cambian los datos fuente.</main></body></html>'

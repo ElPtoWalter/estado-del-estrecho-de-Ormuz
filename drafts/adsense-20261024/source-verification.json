@@ -1,0 +1,38 @@
+{
+  "prepared_on": "2026-10-24",
+  "status": "AI-assisted technical source inspection; human facts/rights approval pending",
+  "checks": [
+    {
+      "source": "EIA Global Energy Security Data",
+      "locator": "release 2026-08-12, table 4, total oil and LNG rows, six quarters 2025Q1-2026Q2",
+      "method": "Read official HTML table and compare all 12 frozen CSV values",
+      "result": "matches"
+    },
+    {
+      "source": "Enagas Informe 2025",
+      "locator": "printed pages 23-25; PDF indexes 22-24",
+      "method": "Render three pages locally with Poppler and visually inspect totals, Qatar map and 2025 green bar",
+      "observed": {
+        "total_gwh": 372498,
+        "qatar_map_gwh": 6403,
+        "qatar_chart_percent": 1.735
+      },
+      "result": "published figures confirmed; discrepancy in harmonised ratio retained; cause unverified",
+      "source_pdf_sha256": "cc1a1b7d8d49cd8cfa86c0ed4efc8204d7a36b8fe7fa689c373776a780beece3"
+    },
+    {
+      "source": "Eurostat 25 March 2026 statistical annex",
+      "url": "https://ec.europa.eu/eurostat/documents/d/products-eurostat-news/imports-energy-products-2025",
+      "locator": "VISUAL 2!A2, D9, E9",
+      "method": "Read cached values and labels from official XLSX",
+      "observed": {
+        "A2": "(% share of trade in value)",
+        "D9": "Qatar",
+        "E9": 8.855309243451158
+      },
+      "result": "8.9% is rounded monetary trade share, not physical volume",
+      "source_xlsx_sha256": "12b24ed2104c5faab73e924a251a4cfd97f578a22cd8c41ab4d30d114dead01c"
+    }
+  ],
+  "third_party_files_redistributed": false
+}

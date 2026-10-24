@@ -65,7 +65,7 @@ def render():
         fig,axes=plt.subplots(2,1,figsize=(11,5.4),layout='constrained')
         for ax,row in zip(axes,exposure):
             val=float(row['share_percent'])
-            label=('España · Todo el aprovisionamiento de gas' if es else 'Spain · All physical gas supplies') if row['geography']=='Spain' else ('UE · Solo importaciones de GNL' if es else 'EU · LNG imports only')
+            label=('España · Cuota publicada de aprovisionamiento' if es else 'Spain · Published procurement share') if row['geography']=='Spain' else ('UE · Valor de importaciones de GNL' if es else 'EU · LNG import value')
             ax.barh([0],[100],color='#2d4059',height=.4);ax.barh([0],[val],color='#73c9fa',height=.4)
             ax.set_yticks([]);ax.set_xlim(0,100);ax.set_xticks([0,25,50,75,100]);ax.set_xlabel('%',labelpad=0)
             ax.set_title(label+f' · 2025 · Qatar {val:g}%',loc='left',color='#e5edf6',fontsize=13)
