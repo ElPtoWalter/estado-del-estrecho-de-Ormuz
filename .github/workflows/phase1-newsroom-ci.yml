@@ -23,6 +23,8 @@ on:
       - "original_research.py"
       - "test_adsense_original.py"
       - "drafts/adsense-20261024/**"
+      - "drafts/historiales-20261024/**"
+      - "test_history_editorial.py"
       - "drafts/legal-persona-fisica-20261024/**"
       - "editorial-context.json"
       - "journal_evidence.py"
@@ -95,3 +97,4 @@ jobs:
           python build_public_site.py
           python check_public_links.py _site
           python adsense_checks.py --root _site
+          python drafts/historiales-20261024/reproduce.py --check

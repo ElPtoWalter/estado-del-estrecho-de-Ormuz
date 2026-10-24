@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-10-24T11:00:13.863387+00:00",
+  "kind": "unreviewed_editorial_snapshot",
+  "models": {
+    "legacy": {
+      "records": 54,
+      "first": "2026-07-12T12:55:32Z",
+      "last": "2026-10-18T17:29:40Z",
+      "states": {
+        "INCIERTO": 51,
+        "ABIERTO": 3
+      }
+    },
+    "v7": {
+      "records": 49,
+      "first": "2026-08-07T12:21:33Z",
+      "last": "2026-10-21T22:38:22Z",
+      "states": {
+        "OPEN_SEVERELY_RESTRICTED": 49
+      }
+    }
+  },
+  "comparison": [
+    {
+      "start_inclusive": "2026-09-10T00:00:00+00:00",
+      "end_exclusive": "2026-10-01T00:00:00+00:00",
+      "calendar_days": 21,
+      "records": 11,
+      "days_with_retained_record": 8,
+      "states": {
+        "OPEN_SEVERELY_RESTRICTED": 11
+      },
+      "confidence": {
+        "MEDIA": 11
+      },
+      "records_with_traffic_ratio": 0
+    },
+    {
+      "start_inclusive": "2026-10-01T00:00:00+00:00",
+      "end_exclusive": "2026-10-22T00:00:00+00:00",
+      "calendar_days": 21,
+      "records": 10,
+      "days_with_retained_record": 7,
+      "states": {
+        "OPEN_SEVERELY_RESTRICTED": 10
+      },
+      "confidence": {
+        "MEDIA": 10
+      },
+      "records_with_traffic_ratio": 0
+    }
+  ],
+  "hash_normalization": "UTF-8 input bytes with CRLF normalized to LF; no JSON reformatting",
+  "inputs_sha256": {
+    "history.json": "c0f2489a82158806459af35c708d64f2a56121f87098ed49860547d6c01490a1",
+    "operational-intelligence-history.json": "3d2553c407eb985f90ffc81082ca28a589d7f9843e885efda07c4eff5219cc97"
+  },
+  "limitations": [
+    "Retained decisions, not AIS measurements or periodic observations.",
+    "Models have different definitions; do not concatenate them into one traffic series.",
+    "Absence of a retained record is not proof of absent traffic or an outage.",
+    "Record counts cannot estimate closure hours, transit volumes, accuracy or risk."
+  ]
+}
