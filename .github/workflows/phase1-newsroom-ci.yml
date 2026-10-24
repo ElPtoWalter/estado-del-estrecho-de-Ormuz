@@ -25,6 +25,8 @@ on:
       - "drafts/adsense-20261024/**"
       - "drafts/historiales-20261024/**"
       - "test_history_editorial.py"
+      - "history_public_candidate.py"
+      - "test_history_public_candidate.py"
       - "drafts/legal-persona-fisica-20261024/**"
       - "editorial-context.json"
       - "journal_evidence.py"
@@ -85,7 +87,7 @@ jobs:
           python-version: "3.12"
       - name: Compilar
         run: |
-          python -m py_compile free_editorial_ai.py generate_daily_journal.py pilot_gemini_phase1.py pilot_phase2a_video.py straitwatch_core.py operational_intelligence_v7.py postprocess_evidence.py generate_health.py build_public_site.py test_free_editorial_ai.py test_straitwatch_core.py phase2_video/*.py
+          python -m py_compile free_editorial_ai.py generate_daily_journal.py pilot_gemini_phase1.py pilot_phase2a_video.py straitwatch_core.py operational_intelligence_v7.py postprocess_evidence.py generate_health.py build_public_site.py history_public_candidate.py test_history_public_candidate.py test_free_editorial_ai.py test_straitwatch_core.py phase2_video/*.py
       - name: Pruebas editoriales
         run: |
           python -m unittest discover -v
@@ -98,3 +100,7 @@ jobs:
           python check_public_links.py _site
           python adsense_checks.py --root _site
           python drafts/historiales-20261024/reproduce.py --check
+          python history_public_candidate.py --check
+          python history_public_candidate.py --build
+          python check_public_links.py drafts/historiales-20261024/preview
+          python adsense_checks.py --root drafts/historiales-20261024/preview

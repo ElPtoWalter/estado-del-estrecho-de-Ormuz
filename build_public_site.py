@@ -991,8 +991,18 @@ def javascript_is_private(path: Path) -> bool:
         return True
     return bool(PRIVATE_ENDPOINT_RE.search(body))
 
+HISTORY_PUBLIC_CSV = frozenset(
+    f"assets/research/monitor-history-20261024/{name}.csv"
+    for name in ("records", "models", "confidence", "windows", "plot")
+)
+
+
 def copy_asset(path: Path) -> bool:
     if path.name == "monitor-records.csv":
+        return True
+    # Five fixed data-only destinations, never a general CSV or folder exception.
+    rel = path.relative_to(ROOT) if path.is_absolute() and path.is_relative_to(ROOT) else path
+    if rel.as_posix() in HISTORY_PUBLIC_CSV:
         return True
     if private_name(path) or path.name.startswith("."):
         return False
@@ -1012,19 +1022,21 @@ def public_html_path(path: Path) -> bool:
             and (len(path.parts) == 1 or
                  (len(path.parts) == 2 and path.parts[0] in {"diario", "diary", "briefs"})))
 
-def write_sitemap() -> None:
+def write_sitemap(root: Path | None = None) -> None:
+    root = root if root is not None else OUT
     # Share canonical/noindex/hreflang parsing with the source generator.
-    tree = sitemap.build_tree(OUT, sitemap.discover_pages(OUT))
+    tree = sitemap.build_tree(root, sitemap.discover_pages(root))
     for node in tree.getroot():
         modified = node.find(sitemap.qname(sitemap.SITEMAP_NS, "lastmod"))
         if modified is not None:
             node.remove(modified)  # Artifact copy times are not editorial modification dates.
-    errors = sitemap.validate_tree(tree, OUT)
+    errors = sitemap.validate_tree(tree, root)
     if errors:
         raise RuntimeError("Invalid public sitemap: " + "; ".join(errors))
-    tree.write(OUT / "sitemap.xml", encoding="utf-8", xml_declaration=True)
+    tree.write(root / "sitemap.xml", encoding="utf-8", xml_declaration=True)
 
-def audit_public_build() -> None:
+def audit_public_build(root: Path | None = None) -> None:
+    root = root if root is not None else OUT
     errors = []
     forbidden_tokens = (
         "status.json", "history.json", "config.json", "operational-intelligence.json",
@@ -1035,10 +1047,12 @@ def audit_public_build() -> None:
         "social-studio.html",
     )
 
-    for path in OUT.rglob("*"):
+    for path in root.rglob("*"):
         if not path.is_file():
             continue
-        rel = path.relative_to(OUT).as_posix()
+        rel = path.relative_to(root).as_posix()
+        if path.suffix.lower() == ".csv" and rel != "monitor-records.csv" and rel not in HISTORY_PUBLIC_CSV:
+            errors.append(f"unapproved public CSV: {rel}")
         if private_name(path):
             errors.append(f"private file leaked: {rel}")
             continue
@@ -1052,17 +1066,17 @@ def audit_public_build() -> None:
                     errors.append(f"{rel}: forbidden public token {token!r}")
 
     for required in ("index.html", "en.html", "robots.txt", "sitemap.xml", "ads.txt"):
-        if not (OUT / required).exists():
+        if not (root / required).exists():
             errors.append(f"missing required public file: {required}")
 
     for forbidden in (
         "status.json", "history.json", "config.json", "update_status.py",
         "operational-intelligence.json", "social-studio.js", "widget.js", "_redirects",
     ):
-        if (OUT / forbidden).exists():
+        if (root / forbidden).exists():
             errors.append(f"forbidden public file exists: {forbidden}")
 
-    errors.extend(check_artifact(OUT))
+    errors.extend(check_artifact(root))
     if errors:
         print("PUBLIC BUILD AUDIT FAILED", file=sys.stderr)
         for error in errors:
