@@ -4,6 +4,7 @@
 
 from __future__ import annotations
 import html
+import hashlib
 import json
 import re
 import shutil
@@ -16,6 +17,7 @@ from monitor_report import build_reports
 from own_projects import add_promotions, ARTICLE_PAGES
 import build_sitemap as sitemap
 from typing import Any
+from urllib.parse import urlsplit
 
 from straitwatch_core import SourceRegistry, canonical_url, normalize_title, public_signal_label, title_similarity
 
@@ -70,6 +72,7 @@ ADSENSE_SCRIPT_RE = re.compile(
 )
 
 PRO_LANGUAGE = (
+    ("History, API, RSS and methodology are accessible.", "History, sources, RSS and methodology are accessible."),
     ("Código y metodología auditables", "Metodología pública · Fuentes verificables"),
     ("Auditable code and methodology", "Public methodology · Verifiable sources"),
     ("La API y el RSS son públicos para consulta razonable. Cita a Estrecho Ormuz y enlaza la metodología cuando reutilices la clasificación.", "Puedes citar las conclusiones públicas con atribución y enlace a la metodología. Sigue los cambios por RSS."),
@@ -430,8 +433,9 @@ def render_history(history: Any, lang: str, limit: int) -> str:
             else "is-closed" if raw_status == "CERRADO"
             else "is-uncertain"
         )
+        event_id = item.get('id') or hashlib.sha256(str(item).encode('utf-8')).hexdigest()[:16]
         rows.append(
-            f'<article class="timeline-item {timeline_class}"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-content">'
+            f'<article id="{esc(event_id)}" class="timeline-item {timeline_class}"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-content">'
             f'<div class="timeline-head"><strong>{esc(label)}</strong>'
             f'<time>{esc(human_date(item.get("at"), lang))}</time></div>'
             f'<p>{esc(summary, "")}</p></div></article>'
@@ -807,6 +811,50 @@ def strip_adsense(document: str, filename: str) -> str:
         return document
     return ADSENSE_SCRIPT_RE.sub("\n", ADSENSE_BLOCK_RE.sub("\n", document))
 
+def repair_public_navigation(document: str, filename: str) -> str:
+    """Language switches retain the article/date declared in its alternates."""
+    metadata = sitemap.MetaParser()
+    metadata.feed(document)
+    other = 'en' if lang_for(filename, document) == 'es' else 'es'
+    alternate = urlsplit(metadata.alternates.get(other, ''))
+    peer = alternate.path if alternate.scheme == 'https' and alternate.netloc == 'estrechoormuz.com' else ''
+    # Exact publisher routes checked on 2026-10-23: keep the dated bulletin,
+    # rather than substituting a current advisory for a historical citation.
+    publisher_routes = {
+        'https://www.ukmto.org/indian-ocean/products': 'https://www.ukmto.org/partner-products/jmic-products',
+        'https://www.ukmto.org/-/media/ukmto/products/update-040-to-jmic-advisory-note-03-may.pdf':
+            'https://www.ukmto.org/-/media/ukmto/products/update-040-jmic-advisory-note-03-may.pdf',
+    }
+
+    def repair_anchor(match):
+        anchor = match.group(0)
+        href = re.search(r'(?<![\w:-])href\s*=\s*(["\x27])(.*?)\1', match['attrs'], re.I | re.S)
+        if not href:
+            return anchor
+        raw = href.group(2)
+        target = urlsplit(html.unescape(raw))
+        label = html.unescape(re.sub(r'<[^>]*>', '', match['label'])).strip().casefold()
+        classes = re.search(r'(?<![\w:-])class\s*=\s*(["\x27])(.*?)\1', match['attrs'], re.I | re.S)
+        switch = ((classes and 'language-link' in classes.group(2).split())
+                  or (target.netloc in ('', 'estrechoormuz.com')
+                      and label in ({'en', 'english'} if other == 'en' else {'es', 'español'})))
+        if html.unescape(raw) in publisher_routes:
+            replacement = publisher_routes[html.unescape(raw)]
+        elif peer and switch:
+            replacement = peer
+        elif (target.netloc in ('', 'estrechoormuz.com') and target.path in ('/en.html', 'en.html')
+              and target.fragment == 'estado-actual'):
+            replacement = html.unescape(raw).rsplit('#', 1)[0] + '#current-status'
+        else:
+            return anchor
+        # Preserve all other attributes and nested content, including bylines.
+        start = match.start('attrs') - match.start() + href.start(2)
+        end = match.start('attrs') - match.start() + href.end(2)
+        return anchor[:start] + html.escape(replacement, quote=True) + anchor[end:]
+
+    return re.sub(r'<a\b(?P<attrs>[^>]*)>(?P<label>.*?)</a>', repair_anchor, document, flags=re.I | re.S)
+
+
 def sanitize_html(document: str, filename: str) -> str:
     lang = lang_for(filename, document)
     document = prerender(document, filename)
@@ -835,6 +883,7 @@ def sanitize_html(document: str, filename: str) -> str:
                 document = re.sub(r'</head>', f'<link rel="alternate" hreflang="{language}" href="{DOMAIN}/{page}"></head>', document, count=1, flags=re.I)
     if metadata.canonical and lang not in metadata.alternates and ('en' if lang == 'es' else 'es') in metadata.alternates:
         document = re.sub(r'</head>', f'<link rel="alternate" hreflang="{lang}" href="{html.escape(metadata.canonical, quote=True)}"></head>', document, count=1, flags=re.I)
+    document = repair_public_navigation(document, filename)
     if filename in ARTICLE_PAGES['ormuz'] and 'data-related-guides' not in document:
         guides = [
             ('que-significa-cierre-estrecho-ormuz.html', 'Qué significa un cierre de Ormuz'),
