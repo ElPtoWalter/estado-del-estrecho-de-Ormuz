@@ -1,0 +1,24 @@
+{
+  "kind": "editorial_draft_publication_plan",
+  "status": "blocked_pending_explicit_owner_authorization",
+  "publish": false,
+  "index": false,
+  "advertising": false,
+  "human_editorial_approval": null,
+  "approved_at": null,
+  "routes": {
+    "es": "https://estrechoormuz.com/historiales-monitor-ormuz.html",
+    "en": "https://estrechoormuz.com/en-monitor-archives-hormuz.html",
+    "x-default": "https://estrechoormuz.com/historiales-monitor-ormuz.html"
+  },
+  "current_location": "drafts/historiales-20261024/",
+  "current_build_behavior": "Entire folder excluded from Pages, sitemap and feeds; HTML remains noindex and publisher-ads disabled.",
+  "owner_verified": "Counts and comparison windows only, as stated in the conversation",
+  "future_release_checks": [
+    "Explicit approval of this new ES/EN editorial version, figures, sources and rights",
+    "Prepare the exact public candidate and asset/source-link destinations without exposing internal code or unapproved JSON",
+    "Apply the existing exact-document review gate to that public candidate with a real authorized reviewer and date",
+    "Verify canonical, reciprocal hreflang, source permalinks, links, mobile reading and final artifact",
+    "Obtain separate publication/deployment authorization; do not infer it from merge or data validation"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "models": [
+    {
+      "model": "legacy",
+      "records": 54,
+      "first_utc": "2026-07-12T12:55:32Z",
+      "last_utc": "2026-10-18T17:29:40Z",
+      "states": {
+        "ABIERTO": 3,
+        "INCIERTO": 51
+      },
+      "confidence": {
+        "ALTA": 14,
+        "BAJA": 31,
+        "MEDIA": 9
+      }
+    },
+    {
+      "model": "v7",
+      "records": 49,
+      "first_utc": "2026-08-07T12:21:33Z",
+      "last_utc": "2026-10-21T22:38:22Z",
+      "states": {
+        "OPEN_SEVERELY_RESTRICTED": 49
+      },
+      "confidence": {
+        "ALTA": 2,
+        "MEDIA": 47
+      }
+    }
+  ],
+  "windows": [
+    {
+      "start_inclusive_utc": "2026-09-10T00:00:00Z",
+      "end_exclusive_utc": "2026-10-01T00:00:00Z",
+      "calendar_days": 21,
+      "records": 11,
+      "days_with_record": 8,
+      "confidence": {
+        "MEDIA": 11
+      }
+    },
+    {
+      "start_inclusive_utc": "2026-10-01T00:00:00Z",
+      "end_exclusive_utc": "2026-10-22T00:00:00Z",
+      "calendar_days": 21,
+      "records": 10,
+      "days_with_record": 7,
+      "confidence": {
+        "MEDIA": 10
+      }
+    }
+  ],
+  "v7_high_confidence_dates_utc": [
+    "2026-08-07T12:21:33Z",
+    "2026-09-02T11:41:03Z"
+  ],
+  "v7_rows_with_numeric_traffic_ratio": 0,
+  "v7_rows_with_traffic_snapshot": 0,
+  "daily_max_records": {
+    "legacy": 7,
+    "v7": 6
+  },
+  "kind": "editorial_draft_derived_data",
+  "timezone": "UTC",
+  "input_csv_sha256_lf": "de685c60a83b797b63f158052c97e52b6b2bee5e0898679625edd5664772e092",
+  "human_editorial_approval": "pending",
+  "confidence_meaning": "Stored model label; not calibrated accuracy or probability",
+  "chart_grain": "UTC day; stack height only separates same-day records",
+  "input_is_not": [
+    "vessel observations",
+    "periodic traffic measurements",
+    "complete execution log"
+  ]
+}

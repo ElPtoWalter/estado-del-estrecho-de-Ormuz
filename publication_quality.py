@@ -20,10 +20,51 @@ EDITORIAL_NOTES = EDITORIAL_HOLDS | {
     "importancia.html", "en-importance.html",
     "puede-estar-abierto-ormuz-aunque-caiga-trafico.html", "en-can-hormuz-be-open-while-traffic-collapses.html",
 }
+HISTORY_ARTICLES = frozenset({
+    "historiales-monitor-ormuz.html", "en-monitor-archives-hormuz.html",
+})
+HISTORY_REFERENCES = frozenset({
+    "metodo-historiales-monitor-20261024.html", "en-monitor-archive-method-20261024.html",
+    "archivo-monitor-20261024.html",
+})
+HISTORY_NO_ADS = HISTORY_ARTICLES | HISTORY_REFERENCES
+HISTORY_APPROVED_COMMIT = 'c01c7d968d5dfeab2decaf0f3395181caf8f733f'
+HISTORY_APPROVAL_REFERENCE = 'https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/pull/22#pullrequestreview-5639358356'
+HISTORY_APPROVED_MANIFEST = 'be55e16a51551f9015eecc0bf21025602933477d2a6cb2fce17d9679fe916d54'
+
+
+def owner_history_review_valid(document, review):
+    """Narrow owner decision, not an assertion of independent fact/legal checks.
+
+    The release builder also verifies every resource against the pinned manifest.
+    This record approves the original candidate bytes, never an arbitrary revision.
+    """
+    if not isinstance(review, dict) or review.get('kind') != 'owner_editorial_approval':
+        return False
+    route = review.get('document')
+    if route not in HISTORY_NO_ADS or review.get('approved') is not True:
+        return False
+    if (review.get('approved_candidate_commit') != HISTORY_APPROVED_COMMIT
+            or review.get('approved_manifest_sha256_lf') != HISTORY_APPROVED_MANIFEST
+            or review.get('approval_reference') != HISTORY_APPROVAL_REFERENCE
+            or review.get('public_author') != 'Estrecho Ormuz'
+            or review.get('approval_date') != '2026-10-24'
+            or review.get('evidence_recorded_at') != '2026-10-24T18:11:21Z'
+            or review.get('sha256') != hashlib.sha256(document.encode('utf-8')).hexdigest()):
+        return False
+    try:
+        recorded = datetime.fromisoformat(review['evidence_recorded_at'].replace('Z', '+00:00'))
+        if recorded > datetime.now(timezone.utc):
+            return False
+    except (TypeError, ValueError):
+        return False
+    return f'href="https://estrechoormuz.com/{route}"' in document
 
 
 def original_review_valid(document, review):
     """A named review authorizes only the exact original draft that was checked."""
+    if owner_history_review_valid(document, review):
+        return True
     if not isinstance(review, dict) or review.get("kind") not in {"original_analysis", "reviewed_article"}:
         return False
     if not all(review.get(key) is True for key in ("facts_checked", "rights_checked", "approved")):
@@ -76,10 +117,28 @@ def ads_authorized(settings):
     ))
 
 
+def approved_history_notices(document, es):
+    """Called only after the exact document's editorial review passes the real gate."""
+    neutral = ("Preparación con asistencia de IA · Datos propios · Sin publicidad" if es else
+               "Prepared with AI assistance · Original project data · Advertising disabled")
+    document = re.sub(r'<p\b[^>]*\bdata-draft-disclosure[^>]*>.*?</p>',
+                      lambda m: '<p class="source-note">'+neutral+'</p>', document, flags=re.I | re.S)
+    document = re.sub(r'<p\b[^>]*\bdata-editorial-approval-pending[^>]*>.*?</p>', '', document, flags=re.I | re.S)
+    document = re.sub(r'<p\b[^>]*\bdata-history-publication-status[^>]*>.*?</p>',
+                      lambda m: '<p>ESTRECHO ORMUZ · '+neutral+'</p>', document, flags=re.I | re.S)
+    # Resource provenance remains; only its pending-authorization notice changes.
+    resource = ("Metadatos de decisiones y gráficos elaborados por el proyecto. Las fuentes, la versión y la atribución se documentan aquí. El archivo excluye posiciones AIS y textos de medios." if es else
+                "Decision metadata and charts prepared by the project. Sources, version and attribution are documented here. The archive excludes AIS positions and media article bodies.")
+    return re.sub(r'<p\b[^>]*\bdata-resource-publication-pending[^>]*>.*?</p>',
+                  lambda m: '<p>'+resource+'</p>', document, flags=re.I | re.S)
+
+
 def apply_policy(document, path, *, programmatic_ads=False, review=None):
     reviewed_original = original_review_valid(document, review)
     path = str(path).replace("\\", "/")
     name = path.rsplit("/", 1)[-1]
+    if isinstance(review, dict) and review.get('kind') == 'owner_editorial_approval' and review.get('document') != name:
+        reviewed_original = False
     digest = (path.startswith(("diario/", "diary/", "briefs/", "newsletter/"))
               or name in {"diario.html", "en-diary.html", "parte-diario.html", "en-daily-brief.html"}
               or bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}\.html", name)))
@@ -122,14 +181,30 @@ def apply_policy(document, path, *, programmatic_ads=False, review=None):
                     "Feed dates alone do not establish when events occurred.")
             document = re.sub(r"(<main\b[^>]*>)", lambda m: m[1] + '<aside data-editorial-disclosure role="note" style="padding:1rem;border:1px solid #888;margin-bottom:1rem">' + note + '</aside>', document, count=1, flags=re.I)
     original_draft = bool(re.search(r'<meta\b(?=[^>]*name=["\x27]content-kind["\x27])(?=[^>]*content=["\x27]original-draft["\x27])[^>]*>', document, re.I))
+    original_draft = original_draft or name in HISTORY_NO_ADS
     if original_draft and not digest:
         if reviewed_original:
+            if name in HISTORY_NO_ADS:
+                document = approved_history_notices(document, es)
             document = re.sub(r'<meta\b(?=[^>]*\bname=["\x27]robots["\x27])[^>]*>', "", document, flags=re.I)
             document = re.sub(r'</head>', '<meta name="robots" content="index,follow,max-image-preview:large"></head>', document, count=1, flags=re.I)
             es = not re.search(r'<html\b[^>]*lang=["\x27]en', document, re.I)
-            label = ("Análisis original · revisión editorial" if review['kind'] == 'original_analysis' else "Artículo revisado y autorizado") if es else ("Original analysis · editorial review" if review['kind'] == 'original_analysis' else "Reviewed and authorized article")
-            note = f'<aside data-original-review role="note">{label}: {html.escape(review["reviewer"])} · {html.escape(review["reviewed_at"])}</aside>'
-            document = re.sub(r'(<main\b[^>]*>)', lambda m: m[1] + note, document, count=1, flags=re.I)
+            if review['kind'] == 'owner_editorial_approval':
+                label = ('Aprobación editorial del titular: 24/10/2026. Preparación con asistencia de IA.' if es else
+                         'Publisher editorial approval: 24 October 2026. Prepared with AI assistance.')
+                note = f'<p class="review-note" data-original-review role="note">{label}</p>'
+                if name in HISTORY_ARTICLES:
+                    about = '/sobre.html' if es else '/en-about.html'
+                    byline = ('Por ' if es else 'By ') + f'<a rel="author" href="{about}">Estrecho Ormuz</a>'
+                    document = re.sub(r'(</h1>)', lambda m: m[1] + f'<p class="source-note" data-institutional-byline>{byline}</p>', document, count=1, flags=re.I)
+                    document = re.sub(r'</head>', '<meta name="author" content="Estrecho Ormuz"></head>', document, count=1, flags=re.I)
+                document = document.replace('content="original-draft"', 'content="original-analysis"')
+                document = re.sub(r'</main>', lambda m: note + m[0], document, count=1, flags=re.I)
+            else:
+                label = ("Análisis original · revisión editorial" if review['kind'] == 'original_analysis' else "Artículo revisado y autorizado") if es else ("Original analysis · editorial review" if review['kind'] == 'original_analysis' else "Reviewed and authorized article")
+                note = f'<aside data-original-review role="note">{label}: {html.escape(review["reviewer"])} · {html.escape(review["reviewed_at"])}</aside>'
+            if review['kind'] != 'owner_editorial_approval':
+                document = re.sub(r'(<main\b[^>]*>)', lambda m: m[1] + note, document, count=1, flags=re.I)
         else:
             document = set_noindex(document)
             if 'data-draft-disclosure' not in document:
@@ -138,7 +213,12 @@ def apply_policy(document, path, *, programmatic_ads=False, review=None):
                         "Original analysis draft · pending human editorial review. "
                         "Automated calculations do not certify maritime events.")
                 document = re.sub(r'(<main\b[^>]*>)', lambda m: m[1] + '<aside data-draft-disclosure role="note">' + note + '</aside>', document, count=1, flags=re.I)
-    block_all_ads = bool(digest or utility or re.search(r'<meta\b[^>]*noindex', document, re.I))
+    # A real editorial review never makes these three support resources indexable.
+    if name in HISTORY_REFERENCES:
+        document = set_noindex(document)
+    if name in HISTORY_NO_ADS:
+        document = re.sub(r'<meta\b(?=[^>]*\bname=["\x27]publisher-ads["\x27])[^>]*>', '', document, flags=re.I)
+    block_all_ads = bool(name in HISTORY_NO_ADS or digest or utility or re.search(r'<meta\b[^>]*noindex', document, re.I))
     if not programmatic_ads or block_all_ads:
         document = without_ads(document, block_house_promotions=block_all_ads)
     return document

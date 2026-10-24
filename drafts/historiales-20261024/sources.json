@@ -1,0 +1,47 @@
+{
+  "prepared_on": "2026-10-24",
+  "kind": "frozen_editorial_sources",
+  "hash_normalization": "UTF-8 bytes, CRLF converted to LF; no JSON reformatting",
+  "sources": [
+    {
+      "name": "Earlier-engine archive",
+      "commit": "373545ee044e4fd40fd6899aa48dff990f8b1a1c",
+      "path": "history.json",
+      "url": "https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/blob/373545ee044e4fd40fd6899aa48dff990f8b1a1c/history.json",
+      "raw_url": "https://raw.githubusercontent.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/373545ee044e4fd40fd6899aa48dff990f8b1a1c/history.json",
+      "sha256_lf": "c0f2489a82158806459af35c708d64f2a56121f87098ed49860547d6c01490a1",
+      "records": 54,
+      "period_start_utc": "2026-07-12T12:55:32Z",
+      "period_end_utc": "2026-10-18T17:29:40Z",
+      "fields": ["at", "status", "confidence"],
+      "http_check": "200 and matching normalized hash, 2026-10-24"
+    },
+    {
+      "name": "V7 archive",
+      "commit": "373545ee044e4fd40fd6899aa48dff990f8b1a1c",
+      "path": "operational-intelligence-history.json",
+      "url": "https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/blob/373545ee044e4fd40fd6899aa48dff990f8b1a1c/operational-intelligence-history.json",
+      "raw_url": "https://raw.githubusercontent.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/373545ee044e4fd40fd6899aa48dff990f8b1a1c/operational-intelligence-history.json",
+      "sha256_lf": "3d2553c407eb985f90ffc81082ca28a589d7f9843e885efda07c4eff5219cc97",
+      "records": 49,
+      "period_start_utc": "2026-08-07T12:21:33Z",
+      "period_end_utc": "2026-10-21T22:38:22Z",
+      "fields": ["generated_at", "state", "confidence", "traffic_ratio_estimate", "traffic_snapshot"],
+      "http_check": "200 and matching normalized hash, 2026-10-24"
+    },
+    {
+      "name": "Original frozen CSV",
+      "commit": "9d6b0cf592b9a85313cc5f33978a48405edf520d",
+      "path": "drafts/adsense-20261024/monitor-observations.csv",
+      "url": "https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/blob/9d6b0cf592b9a85313cc5f33978a48405edf520d/drafts/adsense-20261024/monitor-observations.csv",
+      "raw_url": "https://raw.githubusercontent.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/9d6b0cf592b9a85313cc5f33978a48405edf520d/drafts/adsense-20261024/monitor-observations.csv",
+      "sha256_lf": "de685c60a83b797b63f158052c97e52b6b2bee5e0898679625edd5664772e092",
+      "records": 103,
+      "local_copy": "monitor-observations.csv",
+      "http_check": "200 and matching normalized hash, 2026-10-24"
+    }
+  ],
+  "reuse": "Project decision metadata and own charts; no vessel positions, commercial AIS, third-party photographs or article bodies republished.",
+  "owner_verification_scope": "Owner states counts and comparison windows were checked. This is not approval of the new ES/EN wording, graphics, rights or publication.",
+  "new_editorial_version_approved": false
+}
