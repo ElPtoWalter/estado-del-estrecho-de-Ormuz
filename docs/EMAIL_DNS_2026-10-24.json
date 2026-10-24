@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-24T11:29:27.1836503Z",
+  "domain": "estrechoormuz.com",
+  "method": "Windows Resolve-DnsName, DNS-only, configured recursive resolver",
+  "mx": [
+    {
+      "host": "route2.mx.cloudflare.net",
+      "priority": 27,
+      "ttl": 300
+    },
+    {
+      "host": "route3.mx.cloudflare.net",
+      "priority": 24,
+      "ttl": 300
+    },
+    {
+      "host": "route1.mx.cloudflare.net",
+      "priority": 29,
+      "ttl": 300
+    }
+  ],
+  "spf": [
+    "v=spf1 include:_spf.mx.cloudflare.net ~all"
+  ],
+  "dmarc": {
+    "status": "NXDOMAIN",
+    "records": [],
+    "error_code": "DNS_ERROR_RCODE_NAME_ERROR",
+    "scope": "Configured recursive resolver; absence does not prove mailbox failure"
+  },
+  "mailbox": "contacto@estrechoormuz.com",
+  "mailbox_route": "not_verified",
+  "destination_inbox": "not_accessed",
+  "received_test_message": "not_tested",
+  "reply_from_domain": "not_tested",
+  "messages_sent": 0
+}
