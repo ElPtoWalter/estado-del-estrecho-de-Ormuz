@@ -106,6 +106,9 @@ class PublicHistoryCandidateTests(unittest.TestCase):
             text = data.decode()
             parser = References(); parser.feed(text)
             self.assertNotRegex(text, r'\.json\b|\.py\b|github\.com|mailto:')
+            if name == candidate.ARCHIVE:
+                self.assertIn('Method in English ↗', text)
+                self.assertNotIn('Read in English ↗', text)
             for ref in parser.refs:
                 url = urlsplit(ref)
                 if url.netloc and url.netloc != 'estrechoormuz.com':

@@ -148,13 +148,15 @@ def method(lang):
 
 def archive():
     rows = research.read_rows()
+    archive_nav = nav('es', METHODS['en']).replace('class="language language-link"', 'class="language"')
+    archive_nav = archive_nav.replace('Read in English ↗', 'Method in English ↗')
     tables = ''
     for model, title in (('legacy', 'Motor anterior / Earlier engine'), ('v7', 'V7')):
         body = ''.join('<tr>' + ''.join(f'<td>{html.escape(row[k])}</td>' for k in research.FIELDS) + '</tr>' for row in rows if row['model'] == model)
         headers = ''.join(f'<th scope="col">{key}</th>' for key in research.FIELDS)
         tables += (f'<h2 id="{model}">{title}</h2><div class="table-wrap" role="region" tabindex="0" aria-label="{title}">'
                    f'<table><caption>UTC · {54 if model == "legacy" else 49} registros / records · 2026</caption><thead><tr>{headers}</tr></thead><tbody>{body}</tbody></table></div>')
-    return (head('es', ARCHIVE, 'Archivo congelado / Frozen archive · 24 octubre 2026') + nav('es', METHODS['en']) .replace('class="language language-link"', 'class="language"') +
+    return (head('es', ARCHIVE, 'Archivo congelado / Frozen archive · 24 octubre 2026') + archive_nav +
             f'<main id="content"><p class="draft-bar" data-draft-disclosure>{disclosure("es")}</p><h1>Archivo congelado / Frozen archive</h1>'
             '<p>103 registros originales de dos modelos, analizados por separado. Períodos: legacy 12/07–18/10/2026; V7 07/08–21/10/2026, UTC. No son observaciones de buques.</p>'
             '<p lang="en">103 original records from two models, analysed separately. Periods: legacy 12 July–18 October 2026; V7 7 August–21 October 2026, UTC. These are not vessel observations.</p>'
