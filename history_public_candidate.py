@@ -20,7 +20,8 @@ import xml.etree.ElementTree as ET
 import build_public_site as public
 import build_sitemap as sitemap
 from check_public_links import check as check_links
-from publication_quality import apply_policy
+from publication_quality import apply_policy, original_review_valid
+from publication_quality import HISTORY_ARTICLES, HISTORY_REFERENCES
 
 ROOT = Path(__file__).resolve().parent
 DRAFT = ROOT / 'drafts/historiales-20261024'
@@ -70,7 +71,7 @@ def footer(lang):
              ('aviso-legal.html', 'Aviso legal'), ('privacidad.html', 'Privacidad')] if lang == 'es' else [
              ('en-editorial-policy.html', 'Editorial policy'), ('en-contact.html', 'Contact'),
              ('en-legal.html', 'Legal notice'), ('en-privacy.html', 'Privacy')]
-    return '<footer><p>ESTRECHO ORMUZ · ' + disclosure(lang) + '</p><nav aria-label="' + (
+    return '<footer><p data-history-publication-status>ESTRECHO ORMUZ · ' + disclosure(lang) + '</p><nav aria-label="' + (
         'Información institucional' if lang == 'es' else 'Institutional information') + '">' + ' · '.join(
         f'<a href="/{url}">{label}</a>' for url, label in links) + '</nav></footer>'
 
@@ -138,10 +139,10 @@ def method(lang):
             f'<div class="prose"><p>{intro}</p><p><a href="/{ARTICLES[lang]}">{"Volver al análisis" if es else "Back to the analysis"}</a></p>'
             f'<h2 id="recuento">{"Reproducción paso a paso" if es else "Step-by-step reproduction"}</h2><ol>' + ''.join(f'<li>{s}</li>' for s in steps) + '</ol></div>'
             f'<h2 id="fuentes">{"Fuentes e integridad" if es else "Sources and integrity"}</h2><div class="prose"><p>{provenance}</p></div>' + sources_table(lang) +
-            f'<p><a href="/{ARCHIVE}#legacy">{"Instantánea congelada: motor anterior" if es else "Frozen snapshot: earlier engine"}</a> · '
-            f'<a href="/{ARCHIVE}#v7">V7</a></p><div class="prose"><h2>{"Datos y gráficos propios" if es else "Original data and charts"}</h2><p>{overlap}</p>'
+            f'<p><a href="{public.DOMAIN}/{ARCHIVE}#legacy">{"Instantánea congelada: motor anterior" if es else "Frozen snapshot: earlier engine"}</a> · '
+            f'<a href="{public.DOMAIN}/{ARCHIVE}#v7">V7</a></p><div class="prose"><h2>{"Datos y gráficos propios" if es else "Original data and charts"}</h2><p>{overlap}</p>'
             f'<ul>{downloads}{graphs}</ul><h2>{"Límites y reutilización" if es else "Limitations and reuse"}</h2><p>{limits}</p>'
-            '<p>' + ('Metadatos de decisiones y gráficos elaborados por el proyecto, pendientes de autorización de publicación por el titular. Las fuentes, la versión y la atribución se documentan aquí. El archivo excluye posiciones AIS y textos de medios.' if es else
+            '<p data-resource-publication-pending>' + ('Metadatos de decisiones y gráficos elaborados por el proyecto, pendientes de autorización de publicación por el titular. Las fuentes, la versión y la atribución se documentan aquí. El archivo excluye posiciones AIS y textos de medios.' if es else
                       'Decision metadata and charts prepared by the project, awaiting publication authorisation from the owner. Sources, version and attribution are documented here. The archive excludes AIS positions and media article bodies.') +
             '</p></div></main>' + footer(lang) + '</body></html>\n')
 
@@ -160,7 +161,7 @@ def archive():
             f'<main id="content"><p class="draft-bar" data-draft-disclosure>{disclosure("es")}</p><h1>Archivo congelado / Frozen archive</h1>'
             '<p>103 registros originales de dos modelos, analizados por separado. Períodos: legacy 12/07–18/10/2026; V7 07/08–21/10/2026, UTC. No son observaciones de buques.</p>'
             '<p lang="en">103 original records from two models, analysed separately. Periods: legacy 12 July–18 October 2026; V7 7 August–21 October 2026, UTC. These are not vessel observations.</p>'
-            f'<p><a href="/{METHODS["es"]}">Método y fuentes ES</a> · <a href="/{METHODS["en"]}" lang="en">Method and sources EN</a></p>'
+            f'<p><a href="{public.DOMAIN}/{METHODS["es"]}">Método y fuentes ES</a> · <a href="{public.DOMAIN}/{METHODS["en"]}" lang="en">Method and sources EN</a></p>'
             f'<p id="csv"><a href="/{ASSETS}/records.csv" download>CSV original congelado / Original frozen CSV</a></p>'
             '<p>Los dos indicadores True/False solo indican disponibilidad del campo de medición; no miden tráfico. <span lang="en">The two True/False indicators describe measurement-field availability; they do not measure traffic.</span></p>'
             f'<p>SHA-256 LF: <code>{research.EXPECTED_INPUT_SHA256_LF}</code>.</p>' + tables +
@@ -183,9 +184,9 @@ def article(lang):
     section = (f'<div class="prose"><h2>{"Fuentes congeladas y reproducción" if es else "Frozen sources and reproduction"}</h2><p>' +
                ('La instantánea pública conserva las 103 filas originales y las fuentes identificadas por versión y huella. Los dos modelos se leen por separado. La metodología explica la selección de campos y permite reproducir tablas y gráficos con las descargas públicas.' if es else
                 'The public snapshot preserves all 103 original rows and identifies sources by version and hash. The two models remain separate. The method explains field selection and lets readers reproduce tables and charts using public downloads.') +
-               f'</p><ol class="source-list"><li><a href="/{ARCHIVE}#legacy">{"Motor anterior: 54 registros congelados" if es else "Earlier engine: 54 frozen records"}</a></li>'
-               f'<li><a href="/{ARCHIVE}#v7">V7: 49 {"registros congelados" if es else "frozen records"}</a></li>'
-               f'<li><a href="/{METHODS[lang]}#fuentes">{"Fuentes, versiones y huellas de integridad" if es else "Sources, versions and integrity hashes"}</a></li></ol>'
+               f'</p><ol class="source-list"><li><a href="{public.DOMAIN}/{ARCHIVE}#legacy">{"Motor anterior: 54 registros congelados" if es else "Earlier engine: 54 frozen records"}</a></li>'
+               f'<li><a href="{public.DOMAIN}/{ARCHIVE}#v7">V7: 49 {"registros congelados" if es else "frozen records"}</a></li>'
+               f'<li><a href="{public.DOMAIN}/{METHODS[lang]}#fuentes">{"Fuentes, versiones y huellas de integridad" if es else "Sources, versions and integrity hashes"}</a></li></ol>'
                f'<p><a href="/{METHODS[lang]}">{"Método completo y reproducción" if es else "Full method and reproduction"}</a> · '
                f'<a href="/{ASSETS}/records.csv" download>{"Descargar el CSV original" if es else "Download the original CSV"}</a></p></div>'
                '<aside class="limits" data-related-guides><h2>' + ('Para ampliar el contexto' if es else 'Further context') + '</h2><ul>' +
@@ -196,8 +197,8 @@ def article(lang):
                    ('en-what-does-closing-strait-of-hormuz-mean.html', 'What a Hormuz closure means'),
                    ('en-how-to-verify-operational-maritime-traffic-hormuz.html', 'How to verify maritime passage'),
                    ('en-methodology.html', 'The observatory’s general methodology')])) + '</ul></aside>'
-               '<p class="review-note">' + ('El contenido anterior fue revisado favorablemente por el propietario. Esta adaptación pública y sus recursos siguen pendientes de autorización final. No se registra una aprobación editorial ni se autoriza la publicación con esta entrega.' if es else
-                'The owner reviewed the preceding content favourably. This public adaptation and its resources still await final authorisation. This delivery does not record an editorial approval or authorise publication.') + '</p>\n')
+               '<p class="review-note" data-editorial-approval-pending>' + ('Este análisis ha superado una revisión técnica preparatoria y permanece pendiente de aprobación editorial por el titular. Esa valoración no acredita una revisión personal ni una aprobación editorial humana.' if es else
+                'This analysis has passed a preliminary technical review and awaits editorial approval by the publisher. That assessment does not establish a personal review or human editorial approval.') + '</p>\n')
     text = text[:start] + section + text[end:]
     return re.sub(r'<footer>.*?</footer>', lambda m: footer(lang), text, count=1, flags=re.S)
 
@@ -210,6 +211,13 @@ def candidate_files():
     result = {ARTICLES[lang]: article(lang).encode('utf-8') for lang in ARTICLES}
     result.update({METHODS[lang]: method(lang).encode('utf-8') for lang in METHODS})
     result[ARCHIVE] = archive().encode('utf-8')
+    # Keep source links usable on localhost and on the domain, while recording
+    # the exact HTTPS source identities needed by the existing editorial gate.
+    for name, data in result.items():
+        text = re.sub(r'<a href="('+re.escape(public.DOMAIN)+r'/[^"]+)"',
+                      lambda m: '<a href="'+m[1][len(public.DOMAIN):]+'" data-source-url="'+m[1]+'"',
+                      data.decode('utf-8'))
+        result[name] = text.encode('utf-8')
     for source, dest in CSV_MAP.items():
         result[f'{ASSETS}/{dest}'] = (DRAFT/source).read_bytes().replace(b'\r\n', b'\n')
     for path in DRAFT.glob('history-*.svg'):
@@ -225,9 +233,18 @@ def candidate_files():
 def manifest(files):
     return {'kind': 'exact_public_candidate_not_authorized', 'publication_authorized': False,
             'human_editorial_approval': None, 'reviewer': None, 'approved_at': None,
-            'owner_feedback': 'Favourable review of preceding articles and charts; final public candidate not authorized',
-            'review_reference': 'https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/pull/22#pullrequestreview-5638634753',
+            'review_status': 'Preliminary assisted technical assessment only; no personal owner review or human editorial approval accredited',
+            'review_reference': 'https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/pull/22#pullrequestreview-5638755073',
             'index': False, 'advertising': False, 'pages_workflow_input': '_site (candidate excluded)',
+            'publication_proposal': {
+                'indexable_after_real_editorial_approval': sorted(HISTORY_ARTICLES),
+                'accessible_noindex_follow_even_after_approval': sorted(HISTORY_REFERENCES),
+                'public_csv': sorted(public.HISTORY_PUBLIC_CSV),
+                'public_graphs': sorted(name for name in files if name.endswith('.svg')),
+                'advertising_on_all_five_pages': False,
+                'candidate_notices_removed_only_after_exact_document_review': True,
+                'current_effective_indexability': 'All five pages held noindex; proposal is not an approval',
+            },
             'sha256_lf': {name: sha(data) for name, data in sorted(files.items())}}
 
 
@@ -274,11 +291,16 @@ def audit_payload(files):
                 raise ValueError(f'Missing draft/ads boundary: {name}')
 
 
-def integrate(root):
+def integrate(root, reviews=None):
+    reviews = reviews if isinstance(reviews, dict) else {}
+    approved_pair = all(original_review_valid((SOURCE/name).read_text(encoding='utf-8'), reviews.get(name))
+                        for name in ARTICLES.values())
     for lang, pages in {'es': ('index.html', 'analisis.html', 'historial.html'),
                         'en': ('en.html', 'en-analysis.html', 'en-history.html')}.items():
         title = 'El historial de Ormuz cuenta decisiones, no barcos' if lang == 'es' else 'The Hormuz archive records decisions, not ships'
         note = 'Candidato editorial pendiente de autorización' if lang == 'es' else 'Editorial candidate awaiting authorisation'
+        if approved_pair:
+            note = 'Análisis del archivo de decisiones · Datos propios' if lang == 'es' else 'Decision-archive analysis · Original project data'
         block = f'<aside class="content-section prose-card" data-history-candidate><h2><a href="/{ARTICLES[lang]}">{title}</a></h2><p>{note} · 54 + 49 {"registros, modelos separados" if lang == "es" else "records, separate models"}.</p></aside>'
         for name in pages:
             path = root/name
@@ -324,7 +346,7 @@ def build_preview(base=None, out=None):
         raise ValueError('\n'.join(errors))
     # Future sitemap only: metadata simulation in memory, never a released HTML or approval.
     pages = sitemap.discover_pages(out)
-    for name in list(ARTICLES.values()) + list(METHODS.values()) + [ARCHIVE]:
+    for name in ARTICLES.values():
         page = sitemap.parse_page(out, out/name)
         page.robots = ''
         pages.append(page)
@@ -341,6 +363,8 @@ def build_preview(base=None, out=None):
         raise ValueError('Pages artifact changed during candidate preparation')
     result = {'kind': 'local_public_candidate_audit', 'publication_authorized': False,
               'candidate_pages': list(ARTICLES.values()) + list(METHODS.values()) + [ARCHIVE],
+              'indexable_after_real_editorial_approval': sorted(HISTORY_ARTICLES),
+              'support_noindex_even_after_approval': sorted(HISTORY_REFERENCES),
               'safe_csv_routes': sorted(public.HISTORY_PUBLIC_CSV), 'link_errors': errors,
               'privacy_and_ads_audit': 'passed', 'default_pages_artifact_unchanged': True,
               'sitemap_current_count': len(ET.parse(out/'sitemap.xml').getroot()),

@@ -20,6 +20,14 @@ EDITORIAL_NOTES = EDITORIAL_HOLDS | {
     "importancia.html", "en-importance.html",
     "puede-estar-abierto-ormuz-aunque-caiga-trafico.html", "en-can-hormuz-be-open-while-traffic-collapses.html",
 }
+HISTORY_ARTICLES = frozenset({
+    "historiales-monitor-ormuz.html", "en-monitor-archives-hormuz.html",
+})
+HISTORY_REFERENCES = frozenset({
+    "metodo-historiales-monitor-20261024.html", "en-monitor-archive-method-20261024.html",
+    "archivo-monitor-20261024.html",
+})
+HISTORY_NO_ADS = HISTORY_ARTICLES | HISTORY_REFERENCES
 
 
 def original_review_valid(document, review):
@@ -76,6 +84,22 @@ def ads_authorized(settings):
     ))
 
 
+def approved_history_notices(document, es):
+    """Called only after the exact document's editorial review passes the real gate."""
+    neutral = ("Preparación con asistencia de IA · Datos propios · Sin publicidad" if es else
+               "Prepared with AI assistance · Original project data · Advertising disabled")
+    document = re.sub(r'<p\b[^>]*\bdata-draft-disclosure[^>]*>.*?</p>',
+                      lambda m: '<p class="source-note">'+neutral+'</p>', document, flags=re.I | re.S)
+    document = re.sub(r'<p\b[^>]*\bdata-editorial-approval-pending[^>]*>.*?</p>', '', document, flags=re.I | re.S)
+    document = re.sub(r'<p\b[^>]*\bdata-history-publication-status[^>]*>.*?</p>',
+                      lambda m: '<p>ESTRECHO ORMUZ · '+neutral+'</p>', document, flags=re.I | re.S)
+    # Resource provenance remains; only its pending-authorization notice changes.
+    resource = ("Metadatos de decisiones y gráficos elaborados por el proyecto. Las fuentes, la versión y la atribución se documentan aquí. El archivo excluye posiciones AIS y textos de medios." if es else
+                "Decision metadata and charts prepared by the project. Sources, version and attribution are documented here. The archive excludes AIS positions and media article bodies.")
+    return re.sub(r'<p\b[^>]*\bdata-resource-publication-pending[^>]*>.*?</p>',
+                  lambda m: '<p>'+resource+'</p>', document, flags=re.I | re.S)
+
+
 def apply_policy(document, path, *, programmatic_ads=False, review=None):
     reviewed_original = original_review_valid(document, review)
     path = str(path).replace("\\", "/")
@@ -122,8 +146,11 @@ def apply_policy(document, path, *, programmatic_ads=False, review=None):
                     "Feed dates alone do not establish when events occurred.")
             document = re.sub(r"(<main\b[^>]*>)", lambda m: m[1] + '<aside data-editorial-disclosure role="note" style="padding:1rem;border:1px solid #888;margin-bottom:1rem">' + note + '</aside>', document, count=1, flags=re.I)
     original_draft = bool(re.search(r'<meta\b(?=[^>]*name=["\x27]content-kind["\x27])(?=[^>]*content=["\x27]original-draft["\x27])[^>]*>', document, re.I))
+    original_draft = original_draft or name in HISTORY_NO_ADS
     if original_draft and not digest:
         if reviewed_original:
+            if name in HISTORY_NO_ADS:
+                document = approved_history_notices(document, es)
             document = re.sub(r'<meta\b(?=[^>]*\bname=["\x27]robots["\x27])[^>]*>', "", document, flags=re.I)
             document = re.sub(r'</head>', '<meta name="robots" content="index,follow,max-image-preview:large"></head>', document, count=1, flags=re.I)
             es = not re.search(r'<html\b[^>]*lang=["\x27]en', document, re.I)
@@ -138,7 +165,12 @@ def apply_policy(document, path, *, programmatic_ads=False, review=None):
                         "Original analysis draft · pending human editorial review. "
                         "Automated calculations do not certify maritime events.")
                 document = re.sub(r'(<main\b[^>]*>)', lambda m: m[1] + '<aside data-draft-disclosure role="note">' + note + '</aside>', document, count=1, flags=re.I)
-    block_all_ads = bool(digest or utility or re.search(r'<meta\b[^>]*noindex', document, re.I))
+    # A real editorial review never makes these three support resources indexable.
+    if name in HISTORY_REFERENCES:
+        document = set_noindex(document)
+    if name in HISTORY_NO_ADS:
+        document = re.sub(r'<meta\b(?=[^>]*\bname=["\x27]publisher-ads["\x27])[^>]*>', '', document, flags=re.I)
+    block_all_ads = bool(name in HISTORY_NO_ADS or digest or utility or re.search(r'<meta\b[^>]*noindex', document, re.I))
     if not programmatic_ads or block_all_ads:
         document = without_ads(document, block_house_promotions=block_all_ads)
     return document
