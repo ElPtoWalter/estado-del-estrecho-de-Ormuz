@@ -8,7 +8,7 @@ import json
 import os
 import re
 import unicodedata
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
@@ -102,16 +102,26 @@ def trim_post(text: str, limit: int=260) -> str:
     text = re.sub(r"[ \t]+"," ",text).strip()
     return text if len(text)<=limit else text[:limit-1].rstrip()+"…"
 
-def build_feed(items: list[dict[str, Any]], updated: str) -> str:
+def build_feed(items: list[dict[str, Any]], updated: str, *, root: Path | None = None) -> str:
+    root = ROOT if root is None else Path(root)
     entries=[]
-    for item in items[:30]:
+    for item in items:
+        day = str(item.get('date', ''))
+        try:
+            valid_day = date.fromisoformat(day).isoformat() == day
+        except ValueError:
+            valid_day = False
+        if not valid_day or not (root / 'briefs' / f'{day}.html').is_file():
+            continue
         entries.append(f"""  <entry>
     <title>{html.escape(item.get('operational_label_es','Parte diario'))} · {item.get('date','')}</title>
     <id>{BASE_URL}/parte-diario.html#{item.get('date','')}</id>
-    <link href="{BASE_URL}/parte-diario.html"/>
+    <link href="{BASE_URL}/briefs/{day}.html"/>
     <updated>{item.get('generated_at',updated)}</updated>
     <summary>{html.escape(item.get('summary_es',''))}</summary>
   </entry>""")
+        if len(entries) >= 30:
+            break
     return f"""<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Parte diario · Estrecho Ormuz</title>
