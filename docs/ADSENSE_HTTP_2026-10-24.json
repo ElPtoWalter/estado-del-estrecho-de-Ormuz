@@ -1,0 +1,133 @@
+{
+  "checked_at": "2026-10-24T10:23:06.978117+00:00",
+  "publisher": "pub-1713078636060241",
+  "requests": [
+    {
+      "url": "https://estrechoormuz.com/ads.txt",
+      "agent_header": "Ormuz-ads-txt-audit/1.0",
+      "status": 200,
+      "redirects": [],
+      "final_url": "https://estrechoormuz.com/ads.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "sha256": "18581263f7317654924724dcd2d17bf085850a4364ac8ea5f9bbc1c822a4aff3",
+      "format_errors": []
+    },
+    {
+      "url": "http://estrechoormuz.com/ads.txt",
+      "agent_header": "Ormuz-ads-txt-audit/1.0",
+      "status": 200,
+      "redirects": [
+        {
+          "url": "http://estrechoormuz.com/ads.txt",
+          "status": 301,
+          "location": "https://estrechoormuz.com/ads.txt"
+        }
+      ],
+      "final_url": "https://estrechoormuz.com/ads.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "sha256": "18581263f7317654924724dcd2d17bf085850a4364ac8ea5f9bbc1c822a4aff3",
+      "format_errors": []
+    },
+    {
+      "url": "https://www.estrechoormuz.com/ads.txt",
+      "agent_header": "Ormuz-ads-txt-audit/1.0",
+      "status": 200,
+      "redirects": [
+        {
+          "url": "https://www.estrechoormuz.com/ads.txt",
+          "status": 301,
+          "location": "https://estrechoormuz.com/ads.txt"
+        }
+      ],
+      "final_url": "https://estrechoormuz.com/ads.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "sha256": "18581263f7317654924724dcd2d17bf085850a4364ac8ea5f9bbc1c822a4aff3",
+      "format_errors": []
+    },
+    {
+      "url": "http://www.estrechoormuz.com/ads.txt",
+      "agent_header": "Ormuz-ads-txt-audit/1.0",
+      "status": 200,
+      "redirects": [
+        {
+          "url": "http://www.estrechoormuz.com/ads.txt",
+          "status": 301,
+          "location": "https://estrechoormuz.com/ads.txt"
+        }
+      ],
+      "final_url": "https://estrechoormuz.com/ads.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "sha256": "18581263f7317654924724dcd2d17bf085850a4364ac8ea5f9bbc1c822a4aff3",
+      "format_errors": []
+    },
+    {
+      "url": "https://estrechoormuz.com/ads.txt",
+      "agent_header": "Mediapartners-Google",
+      "status": 200,
+      "redirects": [],
+      "final_url": "https://estrechoormuz.com/ads.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "sha256": "18581263f7317654924724dcd2d17bf085850a4364ac8ea5f9bbc1c822a4aff3",
+      "format_errors": []
+    },
+    {
+      "url": "https://estrechoormuz.com/ads.txt",
+      "agent_header": "Google-adstxt",
+      "status": 200,
+      "redirects": [],
+      "final_url": "https://estrechoormuz.com/ads.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "sha256": "18581263f7317654924724dcd2d17bf085850a4364ac8ea5f9bbc1c822a4aff3",
+      "format_errors": []
+    },
+    {
+      "url": "https://estrechoormuz.com/ads.txt?audit=20261024102305",
+      "agent_header": "Ormuz-ads-txt-audit/1.0",
+      "status": 200,
+      "redirects": [],
+      "final_url": "https://estrechoormuz.com/ads.txt?audit=20261024102305",
+      "content_type": "text/plain; charset=utf-8",
+      "sha256": "18581263f7317654924724dcd2d17bf085850a4364ac8ea5f9bbc1c822a4aff3",
+      "format_errors": []
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "ads_txt_allowed": {
+      "*": true,
+      "Mediapartners-Google": true,
+      "Google-adstxt": true,
+      "Googlebot": true
+    },
+    "text": "User-agent: *\nAllow: /\n\nSitemap: https://estrechoormuz.com/sitemap.xml\n"
+  },
+  "public_dns_nameservers": [
+    {
+      "name": "estrechoormuz.com.",
+      "type": 2,
+      "TTL": 21600,
+      "data": "lakas.ns.cloudflare.com."
+    },
+    {
+      "name": "estrechoormuz.com.",
+      "type": 2,
+      "TTL": 21600,
+      "data": "lisa.ns.cloudflare.com."
+    }
+  ],
+  "artifact": {
+    "artifact_id": 12556008363,
+    "run_id": 40083578417,
+    "main_sha": "373545ee044e4fd40fd6899aa48dff990f8b1a1c",
+    "artifact_ads_txt": "google.com, pub-1713078636060241, DIRECT, f08c47fec0942fa0\n",
+    "sha256": "18581263f7317654924724dcd2d17bf085850a4364ac8ea5f9bbc1c822a4aff3",
+    "matches_public_responses": true,
+    "html_pages": 170,
+    "adsense_loaders": []
+  },
+  "limits": [
+    "User-agent strings are simulated; these are not requests from verified Google IPs.",
+    "Cloudflare rules, crawl logs and account publisher ownership require account access.",
+    "Public delivery and correct format do not prove AdSense Authorized or Ready."
+  ]
+}

@@ -12,6 +12,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from publication_quality import apply_policy, ads_authorized
+from adsense_checks import check_artifact
 from generate_daily_journal import home_teaser_html
 from monitor_report import build_reports
 from own_projects import add_promotions, ARTICLE_PAGES
@@ -758,11 +759,11 @@ def rewrite_evidence_page(document: str, lang: str) -> str:
     if lang == "es":
         return document.replace(
             "Los datos proceden directamente de status.json y no se editan a mano.",
-            "El archivo se mantiene a partir de las evidencias verificadas por el observatorio."
+            "El archivo reúne señales seleccionadas automáticamente; su inclusión no acredita verificación humana de cada noticia."
         )
     return document.replace(
         "The data comes directly from status.json and is not manually edited.",
-        "The archive is maintained from evidence verified by the observatory."
+        "The archive collects automatically selected signals; inclusion does not establish human verification of every report."
     )
 
 def rewrite_data_report(document: str, lang: str) -> str:
@@ -1050,7 +1051,7 @@ def audit_public_build() -> None:
                 if token.lower() in body.lower():
                     errors.append(f"{rel}: forbidden public token {token!r}")
 
-    for required in ("index.html", "en.html", "robots.txt", "sitemap.xml"):
+    for required in ("index.html", "en.html", "robots.txt", "sitemap.xml", "ads.txt"):
         if not (OUT / required).exists():
             errors.append(f"missing required public file: {required}")
 
@@ -1061,6 +1062,7 @@ def audit_public_build() -> None:
         if (OUT / forbidden).exists():
             errors.append(f"forbidden public file exists: {forbidden}")
 
+    errors.extend(check_artifact(OUT))
     if errors:
         print("PUBLIC BUILD AUDIT FAILED", file=sys.stderr)
         for error in errors:

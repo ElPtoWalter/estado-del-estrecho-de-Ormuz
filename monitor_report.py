@@ -56,6 +56,7 @@ def build_reports(root):
         peer = "en-monitor-original-data-report.html" if es else "datos-propios-monitor-ormuz.html"
         alternates = f'<link rel="alternate" hreflang="{lang}" href="https://estrechoormuz.com/{slug}"><link rel="alternate" hreflang="{"en" if es else "es"}" href="https://estrechoormuz.com/{peer}">'
         page = page.replace('</head>', alternates + '</head>', 1)
+        page = page.replace('</head>', '<meta name="content-kind" content="original-draft"><meta name="robots" content="noindex,follow"></head>', 1)
         bars = ''.join(f'<li>{html.escape(state)}: <strong>{count}</strong><span style="width:{count / max(total, 1) * 100:.2f}%" aria-hidden="true"></span></li>' for state, count in sorted(states.items()))
         caption = ("Distribución de registros del monitor; no mide tiempo de cierre ni tráfico de buques." if es else "Distribution of monitor records; not closure duration or vessel traffic.")
         chart = f'<figure class="monitor-bars"><figcaption>{caption}</figcaption><ul>{bars}</ul></figure>'

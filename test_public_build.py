@@ -85,10 +85,13 @@ class PublicBuildTests(unittest.TestCase):
             paths.append(path)
             if path == "sitemap.xml":
                 return b'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"/>', "text/xml"
+            if path == "ads.txt":
+                return (Path(__file__).parent / 'ads.txt').read_bytes(), 'text/plain'
             return b'<html><body><p data-archive-empty></p><script src="/public-ui.min.js"></script></body></html>', "text/html"
         with patch.object(smoke, "fetch", side_effect=fetch):
             self.assertEqual(smoke.one_attempt(1), [])
         self.assertFalse(any(path.endswith(".json") for path in paths))
+        self.assertIn('ads.txt', paths)
 
 
 if __name__ == "__main__":

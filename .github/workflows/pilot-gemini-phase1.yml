@@ -6,13 +6,12 @@ on:
   pull_request:
     branches: [main]
     types: [opened, reopened]
-    # Navigation/docs-only PRs must not consume the model's quota.
     paths:
-      - free_editorial_ai.py
-      - generate_daily_journal.py
-      - journal_evidence.py
-      - editorial-context.json
-      - pilot_gemini_phase1.py
+      - "free_editorial_ai.py"
+      - "generate_daily_journal.py"
+      - "journal_evidence.py"
+      - "editorial-context.json"
+      - "pilot_gemini_phase1.py"
   workflow_dispatch:
     inputs:
       ref:

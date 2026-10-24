@@ -16,6 +16,14 @@ on:
     branches: [main]
     paths:
       - "publication_quality.py"
+      - "adsense_checks.py"
+      - "ads.txt"
+      - "**.html"
+      - "remote_smoke_test.py"
+      - "original_research.py"
+      - "test_adsense_original.py"
+      - "drafts/adsense-20261024/**"
+      - "drafts/legal-persona-fisica-20261024/**"
       - "editorial-context.json"
       - "journal_evidence.py"
       - "test_journal_revision.py"
@@ -82,8 +90,8 @@ jobs:
           python -m unittest discover -s tests -v
       - name: Pruebas de interfaz pública
         run: node --test test_public_ui.cjs test_own_projects.cjs
-
-      - name: Construir y comprobar enlaces de publicacion
+      - name: Construir y comprobar publicación sin anuncios
         run: |
           python build_public_site.py
           python check_public_links.py _site
+          python adsense_checks.py --root _site
