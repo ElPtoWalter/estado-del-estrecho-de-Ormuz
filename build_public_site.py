@@ -1145,8 +1145,12 @@ def main() -> int:
         "User-agent: *\nAllow: /\n\nSitemap: https://estrechoormuz.com/sitemap.xml\n",
         encoding="utf-8",
     )
+    # A sealed owner-approved bundle is selected explicitly; drafts remain private.
+    from history_release import publish as publish_history, audit as audit_history
+    publish_history(OUT, reviews)
     write_sitemap()
     audit_public_build()
+    audit_history(OUT)
     print("Professional public build OK.")
     print("Private JSON, Python, workflows, internal JS and technical notes are absent from _site.")
     return 0

@@ -1,8 +1,9 @@
-"""Prepare a sealed, safe public candidate; never used by the Pages deploy workflow.
+"""Preserve and preview the sealed c01c7d96 candidate as an archival record.
 
 --write prepares static candidate sources. --check verifies exact regeneration.
 --build checks and overlays the candidate onto a COPY of the normal public build.
-All resulting pages remain noindex. No review approval or release switch is created.
+This archival preview remains noindex. The separately authorized history_release
+builder reuses the sealed inputs for the final artifact; this CLI creates no approval.
 """
 from __future__ import annotations
 import argparse
@@ -307,6 +308,7 @@ def integrate(root, reviews=None):
             text = path.read_text(encoding='utf-8')
             if '</main>' not in text:
                 raise ValueError(f'Missing navigation insertion point: {name}')
+            text = re.sub(r'<aside\b[^>]*\bdata-history-candidate[^>]*>.*?</aside>', '', text, flags=re.S)
             path.write_text(text.replace('</main>', block+'</main>', 1), encoding='utf-8', newline='\n')
 
 
@@ -321,8 +323,11 @@ def build_preview(base=None, out=None):
         raise ValueError('Preview is restricted to the named draft preview directory')
     public.audit_public_build(base)
     baseline = {p.relative_to(base).as_posix(): sha(p.read_bytes()) for p in base.rglob('*') if p.is_file()}
-    if any(name in baseline for name in files):
-        raise ValueError('Candidate must remain absent from the Pages artifact')
+    # After explicit approval the normal build contains the released bundle.
+    # This separate archival preview still shows the original unapproved bytes.
+    overlap = set(files) & set(baseline)
+    if overlap and overlap != set(files):
+        raise ValueError('Partial history bundle in the public artifact')
     if out.exists():
         shutil.rmtree(out)  # resolved exact draft target checked above
     shutil.copytree(base, out)

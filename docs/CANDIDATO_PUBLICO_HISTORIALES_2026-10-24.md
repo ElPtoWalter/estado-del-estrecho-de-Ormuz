@@ -1,5 +1,7 @@
 # Candidato público exacto del historial — PR #22
 
+Documento histórico de la preparación de `c01c7d96`. La aprobación editorial expresa posterior del titular y el estado definitivo se documentan en [PUBLICACION_DEFINITIVA_HISTORIALES_2026-10-24.md](PUBLICACION_DEFINITIVA_HISTORIALES_2026-10-24.md). Las secciones siguientes describen el candidato antes de esa decisión; sus manifests y recursos permanecen intactos para trazabilidad.
+
 Se ha consultado la [nueva revisión preparatoria de GitHub](https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/pull/22#pullrequestreview-5638755073). Consta una valoración técnica asistida favorable, no una revisión personal acreditada del propietario ni una aprobación editorial humana. Se corrige esa atribución indebida en ES/EN, en el generador y en el manifest. No se crea una revisión humana en el registro del sitio.
 
 Rama sincronizada con main `34a70ff7d833299b7e9e484a937b30c0908d751c`, conservando sus actualizaciones automáticas de estado, evidencias, parte, salud, inteligencia operativa y sitemap. Esta sincronización de rama no fusiona la PR ni autoriza un despliegue.

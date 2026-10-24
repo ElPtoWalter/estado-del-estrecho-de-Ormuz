@@ -60,15 +60,45 @@ def one_attempt(timeout: int) -> list[str]:
     return errors
 
 
+def history_attempt(timeout: int) -> list[str]:
+    """Opt-in post-deployment verification of the sealed PR #22 release."""
+    import history_release as release
+    import history_public_candidate as candidate
+    from publication_quality import HISTORY_ARTICLES, HISTORY_REFERENCES
+    files, reviews = release.verify()
+    expected = release.render(files, reviews)
+    errors = []
+    token = datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
+    for name, data in expected.items():
+        try:
+            raw, _ = fetch(name, token, timeout)
+            if candidate.sha(raw) != candidate.sha(data):
+                errors.append(f'{name}: release hash mismatch')
+        except Exception as exc:
+            errors.append(f'{name}: {exc}')
+    try:
+        raw, _ = fetch('sitemap.xml', token, timeout)
+        urls = {node.find('{http://www.sitemaps.org/schemas/sitemap/0.9}loc').text for node in ET.fromstring(raw)}
+        for name in HISTORY_ARTICLES | HISTORY_REFERENCES:
+            if ((BASE+name) in urls) != (name in HISTORY_ARTICLES):
+                errors.append(f'{name}: incorrect deployed sitemap selection')
+    except Exception as exc:
+        errors.append(f'history sitemap: {exc}')
+    return errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--attempts", type=int, default=8)
     parser.add_argument("--delay", type=int, default=20)
     parser.add_argument("--timeout", type=int, default=20)
+    parser.add_argument('--history-release', action='store_true')
     args = parser.parse_args()
     last: list[str] = []
     for attempt in range(1, max(1, args.attempts) + 1):
         last = one_attempt(args.timeout)
+        if args.history_release:
+            last.extend(history_attempt(args.timeout))
         if not last:
             print(f"Despliegue remoto correcto en el intento {attempt}.")
             return 0

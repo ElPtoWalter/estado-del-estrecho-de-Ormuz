@@ -141,7 +141,11 @@ class PublicHistoryCandidateTests(unittest.TestCase):
         self.assertEqual(proposal['indexable_after_real_editorial_approval'], sorted(HISTORY_ARTICLES))
         self.assertEqual(proposal['accessible_noindex_follow_even_after_approval'], sorted(HISTORY_REFERENCES))
         self.assertFalse(proposal['advertising_on_all_five_pages'])
-        self.assertEqual(json.loads((public.ROOT/'editorial-reviews.json').read_text()), {})
+        # The historical candidate manifest is immutable. A subsequent explicit
+        # owner decision lives separately and does not rewrite its prior status.
+        reviews = json.loads((public.ROOT/'editorial-reviews.json').read_text())
+        self.assertEqual(set(reviews), HISTORY_ARTICLES | HISTORY_REFERENCES)
+        self.assertTrue(all(r['kind'] == 'owner_editorial_approval' for r in reviews.values()))
         for name in self.files:
             if name.endswith('.html'):
                 self.assertFalse(public.public_html_path((candidate.SOURCE/name).relative_to(public.ROOT)))
