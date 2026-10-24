@@ -11,6 +11,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from publication_quality import apply_policy, ads_authorized
+from adsense_checks import check_artifact
 from generate_daily_journal import home_teaser_html
 from monitor_report import build_reports
 from own_projects import add_promotions, ARTICLE_PAGES
@@ -1001,7 +1002,7 @@ def audit_public_build() -> None:
                 if token.lower() in body.lower():
                     errors.append(f"{rel}: forbidden public token {token!r}")
 
-    for required in ("index.html", "en.html", "robots.txt", "sitemap.xml"):
+    for required in ("index.html", "en.html", "robots.txt", "sitemap.xml", "ads.txt"):
         if not (OUT / required).exists():
             errors.append(f"missing required public file: {required}")
 
@@ -1012,6 +1013,7 @@ def audit_public_build() -> None:
         if (OUT / forbidden).exists():
             errors.append(f"forbidden public file exists: {forbidden}")
 
+    errors.extend(check_artifact(OUT))
     if errors:
         print("PUBLIC BUILD AUDIT FAILED", file=sys.stderr)
         for error in errors:

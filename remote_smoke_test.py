@@ -9,6 +9,8 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+from pathlib import Path
+from adsense_checks import publisher_id, validate_ads_txt
 from datetime import datetime, timezone
 
 BASE = "https://estrechoormuz.com/"
@@ -28,6 +30,13 @@ def fetch(path: str, token: str, timeout: int) -> tuple[bytes, str]:
 def one_attempt(timeout: int) -> list[str]:
     token = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S%f")
     errors: list[str] = []
+    try:
+        raw, content_type = fetch("ads.txt", token, timeout)
+        errors.extend(validate_ads_txt(raw, publisher_id(Path(__file__).parent)))
+        if 'text/plain' not in content_type.lower():
+            errors.append('ads.txt: expected text/plain')
+    except Exception as exc:
+        errors.append(f"ads.txt: {exc}")
     try:
         raw, _ = fetch("sitemap.xml", token, timeout)
         root = ET.fromstring(raw)

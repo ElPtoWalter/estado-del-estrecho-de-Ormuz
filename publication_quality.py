@@ -6,6 +6,15 @@ from datetime import datetime, timezone
 from urllib.parse import urlsplit
 
 
+# Specific editorial holds from the dated inventory, never a word-count rule.
+# They stay readable; noindex does not exempt them from AdSense's site review.
+EDITORIAL_HOLDS = {
+    "importancia.html", "en-importance.html",  # Generic summary without cited evidence.
+    "como-afecta-ormuz-espana-europa.html", "en-how-hormuz-affects-spain-europe.html",
+    "puede-estar-abierto-ormuz-aunque-caiga-trafico.html", "en-can-hormuz-be-open-while-traffic-collapses.html",
+}
+
+
 def original_review_valid(document, review):
     """A named review authorizes only the exact original draft that was checked."""
     if not isinstance(review, dict) or review.get("kind") not in {"original_analysis", "reviewed_article"}:
@@ -74,6 +83,25 @@ def apply_policy(document, path, *, programmatic_ads=False, review=None):
                        "widget.html", "en-widget.html", "publicidad.html", "en-advertising.html", "publicidad-y-patrocinios.html",
                        "media-kit.html", "en-media-kit.html", "metodologia.html", "en-methodology.html",
                        "fuentes.html", "en-sources.html"}
+    es = not re.search(r'<html\b[^>]*lang=["\x27]en', document, re.I)
+    if not reviewed_original:
+        # A date stamped by an old generator is not evidence of human review.
+        document = document.replace(
+            "Revisión documental realizada el 4 de agosto de 2026. Se actualiza si cambian los datos fuente.",
+            "Texto fechado el 4 de agosto de 2026; no consta una revisión humana individual acreditada.")
+        document = document.replace(
+            "Document review completed on 4 August 2026. Updated when source data materially change.",
+            "Text dated 4 August 2026; no individual human review is documented.")
+    if utility:
+        document = set_noindex(document)
+    if name in EDITORIAL_HOLDS and not reviewed_original:
+        document = set_noindex(document)
+        note = ("Contexto pendiente de actualización editorial. No describe por sí solo la situación actual "
+                "ni acredita una revisión humana individual. Consulta el monitor y las fuentes fechadas." if es else
+                "Context awaiting an editorial update. It does not establish current conditions or an individual "
+                "human review. Consult the monitor and dated sources.")
+        if 'data-editorial-hold' not in document:
+            document = re.sub(r'(<main\b[^>]*>)', lambda m: m[1] + '<aside data-editorial-hold role="note">' + note + '</aside>', document, count=1, flags=re.I)
     if digest:
         document = set_noindex(document)
         if 'data-editorial-disclosure' not in document:
@@ -96,6 +124,12 @@ def apply_policy(document, path, *, programmatic_ads=False, review=None):
             document = re.sub(r'(<main\b[^>]*>)', lambda m: m[1] + note, document, count=1, flags=re.I)
         else:
             document = set_noindex(document)
+            if 'data-draft-disclosure' not in document:
+                note = ("Borrador de análisis original · pendiente de revisión editorial humana. "
+                        "Los cálculos automáticos no certifican los hechos marítimos." if es else
+                        "Original analysis draft · pending human editorial review. "
+                        "Automated calculations do not certify maritime events.")
+                document = re.sub(r'(<main\b[^>]*>)', lambda m: m[1] + '<aside data-draft-disclosure role="note">' + note + '</aside>', document, count=1, flags=re.I)
     block_all_ads = bool(digest or utility or re.search(r'<meta\b[^>]*noindex', document, re.I))
     if not programmatic_ads or block_all_ads:
         document = without_ads(document, block_house_promotions=block_all_ads)
