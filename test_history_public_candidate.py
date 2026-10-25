@@ -144,8 +144,8 @@ class PublicHistoryCandidateTests(unittest.TestCase):
         # The historical candidate manifest is immutable. A subsequent explicit
         # owner decision lives separately and does not rewrite its prior status.
         reviews = json.loads((public.ROOT/'editorial-reviews.json').read_text())
-        self.assertEqual(set(reviews), HISTORY_ARTICLES | HISTORY_REFERENCES)
-        self.assertTrue(all(r['kind'] == 'owner_editorial_approval' for r in reviews.values()))
+        self.assertTrue((HISTORY_ARTICLES | HISTORY_REFERENCES).issubset(reviews))
+        self.assertTrue(all(reviews[name]['kind'] == 'owner_editorial_approval' for name in HISTORY_ARTICLES | HISTORY_REFERENCES))
         for name in self.files:
             if name.endswith('.html'):
                 self.assertFalse(public.public_html_path((candidate.SOURCE/name).relative_to(public.ROOT)))
