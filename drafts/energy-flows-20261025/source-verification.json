@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-10-25T10:20:21.608884+00:00",
+  "checks": [
+    {
+      "source": "eia_table4",
+      "url": "https://www.eia.gov/outlooks/steo/report/energysecurity/article.php",
+      "http_status": 200,
+      "page_sha256_lf": "dd99de44f220c94605da081f8662c6759ceed0124d3ccea63e6f0855e17044f8",
+      "selected_rows": {
+        "oil": [
+          "20.9",
+          "21.0",
+          "21.3",
+          "21.6",
+          "14.9",
+          "4.9"
+        ],
+        "lng": [
+          "11.7",
+          "11.0",
+          "10.9",
+          "10.5",
+          "7.4",
+          "0.8"
+        ]
+      },
+      "release": "2026-08-12"
+    },
+    {
+      "source": "eia_reuse",
+      "url": "https://www.eia.gov/about/copyrights_reuse.php",
+      "http_status": 200,
+      "page_sha256_lf": "9888d60f7047dfd3b4d211b829ef641acefaf6984bc763d2888c7d314faa7d80"
+    },
+    {
+      "source": "imo_context",
+      "url": "https://www.imo.org/en/mediacentre/hottopics/pages/middle-east-strait-of-hormuz.aspx",
+      "http_status": 200,
+      "page_sha256_lf": "3f151f50288a4718a630574f21e86237942353be196896aa20d85dbd2a8b7944"
+    }
+  ],
+  "scope": "HTTP delivery, exact two EIA table-4 rows and supplement date; source policy read separately. No verification of individual voyages, current traffic or independent legal clearance.",
+  "personal_data_copied": false
+}
