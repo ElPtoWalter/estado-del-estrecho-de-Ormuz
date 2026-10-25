@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-10-24T23:34:45Z",
-  "last_success_at": "2026-10-24T23:34:45Z",
+  "checked_at": "2026-10-25T01:31:31Z",
+  "last_success_at": "2026-10-25T01:31:31Z",
   "last_change_at": "2026-10-18T17:29:40Z",
   "verification_ok": true,
   "stale": false,
@@ -16,14 +16,14 @@
   "evidence": [
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran says wont allow US warships to get close as Trump ponders new attacks | US - Israel war on Iran News",
+      "title": "Iran says won't allow US warships to get close as Trump ponders new attacks - Al Jazeera",
       "source_name": "Al Jazeera",
       "source_id": "aljazeera",
-      "source_url": "https://aljazeera.com/news/2026/10/24/iran-says-wont-allow-us-warships-to-get-close-as-trump-ponders-new-attacks",
-      "published_at": "2026-10-24T17:15:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPbnhYekZtTGYtNUxRY1l0SkNlclVxV1JhVHJ2QUNzRFhRQW96Z0FWbXBSakNhblFEYk9kNHBibExfT0xFVFhLbUEzLWZpR0VNVC0tT2NlTTRIWmlaRThSTXN5OEF6d1ZiSEhGak11ck5zclJpYkRPODdJdFNqLXJTWjZiemlRSnZuOUV1MWY3eDZYMTBjaThzRDJaU3VVQnFqbFQ3bEt2enJEeHNUcm1nZTBnT1lXNXfSAbwBQVVfeXFMTzcyR081VVdqUVNRX05XQ0NxRFFPdm81M0NEV0hPcm9FYlZmTEJ4bTBPQUtjSjZvOEx3aGFWdGNDbHkyZzdoVDlVZzZyU1NrNkt4YkhBZGxZcm1vZ0tlWTB0T3lZbDdaX3dnSkZVdUpqc19KZnpWS3Vlc2tiN1JEQUNWZEVZYmV0ZWVyYXFENDU4a2FqU3ZWZGR5dFFreHl4VzVZellsU2hwQVcyZzBBTjl6SG9WQUpBNmprOXA",
+      "published_at": "2026-10-24T13:15:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-24T23:34:45Z"
+      "observed_at": "2026-10-25T01:31:31Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -34,7 +34,7 @@
       "published_at": "2026-10-23T15:30:47Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-24T23:34:45Z"
+      "observed_at": "2026-10-25T01:31:31Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -45,7 +45,7 @@
       "published_at": "2026-10-23T14:59:43Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-24T23:34:45Z"
+      "observed_at": "2026-10-25T01:31:31Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -56,7 +56,7 @@
       "published_at": "2026-10-23T09:36:16Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-24T23:34:45Z"
+      "observed_at": "2026-10-25T01:31:31Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -67,7 +67,7 @@
       "published_at": "2026-10-22T11:28:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-24T23:34:45Z"
+      "observed_at": "2026-10-25T01:31:31Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,16 +78,17 @@
       "published_at": "2026-10-21T14:10:19Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-24T23:34:45Z"
+      "observed_at": "2026-10-25T01:31:31Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
@@ -109,7 +110,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-10-24T17:15:00Z",
+    "as_of": "2026-10-24T13:15:07Z",
     "current_cycle_count": 6,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -137,7 +138,7 @@
       "published_at": "2026-10-24T13:15:07Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-24T21:06:49Z"
+      "observed_at": "2026-10-25T01:31:31Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -170,7 +171,7 @@
       "published_at": "2026-10-23T15:30:47Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-10-24T23:34:45Z"
+      "observed_at": "2026-10-25T01:31:31Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -181,7 +182,7 @@
       "published_at": "2026-10-23T14:59:43Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-24T23:34:45Z"
+      "observed_at": "2026-10-25T01:31:31Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -192,7 +193,7 @@
       "published_at": "2026-10-23T09:36:16Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-24T23:34:45Z"
+      "observed_at": "2026-10-25T01:31:31Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -291,7 +292,7 @@
       "published_at": "2026-10-21T14:10:19Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-24T23:34:45Z"
+      "observed_at": "2026-10-25T01:31:31Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -781,7 +782,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-24T23:35:04Z",
+    "generated_at": "2026-10-25T01:32:29Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -815,14 +816,14 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 3.64,
+      "passage": 4.654,
       "closure": 0,
-      "traffic_reduction": 0.9,
+      "traffic_reduction": 0.78,
       "access_restriction": 1.9,
-      "risk": 77.284
+      "risk": 89.904
     },
     "source_counts": {
-      "passage": 3,
+      "passage": 4,
       "closure": 0,
       "primary_sources": 3
     },
@@ -889,7 +890,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-24T23:35:04Z",
+        "published_at": "2026-10-25T01:32:29Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -903,30 +904,13 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Iran says wont allow US warships to get close as Trump ponders new attacks | US - Israel war on Iran News",
-        "source": "Al Jazeera",
-        "url": "https://aljazeera.com/news/2026/10/24/iran-says-wont-allow-us-warships-to-get-close-as-trump-ponders-new-attacks",
-        "published_at": "2026-10-24T17:15:00Z",
-        "tier": 2,
-        "weight": 2.4,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 2.4,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Iran says won’t allow US warships to get close as Trump ponders new attacks - Al Jazeera",
+        "title": "Iran says won't allow US warships to get close as Trump ponders new attacks - Al Jazeera",
         "source": "Al Jazeera",
         "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPbnhYekZtTGYtNUxRY1l0SkNlclVxV1JhVHJ2QUNzRFhRQW96Z0FWbXBSakNhblFEYk9kNHBibExfT0xFVFhLbUEzLWZpR0VNVC0tT2NlTTRIWmlaRThSTXN5OEF6d1ZiSEhGak11ck5zclJpYkRPODdJdFNqLXJTWjZiemlRSnZuOUV1MWY3eDZYMTBjaThzRDJaU3VVQnFqbFQ3bEt2enJEeHNUcm1nZTBnT1lXNXfSAbwBQVVfeXFMTzcyR081VVdqUVNRX05XQ0NxRFFPdm81M0NEV0hPcm9FYlZmTEJ4bTBPQUtjSjZvOEx3aGFWdGNDbHkyZzdoVDlVZzZyU1NrNkt4YkhBZGxZcm1vZ0tlWTB0T3lZbDdaX3dnSkZVdUpqc19KZnpWS3Vlc2tiN1JEQUNWZEVZYmV0ZWVyYXFENDU4a2FqU3ZWZGR5dFFreHl4VzVZellsU2hwQVcyZzBBTjl6SG9WQUpBNmprOXA",
         "published_at": "2026-10-24T13:15:07Z",
         "tier": 2,
         "weight": 2.4,
-        "provider": "Google News RSS",
+        "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
@@ -968,29 +952,46 @@
         "effective_weight": 1.98,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Iran Has a New Way to Humiliate Donald Trump: Tehran Could Drop Mines Into the Strait of Hormuz and Spark a Crisis - National Security Journal",
+        "source": "National Security Journal",
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOSEZFNG44MUROLXdpNTkwMTFER09Id2l2R1NRdUxZNl9rY05VVllzSVpvSTU4SUdzR3BScFl2WXRnLVVGYWlCLWh0UnEzclpxMVJWRmZNem9TMUlrVy1WcnVhaldBaUptLUNZaGlfWVhzSHFxd0E5M3ZfdXFpOFpReXVVYWFadW8wZmMzYlZXc3FmZ25EV3VhUjdhUEo2Unlha2FlSTVKM2phZWhKbkRXbklpRGxlc2hYaV9lWl9KNWNVdHo2YTBFRFotVmh3QllPVkkwRGozU1NSSUZtdlJ5d3p3R3o",
+        "published_at": "2026-10-21T14:10:19Z",
+        "tier": 2,
+        "weight": 2.1,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 1.302,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_83c523cf06f27c56",
       "evt_2d74347f166bc0cd",
-      "evt_cc89fc847f518ffe",
       "evt_848d5980e8761bd7",
-      "evt_f6b72f8e8595eca8",
-      "evt_5a384ed25db98a35",
       "evt_dbf11ce9a3a5a270",
-      "evt_a6e7dd9c75f7cf29",
+      "evt_ff4595ae31404e22",
+      "evt_627907211d67f45b",
+      "evt_cc89fc847f518ffe",
+      "evt_45f6a1babfab971a",
       "evt_c731814299dadcba",
-      "evt_cc89ccf20164c72c",
-      "evt_234bb683391484d9",
+      "evt_f6b72f8e8595eca8",
       "evt_8547c7501d3f3661",
       "evt_89aca76a6ee2145c",
       "evt_83d881e7675690ad",
+      "evt_15f4021c82f992c7",
+      "evt_8f6308b4660a6ce8",
       "evt_39f8027695d90516",
-      "evt_45f6a1babfab971a",
-      "evt_3fc3466d84382b74",
       "evt_a739d89a3512887d",
       "evt_bb2da724e936cd4b",
-      "evt_9205d43fb7bd1d28"
+      "evt_9205d43fb7bd1d28",
+      "evt_20d4b4190504200a"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 7,
@@ -998,16 +999,16 @@
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 3,
       "SINGLE_SOURCE": 22,
-      "UNCONFIRMED": 26,
-      "TOTAL": 58
+      "UNCONFIRMED": 31,
+      "TOTAL": 63
     },
     "diagnostics": {
-      "signals_considered": 80,
+      "signals_considered": 97,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 58,
-      "article_count_after_deduplication": 131,
+      "event_count": 63,
+      "article_count_after_deduplication": 150,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -1019,6 +1020,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-24T23:35:04Z"
+    "generated_at": "2026-10-25T01:32:29Z"
   }
 }
