@@ -1,0 +1,9 @@
+calculation,value,unit,period,formula,interpretation,source_inputs
+es_total_share,1.71893540,percent,2025,qatar_map / es_total * 100,Own quotient; not a correction to the PDF chart,source-inputs.csv
+es_lng_share,2.58098064,percent,2025,qatar_map / es_lng * 100,Own LNG-only denominator; not comparable to EU trade value,source-inputs.csv
+excel_share,1.71889077,percent,2025,qatar_excel_fraction * 100,Official workbook fraction converted to percent,source-inputs.csv
+pdf_minus_quotient,0.01606460,percentage_points,2025,qatar_pdf_share - es_total_share,Documentary difference; cause unresolved,source-inputs.csv
+excel_minus_quotient,-0.00004463,percentage_points,2025,excel_share - es_total_share,Small residual; no unverified cause assigned,source-inputs.csv
+implied_qatar_volume,6462.84030000,GWh,2025,es_total * qatar_pdf_share / 100,Hypothetical equality check; not observed volume,source-inputs.csv
+implied_minus_map,59.84030000,GWh,2025,implied_qatar_volume - qatar_map,Arithmetic residual; not lost or missing energy,source-inputs.csv
+eu_news_rounded,8.90000000,percent_of_trade_value,2025,round(eu_qatar_value_share; 1 decimal),Value of extra-EU LNG imports; not volume or consumption,source-inputs.csv

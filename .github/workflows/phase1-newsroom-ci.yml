@@ -31,6 +31,10 @@ on:
       - "energy_editorial.py"
       - "energy_release.py"
       - "test_energy_release.py"
+      - "spain_data.py"
+      - "spain_editorial.py"
+      - "test_spain_editorial.py"
+      - "drafts/spain-europe-20261025/**"
       - "docs/energy-release-20261025.json"
       - "test_energy_editorial.py"
       - "drafts/energy-flows-20261025/**"
@@ -97,6 +101,7 @@ jobs:
           python-version: "3.12"
       - name: Compilar
         run: |
+          python -m py_compile spain_data.py spain_editorial.py test_spain_editorial.py drafts/spain-europe-20261025/render_charts.py
           python -m py_compile energy_data.py energy_editorial.py energy_release.py test_energy_editorial.py test_energy_release.py drafts/energy-flows-20261025/render_charts.py
           python -m py_compile publication_quality.py free_editorial_ai.py generate_daily_journal.py pilot_gemini_phase1.py pilot_phase2a_video.py straitwatch_core.py operational_intelligence_v7.py postprocess_evidence.py generate_health.py build_public_site.py history_public_candidate.py history_release.py test_history_release.py test_history_public_candidate.py test_free_editorial_ai.py test_straitwatch_core.py phase2_video/*.py
       - name: Pruebas editoriales
@@ -118,6 +123,10 @@ jobs:
           python history_public_candidate.py --build
           python check_public_links.py drafts/historiales-20261024/preview
           python adsense_checks.py --root drafts/historiales-20261024/preview
+          python spain_editorial.py --check
+          python spain_editorial.py --build-preview
+          python check_public_links.py drafts/spain-europe-20261025/preview
+          python adsense_checks.py --root drafts/spain-europe-20261025/preview
       - name: Conservar candidato público comprobado sin desplegar
         uses: actions/upload-artifact@v7
         with:

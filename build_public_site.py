@@ -996,14 +996,15 @@ HISTORY_PUBLIC_CSV = frozenset(
     for name in ("records", "models", "confidence", "windows", "plot")
 )
 ENERGY_PUBLIC_CSV = frozenset({'assets/research/energy-flows-20261025/energy-series.csv'})
+SPAIN_DRAFT_CSV = frozenset(f'assets/research/spain-europe-20261025/{name}.csv' for name in ('source-inputs','calculations'))
 
 
 def copy_asset(path: Path) -> bool:
     if path.name == "monitor-records.csv":
         return True
-    # Five fixed data-only destinations, never a general CSV or folder exception.
+    # Exact data-only destinations, never a general CSV or folder exception.
     rel = path.relative_to(ROOT) if path.is_absolute() and path.is_relative_to(ROOT) else path
-    if rel.as_posix() in HISTORY_PUBLIC_CSV | ENERGY_PUBLIC_CSV:
+    if rel.as_posix() in HISTORY_PUBLIC_CSV | ENERGY_PUBLIC_CSV | SPAIN_DRAFT_CSV:
         return True
     if private_name(path) or path.name.startswith("."):
         return False
@@ -1052,7 +1053,7 @@ def audit_public_build(root: Path | None = None) -> None:
         if not path.is_file():
             continue
         rel = path.relative_to(root).as_posix()
-        if path.suffix.lower() == ".csv" and rel != "monitor-records.csv" and rel not in HISTORY_PUBLIC_CSV | ENERGY_PUBLIC_CSV:
+        if path.suffix.lower() == ".csv" and rel != "monitor-records.csv" and rel not in HISTORY_PUBLIC_CSV | ENERGY_PUBLIC_CSV | SPAIN_DRAFT_CSV:
             errors.append(f"unapproved public CSV: {rel}")
         if private_name(path):
             errors.append(f"private file leaked: {rel}")

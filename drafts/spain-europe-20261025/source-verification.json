@@ -1,0 +1,84 @@
+{
+  "checked_at": "2026-10-25T16:28:27.765412+00:00",
+  "kind": "assisted_document_inspection_not_human_editorial_approval",
+  "http": {
+    "enagas-2025.pdf": {
+      "url": "https://www.enagas.es/content/dam/enagas/es/ficheros/sala-de-comunicacion/publicaciones/informe-sistema-gasista/informe-sistema-gasista-espa%C3%B1ol-2025.pdf",
+      "final_url": "https://www.enagas.es/content/dam/enagas/es/ficheros/sala-de-comunicacion/publicaciones/informe-sistema-gasista/informe-sistema-gasista-espa%C3%B1ol-2025.pdf",
+      "status": 200,
+      "type": "application/pdf",
+      "sha256": "cc1a1b7d8d49cd8cfa86c0ed4efc8204d7a36b8fe7fa689c373776a780beece3",
+      "bytes": 1493685
+    },
+    "enagas-operation-2025.xlsx": {
+      "url": "https://www.enagas.es/content/dam/enagas/es/ficheros/informe-sistema-gasista-2025/2-Operacion-fisica_Informe_Sistema_Gasista_2025.xlsx",
+      "final_url": "https://www.enagas.es/content/dam/enagas/es/ficheros/informe-sistema-gasista-2025/2-Operacion-fisica_Informe_Sistema_Gasista_2025.xlsx",
+      "status": 200,
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "35f0677a72a7868b58228b4fd983cfa1dad773d6ced188172b08c39d79bc2e58",
+      "bytes": 1913095
+    },
+    "eurostat-energy-2025.xlsx": {
+      "url": "https://ec.europa.eu/eurostat/documents/d/products-eurostat-news/imports-energy-products-2025",
+      "final_url": "https://ec.europa.eu/eurostat/documents/d/products-eurostat-news/imports-energy-products-2025",
+      "status": 200,
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "12b24ed2104c5faab73e924a251a4cfd97f578a22cd8c41ab4d30d114dead01c",
+      "bytes": 232715
+    },
+    "enagas-legal.html": {
+      "url": "https://www.enagas.es/es/aviso-legal/",
+      "final_url": "https://www.enagas.es/es/aviso-legal/",
+      "status": 200,
+      "type": "text/html;charset=utf-8",
+      "sha256": "81dcd5e6e583e9789cd1fbd901a3c17a62f820b3119f9c4bdfe34e2e4e373d2c",
+      "bytes": 187723
+    },
+    "eurostat-rights.html": {
+      "url": "https://ec.europa.eu/eurostat/help/copyright-notice",
+      "final_url": "https://ec.europa.eu/eurostat/help/copyright-notice",
+      "status": 200,
+      "type": "text/html;charset=UTF-8",
+      "sha256": "5d40d0ef7038d0b21bf31e1a356b3ff44610f4b7337e770dd5d8dd0f8434ab5b",
+      "bytes": 179239
+    },
+    "eurostat-news.html": {
+      "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3",
+      "final_url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3",
+      "status": 200,
+      "type": "text/html;charset=UTF-8",
+      "sha256": "89a78403046b4f855db284c3bd56c1f18491e1f4792daacc592a54496167877a",
+      "bytes": 189482
+    },
+    "iea-context.html": {
+      "url": "https://www.iea.org/about/strait-of-hormuz",
+      "final_url": "https://www.iea.org/about/strait-of-hormuz",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "sha256": "00805e4addaff361a0e4be40f422e0282a88593f85b7803d6eff844e621214d9",
+      "bytes": 250273
+    }
+  },
+  "selected_data_checks": {
+    "selected_facts_match": true,
+    "pdf_pages_inspected": [
+      23,
+      24,
+      25,
+      80
+    ],
+    "enagas_workbook": "Pág. 25!B12:E12; E4=2025; E12 is a literal fraction",
+    "eurostat_workbook": "VISUAL 2!A1:A2, D4:E9; E9 is a literal percentage",
+    "mass_data_also_available": "Natural gas (liq) partners!A15:C19; mass is not GWh",
+    "reconciliation": "unresolved PDF chart versus map/total and linked Excel; no cause inferred"
+  },
+  "visual_inspection": "PDF printed pages 23,24,25,80 rendered locally; Qatar label, green 2025 bar, units and download link inspected with AI assistance",
+  "human_editorial_approval": null,
+  "scope_limits": "Selected facts and definitions only; no certificate of the full PDF/workbooks, independent legal clearance, issuer contact or SL-ATR reconciliation",
+  "original_draft_sha256_lf": {
+    "espana-europa-exposicion.html": "cfb58860afc445bbcf67d7aae2e2578ca97d6e214f8f90cd37cf8d6bfa39a2db",
+    "spain-europe-exposure.html": "6b7c5a9fef5d72c890d7ea9c58d3e1b5314cd178a792fab3d0cae06080dd2269",
+    "spain-eu-context.csv": "e06e4ec2113ea63d70814b7abf59b2245238eea53be2ed37125904637ba7c72a",
+    "spain-reconciliation.csv": "c732c211b53a7c09a3031da0e9898e1d2d8630d80e0f45decf13eb26c18dc6cc"
+  }
+}
