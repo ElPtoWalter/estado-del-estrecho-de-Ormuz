@@ -29,7 +29,8 @@ class HistoryReleaseTests(unittest.TestCase):
         self.assertFalse(record['deployment_authorized'])
         self.assertFalse(record['advertising_authorized'])
         self.assertIsNone(candidate.manifest(self.files)['human_editorial_approval'])
-        for name,r in self.reviews.items():
+        for name in HISTORY_NO_ADS:
+            r=self.reviews[name]
             self.assertNotIn('reviewer',r)
             self.assertNotIn('facts_checked',r)
             self.assertNotIn('rights_checked',r)

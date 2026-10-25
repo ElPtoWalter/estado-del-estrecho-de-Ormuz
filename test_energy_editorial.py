@@ -60,9 +60,11 @@ class EnergyEditorialTests(unittest.TestCase):
                 text=self.files[name].decode();p=sitemap.MetaParser();p.feed(text)
                 self.assertEqual(p.canonical,public.DOMAIN+'/'+name);self.assertEqual(p.alternates,expected)
                 self.assertIn('noindex',p.robots);self.assertIn('publisher-ads" content="disabled',text)
-                self.assertIsNone(approvals.get(name));self.assertFalse(public.public_html_path((editorial.SOURCE/name).relative_to(data.ROOT)))
-                for old_review in approvals.values():self.assertFalse(original_review_valid(text,old_review))
-                rendered=apply_policy(text,name,programmatic_ads=True,review=next(iter(approvals.values())))
+                self.assertEqual(approvals[name]['kind'],'owner_energy_editorial_approval');self.assertFalse(public.public_html_path((editorial.SOURCE/name).relative_to(data.ROOT)))
+                for old_review in approvals.values():
+                    if old_review['kind']=='owner_editorial_approval':self.assertFalse(original_review_valid(text,old_review))
+                history_review=next(r for r in approvals.values() if r['kind']=='owner_editorial_approval')
+                rendered=apply_policy(text,name,programmatic_ads=True,review=history_review)
                 self.assertIn('noindex',rendered);self.assertNotIn('data-original-review',rendered)
                 self.assertEqual(add_promotions(text,'drafts/energy-flows-20261025/'+name,'ormuz'),text)
 

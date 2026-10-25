@@ -1,5 +1,7 @@
 # Segundo análisis original: cierre, paso y flujos
 
+> Archivo del estado previo a aprobación: el candidato sellado se conserva sin cambios. El titular aprobó después el commit `e40b057e`; la selección definitiva y los permisos aún pendientes se documentan en [PUBLICACION_DEFINITIVA_ENERGIA_2026-10-25.md](../../docs/PUBLICACION_DEFINITIVA_ENERGIA_2026-10-25.md). Los comandos de previsualización y las referencias a aprobación pendiente que siguen describen aquel estado histórico, no la versión definitiva.
+
 Edición de trabajo del 25/10/2026. Borrador ES/EN sin aprobación editorial humana ni autorización de publicación. Firma institucional prevista: Estrecho Ormuz. Rama independiente basada en main `04792ada6cdd99fb8b044d503bd557344a1d283c`; la PR #22 ya fusionada no se modifica.
 
 ## Auditoría del material anterior

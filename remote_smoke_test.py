@@ -87,18 +87,48 @@ def history_attempt(timeout: int) -> list[str]:
     return errors
 
 
+def energy_attempt(timeout: int) -> list[str]:
+    """Opt-in verification after a separately authorised PR #23 deployment."""
+    import energy_release as release
+    from energy_data import sha
+    from publication_quality import ENERGY_ARTICLES, ENERGY_METHODS
+    files, reviews = release.verify()
+    expected = release.render(files, reviews)
+    errors = []
+    token = datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
+    for name, data in expected.items():
+        try:
+            raw, _ = fetch(name, token, timeout)
+            if sha(raw) != sha(data):
+                errors.append(f'{name}: release hash mismatch')
+        except Exception as exc:
+            errors.append(f'{name}: {exc}')
+    try:
+        raw, _ = fetch('sitemap.xml', token, timeout)
+        urls = {node.find('{http://www.sitemaps.org/schemas/sitemap/0.9}loc').text for node in ET.fromstring(raw)}
+        for name in ENERGY_ARTICLES | ENERGY_METHODS:
+            if ((BASE+name) in urls) != (name in ENERGY_ARTICLES):
+                errors.append(f'{name}: incorrect deployed sitemap selection')
+    except Exception as exc:
+        errors.append(f'energy sitemap: {exc}')
+    return errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--attempts", type=int, default=8)
     parser.add_argument("--delay", type=int, default=20)
     parser.add_argument("--timeout", type=int, default=20)
     parser.add_argument('--history-release', action='store_true')
+    parser.add_argument('--energy-release', action='store_true')
     args = parser.parse_args()
     last: list[str] = []
     for attempt in range(1, max(1, args.attempts) + 1):
         last = one_attempt(args.timeout)
         if args.history_release:
             last.extend(history_attempt(args.timeout))
+        if args.energy_release:
+            last.extend(energy_attempt(args.timeout))
         if not last:
             print(f"Despliegue remoto correcto en el intento {attempt}.")
             return 0

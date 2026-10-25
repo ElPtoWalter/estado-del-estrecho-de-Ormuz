@@ -1149,9 +1149,12 @@ def main() -> int:
     # A sealed owner-approved bundle is selected explicitly; drafts remain private.
     from history_release import publish as publish_history, audit as audit_history
     publish_history(OUT, reviews)
+    from energy_release import publish as publish_energy, audit as audit_energy
+    publish_energy(OUT, reviews)
     write_sitemap()
     audit_public_build()
     audit_history(OUT)
+    audit_energy(OUT)
     print("Professional public build OK.")
     print("Private JSON, Python, workflows, internal JS and technical notes are absent from _site.")
     return 0
