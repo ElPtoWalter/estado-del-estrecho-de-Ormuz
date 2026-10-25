@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-25T19:54:41Z",
+    "generated_at": "2026-10-25T22:45:53Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -99,8 +99,8 @@
       "passage": 6.956,
       "closure": 0,
       "traffic_reduction": 0.78,
-      "access_restriction": 5.68,
-      "risk": 73.838
+      "access_restriction": 8.58,
+      "risk": 74.598
     },
     "source_counts": {
       "passage": 6,
@@ -136,7 +136,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-25T19:54:41Z",
+        "published_at": "2026-10-25T22:45:53Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -184,13 +184,30 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Iran says won't allow US warships to get close as Trump ponders new attacks - Al Jazeera",
+        "title": "Iran blames US for deal failure, urges new try amid fear of new attacks - Al Jazeera",
+        "source": "Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZ05XMkJCM0VsWlpad3c3TDI0OTBlWEl4SnJrdlNfRmFyRXdTOGpEZUk2YWlUMFZHZ25qOTctZ282NXo1bXN6SXZGUFZTNTZwN2JBbVJtNjZzY1lmYkQzU3l6Y3N0U2ZERmJ4eHUwc3kxX3otMUFiUm12RWY2MVJWTUs4Sk54V3lOZURVOUYzQ2hWZzBQU3lhYTBQd0NCOGNFUUJ1QUdEREhXaTBLQkpDRTlB0gG3AUFVX3lxTE81TzJSMTVEOHE5ZWVybzFEVXRiWFJiYWo1VkJsVTJjbEp4WVE0eFFwSFp3VjhmVWpuSHRKVy1rdjFndzdQTG4xd0w1ejN0anp6T1U0a25Delkxc2Z5N0R6elBjMDVYVDU4SWlyQW5xQUFBcUtQVGtHRjM4TWk4eC0zUFUtd3VTdnd4ZnhBdUUwejUwdFE4eG1RSHlnRGNmNG9VXy1fNVRDUkFiNkVPc2djMFRfM2NsZw",
+        "published_at": "2026-10-24T21:36:25Z",
+        "tier": 2,
+        "weight": 2.4,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 2.16,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Iran says won’t allow US warships to get close as Trump ponders new attacks - Al Jazeera",
         "source": "Al Jazeera",
         "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPbnhYekZtTGYtNUxRY1l0SkNlclVxV1JhVHJ2QUNzRFhRQW96Z0FWbXBSakNhblFEYk9kNHBibExfT0xFVFhLbUEzLWZpR0VNVC0tT2NlTTRIWmlaRThSTXN5OEF6d1ZiSEhGak11ck5zclJpYkRPODdJdFNqLXJTWjZiemlRSnZuOUV1MWY3eDZYMTBjaThzRDJaU3VVQnFqbFQ3bEt2enJEeHNUcm1nZTBnT1lXNXfSAbwBQVVfeXFMTzcyR081VVdqUVNRX05XQ0NxRFFPdm81M0NEV0hPcm9FYlZmTEJ4bTBPQUtjSjZvOEx3aGFWdGNDbHkyZzdoVDlVZzZyU1NrNkt4YkhBZGxZcm1vZ0tlWTB0T3lZbDdaX3dnSkZVdUpqc19KZnpWS3Vlc2tiN1JEQUNWZEVZYmV0ZWVyYXFENDU4a2FqU3ZWZGR5dFFreHl4VzVZellsU2hwQVcyZzBBTjl6SG9WQUpBNmprOXA",
         "published_at": "2026-10-24T13:15:07Z",
         "tier": 2,
         "weight": 2.4,
-        "provider": "legacy-engine",
+        "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
@@ -232,63 +249,46 @@
         "effective_weight": 1.716,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "CENTCOM chief visits Strait of Hormuz, declares routes clear of Iranian mines - Roya News",
-        "source": "Roya News",
-        "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9hUlZWbWRJbVBsbWxXVmtfN1FwZUtrX2dqQUpZOFpMTW1fZHpmRzQ0OXB5VFlyNUNjZ3pqMkMyMmI5WkQzUmxOcw",
-        "published_at": "2026-10-25T19:07:27Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_83c523cf06f27c56",
+      "evt_b6fec3ed05e95988",
       "evt_df266799e32a47c9",
       "evt_1811c48a568795db",
+      "evt_a2896cb89aa5cc20",
       "evt_15f4021c82f992c7",
-      "evt_16373cb2edd3851d",
       "evt_519490d635224ca8",
+      "evt_16373cb2edd3851d",
       "evt_e7f266f287f64ee1",
       "evt_7d7b2de76966bce6",
       "evt_9405abafef1a776e",
       "evt_8547c7501d3f3661",
       "evt_30b86f7aa164ac26",
+      "evt_45dba7148ff4471f",
+      "evt_cc89fc847f518ffe",
       "evt_71e3ea08fc9e2465",
-      "evt_dbf11ce9a3a5a270",
       "evt_ff4595ae31404e22",
       "evt_439688cfa66ffe3b",
-      "evt_cc89fc847f518ffe",
-      "evt_627907211d67f45b",
-      "evt_e6a9080904602140",
-      "evt_89aca76a6ee2145c",
-      "evt_c610753ec1ce0f2f"
+      "evt_dbf11ce9a3a5a270",
+      "evt_e6a9080904602140"
     ],
     "verification_summary": {
-      "CONFIRMED_MULTI_SOURCE": 7,
+      "CONFIRMED_MULTI_SOURCE": 6,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 3,
-      "SINGLE_SOURCE": 22,
-      "UNCONFIRMED": 35,
-      "TOTAL": 67
+      "DECLARATION_ONLY": 4,
+      "SINGLE_SOURCE": 21,
+      "UNCONFIRMED": 38,
+      "TOTAL": 69
     },
     "diagnostics": {
-      "signals_considered": 94,
+      "signals_considered": 96,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 67,
-      "article_count_after_deduplication": 148,
+      "event_count": 69,
+      "article_count_after_deduplication": 149,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-25T19:54:41Z"
+    "generated_at": "2026-10-25T22:45:53Z"
   }
 }
