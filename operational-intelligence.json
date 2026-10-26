@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-10-26T14:30:46Z",
+  "generated_at": "2026-10-26T20:05:09Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -34,11 +34,11 @@
   "traffic_ratio_estimate": null,
   "traffic_snapshot": null,
   "scores": {
-    "passage": 10.609,
+    "passage": 10.337,
     "closure": 0,
-    "traffic_reduction": 0,
-    "access_restriction": 10.98,
-    "risk": 64.776
+    "traffic_reduction": 0.62,
+    "access_restriction": 14.88,
+    "risk": 64.396
   },
   "source_counts": {
     "passage": 8,
@@ -49,7 +49,7 @@
   "legacy_engine": {
     "status": "INCIERTO",
     "operational_status": "HIGH_RISK_UNCONFIRMED",
-    "confidence": "ALTA"
+    "confidence": "MEDIA"
   },
   "evidence": [
     {
@@ -57,10 +57,10 @@
       "title": "Bulk carrier Cape Dao sinks after Hormuz attack - Lloyd's List",
       "source": "Lloyd's List",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbjNFbmpQTWRHUU9xdkxfUzRuaG5KekR3S09EdmpCUnFXTHFQdDl4SXpkeWRtdWpLRGdCRmo2czBRV3VlVlZXM1JoV1RGMFlNNS1QSXhEVEFTdmdnZ04teHRGcnBnNG51TjVONXB4ZWxwTjFwZlRtZzlIUTNEVjh3TzVyODUxRWFqSndVRw",
-      "published_at": "2026-10-26T14:00:43Z",
+      "published_at": "2026-10-26T14:00:25Z",
       "tier": 4,
       "weight": 4.0,
-      "provider": "legacy-engine",
+      "provider": "Google News RSS",
       "details": "",
       "traffic_ratio": null,
       "traffic_count": null,
@@ -70,11 +70,11 @@
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "RISK_SEVERE",
-      "title": "Ship attacks in Strait of Hormuz hit record high in October - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOT0p6ZElVazFhVWJxRy15cXJ6X2VJZlBZbkp6dTFNUGNzb1pCbjYyenA2UE5ERXBYMnMya2tYNkNfcGN3U3FGZ3V2MzdaN0RWUng5VFJHVl9jVk9LLVJGOVFVRFNKR21sc0pULWQ0Vm9uQk9tODlWTGs0U3BSeFd2MC15X2RIakQ2Mkw0eFhMa1Y2UUVWYVBsZkhrZHowVnlaWUpKZA",
-      "published_at": "2026-10-23T14:59:43Z",
+      "kind": "ACCESS_RESTRICTED",
+      "title": "Panama Canal restrictions double Asian LPG importers' Hormuz conundrum - Lloyd's List",
+      "source": "Lloyd's List",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaHg4cXloVXYwZDRiTXpJYjcxY0h1VzBtdjZYUHVkajRkQmRBaUNuVmV4SkJzUlM3eTRPdmpEb2l5eUk1cEZzLXBrU1pkaG5fR0ZEYXBaUEQ4VFpPYU13OTVWR3pqTnRjdjVfLVZ5eUJOMS16OGJmc2x3aVpZTm1uWGZ5UVBGbzJ1cG41WEFfS3Q0WFRtOEtIX3lZNWhWNzlxSHplcW12MlpYUnhlVVhoZ3ptTFFGdw",
+      "published_at": "2026-10-26T11:38:15Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "legacy-engine",
@@ -82,16 +82,16 @@
       "traffic_ratio": null,
       "traffic_count": null,
       "traffic_average": null,
-      "effective_weight": 3.12,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
+      "effective_weight": 4.0,
+      "kind_label_es": "Acceso restringido",
+      "kind_label_en": "Restricted access"
     },
     {
       "kind": "RISK_SEVERE",
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-10-26T14:30:46Z",
+      "published_at": "2026-10-26T20:05:09Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -108,7 +108,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
       "source": "Lloyd's List",
       "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-10-26T14:30:46Z",
+      "published_at": "2026-10-26T20:05:09Z",
       "tier": 4,
       "weight": 2.6,
       "provider": "Lloyd's List hot topic",
@@ -119,6 +119,23 @@
       "effective_weight": 2.6,
       "kind_label_es": "Acceso restringido",
       "kind_label_en": "Restricted access"
+    },
+    {
+      "kind": "RISK_SEVERE",
+      "title": "Ship attacks in Strait of Hormuz hit record high in October - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOT0p6ZElVazFhVWJxRy15cXJ6X2VJZlBZbkp6dTFNUGNzb1pCbjYyenA2UE5ERXBYMnMya2tYNkNfcGN3U3FGZ3V2MzdaN0RWUng5VFJHVl9jVk9LLVJGOVFVRFNKR21sc0pULWQ0Vm9uQk9tODlWTGs0U3BSeFd2MC15X2RIakQ2Mkw0eFhMa1Y2UUVWYVBsZkhrZHowVnlaWUpKZA",
+      "published_at": "2026-10-23T14:59:43Z",
+      "tier": 4,
+      "weight": 4.0,
+      "provider": "legacy-engine",
+      "details": "",
+      "traffic_ratio": null,
+      "traffic_count": null,
+      "traffic_average": null,
+      "effective_weight": 2.48,
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     },
     {
       "kind": "RISK_SEVERE",
@@ -170,63 +187,46 @@
       "effective_weight": 1.364,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
-    },
-    {
-      "kind": "RISK_SEVERE",
-      "title": "UKMTO reports more tankers struck in Hormuz - Quantum Commodity Intelligence",
-      "source": "Quantum Commodity Intelligence",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOTjd1SjFyMDRfc0hZNzBtbjNzemE3UmFoa3BhalM5akphSmZ5V1RSZUdXeDdQbGJmX3VDYm95SUFDNk5ZdHpfMjFMSUEwOWVXcGJoMF9BUktyd0dwR0RPR0E0OGhESnI2WXFZT2dfc3YyR2RhSWtFRXV5aHpqcDgxcHBoWl90dHBYdmFEdXRIVQ",
-      "published_at": "2026-10-26T14:22:21Z",
-      "tier": 1,
-      "weight": 1.0,
-      "provider": "Google News RSS",
-      "details": "",
-      "traffic_ratio": null,
-      "traffic_count": null,
-      "traffic_average": null,
-      "effective_weight": 1.0,
-      "kind_label_es": "Riesgo severo",
-      "kind_label_en": "Severe risk"
     }
   ],
   "event_ids": [
     "evt_83c523cf06f27c56",
-    "evt_848d5980e8761bd7",
+    "evt_66a496b419ef71fd",
+    "evt_73cde542c77cc63c",
+    "evt_dc8209eb6a047973",
+    "evt_69251738335e1e37",
+    "evt_b19c632fbc59e33c",
     "evt_f717d8d095881641",
-    "evt_df266799e32a47c9",
+    "evt_cc6aa38664fe8031",
     "evt_7d7b2de76966bce6",
+    "evt_3e0b63fdd51727d2",
+    "evt_0486a41a220050d5",
     "evt_bf4c9da2cafc63d3",
+    "evt_bb3226a861c3eeea",
+    "evt_df266799e32a47c9",
     "evt_8547c7501d3f3661",
     "evt_e6a9080904602140",
     "evt_10df37bdc996f78f",
     "evt_c5e833beecc53ec2",
-    "evt_5c8fb039b4d58395",
     "evt_87598d32809871df",
-    "evt_6e56fb696a116e5d",
-    "evt_b0435f8ea3e62790",
-    "evt_e91b8b936014dd61",
-    "evt_6f31a89f5dcfd43a",
-    "evt_b6fec3ed05e95988",
-    "evt_1811c48a568795db",
-    "evt_a2896cb89aa5cc20",
-    "evt_15f4021c82f992c7"
+    "evt_6e56fb696a116e5d"
   ],
   "verification_summary": {
     "CONFIRMED_MULTI_SOURCE": 5,
     "CONFIRMED_PRIMARY": 0,
     "CONFLICTING": 0,
-    "DECLARATION_ONLY": 7,
-    "SINGLE_SOURCE": 20,
-    "UNCONFIRMED": 35,
-    "TOTAL": 67
+    "DECLARATION_ONLY": 3,
+    "SINGLE_SOURCE": 23,
+    "UNCONFIRMED": 44,
+    "TOTAL": 75
   },
   "diagnostics": {
-    "signals_considered": 88,
+    "signals_considered": 89,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
-    "event_count": 67,
-    "article_count_after_deduplication": 140,
+    "event_count": 75,
+    "article_count_after_deduplication": 141,
     "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
     "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
   }
