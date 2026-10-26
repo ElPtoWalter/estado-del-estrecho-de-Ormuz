@@ -37,6 +37,74 @@ ENERGY_NO_ADS = ENERGY_ARTICLES | ENERGY_METHODS
 ENERGY_APPROVED_COMMIT = 'e40b057eb86ab1a9d4b5fec0d5b55fa1f40d6cd4'
 ENERGY_APPROVED_MANIFEST = '530538a57a1d94ca00268996c4938c63885d974fc50ace7e990d54d8a6a6a77d'
 ENERGY_APPROVAL_REFERENCE = 'https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/pull/23#pullrequestreview-5642834731'
+SPAIN_ARTICLES = frozenset({'espana-europa-ormuz-dos-porcentajes.html','en-spain-europe-hormuz-two-percentages.html'})
+SPAIN_METHODS = frozenset({'metodo-espana-europa-20261025.html','en-spain-europe-method-20261025.html'})
+SPAIN_NO_ADS = SPAIN_ARTICLES | SPAIN_METHODS
+SPAIN_APPROVED_COMMIT = '21123ca1a6737aa3809359946ae3d7224e67c74f'
+SPAIN_APPROVED_MANIFEST = '40eb03ae1fc277a1d5bca6dcf1ab7cb946eca4da9d23ce11d83767f0dfd06f4d'
+SPAIN_APPROVAL_REFERENCE = 'https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/pull/24#pullrequestreview-5649321245'
+
+
+def owner_spain_review_valid(document, review):
+    """Exact publisher decision; neither technical CI nor external legal clearance."""
+    if not isinstance(review,dict) or review.get('kind') != 'owner_spain_editorial_approval':
+        return False
+    if (review.get('document') not in SPAIN_NO_ADS or review.get('approved') is not True
+            or review.get('approved_candidate_commit') != SPAIN_APPROVED_COMMIT
+            or review.get('approved_manifest_sha256_lf') != SPAIN_APPROVED_MANIFEST
+            or review.get('approval_reference') != SPAIN_APPROVAL_REFERENCE
+            or review.get('approval_date') != '2026-10-25'
+            or review.get('evidence_recorded_at') != '2026-10-26T08:38:42Z'
+            or review.get('public_author') != 'Estrecho Ormuz'
+            or review.get('sha256') != hashlib.sha256(document.encode('utf-8')).hexdigest()):
+        return False
+    if datetime.fromisoformat(review['evidence_recorded_at'].replace('Z','+00:00')) > datetime.now(timezone.utc):
+        return False
+    return f'href="https://estrechoormuz.com/{review["document"]}"' in document
+
+
+def approved_spain_document(document, name):
+    """Presentation transition only; preserve every approved factual article word."""
+    es=not name.startswith('en-')
+    neutral=('Preparación con asistencia de IA · Análisis de estadísticas de 2025 · Sin publicidad' if es else
+             'Prepared with AI assistance · Analysis of 2025 statistics · Advertising disabled')
+    document=re.sub(r'<p\b[^>]*\bdata-draft-disclosure[^>]*>.*?</p>',lambda m:'<p class="source-note" data-automation-disclosure>'+neutral+'</p>',document,flags=re.S)
+    document=re.sub(r'(<footer><p>).*?(</p>)',lambda m:m[1]+'ESTRECHO ORMUZ · '+neutral+m[2],document,count=1,flags=re.S)
+    if name in SPAIN_ARTICLES:
+        about='/sobre.html' if es else '/en-about.html'
+        byline=('Por ' if es else 'By ')+f'<a rel="author" href="{about}">Estrecho Ormuz</a>'
+        planned=r'<p class="source-note">(?:Firma institucional prevista:|Proposed institutional byline:).*?</p>'
+        document,count=re.subn(planned,lambda m:'<p class="source-note" data-institutional-byline>'+byline+'</p>',document,count=1,flags=re.S)
+        if count!=1:raise ValueError('Approved institutional byline insertion point changed')
+        document=document.replace('</head>','<meta name="author" content="Estrecho Ormuz"></head>',1)
+    else:
+        replacements={
+            'Este borrador selecciona':'Este análisis selecciona',
+            'This draft cites':'This analysis cites',
+            'El titular debe valorar la base de reutilización de estas cifras antes de autorizar su publicación; no se acredita una autorización específica ni una revisión jurídica independiente.':
+                'El titular ha aceptado editorialmente la cita limitada de hechos numéricos y las representaciones propias. Esta aceptación no acredita una autorización específica de Enagás ni una revisión jurídica independiente.',
+            'The publisher must consider the basis for reusing these figures before authorising publication; no specific permission or independent legal clearance is claimed.':
+                'The publisher has editorially accepted the limited citation of numerical facts and original representations. That acceptance establishes neither specific permission from Enagás nor independent legal clearance.',
+            'Firma institucional prevista: Estrecho Ormuz. Preparación con asistencia de IA. No existe aprobación editorial humana de esta edición ni se hereda la de otros análisis. Los cuatro HTML siguen noindex,follow, fuera de Pages, sitemap y RSS. Publicidad apagada; sin cambios de clasificación del monitor.':
+                'Firma institucional: Estrecho Ormuz. Preparación con asistencia de IA. La aprobación editorial del titular corresponde a esta edición exacta; no se hereda de otros análisis ni constituye autorización jurídica externa. La discrepancia documental sigue sin resolverse. Publicidad desactivada.',
+            'Proposed institutional byline: Estrecho Ormuz. Prepared with AI assistance. This edition has no human editorial approval and inherits none from earlier analyses. All four HTML pages remain noindex,follow and excluded from Pages, sitemap and RSS. Advertising is disabled; monitor classifications are unchanged.':
+                'Institutional byline: Estrecho Ormuz. Prepared with AI assistance. Publisher editorial approval covers this exact edition; it is not inherited from earlier analyses and provides no external legal authorisation. The documentary discrepancy remains unresolved. Advertising is disabled.',
+            'Sin licencia abierta general acreditada; hechos limitados y obra propia, revisión pendiente.':
+                'Sin licencia abierta general acreditada; hechos limitados y obra propia; sin autorización jurídica externa acreditada.',
+            'No general open licence established; limited facts and own work, review pending.':
+                'No general open licence established; limited facts and original work; no external legal authorisation established.'}
+        for old,new in replacements.items():
+            if old in document:document=document.replace(old,new)
+    document=document.replace('content="original-draft"','content="original-analysis"')
+    document=re.sub(r'<meta\b(?=[^>]*\bname=["\x27]robots["\x27])[^>]*>','',document,flags=re.I)
+    document=document.replace('</head>','<meta name="robots" content="index,follow,max-image-preview:large"></head>',1)
+    if name in SPAIN_METHODS:document=set_noindex(document)
+    # The review heading states 25 October; this is the actual evidence registration date.
+    label=('Aprobación editorial del titular registrada el 26/10/2026. Preparación con asistencia de IA.' if es else
+           'Publisher editorial approval recorded on 26 October 2026. Prepared with AI assistance.')
+    document=document.replace('</main>',f'<p class="review-note" data-original-review role="note">{label}</p></main>',1)
+    document=re.sub(r'<meta\b(?=[^>]*\bname=["\x27]publisher-ads["\x27])[^>]*>','',document,flags=re.I)
+    return without_ads(document,block_house_promotions=True)
 
 
 def owner_energy_review_valid(document, review):
@@ -133,7 +201,7 @@ def owner_history_review_valid(document, review):
 
 def original_review_valid(document, review):
     """A named review authorizes only the exact original draft that was checked."""
-    if owner_history_review_valid(document, review) or owner_energy_review_valid(document,review):
+    if owner_history_review_valid(document, review) or owner_energy_review_valid(document,review) or owner_spain_review_valid(document,review):
         return True
     if not isinstance(review, dict) or review.get("kind") not in {"original_analysis", "reviewed_article"}:
         return False
@@ -207,6 +275,10 @@ def apply_policy(document, path, *, programmatic_ads=False, review=None):
     reviewed_original = original_review_valid(document, review)
     path = str(path).replace("\\", "/")
     name = path.rsplit("/", 1)[-1]
+    if isinstance(review,dict) and review.get('kind') == 'owner_spain_editorial_approval':
+        if review.get('document') == path and owner_spain_review_valid(document,review):
+            return approved_spain_document(document,name)
+        reviewed_original=False
     if isinstance(review,dict) and review.get('kind') == 'owner_energy_editorial_approval':
         if review.get('document') == path and owner_energy_review_valid(document,review):
             return approved_energy_document(document,name)
@@ -255,7 +327,7 @@ def apply_policy(document, path, *, programmatic_ads=False, review=None):
                     "Feed dates alone do not establish when events occurred.")
             document = re.sub(r"(<main\b[^>]*>)", lambda m: m[1] + '<aside data-editorial-disclosure role="note" style="padding:1rem;border:1px solid #888;margin-bottom:1rem">' + note + '</aside>', document, count=1, flags=re.I)
     original_draft = bool(re.search(r'<meta\b(?=[^>]*name=["\x27]content-kind["\x27])(?=[^>]*content=["\x27]original-draft["\x27])[^>]*>', document, re.I))
-    original_draft = original_draft or name in HISTORY_NO_ADS | ENERGY_NO_ADS
+    original_draft = original_draft or name in HISTORY_NO_ADS | ENERGY_NO_ADS | SPAIN_NO_ADS
     if original_draft and not digest:
         if reviewed_original:
             if name in HISTORY_NO_ADS:
@@ -288,11 +360,11 @@ def apply_policy(document, path, *, programmatic_ads=False, review=None):
                         "Automated calculations do not certify maritime events.")
                 document = re.sub(r'(<main\b[^>]*>)', lambda m: m[1] + '<aside data-draft-disclosure role="note">' + note + '</aside>', document, count=1, flags=re.I)
     # A real editorial review never makes these three support resources indexable.
-    if name in HISTORY_REFERENCES | ENERGY_METHODS:
+    if name in HISTORY_REFERENCES | ENERGY_METHODS | SPAIN_METHODS:
         document = set_noindex(document)
-    if name in HISTORY_NO_ADS | ENERGY_NO_ADS:
+    if name in HISTORY_NO_ADS | ENERGY_NO_ADS | SPAIN_NO_ADS:
         document = re.sub(r'<meta\b(?=[^>]*\bname=["\x27]publisher-ads["\x27])[^>]*>', '', document, flags=re.I)
-    block_all_ads = bool(name in HISTORY_NO_ADS | ENERGY_NO_ADS or digest or utility or re.search(r'<meta\b[^>]*noindex', document, re.I))
+    block_all_ads = bool(name in HISTORY_NO_ADS | ENERGY_NO_ADS | SPAIN_NO_ADS or digest or utility or re.search(r'<meta\b[^>]*noindex', document, re.I))
     if not programmatic_ads or block_all_ads:
         document = without_ads(document, block_house_promotions=block_all_ads)
     return document

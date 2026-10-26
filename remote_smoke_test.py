@@ -114,6 +114,33 @@ def energy_attempt(timeout: int) -> list[str]:
     return errors
 
 
+def spain_attempt(timeout: int) -> list[str]:
+    """Opt-in verification after a separately authorised PR #24 deployment."""
+    import spain_release as release
+    from spain_data import sha
+    from publication_quality import SPAIN_ARTICLES, SPAIN_METHODS
+    files, reviews = release.verify()
+    expected = release.render(files, reviews)
+    errors = []
+    token = datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
+    for name, data in expected.items():
+        try:
+            raw, _ = fetch(name, token, timeout)
+            if sha(raw) != sha(data):
+                errors.append(f'{name}: release hash mismatch')
+        except Exception as exc:
+            errors.append(f'{name}: {exc}')
+    try:
+        raw, _ = fetch('sitemap.xml', token, timeout)
+        urls = {node.find('{http://www.sitemaps.org/schemas/sitemap/0.9}loc').text for node in ET.fromstring(raw)}
+        for name in SPAIN_ARTICLES | SPAIN_METHODS:
+            if ((BASE+name) in urls) != (name in SPAIN_ARTICLES):
+                errors.append(f'{name}: incorrect deployed sitemap selection')
+    except Exception as exc:
+        errors.append(f'spain sitemap: {exc}')
+    return errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--attempts", type=int, default=8)
@@ -121,6 +148,7 @@ def main() -> int:
     parser.add_argument("--timeout", type=int, default=20)
     parser.add_argument('--history-release', action='store_true')
     parser.add_argument('--energy-release', action='store_true')
+    parser.add_argument('--spain-release', action='store_true')
     args = parser.parse_args()
     last: list[str] = []
     for attempt in range(1, max(1, args.attempts) + 1):
@@ -129,6 +157,8 @@ def main() -> int:
             last.extend(history_attempt(args.timeout))
         if args.energy_release:
             last.extend(energy_attempt(args.timeout))
+        if args.spain_release:
+            last.extend(spain_attempt(args.timeout))
         if not last:
             print(f"Despliegue remoto correcto en el intento {attempt}.")
             return 0
