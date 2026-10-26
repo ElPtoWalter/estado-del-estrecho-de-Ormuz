@@ -4,7 +4,7 @@ El titular aprobó el conjunto exacto del candidato `21123ca1a6737aa3809359946ae
 
 La cabecera de la decisión indica 25/10/2026; GitHub registra la evidencia el 26/10/2026 a las 08:38:42 UTC. Se conservan ambas referencias con su significado. La web dice que la aprobación quedó **registrada** el 26/10/2026; no inventa una hora de revisión personal. No se registra nombre de revisor, nuevas comprobaciones estadísticas o revisión jurídica independiente.
 
-Solo se autoriza preparar esta versión. Merge de la PR, despliegue, publicidad, solicitud de revisión AdSense y publicación de datos personales siguen sin autorizarse. La PR continúa en borrador. Se incorpora la sincronización del titular `6811fedf8551fe0da29ebbfd76443dc4f6f03c45` y, tras detectar una nueva edición del diario, se integra main `7f28b603a3aed878d200cb92d8b30478cc353633` sin sobrescribir sus actualizaciones automáticas. Se repiten las pruebas y CI. Si main avanza otra vez, debe integrarse y repetirse CI antes de presentar otro commit para publicar.
+Solo se autoriza preparar esta versión. Merge de la PR, despliegue, publicidad, solicitud de revisión AdSense y publicación de datos personales siguen sin autorizarse. La PR continúa en borrador. Se incorpora la sincronización del titular `6811fedf8551fe0da29ebbfd76443dc4f6f03c45`, la nueva edición del diario de main `7f28b603a3aed878d200cb92d8b30478cc353633` y la actualización automática posterior `bb8821738d239d7f55abdfc605d9d42b4ce44fa6`, sin sobrescribir sus datos. Se repiten las pruebas y CI. Si main avanza otra vez, debe integrarse y repetirse CI antes de presentar otro commit para publicar.
 
 ## Selección pública exacta
 
