@@ -4,7 +4,7 @@ El titular aprobó el conjunto exacto del candidato `21123ca1a6737aa3809359946ae
 
 La cabecera de la decisión indica 25/10/2026; GitHub registra la evidencia el 26/10/2026 a las 08:38:42 UTC. Se conservan ambas referencias con su significado. La web dice que la aprobación quedó **registrada** el 26/10/2026; no inventa una hora de revisión personal. No se registra nombre de revisor, nuevas comprobaciones estadísticas o revisión jurídica independiente.
 
-Solo se autoriza preparar esta versión. Merge, despliegue, publicidad, solicitud de revisión AdSense y publicación de datos personales siguen sin autorizarse. La PR continúa en borrador. Se incorpora la sincronización del titular `6811fedf8551fe0da29ebbfd76443dc4f6f03c45`, que contiene main `e96145faadd8d164e5a8236da487345a9f13ddb1` y sus actualizaciones automáticas. Si main avanza, debe integrarse y repetirse CI antes de presentar otro commit para publicar.
+Solo se autoriza preparar esta versión. Merge de la PR, despliegue, publicidad, solicitud de revisión AdSense y publicación de datos personales siguen sin autorizarse. La PR continúa en borrador. Se incorpora la sincronización del titular `6811fedf8551fe0da29ebbfd76443dc4f6f03c45` y, tras detectar una nueva edición del diario, se integra main `7f28b603a3aed878d200cb92d8b30478cc353633` sin sobrescribir sus actualizaciones automáticas. Se repiten las pruebas y CI. Si main avanza otra vez, debe integrarse y repetirse CI antes de presentar otro commit para publicar.
 
 ## Selección pública exacta
 
@@ -18,7 +18,7 @@ Solo se autoriza preparar esta versión. Merge, despliegue, publicidad, solicitu
 | `/assets/research/spain-europe-20261025/calculations.csv` | Ocho resultados Decimal y fórmulas explicadas, intactos |
 | Ocho SVG y `spain-editorial.css` en el mismo directorio | Figuras ES/EN, móvil/escritorio, y diseño aprobados, intactos |
 
-Hay canonical propios, hreflang ES/EN/x-default recíprocos y enlaces de idioma correctos. Solo los dos artículos se añaden al sitemap: 60 → 62 URLs en la construcción comprobada. Las metodologías quedan fuera. La navegación entrante se integra en portada, análisis y hemeroteca ES/EN. Los enlaces originales a Enagás, Eurostat, AIE y los dos análisis publicados se conservan.
+Hay canonical propios, hreflang ES/EN/x-default recíprocos y enlaces de idioma correctos. Solo los dos artículos se añaden al sitemap: el main actualizado aporta 62 URLs y el candidato final contiene 64. El incremento respecto a las 62 inicialmente previstas se debe a las dos páginas históricas ES/EN del diario del 26/10/2026 añadidas por main, que se conservan. Las metodologías quedan fuera. La navegación entrante se integra en portada, análisis y hemeroteca ES/EN. Los enlaces originales a Enagás, Eurostat, AIE y los dos análisis publicados se conservan.
 
 ## Únicos cambios sobre el contenido aprobado
 
@@ -44,9 +44,9 @@ El artefacto de CI del sitio normal contiene la selección definitiva comprobada
 
 ## Validación de esta preparación
 
-- Construcción final: 249 archivos, con quince recursos nuevos. Solo cambian siete archivos previos del artefacto: seis páginas de navegación y sitemap. Los demás 227 archivos previos conservan sus huellas LF, incluidos los recursos de las dos publicaciones anteriores.
-- Sitemap: 62 URLs, con los dos artículos y sin los métodos. Enlaces, privacidad y anuncios: cero errores. El validador de fuente mantiene diez avisos existentes sobre duplicados de evidencias, widgets y el archivo de verificación de propiedad; no corresponden a estas páginas.
-- Local: 456 pruebas Python (455 correctas y una omisión opcional de vídeo), 20 mantenimiento y 23 JavaScript correctas. Se compilan 103 archivos Python. Las diez regresiones nuevas comprueban aprobación exacta, fechas, rutas, cuerpo y descargas idénticos, cautela legal, noindex y anuncios, navegación y comprobación remota futura.
+- Construcción final: 251 archivos frente a los 236 de main, con quince recursos nuevos. Solo cambian siete archivos previos del artefacto: seis páginas de navegación y sitemap. Los demás 229 archivos previos conservan sus huellas LF, incluidos los recursos de las dos publicaciones anteriores y la nueva edición del diario.
+- Sitemap: 64 URLs, con los dos artículos y sin los métodos. Enlaces, privacidad y anuncios: cero errores. El validador de fuente mantiene diez avisos existentes sobre duplicados de evidencias, widgets y el archivo de verificación de propiedad; no corresponden a estas páginas.
+- Local: 456 pruebas Python (455 correctas y una omisión opcional de vídeo), 20 mantenimiento y 23 JavaScript correctas. Se compilan los 119 archivos Python versionados. Las diez regresiones nuevas comprueban aprobación exacta, fechas, rutas, cuerpo y descargas idénticos, cautela legal, noindex y anuncios, navegación y comprobación remota futura.
 - 36 comprobaciones HTTP: quince recursos finales locales 200 con bytes esperados, diez rutas privadas 404, siete fuentes oficiales 200 y cuatro enlaces a análisis publicados 200. Los PDF y XLSX oficiales consultados mantienen las huellas binarias documentadas en el candidato aprobado; no se afirma una nueva revisión jurídica o humana por comprobar su entrega.
 - 33 fuentes originales del candidato permanecen intactas, excluida únicamente la nota histórica añadida al README. Diez archivos protegidos de datos, automatización y monetización coinciden con main. Las nueve entradas anteriores del registro editorial no cambian.
 - Cuatro páginas a 320/390/1280 px: doce casos sin desbordamiento horizontal, dos descargas claras por página, encabezados, tablas con regiones de teclado, alternativas textuales, byline institucional y estados de indexación correctos. Ocho vistas de gráficos inspeccionadas. Esto no se presenta como certificación completa WCAG o prueba de lector de pantalla.
