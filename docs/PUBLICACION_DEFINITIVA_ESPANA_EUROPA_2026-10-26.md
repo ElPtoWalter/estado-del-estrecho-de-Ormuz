@@ -18,7 +18,7 @@ Solo se autoriza preparar esta versión. Merge de la PR, despliegue, publicidad,
 | `/assets/research/spain-europe-20261025/calculations.csv` | Ocho resultados Decimal y fórmulas explicadas, intactos |
 | Ocho SVG y `spain-editorial.css` en el mismo directorio | Figuras ES/EN, móvil/escritorio, y diseño aprobados, intactos |
 
-Hay canonical propios, hreflang ES/EN/x-default recíprocos y enlaces de idioma correctos. Solo los dos artículos se añaden al sitemap: el main actualizado aporta 62 URLs y el candidato final contiene 64. El incremento respecto a las 62 inicialmente previstas se debe a las dos páginas históricas ES/EN del diario del 26/10/2026 añadidas por main, que se conservan. Las metodologías quedan fuera. La navegación entrante se integra en portada, análisis y hemeroteca ES/EN. Los enlaces originales a Enagás, Eurostat, AIE y los dos análisis publicados se conservan.
+Hay canonical propios, hreflang ES/EN/x-default recíprocos y enlaces de idioma correctos. Solo los dos artículos se añaden al sitemap: el main actualizado aporta 60 URLs y el candidato final contiene 62. Las dos páginas históricas ES/EN del diario del 26/10/2026 añadidas por main se conservan como accesibles con noindex y no amplían el sitemap. Las metodologías quedan fuera. La navegación entrante se integra en portada, análisis y hemeroteca ES/EN. Los enlaces originales a Enagás, Eurostat, AIE y los dos análisis publicados se conservan.
 
 ## Únicos cambios sobre el contenido aprobado
 
@@ -45,7 +45,7 @@ El artefacto de CI del sitio normal contiene la selección definitiva comprobada
 ## Validación de esta preparación
 
 - Construcción final: 251 archivos frente a los 236 de main, con quince recursos nuevos. Solo cambian siete archivos previos del artefacto: seis páginas de navegación y sitemap. Los demás 229 archivos previos conservan sus huellas LF, incluidos los recursos de las dos publicaciones anteriores y la nueva edición del diario.
-- Sitemap: 64 URLs, con los dos artículos y sin los métodos. Enlaces, privacidad y anuncios: cero errores. El validador de fuente mantiene diez avisos existentes sobre duplicados de evidencias, widgets y el archivo de verificación de propiedad; no corresponden a estas páginas.
+- Sitemap: 62 URLs, con los dos artículos y sin los métodos. Enlaces, privacidad y anuncios: cero errores. El validador de fuente mantiene diez avisos existentes sobre duplicados de evidencias, widgets y el archivo de verificación de propiedad; no corresponden a estas páginas.
 - Local: 456 pruebas Python (455 correctas y una omisión opcional de vídeo), 20 mantenimiento y 23 JavaScript correctas. Se compilan los 119 archivos Python versionados. Las diez regresiones nuevas comprueban aprobación exacta, fechas, rutas, cuerpo y descargas idénticos, cautela legal, noindex y anuncios, navegación y comprobación remota futura.
 - 36 comprobaciones HTTP: quince recursos finales locales 200 con bytes esperados, diez rutas privadas 404, siete fuentes oficiales 200 y cuatro enlaces a análisis publicados 200. Los PDF y XLSX oficiales consultados mantienen las huellas binarias documentadas en el candidato aprobado; no se afirma una nueva revisión jurídica o humana por comprobar su entrega.
 - 33 fuentes originales del candidato permanecen intactas, excluida únicamente la nota histórica añadida al README. Diez archivos protegidos de datos, automatización y monetización coinciden con main. Las nueve entradas anteriores del registro editorial no cambian.
