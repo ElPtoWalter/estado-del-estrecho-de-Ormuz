@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-26T01:33:51Z",
+    "generated_at": "2026-10-26T06:52:22Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -96,18 +96,18 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 8.255,
+      "passage": 10.856,
       "closure": 0,
-      "traffic_reduction": 0.62,
-      "access_restriction": 8.58,
-      "risk": 73.518
+      "traffic_reduction": 0,
+      "access_restriction": 7.7,
+      "risk": 71.394
     },
     "source_counts": {
-      "passage": 7,
+      "passage": 9,
       "closure": 0,
-      "primary_sources": 3
+      "primary_sources": 2
     },
-    "latest_confirmed_transit_at": "2026-10-25T22:58:14Z",
+    "latest_confirmed_transit_at": "2026-10-26T04:07:33Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -136,7 +136,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-26T01:33:51Z",
+        "published_at": "2026-10-26T06:52:22Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -145,23 +145,6 @@
         "traffic_count": null,
         "traffic_average": null,
         "effective_weight": 3.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Tanker struck off Oman in war's most violent month for shipping in Hormuz - TradeWinds News",
-        "source": "TradeWinds",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQN2JocVhjZEJJeGR5V2Z2WE1jTzVHSjEwZVRUVGVraGtKenM3eGRUUW9uZjBGVlZtM2lJelNteGhZVUJBQXRWekJXZjAwYUhGQndOcTdDZDd6dlA4bmwyeTFMQURuemNsaE1sZXg1dzRzelNIYW5fMElJUnpaYlRDQWxrdklDdnhpMEhRRHZFQXkyWFpHb1k1UHlrdS1JRkFuN1dLM09EcWVzd0ZHcnNsdE9XY0drRnp5bU9GZ0Y1TVo0Q01mYVE",
-        "published_at": "2026-10-23T17:57:42Z",
-        "tier": 4,
-        "weight": 3.8,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 2.964,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -235,7 +218,7 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Oil spill hits UAE beaches as tanker attacks multiply near Hormuz - Euronews.com",
+        "title": "Oil spill hits UAE beaches as tanker attacks multiply near Hormuz - Euronews",
         "source": "Euronews",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOMzZ0ZWE4QnVXNmliWk5VUGFvM3QydDBnRnpTUjh0R1pKSkhfVnRmQk4ta3QxSGs5WmZDd3lkbzBNRm9Ja2YwQTJGUDJWVm9jYjc5bVNncXk4eDZveWpGVkZsU0I4Zmg1SzFKd1hTN1N5M3FSXzFqNVdSMnl2MTRwN1JKMTk5S21tY2lnQUlTS2wzRVZlQkhsXzdyYUFGZjJweTY0",
         "published_at": "2026-10-23T09:36:16Z",
@@ -249,28 +232,45 @@
         "effective_weight": 1.716,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "U.S. Military Claims \"No More Iranian Mines\" on Key Hormuz Shipping Lanes - news.sbs.co.kr",
+        "source": "news.sbs.co.kr",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE14U1c3QV9XY2hEVkxtMlhFb1d3ZDJYN3pKTnhfbnZnWG1CQkVNRUxDMW00UlpfYVp0QXFMNUFMek5nVWx6YWlxRzFlTVlkZWpfSHZJQ1ZHbFotY1JwSGV0dWlnZ1hoSE5YSElWYUZn",
+        "published_at": "2026-10-26T06:40:33Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_83c523cf06f27c56",
-      "evt_e91b8b936014dd61",
-      "evt_87598d32809871df",
-      "evt_b6fec3ed05e95988",
       "evt_df266799e32a47c9",
+      "evt_10df37bdc996f78f",
+      "evt_87598d32809871df",
+      "evt_6e56fb696a116e5d",
+      "evt_b0435f8ea3e62790",
+      "evt_e91b8b936014dd61",
+      "evt_b6fec3ed05e95988",
       "evt_1811c48a568795db",
       "evt_a2896cb89aa5cc20",
       "evt_15f4021c82f992c7",
       "evt_519490d635224ca8",
-      "evt_e7f266f287f64ee1",
+      "evt_0610b73803fdda2d",
       "evt_7d7b2de76966bce6",
       "evt_9405abafef1a776e",
+      "evt_d88f8035ab46fe71",
       "evt_8547c7501d3f3661",
       "evt_30b86f7aa164ac26",
       "evt_45dba7148ff4471f",
-      "evt_dbf11ce9a3a5a270",
-      "evt_71e3ea08fc9e2465",
-      "evt_848d5980e8761bd7",
-      "evt_439688cfa66ffe3b",
       "evt_cc89fc847f518ffe"
     ],
     "verification_summary": {
@@ -278,17 +278,17 @@
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 5,
-      "SINGLE_SOURCE": 21,
-      "UNCONFIRMED": 39,
-      "TOTAL": 70
+      "SINGLE_SOURCE": 20,
+      "UNCONFIRMED": 35,
+      "TOTAL": 65
     },
     "diagnostics": {
-      "signals_considered": 96,
+      "signals_considered": 93,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 70,
-      "article_count_after_deduplication": 149,
+      "event_count": 65,
+      "article_count_after_deduplication": 145,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-26T01:33:51Z"
+    "generated_at": "2026-10-26T06:52:22Z"
   }
 }
