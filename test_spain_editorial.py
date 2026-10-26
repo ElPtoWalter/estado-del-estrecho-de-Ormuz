@@ -73,7 +73,7 @@ class SpainEditorialTests(unittest.TestCase):
     self.assertIn('noindex',meta.robots);self.assertEqual(meta.canonical,public.DOMAIN+'/'+name)
     self.assertEqual(meta.alternates,{k:public.DOMAIN+'/'+v for k,v in {**pair,'x-default':pair['es']}.items()})
     self.assertIn('data-draft-disclosure',text);self.assertIn('publisher-ads" content="disabled',text)
-    self.assertNotIn(name,reviews)
+    self.assertEqual(reviews[name]['kind'],'owner_spain_editorial_approval')
     self.assertFalse(public.public_html_path((editorial.SOURCE/name).relative_to(data.ROOT)))
     self.assertNotRegex(text,r'\.json\b|\.py\b|mailto:|pub-\d+|ElPtoWalter|Eduardo|<script')
     self.assertEqual(len(re.findall(r'<a\b[^>]*href="[^"]+\.csv"',text)),2)
@@ -83,6 +83,7 @@ class SpainEditorialTests(unittest.TestCase):
   for name in (*editorial.ARTICLES.values(),*editorial.METHODS.values()):
    text=self.files[name].decode()
    for review in reviews.values():
+    if review['kind']=='owner_spain_editorial_approval':continue
     self.assertFalse(original_review_valid(text,review))
     rendered=apply_policy(text,name,programmatic_ads=True,review=review)
     self.assertIn('noindex',rendered);self.assertNotIn('data-original-review',rendered)

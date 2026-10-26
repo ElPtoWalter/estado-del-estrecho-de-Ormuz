@@ -1152,10 +1152,13 @@ def main() -> int:
     publish_history(OUT, reviews)
     from energy_release import publish as publish_energy, audit as audit_energy
     publish_energy(OUT, reviews)
+    from spain_release import publish as publish_spain, audit as audit_spain
+    publish_spain(OUT, reviews)
     write_sitemap()
     audit_public_build()
     audit_history(OUT)
     audit_energy(OUT)
+    audit_spain(OUT)
     print("Professional public build OK.")
     print("Private JSON, Python, workflows, internal JS and technical notes are absent from _site.")
     return 0

@@ -1,5 +1,7 @@
 # Tercer análisis original: España, Europa y Ormuz
 
+> Archivo histórico del estado previo a aprobación. El titular aprobó después el candidato exacto `21123ca1`; los originales y su manifest se conservan intactos. La versión pública definitiva y el alcance de la decisión se documentan en [PUBLICACION_DEFINITIVA_ESPANA_EUROPA_2026-10-26.md](../../docs/PUBLICACION_DEFINITIVA_ESPANA_EUROPA_2026-10-26.md). Los estados pendientes y comandos de previsualización siguientes describen aquel borrador histórico, no la selección definitiva.
+
 Edición para revisión editorial, preparada el 25/10/2026 sobre main `63aba657f3cb269d0a686eec4b43dd5621c65fa9`, que ya contiene las publicaciones de las PR #22 y #23. Firma institucional **prevista**: Estrecho Ormuz. Preparación con asistencia de IA. No hay aprobación editorial humana, autorización de publicación o permiso de publicidad para esta edición.
 
 ## Auditoría y aportación
