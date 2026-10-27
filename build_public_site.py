@@ -1154,11 +1154,14 @@ def main() -> int:
     publish_energy(OUT, reviews)
     from spain_release import publish as publish_spain, audit as audit_spain
     publish_spain(OUT, reviews)
+    from seo_surface import publish as publish_seo, audit as audit_seo
+    publish_seo(OUT)
     write_sitemap()
     audit_public_build()
     audit_history(OUT)
     audit_energy(OUT)
     audit_spain(OUT)
+    audit_seo(OUT)
     print("Professional public build OK.")
     print("Private JSON, Python, workflows, internal JS and technical notes are absent from _site.")
     return 0
