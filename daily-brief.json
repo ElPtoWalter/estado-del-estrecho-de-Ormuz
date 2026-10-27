@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-26T20:05:09Z",
+    "generated_at": "2026-10-27T00:02:29Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -77,33 +77,33 @@
       "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "DISPUTED"
+      "legal": "CLOSURE_CLAIMED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Régimen disputado"
+      "legal": "Cierre declarado por una parte"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "Disputed regime"
+      "legal": "Closure claimed by one party"
     },
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 10.337,
+      "passage": 8.907,
       "closure": 0,
-      "traffic_reduction": 0.62,
-      "access_restriction": 14.88,
-      "risk": 64.396
+      "traffic_reduction": 0,
+      "access_restriction": 15.78,
+      "risk": 64.928
     },
     "source_counts": {
-      "passage": 8,
+      "passage": 7,
       "closure": 0,
       "primary_sources": 2
     },
@@ -153,7 +153,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-26T20:05:09Z",
+        "published_at": "2026-10-27T00:02:29Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -170,7 +170,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-26T20:05:09Z",
+        "published_at": "2026-10-27T00:02:29Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -201,6 +201,23 @@
       },
       {
         "kind": "RISK_SEVERE",
+        "title": "Late reports of Hormuz attacks as Iran blacklist expands - Seatrade Maritime News",
+        "source": "Seatrade Maritime News",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNLU5QQ2V3MjVrZUNLeW9Qbm40LUFCWGs2ajU2N2lVa3FZSXE1ZUNFTVRzU0laV1FXWV9Yc2lReGpieV9RNW9ldllKLUhxQ25ELUF3MDM4YUYxVzh5QWF4ZHdWSmZXMGNTS3daZE5RclBnSmJ5YkZlcTkyMk42aklmRjhmYW0tNmIzR1FpUGFkc3Q0YzRzVWR6dy0xOWh3Vi1V",
+        "published_at": "2026-10-26T16:27:25Z",
+        "tier": 2,
+        "weight": 2.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 2.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
         "title": "Iran blames US for deal failure, urges new try amid fear of new attacks - Al Jazeera",
         "source": "Al Jazeera",
         "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZ05XMkJCM0VsWlpad3c3TDI0OTBlWEl4SnJrdlNfRmFyRXdTOGpEZUk2YWlUMFZHZ25qOTctZ282NXo1bXN6SXZGUFZTNTZwN2JBbVJtNjZzY1lmYkQzU3l6Y3N0U2ZERmJ4eHUwc3kxX3otMUFiUm12RWY2MVJWTUs4Sk54V3lOZURVOUYzQ2hWZzBQU3lhYTBQd0NCOGNFUUJ1QUdEREhXaTBLQkpDRTlB0gG3AUFVX3lxTE81TzJSMTVEOHE5ZWVybzFEVXRiWFJiYWo1VkJsVTJjbEp4WVE0eFFwSFp3VjhmVWpuSHRKVy1rdjFndzdQTG4xd0w1ejN0anp6T1U0a25Delkxc2Z5N0R6elBjMDVYVDU4SWlyQW5xQUFBcUtQVGtHRjM4TWk4eC0zUFUtd3VTdnd4ZnhBdUUwejUwdFE4eG1RSHlnRGNmNG9VXy1fNVRDUkFiNkVPc2djMFRfM2NsZw",
@@ -212,7 +229,7 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 2.16,
+        "effective_weight": 1.872,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -232,63 +249,46 @@
         "effective_weight": 1.872,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Oil spill hits UAE beaches as tanker attacks multiply near Hormuz - Euronews.com",
-        "source": "Euronews",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOMzZ0ZWE4QnVXNmliWk5VUGFvM3QydDBnRnpTUjh0R1pKSkhfVnRmQk4ta3QxSGs5WmZDd3lkbzBNRm9Ja2YwQTJGUDJWVm9jYjc5bVNncXk4eDZveWpGVkZsU0I4Zmg1SzFKd1hTN1N5M3FSXzFqNVdSMnl2MTRwN1JKMTk5S21tY2lnQUlTS2wzRVZlQkhsXzdyYUFGZjJweTY0",
-        "published_at": "2026-10-23T09:36:16Z",
-        "tier": 2,
-        "weight": 2.2,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.364,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_83c523cf06f27c56",
+      "evt_b0de3098abaad984",
+      "evt_1294a092cdb0a290",
       "evt_66a496b419ef71fd",
+      "evt_f72e694ad86c6a35",
+      "evt_f311b47d1e92e810",
       "evt_73cde542c77cc63c",
+      "evt_89aca76a6ee2145c",
+      "evt_e6ddb143614bd358",
+      "evt_a08f3b66ebe8cd10",
       "evt_dc8209eb6a047973",
-      "evt_69251738335e1e37",
       "evt_b19c632fbc59e33c",
+      "evt_69251738335e1e37",
       "evt_f717d8d095881641",
       "evt_cc6aa38664fe8031",
       "evt_7d7b2de76966bce6",
       "evt_3e0b63fdd51727d2",
       "evt_0486a41a220050d5",
       "evt_bf4c9da2cafc63d3",
-      "evt_bb3226a861c3eeea",
-      "evt_df266799e32a47c9",
-      "evt_8547c7501d3f3661",
-      "evt_e6a9080904602140",
-      "evt_10df37bdc996f78f",
-      "evt_c5e833beecc53ec2",
-      "evt_87598d32809871df",
-      "evt_6e56fb696a116e5d"
+      "evt_bb3226a861c3eeea"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 3,
+      "DECLARATION_ONLY": 6,
       "SINGLE_SOURCE": 23,
-      "UNCONFIRMED": 44,
-      "TOTAL": 75
+      "UNCONFIRMED": 47,
+      "TOTAL": 81
     },
     "diagnostics": {
-      "signals_considered": 89,
+      "signals_considered": 92,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 75,
-      "article_count_after_deduplication": 141,
+      "event_count": 81,
+      "article_count_after_deduplication": 144,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-26T20:05:09Z"
+    "generated_at": "2026-10-27T00:02:29Z"
   }
 }
