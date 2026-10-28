@@ -263,7 +263,7 @@
       "https://estrechoormuz.com/trafico-normal-estrecho-ormuz-cifras.html"
     ],
     "http_status": 200,
-    "checked_at": "2026-10-28T16:53:48.057463+00:00",
+    "checked_at": "2026-10-28T17:58:13.844806+00:00",
     "headers": {
       "server": "GitHub.com",
       "content-type": "application/xml",
@@ -340,8 +340,53 @@
     "https://estrechoormuz.com/ormuz-cierre-paso-flujos.html"
   ],
   "built_vs_deployed_url_sets_equal": true,
-  "search_console_indexed_count": null,
-  "search_console_page_indexing": "pending_external_account",
+  "search_console_live_indexed_count": null,
+  "search_console_page_indexing_snapshot": {
+    "schema_version": 1,
+    "snapshot_date": "2026-10-28",
+    "source": {
+      "kind": "owner_provided_search_console_screenshot_reported_in_github_review",
+      "reference": "https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/pull/26#pullrequestreview-5686997001",
+      "independent_api_query": false,
+      "private_capture_included": false
+    },
+    "counts": {
+      "indexed": 61,
+      "not_indexed": 62,
+      "total_in_report": 123
+    },
+    "not_indexed_reasons": [
+      {
+        "reason": "Excluida por una etiqueta noindex",
+        "count": 43
+      },
+      {
+        "reason": "Página con redirección",
+        "count": 3
+      },
+      {
+        "reason": "No se ha encontrado (404)",
+        "count": 2
+      },
+      {
+        "reason": "Página alternativa con etiqueta canónica adecuada",
+        "count": 1
+      },
+      {
+        "reason": "Descubierta: actualmente sin indexar",
+        "count": 10
+      },
+      {
+        "reason": "Rastreada: actualmente sin indexar",
+        "count": 3
+      }
+    ],
+    "document": "docs/preflight-20261028/page-indexing-owner-snapshot.json",
+    "is_live_state": false,
+    "sitemap_membership_inferred": false,
+    "six_research_individual_status": "pending_url_inspection"
+  },
+  "search_console_page_indexing": "owner_snapshot_available_individual_urls_pending",
   "url_inspection": "pending_external_account",
   "research": [
     {
@@ -1903,7 +1948,7 @@
   ],
   "public_ads_txt": {
     "http_status": 200,
-    "checked_at": "2026-10-28T16:53:48.057463+00:00",
+    "checked_at": "2026-10-28T17:58:13.844806+00:00",
     "publisher_id": "pub-1713078636060241",
     "sha256": "18581263f7317654924724dcd2d17bf085850a4364ac8ea5f9bbc1c822a4aff3",
     "matches_source_and_built_file": true,

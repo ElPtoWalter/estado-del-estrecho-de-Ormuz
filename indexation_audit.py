@@ -6,7 +6,7 @@ Network observations are supplied as local public-HTTP evidence, not inferred.
 from __future__ import annotations
 import argparse,csv,hashlib,json,re
 from collections import Counter,defaultdict
-from datetime import datetime
+from datetime import date,datetime
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -20,6 +20,33 @@ BASE='https://estrechoormuz.com/'
 ARTICLES=tuple(path for rows in seo_surface.RESEARCH.values() for path,*_ in rows)
 DIARY=re.compile(r'^(?:diario|diary)/\d{4}-\d{2}-\d{2}\.html$')
 ACCOUNT_FIELDS=('page_indexing_state','url_inspection_verdict','google_selected_canonical','last_crawl_time','account_checked_at','private_evidence_reference')
+OWNER_SNAPSHOT=Path('docs/preflight-20261028/page-indexing-owner-snapshot.json')
+
+
+def page_indexing_snapshot(root):
+    """Load dated aggregate evidence, never a live count or a per-URL verdict."""
+    path=root/OWNER_SNAPSHOT
+    if not path.exists():return None
+    value=json.loads(path.read_text(encoding='utf-8'))
+    if set(value)!={'schema_version','snapshot_date','source','counts','not_indexed_reasons'}:
+        raise ValueError('Only dated aggregate Page Indexing evidence is permitted')
+    source=value['source'];counts=value['counts'];reasons=value['not_indexed_reasons']
+    if (value['schema_version']!=1 or date.fromisoformat(value['snapshot_date'])>date.today()
+        or set(source)!={'kind','reference','independent_api_query','private_capture_included'}
+        or source['kind']!='owner_provided_search_console_screenshot_reported_in_github_review'
+        or not re.fullmatch(r'https://github\.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/pull/26#pullrequestreview-\d+',source['reference'])
+        or source['independent_api_query'] is not False or source['private_capture_included'] is not False
+        or set(counts)!={'indexed','not_indexed','total_in_report'}
+        or any(type(n) is not int or n<0 for n in counts.values())
+        or counts['indexed']+counts['not_indexed']!=counts['total_in_report']
+        or not isinstance(reasons,list) or not reasons
+        or any(set(r)!={'reason','count'} or not isinstance(r['reason'],str) or not r['reason'].strip()
+               or type(r['count']) is not int or r['count']<0 for r in reasons)
+        or len({r['reason'] for r in reasons})!=len(reasons)
+        or sum(r['count'] for r in reasons)!=counts['not_indexed']):
+        raise ValueError('Invalid aggregate snapshot, provenance or reason totals')
+    return {**value,'document':OWNER_SNAPSHOT.as_posix(),'is_live_state':False,
+            'sitemap_membership_inferred':False,'six_research_individual_status':'pending_url_inspection'}
 
 
 def sha(raw):return hashlib.sha256(raw.replace(b'\r\n',b'\n')).hexdigest()
@@ -110,6 +137,7 @@ def layer(raw,kind,reference):
 
 
 def audit(root,public_root,http=None):
+    owner_snapshot=page_indexing_snapshot(root)
     source=layer((root/'sitemap.xml').read_bytes(),'repository_source','sitemap.xml')
     built=layer((public_root/'sitemap.xml').read_bytes(),'generated_public_artifact','_site/sitemap.xml')
     observed=(http or {}).get('responses',{})
@@ -176,7 +204,8 @@ def audit(root,public_root,http=None):
     return {'kind':'separate_indexation_evidence_layers','source_sitemap':source,'generated_sitemap':built,'deployed_sitemap':deployed,
       'source_only_urls':sorted(sets['source']-sets['built']),'built_only_urls':sorted(sets['built']-sets['source']),
       'built_vs_deployed_url_sets_equal':sets['built']==sets['deployed'] if deployed else None,
-      'search_console_indexed_count':None,'search_console_page_indexing':'pending_external_account',
+      'search_console_live_indexed_count':None,'search_console_page_indexing_snapshot':owner_snapshot,
+      'search_console_page_indexing':'owner_snapshot_available_individual_urls_pending' if owner_snapshot else 'pending_external_account',
       'url_inspection':'pending_external_account','research':research,'diary_in_source_sitemap':diaries,
       'exact_main_text_duplicate_groups':[v for v in exact.values() if len(v)>1],
       'date_number_masked_similarity_groups':[v for v in masked.values() if len(v)>1],
@@ -206,5 +235,9 @@ def write_report(report,output):
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=Path(__file__).parent);p.add_argument('--public-root',type=Path,required=True);p.add_argument('--http',type=Path);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
     result=audit(a.root,a.public_root,json.loads(a.http.read_text(encoding='utf-8')) if a.http else None);write_report(result,a.output)
-    print(json.dumps({'source':result['source_sitemap']['url_count'],'built':result['generated_sitemap']['url_count'],'deployed':result['deployed_sitemap']['url_count'] if result['deployed_sitemap'] else None,'diaries':len(result['diary_in_source_sitemap']),'indexed_count':None,'errors':result['errors']},indent=2))
+    owner=result['search_console_page_indexing_snapshot']
+    print(json.dumps({'source':result['source_sitemap']['url_count'],'built':result['generated_sitemap']['url_count'],'deployed':result['deployed_sitemap']['url_count'] if result['deployed_sitemap'] else None,
+      'diaries':len(result['diary_in_source_sitemap']),'live_indexed_count':None,
+      'owner_page_indexing_snapshot':{'date':owner['snapshot_date'],'counts':owner['counts'],'independent_api_query':False} if owner else None,
+      'research_individual_status':'pending_url_inspection','errors':result['errors']},indent=2))
     if result['errors']:raise SystemExit(1)

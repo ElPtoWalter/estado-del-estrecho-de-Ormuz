@@ -2,7 +2,7 @@
 
 Auditoría del 28/10/2026 sobre main `97ff0f0a` y la entrega HTTP observada. Las PR #22–#25 están fusionadas y sus publicaciones se conservan. Este documento prepara decisiones; no autoriza merge, despliegue, publicidad, publicación de datos personales o solicitudes a Google. `ready_for_resubmission=false`.
 
-## Cuatro evidencias distintas de sitemap e indexación
+## Cinco evidencias distintas de sitemap e indexación
 
 | Capa | Comprobación | Alcance y límite |
 |---|---|---|
@@ -10,12 +10,33 @@ Auditoría del 28/10/2026 sobre main `97ff0f0a` y la entrega HTTP observada. Las
 | `_site/sitemap.xml` generado | **62 URLs**; construido después de políticas editoriales y selección de publicaciones | Elegibilidad técnica de esta construcción; no confirma inclusión en Google. |
 | `https://estrechoormuz.com/sitemap.xml` | **HTTP 200, 62 URLs**; su conjunto de URLs coincide con `_site` | Evidencia pública fechada, con cabeceras y huella propias. No se deduce de GitHub. |
 | Metadatos históricos del conector Search Console | **60 URLs enviadas** | La respuesta consultada conserva fecha de última descarga en julio de 2026. No es un recuento actual de URLs indexadas ni prueba de que Google no haya rastreado después. No se publica la exportación privada. |
+| Instantánea global de Page Indexing aportada por el titular | **28/10/2026: 61 indexadas y 62 sin indexar; 123 en el informe** | Procedencia: captura del titular, según su revisión de GitHub. Sin consulta API independiente. No es un estado vivo, el conjunto del sitemap ni el estado individual de las seis investigaciones. |
 
 La diferencia fuente/construcción es explícita: 56 URLs solo están en el fuente —36 ediciones fechadas, dos índices del diario y 18 páginas con otras políticas—; seis artículos originales solo aparecen en el sitemap público generado, pues se seleccionan de sus paquetes sellados al construir. No se elimina una página por esta diferencia ni se copia el sitemap fuente sobre la salida pública. Las dos listas y sus huellas quedan en la evidencia reproducible.
 
 Las seis versiones ES/EN responden 200, tienen canonical propios, hreflang recíprocos y `index,follow`; robots.txt permite su rastreo y están en ambos sitemaps públicos comprobados. Esto no informa de la canonical elegida por Google o de su indexación actual. Las metodologías y el archivo congelado siguen accesibles con noindex según la política previa.
 
 `preflight-20261028/url-inspection-template.csv` contiene seis filas técnicas y casillas de cuenta vacías. **Copiarlo a un entorno privado antes de incorporar resultados de cuenta.** Registrar Page Indexing, veredicto de URL Inspection, canonical elegida por Google, último rastreo y fecha de consulta, conservando allí la evidencia original. No introducir nombres de personas o exportaciones de cuenta en esta plantilla pública. No se han enviado URLs, sitemap o solicitudes de indexación.
+
+## Instantánea global aportada por el titular
+
+La [revisión real de GitHub](https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/pull/26#pullrequestreview-5686997001) del candidato `659669caa51f5a51d342731bd0cf2be77c047736` documenta una captura de Page Indexing del **28/10/2026** facilitada por el titular: **61 páginas indexadas y 62 sin indexar**. Se incorpora únicamente el resumen agregado autorizado en `preflight-20261028/page-indexing-owner-snapshot.json`, con fecha y procedencia; no la captura privada, identificadores o exportaciones de la cuenta. No se ha hecho consulta API independiente.
+
+| Motivo de no indexación recogido en la revisión | Páginas |
+|---|---:|
+| Excluida por una etiqueta noindex | 43 |
+| Página con redirección | 3 |
+| No se ha encontrado (404) | 2 |
+| Página alternativa con etiqueta canónica adecuada | 1 |
+| Descubierta: actualmente sin indexar | 10 |
+| Rastreada: actualmente sin indexar | 3 |
+| **Total sin indexar de la instantánea** | **62** |
+
+Las 123 URL del informe (61 + 62) y las 62 URL elegibles del sitemap son conjuntos diferentes. No se calcula una tasa de indexación dividiendo 61 por 62 ni se asigna un motivo a una investigación por esos totales. Exclusión por noindex, redirección o canonical alternativa puede ser deliberada; los dos 404 requieren identificar sus URL antes de decidir una corrección. No se alteran políticas con esta instantánea.
+
+La revisión menciona también una tabla de diez URL descubiertas, incluidas cuatro guías de interés y varias herramientas. No enumera sus rutas y no se importan datos privados o URL inventadas: su identificación y comprobación individual quedan para la consulta privada correspondiente. **Sigue pendiente conocer qué seis investigaciones concretas están indexadas, su canonical elegida por Google y su último rastreo.** Los campos individuales de la matriz permanecen vacíos; el resumen global deja de describirse como totalmente desconocido.
+
+El cargador valida fecha, procedencia, suma de motivos y total de páginas. Los recuentos residen en el documento fechado, no en una constante universal del programa. Una nueva evidencia requiere otra instantánea explícita; no se actualiza por inferencia del sitemap.
 
 ## Ediciones del diario: revisión sin decisión automática
 
@@ -33,13 +54,13 @@ No se detecta contradicción formal entre la fecha visible, la ruta y las fechas
 
 Recepción de `contacto@estrechoormuz.com`: **confirmada por declaración del titular del 28/10/2026**. La auditoría no ha enviado un mensaje ni ha hecho una prueba independiente. El registro está en `publisher-preparation.json`; no contiene dirección privada de destino.
 
-Enviar respuestas con la identidad del dominio sigue **sin comprobarse**. La declaración no verifica otros alias. No se infiere capacidad SMTP, envío autenticado o respuesta efectiva de la existencia de MX, reenvío, SPF o DKIM. No se cambia DNS, contrata un proveedor o envía correo. Las propuestas ES/EN de aviso legal, privacidad y contacto corrigen el antiguo «recepción sin verificar» y quedan pendientes de revisión pública en esta PR.
+Enviar respuestas con la identidad del dominio sigue **sin comprobarse**. La declaración no verifica otros alias. No se infiere capacidad SMTP, envío autenticado o respuesta efectiva de la existencia de MX, reenvío, SPF o DKIM. No se cambia DNS, contrata un proveedor o envía correo. Las propuestas ES/EN de aviso legal, privacidad y contacto usan redacción funcional para el visitante, sin fechas de verificación, relatos de pruebas o declaraciones internas. El detalle probatorio permanece aquí y en `publisher-preparation.json`. Las correcciones editoriales se dirigen también a `contacto@`; no se presenta el alias no verificado como canal confirmado. Los avisos sustantivos de identificación pendiente, publicidad apagada y detalles de privacidad por completar se conservan. Las seis propuestas siguen pendientes de revisión editorial final y autorización de publicación.
 
 ## Matriz de comprobaciones y decisiones
 
 | Elemento | Comprobado | Cuenta externa pendiente | Decisión del titular pendiente | Asesoramiento legal pendiente |
 |---|---|---|---|---|
-| Tres investigaciones, seis artículos | HTTP, metadatos y paquetes sellados; aprobaciones reales anteriores conservadas | Indexación, canonical elegida y rastreo | Ninguna nueva edición de los originales autorizada aquí | No se declara autorización jurídica externa de fuentes/licencias |
+| Tres investigaciones, seis artículos | HTTP, metadatos y paquetes sellados; aprobaciones reales anteriores conservadas; instantánea global aportada por el titular, sin veredicto por artículo | Indexación individual, canonical elegida y rastreo | Ninguna nueva edición de los originales autorizada aquí | No se declara autorización jurídica externa de fuentes/licencias |
 | PR #25 y navegación | Las cuatro páginas desplegadas contienen su sección de investigaciones y títulos esperados | Evolución SEO y datos posteriores suficientes | Fusión/publicación de esta PR, si procede | — |
 | Diario histórico | 36 filas, políticas y repetición documentadas | Page Indexing/Inspection por URL | Revisión de valor por edición; no decisión automática | Derechos de terceros si se plantea otra reutilización |
 | Correo entrante | Declaración del titular, separada de prueba técnica | Proveedor y operación de respuesta, si requiere cuenta | Validar identidad de envío y otros alias; ningún envío autorizado ahora | Canal efectivo y tratamiento de comunicaciones |
@@ -67,8 +88,16 @@ La AEPD exige opciones de aceptar y rechazar simultáneas, al mismo nivel y con 
 
 Checklist jurídico: [IDENTIFICACION_Y_PRIVACIDAD_2026-10-28.md](IDENTIFICACION_Y_PRIVACIDAD_2026-10-28.md). Pruebas, commit, CI y artefacto exacto se entregan en el informe final; no se asume que estos documentos completan las dependencias externas.
 
-## Verificación local del candidato
+## Verificación del candidato inicial (659669ca)
 
 479 pruebas Python de raíz (478 satisfactorias, una opcional omitida), 20 de mantenimiento y 23 JavaScript sin fallos; 125 archivos Python compilados. Construcción, enlaces, privacidad y ausencia de cargadores publicitarios pasan. Los tres controles de integridad de investigaciones pasan: sus 46 recursos públicos sellados se conservan. De los 255 archivos de salida, solo cambian las seis páginas legales/contacto por la actualización limitada del correo; los otros 249 son idénticos a la construcción de main con saltos de línea normalizados.
 
 El validador general de fuentes devuelve cero errores y diez avisos heredados: tres evidencias compartidas entre listas activas/archivo, dos widgets sin h1 y siete metadatos ausentes en la página de verificación de Google. No son diez fallos nuevos ni se ocultan como un resultado sin avisos. Este encargo no cambia esas superficies o las evidencias operativas. La CI remota y su artefacto se referenciarán en la PR, vinculados al commit exacto; no se declara que su aprobación técnica cierre las dependencias legales o de cuenta.
+
+## Verificación de las dos correcciones solicitadas
+
+La revisión `5686997001` solicita incorporar la instantánea agregada y simplificar los textos públicos; su valoración técnica favorable no autoriza publicación o merge. Las limitaciones sobre recepción declarada, envío sin comprobar, otros alias y cumplimiento jurídico se mantienen en los registros internos y los cuatro borradores jurídicos. No se incorpora ninguna nueva aprobación editorial de los artículos originales.
+
+En la construcción correctora solo cambian `aviso-legal.html`, `en-legal.html`, `privacidad.html`, `en-privacy.html`, `contacto.html` y `en-contact.html`. Se conserva el correo confirmado y la identificación pendiente; se retiran relatos de auditoría/fechas de verificación y se usa `contacto@` también para correcciones. La revisión de contratos, proveedores y transferencias sigue pendiente internamente; la privacidad pública conserva la información sustantiva incompleta y los anuncios desactivados.
+
+482 pruebas Python de raíz (481 satisfactorias, una opcional omitida), 20 de mantenimiento y 23 JavaScript sin fallos; 125 Python compilados. Construcción, enlaces, privacidad y tres controles de integridad pasan. Comparación con main **y con el ZIP previo del commit 659669ca**: 249 de 255 archivos públicos idénticos; solo las seis propuestas cambian. Los 46 recursos sellados y las políticas canonical/hreflang/robots/sitemap se conservan. 61 GET públicos repetidos responden 200. Se mantienen los diez avisos heredados descritos arriba. La CI correctora y el ZIP exacto se enlazarán en la PR; no se hereda la conclusión de CI del candidato previo.

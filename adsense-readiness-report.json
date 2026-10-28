@@ -213,7 +213,7 @@
     "AdSense account, legal identification, domain sending identity and consent remain unverified.",
     "Receipt of the public mailbox is confirmed by owner statement, not an independent agent email test.",
     "Existing editorial approvals and published investigations are not general external legal or rights clearance.",
-    "Sitemap source, generated artifact, HTTP delivery and historical Search Console metadata are different evidence layers."
+    "Sitemap source, generated artifact, HTTP delivery, historical connector metadata and the dated owner Page Indexing snapshot are distinct evidence layers."
   ],
   "errors": [],
   "ready_for_resubmission": false,
@@ -223,7 +223,7 @@
     "Current AdSense account policy tasks, crawl/ads.txt state and approval; no account result inferred from publisher ID",
     "Real legal identification and admissible address assessed privately, then expressly authorised through a safe publication process",
     "Ability to answer using the domain identity and effective contact procedure; other aliases not covered by the statement",
-    "Page Indexing and URL Inspection findings; no indexed count inferred from sitemap",
+    "Individual Page Indexing and URL Inspection findings for the six research articles; the owner aggregate snapshot does not identify them",
     "Appropriate CMP, actual processing/retention/providers and consent behaviour before any advertising",
     "Separate owner authorization for merge, deployment and any future AdSense review; all advertising permissions remain off"
   ],
@@ -302,7 +302,7 @@
   },
   "public_ads_txt": {
     "http_status": 200,
-    "checked_at": "2026-10-28T16:53:48.057463+00:00",
+    "checked_at": "2026-10-28T17:58:13.844806+00:00",
     "publisher_id": "pub-1713078636060241",
     "sha256": "18581263f7317654924724dcd2d17bf085850a4364ac8ea5f9bbc1c822a4aff3",
     "matches_source_and_built_file": true,
@@ -332,9 +332,55 @@
     "document": "docs/PREFLIGHT_ADSENSE_2026-10-28.md",
     "performance_data_access": true,
     "historical_sitemaps_metadata_access": true,
-    "page_indexing_access": "pending_external_account",
+    "page_indexing_access": "owner_snapshot_not_independent_api",
+    "page_indexing_snapshot": {
+      "schema_version": 1,
+      "snapshot_date": "2026-10-28",
+      "source": {
+        "kind": "owner_provided_search_console_screenshot_reported_in_github_review",
+        "reference": "https://github.com/ElPtoWalter/estado-del-estrecho-de-Ormuz/pull/26#pullrequestreview-5686997001",
+        "independent_api_query": false,
+        "private_capture_included": false
+      },
+      "counts": {
+        "indexed": 61,
+        "not_indexed": 62,
+        "total_in_report": 123
+      },
+      "not_indexed_reasons": [
+        {
+          "reason": "Excluida por una etiqueta noindex",
+          "count": 43
+        },
+        {
+          "reason": "Página con redirección",
+          "count": 3
+        },
+        {
+          "reason": "No se ha encontrado (404)",
+          "count": 2
+        },
+        {
+          "reason": "Página alternativa con etiqueta canónica adecuada",
+          "count": 1
+        },
+        {
+          "reason": "Descubierta: actualmente sin indexar",
+          "count": 10
+        },
+        {
+          "reason": "Rastreada: actualmente sin indexar",
+          "count": 3
+        }
+      ],
+      "document": "docs/preflight-20261028/page-indexing-owner-snapshot.json",
+      "is_live_state": false,
+      "sitemap_membership_inferred": false,
+      "six_research_individual_status": "pending_url_inspection"
+    },
     "url_inspection_access": "pending_external_account",
-    "current_indexed_count": null,
+    "six_research_individual_status": "pending_url_inspection",
+    "live_indexed_count": null,
     "editorial_indexing_decisions_changed": false
   },
   "historical_snapshot_20261024": {
@@ -443,7 +489,7 @@
     "noindex_pages": 126,
     "eligible_sitemap_urls": 62,
     "artifact_privacy_or_ads_errors": [],
-    "google_indexed_count": null
+    "google_indexing_inferred_from_artifact": false
   },
   "noindex_pages": [
     "404.html",

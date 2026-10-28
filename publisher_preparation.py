@@ -4,6 +4,7 @@ import argparse,copy,json
 from pathlib import Path
 from datetime import date
 import build_sitemap as sitemap
+from indexation_audit import page_indexing_snapshot
 
 ROOT=Path(__file__).resolve().parent
 STATE_KEYS={'schema_version','as_of','owner_type','public_contact_email','incoming_mail','outgoing_domain_identity','other_mail_aliases','legal_identity_complete','legal_compliance_confirmed','adsense_account_verified','cmp_verified','ready_for_resubmission','permissions'}
@@ -41,14 +42,18 @@ def enrich(report,root=ROOT,public_root=None):
     result['warnings']=['AdSense account, legal identification, domain sending identity and consent remain unverified.',
       'Receipt of the public mailbox is confirmed by owner statement, not an independent agent email test.',
       'Existing editorial approvals and published investigations are not general external legal or rights clearance.',
-      'Sitemap source, generated artifact, HTTP delivery and historical Search Console metadata are different evidence layers.']
+      'Sitemap source, generated artifact, HTTP delivery, historical connector metadata and the dated owner Page Indexing snapshot are distinct evidence layers.']
     result['external_checks_pending']=['Current AdSense account policy tasks, crawl/ads.txt state and approval; no account result inferred from publisher ID',
       'Real legal identification and admissible address assessed privately, then expressly authorised through a safe publication process',
       'Ability to answer using the domain identity and effective contact procedure; other aliases not covered by the statement',
-      'Page Indexing and URL Inspection findings; no indexed count inferred from sitemap',
+      'Individual Page Indexing and URL Inspection findings for the six research articles; the owner aggregate snapshot does not identify them',
       'Appropriate CMP, actual processing/retention/providers and consent behaviour before any advertising',
       'Separate owner authorization for merge, deployment and any future AdSense review; all advertising permissions remain off']
-    result['indexing_review']={'document':'docs/PREFLIGHT_ADSENSE_2026-10-28.md','performance_data_access':True,'historical_sitemaps_metadata_access':True,'page_indexing_access':'pending_external_account','url_inspection_access':'pending_external_account','current_indexed_count':None,'editorial_indexing_decisions_changed':False}
+    owner_snapshot=page_indexing_snapshot(root)
+    result['indexing_review']={'document':'docs/PREFLIGHT_ADSENSE_2026-10-28.md','performance_data_access':True,'historical_sitemaps_metadata_access':True,
+      'page_indexing_access':'owner_snapshot_not_independent_api' if owner_snapshot else 'pending_external_account',
+      'page_indexing_snapshot':owner_snapshot,'url_inspection_access':'pending_external_account',
+      'six_research_individual_status':'pending_url_inspection','live_indexed_count':None,'editorial_indexing_decisions_changed':False}
     snapshot=root/'docs/preflight-20261028/sitemap-audit.json'
     if snapshot.exists():
         audit=json.loads(snapshot.read_text(encoding='utf-8'))
@@ -75,7 +80,7 @@ def enrich(report,root=ROOT,public_root=None):
             meta=sitemap.MetaParser();meta.feed((public_root/name).read_text(encoding='utf-8'))
             if 'noindex' in meta.robots:noindex.append(name)
         errors=check_artifact(public_root)
-        result['public_surface_snapshot']={'html_pages':len(html_pages),'noindex_pages':len(noindex),'eligible_sitemap_urls':len(locations),'artifact_privacy_or_ads_errors':errors,'google_indexed_count':None}
+        result['public_surface_snapshot']={'html_pages':len(html_pages),'noindex_pages':len(noindex),'eligible_sitemap_urls':len(locations),'artifact_privacy_or_ads_errors':errors,'google_indexing_inferred_from_artifact':False}
         result['noindex_pages']=noindex
         result['ad_free_pages']=html_pages if not errors else []
         result['errors']=list(dict.fromkeys(result.get('errors',[])+errors))
@@ -91,6 +96,8 @@ def check(root=ROOT):
     if report.get('ready_for_resubmission') is not False or any(config[k] is not False for k in ('enabled','account_ready','cmp_verified','publisher_identity_complete')):
         raise ValueError('Advertising/readiness permission changed')
     if report.get('preparation_evidence')!=declarations:raise ValueError('Readiness report does not reflect the actual limited owner statement')
+    if report.get('indexing_review',{}).get('page_indexing_snapshot')!=page_indexing_snapshot(root):
+        raise ValueError('Readiness report does not reflect the dated aggregate evidence')
     return declarations
 
 

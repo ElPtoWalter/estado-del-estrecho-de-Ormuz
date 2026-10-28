@@ -30,8 +30,35 @@ class EvidenceTests(unittest.TestCase):
     def test_actual_snapshot_does_not_infer_google_indexing(self):
         r=json.loads((prep.ROOT/'docs/preflight-20261028/sitemap-audit.json').read_text(encoding='utf-8'))
         self.assertEqual(r['source_sitemap']['kind'],'repository_source');self.assertEqual(r['generated_sitemap']['kind'],'generated_public_artifact');self.assertEqual(r['deployed_sitemap']['kind'],'http_deployed')
-        self.assertEqual(len(r['research']),6);self.assertIsNone(r['search_console_indexed_count']);self.assertFalse(r['editorial_decisions_changed'])
+        self.assertEqual(len(r['research']),6);self.assertIsNone(r['search_console_live_indexed_count']);self.assertFalse(r['editorial_decisions_changed'])
+        summary=r['search_console_page_indexing_snapshot'];self.assertEqual(summary['snapshot_date'],'2026-10-28')
+        self.assertEqual(summary['counts'],{'indexed':61,'not_indexed':62,'total_in_report':123})
+        self.assertEqual(sum(x['count'] for x in summary['not_indexed_reasons']),62)
+        self.assertFalse(summary['source']['independent_api_query']);self.assertFalse(summary['is_live_state'])
+        self.assertFalse(summary['sitemap_membership_inferred']);self.assertEqual(summary['six_research_individual_status'],'pending_url_inspection')
         for row in r['research']:self.assertEqual(row['public_http_status'],200);self.assertFalse(row['google_indexing_confirmed'])
+    def test_aggregate_counts_are_loaded_from_dated_data_not_a_program_constant(self):
+        value=json.loads((prep.ROOT/audit.OWNER_SNAPSHOT).read_text(encoding='utf-8'))
+        value['snapshot_date']='2026-10-20';value['counts']={'indexed':4,'not_indexed':6,'total_in_report':10}
+        for row in value['not_indexed_reasons']:row['count']=1
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);path=root/audit.OWNER_SNAPSHOT;path.parent.mkdir(parents=True);path.write_text(json.dumps(value),encoding='utf-8')
+            actual=audit.page_indexing_snapshot(root);self.assertEqual(actual['counts']['indexed'],4)
+            self.assertEqual(actual['snapshot_date'],'2026-10-20');self.assertFalse(actual['is_live_state'])
+    def test_inconsistent_totals_private_fields_or_false_api_provenance_are_rejected(self):
+        value=json.loads((prep.ROOT/audit.OWNER_SNAPSHOT).read_text(encoding='utf-8'));variants=[]
+        x=copy.deepcopy(value);x['counts']['not_indexed']+=1;variants.append(x)
+        x=copy.deepcopy(value);x['not_indexed_reasons'][0]['count']+=1;variants.append(x)
+        x=copy.deepcopy(value);x['source']['independent_api_query']=True;variants.append(x)
+        x=copy.deepcopy(value);x['source']['private_capture_included']=True;variants.append(x)
+        x=copy.deepcopy(value);x['private_account_identifier']='FIELD_NOT_PERMITTED';variants.append(x)
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);path=root/audit.OWNER_SNAPSHOT;path.parent.mkdir(parents=True)
+            for variant in variants:
+                path.write_text(json.dumps(variant),encoding='utf-8')
+                with self.assertRaises(ValueError):audit.page_indexing_snapshot(root)
+    def test_missing_snapshot_does_not_create_an_aggregate_count(self):
+        with tempfile.TemporaryDirectory() as tmp:self.assertIsNone(audit.page_indexing_snapshot(Path(tmp)))
 
 class PreparationTests(unittest.TestCase):
     def test_receipt_is_a_statement_not_a_sending_or_account_test(self):
@@ -55,15 +82,22 @@ class PreparationTests(unittest.TestCase):
         self.assertFalse(r['ready_for_resubmission']);self.assertEqual(r['account_approval'],'not_verified');self.assertIn('historical_snapshot_20261024',r)
         self.assertFalse(r['publication_evidence']['new_human_review_recorded']);self.assertFalse(r['publication_evidence']['external_legal_clearance_asserted'])
         self.assertNotIn('contact_receipt_and_reply',r['owner_confirmation']);self.assertTrue(r['publication_evidence']['pr25_deployed_verified_by_http'])
+        self.assertEqual(r['indexing_review']['page_indexing_snapshot'],audit.page_indexing_snapshot(prep.ROOT))
+        self.assertEqual(r['indexing_review']['six_research_individual_status'],'pending_url_inspection')
+        self.assertIsNone(r['indexing_review']['live_indexed_count'])
     def test_missing_declaration_never_creates_receipt_confirmation(self):
         with tempfile.TemporaryDirectory() as tmp:
             r=prep.enrich({'ready_for_resubmission':True},Path(tmp));self.assertFalse(r['ready_for_resubmission']);self.assertNotIn('owner_confirmation',r)
     def test_public_proposals_preserve_limits_and_no_advertising(self):
         for name in ('aviso-legal.html','privacidad.html','contacto.html','en-legal.html','en-privacy.html','en-contact.html'):
-            t=(prep.ROOT/name).read_text(encoding='utf-8');self.assertIn('declaración del titular' if not name.startswith('en-') else 'owner’s statement',t)
-            self.assertRegex(t,r'sin comprobarse|No se ha comprobado' if not name.startswith('en-') else r'unverified')
-        t=public.sanitize_html((prep.ROOT/'aviso-legal.html').read_text(encoding='utf-8'),'aviso-legal.html')
-        self.assertIn('declaración del titular',t);self.assertNotIn('adsbygoogle.js',t)
+            t=public.sanitize_html((prep.ROOT/name).read_text(encoding='utf-8'),name)
+            content=audit.TextFacts(t).text.casefold();self.assertIn('contacto@estrechoormuz.com',content)
+            for phrase in ('declaración del titular','auditoría','prueba independiente','sin comprobarse','unverified','owner’s statement','independently tested','this audit','28/10/2026','28 october 2026'):
+                self.assertNotIn(phrase,content)
+            self.assertNotIn('correcciones@estrechoormuz.com',t);self.assertNotIn('adsbygoogle.js',t)
+            if 'contact' not in name:
+                self.assertIn('pendiente' if not name.startswith('en-') else 'pending',content)
+                self.assertIn('persona física' if not name.startswith('en-') else 'natural person',content)
     def test_resubmission_and_all_four_monetization_gates_remain_false(self):
         prep.check();v=json.loads((prep.ROOT/'monetization.json').read_text(encoding='utf-8'))['adsense']
         for k in ('enabled','account_ready','cmp_verified','publisher_identity_complete'):self.assertIs(v[k],False)
