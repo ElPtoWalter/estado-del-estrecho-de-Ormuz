@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-10-28T07:16:53Z",
-  "last_success_at": "2026-10-28T07:16:53Z",
+  "checked_at": "2026-10-28T14:22:00Z",
+  "last_success_at": "2026-10-28T14:22:00Z",
   "last_change_at": "2026-10-18T17:29:40Z",
   "verification_ok": true,
   "stale": false,
@@ -23,43 +23,53 @@
       "published_at": "2026-10-27T01:34:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-28T07:16:53Z"
+      "observed_at": "2026-10-28T14:22:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Panama Canal restrictions double Asian LPG importers' Hormuz conundrum - Lloyd's List",
+      "title": "Bulk carrier Cape Dao sinks after Hormuz attack - Lloyd's List",
       "source_name": "Lloyd's List",
       "source_id": "lloyds_list",
-      "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaHg4cXloVXYwZDRiTXpJYjcxY0h1VzBtdjZYUHVkajRkQmRBaUNuVmV4SkJzUlM3eTRPdmpEb2l5eUk1cEZzLXBrU1pkaG5fR0ZEYXBaUEQ4VFpPYU13OTVWR3pqTnRjdjVfLVZ5eUJOMS16OGJmc2x3aVpZTm1uWGZ5UVBGbzJ1cG41WEFfS3Q0WFRtOEtIX3lZNWhWNzlxSHplcW12MlpYUnhlVVhoZ3ptTFFGdw",
-      "published_at": "2026-10-26T11:38:15Z",
+      "source_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbjNFbmpQTWRHUU9xdkxfUzRuaG5KekR3S09EdmpCUnFXTHFQdDl4SXpkeWRtdWpLRGdCRmo2czBRV3VlVlZXM1JoV1RGMFlNNS1QSXhEVEFTdmdnZ04teHRGcnBnNG51TjVONXB4ZWxwTjFwZlRtZzlIUTNEVjh3TzVyODUxRWFqSndVRw",
+      "published_at": "2026-10-26T14:00:25Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-10-28T07:16:53Z"
+      "observed_at": "2026-10-28T14:22:00Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "CENTCOM reportedly has plans for Iran strikes: Will Trump approve them? - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_id": "aljazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPd29BdjhJS29PZ0IwcElEZmdpZW4xRlhlYnIyQWhXR1VaZ2FCQlBFTW9kWjRETG0zalRDOWZ3dC1fc0cxc09HTmQ2UjhnUldtZXlNV0xEbjBQc0FFTTJ3S0hZOXFqbGhjVDYydEVXNFF2WTk3aHhKRVAwVnlOUENTVUlLOWpVZlN2M09CRjJVcUZfVlRHOEpHS2hSUUxLZW51OXZnZDk0YnBTamkyZlhpSNIBtgFBVV95cUxPQWc2WnhrU0s2LVRqd01IeHlnNG5RUllfQWVKVmlIeHMzQmp0UmQ3Vlo2VlAtTGMweHd3ZlZwWDZnTHhveUdmS1QyV00xLW9Jb2Q1MEN5ZzU3ZUZobUUzMzJXUjlMb240aDNNcDg0dU9Ibnk0bDhNcGVDQkZRS3pfTzNWTkFFcTFEUUFLamhaYzVVNVRPenJzQ3JEbTVxcjdtWVZsSXBsZEpzNWdyeGR0ZlllTE1UQQ",
+      "published_at": "2026-10-25T11:41:52Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-10-28T14:22:00Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 4.075
+      "risk": 4.765
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 2
+      "risk": 3
     },
-    "articles_considered": 14,
-    "signals_considered": 2,
-    "current_cycle_evidence": 2,
+    "articles_considered": 23,
+    "signals_considered": 4,
+    "current_cycle_evidence": 3,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
     "evidence_archive_days": 14
@@ -67,7 +77,7 @@
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-10-27T01:34:00Z",
-    "current_cycle_count": 2,
+    "current_cycle_count": 3,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -83,7 +93,7 @@
       "published_at": "2026-10-27T01:34:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-10-28T07:16:53Z"
+      "observed_at": "2026-10-28T14:22:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -117,6 +127,17 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-10-28T07:16:53Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "CENTCOM reportedly has plans for Iran strikes: Will Trump approve them? - Al Jazeera",
+      "source_name": "Al Jazeera",
+      "source_id": "aljazeera",
+      "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPd29BdjhJS29PZ0IwcElEZmdpZW4xRlhlYnIyQWhXR1VaZ2FCQlBFTW9kWjRETG0zalRDOWZ3dC1fc0cxc09HTmQ2UjhnUldtZXlNV0xEbjBQc0FFTTJ3S0hZOXFqbGhjVDYydEVXNFF2WTk3aHhKRVAwVnlOUENTVUlLOWpVZlN2M09CRjJVcUZfVlRHOEpHS2hSUUxLZW51OXZnZDk0YnBTamkyZlhpSNIBtgFBVV95cUxPQWc2WnhrU0s2LVRqd01IeHlnNG5RUllfQWVKVmlIeHMzQmp0UmQ3Vlo2VlAtTGMweHd3ZlZwWDZnTHhveUdmS1QyV00xLW9Jb2Q1MEN5ZzU3ZUZobUUzMzJXUjlMb240aDNNcDg0dU9Ibnk0bDhNcGVDQkZRS3pfTzNWTkFFcTFEUUFLamhaYzVVNVRPenJzQ3JEbTVxcjdtWVZsSXBsZEpzNWdyeGR0ZlllTE1UQQ",
+      "published_at": "2026-10-25T11:41:52Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-10-28T14:22:00Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -722,23 +743,12 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-10-17T14:21:33Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran steps up Hormuz surveillance: Attacks soar, oil flows crash again - Al Jazeera",
-      "source_name": "Al Jazeera",
-      "source_id": "aljazeera",
-      "source_url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZEoydG9jdlpqSFV4N3RwNzZULXNUMEgwVW54MjZad0U5TWI0MVlSemdzNG90X3YtaVp2cEhHRm1FMDRqUjZtaUs1MjZtdlY0d0l2amZLTS1MMUkzakNHMzV4b0hoYktXWHo1ckwwSkVCUG1vRzF1X1p6VUJZYXUtYndkRHRoZnIwbUczS2dmc2pHYzdQSlhYNWJoZXd1T050bzBYNEx3UGlvX0JKWWxF0gG0AUFVX3lxTFBuRVdqTEhtSEJaRjhiSjU3eTBYRHVBbjllR1lhMndWOFFHMENQLXhtNXF4SHl5WjlVWWdhdWJnSU0zR1QtNmQ2MldNdzgtTWg0ZzdsNkpkS2kyMzlyZmg4NkZiOFQtVURiUEhSMGw2WFJEOGp0Z05ZbmQzVi11andqNjRJT3l4V1hQSERpNTduWTNkc2NQTUI2MGt4R29xMTlBQkNYMTFheUI0ZkdsdnRVOVluaA",
-      "published_at": "2026-10-14T11:24:08Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-10-14T13:57:53Z"
     }
   ],
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-28T07:17:33Z",
+    "generated_at": "2026-10-28T14:22:17Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -772,24 +782,41 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 7.169,
+      "passage": 13.423,
       "closure": 0,
       "traffic_reduction": 0,
-      "access_restriction": 11.8,
-      "risk": 53.318
+      "access_restriction": 15.94,
+      "risk": 57.71
     },
     "source_counts": {
-      "passage": 6,
+      "passage": 9,
       "closure": 0,
       "primary_sources": 1
     },
-    "latest_confirmed_transit_at": "2026-10-28T04:51:00Z",
+    "latest_confirmed_transit_at": "2026-10-28T12:28:08Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "MEDIA"
     },
     "evidence": [
+      {
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "US Tells Ships to Avoid Unnecessary Transits Through Hormuz - Bloomberg.com",
+        "source": "Bloomberg",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOMHNCYmFZcm1Sa2ZJN2QtOHExcUl4b0xjU0NpOE9yQVpiYnViU1BQTlBaRktZMDgwQ0l2blFLeHFKbmNiUnBZMy05OHQ2azh2MF9oZjdMaUdrOFNrRFlHRmRHOFJTcThkb2hOcnN4ZjhKZE1ZNnRVOUZvNDMxOW5BX2JmaGwzVnJqLUZzX3dYUWFvNnk3U3BQLUJQRE1DcEd3MG5CVUhKd292dG9MZ01B",
+        "published_at": "2026-10-28T10:31:32Z",
+        "tier": 3,
+        "weight": 3.2,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.2,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
+      },
       {
         "kind": "RISK_SEVERE",
         "title": "Bulk carrier Cape Dao sinks after Hormuz attack - Lloyd's List",
@@ -798,29 +825,29 @@
         "published_at": "2026-10-26T14:00:25Z",
         "tier": 4,
         "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.6,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Panama Canal restrictions double Asian LPG importers' Hormuz conundrum - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaHg4cXloVXYwZDRiTXpJYjcxY0h1VzBtdjZYUHVkajRkQmRBaUNuVmV4SkJzUlM3eTRPdmpEb2l5eUk1cEZzLXBrU1pkaG5fR0ZEYXBaUEQ4VFpPYU13OTVWR3pqTnRjdjVfLVZ5eUJOMS16OGJmc2x3aVpZTm1uWGZ5UVBGbzJ1cG41WEFfS3Q0WFRtOEtIX3lZNWhWNzlxSHplcW12MlpYUnhlVVhoZ3ptTFFGdw",
-        "published_at": "2026-10-26T11:38:15Z",
-        "tier": 4,
-        "weight": 4.0,
         "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 3.6,
+        "effective_weight": 3.12,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "ACCESS_RESTRICTED",
+        "title": "Panama Canal restrictions double Asian LPG importers’ Hormuz conundrum - Lloyd's List",
+        "source": "Lloyd's List",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaHg4cXloVXYwZDRiTXpJYjcxY0h1VzBtdjZYUHVkajRkQmRBaUNuVmV4SkJzUlM3eTRPdmpEb2l5eUk1cEZzLXBrU1pkaG5fR0ZEYXBaUEQ4VFpPYU13OTVWR3pqTnRjdjVfLVZ5eUJOMS16OGJmc2x3aVpZTm1uWGZ5UVBGbzJ1cG41WEFfS3Q0WFRtOEtIX3lZNWhWNzlxSHplcW12MlpYUnhlVVhoZ3ptTFFGdw",
+        "published_at": "2026-10-26T11:38:15Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.12,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
       },
@@ -829,7 +856,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-28T07:17:33Z",
+        "published_at": "2026-10-28T14:22:17Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -846,7 +873,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-28T07:17:33Z",
+        "published_at": "2026-10-28T14:22:17Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -893,28 +920,11 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "RISK_SEVERE",
-        "title": "Iran says won’t allow US warships to get close as Trump ponders new attacks - Al Jazeera",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPbnhYekZtTGYtNUxRY1l0SkNlclVxV1JhVHJ2QUNzRFhRQW96Z0FWbXBSakNhblFEYk9kNHBibExfT0xFVFhLbUEzLWZpR0VNVC0tT2NlTTRIWmlaRThSTXN5OEF6d1ZiSEhGak11ck5zclJpYkRPODdJdFNqLXJTWjZiemlRSnZuOUV1MWY3eDZYMTBjaThzRDJaU3VVQnFqbFQ3bEt2enJEeHNUcm1nZTBnT1lXNXfSAbwBQVVfeXFMTzcyR081VVdqUVNRX05XQ0NxRFFPdm81M0NEV0hPcm9FYlZmTEJ4bTBPQUtjSjZvOEx3aGFWdGNDbHkyZzdoVDlVZzZyU1NrNkt4YkhBZGxZcm1vZ0tlWTB0T3lZbDdaX3dnSkZVdUpqc19KZnpWS3Vlc2tiN1JEQUNWZEVZYmV0ZWVyYXFENDU4a2FqU3ZWZGR5dFFreHl4VzVZellsU2hwQVcyZzBBTjl6SG9WQUpBNmprOXA",
-        "published_at": "2026-10-24T13:15:07Z",
-        "tier": 2,
-        "weight": 2.4,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.488,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
         "kind": "TRANSIT_CONFIRMED",
-        "title": "Iran Army: Oil tanker hit mines, caught fire attempting unauthorized crossing of Strait of Hormuz - ABNA English",
-        "source": "ABNA English",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPdl8td2YzQzhIQnc4MXo5SnVab1hRM2lPbmtlLW9iNVdJcjFEMDRuQXhCUFExUnR1cDlFVmRzaU9EbWxfNkdybDR5d3ZORjBCNmNMN01iNXBUb1ZvSTZHSW84OE1yM056SmZsLU5BM1hIQk5vbjBzcmw1SkkzUDk1ZXpJVXBfT2FEY2k4WUpaY0JUX0dHSy1SLV8xR0ZoVlFLWUJz",
-        "published_at": "2026-10-28T04:51:00Z",
+        "title": "US Tells Ships to Avoid Unnecessary Transits Through Hormuz - Insurance Journal",
+        "source": "Insurance Journal",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9tb1UzdDhxX3I0eHhpbHpNMFY5LTFOUTNHMm1CWUN4c0NicDZBa3JtUWRodGxzYVJRV0NxUW5LNGx3OThwQUdvSlg3WHFscWdQNEo2RUh0TWRTenA5dWFEM19uQkVpeDBRSkI2cmFpTmYzUTl2bWVTdkxpLWNyUQ",
+        "published_at": "2026-10-28T12:28:08Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
@@ -929,25 +939,25 @@
     ],
     "event_ids": [
       "evt_83c523cf06f27c56",
-      "evt_e0224e6abd31e366",
-      "evt_550370d61a27ddda",
-      "evt_e41d329da78d0a58",
-      "evt_bb3226a861c3eeea",
-      "evt_ebc454ee7de57242",
-      "evt_21a04928a60b45bf",
-      "evt_ea1cf4c4bc0c4448",
-      "evt_10df37bdc996f78f",
-      "evt_8547c7501d3f3661",
-      "evt_dc8209eb6a047973",
       "evt_87598d32809871df",
-      "evt_65d6c1ed94212a10",
-      "evt_b0de3098abaad984",
-      "evt_04544a876fd95f29",
-      "evt_1294a092cdb0a290",
-      "evt_66a496b419ef71fd",
-      "evt_89aca76a6ee2145c",
-      "evt_69251738335e1e37",
-      "evt_f717d8d095881641"
+      "evt_bb3226a861c3eeea",
+      "evt_cc5ee07b8c814a89",
+      "evt_3f4bd9d666eefe25",
+      "evt_774c6352feb664e8",
+      "evt_f54f0d500ff94c71",
+      "evt_ea1cf4c4bc0c4448",
+      "evt_dc8209eb6a047973",
+      "evt_e0224e6abd31e366",
+      "evt_c1cbb1c6e61941e9",
+      "evt_7679cf876a8d2e8f",
+      "evt_550370d61a27ddda",
+      "evt_ca06ed546cdfed41",
+      "evt_66312f0f8932b895",
+      "evt_ebc454ee7de57242",
+      "evt_0549e8ab6ff8bdf2",
+      "evt_21a04928a60b45bf",
+      "evt_10df37bdc996f78f",
+      "evt_0432ae427cb84803"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 4,
@@ -955,16 +965,16 @@
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 3,
       "SINGLE_SOURCE": 24,
-      "UNCONFIRMED": 34,
-      "TOTAL": 65
+      "UNCONFIRMED": 39,
+      "TOTAL": 70
     },
     "diagnostics": {
-      "signals_considered": 71,
+      "signals_considered": 86,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 65,
-      "article_count_after_deduplication": 123,
+      "event_count": 70,
+      "article_count_after_deduplication": 138,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -976,6 +986,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-28T07:17:33Z"
+    "generated_at": "2026-10-28T14:22:17Z"
   }
 }
