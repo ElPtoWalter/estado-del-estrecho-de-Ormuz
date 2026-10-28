@@ -11,7 +11,7 @@ Estrecho Ormuz, accesible en https://estrechoormuz.com, es un proyecto informati
 | Titular | `[[NOMBRE_Y_APELLIDOS_LEGALES_AUTORIZADOS]]` |
 | NIF | `[[NIF_REAL_AUTORIZADO_CUANDO_APLIQUE_ART_10_LSSI]]` |
 | Residencia, domicilio o dirección admisible conforme al artículo 10.1.a LSSI | `[[DIRECCION_REAL_COMPLETA_VALIDADA_Y_AUTORIZADA]]` |
-| Correo | `contacto@estrechoormuz.com` — dirección propuesta; `[[CONFIRMAR_RUTA_RECEPCION_Y_RESPUESTA_ANTES_DE_PUBLICAR]]` |
+| Correo | `contacto@estrechoormuz.com` — recepción confirmada por declaración del titular el 28/10/2026; envío de respuestas con identidad del dominio no comprobado. `[[VALIDAR_ENVIO_Y_PROCEDIMIENTO_DE_RESPUESTA]]` |
 | Medio adicional de comunicación directa y efectiva | `[[CANAL_REAL_VALIDADO_Y_FORMA_DE_ACCESO]]` |
 | Inscripción registral, autorización administrativa, profesión regulada o código de conducta | `[[COMPROBAR_SI_APLICA_Y_COMPLETAR_O_RETIRAR_ESTA_FILA]]` |
 

@@ -1,5 +1,7 @@
 # Revisión individual de las 32 URLs · 24/10/2026
 
+> **Estado posterior — 28/10/2026:** las tres investigaciones ES/EN están publicadas (PR #22–#24) y la entrega de la PR #25 se ha verificado por HTTP. La recepción de `contacto@estrechoormuz.com` está confirmada por declaración del titular; el envío con identidad del dominio sigue sin comprobarse. Hay acceso a rendimiento y metadatos históricos de Search Console, pero Page Indexing/URL Inspection siguen pendientes. Los recuentos, dependencias y propuestas fechados en este documento son historial. Prevalece [la auditoría actual](PREFLIGHT_ADSENSE_2026-10-28.md); no acredita aprobación AdSense ni cumplimiento legal completo.
+
 Comparación de la propuesta anterior de #21 (42 URLs) frente al artefacto de #20 sincronizado con main 6b89924d (74 URLs). Son URLs técnicamente indexables, no un recuento de indexación real. **No se ha accedido a Search Console: todas las decisiones SEO se identifican como provisionales**, sin atribuir cero visitas, impresiones o enlaces a ninguna página. No se sabe qué URL motivó el rechazo global de AdSense.
 
 Se recupera la indexabilidad de **14 URLs**, conservando una propuesta de **56**. Se mantienen 18 exclusiones concretas. No se elimina ni redirige ninguna página, ni se modifica contenido solo para rastreadores. Indexable tampoco significa aprobado por una persona ni apto para anuncios: los recursos documentales siguen sin publicidad. Los diarios y partes automáticos, que ya eran noindex, conservan esa condición y su RSS permanente.
