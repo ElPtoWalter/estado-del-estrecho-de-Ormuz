@@ -11,7 +11,7 @@ Estrecho Ormuz, available at https://estrechoormuz.com, is an independent inform
 | Owner | `[[AUTHORIZED_REAL_FULL_LEGAL_NAME]]` |
 | Spanish tax identification number | `[[AUTHORIZED_REAL_NIF_WHEN_LSSI_ARTICLE_10_APPLIES]]` |
 | Residence, address or qualifying address under LSSI Article 10(1)(a) | `[[VALIDATED_AND_AUTHORIZED_FULL_REAL_ADDRESS]]` |
-| Email | `contacto@estrechoormuz.com` — proposed address; `[[VERIFY_ROUTING_RECEIPT_AND_REPLY_BEFORE_PUBLICATION]]` |
+| Email | `contacto@estrechoormuz.com` — receipt confirmed by the owner’s statement on 28 October 2026; sending replies using the domain identity remains unverified. `[[VALIDATE_SENDING_AND_RESPONSE_PROCEDURE]]` |
 | Additional means of direct and effective communication | `[[VALIDATED_REAL_CHANNEL_AND_ACCESS_DETAILS]]` |
 | Registration, administrative authorisation, regulated profession or code of conduct | `[[CHECK_APPLICABILITY_THEN_COMPLETE_OR_REMOVE_THIS_ROW]]` |
 

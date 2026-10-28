@@ -37,6 +37,14 @@ on:
       - "spain_release.py"
       - "test_spain_release.py"
       - "seo_surface.py"
+      - "indexation_audit.py"
+      - "publisher_preparation.py"
+      - "publisher-preparation.json"
+      - "adsense-readiness-report.json"
+      - "test_preflight_audit.py"
+      - "docs/preflight-20261028/**"
+      - "docs/PREFLIGHT_ADSENSE_2026-10-28.md"
+      - "docs/IDENTIFICACION_Y_PRIVACIDAD_2026-10-28.md"
       - "search_console_report.py"
       - "test_seo_search_console.py"
       - "docs/SEO_SEARCH_CONSOLE_2026-10-27.md"
@@ -111,6 +119,7 @@ jobs:
           python -m py_compile spain_data.py spain_editorial.py test_spain_editorial.py drafts/spain-europe-20261025/render_charts.py
           python -m py_compile spain_release.py test_spain_release.py
           python -m py_compile seo_surface.py search_console_report.py test_seo_search_console.py
+          python -m py_compile indexation_audit.py publisher_preparation.py test_preflight_audit.py
           python -m py_compile energy_data.py energy_editorial.py energy_release.py test_energy_editorial.py test_energy_release.py drafts/energy-flows-20261025/render_charts.py
           python -m py_compile publication_quality.py free_editorial_ai.py generate_daily_journal.py pilot_gemini_phase1.py pilot_phase2a_video.py straitwatch_core.py operational_intelligence_v7.py postprocess_evidence.py generate_health.py build_public_site.py history_public_candidate.py history_release.py test_history_release.py test_history_public_candidate.py test_free_editorial_ai.py test_straitwatch_core.py phase2_video/*.py
       - name: Pruebas editoriales
@@ -135,6 +144,8 @@ jobs:
           python spain_editorial.py --check
           python spain_release.py --check
           python seo_surface.py --root _site
+          python publisher_preparation.py --check
+          python indexation_audit.py --public-root _site --output "${{ runner.temp }}/indexation-offline"
       - name: Conservar candidato público comprobado sin desplegar
         uses: actions/upload-artifact@v7
         with:

@@ -475,6 +475,8 @@ def validate(policy: dict[str, Any]) -> dict[str, Any]:
         "account_approval": "not_verified",
         "external_checks_pending": ["AdSense account and rejection reason", "Certified CMP and consent behaviour", "Publisher legal identity"],
     }
+    from publisher_preparation import enrich
+    result = enrich(result, ROOT)
     write(
         REPORT,
         json.dumps(result, ensure_ascii=False, indent=2) + "\n",
@@ -504,7 +506,7 @@ def apply() -> None:
     print(f"Monetized pages: {len(result['monetized_pages'])}")
     print(f"Ad-free pages: {len(result['ad_free_pages'])}")
     print(f"Noindex utilities: {len(result['noindex_utility_pages'])}")
-    print("The site is technically ready for a new review.")
+    print("Local checks completed; ready_for_resubmission=false. External evidence and separate authorization are still required.")
 
 
 def main() -> int:

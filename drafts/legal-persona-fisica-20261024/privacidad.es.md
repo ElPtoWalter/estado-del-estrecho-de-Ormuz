@@ -4,7 +4,7 @@ Preparado el 24/10/2026 con asistencia de IA. No acredita cumplimiento ni revisi
 
 ## Información básica
 
-- Responsable: `[[NOMBRE_Y_APELLIDOS_LEGALES_AUTORIZADOS]]`, persona física titular de Estrecho Ormuz. Contacto: `[[DIRECCION_DE_CONTACTO_AUTORIZADA]]` y `contacto@estrechoormuz.com`, esta última pendiente de prueba de recepción y respuesta.
+- Responsable: `[[NOMBRE_Y_APELLIDOS_LEGALES_AUTORIZADOS]]`, persona física titular de Estrecho Ormuz. Contacto: `[[DIRECCION_DE_CONTACTO_AUTORIZADA]]` y `contacto@estrechoormuz.com`, con recepción confirmada por declaración del titular el 28/10/2026. No se ha comprobado el envío de respuestas con la identidad del dominio ni realizado una prueba independiente de recepción.
 - Finalidades: entregar y proteger la web; responder comunicaciones voluntarias. `[[CONFIRMAR_TRATAMIENTOS_EFECTIVOS_Y_RETIRAR_LOS_INEXISTENTES]]`.
 - Bases jurídicas: `[[BASE_CONCRETA_PARA_CADA_FINALIDAD_VALIDADA_EN_TABLA_INFERIOR]]`.
 - Destinatarios y transferencias: `[[PROVEEDORES_REALES_PAISES_ROLES_Y_GARANTIAS_CONFIRMADOS]]`.

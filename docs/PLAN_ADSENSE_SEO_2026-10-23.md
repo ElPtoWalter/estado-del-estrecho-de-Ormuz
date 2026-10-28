@@ -1,5 +1,7 @@
 # Plan AdSense y tráfico orgánico
 
+> **Estado posterior — 28/10/2026:** las tres investigaciones ES/EN están publicadas (PR #22–#24) y la entrega de la PR #25 se ha verificado por HTTP. La recepción de `contacto@estrechoormuz.com` está confirmada por declaración del titular; el envío con identidad del dominio sigue sin comprobarse. Hay acceso a rendimiento y metadatos históricos de Search Console y una instantánea global de Page Indexing aportada por el titular el 28/10/2026 (61 indexadas, 62 sin indexar); el estado individual de las seis investigaciones y URL Inspection siguen pendientes. Los recuentos, dependencias y propuestas fechados en este documento son historial. Prevalece [la auditoría actual](PREFLIGHT_ADSENSE_2026-10-28.md); no acredita aprobación AdSense ni cumplimiento legal completo.
+
 23/10/2026. Propuesta operativa, sin activación publicitaria ni promesa de aprobación o visitas. Las prioridades de búsquedas son hipótesis hasta disponer de Search Console.
 
 ## Punto de partida verificado

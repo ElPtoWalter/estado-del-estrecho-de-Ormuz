@@ -4,7 +4,7 @@ Prepared on 24 October 2026 with AI assistance. This does not establish complian
 
 ## Basic information
 
-- Controller: `[[AUTHORIZED_REAL_FULL_LEGAL_NAME]]`, the natural person owning Estrecho Ormuz. Contact: `[[AUTHORIZED_CONTACT_ADDRESS]]` and `contacto@estrechoormuz.com`; receipt and replies through that email address remain untested.
+- Controller: `[[AUTHORIZED_REAL_FULL_LEGAL_NAME]]`, the natural person owning Estrecho Ormuz. Contact: `[[AUTHORIZED_CONTACT_ADDRESS]]` and `contacto@estrechoormuz.com`; receipt is confirmed by the owner’s statement on 28 October 2026. Sending replies using the domain identity and independent receipt testing remain unverified.
 - Purposes: deliver and protect the website; answer voluntary communications. `[[CONFIRM_ACTUAL_PROCESSING_AND_REMOVE_ABSENT_ACTIVITIES]]`.
 - Legal bases: `[[SPECIFIC_VALIDATED_BASIS_FOR_EACH_PURPOSE_IN_THE_TABLE_BELOW]]`.
 - Recipients and transfers: `[[CONFIRMED_PROVIDERS_COUNTRIES_ROLES_AND_SAFEGUARDS]]`.

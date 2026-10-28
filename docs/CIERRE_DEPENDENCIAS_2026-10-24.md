@@ -1,5 +1,7 @@
 # Preparación de monetización: dependencias y autorizaciones
 
+> **Estado posterior — 28/10/2026:** las tres investigaciones ES/EN están publicadas (PR #22–#24) y la entrega de la PR #25 se ha verificado por HTTP. La recepción de `contacto@estrechoormuz.com` está confirmada por declaración del titular; el envío con identidad del dominio sigue sin comprobarse. Hay acceso a rendimiento y metadatos históricos de Search Console y una instantánea global de Page Indexing aportada por el titular el 28/10/2026 (61 indexadas, 62 sin indexar); el estado individual de las seis investigaciones y URL Inspection siguen pendientes. Los recuentos, dependencias y propuestas fechados en este documento son historial. Prevalece [la auditoría actual](PREFLIGHT_ADSENSE_2026-10-28.md); no acredita aprobación AdSense ni cumplimiento legal completo.
+
 24/10/2026. Trabajo en las ramas de PR #20 y #21. Ambas se mantienen en borrador, abiertas y sin fusionar en main. No se despliega desde esta tarea ni se activa publicidad o solicita revisión de AdSense. PR #19 ya estaba fusionada; PR #18 permanece independiente.
 
 ## Integración
@@ -39,7 +41,7 @@ No se han recibido ni publicado nombre legal, NIF, domicilio privado, teléfono 
 | Aprobar cada original, con su traducción y derechos | Seis HTML y manifest de huellas; elección editorial explícita de publicar la discrepancia de Enagás o esperar reconciliación. | Aprobar otro original, otra versión o cualquier anuncio. La firma y fecha deben ser reales y autorizadas; no se registran aquí. |
 | Publicar las versiones finales de los originales | Definir rutas, enlazado, canonical/hreflang y revisar los HTML públicos exactos antes de la aprobación final. | Convertir automáticamente los borradores actuales en páginas indexables. |
 | Publicar datos legales concretos | Determinar campos exigibles, dirección válida y datos exactos que el titular autoriza, fuera del repositorio hasta esa decisión. | Publicar copia del DNI/NIE, dirección privada de reenvío, teléfono o capturas de cuenta. |
-| Configurar correo o contratar un proveedor, si fuese necesario | Alternativas documentadas; acceso de cuenta y pruebas de recepción/respuesta pendientes. | Enviar mensajes a terceros, cambiar todos los registros DNS o incurrir en costes sin alcance y autorización. |
+| Configurar correo o contratar un proveedor, si fuese necesario | Recepción confirmada por declaración del titular el 28/10/2026; envío con identidad del dominio y operación de respuesta pendientes. | Enviar mensajes a terceros, cambiar todos los registros DNS o incurrir en costes sin alcance y autorización. |
 | Solicitar revisión de AdSense, en una fase posterior | Comprobar cuenta, rastreo de ads.txt, contenido aprobado y publicado, identidad y requisitos de Google. | Activar anuncios. No se recomienda solicitarla todavía. |
 | Activar publicidad, en una fase posterior | Cuenta, CMP/consentimiento, identidad y ubicaciones verificadas y autorización expresa. | Interpretar el ID configurado o una puntuación local como aprobación de Google. |
 
