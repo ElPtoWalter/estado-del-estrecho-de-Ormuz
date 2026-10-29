@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-29T19:10:56Z",
+    "generated_at": "2026-10-29T23:31:38Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -96,18 +96,18 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 7.971,
+      "passage": 12.886,
       "closure": 0,
-      "traffic_reduction": 1.9,
-      "access_restriction": 10.5,
-      "risk": 66.18
+      "traffic_reduction": 0.9,
+      "access_restriction": 11.48,
+      "risk": 109.62
     },
     "source_counts": {
-      "passage": 6,
+      "passage": 8,
       "closure": 0,
       "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-10-29T12:16:37Z",
+    "latest_confirmed_transit_at": "2026-10-29T20:20:02Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -119,7 +119,7 @@
         "title": "Iran says 3 oil tankers struck mines, and other Mideast news - AP News",
         "source": "Associated Press",
         "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPODlXY2RDRGVPYkNGQ20xbjVsN01Vdzl0NWItMlVkOFJzTnRjNU1GRW9vdzBOckdWVjNhdHdfa3RLV0VETGxWOVVCVWFSbVUxSUJnQ2lKaUFrdFNoU1gyNHdyQVhoc3h4MFNTaXRoOEl0aHRmZGpfb2txSEpXS1M1WWR3UmoxZXVwNWV3Y080emJWX1pNSWJLMlYxNXhVOHNPeUNOV0ZWT0oxZ3pMYUN2c2VlR1Y",
-        "published_at": "2026-10-29T17:25:00Z",
+        "published_at": "2026-10-29T19:58:00Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "legacy-engine",
@@ -170,7 +170,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-29T19:10:56Z",
+        "published_at": "2026-10-29T23:31:38Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -183,21 +183,38 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
-        "source": "Lloyd's List",
-        "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-29T19:10:56Z",
-        "tier": 4,
-        "weight": 2.6,
-        "provider": "Lloyd's List hot topic",
+        "kind": "TRANSIT_CONFIRMED",
+        "title": "US Tells Ships to Avoid Unnecessary Transits Through Hormuz - Bloomberg.com",
+        "source": "Bloomberg",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOMHNCYmFZcm1Sa2ZJN2QtOHExcUl4b0xjU0NpOE9yQVpiYnViU1BQTlBaRktZMDgwQ0l2blFLeHFKbmNiUnBZMy05OHQ2azh2MF9oZjdMaUdrOFNrRFlHRmRHOFJTcThkb2hOcnN4ZjhKZE1ZNnRVOUZvNDMxOW5BX2JmaGwzVnJqLUZzX3dYUWFvNnk3U3BQLUJQRE1DcEd3MG5CVUhKd292dG9MZ01B",
+        "published_at": "2026-10-28T10:31:32Z",
+        "tier": 3,
+        "weight": 3.2,
+        "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 2.6,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
+        "effective_weight": 2.88,
+        "kind_label_es": "Tránsito confirmado",
+        "kind_label_en": "Confirmed transit"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "US-Iran War Latest Live News: UKMTO Reports Tanker Hit by Unknown Projectile in Strait of Hormuz as Yemen Urges UN Action Over Aden Airport Attacks Amid Escalating Middle East Tensions - The Sunday Guardian",
+        "source": "The Sunday Guardian",
+        "url": "https://news.google.com/rss/articles/CBMizAJBVV95cUxOMkFqRFAxY0c0cG1FNUlkU1Z5ZGRXZVhGbk1nTmxRWTJ5bmFmNUp3UHJWVVdUVTdVTU1QTmYtZUwxa1k4RWJCQWZ0dWVDbFlMay1xUXB3bVRMWjhST3VRY2ZkckpFbkh5ejJEeFF4WkNXckxWYUN6OFBMSmN2S1FyTnFTRjJrWmxIVFhpUUE0ZW9lXzZKNmZiMl9EajhBYVB3ZWFSckVzV3B4TWhlMUVfSnFZVE5JNmVqWE5wcVgxdmRDMTREdm8ydzg0Q0pNSFhvOEdYNlQ5QTczc0NPaTFzdC1BNldkRjNQYXNLTUpjaEFZQmF0Tk40bmd0N2lFWlVMLVc3OW41UGpRVlVITURrRmlRRmhMeXhGM0xjdmMyNTR2UnJkVXNidlZDZGY3LWhKeFc5U0E4UURJQUVGMk15YTI5dXFzVjVkZ0x4R9IB0gJBVV95cUxNVHQwTWhpak9WcDNwRE41Y05YTGZOMDdwc2VUbURPd0lqM3g0bWlnUXlHdENwWWJsd3Jtb2EzWXI3SG1IY0dtMUYzZXNmLUtNdThPSE52bFAzZDRmRXVYODVfYnc5ckpTcldXYnRmczZtTnJ6R0RVZVM0RjJSb2tXRFVvbnl3Sjdha2VjRjY3Wk9wcHVmZklwMjctT3U5T2FPVlVBX29UNlBFYTYtLTY0U1l5WEM3U3dBa2htNGZxREdvSzBDYnBITFpKZ0xndExaSlhmN2M5RW50RURWRGlHV2gxNXZGVi1LRkt3N0xMOHFLX3pyNDlPQllOOWVrY3Ywa19iVUg4Y3FaX1VtYWRvWndGVWg3LVRuV0V2UWc5WW1RRFczbzI3SEZJV2E1QkFxTGV4OU82c0o0Nnc4WjVYMUx0ZVBtZFYzOXBQYnlubHdrZw",
+        "published_at": "2026-10-29T19:41:30Z",
+        "tier": 2,
+        "weight": 2.0,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 2.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       },
       {
         "kind": "RISK_SEVERE",
@@ -224,7 +241,7 @@
         "published_at": "2026-10-29T07:46:15Z",
         "tier": 2,
         "weight": 2.0,
-        "provider": "legacy-engine",
+        "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
@@ -232,63 +249,46 @@
         "effective_weight": 2.0,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "UK reports tanker hit by projectile in Hormuz - Breakingthenews.net",
-        "source": "Breakingthenews.net",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSzQ3U1ZaaVRHUWxXRlA1UVk0Y1dLb3NFN2ExNkJ5ZkMwMjJFV1oxeDI0X3lwUTdlOGZIbGU3c3FvVW5FNDJmQW9MOXlpUGpQNjFQSWp6cnV0SWc1eHZrQ2dtQU1ZVzZKTzNrXzVkcVlhNENVNUd0MndZS3hMa1U0NDkxRzhmbHFlODkzYVUxazM4U291",
-        "published_at": "2026-10-29T18:35:00Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_83c523cf06f27c56",
+      "evt_e980a590bef3d8ca",
+      "evt_87dd90d6e4737e66",
+      "evt_c24a8dd0649f51f8",
+      "evt_65d6c1ed94212a10",
+      "evt_82cb47cb8e7b067e",
+      "evt_f7671f6e82823551",
       "evt_d9f64f58be847b3c",
       "evt_2cea7514dd37aab8",
-      "evt_6a2f24d87cf54a81",
-      "evt_e980a590bef3d8ca",
       "evt_9b7df26bb2d2be7b",
-      "evt_785d3dce58e73f0d",
       "evt_0360d34da907f5e3",
       "evt_054ac1c77a3c83b7",
       "evt_7c37da0231acc1b0",
-      "evt_d73a95264d00fc16",
-      "evt_dc8209eb6a047973",
       "evt_8c50393f36b321bd",
-      "evt_3df05437e584b3c8",
+      "evt_e41d329da78d0a58",
       "evt_e033b27313577b74",
       "evt_ab7de79e75ce1350",
       "evt_580655f09d778678",
-      "evt_c017ee009d3da9e2",
-      "evt_3501c1941d2c132d",
-      "evt_87bad3eadec752d7"
+      "evt_60121d3628219988",
+      "evt_c017ee009d3da9e2"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 5,
-      "SINGLE_SOURCE": 25,
-      "UNCONFIRMED": 31,
-      "TOTAL": 66
+      "DECLARATION_ONLY": 3,
+      "SINGLE_SOURCE": 26,
+      "UNCONFIRMED": 26,
+      "TOTAL": 60
     },
     "diagnostics": {
-      "signals_considered": 88,
+      "signals_considered": 130,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 66,
-      "article_count_after_deduplication": 131,
+      "event_count": 60,
+      "article_count_after_deduplication": 160,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-29T19:10:56Z"
+    "generated_at": "2026-10-29T23:31:38Z"
   }
 }
