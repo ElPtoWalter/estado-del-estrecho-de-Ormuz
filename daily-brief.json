@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-29T00:17:41Z",
+    "generated_at": "2026-10-29T06:20:24Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -77,37 +77,37 @@
       "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "CLOSURE_CLAIMED"
+      "legal": "DISPUTED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Cierre declarado por una parte"
+      "legal": "Régimen disputado"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "Closure claimed by one party"
+      "legal": "Disputed regime"
     },
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 8.141,
+      "passage": 11.943,
       "closure": 0,
-      "traffic_reduction": 1.0,
-      "access_restriction": 11.76,
-      "risk": 45.97
+      "traffic_reduction": 1.9,
+      "access_restriction": 7.24,
+      "risk": 57.87
     },
     "source_counts": {
-      "passage": 5,
+      "passage": 8,
       "closure": 0,
       "primary_sources": 1
     },
-    "latest_confirmed_transit_at": "2026-10-28T11:57:46Z",
+    "latest_confirmed_transit_at": "2026-10-29T01:35:41Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -115,25 +115,8 @@
     },
     "evidence": [
       {
-        "kind": "RISK_SEVERE",
-        "title": "Saudi Oil Exports Near Wartime High as Houthis Mount Attacks - Bloomberg",
-        "source": "Bloomberg",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNVWM1aUNQQVJfTHhOZkhSSGNXTEtETEQ1WUpiSExUUkpSRnE1a0tsZFdxOS1WbDVreDJHZDZhMGM2UVpOTGlPQVp1aGowcFRiQTU4c1lJLW5sZ25EV0lQTUVrQnVFdTFCMHpCS1U1ZnpJSVhoaE1VVV9QM1VFX0FHRmhzb0FDOTRfVzdxQ2dRbW95SUlhS2V2TlVOU0YxX2JITVo2c3ZPWWNtU2VtRGxjcw",
-        "published_at": "2026-10-28T11:44:36Z",
-        "tier": 3,
-        "weight": 3.2,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.2,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
         "kind": "TRANSIT_CONFIRMED",
-        "title": "US Tells Ships to Avoid Unnecessary Transits Through Hormuz - Bloomberg",
+        "title": "US Tells Ships to Avoid Unnecessary Transits Through Hormuz - Bloomberg.com",
         "source": "Bloomberg",
         "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOMHNCYmFZcm1Sa2ZJN2QtOHExcUl4b0xjU0NpOE9yQVpiYnViU1BQTlBaRktZMDgwQ0l2blFLeHFKbmNiUnBZMy05OHQ2azh2MF9oZjdMaUdrOFNrRFlHRmRHOFJTcThkb2hOcnN4ZjhKZE1ZNnRVOUZvNDMxOW5BX2JmaGwzVnJqLUZzX3dYUWFvNnk3U3BQLUJQRE1DcEd3MG5CVUhKd292dG9MZ01B",
         "published_at": "2026-10-28T10:31:32Z",
@@ -149,11 +132,11 @@
         "kind_label_en": "Confirmed transit"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Panama Canal restrictions double Asian LPG importers' Hormuz conundrum - Lloyd's List",
+        "kind": "RISK_SEVERE",
+        "title": "Bulk carrier Cape Dao sinks after Hormuz attack - Lloyd's List",
         "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaHg4cXloVXYwZDRiTXpJYjcxY0h1VzBtdjZYUHVkajRkQmRBaUNuVmV4SkJzUlM3eTRPdmpEb2l5eUk1cEZzLXBrU1pkaG5fR0ZEYXBaUEQ4VFpPYU13OTVWR3pqTnRjdjVfLVZ5eUJOMS16OGJmc2x3aVpZTm1uWGZ5UVBGbzJ1cG41WEFfS3Q0WFRtOEtIX3lZNWhWNzlxSHplcW12MlpYUnhlVVhoZ3ptTFFGdw",
-        "published_at": "2026-10-26T11:38:15Z",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbjNFbmpQTWRHUU9xdkxfUzRuaG5KekR3S09EdmpCUnFXTHFQdDl4SXpkeWRtdWpLRGdCRmo2czBRV3VlVlZXM1JoV1RGMFlNNS1QSXhEVEFTdmdnZ04teHRGcnBnNG51TjVONXB4ZWxwTjFwZlRtZzlIUTNEVjh3TzVyODUxRWFqSndVRw",
+        "published_at": "2026-10-26T14:00:25Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "legacy-engine",
@@ -162,15 +145,15 @@
         "traffic_count": null,
         "traffic_average": null,
         "effective_weight": 3.12,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       },
       {
         "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-29T00:17:41Z",
+        "published_at": "2026-10-29T06:20:24Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -187,7 +170,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-29T00:17:41Z",
+        "published_at": "2026-10-29T06:20:24Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -212,7 +195,7 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 2.25,
+        "effective_weight": 1.95,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -235,10 +218,27 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "US military rejects Iranian mine-strike claims, says Hormuz transit lanes remain 'clear' - Gulf News",
-        "source": "Gulf News",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQczNVaVUyc1NFcnhPVFJQWXAyX1hfYnRVUnB5RmJmbDdEQXBKTmUxb0xEby1BWDJMQkIwQTJoRmRzenMxX1A3S1pVazFJNTNJbER2OExIU3lGWVJSbW5VM3Qtdm12cFBMM0xZOW02VDAydEw3dUxVTFBoS3dqM216WUprR2dXNFRoUG9STnIwcnRQMXJJeFJtQUtEZWxEbDJqelUxdkRyN1Y5ZmR3VXlVZVpFQUN0X2xZUXJFbXVaNUJfZUlBUVJFQg",
-        "published_at": "2026-10-28T23:37:46Z",
+        "title": "Iran’s Guards Say Two Tankers Hit Mines in Strait of Hormuz - EnergyNow.com",
+        "source": "EnergyNow.com",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOamJLVm5XOWtabTJVVmRTZHgwMkxqdGtFdHhYYU5HYzBGdlhlQ19hcjZyTjRPWTJ6X1ZKYmtPdjIyMVc4ZWw5eWIya284SThKQ2ZVWm14MlljRjlfRHVFd1ZsRlBZWG5qdzh5OERHOVI1azM3REMya08xcW1oWHlXdG5YTUdINi1EcDR2WUQxczg0QVE",
+        "published_at": "2026-10-29T02:49:19Z",
+        "tier": 1,
+        "weight": 1.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 1.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Iran warns of 'devastating' economic fallout from any new Israeli attack - The New Indian Express",
+        "source": "The New Indian Express",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPbERPckNieWxlUmctWG5qdUpwZmxSVEFZYlFiM3ZVOHF4am9kV2JVR3RRZWpHd3Q4WmE0LUdWb0k4bkJVY0Voc0ZWRUI0Q01FbkxFLU50aHdyOFlKU24yNkg5R1pPQUt5VGw1cnIwMkJaVVVjT0dMU2I3cmw0cXpuc0ktV2drQmg4LUpQZkZKZlFzRW13c2NsZnBfb013QUJxY3lHTnVjVzFfT0xCRG9sVmI2bml1TC1OVkJ0UnlJRkvSAc4BQVVfeXFMT1ItZ01SY1lKWGlpN05rbTNzNVJrLWlZb0pRZHhaUVdvTElucXJYZm5DMHBoelpuUVFESzNYS3dZTzdZWWR5RjhDUm4tUGRRcjlRTVN4aUlXbFc3WmdaeExNakFxUXVkTFBVVEtIcktqaXlBa0VMSEpLeVBKUmVubjdQT1NacHo1SDhhVXdZWmxGcmRZbmVaTnNkblBkbFRjelRSOXgwUE43SjRwbHh4ek1Zbm5KVlV2UkZxNjVwa1pDNFd2amx6WXBsZnNnT1E",
+        "published_at": "2026-10-29T02:09:35Z",
         "tier": 1,
         "weight": 1.0,
         "provider": "Google News RSS",
@@ -253,42 +253,42 @@
     ],
     "event_ids": [
       "evt_83c523cf06f27c56",
-      "evt_9db8b4596fca6440",
+      "evt_448e8a3c6af76c7e",
+      "evt_87bad3eadec752d7",
+      "evt_3f4bd9d666eefe25",
+      "evt_04544a876fd95f29",
+      "evt_4ab515e18f24ec4f",
       "evt_66c39db31546a0bb",
       "evt_9b7df26bb2d2be7b",
-      "evt_4ab515e18f24ec4f",
       "evt_0fcffd31fdb19a55",
-      "evt_fbeadbd8cb5907ff",
-      "evt_20f7322d7c2bb480",
-      "evt_8521506d92e5243c",
+      "evt_7c37da0231acc1b0",
+      "evt_6a2f24d87cf54a81",
+      "evt_611ed60ccc77dfb6",
       "evt_f54f0d500ff94c71",
       "evt_65d6c1ed94212a10",
       "evt_cc5ee07b8c814a89",
-      "evt_3f4bd9d666eefe25",
-      "evt_611ed60ccc77dfb6",
       "evt_774c6352feb664e8",
-      "evt_2cea7514dd37aab8",
       "evt_dc8209eb6a047973",
-      "evt_a9a427059e3dae77",
-      "evt_de0131f1e18290db",
-      "evt_ebc454ee7de57242"
+      "evt_e0224e6abd31e366",
+      "evt_906c6e08a92334c0",
+      "evt_a2896cb89aa5cc20"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 3,
-      "SINGLE_SOURCE": 22,
-      "UNCONFIRMED": 37,
-      "TOTAL": 67
+      "DECLARATION_ONLY": 1,
+      "SINGLE_SOURCE": 23,
+      "UNCONFIRMED": 41,
+      "TOTAL": 70
     },
     "diagnostics": {
-      "signals_considered": 68,
+      "signals_considered": 84,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 67,
-      "article_count_after_deduplication": 117,
+      "event_count": 70,
+      "article_count_after_deduplication": 131,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-29T00:17:41Z"
+    "generated_at": "2026-10-29T06:20:24Z"
   }
 }
