@@ -64,6 +64,9 @@ def check(root):
     for page, parser in parsers.items():
         for ref in parser.refs:
             url = urlsplit(ref)
+            if url.scheme.casefold() == 'mailto' and unquote(url.path).casefold() == 'correcciones@estrechoormuz.com':
+                errors.append(f'{page.relative_to(root)}: unverified corrections mailbox; use contacto@estrechoormuz.com')
+                continue
             if (url.scheme and url.scheme not in {'http', 'https'}) or (url.netloc and url.hostname != 'estrechoormuz.com') or not (url.path or url.fragment):
                 continue
             path = unquote(url.path) if url.path else ('/' if url.netloc else '')
