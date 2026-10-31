@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-31T01:45:32Z",
+    "generated_at": "2026-10-31T08:45:51Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -96,18 +96,18 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 8.363,
+      "passage": 12.069,
       "closure": 0,
-      "traffic_reduction": 0.9,
-      "access_restriction": 9.4,
-      "risk": 122.6
+      "traffic_reduction": 0,
+      "access_restriction": 10.3,
+      "risk": 120.17
     },
     "source_counts": {
-      "passage": 6,
+      "passage": 9,
       "closure": 0,
       "primary_sources": 4
     },
-    "latest_confirmed_transit_at": "2026-10-30T15:31:00Z",
+    "latest_confirmed_transit_at": "2026-10-31T08:15:06Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -184,30 +184,13 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "'Insane' US attacks on Iran planned next week as ship attacks continue - TradeWinds News",
+        "title": "'Insane' US attacks on Iran planned next week as ship strikes continue - TradeWinds News",
         "source": "TradeWinds",
         "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPbllWYzhWZHo0Q2x3TjBrT3pGbUh0c2kweWJ2WTRWdVBGSWNLSkFoeG4yZmxnY3JKVUxHeEhxMEtfSl82SXU0eVNTVE5veHQxWEJTUVBUMHBPcFliSC03NXRWUk1uU3NrUHhVSmRoQS1TU1ZrX0piUE9Sc2FlVzlSaGxwYVZOeWtVMnI1NWtUV0dGWFEwV0RrMlVERDY3WUNIc1RlWXVKN3dQQkhjbUhYbzgxUVRlMVhXaHAwZg",
         "published_at": "2026-10-30T14:14:54Z",
         "tier": 4,
         "weight": 3.8,
         "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.8,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Iran deploys new small-boat tactics in attack on tanker in the Strait of Hormuz - TradeWinds News",
-        "source": "TradeWinds",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNc2ZpT2tjMmZudk10V1BqeDlHbmNoWEtlUW00VFZJY0YtUXkzNG9senZJMlhKVlBRZHB0OWlSS2FxVXNBUTRibTRDb0lYUXNjRVdIeXExclhmVklmNlJ3Y2t1WHZCMXNOX2FvaTRJei0yVGFuRnBVb3JaSlA4MERXa0ZDVENVenJWUmNpV2lWanVKWXJXTVpKVDNPWDV4cDctMFJXT1NNeUZEZFhEOEFCX2dFREVjNG92MERpTW5uWHpUWDBBU0otTUdrRGI5QQ",
-        "published_at": "2026-10-30T05:29:12Z",
-        "tier": 4,
-        "weight": 3.8,
-        "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
@@ -249,46 +232,63 @@
         "effective_weight": 3.2,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Rare Speedboat Attack in Hormuz Ignites Tanker’s Engine Room - Bloomberg",
+        "source": "Bloomberg",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSHpZWFk2ODJZTWY4SzNEUllscGRBMDB4UHdLcnV4SDdHd0ZrRlZKaU1mVVk5c1N3dXBRblhBMEV2cnI5aWRPV3FBU3NUR29TYnhST2gxSkhKbXB0Y0xwOXRZdHNfR3p1YjZMaWtKMmozUU1KLUJ1bTdlS181TjRRTEk5djdkcGZzRm1FVU1oNEN4Y2pTRFIzbzNnaGtoYUhVbTNxWndBWTZldmY2THNqNA",
+        "published_at": "2026-10-30T15:13:08Z",
+        "tier": 3,
+        "weight": 3.2,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.2,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_83c523cf06f27c56",
+      "evt_5348b7d99dec65ce",
+      "evt_68a4cb1d27c95a49",
       "evt_9e1c1e1aa042fd06",
-      "evt_c6198c3328491f8b",
-      "evt_c017ee009d3da9e2",
-      "evt_49200c4a90ebaaf7",
-      "evt_8f18aa1f73452301",
-      "evt_49f69dd66dbb3ec6",
       "evt_cfe2571213e69441",
       "evt_5ae56b8e70fee0e0",
-      "evt_c5a4fed7143154f4",
-      "evt_4d357832799e388d",
-      "evt_ba33cd13eb660c64",
+      "evt_b74f962781f1359a",
+      "evt_c017ee009d3da9e2",
+      "evt_bf6113391e60167d",
       "evt_2cea7514dd37aab8",
       "evt_2741e8c4811bc868",
+      "evt_49f69dd66dbb3ec6",
       "evt_24f36b9bc6acc195",
       "evt_ab81fb8e0b3ca6c3",
       "evt_c5ea8096da542ab8",
-      "evt_4b633c4f47754c84",
-      "evt_2e89a0c3df7b32e2",
-      "evt_01cd7f7f04542114"
+      "evt_8f18aa1f73452301",
+      "evt_01cd7f7f04542114",
+      "evt_b63c01331885a252",
+      "evt_6014a8bce1e691e2",
+      "evt_52a92a684b40a996"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 5,
+      "DECLARATION_ONLY": 4,
       "SINGLE_SOURCE": 31,
-      "UNCONFIRMED": 22,
-      "TOTAL": 63
+      "UNCONFIRMED": 18,
+      "TOTAL": 58
     },
     "diagnostics": {
-      "signals_considered": 116,
+      "signals_considered": 120,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 63,
-      "article_count_after_deduplication": 157,
+      "event_count": 58,
+      "article_count_after_deduplication": 159,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-31T01:45:32Z"
+    "generated_at": "2026-10-31T08:45:51Z"
   }
 }
