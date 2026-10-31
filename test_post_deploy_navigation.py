@@ -2,6 +2,7 @@
 from pathlib import Path
 import tempfile
 import unittest
+from urllib.parse import urlsplit
 
 from build_public_site import repair_public_navigation, professional_language, render_history
 from check_public_links import References, check
@@ -103,6 +104,35 @@ class PostDeployNavigationTests(unittest.TestCase):
     def test_public_copy_does_not_offer_an_unpublished_api(self):
         result = professional_language('History, API, RSS and methodology are accessible.', 'en')
         self.assertEqual(result, 'History, sources, RSS and methodology are accessible.')
+
+    def test_checker_rejects_unconfirmed_corrections_alias_without_flagging_other_mail(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            p = root / 'index.html'
+            original = ('<html><body><a href="mailto:CORRECCIONES@estrechoormuz.com?subject=Correction">Old</a>'
+                        '<a href="mailto:contacto@estrechoormuz.com?subject=Correction">Contact</a>'
+                        '<a href="mailto:correcciones@example.org">External</a></body></html>')
+            p.write_text(original, encoding='utf-8')
+            self.assertEqual(len(check(root)), 1)
+            self.assertIn('unverified corrections mailbox', check(root)[0])
+            p.write_text(original.replace('CORRECCIONES@estrechoormuz.com','contacto@estrechoormuz.com'), encoding='utf-8')
+            self.assertEqual(check(root), [])
+
+    def test_contextual_guide_links_resolve_in_their_own_language(self):
+        root = Path(__file__).resolve().parent
+        pairs = {
+            'en-can-hormuz-be-open-while-traffic-collapses.html': {'en-who-controls-strait-of-hormuz-transit-passage.html','en-how-hormuz-closure-affects-oil-gas-economy.html'},
+            'puede-estar-abierto-ormuz-aunque-caiga-trafico.html': {'quien-controla-estrecho-ormuz-derecho-paso.html','como-afectaria-cierre-ormuz-petroleo-gas-economia.html'},
+            'en-how-hormuz-closure-affects-oil-gas-economy.html': {'en-alternative-routes-strait-of-hormuz-closure-capacity.html','en-marine-insurance-war-risk-premiums-hormuz.html'},
+            'como-afectaria-cierre-ormuz-petroleo-gas-economia.html': {'rutas-alternativas-cierre-estrecho-ormuz-capacidad.html','seguros-maritimos-primas-guerra-ormuz.html'},
+        }
+        for origin, expected in pairs.items():
+            p = References();p.feed((root/origin).read_text(encoding='utf-8'))
+            targets = {urlsplit(a['href']).path.lstrip('/') for a in p.anchors}
+            self.assertTrue(expected <= targets, origin)
+            for name in expected:
+                other=References();other.feed((root/name).read_text(encoding='utf-8'))
+                self.assertEqual(other.lang,p.lang)
 
 
 if __name__ == '__main__':

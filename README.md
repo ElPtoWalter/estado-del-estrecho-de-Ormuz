@@ -42,7 +42,7 @@ Web estática bilingüe para GitHub Pages con actualización automática, histor
 - **Consulta oficial reforzada:** búsqueda web específica de avisos PDF de UKMTO/JMIC, IMO y MARAD, además de GDELT y Google News RSS.
 - **Historial:** `history.json`, `historial.html` y `en-history.html`.
 - **Versión inglesa completa:** `en.html` y páginas auxiliares.
-- **Alertas:** notificaciones mientras la pestaña esté abierta, feed Atom, JSON público y canales opcionales del propietario.
+- **Seguimiento público:** edición operativa renderizada en HTML y feed Atom. El JSON interno no se publica en Pages.
 - **IndexNow:** aviso automático a buscadores compatibles cuando cambia el estado.
 - **Pruebas automáticas:** el workflow ejecuta nueve casos críticos antes de publicar.
 
@@ -86,8 +86,8 @@ No es necesario volver a configurar GitHub Pages, Google Search Console ni Bing 
 | `update_status.py` | Consulta fuentes, clasifica señales, decide el estado y actualiza la web. |
 | `test_decision_engine.py` | Pruebas contra falsos cierres y contradicciones. |
 | `notify_services.py` | IndexNow, Telegram y ntfy después de un cambio significativo. |
-| `status.json` | API pública del estado actual. |
-| `status.schema.json` | Esquema JSON de la API. |
+| `status.json` | Contrato interno del monitor; no se publica en la superficie segura de Pages. |
+| `status.schema.json` | Esquema del contrato interno del monitor. |
 | `history.json` | Historial de cambios significativos. |
 | `feed.xml` | Feed Atom para alertas RSS. |
 | `sources.json` | Registro legible por máquinas de las fuentes admitidas. |
