@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-10-31T22:44:30Z",
+    "generated_at": "2026-11-01T02:29:49Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -96,41 +96,24 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 13.125,
+      "passage": 9.076,
       "closure": 0,
-      "traffic_reduction": 1.0,
-      "access_restriction": 9.18,
-      "risk": 138.46
+      "traffic_reduction": 0,
+      "access_restriction": 8.28,
+      "risk": 120.32
     },
     "source_counts": {
-      "passage": 10,
+      "passage": 8,
       "closure": 0,
       "primary_sources": 4
     },
-    "latest_confirmed_transit_at": "2026-10-31T13:42:31Z",
+    "latest_confirmed_transit_at": "2026-10-31T23:29:11Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "ALTA"
     },
     "evidence": [
-      {
-        "kind": "RISK_ELEVATED",
-        "title": "Iranian envoys meet Qatari mediators as threat looms of US strikes after midterms - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOODBHZGo0TEhURWc2Rm9nLUJjaF9Hb09YLUpnU3JlTWJ0OHJKd3p0dFZEYWdpYUNPVlNJdFJoYXhGOVdOX29rdHhjQ2F0c2E2VjJRQndHcEtSY1JIdEFzTkJJd3RKX2lKYWxRMnRQYjZvVnpxNnJQTlBmUFY5TWMzZTJ4akRuS1pKNExQY2lCQTAzRVlWOG4wYnZRVV9tRWJQdDJKQ0owZVdZUS1ZQmZYbTlMR0xxbF9uZ3ZvWkRNNDJtX0JNclZhLQ",
-        "published_at": "2026-10-31T20:00:36Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo elevado",
-        "kind_label_en": "Elevated risk"
-      },
       {
         "kind": "RISK_SEVERE",
         "title": "Iran says 4 tankers strike mines and catch fire in Strait of Hormuz, and other Mideast news - AP News",
@@ -221,7 +204,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-10-31T22:44:30Z",
+        "published_at": "2026-11-01T02:29:49Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -235,13 +218,30 @@
       },
       {
         "kind": "RISK_SEVERE",
+        "title": "Rare Speedboat Attack in Hormuz Ignites Tanker’s Engine Room - Bloomberg.com",
+        "source": "Bloomberg",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSHpZWFk2ODJZTWY4SzNEUllscGRBMDB4UHdLcnV4SDdHd0ZrRlZKaU1mVVk5c1N3dXBRblhBMEV2cnI5aWRPV3FBU3NUR29TYnhST2gxSkhKbXB0Y0xwOXRZdHNfR3p1YjZMaWtKMmozUU1KLUJ1bTdlS181TjRRTEk5djdkcGZzRm1FVU1oNEN4Y2pTRFIzbzNnaGtoYUhVbTNxWndBWTZldmY2THNqNA",
+        "published_at": "2026-10-30T15:13:08Z",
+        "tier": 3,
+        "weight": 3.2,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 2.88,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
         "title": "Iran hits Hormuz tanker with limpet mines in apparent tactical shift - Financial Times",
         "source": "Financial Times",
         "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdlhMalhPNXJQMlROUmlua3ZEaEZUZGplWTdKWjdud010OWFwRTJhQU55bDA0U0VodGtpTUJ6aWYxZFRsYWtlRVp0dUt0UXRHamhoaW5mQUVaemRNNDhsUG9SaHRtaTJrSl9HTkhZTVBBYXlDNjhBcy10cmxYVmdJSVp2TUY",
         "published_at": "2026-10-30T12:01:05Z",
         "tier": 3,
         "weight": 3.2,
-        "provider": "Google News RSS",
+        "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
@@ -253,42 +253,42 @@
     ],
     "event_ids": [
       "evt_83c523cf06f27c56",
+      "evt_5644821e2fe1614e",
+      "evt_5348b7d99dec65ce",
+      "evt_c017ee009d3da9e2",
+      "evt_1139d96496ac9611",
+      "evt_02497733267c0518",
+      "evt_2c4bfc4161f50d18",
       "evt_a320ce209dca75c6",
-      "evt_ecf6a02bbd919ae4",
+      "evt_36846ad5e97876de",
       "evt_980c7aa05519e5dc",
       "evt_0cd56fa22d69fb09",
       "evt_2cea7514dd37aab8",
-      "evt_8b47153ae58520f5",
-      "evt_071458ca7d4c30e9",
-      "evt_603396ae54900e74",
+      "evt_980a40e711db48d6",
+      "evt_726ba211ca989d9f",
       "evt_cafc460255d69afd",
       "evt_30ad7469b9dba9ea",
-      "evt_5348b7d99dec65ce",
       "evt_2d4abbf1418743db",
-      "evt_02497733267c0518",
+      "evt_b13449e94fa20d01",
       "evt_68a4cb1d27c95a49",
-      "evt_03315282918c6a40",
-      "evt_8db2eebf1a8c5106",
-      "evt_8f18aa1f73452301",
-      "evt_b74f962781f1359a",
-      "evt_638fd7fae8cbe23f"
+      "evt_14d96409bc57e055"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 3,
-      "SINGLE_SOURCE": 29,
-      "UNCONFIRMED": 25,
-      "TOTAL": 62
+      "DECLARATION_ONLY": 4,
+      "SINGLE_SOURCE": 28,
+      "UNCONFIRMED": 26,
+      "TOTAL": 63
     },
     "diagnostics": {
-      "signals_considered": 156,
+      "signals_considered": 131,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 62,
-      "article_count_after_deduplication": 184,
+      "event_count": 63,
+      "article_count_after_deduplication": 168,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-10-31T22:44:30Z"
+    "generated_at": "2026-11-01T02:29:49Z"
   }
 }
