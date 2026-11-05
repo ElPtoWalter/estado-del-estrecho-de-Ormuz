@@ -1,24 +1,25 @@
 {
   "schema_version": 1,
-  "date": "2026-11-04",
-  "generated_at": "2026-11-04T13:18:13Z",
+  "date": "2026-11-05",
+  "generated_at": "2026-11-05T13:30:58Z",
   "title_es": "Ormuz mantiene un tránsito muy restringido en la última evaluación",
   "title_en": "Hormuz transit remains severely restricted in the latest assessment",
-  "summary_es": "Reuters informó el 3 de noviembre de 2026 que los flujos de petróleo en el golfo Pérsico disminuyeron en octubre respecto al máximo posterior al conflicto con Irán, según muestran los datos.",
-  "summary_en": "Reuters reported on November 3, 2026, that Gulf oil flows dipped in October from the post-Iran war high, according to data.",
+  "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+  "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "material_score": 3,
   "material_reasons": [
     "1 acontecimiento(s) gana(n) verificación suficiente"
   ],
   "material_archive": false,
   "edition_mode": "brief",
-  "new_articles": 16,
-  "source_brands": 7,
+  "new_articles": 13,
+  "source_brands": 9,
   "topics": {
-    "diplomacy": 2,
-    "security": 7,
-    "other": 4,
-    "energy": 3
+    "other": 9,
+    "security": 1,
+    "maritime": 1,
+    "energy": 1,
+    "diplomacy": 1
   },
   "fingerprint": {
     "legacy_status": "INCIERTO",
@@ -35,55 +36,31 @@
     },
     "events": [
       {
-        "event_id": "evt_ac80765b75e74484",
+        "event_id": "evt_9e699c6699332da2",
+        "verification_status": "SINGLE_SOURCE",
+        "importance": 63,
+        "operational_impact": "POTENTIAL"
+      },
+      {
+        "event_id": "evt_5525d69cb87b932c",
+        "verification_status": "CONFLICTING",
+        "importance": 63,
+        "operational_impact": "POTENTIAL"
+      },
+      {
+        "event_id": "evt_8f234bbf51795bdd",
         "verification_status": "UNCONFIRMED",
         "importance": 55,
         "operational_impact": "POTENTIAL"
       },
       {
-        "event_id": "evt_c1c543bfb86d111f",
-        "verification_status": "UNCONFIRMED",
-        "importance": 55,
-        "operational_impact": "POTENTIAL"
-      },
-      {
-        "event_id": "evt_6bbeb200fefcb8c2",
-        "verification_status": "UNCONFIRMED",
-        "importance": 55,
-        "operational_impact": "POTENTIAL"
-      },
-      {
-        "event_id": "evt_88829cb0075b50b6",
-        "verification_status": "UNCONFIRMED",
-        "importance": 55,
-        "operational_impact": "POTENTIAL"
-      },
-      {
-        "event_id": "evt_96952cae604fd45a",
-        "verification_status": "UNCONFIRMED",
-        "importance": 55,
-        "operational_impact": "POTENTIAL"
-      },
-      {
-        "event_id": "evt_e66aa69049e81c42",
+        "event_id": "evt_c017ee009d3da9e2",
         "verification_status": "DECLARATION_ONLY",
         "importance": 30,
         "operational_impact": "POTENTIAL"
       },
       {
-        "event_id": "evt_9dc574484820cd14",
-        "verification_status": "CONFIRMED_MULTI_SOURCE",
-        "importance": 94,
-        "operational_impact": "MATERIAL"
-      },
-      {
-        "event_id": "evt_85521dd39eb3e5bf",
-        "verification_status": "SINGLE_SOURCE",
-        "importance": 66,
-        "operational_impact": "POTENTIAL"
-      },
-      {
-        "event_id": "evt_c017ee009d3da9e2",
+        "event_id": "evt_95dd67f0bce3bdd9",
         "verification_status": "UNCONFIRMED",
         "importance": 55,
         "operational_impact": "POTENTIAL"
@@ -95,10 +72,46 @@
         "operational_impact": "POTENTIAL"
       },
       {
-        "event_id": "evt_28bddacc1bb369f6",
+        "event_id": "evt_5e4b211407f9ecf6",
         "verification_status": "UNCONFIRMED",
         "importance": 55,
         "operational_impact": "POTENTIAL"
+      },
+      {
+        "event_id": "evt_ac80765b75e74484",
+        "verification_status": "SINGLE_SOURCE",
+        "importance": 66,
+        "operational_impact": "POTENTIAL"
+      },
+      {
+        "event_id": "evt_8bb0043239080d35",
+        "verification_status": "UNCONFIRMED",
+        "importance": 55,
+        "operational_impact": "POTENTIAL"
+      },
+      {
+        "event_id": "evt_edc38d728e449514",
+        "verification_status": "SINGLE_SOURCE",
+        "importance": 63,
+        "operational_impact": "POTENTIAL"
+      },
+      {
+        "event_id": "evt_f50f708a0063ee93",
+        "verification_status": "UNCONFIRMED",
+        "importance": 55,
+        "operational_impact": "POTENTIAL"
+      },
+      {
+        "event_id": "evt_e66aa69049e81c42",
+        "verification_status": "DECLARATION_ONLY",
+        "importance": 30,
+        "operational_impact": "POTENTIAL"
+      },
+      {
+        "event_id": "evt_88829cb0075b50b6",
+        "verification_status": "CONFIRMED_MULTI_SOURCE",
+        "importance": 94,
+        "operational_impact": "MATERIAL"
       },
       {
         "event_id": "evt_41ba1122c4a8e1ea",
@@ -113,21 +126,27 @@
         "operational_impact": "POTENTIAL"
       },
       {
-        "event_id": "evt_5e4b211407f9ecf6",
+        "event_id": "evt_a7c0f9568e14c57a",
         "verification_status": "UNCONFIRMED",
         "importance": 55,
         "operational_impact": "POTENTIAL"
       },
       {
-        "event_id": "evt_b2f42fe1ad991bbd",
+        "event_id": "evt_fa59b331e1bb97dd",
+        "verification_status": "SINGLE_SOURCE",
+        "importance": 43,
+        "operational_impact": "CONTEXT"
+      },
+      {
+        "event_id": "evt_28fcbc5c1101bea0",
         "verification_status": "UNCONFIRMED",
         "importance": 55,
         "operational_impact": "POTENTIAL"
       },
       {
-        "event_id": "evt_f5d6c450b7c879ed",
-        "verification_status": "UNCONFIRMED",
-        "importance": 55,
+        "event_id": "evt_25f80969065985e3",
+        "verification_status": "CONFIRMED_MULTI_SOURCE",
+        "importance": 72,
         "operational_impact": "POTENTIAL"
       },
       {
@@ -143,13 +162,13 @@
         "operational_impact": "CONTEXT"
       },
       {
-        "event_id": "evt_822e9fd40a45acd6",
-        "verification_status": "UNCONFIRMED",
-        "importance": 55,
+        "event_id": "evt_1dba20ce0f2aeb97",
+        "verification_status": "SINGLE_SOURCE",
+        "importance": 63,
         "operational_impact": "POTENTIAL"
       },
       {
-        "event_id": "evt_38c8d0f5425fa566",
+        "event_id": "evt_822e9fd40a45acd6",
         "verification_status": "UNCONFIRMED",
         "importance": 55,
         "operational_impact": "POTENTIAL"
@@ -167,40 +186,10 @@
         "operational_impact": "POTENTIAL"
       },
       {
-        "event_id": "evt_2186db21fc980846",
-        "verification_status": "UNCONFIRMED",
-        "importance": 55,
-        "operational_impact": "POTENTIAL"
-      },
-      {
-        "event_id": "evt_529424f302ddcc00",
-        "verification_status": "UNCONFIRMED",
-        "importance": 55,
-        "operational_impact": "POTENTIAL"
-      },
-      {
-        "event_id": "evt_25f80969065985e3",
-        "verification_status": "CONFIRMED_MULTI_SOURCE",
-        "importance": 69,
-        "operational_impact": "POTENTIAL"
-      },
-      {
         "event_id": "evt_915db85c21c2e010",
         "verification_status": "SINGLE_SOURCE",
         "importance": 43,
         "operational_impact": "CONTEXT"
-      },
-      {
-        "event_id": "evt_0cf1136a74a05868",
-        "verification_status": "UNCONFIRMED",
-        "importance": 55,
-        "operational_impact": "POTENTIAL"
-      },
-      {
-        "event_id": "evt_6676b484682f53e4",
-        "verification_status": "UNCONFIRMED",
-        "importance": 55,
-        "operational_impact": "POTENTIAL"
       },
       {
         "event_id": "evt_9f53414ef89a0b1f",
@@ -209,56 +198,189 @@
         "operational_impact": "POTENTIAL"
       },
       {
-        "event_id": "evt_3631bc5d2211c466",
+        "event_id": "evt_a6ed9d20fb7d57af",
+        "verification_status": "SINGLE_SOURCE",
+        "importance": 63,
+        "operational_impact": "POTENTIAL"
+      },
+      {
+        "event_id": "evt_be672203bc432618",
+        "verification_status": "UNCONFIRMED",
+        "importance": 55,
+        "operational_impact": "POTENTIAL"
+      },
+      {
+        "event_id": "evt_b2f42fe1ad991bbd",
         "verification_status": "UNCONFIRMED",
         "importance": 55,
         "operational_impact": "POTENTIAL"
       }
     ],
     "event_ids": [
-      "evt_ac80765b75e74484",
-      "evt_c1c543bfb86d111f",
-      "evt_6bbeb200fefcb8c2",
-      "evt_88829cb0075b50b6",
-      "evt_96952cae604fd45a",
-      "evt_e66aa69049e81c42",
-      "evt_9dc574484820cd14",
-      "evt_85521dd39eb3e5bf",
+      "evt_9e699c6699332da2",
+      "evt_5525d69cb87b932c",
+      "evt_8f234bbf51795bdd",
       "evt_c017ee009d3da9e2",
+      "evt_95dd67f0bce3bdd9",
       "evt_77676b7e67db9b36",
-      "evt_28bddacc1bb369f6",
+      "evt_5e4b211407f9ecf6",
+      "evt_ac80765b75e74484",
+      "evt_8bb0043239080d35",
+      "evt_edc38d728e449514",
+      "evt_f50f708a0063ee93",
+      "evt_e66aa69049e81c42",
+      "evt_88829cb0075b50b6",
       "evt_41ba1122c4a8e1ea",
       "evt_73c0376b213f5fb1",
-      "evt_5e4b211407f9ecf6",
-      "evt_b2f42fe1ad991bbd",
-      "evt_f5d6c450b7c879ed",
+      "evt_a7c0f9568e14c57a",
+      "evt_fa59b331e1bb97dd",
+      "evt_28fcbc5c1101bea0",
+      "evt_25f80969065985e3",
       "evt_71c44677be2b7223",
       "evt_f47cb939d244a8e0",
+      "evt_1dba20ce0f2aeb97",
       "evt_822e9fd40a45acd6",
-      "evt_38c8d0f5425fa566",
       "evt_355c2e308d4161a1",
       "evt_34f8d1cd1c736917",
-      "evt_2186db21fc980846",
-      "evt_529424f302ddcc00",
-      "evt_25f80969065985e3",
       "evt_915db85c21c2e010",
-      "evt_0cf1136a74a05868",
-      "evt_6676b484682f53e4",
       "evt_9f53414ef89a0b1f",
-      "evt_3631bc5d2211c466"
+      "evt_a6ed9d20fb7d57af",
+      "evt_be672203bc432618",
+      "evt_b2f42fe1ad991bbd"
     ]
   },
   "news": [
     {
-      "title": "Iran's chief negotiator says Americans voted 'no to war' - BBC",
-      "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1TQUxQNVBvM2RuXzZnTWxjS1VPRHo5dHR3S25zZVFJeFhJYzVnSHJMcGMyb1JpODhEOG5ScDlHb3d3M3Jqbm1FRjR1OUlESElyUVFvLXJmbFFlWkU",
-      "published_at": "2026-11-04T12:21:21Z",
-      "tier": 3,
-      "topic": "diplomacy",
+      "title": "South Korea plans to extend anti-piracy patrols closer to Strait of Hormuz - Euronews.com",
+      "source": "Euronews",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOM0lZdnZNSzNLd055R3lpVGVTM2tDVFFURXR2cmtYQ0lNa3I2c2FQMHZDcDl0OGVrWktWVjdkM2h4eEtZOE1RQU1iNkh2S0FISlp6WnF5bzdReXpNVU51TmJHYTN3T1dZcnJYQmItMmRDQWxJYnh4YVQ2Mm9DTzRzT0tPSlRHUG01dHg3cnZVb3RSblJ1NEpRYXQ5WEhqVW1QaW9LZUJGNGtZcjFDN0x3",
+      "published_at": "2026-11-05T12:07:23Z",
+      "tier": 2,
+      "topic": "other",
+      "query": "\"Strait of Hormuz\" (attack OR security OR UKMTO OR JMIC OR mine OR navy) when:2d",
+      "analytical": false,
+      "source_id": "euronews"
+    },
+    {
+      "title": "US sanctions Indian and Turkish firms accused of helping Iran - Al Jazeera",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOc2VIc2Q5WHBYNE9lazFZbklucXZiWUFsWndGOHFxNWdYZTNWX2x2SVhnMGgyc21OeERuaDVyNjBYS1Q3Uk5KUHRlMkpJY0N2c1Zob3BGMFdIU0pLR1R6NnFpczQ4WEJPbTI2b0p3T1pORmJ6T2JEckhDcDg5MUJoNkZsZHlQZHdHV3FfTW90YjJ0MjNJOWpScC1qTnVzeXhjLWpCaNIBqgFBVV95cUxNbWtRbGN5RU1XcHJ4a3BHXzRRVmxXY1pQd3hPeVdCaFRyMHRwNlprZmhSQk92SFB0U2stQUUtYUFuakhrWGxSWEdNZlI0bkc4NkRhVXJyOWNKZEtmS21fODF4LTJQeTMzTXNzaUZ3WDdJbU1ka1FoMkpFaHhTSEtGemE4Mnp0VVNWNGtnTDVQZjAzRVpPUG83cURENzBfUkwwUktMRmxfMUZ1Zw",
+      "published_at": "2026-11-05T10:07:52Z",
+      "tier": 2,
+      "topic": "other",
+      "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
+      "analytical": false,
+      "source_id": "aljazeera"
+    },
+    {
+      "title": "Iran strikes up to three tankers in new Strait of Hormuz attacks - TradeWinds News",
+      "source": "TradeWinds",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZWVqQWJyeXlmQ1dWUnl4OTdvLWQyUHNuVms4c1RWNDBZZ3BCWll0TkhmMkFCQWxJdWNCRzZrZHZZazdFSTBBcWFSMEpVcU02VFZFV2tlcXFCWDA5NkdVTGRnZDFiaFpoWkxxQVJQbXlWUUlwdFNYUzFPNmVVYlc0Vm9nWG15cG9DM0JmYmpiWExNSzdwMi1BS2xfTmRaR3ZxSTNFaWhiS2U3Y0x4Y1ZpLUZvcFpPV09Wa2c",
+      "published_at": "2026-11-05T09:45:43Z",
+      "tier": 4,
+      "topic": "security",
       "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
       "analytical": false,
-      "source_id": "bbc"
+      "source_id": "tradewinds"
+    },
+    {
+      "title": "South Korea plans to expand anti-piracy operations closer to Hormuz Strait - Al Jazeera",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQelUxTExqVjBGb3V0c0JlbG5ucTk1QzhFVHloU182OHRxMFRnYlo1dzhwNlZ1U1p6Y2I1UEVVN3NGcU9BaDBoY2RIX1paeDYwckQ1eU9yX2llaXY5ODNQUVk2aDdMQU1sNFA5c2dqOFh3dktseTRBMjJid3ZWd3FJb01pQ0Q3ZjNpWXVZWkZfUk5QVlVCa3JRNnVWYlRNdWFiZ0NheDE2RXRrRWlIMElsY1ViaTV1Z9IBuwFBVV95cUxNempWTFFIYkVyNWNKUEpieGhab1hvY3lEWjQ5TTNvSUkxM2RKdDV6OXUwX1JiRXhtcmVJbkstalp0aHJjS1NoVVRoeTJ6VWtUMG00UlF3TWRmVk5fV25YYWhRSVFrTmpRY3U0Wk8zd2VPb2VGNy1jN0ZfYlFjMVdXV3Vhc0tOSUo5Zm1yMEpCRmtEZkZtbTlJOWhBYlRzZS04YzhQbE9zYXJWTjJocUZWVXFSRUFVTjBwVHpj",
+      "published_at": "2026-11-05T07:49:05Z",
+      "tier": 2,
+      "topic": "other",
+      "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
+      "analytical": false,
+      "source_id": "aljazeera"
+    },
+    {
+      "title": "South Korea says it will expand naval operations closer to strait of Hormuz - The Guardian",
+      "source": "The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPR0RQNEl3UkNKLS1ySG4xOWhzWFNIb2J1NXFDTlpDR1pWbWRVR1RnZ2phUUNXR2ExX3lCVDdXREVpdkhUUl9uMmlOVjJJWmFGUDNNUzItSEV2ckllNGpvdWN1VG1jZW0wRnRoMnpGR2Z1VldxNS1sR0Mwd1lNMDdXN3UyVGZPbUw1RWtsTzUwc3I3NnJsMVZ3MGY3bTRIcXdVLUVV",
+      "published_at": "2026-11-05T04:59:00Z",
+      "tier": 3,
+      "topic": "other",
+      "query": "\"Strait of Hormuz\" (attack OR security OR UKMTO OR JMIC OR mine OR navy) when:2d",
+      "analytical": false,
+      "source_id": "guardian"
+    },
+    {
+      "title": "Iran's IRGC says two tankers and tugboat caught fire in Strait of Hormuz - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQN2pHcmkxeDJDM184TXNiS2xIOUdXdHNrTXcyVHFKcUNGZEgtanhxTm9TR0UxWjA5cGlXSy12RVBLT3JYYVVBVEltbXFTNWtFT09OMVBIUkFEVlZiaW1mcVhPM3JfQ2tnZm1uRnJSQlVoX1FfNTl5bmh1c1pZMUJBVlVZeVdoWnlQMURoR0g0WVZYcjU4WDloZzRxMHh3Q24zMlRSYXV3MUFZTGxEQXM3NXNuNExxUQ",
+      "published_at": "2026-11-05T04:21:00Z",
+      "tier": 4,
+      "topic": "maritime",
+      "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+      "analytical": false,
+      "source_id": "reuters"
+    },
+    {
+      "title": "Trump will probably leave Iran alone: Brookings - CNBC",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbFdnX3JqUVlJWGpyX2ZoTmtpam8zazh2TlNNVjZyMHFId05qTHNvUVVwNEg3VUF0b29sVVpkend1Q0MxVTFGYVBDV0FaSnB6Y0p4QkVGSDlKeWtlS0dXVnJiVVNtNGdVOU50emRTXzBXUUs4eExhUk83YThEdVZQR2Uzd19fOE1BR3l3ZzlCV3kycTF4R1BVd0FweGVGMnZKZ2RBcGlXTEtSNUw4",
+      "published_at": "2026-11-05T03:53:54Z",
+      "tier": 2,
+      "topic": "other",
+      "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
+      "analytical": false,
+      "source_id": "cnbc"
+    },
+    {
+      "title": "South Korea to expand anti-piracy unit operations closer to Strait of Hormuz - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNWmlVV005TWpIcUdLT2ZZaUpORmNMc09CYnNzQnFBRUhJeF8yTklGM20tcHlpZkI3bGpCa2VXQlJfOGd2MEdOTWtpN1BpMnNmUVUyYzF1R2U5SjN4bl90X2xGRDZ2MzY2aGU1WTVYM3otVlRhTjRXR2JMUWp5cGZsZFV1MFUtWG83QW1tMG44aXY3dmg4Zl9GbGFjMEZ5bWhUbGliempaM2dRaE9pZHlHUldkUndDZEtLTkdTUlQ1RQ",
+      "published_at": "2026-11-05T01:54:00Z",
+      "tier": 4,
+      "topic": "other",
+      "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+      "analytical": false,
+      "source_id": "reuters"
+    },
+    {
+      "title": "A rare glimpse inside the high-risk, high-reward Hormuz trade - Lloyd's List",
+      "source": "Lloyd's List",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQY0J3ekFQS055QzlWd011QklkeVhtYXAwajQ0UHJrMkZYNENvVW5lOTNCcG91aDdkVkVBMnJ6VEtFOUNuM193UlFjMnJxTEpWYklRSURpZlo3Rk1WdEUxdWhmN0NhVDk2aFFyZFhfbGZCc3YzZjQzQnpSdzFiS3phSE1PWG5FeUtMRlRnLU53YUh0SkhJaUZ6VFdaYw",
+      "published_at": "2026-11-05T00:48:46Z",
+      "tier": 4,
+      "topic": "other",
+      "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+      "analytical": false,
+      "source_id": "lloyds_list"
+    },
+    {
+      "title": "Beaten at home, Trump faces stark choice on Iran: deal or escalation - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPc3dTRDFGYS1HSWtZcGh3ZTh2MjRleFhNUkwtR0wwSUd3TWlsQU1tcjI2ZG1fa1RxNHEyRDJsSUpjTzNGb0xTRE90Umh1RVdncGxtN29NNVhXel9PMlZ3UEQ1bDJzTkh4V052MEh5UFFteDRHakRVTzVQLS1rdjEzM2xjZDlYdjhCWkxwMkZOMjVSUlhOV2NCVl9ETFROeEN3ZENWQmZiejJhLXctcHFDUkc5d3k",
+      "published_at": "2026-11-04T18:02:00Z",
+      "tier": 4,
+      "topic": "other",
+      "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
+      "analytical": false,
+      "source_id": "reuters"
+    },
+    {
+      "title": "UAE Mulls Third Crude Oil Pipeline to Avoid Strait of Hormuz - Bloomberg.com",
+      "source": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTXNLX3ZlS196c3ZXQ18wZ1pCVnRqMkNuT1JwcmxaMmdxd2x5UFZxX2xpaDhDMm9iTHR3ZE9URVljcWlDVllMelBQVDR6cXRGbjktclN5TnpVQWJacGZmRVNqM1FNeWFnNTFtT0lVQkhkZGNQcVBrXzJCVmhSZjlqb1hlV3RxaTNPNHF2YWk0YzJQTVFJd0doa0VieEFhSEJfUDAxRXVac1MtRllWZWhmaw",
+      "published_at": "2026-11-04T14:26:15Z",
+      "tier": 3,
+      "topic": "energy",
+      "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
+      "analytical": false,
+      "source_id": "bloomberg"
+    },
+    {
+      "title": "Iran unveils ‘We will kill Trump’ banner – but US president may now be tempted to resume bombing - The Guardian",
+      "source": "The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNZDlQRHRUMGc3SmZqTUpwcEY0UWRDQ2k4aTRYd1R4bWRySVlXWjRSTjREUno3bzdlWDNqanhyeHQ5cjc2dHdDR0JfWmNSYXZxeGV6YUZrQzVfNHNmemZkZHFoUWxDbnE2N1BCWUlMMnVlMm91R2FXTHIzbmlvNHR1dVp5cExuYjNDZEdRNWhkME9QbEJxaGEybUxn",
+      "published_at": "2026-11-04T13:44:00Z",
+      "tier": 3,
+      "topic": "other",
+      "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
+      "analytical": false,
+      "source_id": "guardian"
     },
     {
       "title": "Another day of attacks hits ships from Hormuz to Black Sea - Lloyd's List",
@@ -267,7 +389,7 @@
       "published_at": "2026-11-04T12:12:36Z",
       "tier": 4,
       "topic": "security",
-      "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
+      "query": "legacy evidence",
       "analytical": false,
       "source_id": "lloyds_list"
     },
@@ -278,7 +400,7 @@
       "published_at": "2026-11-04T11:33:32Z",
       "tier": 4,
       "topic": "security",
-      "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
+      "query": "\"Strait of Hormuz\" (attack OR security OR UKMTO OR JMIC OR mine OR navy) when:2d",
       "analytical": false,
       "source_id": "tradewinds"
     },
@@ -289,167 +411,40 @@
       "published_at": "2026-11-04T11:11:56Z",
       "tier": 4,
       "topic": "other",
-      "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
-      "analytical": true,
-      "source_id": "lloyds_list"
-    },
-    {
-      "title": "Who determines Iran’s fighting and negotiating position amid US threats? - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQLTB0QV9yODh4YVZfbzZxU2gwUTF6eE53UHNYS0xxNS1JSURSZGd0TG9MQnVoVFVlLU91Z29KZ2NDbW1iWm52N0RCS3IyeV9NYkptZVppbUFCS001RHVRZHQ0YnhpYjZXQl9wVU5HcDNKM3pRUGhHMGpFeVNvazY3dzRmQVRYUDUtWXhLMzFrNDZ6cnA2UkZ1dTZOWVdLYXotQUhsV19QdEdjOW0zeU1CWtIBtgFBVV95cUxNYlQwSEVVRnBZNHRYamt1aUxhcl96Z2JtcjdjTlg5eFVhdEwteDlTOVFwV05ybGJ4MElIcW9OcmpOaEg0UHJHdEo1TUtxN2M5Nldoa285RGc0RWZKSUVZY1YyVkp4aWpjWm5SbmdpRWtuM2tCS3dpdjVHWGtzSXRQbG9sTm1Yb0o1d3FkTEt6cEdBdHNJNjJuLUZPZF9taFVtNmw5eW1TaTMwbUZLbHBDbGFMS2EyZw",
-      "published_at": "2026-11-04T09:32:36Z",
-      "tier": 2,
-      "topic": "diplomacy",
-      "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
-      "analytical": true,
-      "source_id": "aljazeera"
-    },
-    {
-      "title": "Iran says US reply to Hormuz plan 'unconvincing'; Trump confirms strikes - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxON1ZqTGJfa3lWVVdvUzRRRUc3TlVVYUNFMHhkWlREdDZsYUFzSmdJVjBhcU9PaEptVWRxRm9QMnRGcmpkYkNHVXgydHhJYTd6X0d5dF9JMG1vc1dVOWtBWWxBUTB3VjhkZlAyUEt4cGhPUlJIRzR2cFhkdFVoOEc4SkRkM1FRQ0FpblBPZHh5S3JKMl9zbUhjeUlVazhmdkJ5QjRaUXJ6eV8taGNpV3lv0gG0AUFVX3lxTE1qMndoTmRKR0xGNDZnMVJYWmdselZrTXdiXzFKVjgwQW9OZ242eHJDWFlMa2x5MU1mbGVGdFIwV2V5Q2V2OVpfYmtfd0RLUnhmN01vTjZMdHgzVnVaMlZfelBSajJHOWVJOXZ0UTlQZEMwR0RsalU2bThPekFSRDExWG9KUUVMdFlVSFRPNTgteTdyNGxZMmhCMU9aUjU1SnNaTWJETmdSTlFyeHUwQmRUOGpRMw",
-      "published_at": "2026-11-04T07:35:38Z",
-      "tier": 2,
-      "topic": "security",
-      "query": "legacy evidence",
-      "analytical": false,
-      "source_id": "aljazeera"
-    },
-    {
-      "title": "Four tankers destroyed by naval mines in Strait of Hormuz, Iran's IRGC says - BBC",
-      "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAzWS1zNjJsSGtQeHJhQUFqZEVQX3QtMFBZUTZ0SnRwdFFaSXZmSlE3S0VGN1JlVVkzOWJzTG16QmhXd0diLVg3ZW5Ma2MzTTB1OHVvX002TzZzeFN4",
-      "published_at": "2026-11-04T07:17:08Z",
-      "tier": 3,
-      "topic": "security",
-      "query": "legacy evidence",
-      "analytical": false,
-      "source_id": "bbc"
-    },
-    {
-      "title": "Iran blacklisted a VLCC this week — then two projectiles hit its engine room - TradeWinds News",
-      "source": "TradeWinds",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNSnpUbXRiTllPTldVTlNlaV8xQWltMUNtV2o2WkY4STFIYnRVOWo1cmRKdk5VTnNWVGt3QjZla2hTR1U2OW9qY3NLejJuTHdoaXJSNjFGU2kzUjBOdmFEZlZ2dUtUdjJGSHdfSjhMZDRvSV92LUk5LVRJZzhQTjlPbHNBQ055Nk9QbFUwWmFZd19xTWRDMmhPNEUtU21EdTIyVDhWa1pJQ3U",
-      "published_at": "2026-11-04T07:16:09Z",
-      "tier": 4,
-      "topic": "other",
-      "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
-      "analytical": false,
-      "source_id": "tradewinds"
-    },
-    {
-      "title": "US and Iran Are Reviewing Proposals to End War - Bloomberg.com",
-      "source": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQN0QzbXFhSUp2Q1dpMWRuUTZMTWJrMmIxSml0VktRZGM4cnlMZGx2d0dMNjNjcDBhYVVjRWxOUU1rUWZZNXZ6Y1UxQXdBWUxBel9NRFdUck51YzMyTHlXeGxtNmZCeXlGbzZzNnRMSGZUYWdvc1JyTUp5clNPam9YVjR1bmlOVjBVTDZxTG5tWnhmOVE5M2NpejZ0d3RlZlV1V1dRMWRreTFvbHAyVUhVZ2pJYlphLVN6",
-      "published_at": "2026-11-04T06:29:11Z",
-      "tier": 3,
-      "topic": "other",
-      "query": "\"Strait of Hormuz\" (Iran OR Oman OR talks OR deal OR negotiations) when:2d",
-      "analytical": false,
-      "source_id": "bloomberg"
-    },
-    {
-      "title": "Iran's IRGC says four tankers ablaze after hitting mines near Strait of Hormuz - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbjcyLUxfeTMxaHFnbENrc2tqdlowSDFqWU5DUWtqOWhVUUdSYWdSbFpBRGQ4VHI3Rm5DbDVsLTV6bkM4d3FjcmVPRnpsQlJ6RkNSLWNZX0ZtWURvUExKaGZ2M2diWUFvZWZfSE5FN01PR2FXc1pSN1kyeXhHX0ZFS0k4S1FjSDJLc2ZfbGx2cm9TYW9JSThiZVZIeFQxTnVBXzAwYnhlaGxsN3lwQkxOZTdFRVVpc3RPa2J2M0JZNVduZXA3Z2pz",
-      "published_at": "2026-11-04T03:50:00Z",
-      "tier": 4,
-      "topic": "security",
-      "query": "legacy evidence",
-      "analytical": false,
-      "source_id": "reuters"
-    },
-    {
-      "title": "How US midterm elections could impact course of Hormuz crisis - Lloyd's List",
-      "source": "Lloyd's List",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOY1NtX3BPSk9fNUVILXo3dGdacE56ZVlNaGcwczg4MXVlM21Pa0FUXzk2cHJfM1pvaDdabFVlMkhUZzVLdExLSVVmWXlEV0UtWlpzYWZxMXRkQWtkUVBNRDNVV2Fxbl9TS0p1WDdFcERfeXNLaGMtdGdiVGs1Q0syYm5ROU1USzJZQ3FQVWxSdmZ6UjFheVNPdkFwbHRDdDg",
-      "published_at": "2026-11-03T23:32:12Z",
-      "tier": 4,
-      "topic": "other",
-      "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
-      "analytical": true,
-      "source_id": "lloyds_list"
-    },
-    {
-      "title": "Gulf oil flows dip in October from post-Iran war high, data shows - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNHNPY2VaUDh6Wm5mQi1obXBHZkJBVUVTODF0d1drdkY2XzBlMDZMQ3gxdFQyUnpxR1B0Y2I0QXdiSndDelZ4UUJEY1p6a1hSX0hYWnZQb0Q1aWJvdkFjek44dEliMVlwZHlrc29FYVNmOTlvSjlwS3NSc2FKaWtRQnNjOEtXeUo2RVAxOG1LUWF4UjVIakptR3g5RHhTX3llXzBxaVZMY0JfN1d1",
-      "published_at": "2026-11-03T15:36:00Z",
-      "tier": 4,
-      "topic": "energy",
-      "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
-      "analytical": false,
-      "source_id": "reuters"
-    },
-    {
-      "title": "Iran commander sets out five conditions for regional security - Al Jazeera",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQXFkQnJ5U3l2WU9GN09nSWlKaUZ0ZVRzWlNpZXBOMm4xN1pvYUpnNG5NU2ZBeFV3dTRiM1Q5MDBBTnZpdndVdXcxM3E4LUVwRWJmUWg0SXlZQUpXamFUdUdNNXZwbmVTYnBrSVA3RVZsSmRybGtZYzJ5WWZLWTBaUkdON0RvaEhhRFJwUnoyYUNZVFhJZWJWM0d6V3hvMU9RM3NVWNIBqgFBVV95cUxQbk0wZW9zWTVydEhvTUJBVFBCcFNJMUZNWk5qQWw0UkV5RjVpbDlldXVQSjYtUFdHY25rTlNFU3VfNm9zaFFQLXExRjFialZ2eWRmWXB1QXhSN3FVYTYwRm1lRDhIckV1N19QbFRiZTlqRDRsNFRFdjVnYWFxUlk5LW5aWF96SW80RDF0WHFtX3VkeEZSUDFsVDh6Uk85MmJjMnNLU05xU2Q3QQ",
-      "published_at": "2026-11-03T15:33:49Z",
-      "tier": 2,
-      "topic": "security",
-      "query": "\"Strait of Hormuz\" (attack OR security OR UKMTO OR JMIC OR mine OR navy) when:2d",
-      "analytical": false,
-      "source_id": "aljazeera"
-    },
-    {
-      "title": "Oil services firms face major cost pressure from Iran crisis, execs say - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOczMwcS1vUnEzdnFTRElKeTJhSUt3Q2F3bTZJMFRkT0h3cU5OSHFpTUFzWDRMd1FzaDR6RGV4U3FlbFZodDFuXzNjZGRNZUdYeUFPdzZqQXFqRWxnaTVBYkViYkZ3VFVxZ3ZkRDV4Q09TRjlUSUh3WXZRZjgxUkMxXzB6VWl1bjl2eW5YZzVacjFycGdHMHc4NHlpbjZZTG9aekFBaGVfcHNNZkktUTRKMGdNWjVoVkpK",
-      "published_at": "2026-11-03T15:11:43Z",
-      "tier": 4,
-      "topic": "energy",
-      "query": "\"Strait of Hormuz\" (traffic OR transit OR shipping OR vessels OR tankers) when:2d",
-      "analytical": false,
-      "source_id": "reuters"
-    },
-    {
-      "title": "Hormuz crisis drives shipping costs to more than 30% of barrel value, Adnoc chief executive says - Lloyd's List",
-      "source": "Lloyd's List",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQOHVsR3VSV0F6WnZYa0RPQkpvUERQb3ZWV0ZmWXRhS2JYNE9qT3ByLUtZLUNTcmxFTXl2UkxPRTVvQk9HWHdxaHk2RHZjY0VlZllDS18ta0NFVGlOSmZ0WVJUUHBvUDEyOHJxeWZPQWhkdUI3UTZWQkZkOGdfRUtQTlBZUG5faXRnaVZnNkFvZWp4MWZ4M0p0dDlMcTFqWGNOYTJhRjRweUpvRnBVQUtFRWVLbG5VcHp3ZWoydndHalZnUnphUFZGd203bw",
-      "published_at": "2026-11-03T14:45:35Z",
-      "tier": 4,
-      "topic": "maritime",
       "query": "\"Strait of Hormuz\" (oil OR LNG OR insurance OR freight OR war risk) when:2d",
-      "analytical": false,
+      "analytical": true,
       "source_id": "lloyds_list"
     }
   ],
   "fetch_errors": [],
-  "editor_engine": "gemini",
-  "assistant_status": "partial-fallback",
-  "editor_assistant_status": "partial-fallback",
+  "editor_engine": "rules",
+  "assistant_status": "gemini-http-503",
+  "editor_assistant_status": "gemini-http-503",
   "editorial_trace": {
     "validator_version": 10,
-    "factual_packet_sha256": "7f740c6a29e6f3c573f6352d0cad33b37d5a41676660854e8c3a70c0af76a473",
-    "provider": "gemini",
-    "status": "partial-fallback",
+    "factual_packet_sha256": "b942eb8cff3c81d441ce25dd0878b2f167b78f80e95fbfe9d838f73552efffd6",
+    "provider": "rules",
+    "status": "gemini-http-503",
     "attempts": [
       {
         "provider": "gemini",
         "model": "gemini-3.5-flash-lite"
       }
     ],
-    "validation_diagnostics": {
-      "language": "es",
-      "reason": "section-paragraph-shape"
-    },
-    "field_fallbacks": [
-      "es.sections.2.paragraph",
-      "es.sections.3.paragraph",
-      "en.sections.1.paragraph",
-      "en.sections.2.paragraph",
-      "en.sections.3.paragraph"
-    ],
-    "full_output_validated": true,
-    "factual_packet_hash": "7f740c6a29e6f3c573f6352d0cad33b37d5a41676660854e8c3a70c0af76a473",
+    "factual_packet_hash": "b942eb8cff3c81d441ce25dd0878b2f167b78f80e95fbfe9d838f73552efffd6",
     "event_ids": [
+      "evt_9e699c6699332da2",
+      "evt_5525d69cb87b932c",
+      "evt_c017ee009d3da9e2",
+      "evt_ac80765b75e74484",
+      "evt_edc38d728e449514",
       "evt_e66aa69049e81c42",
-      "evt_9dc574484820cd14",
-      "evt_85521dd39eb3e5bf",
+      "evt_88829cb0075b50b6",
+      "evt_fa59b331e1bb97dd",
+      "evt_25f80969065985e3",
       "evt_71c44677be2b7223",
       "evt_f47cb939d244a8e0",
-      "evt_25f80969065985e3",
+      "evt_1dba20ce0f2aeb97",
       "evt_915db85c21c2e010",
       "evt_a6ed9d20fb7d57af",
       "evt_0277f1e5320d2ba7",
@@ -457,13 +452,7 @@
       "evt_50cfba9d82ab95f9",
       "evt_4e98fdcde1cd068f",
       "evt_cafc460255d69afd",
-      "evt_3a3d9e807ee75cfa",
-      "evt_2741e8c4811bc868",
-      "evt_ab81fb8e0b3ca6c3",
-      "evt_c5ea8096da542ab8",
-      "evt_a7b9a7b1b8c54701",
-      "evt_815a3669c8e43a26",
-      "evt_08b6cb4ad251ccff"
+      "evt_3a3d9e807ee75cfa"
     ],
     "source_ids": [
       "aljazeera",
@@ -472,9 +461,9 @@
       "bloomberg",
       "cnbc",
       "euronews",
-      "ft",
       "guardian",
       "lloyds_list",
+      "national_security_journal",
       "reuters",
       "sunday_guardian",
       "tradewinds",
@@ -483,46 +472,64 @@
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 6,
       "CONFIRMED_PRIMARY": 0,
-      "CONFLICTING": 0,
-      "DECLARATION_ONLY": 4,
-      "SINGLE_SOURCE": 22,
-      "UNCONFIRMED": 38,
-      "TOTAL": 70
+      "CONFLICTING": 1,
+      "DECLARATION_ONLY": 3,
+      "SINGLE_SOURCE": 28,
+      "UNCONFIRMED": 18,
+      "TOTAL": 56
     },
-    "timestamp": "2026-11-04T13:18:13Z",
+    "timestamp": "2026-11-05T13:30:58Z",
     "fallback_used": true,
     "editorial_quality": {
       "es": {
-        "word_count": 424,
-        "template_similarity": 0.773,
+        "word_count": 462,
+        "template_similarity": 1.0,
         "repeated_sentence_pairs": [],
-        "flags": [],
-        "style_penalty": 0,
-        "blocking_flags": [],
-        "style_checks_passed": true,
+        "flags": [
+          "near_identical_to_local_template",
+          "unchanged_deck"
+        ],
+        "style_penalty": 6,
+        "blocking_flags": [
+          "near_identical_to_local_template",
+          "unchanged_deck"
+        ],
+        "style_checks_passed": false,
         "human_editorial_assessment_required": true
       },
       "en": {
-        "word_count": 353,
-        "template_similarity": 0.843,
+        "word_count": 387,
+        "template_similarity": 1.0,
         "repeated_sentence_pairs": [],
-        "flags": [],
-        "style_penalty": 0,
-        "blocking_flags": [],
-        "style_checks_passed": true,
+        "flags": [
+          "near_identical_to_local_template",
+          "unchanged_deck"
+        ],
+        "style_penalty": 6,
+        "blocking_flags": [
+          "near_identical_to_local_template",
+          "unchanged_deck"
+        ],
+        "style_checks_passed": false,
         "human_editorial_assessment_required": true
       }
     }
   },
   "validator_version": 10,
-  "factual_packet_hash": "7f740c6a29e6f3c573f6352d0cad33b37d5a41676660854e8c3a70c0af76a473",
+  "factual_packet_hash": "b942eb8cff3c81d441ce25dd0878b2f167b78f80e95fbfe9d838f73552efffd6",
   "event_ids": [
+    "evt_9e699c6699332da2",
+    "evt_5525d69cb87b932c",
+    "evt_c017ee009d3da9e2",
+    "evt_ac80765b75e74484",
+    "evt_edc38d728e449514",
     "evt_e66aa69049e81c42",
-    "evt_9dc574484820cd14",
-    "evt_85521dd39eb3e5bf",
+    "evt_88829cb0075b50b6",
+    "evt_fa59b331e1bb97dd",
+    "evt_25f80969065985e3",
     "evt_71c44677be2b7223",
     "evt_f47cb939d244a8e0",
-    "evt_25f80969065985e3",
+    "evt_1dba20ce0f2aeb97",
     "evt_915db85c21c2e010",
     "evt_a6ed9d20fb7d57af",
     "evt_0277f1e5320d2ba7",
@@ -530,13 +537,7 @@
     "evt_50cfba9d82ab95f9",
     "evt_4e98fdcde1cd068f",
     "evt_cafc460255d69afd",
-    "evt_3a3d9e807ee75cfa",
-    "evt_2741e8c4811bc868",
-    "evt_ab81fb8e0b3ca6c3",
-    "evt_c5ea8096da542ab8",
-    "evt_a7b9a7b1b8c54701",
-    "evt_815a3669c8e43a26",
-    "evt_08b6cb4ad251ccff"
+    "evt_3a3d9e807ee75cfa"
   ],
   "source_ids": [
     "aljazeera",
@@ -545,24 +546,24 @@
     "bloomberg",
     "cnbc",
     "euronews",
-    "ft",
     "guardian",
     "lloyds_list",
+    "national_security_journal",
     "reuters",
     "sunday_guardian",
     "tradewinds",
     "unknown"
   ],
-  "timestamp": "2026-11-04T13:18:13Z",
+  "timestamp": "2026-11-05T13:30:58Z",
   "fallback_used": true,
   "verification_summary": {
     "CONFIRMED_MULTI_SOURCE": 6,
     "CONFIRMED_PRIMARY": 0,
-    "CONFLICTING": 0,
-    "DECLARATION_ONLY": 4,
-    "SINGLE_SOURCE": 22,
-    "UNCONFIRMED": 38,
-    "TOTAL": 70
+    "CONFLICTING": 1,
+    "DECLARATION_ONLY": 3,
+    "SINGLE_SOURCE": 28,
+    "UNCONFIRMED": 18,
+    "TOTAL": 56
   },
   "editorial": {
     "version": 11,
@@ -570,14 +571,14 @@
     "slug": "security",
     "label_es": "Cuaderno de seguridad",
     "label_en": "Security log",
-    "current_count": 16,
-    "recent_average": 12.428571428571429,
-    "pulse_es": "Agenda más intensa que la media reciente",
-    "pulse_en": "A busier news agenda than the recent average",
-    "source_count": 7,
-    "analytical_count": 3,
-    "limit_es": "3 titular(es) analítico(s) se conservan como contexto, pero no se utilizan para afirmar hechos operativos.",
-    "limit_en": "3 analytical headline(s) are retained as context but are not used to assert operational facts.",
+    "current_count": 13,
+    "recent_average": 12.714285714285714,
+    "pulse_es": "Agenda en línea con la media reciente",
+    "pulse_en": "News agenda in line with the recent average",
+    "source_count": 9,
+    "analytical_count": 0,
+    "limit_es": "Los titulares no permiten medir por sí solos el volumen real de tráfico ni confirmar una normalización sostenida.",
+    "limit_en": "Headlines alone cannot measure actual traffic volume or confirm sustained normalisation.",
     "primary_context": [
       {
         "id": "eia-hormuz-2024-oil",
