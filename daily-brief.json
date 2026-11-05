@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-11-05T15:44:43Z",
+    "generated_at": "2026-11-05T22:12:49Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -96,24 +96,41 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 12.83,
+      "passage": 11.634,
       "closure": 0,
-      "traffic_reduction": 1.517,
-      "access_restriction": 29.4,
-      "risk": 57.24
+      "traffic_reduction": 0.897,
+      "access_restriction": 27.38,
+      "risk": 56.34
     },
     "source_counts": {
-      "passage": 11,
+      "passage": 9,
       "closure": 0,
       "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-11-05T08:57:23Z",
+    "latest_confirmed_transit_at": "2026-11-05T16:06:58Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "ALTA"
     },
     "evidence": [
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Seafarer killed as tanker attack underscores widening Middle East Gulf threat - Lloyd's List",
+        "source": "Lloyd's List",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeXNlaVh6NGpBM1FLbXFTOEt6ejZZTVVIZkk4b3hBQ2hiVGNpVC1lbzVBbG5ibU1KNTJuQzA5RTFVa2NyZ1RjS1czbERKdVJ6RHJPdXZ5X2NTaGxJWjM5MDdUT3o3c3gybjFpQUtpajd0dGJqdmljYWV1Ukg5RENtbzFaRkdha1dvYVg5cndsZ0NsMnZlb1pJT08xRGp4cWR6SFlybXpleFV5eG9WLXd5ck5wRTM",
+        "published_at": "2026-11-05T17:23:26Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
       {
         "kind": "RISK_SEVERE",
         "title": "US calls on Iran to identify mine locations in Strait of Hormuz - TradeWinds News",
@@ -150,23 +167,6 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Another day of attacks hits ships from Hormuz to Black Sea - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQc1MySjNKaXppOFNjeWFqRmNWd092d245OHVQZllCLXN4TjZ5aThRMlo2X0NZang1NFF5S1A2YlQ2ZEFYeGxUVHVCcXptZVd6cjJhWWI2aHJZQ05hbUNoWFRUWmtXSDFIRFRqN0RJWUNSeDNMZXJ5bUVURGJGNEtHblF6OFprXzl5VkV6XzV4ajBpQzR4MjRFTjRXRQ",
-        "published_at": "2026-11-04T12:12:36Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.6,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
         "title": "Iran's IRGC says four tankers ablaze after hitting mines near Strait of Hormuz - Reuters",
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbjcyLUxfeTMxaHFnbENrc2tqdlowSDFqWU5DUWtqOWhVUUdSYWdSbFpBRGQ4VHI3Rm5DbDVsLTV6bkM4d3FjcmVPRnpsQlJ6RkNSLWNZX0ZtWURvUExKaGZ2M2diWUFvZWZfSE5FN01PR2FXc1pSN1kyeXhHX0ZFS0k4S1FjSDJLc2ZfbGx2cm9TYW9JSThiZVZIeFQxTnVBXzAwYnhlaGxsN3lwQkxOZTdFRVVpc3RPa2J2M0JZNVduZXA3Z2pz",
@@ -187,7 +187,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-11-05T15:44:43Z",
+        "published_at": "2026-11-05T22:12:49Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -204,7 +204,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-11-05T15:44:43Z",
+        "published_at": "2026-11-05T22:12:49Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -215,6 +215,23 @@
         "effective_weight": 2.6,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Oil jumps as investors assess Iran war future, tanker attacks - CNBC",
+        "source": "CNBC",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNdWI5VVd5QjQ2czk5cjBSOHBvSjhKRmtSMnFUSlZPNmRpWFQzTmhBZl94ZnpibGtUdGRDWFNuZTU0MTdIZktfNlVJMUhpM1M1S05xN21wcUtvelhxN3RVbW01T0JyQnFucVVkTEp1bU5NZmp4azFkT0l2b0FVb2FtUkFTTHRrd2FoZUx6YlY0ejVJbVV2TkNWZ3B0dnpqdjVKME1OWmtZZWRXSlQ3ZWZ3OVMxTEx1OHBF0gG-AUFVX3lxTE9jRFNha0MwNFU1d3lTeVRhWGZONFRuV29Gb3FJQ3ZkeV9RUnZnWlRmc05hV0dTSWhnUDBoTzlWNHZJbWp0Rm1QY1d3Nmo2ckJIOXRVd0phYkczYlRsdndvdmhRbWJOMDhFZGUtQk8xZGlEa0JmT0phYkxYbVdsWC1rbFRrWUl0eldCWDNIakFRSHZyUnEtYlh2R1RLLU9ubkVIM0FEbUJpR3FlWWswVGx3TXBKRDZkMzhXcUptMUE",
+        "published_at": "2026-11-05T05:02:54Z",
+        "tier": 2,
+        "weight": 2.5,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 2.5,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       },
       {
         "kind": "RISK_SEVERE",
@@ -232,63 +249,46 @@
         "effective_weight": 2.48,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Iran's IRGC Navy says two tankers 'exploded' after hitting mines in Hormuz - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZmk2dmxjdk1sOW96UkZiaUlJVXhzc1pJMjZJUnY2WGtvaXd4aXRJY3d4UTNoUmFJdUVQQjlkb0JPSmxEc2YzS1JOZ2NSWmpTUnhzYzBiU1hfeXBvb2F2WEp2NHc5YkFfUUNKSHc2NW1PMUVKT0xqUTdOa0tfUmZpQWE2SDFtdzJ5TmZleWpLd0Zid1JWR2Z0d0dOeVMwekFzNTNTYndHMmMyV0poZ2h0UmFOVWc2M3o3Z2h6TUR2SQ",
-        "published_at": "2026-11-01T20:12:33Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 2.48,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_9e699c6699332da2",
-      "evt_9a3b0d21ac72c9a3",
+      "evt_763b81a6df93e7a3",
+      "evt_3cddfffc63307b70",
       "evt_5525d69cb87b932c",
+      "evt_77676b7e67db9b36",
+      "evt_999cef0553d0c127",
+      "evt_f50f708a0063ee93",
+      "evt_9a3b0d21ac72c9a3",
       "evt_a7c0f9568e14c57a",
       "evt_321529c7ff176ba3",
       "evt_5686fcd80ab8e4f0",
       "evt_cba8d342819b0dd6",
-      "evt_b46c1062ba915cc8",
-      "evt_763b81a6df93e7a3",
-      "evt_45f80bb1fa24470f",
-      "evt_f50f708a0063ee93",
-      "evt_95dd67f0bce3bdd9",
-      "evt_77676b7e67db9b36",
       "evt_c017ee009d3da9e2",
+      "evt_860c7a5a4da947cf",
+      "evt_45f80bb1fa24470f",
+      "evt_0277f1e5320d2ba7",
       "evt_5e4b211407f9ecf6",
       "evt_ac001bf4cbcd27c4",
-      "evt_ac80765b75e74484",
       "evt_edc38d728e449514",
-      "evt_e66aa69049e81c42",
-      "evt_88829cb0075b50b6"
+      "evt_a702234705b10eb1"
     ],
     "verification_summary": {
-      "CONFIRMED_MULTI_SOURCE": 6,
+      "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 1,
-      "DECLARATION_ONLY": 3,
+      "DECLARATION_ONLY": 4,
       "SINGLE_SOURCE": 27,
       "UNCONFIRMED": 20,
       "TOTAL": 57
     },
     "diagnostics": {
-      "signals_considered": 89,
+      "signals_considered": 82,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
       "event_count": 57,
-      "article_count_after_deduplication": 125,
+      "article_count_after_deduplication": 121,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-11-05T15:44:43Z"
+    "generated_at": "2026-11-05T22:12:49Z"
   }
 }
