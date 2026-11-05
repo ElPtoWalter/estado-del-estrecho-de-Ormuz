@@ -62,7 +62,7 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-11-05T07:16:34Z",
+    "generated_at": "2026-11-05T15:44:43Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -96,24 +96,58 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 13.546,
+      "passage": 12.83,
       "closure": 0,
-      "traffic_reduction": 1.035,
-      "access_restriction": 31.3,
-      "risk": 51.964
+      "traffic_reduction": 1.517,
+      "access_restriction": 29.4,
+      "risk": 57.24
     },
     "source_counts": {
       "passage": 11,
       "closure": 0,
       "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-11-04T15:40:58Z",
+    "latest_confirmed_transit_at": "2026-11-05T08:57:23Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "ALTA"
     },
     "evidence": [
+      {
+        "kind": "RISK_SEVERE",
+        "title": "US calls on Iran to identify mine locations in Strait of Hormuz - TradeWinds News",
+        "source": "TradeWinds",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVmdvZWp4RUNTYzBEakdvd1NQb3BDa2JnaTdXRWMtSmFQcnUtOXB1WV9VWjB1aWNHS1ktWlNtX0I1aUFqTWNDWTBCSnlDWHJsbzA0bzhHNUtDTmc5dmRySTZiX25obGJDTklRU0tQMGx1R3AycE84SkhKS0VNdnI1UXdvX3NFZFpJOTc4a0RSYjRMWmhuSWJjNmJ3eW5mZThyc0RfdHFPcm1UNG1lb2FOWlZMTFBPNlE",
+        "published_at": "2026-11-05T14:46:52Z",
+        "tier": 4,
+        "weight": 3.8,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.8,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Iran strikes up to three tankers in new Strait of Hormuz attacks - TradeWinds News",
+        "source": "TradeWinds",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZWVqQWJyeXlmQ1dWUnl4OTdvLWQyUHNuVms4c1RWNDBZZ3BCWll0TkhmMkFCQWxJdWNCRzZrZHZZazdFSTBBcWFSMEpVcU02VFZFV2tlcXFCWDA5NkdVTGRnZDFiaFpoWkxxQVJQbXlWUUlwdFNYUzFPNmVVYlc0Vm9nWG15cG9DM0JmYmpiWExNSzdwMi1BS2xfTmRaR3ZxSTNFaWhiS2U3Y0x4Y1ZpLUZvcFpPV09Wa2c",
+        "published_at": "2026-11-05T09:45:08Z",
+        "tier": 4,
+        "weight": 3.8,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.8,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
       {
         "kind": "RISK_SEVERE",
         "title": "Another day of attacks hits ships from Hormuz to Black Sea - Lloyd's List",
@@ -127,7 +161,7 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 4.0,
+        "effective_weight": 3.6,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -150,27 +184,10 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Iran claims attack on three ships in Strait of Hormuz as Tehran expands ‘blacklist’ - TradeWinds News",
-        "source": "TradeWinds",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZFp5TFRGYWNiRVdEWXN2X0NBU29GaEszTW1BZHBkVm5xUWdwcGlnZkUxRjFHWUJHazFlMFkyTjk3aDF5cFJZcTMwcUhQdGhCWnVUQ29FY1dtcjdRamdqTkM5NXRFNDVIWHBITGtoNDhqSjJhUUctcjdHS2tGRXpaNXhrQnhKd2xVLVZodnAydVVDam84ZlJUei1QY1ZZZE9zUl9QUkxFRzBMZTVMdGItMlNtVFItYnZ1VVFBQWx1MXVsc3VZSGI4VE14clNjQQ",
-        "published_at": "2026-11-03T11:15:21Z",
-        "tier": 4,
-        "weight": 3.8,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.42,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-11-05T07:16:34Z",
+        "published_at": "2026-11-05T15:44:43Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -183,28 +200,11 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "RISK_SEVERE",
-        "title": "Ukraine proposes new IMO rules for freedom of navigation as attack zone expands in Black Sea - TradeWinds News",
-        "source": "TradeWinds",
-        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNcVFmZmU2bmtjei1aVExyNjRnSTZhRldwNVotcGVEZHFUaXBvcHBYV1B3Ymp0WlB1ck9ST1BUbW9TNHVCcEFBd1o4b0lNRTdhb1U3ei1LbGxBMldNdTlwR1prY1I4Zm9IQi05LW5GT1FFQVR2dkhWT1Q2STNMekt1Q01XSk1PcmdRZDM2VHVDX3dlWWgwb0gxeVBjcV80X1RZVTFjcExIc1o1THNyU29WNXBOdGdzbDg4R3JMdXktVGhUT2R4NjloWUEzek03YkY5ZUVNN3pNU25iS1ZxWHFN",
-        "published_at": "2026-11-02T19:20:57Z",
-        "tier": 4,
-        "weight": 3.8,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 2.964,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
         "kind": "ACCESS_RESTRICTED",
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-11-05T07:16:34Z",
+        "published_at": "2026-11-05T15:44:43Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -253,42 +253,42 @@
     ],
     "event_ids": [
       "evt_9e699c6699332da2",
+      "evt_9a3b0d21ac72c9a3",
       "evt_5525d69cb87b932c",
-      "evt_8f234bbf51795bdd",
-      "evt_c017ee009d3da9e2",
+      "evt_a7c0f9568e14c57a",
+      "evt_321529c7ff176ba3",
+      "evt_5686fcd80ab8e4f0",
+      "evt_cba8d342819b0dd6",
+      "evt_b46c1062ba915cc8",
+      "evt_763b81a6df93e7a3",
+      "evt_45f80bb1fa24470f",
+      "evt_f50f708a0063ee93",
       "evt_95dd67f0bce3bdd9",
       "evt_77676b7e67db9b36",
+      "evt_c017ee009d3da9e2",
       "evt_5e4b211407f9ecf6",
+      "evt_ac001bf4cbcd27c4",
       "evt_ac80765b75e74484",
-      "evt_8bb0043239080d35",
       "evt_edc38d728e449514",
-      "evt_f50f708a0063ee93",
       "evt_e66aa69049e81c42",
-      "evt_88829cb0075b50b6",
-      "evt_41ba1122c4a8e1ea",
-      "evt_73c0376b213f5fb1",
-      "evt_a7c0f9568e14c57a",
-      "evt_fa59b331e1bb97dd",
-      "evt_28fcbc5c1101bea0",
-      "evt_25f80969065985e3",
-      "evt_71c44677be2b7223"
+      "evt_88829cb0075b50b6"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 6,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 1,
       "DECLARATION_ONLY": 3,
-      "SINGLE_SOURCE": 28,
-      "UNCONFIRMED": 18,
-      "TOTAL": 56
+      "SINGLE_SOURCE": 27,
+      "UNCONFIRMED": 20,
+      "TOTAL": 57
     },
     "diagnostics": {
-      "signals_considered": 84,
+      "signals_considered": 89,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 56,
-      "article_count_after_deduplication": 120,
+      "event_count": 57,
+      "article_count_after_deduplication": 125,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -300,6 +300,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-11-05T07:16:34Z"
+    "generated_at": "2026-11-05T15:44:43Z"
   }
 }
