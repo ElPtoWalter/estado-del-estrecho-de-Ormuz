@@ -1,34 +1,129 @@
 {
   "version": 11,
-  "generated_at": "2026-11-05T13:30:58Z",
+  "generated_at": "2026-11-06T13:15:43Z",
   "ok": true,
-  "date": "2026-11-05",
-  "material_score": 3,
+  "date": "2026-11-06",
+  "material_score": 0,
   "material_archive": false,
-  "news_considered": 19,
-  "new_articles": 13,
-  "source_brands": 9,
+  "news_considered": 22,
+  "new_articles": 16,
+  "source_brands": 8,
   "fetch_errors": [],
   "operational_intelligence_used": true,
-  "editor_engine": "rules",
-  "editor_assistant_status": "gemini-http-503",
+  "editor_engine": "gemini",
+  "editor_assistant_status": "partial-fallback",
   "editorial_trace": {
     "validator_version": 10,
-    "factual_packet_sha256": "b942eb8cff3c81d441ce25dd0878b2f167b78f80e95fbfe9d838f73552efffd6",
-    "provider": "rules",
-    "status": "gemini-http-503",
+    "factual_packet_sha256": "de3a4d6529965052fcb81f59a7914149329ea5b347537465576e01226ab7ffda",
+    "provider": "gemini",
+    "status": "partial-fallback",
     "attempts": [
+      {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite"
+      },
       {
         "provider": "gemini",
         "model": "gemini-3.5-flash-lite"
       }
     ],
-    "factual_packet_hash": "b942eb8cff3c81d441ce25dd0878b2f167b78f80e95fbfe9d838f73552efffd6",
+    "validation_diagnostics": {
+      "language": "es",
+      "reason": "section-headline-grounding"
+    },
+    "field_fallbacks": [
+      "es.sections.0.paragraph",
+      "es.sections.2.paragraph",
+      "en.sections.2.paragraph"
+    ],
+    "full_output_validated": true,
+    "initial_field_fallbacks": [
+      "es.sections.0.paragraph",
+      "es.sections.2.paragraph",
+      "en.sections.2.paragraph"
+    ],
+    "initial_validation_diagnostics": {
+      "language": "es",
+      "reason": "section-headline-grounding"
+    },
+    "style_revision": {
+      "attempted": true,
+      "adopted": false,
+      "initial_quality": {
+        "es": {
+          "word_count": 379,
+          "template_similarity": 0.804,
+          "repeated_sentence_pairs": [],
+          "flags": [],
+          "style_penalty": 0,
+          "blocking_flags": [],
+          "style_checks_passed": true,
+          "human_editorial_assessment_required": true
+        },
+        "en": {
+          "word_count": 296,
+          "template_similarity": 0.7,
+          "repeated_sentence_pairs": [
+            [
+              0,
+              4
+            ]
+          ],
+          "flags": [
+            "repeated_sentence_across_fields"
+          ],
+          "style_penalty": 5,
+          "blocking_flags": [
+            "repeated_sentence_across_fields"
+          ],
+          "style_checks_passed": false,
+          "human_editorial_assessment_required": true
+        }
+      },
+      "candidate_quality": {
+        "es": {
+          "word_count": 379,
+          "template_similarity": 0.804,
+          "repeated_sentence_pairs": [],
+          "flags": [],
+          "style_penalty": 0,
+          "blocking_flags": [],
+          "style_checks_passed": true,
+          "human_editorial_assessment_required": true
+        },
+        "en": {
+          "word_count": 315,
+          "template_similarity": 0.68,
+          "repeated_sentence_pairs": [
+            [
+              0,
+              4
+            ]
+          ],
+          "flags": [
+            "repeated_sentence_across_fields"
+          ],
+          "style_penalty": 5,
+          "blocking_flags": [
+            "repeated_sentence_across_fields"
+          ],
+          "style_checks_passed": false,
+          "human_editorial_assessment_required": true
+        }
+      },
+      "valid_against_original_packet": true,
+      "same_factual_packet": true
+    },
+    "factual_packet_hash": "de3a4d6529965052fcb81f59a7914149329ea5b347537465576e01226ab7ffda",
     "event_ids": [
       "evt_9e699c6699332da2",
       "evt_5525d69cb87b932c",
+      "evt_763b81a6df93e7a3",
+      "evt_3cddfffc63307b70",
+      "evt_9a3b0d21ac72c9a3",
+      "evt_0277f1e5320d2ba7",
       "evt_c017ee009d3da9e2",
-      "evt_ac80765b75e74484",
+      "evt_ac001bf4cbcd27c4",
       "evt_edc38d728e449514",
       "evt_e66aa69049e81c42",
       "evt_88829cb0075b50b6",
@@ -36,15 +131,11 @@
       "evt_25f80969065985e3",
       "evt_71c44677be2b7223",
       "evt_f47cb939d244a8e0",
-      "evt_1dba20ce0f2aeb97",
       "evt_915db85c21c2e010",
       "evt_a6ed9d20fb7d57af",
-      "evt_0277f1e5320d2ba7",
       "evt_386c82db0c5f787e",
       "evt_50cfba9d82ab95f9",
-      "evt_4e98fdcde1cd068f",
-      "evt_cafc460255d69afd",
-      "evt_3a3d9e807ee75cfa"
+      "evt_4e98fdcde1cd068f"
     ],
     "source_ids": [
       "aljazeera",
@@ -55,52 +146,47 @@
       "euronews",
       "guardian",
       "lloyds_list",
-      "national_security_journal",
       "reuters",
-      "sunday_guardian",
       "tradewinds",
       "unknown"
     ],
     "verification_summary": {
-      "CONFIRMED_MULTI_SOURCE": 6,
+      "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 1,
-      "DECLARATION_ONLY": 3,
-      "SINGLE_SOURCE": 28,
-      "UNCONFIRMED": 18,
-      "TOTAL": 56
+      "DECLARATION_ONLY": 4,
+      "SINGLE_SOURCE": 27,
+      "UNCONFIRMED": 17,
+      "TOTAL": 54
     },
-    "timestamp": "2026-11-05T13:30:58Z",
+    "timestamp": "2026-11-06T13:15:43Z",
     "fallback_used": true,
     "editorial_quality": {
       "es": {
-        "word_count": 462,
-        "template_similarity": 1.0,
+        "word_count": 379,
+        "template_similarity": 0.804,
         "repeated_sentence_pairs": [],
-        "flags": [
-          "near_identical_to_local_template",
-          "unchanged_deck"
-        ],
-        "style_penalty": 6,
-        "blocking_flags": [
-          "near_identical_to_local_template",
-          "unchanged_deck"
-        ],
-        "style_checks_passed": false,
+        "flags": [],
+        "style_penalty": 0,
+        "blocking_flags": [],
+        "style_checks_passed": true,
         "human_editorial_assessment_required": true
       },
       "en": {
-        "word_count": 387,
-        "template_similarity": 1.0,
-        "repeated_sentence_pairs": [],
-        "flags": [
-          "near_identical_to_local_template",
-          "unchanged_deck"
+        "word_count": 296,
+        "template_similarity": 0.7,
+        "repeated_sentence_pairs": [
+          [
+            0,
+            4
+          ]
         ],
-        "style_penalty": 6,
+        "flags": [
+          "repeated_sentence_across_fields"
+        ],
+        "style_penalty": 5,
         "blocking_flags": [
-          "near_identical_to_local_template",
-          "unchanged_deck"
+          "repeated_sentence_across_fields"
         ],
         "style_checks_passed": false,
         "human_editorial_assessment_required": true
