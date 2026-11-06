@@ -4,9 +4,9 @@
   "operational_status": "HIGH_RISK_UNCONFIRMED",
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
-  "confidence": "MEDIA",
-  "checked_at": "2026-11-06T11:24:12Z",
-  "last_success_at": "2026-11-06T11:24:12Z",
+  "confidence": "ALTA",
+  "checked_at": "2026-11-06T18:18:29Z",
+  "last_success_at": "2026-11-06T18:18:29Z",
   "last_change_at": "2026-10-18T17:29:40Z",
   "verification_ok": true,
   "stale": false,
@@ -23,18 +23,18 @@
       "published_at": "2026-11-06T06:13:36Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-06T11:24:12Z"
+      "observed_at": "2026-11-06T18:18:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Seafarer killed as tanker attack underscores widening Middle East Gulf threat - Lloyd's List",
-      "source_name": "Lloyd's List",
-      "source_id": "lloyds_list",
-      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeXNlaVh6NGpBM1FLbXFTOEt6ejZZTVVIZkk4b3hBQ2hiVGNpVC1lbzVBbG5ibU1KNTJuQzA5RTFVa2NyZ1RjS1czbERKdVJ6RHJPdXZ5X2NTaGxJWjM5MDdUT3o3c3gybjFpQUtpajd0dGJqdmljYWV1Ukg5RENtbzFaRkdha1dvYVg5cndsZ0NsMnZlb1pJT08xRGp4cWR6SFlybXpleFV5eG9WLXd5ck5wRTM",
-      "published_at": "2026-11-05T17:22:29Z",
+      "title": "US calls on Iran to identify mine locations in Strait of Hormuz - TradeWinds News",
+      "source_name": "TradeWinds",
+      "source_id": "tradewinds",
+      "source_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVmdvZWp4RUNTYzBEakdvd1NQb3BDa2JnaTdXRWMtSmFQcnUtOXB1WV9VWjB1aWNHS1ktWlNtX0I1aUFqTWNDWTBCSnlDWHJsbzA0bzhHNUtDTmc5dmRySTZiX25obGJDTklRU0tQMGx1R3AycE84SkhKS0VNdnI1UXdvX3NFZFpJOTc4a0RSYjRMWmhuSWJjNmJ3eW5mZThyc0RfdHFPcm1UNG1lb2FOWlZMTFBPNlE",
+      "published_at": "2026-11-05T14:46:52Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-06T11:24:12Z"
+      "observed_at": "2026-11-06T18:18:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -45,7 +45,18 @@
       "published_at": "2026-11-05T05:02:54Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-06T11:24:12Z"
+      "observed_at": "2026-11-06T18:18:29Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Another day of attacks hits ships from Hormuz to Black Sea - Lloyd's List",
+      "source_name": "Lloyd's List",
+      "source_id": "lloyds_list",
+      "source_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQc1MySjNKaXppOFNjeWFqRmNWd092d245OHVQZllCLXN4TjZ5aThRMlo2X0NZang1NFF5S1A2YlQ2ZEFYeGxUVHVCcXptZVd6cjJhWWI2aHJZQ05hbUNoWFRUWmtXSDFIRFRqN0RJWUNSeDNMZXJ5bUVURGJGNEtHblF6OFprXzl5VkV6XzV4ajBpQzR4MjRFTjRXRQ",
+      "published_at": "2026-11-04T12:12:36Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-11-06T18:18:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -56,39 +67,40 @@
       "published_at": "2026-11-04T03:50:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-06T11:24:12Z"
+      "observed_at": "2026-11-06T18:18:29Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 9.475
+      "risk": 10.785
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 4
+      "risk": 5
     },
-    "articles_considered": 23,
-    "signals_considered": 8,
-    "current_cycle_evidence": 4,
+    "articles_considered": 19,
+    "signals_considered": 7,
+    "current_cycle_evidence": 5,
     "evidence_display_mode": "current",
-    "evidence_archive_size": 54,
+    "evidence_archive_size": 51,
     "evidence_archive_days": 14
   },
   "evidence_context": {
     "mode": "current",
     "as_of": "2026-11-06T06:13:36Z",
-    "current_cycle_count": 4,
+    "current_cycle_count": 5,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
     "description_es": "Señales publicables encontradas en el ciclo más reciente.",
@@ -104,7 +116,7 @@
       "published_at": "2026-11-06T06:13:36Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-06T11:24:12Z"
+      "observed_at": "2026-11-06T18:18:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -130,6 +142,17 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "US calls on Iran to identify mine locations in Strait of Hormuz - TradeWinds News",
+      "source_name": "TradeWinds",
+      "source_id": "tradewinds",
+      "source_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVmdvZWp4RUNTYzBEakdvd1NQb3BDa2JnaTdXRWMtSmFQcnUtOXB1WV9VWjB1aWNHS1ktWlNtX0I1aUFqTWNDWTBCSnlDWHJsbzA0bzhHNUtDTmc5dmRySTZiX25obGJDTklRU0tQMGx1R3AycE84SkhKS0VNdnI1UXdvX3NFZFpJOTc4a0RSYjRMWmhuSWJjNmJ3eW5mZThyc0RfdHFPcm1UNG1lb2FOWlZMTFBPNlE",
+      "published_at": "2026-11-05T14:46:52Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-11-06T18:18:29Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Iran strikes up to three tankers in new Strait of Hormuz attacks - TradeWinds News",
       "source_name": "TradeWinds",
       "source_id": "tradewinds",
@@ -148,7 +171,7 @@
       "published_at": "2026-11-05T05:02:54Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-06T11:24:12Z"
+      "observed_at": "2026-11-06T18:18:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -159,7 +182,7 @@
       "published_at": "2026-11-04T12:12:36Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-05T15:44:06Z"
+      "observed_at": "2026-11-06T18:18:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -192,7 +215,7 @@
       "published_at": "2026-11-04T03:50:00Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-06T11:24:12Z"
+      "observed_at": "2026-11-06T18:18:29Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -644,56 +667,12 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-10-24T18:19:03Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Strait of Hormuz Ship Attacks Reach New High in October - MarineLink",
-      "source_name": "MarineLink",
-      "source_id": "marinelink",
-      "source_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNWmJ4M3J4ZEJjdXlSdDRmWEM5ZXA4TFZsTzA4WmJoMHFaM1JwUGZMYXRYUVF0ZjczU0EzRF9VeTRKbVQ0X0ZvT3lhN2ZBcWVmd3RsOHp6Z19Uak1JVm42ZVBmeE9Bc1ZfWUlacWlzbEVUc2VlcG56MmljLXp0QzZRcE9nYkhrZkU",
-      "published_at": "2026-10-23T16:58:09Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-10-27T16:49:03Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil hits five - month high amid fears US will renew strikes on Iran",
-      "source_name": "The Guardian",
-      "source_id": "guardian",
-      "source_url": "https://theguardian.com/business/2026/oct/23/oil-five-month-high-fears-us-renews-strikes-iran",
-      "published_at": "2026-10-23T16:48:28Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-10-23T18:38:46Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Oil spill washes up on UAE beaches after tanker strike - BBC",
-      "source_name": "BBC",
-      "source_id": "bbc",
-      "source_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFAtRHZQS1d3a29OWlFvc1dSbUxFSDMxVFI2SlBjSEJRbFA0c2hKLU5yQ0s5cEFoclNNTjFxNnJIZUlrZDhMWmZhb2NySEx3bEFzWllsM1R1RHVKeW5ZWGc",
-      "published_at": "2026-10-23T15:30:47Z",
-      "tier": 3,
-      "official": false,
-      "observed_at": "2026-10-27T10:50:35Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Ship attacks in Strait of Hormuz hit record high in October - Reuters",
-      "source_name": "Reuters",
-      "source_id": "reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOT0p6ZElVazFhVWJxRy15cXJ6X2VJZlBZbkp6dTFNUGNzb1pCbjYyenA2UE5ERXBYMnMya2tYNkNfcGN3U3FGZ3V2MzdaN0RWUng5VFJHVl9jVk9LLVJGOVFVRFNKR21sc0pULWQ0Vm9uQk9tODlWTGs0U3BSeFd2MC15X2RIakQ2Mkw0eFhMa1Y2UUVWYVBsZkhrZHowVnlaWUpKZA",
-      "published_at": "2026-10-23T14:59:43Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-10-27T00:01:36Z"
     }
   ],
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-11-06T11:24:51Z",
+    "generated_at": "2026-11-06T18:19:08Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -727,41 +706,24 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 11.95,
+      "passage": 13.754,
       "closure": 0,
-      "traffic_reduction": 0,
-      "access_restriction": 29.16,
-      "risk": 52.09
+      "traffic_reduction": 1.0,
+      "access_restriction": 24.08,
+      "risk": 59.042
     },
     "source_counts": {
-      "passage": 10,
+      "passage": 11,
       "closure": 0,
       "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-11-05T22:09:05Z",
+    "latest_confirmed_transit_at": "2026-11-06T13:18:17Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
-      "confidence": "MEDIA"
+      "confidence": "ALTA"
     },
     "evidence": [
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Seafarer killed as tanker attack underscores widening Middle East Gulf threat - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeXNlaVh6NGpBM1FLbXFTOEt6ejZZTVVIZkk4b3hBQ2hiVGNpVC1lbzVBbG5ibU1KNTJuQzA5RTFVa2NyZ1RjS1czbERKdVJ6RHJPdXZ5X2NTaGxJWjM5MDdUT3o3c3gybjFpQUtpajd0dGJqdmljYWV1Ukg5RENtbzFaRkdha1dvYVg5cndsZ0NsMnZlb1pJT08xRGp4cWR6SFlybXpleFV5eG9WLXd5ck5wRTM",
-        "published_at": "2026-11-05T17:22:29Z",
-        "tier": 4,
-        "weight": 4.0,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 4.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
       {
         "kind": "RISK_SEVERE",
         "title": "US calls on Iran to identify mine locations in Strait of Hormuz - TradeWinds News",
@@ -770,12 +732,29 @@
         "published_at": "2026-11-05T14:46:52Z",
         "tier": 4,
         "weight": 3.8,
-        "provider": "Google News RSS",
+        "provider": "legacy-engine",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 3.8,
+        "effective_weight": 3.42,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Another day of attacks hits ships from Hormuz to Black Sea - Lloyd's List",
+        "source": "Lloyd's List",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQc1MySjNKaXppOFNjeWFqRmNWd092d245OHVQZllCLXN4TjZ5aThRMlo2X0NZang1NFF5S1A2YlQ2ZEFYeGxUVHVCcXptZVd6cjJhWWI2aHJZQ05hbUNoWFRUWmtXSDFIRFRqN0RJWUNSeDNMZXJ5bUVURGJGNEtHblF6OFprXzl5VkV6XzV4ajBpQzR4MjRFTjRXRQ",
+        "published_at": "2026-11-04T12:12:36Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "legacy-engine",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.12,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       },
@@ -801,7 +780,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-11-06T11:24:51Z",
+        "published_at": "2026-11-06T18:19:08Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -818,7 +797,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-11-06T11:24:51Z",
+        "published_at": "2026-11-06T18:19:08Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -885,41 +864,41 @@
     "event_ids": [
       "evt_9e699c6699332da2",
       "evt_f50f708a0063ee93",
+      "evt_d0f3b688b72cb54d",
+      "evt_45f80bb1fa24470f",
       "evt_5525d69cb87b932c",
+      "evt_5bd0b567dae0333e",
+      "evt_00c067cb1f455779",
+      "evt_77676b7e67db9b36",
+      "evt_822e9fd40a45acd6",
       "evt_4d025568d4edfe14",
       "evt_a702234705b10eb1",
       "evt_0fd248afcebc39b5",
       "evt_763b81a6df93e7a3",
       "evt_3cddfffc63307b70",
-      "evt_77676b7e67db9b36",
       "evt_9a3b0d21ac72c9a3",
       "evt_860c7a5a4da947cf",
-      "evt_321529c7ff176ba3",
       "evt_5686fcd80ab8e4f0",
-      "evt_cba8d342819b0dd6",
-      "evt_45f80bb1fa24470f",
+      "evt_321529c7ff176ba3",
       "evt_0277f1e5320d2ba7",
-      "evt_c017ee009d3da9e2",
-      "evt_5e4b211407f9ecf6",
-      "evt_ac001bf4cbcd27c4",
-      "evt_edc38d728e449514"
+      "evt_c017ee009d3da9e2"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 1,
       "DECLARATION_ONLY": 4,
-      "SINGLE_SOURCE": 27,
-      "UNCONFIRMED": 17,
-      "TOTAL": 54
+      "SINGLE_SOURCE": 24,
+      "UNCONFIRMED": 21,
+      "TOTAL": 55
     },
     "diagnostics": {
-      "signals_considered": 85,
+      "signals_considered": 91,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 54,
-      "article_count_after_deduplication": 123,
+      "event_count": 55,
+      "article_count_after_deduplication": 126,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -931,6 +910,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-11-06T11:24:51Z"
+    "generated_at": "2026-11-06T18:19:08Z"
   }
 }
