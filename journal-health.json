@@ -1,119 +1,38 @@
 {
   "version": 11,
-  "generated_at": "2026-11-09T14:24:37Z",
+  "generated_at": "2026-11-10T13:47:56Z",
   "ok": true,
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "material_score": 0,
   "material_archive": false,
-  "news_considered": 23,
-  "new_articles": 22,
-  "source_brands": 10,
+  "news_considered": 29,
+  "new_articles": 19,
+  "source_brands": 8,
   "fetch_errors": [],
   "operational_intelligence_used": true,
-  "editor_engine": "gemini",
-  "editor_assistant_status": "partial-fallback",
+  "editor_engine": "rules",
+  "editor_assistant_status": "gemini-http-503",
   "editorial_trace": {
     "validator_version": 10,
-    "factual_packet_sha256": "b4c1d88badad0b9d1dda257615ac6f916f554503cf8ca410886603b66fb1e906",
-    "provider": "gemini",
-    "status": "partial-fallback",
+    "factual_packet_sha256": "94cd0642457c8dc1903b6903e05da86708fca4a714157d75ea1c25d513777160",
+    "provider": "rules",
+    "status": "gemini-http-503",
     "attempts": [
-      {
-        "provider": "gemini",
-        "model": "gemini-3.5-flash-lite"
-      },
       {
         "provider": "gemini",
         "model": "gemini-3.5-flash-lite"
       }
     ],
-    "validation_diagnostics": {
-      "language": "es",
-      "reason": "section-headline-grounding"
-    },
-    "field_fallbacks": [
-      "es.sections.3.paragraph",
-      "en.sections.0.paragraph",
-      "en.sections.3.paragraph"
-    ],
-    "full_output_validated": true,
-    "initial_field_fallbacks": [
-      "es.deck",
-      "es.sections.1.paragraph",
-      "es.sections.3.paragraph",
-      "en.deck",
-      "en.sections.0.paragraph",
-      "en.sections.1.paragraph",
-      "en.sections.3.paragraph"
-    ],
-    "initial_validation_diagnostics": {
-      "language": "es",
-      "reason": "section-attribution"
-    },
-    "style_revision": {
-      "attempted": true,
-      "adopted": true,
-      "initial_quality": {
-        "es": {
-          "word_count": 588,
-          "template_similarity": 0.741,
-          "repeated_sentence_pairs": [],
-          "flags": [
-            "unchanged_deck"
-          ],
-          "style_penalty": 3,
-          "blocking_flags": [
-            "unchanged_deck"
-          ],
-          "style_checks_passed": false,
-          "human_editorial_assessment_required": true
-        },
-        "en": {
-          "word_count": 436,
-          "template_similarity": 0.868,
-          "repeated_sentence_pairs": [],
-          "flags": [
-            "unchanged_deck"
-          ],
-          "style_penalty": 3,
-          "blocking_flags": [
-            "unchanged_deck"
-          ],
-          "style_checks_passed": false,
-          "human_editorial_assessment_required": true
-        }
-      },
-      "candidate_quality": {
-        "es": {
-          "word_count": 594,
-          "template_similarity": 0.592,
-          "repeated_sentence_pairs": [],
-          "flags": [],
-          "style_penalty": 0,
-          "blocking_flags": [],
-          "style_checks_passed": true,
-          "human_editorial_assessment_required": true
-        },
-        "en": {
-          "word_count": 422,
-          "template_similarity": 0.712,
-          "repeated_sentence_pairs": [],
-          "flags": [],
-          "style_penalty": 0,
-          "blocking_flags": [],
-          "style_checks_passed": true,
-          "human_editorial_assessment_required": true
-        }
-      },
-      "valid_against_original_packet": true,
-      "same_factual_packet": true
-    },
-    "factual_packet_hash": "b4c1d88badad0b9d1dda257615ac6f916f554503cf8ca410886603b66fb1e906",
+    "factual_packet_hash": "94cd0642457c8dc1903b6903e05da86708fca4a714157d75ea1c25d513777160",
     "event_ids": [
       "evt_9e699c6699332da2",
+      "evt_13c31dc6b37a516f",
+      "evt_ba8347fe28865f27",
+      "evt_f4e6bea7b9d30189",
+      "evt_9368b7a68ba6bee2",
       "evt_c017ee009d3da9e2",
+      "evt_5cf9e019664ebc2f",
       "evt_4fbeb37286d42d67",
-      "evt_74f58fe22a498b97",
       "evt_4589517db11cc563",
       "evt_6348b3c5d5afcaad",
       "evt_e66aa69049e81c42",
@@ -125,11 +44,7 @@
       "evt_88829cb0075b50b6",
       "evt_fa59b331e1bb97dd",
       "evt_25f80969065985e3",
-      "evt_71c44677be2b7223",
-      "evt_f47cb939d244a8e0",
-      "evt_915db85c21c2e010",
-      "evt_a6ed9d20fb7d57af",
-      "evt_386c82db0c5f787e"
+      "evt_71c44677be2b7223"
     ],
     "source_ids": [
       "aljazeera",
@@ -150,32 +65,44 @@
       "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 3,
+      "DECLARATION_ONLY": 4,
       "SINGLE_SOURCE": 27,
-      "UNCONFIRMED": 22,
-      "TOTAL": 57
+      "UNCONFIRMED": 29,
+      "TOTAL": 65
     },
-    "timestamp": "2026-11-09T14:24:37Z",
+    "timestamp": "2026-11-10T13:47:56Z",
     "fallback_used": true,
     "editorial_quality": {
       "es": {
-        "word_count": 594,
-        "template_similarity": 0.592,
+        "word_count": 511,
+        "template_similarity": 1.0,
         "repeated_sentence_pairs": [],
-        "flags": [],
-        "style_penalty": 0,
-        "blocking_flags": [],
-        "style_checks_passed": true,
+        "flags": [
+          "near_identical_to_local_template",
+          "unchanged_deck"
+        ],
+        "style_penalty": 6,
+        "blocking_flags": [
+          "near_identical_to_local_template",
+          "unchanged_deck"
+        ],
+        "style_checks_passed": false,
         "human_editorial_assessment_required": true
       },
       "en": {
-        "word_count": 422,
-        "template_similarity": 0.712,
+        "word_count": 425,
+        "template_similarity": 1.0,
         "repeated_sentence_pairs": [],
-        "flags": [],
-        "style_penalty": 0,
-        "blocking_flags": [],
-        "style_checks_passed": true,
+        "flags": [
+          "near_identical_to_local_template",
+          "unchanged_deck"
+        ],
+        "style_penalty": 6,
+        "blocking_flags": [
+          "near_identical_to_local_template",
+          "unchanged_deck"
+        ],
+        "style_checks_passed": false,
         "human_editorial_assessment_required": true
       }
     }
