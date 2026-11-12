@@ -62,16 +62,16 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-11-12T03:17:52Z",
+    "generated_at": "2026-11-12T11:44:25Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
     "operational_label_en": "Physical passage exists, but flows are severely degraded",
-    "confidence": "MEDIA",
-    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
-    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+    "confidence": "BAJA",
+    "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
+    "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
@@ -254,24 +254,24 @@
     "event_ids": [
       "evt_9e699c6699332da2",
       "evt_27b1096f8234cf8c",
+      "evt_51d4a232a3d73434",
       "evt_738068aff7105a41",
-      "evt_5e0013cd24b43bfc",
+      "evt_57fc74fd6b5b080b",
+      "evt_d778f5a5094db6d5",
+      "evt_4fbeb37286d42d67",
       "evt_6a5adb34bf719854",
+      "evt_12674b014cf134a4",
+      "evt_f7b53227b42bc428",
+      "evt_2394961e3680f041",
       "evt_9450d2fd1badaeb3",
       "evt_6d88e5e9db506e50",
       "evt_ce0b3503e1005816",
       "evt_e4286a0ae8d00a05",
       "evt_ca36871050664bbd",
       "evt_1c1e51b17f390839",
-      "evt_addf0a69c4a755a0",
       "evt_bc3c6f0da25468cd",
       "evt_3ee201714b7b7040",
-      "evt_0267144843b56785",
-      "evt_51d4a232a3d73434",
-      "evt_4fbeb37286d42d67",
-      "evt_f4879d7f68a86afa",
-      "evt_9a36612f83f66216",
-      "evt_44701829d9e10df0"
+      "evt_0267144843b56785"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 6,
@@ -283,15 +283,16 @@
       "TOTAL": 60
     },
     "diagnostics": {
-      "signals_considered": 66,
+      "signals_considered": 55,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
       "event_count": 60,
-      "article_count_after_deduplication": 117,
+      "article_count_after_deduplication": 109,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-    }
+    },
+    "carried_forward": true
   },
   "canonical_assessment": {
     "engine": "operational-intelligence-v7",
@@ -299,7 +300,7 @@
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
-    "confidence": "MEDIA",
-    "generated_at": "2026-11-12T03:17:52Z"
+    "confidence": "BAJA",
+    "generated_at": "2026-11-12T11:44:25Z"
   }
 }
