@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-11-13T01:24:38Z",
-  "last_success_at": "2026-11-13T01:24:38Z",
+  "checked_at": "2026-11-13T08:40:37Z",
+  "last_success_at": "2026-11-13T08:40:37Z",
   "last_change_at": "2026-10-18T17:29:40Z",
   "verification_ok": true,
   "stale": false,
@@ -20,21 +20,10 @@
       "source_name": "The Guardian",
       "source_id": "guardian",
       "source_url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPRUZrbGx3VFdKNHM3cE1rX012RTJ5a0JXRFd5NTlpSm9kUV9JQm92QzJ0NFFQdm9RcG1kNUZXaVAzOTBGQXp5R0JFZnpnYXZPMFAyM3pndVVpd2NJZTRYQ0pYQlQ3LWVxUnFVOTNNRnlaMmwxSW9iUHZHSjZKNXBlWmpPQl9YTUpBT092dm4zRml2azV5bDI5dkM5cWtkeE5rcG9EeE0wYlplWkJVZ0tSSnEtRUgxdi1LVi1IMzhreWM2dTY3dDBUcjV5dG5BU05aUmFJVQ",
-      "published_at": "2026-11-12T19:31:00Z",
+      "published_at": "2026-11-13T02:30:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-11-13T01:24:38Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Hormuz tanker traffic hits wartime high as attacks surge - Lloyd's List",
-      "source_name": "Lloyd's List",
-      "source_id": "lloyds_list",
-      "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxON2hKcUZDakpwRzVEem1laUFPUkRiNlo1S2tnVnRoVTM3S3BwTWFLSDF1WmdpU2VHamhnV3BiWjFSNDBLS1dmZ1lnUmFUZ2dqYWRQdS1DUDhhSmFhaGdFMXdlaVRYSldDMFFjZ20zdmRkNWtvOVBKczViNHZPaWxSNU8ycGwzbHk1WmZ4eVpZNy1OOUhWbGRsMg",
-      "published_at": "2026-11-12T17:33:54Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-11-13T01:24:38Z"
+      "observed_at": "2026-11-13T08:40:37Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -45,7 +34,7 @@
       "published_at": "2026-11-12T16:27:35Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-13T01:24:38Z"
+      "observed_at": "2026-11-13T08:40:37Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -56,22 +45,32 @@
       "published_at": "2026-11-11T21:09:19Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-13T01:24:38Z"
+      "observed_at": "2026-11-13T08:40:37Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Robot vessels take on the dangerous work of mine hunting",
+      "source_name": "BBC",
+      "source_id": "bbc",
+      "source_url": "https://bbc.com/news/articles/cj5yn24llxd6o",
+      "published_at": "2026-11-11T05:30:00Z",
+      "tier": 3,
+      "official": false,
+      "observed_at": "2026-11-13T08:40:37Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
+      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [
-      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
-    ],
+    "providers_failed": [],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 13.7
+      "risk": 11.57
     },
     "independent_sources": {
       "open": 0,
@@ -80,7 +79,7 @@
       "risk": 4
     },
     "articles_considered": 25,
-    "signals_considered": 6,
+    "signals_considered": 8,
     "current_cycle_evidence": 4,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -88,7 +87,7 @@
   },
   "evidence_context": {
     "mode": "current",
-    "as_of": "2026-11-12T19:31:00Z",
+    "as_of": "2026-11-13T02:30:00Z",
     "current_cycle_count": 4,
     "heading_es": "Evidencias de esta comprobación",
     "heading_en": "Evidence from this check",
@@ -102,10 +101,10 @@
       "source_name": "The Guardian",
       "source_id": "guardian",
       "source_url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPRUZrbGx3VFdKNHM3cE1rX012RTJ5a0JXRFd5NTlpSm9kUV9JQm92QzJ0NFFQdm9RcG1kNUZXaVAzOTBGQXp5R0JFZnpnYXZPMFAyM3pndVVpd2NJZTRYQ0pYQlQ3LWVxUnFVOTNNRnlaMmwxSW9iUHZHSjZKNXBlWmpPQl9YTUpBT092dm4zRml2azV5bDI5dkM5cWtkeE5rcG9EeE0wYlplWkJVZ0tSSnEtRUgxdi1LVi1IMzhreWM2dTY3dDBUcjV5dG5BU05aUmFJVQ",
-      "published_at": "2026-11-12T19:31:00Z",
+      "published_at": "2026-11-13T02:30:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-11-13T01:24:38Z"
+      "observed_at": "2026-11-13T08:40:37Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -138,7 +137,7 @@
       "published_at": "2026-11-12T16:27:35Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-13T01:24:38Z"
+      "observed_at": "2026-11-13T08:40:37Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -160,7 +159,7 @@
       "published_at": "2026-11-11T21:09:19Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-13T01:24:38Z"
+      "observed_at": "2026-11-13T08:40:37Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -204,7 +203,7 @@
       "published_at": "2026-11-11T05:30:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-11-12T11:43:42Z"
+      "observed_at": "2026-11-13T08:40:37Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -760,52 +759,52 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-11-13T01:25:14Z",
+    "generated_at": "2026-11-13T08:41:01Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "operational_label_es": "Hay paso físico, pero el flujo está severamente degradado",
     "operational_label_en": "Physical passage exists, but flows are severely degraded",
-    "confidence": "BAJA",
-    "summary_es": "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado.",
-    "summary_en": "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours.",
+    "confidence": "MEDIA",
+    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
-      "access": "RESTRICTED",
+      "access": "SELECTIVE",
       "risk": "EXTREME",
       "legal": "CLOSURE_CLAIMED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
-      "access": "Restringido",
+      "access": "Selectivo / condicionado",
       "risk": "Extremo",
       "legal": "Cierre declarado por una parte"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
-      "access": "Restricted",
+      "access": "Selective / conditional",
       "risk": "Extreme",
       "legal": "Closure claimed by one party"
     },
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 4.033,
+      "passage": 3.36,
       "closure": 0,
-      "traffic_reduction": 0.9,
-      "access_restriction": 3.68,
-      "risk": 60.732
+      "traffic_reduction": 6.0,
+      "access_restriction": 7.42,
+      "risk": 62.524
     },
     "source_counts": {
       "passage": 5,
       "closure": 0,
       "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-11-10T22:23:48Z",
+    "latest_confirmed_transit_at": "2026-11-10T23:13:52Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -814,10 +813,44 @@
     "evidence": [
       {
         "kind": "RISK_SEVERE",
-        "title": "NEWSLETTER: Hormuz traffic is up. So are the attacks - Reuters",
+        "title": "Iran says tanker carrying LNG hit mine, suffered explosion in Hormuz - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPYjlBX041WVNOU3VBZEk1UVBkeDJQZ2tmNDFiTExBWUtNMldua215TURPWTU3aTFEbGhlcGRiSnFrX191UVpONXpMSjc5dlVhNVpDZzJWM25lNEtoSE4wSFZpTmtKX1BMWnpkSUdoNk9OeTd0SzFUa2NqdlVxcGpRQ2ZSZEcyTlN3MnRzbTlUZm9tVlU",
-        "published_at": "2026-11-11T16:12:11Z",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPbWY4UFhVeWZBSkUteDV4dHd0b3cyU3czTkdkU3ZLbU9zZzlhOGhTcDlDcTlmSVlKVUZFZDhwTWdmdG9zQkJHZ05jaXVad0ZpVGdsTHJvZ0VRT3Q4cXRMZFZ5cFpkR0Y5dmo4b3dlQ0F4RUVxZFFGanB4M1cxZmJlSERVQ0dQVDNWbVFVV2pJZ09XNG5DWlV2Zk4xdi1xRm9jUjhzVFl1akd1QQ",
+        "published_at": "2026-11-13T07:00:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "TRAFFIC_REDUCED",
+        "title": "Oil prices set for second weekly decline as Trump sticks with Iran blockade - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOa0ZTUUtQbXVySmRXLWtEc2xtZDk5RWkwa29OWlEyQjN3UXVzMkZTYzF3ajVoNkVXZnBnODVRTkN0b1ZwaVk4VE5KOXFqZktYbG1PN1RwdEtwS1ZEb3BBUEkxM2JtUl91NkxCMWpjbmxWV3RScndxMjJUcjh4dEpZM256Nl8tY19iWmp4OExndnRRaXQwdFRpMGRYRDFnNGQ1eEFhNEVrZjZwaW0tamJkLXFYa1I3V1EzbVE",
+        "published_at": "2026-11-13T03:01:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Tráfico reducido",
+        "kind_label_en": "Reduced traffic"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Four tankers struck by explosions in Strait of Hormuz, Iran says - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQcDQ2cWxyeTFpazFaX1ZNM2RoS0t2ZVpEa0JpMElTZVFMUElROEF5c20tMlU0dEszWFlEdkhfR2VOb3hEQmo3MjRtdVlSaEhkZnpKXzExbE5QcXItQ3Z6REoyY1Fpak9IUUplYWp6NTQ2UjBiNVk1WDN0MmJjaFRkOHNLdDYxMU9xOWhuMnVaTlNiVXJNTlhLYV9EZEpnd1oxYmF0cG82b2VkMURkYnkzZkZBX0hhWHM",
+        "published_at": "2026-11-12T16:27:35Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "legacy-engine",
@@ -831,27 +864,10 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Iran trade barbs with Kuwait at IMO over attacks on tankers - TradeWinds News",
+        "title": "Iran claims fresh VLCC strike as Strait of Hormuz attacks hit 50 ships in 45 days - TradeWinds News",
         "source": "TradeWinds",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQa2RYamZlT2lZX2ViMDhEUVYyaC0xNFpvR0o4Vzc2Tkd4NXhHcFdRM3c1VElCam91cXV3R2tGbkRMMXphQWQzSHhfakpSMVRoV3BMVXpJWm9GVzlzaXhmb1QwYUU2MjViODNtakhUTG1uZFA2S3JZYjN2a0VCdFZaRklxa2h6LXk3STFfV3NIQ3N1LTc4UDNVaE1zRHlrTXloSjFJcXNhUF8tVWpGZG55NV93",
-        "published_at": "2026-11-11T22:28:02Z",
-        "tier": 4,
-        "weight": 3.8,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.8,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Bahri product tanker linked to Hormuz ‘attack’ as Iran claims new ship hit - TradeWinds News",
-        "source": "TradeWinds",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPZTFveTF1SE83MkRqMGdUMUJvNE10MzhFUVMwRjkwRzE5OWxrdXg3Vjl3Vkh3LXVINlpUcEt4dGF0ZUd2WTJFazZ5cnUtWUVwOHFPcl9GdkZaaXBQanBJdXZ1bnlCaVlDQmJDNGdsajdKdG5UMElreXlLZlRyREo1eDduR1MwNkxsMElBaDJPX3pGUzdtTTVDemVoR2o5X2tNRUZuUC01UmJBbUE3WFRjZm1NOVFZZVYxTzFpY0RJMm1Gblg0dGc",
-        "published_at": "2026-11-11T17:30:12Z",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNMVdtWVV0MDNGOGhQTkVGSks2M1hvSW0tZjhMYmNSQjNFT0FXVHRyZnE1LUZ6RDV5c3F5cDRHNEFmWGoxNUtzRWJVbHlSUUo0VGg4emRuNUhaekRGM2RGdXpnZzJTR243MEdHLUhrSGlPbTdYb0RyZlBtWUhMczR2YXJLNi0zdmtha0JRa0lndFU2WmZrMjJfY2VaMW1sa1o2NG40S05neE50VDl4NEQzb1lVNV9xY21KLWJ3YzlGR0JtZkE",
+        "published_at": "2026-11-12T11:44:50Z",
         "tier": 4,
         "weight": 3.8,
         "provider": "Google News RSS",
@@ -865,10 +881,44 @@
       },
       {
         "kind": "RISK_SEVERE",
+        "title": "Oil settles $3 higher on attacks on Saudi energy sites, Strait of Hormuz disruptions - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSVNfOWE4dnhlMzA3cExiOE1nR0FNQXFJejNsQTExRExKTlVKNjNjcFRGMWQxMGNmYnNOWFdLaUp0OUo2SHFlNVoxMUo0Y21WazFhVmhZU1VxYlRuWVRfZEtiQ0NGWENEejFpMFRzaUtNbVV3TEhKUHp2aUc0SHJ2VkNzM1BHNU5VeGNNbnRldWZaZUFkTWdDNm9ibk5kQXlOQlRRWHRhdGk5ZEtPZjVjMjE1Q1BJaTZ1NmplRWJVSDlvRFBUQnc",
+        "published_at": "2026-11-12T01:52:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.6,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "NEWSLETTER: Hormuz traffic is up. So are the attacks - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPYjlBX041WVNOU3VBZEk1UVBkeDJQZ2tmNDFiTExBWUtNMldua215TURPWTU3aTFEbGhlcGRiSnFrX191UVpONXpMSjc5dlVhNVpDZzJWM25lNEtoSE4wSFZpTmtKX1BMWnpkSUdoNk9OeTd0SzFUa2NqdlVxcGpRQ2ZSZEcyTlN3MnRzbTlUZm9tVlU",
+        "published_at": "2026-11-11T16:12:11Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.6,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-11-12T03:17:52Z",
+        "published_at": "2026-11-13T08:41:01Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -882,10 +932,10 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "Robot vessels take on the dangerous work of mine hunting - BBC",
+        "title": "Robot vessels take on the dangerous work of mine hunting",
         "source": "BBC",
-        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE4yNE9ScXJEWUJHQjh6OThITFMtTl9STW9Ya0hMcWdUbnlST1ZhTGg1SzdsYW45U1Z4NHJjWENiXzJMdW5PZUl2cUtTYTJ0N0J2QnQ4N2otdDhLTU0",
-        "published_at": "2026-11-11T00:19:13Z",
+        "url": "https://bbc.com/news/articles/cj5yn24llxd6o",
+        "published_at": "2026-11-11T05:30:00Z",
         "tier": 3,
         "weight": 3.2,
         "provider": "legacy-engine",
@@ -893,104 +943,52 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 2.88,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Saudi Arabia reports new attack on key East-West pipeline - Al Jazeera",
-        "source": "Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPLUtUMTUxcHlqWWZsSmNOdkxic1NGY0VKejdJOHVMZWhRZzVWODZDOE1lcC1MQXFlYmZzQnZIQlUwWF9OdDg3UFZFQnBjYnhfZTQ1bVFiVWFGSkFGU3lNYmZQeEJhbGhwRDRHdGVXY3M5V1EtdVFCcUV2dlFiRDRLWG5SYmc2aHhVcGRsQnNYR2dFOVVvNUd0Zm9CY3JzemvSAaQBQVVfeXFMUFdBQWFtVTZqWlVBTXNERjlNVDBZZjI5bldxYU1sanBhNkluVk4tdHYza181cWNnODNhZnREWmpXS2RsdmROdi1UWmgxbk5FNWt0RFZTaXp6Ry0xdXVJZ2tYLUZVNkFCU1dhWmtXQ1AtUHk3X1F2Q1JMNjk4aEM2YmdWVEFUVy1ZTDkzd0FDYjVUWXpzV3A5RGstLUVIUUVfaktTMk8",
-        "published_at": "2026-11-09T22:18:07Z",
-        "tier": 2,
-        "weight": 2.4,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.872,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Tankers hit by projectiles in Strait of Hormuz; Iran reports further mine strikes - Riviera Maritime Media",
-        "source": "Riviera Maritime Media",
-        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQZHhmekZ0dVpQc1NWc3lxNDhtUUd3Q3Jlc29EZjN1NWVuSFFhekp0ZnlfMVA2NlIyY01vWjBhRlhkem50MXlqd29FczRNaEZsVUxsQ29aWldhVTdIei1meDhJMDB5S1U3NWU2TUtnZl9XUl9fMVEyWVdNeWM5QkVoS0NBY2ZLVmtsSDcybjFxcVVkN1BXV0k2WHdOd2NwRks2aWozSXBKSm9uSVB3cjVXRHdNS1ZPUlhjRkg3NjRMMDN3Y3cxYzVfamdTelc5T3VjN2JSb2ZLOXNyUXhDQmpR",
-        "published_at": "2026-11-12T00:00:00Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.0,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Iran says it struck navigation systems on Omani island in Strait of Hormuz - Mezha.net",
-        "source": "Mezha.net",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE91YXVRRDF5YzJZaE9hQ1ZRUkduT0J4QmZxZjdfdi0yaUFkcjNYdmNzYy1EeFpzMWc0UzNDQzFDT2JERGtNWUt5YU8ydEdHNmU2YThXVEdSVUpKaVFVcjdaTXZMNm1JbldqR3JGVGpIVHA1bFJuVzF4SGJtdw",
-        "published_at": "2026-11-11T23:18:44Z",
-        "tier": 1,
-        "weight": 1.0,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 1.0,
+        "effective_weight": 2.496,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_9e699c6699332da2",
+      "evt_83937f8e4183cc50",
+      "evt_51d4a232a3d73434",
+      "evt_e63b7589635c1435",
       "evt_22c7a32c3d650c93",
-      "evt_3e5f07d8ae988b2d",
-      "evt_57fc74fd6b5b080b",
-      "evt_f429c7eaa57904a0",
-      "evt_70bd11948e4063ea",
       "evt_d778f5a5094db6d5",
+      "evt_5e0013cd24b43bfc",
+      "evt_27b1096f8234cf8c",
+      "evt_3e5f07d8ae988b2d",
+      "evt_f429c7eaa57904a0",
       "evt_e5ca072f7dfb72f8",
+      "evt_e472aeeffe57eade",
       "evt_6d88e5e9db506e50",
       "evt_e0d073888c2fecdd",
-      "evt_83937f8e4183cc50",
       "evt_9450d2fd1badaeb3",
       "evt_e42eaa42d56701eb",
-      "evt_e472aeeffe57eade",
-      "evt_51d4a232a3d73434",
       "evt_838c2b3fc477029e",
       "evt_738068aff7105a41",
-      "evt_27b1096f8234cf8c",
-      "evt_6a5adb34bf719854",
-      "evt_12674b014cf134a4"
+      "evt_70bd11948e4063ea",
+      "evt_6a5adb34bf719854"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 4,
-      "SINGLE_SOURCE": 32,
-      "UNCONFIRMED": 23,
+      "SINGLE_SOURCE": 34,
+      "UNCONFIRMED": 21,
       "TOTAL": 64
     },
     "diagnostics": {
-      "signals_considered": 57,
+      "signals_considered": 67,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
       "event_count": 64,
-      "article_count_after_deduplication": 108,
+      "article_count_after_deduplication": 117,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
-    },
-    "carried_forward": true
+    }
   },
   "canonical_assessment": {
     "engine": "operational-intelligence-v7",
@@ -998,7 +996,7 @@
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
-    "confidence": "BAJA",
-    "generated_at": "2026-11-13T01:25:14Z"
+    "confidence": "MEDIA",
+    "generated_at": "2026-11-13T08:41:01Z"
   }
 }
