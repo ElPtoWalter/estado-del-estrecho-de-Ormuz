@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-11-13T17:20:25Z",
+  "generated_at": "2026-11-13T22:48:56Z",
   "state": "OPEN_SEVERELY_RESTRICTED",
   "family": "OPEN",
   "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -13,35 +13,35 @@
   "dimensions": {
     "passage": "PASSAGE_CONFIRMED",
     "traffic": "REDUCED",
-    "access": "SELECTIVE",
+    "access": "RESTRICTED",
     "risk": "EXTREME",
     "legal": "CLOSURE_CLAIMED"
   },
   "dimension_labels_es": {
     "passage": "Confirmado",
     "traffic": "Reducido",
-    "access": "Selectivo / condicionado",
+    "access": "Restringido",
     "risk": "Extremo",
     "legal": "Cierre declarado por una parte"
   },
   "dimension_labels_en": {
     "passage": "Confirmed",
     "traffic": "Reduced",
-    "access": "Selective / conditional",
+    "access": "Restricted",
     "risk": "Extreme",
     "legal": "Closure claimed by one party"
   },
   "traffic_ratio_estimate": null,
   "traffic_snapshot": null,
   "scores": {
-    "passage": 6.47,
+    "passage": 5.718,
     "closure": 0,
-    "traffic_reduction": 5.0,
-    "access_restriction": 7.8,
-    "risk": 72.376
+    "traffic_reduction": 0,
+    "access_restriction": 3.56,
+    "risk": 77.516
   },
   "source_counts": {
-    "passage": 8,
+    "passage": 7,
     "closure": 0,
     "primary_sources": 3
   },
@@ -54,10 +54,10 @@
   "evidence": [
     {
       "kind": "RISK_SEVERE",
-      "title": "Iran says tanker carrying LNG hit mine, suffered explosion in Hormuz - Reuters",
+      "title": "Iran's IRGC says two tankers hit sea mines in Hormuz - Reuters",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPbWY4UFhVeWZBSkUteDV4dHd0b3cyU3czTkdkU3ZLbU9zZzlhOGhTcDlDcTlmSVlKVUZFZDhwTWdmdG9zQkJHZ05jaXVad0ZpVGdsTHJvZ0VRT3Q4cXRMZFZ5cFpkR0Y5dmo4b3dlQ0F4RUVxZFFGanB4M1cxZmJlSERVQ0dQVDNWbVFVV2pJZ09XNG5DWlV2Zk4xdi1xRm9jUjhzVFl1akd1QQ",
-      "published_at": "2026-11-13T07:00:00Z",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOWVUydG1mRVVtRzVScWR6N19NejF5VXVuUDlqaGxSSHdJN1hmYlBtZHRJMDNWbUJVSUMyRTBRM252dzFjSmtZOHlLYmg4Y2pqLXVrSndiS3dVLWVBa0tESWJtZW05MUprVkpXTE5sQXV0aXJRR1dQQ3FmWHk0SHpoSmQzRUZmRFZCaXdjLURicWxtRk1tSnZ1dEM2UTI1b1RmTzdwRw",
+      "published_at": "2026-11-13T21:14:55Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "legacy-engine",
@@ -70,11 +70,11 @@
       "kind_label_en": "Severe risk"
     },
     {
-      "kind": "TRAFFIC_REDUCED",
-      "title": "Oil prices set for second weekly decline as Trump sticks with Iran blockade - Reuters",
+      "kind": "RISK_SEVERE",
+      "title": "Iran says tanker carrying LNG hit mine, suffered explosion in Hormuz - Reuters",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOa0ZTUUtQbXVySmRXLWtEc2xtZDk5RWkwa29OWlEyQjN3UXVzMkZTYzF3ajVoNkVXZnBnODVRTkN0b1ZwaVk4VE5KOXFqZktYbG1PN1RwdEtwS1ZEb3BBUEkxM2JtUl91NkxCMWpjbmxWV3RScndxMjJUcjh4dEpZM256Nl8tY19iWmp4OExndnRRaXQwdFRpMGRYRDFnNGQ1eEFhNEVrZjZwaW0tamJkLXFYa1I3V1EzbVE",
-      "published_at": "2026-11-13T03:01:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPbWY4UFhVeWZBSkUteDV4dHd0b3cyU3czTkdkU3ZLbU9zZzlhOGhTcDlDcTlmSVlKVUZFZDhwTWdmdG9zQkJHZ05jaXVad0ZpVGdsTHJvZ0VRT3Q4cXRMZFZ5cFpkR0Y5dmo4b3dlQ0F4RUVxZFFGanB4M1cxZmJlSERVQ0dQVDNWbVFVV2pJZ09XNG5DWlV2Zk4xdi1xRm9jUjhzVFl1akd1QQ",
+      "published_at": "2026-11-13T07:00:00Z",
       "tier": 4,
       "weight": 4.0,
       "provider": "Google News RSS",
@@ -83,8 +83,8 @@
       "traffic_count": null,
       "traffic_average": null,
       "effective_weight": 4.0,
-      "kind_label_es": "Tráfico reducido",
-      "kind_label_en": "Reduced traffic"
+      "kind_label_es": "Riesgo severo",
+      "kind_label_en": "Severe risk"
     },
     {
       "kind": "RISK_SEVERE",
@@ -99,7 +99,7 @@
       "traffic_ratio": null,
       "traffic_count": null,
       "traffic_average": null,
-      "effective_weight": 4.0,
+      "effective_weight": 3.6,
       "kind_label_es": "Riesgo severo",
       "kind_label_en": "Severe risk"
     },
@@ -139,7 +139,7 @@
     },
     {
       "kind": "RISK_SEVERE",
-      "title": "Sinokor VLCC evacuated as Strait of Hormuz attacks hit 50 ships in 45 days - TradeWinds News",
+      "title": "Iran claims fresh VLCC strike as Strait of Hormuz attacks hit 50 ships in 45 days - TradeWinds News",
       "source": "TradeWinds",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNMVdtWVV0MDNGOGhQTkVGSks2M1hvSW0tZjhMYmNSQjNFT0FXVHRyZnE1LUZ6RDV5c3F5cDRHNEFmWGoxNUtzRWJVbHlSUUo0VGg4emRuNUhaekRGM2RGdXpnZzJTR243MEdHLUhrSGlPbTdYb0RyZlBtWUhMczR2YXJLNi0zdmtha0JRa0lndFU2WmZrMjJfY2VaMW1sa1o2NG40S05neE50VDl4NEQzb1lVNV9xY21KLWJ3YzlGR0JtZkE",
       "published_at": "2026-11-12T11:44:50Z",
@@ -176,7 +176,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source": "Lloyd's List",
       "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-11-13T17:20:25Z",
+      "published_at": "2026-11-13T22:48:56Z",
       "tier": 4,
       "weight": 3.0,
       "provider": "Lloyd's List hot topic",
@@ -191,42 +191,42 @@
   ],
   "event_ids": [
     "evt_9e699c6699332da2",
-    "evt_57fc74fd6b5b080b",
+    "evt_6dde2a4dbe98ae00",
+    "evt_5e0013cd24b43bfc",
+    "evt_e42eaa42d56701eb",
+    "evt_bd91c3e139684996",
+    "evt_4e95ce1da0fedc0c",
+    "evt_fcc19b731d967235",
+    "evt_9450d2fd1badaeb3",
+    "evt_22c7a32c3d650c93",
     "evt_0a72e93be17ff564",
+    "evt_7cd8b42db37d3023",
     "evt_71aeb01269b2f3cd",
+    "evt_0db0f8def9f9fac6",
     "evt_51d4a232a3d73434",
     "evt_3c268f242c80dcea",
     "evt_d34424e451654655",
     "evt_f2f0ae52f7003860",
     "evt_6bc9df49cb6eacc7",
-    "evt_22c7a32c3d650c93",
-    "evt_699b972f0a10678c",
-    "evt_e63b7589635c1435",
-    "evt_d778f5a5094db6d5",
-    "evt_760db8e42c7d859d",
-    "evt_7cd8b42db37d3023",
-    "evt_27b1096f8234cf8c",
-    "evt_3e5f07d8ae988b2d",
-    "evt_e5ca072f7dfb72f8",
-    "evt_e472aeeffe57eade",
-    "evt_6d88e5e9db506e50"
+    "evt_37aac34cb9f991f6",
+    "evt_699b972f0a10678c"
   ],
   "verification_summary": {
     "CONFIRMED_MULTI_SOURCE": 4,
     "CONFIRMED_PRIMARY": 0,
     "CONFLICTING": 0,
-    "DECLARATION_ONLY": 4,
-    "SINGLE_SOURCE": 35,
-    "UNCONFIRMED": 25,
-    "TOTAL": 68
+    "DECLARATION_ONLY": 5,
+    "SINGLE_SOURCE": 33,
+    "UNCONFIRMED": 27,
+    "TOTAL": 69
   },
   "diagnostics": {
-    "signals_considered": 76,
+    "signals_considered": 74,
     "provider_errors": [],
     "offline": false,
     "baseline_vessels_per_day": 138.0,
-    "event_count": 68,
-    "article_count_after_deduplication": 123,
+    "event_count": 69,
+    "article_count_after_deduplication": 120,
     "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
     "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
   }
