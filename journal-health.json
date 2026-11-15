@@ -1,35 +1,167 @@
 {
   "version": 11,
-  "generated_at": "2026-11-14T12:32:34Z",
+  "generated_at": "2026-11-15T12:58:41Z",
   "ok": true,
-  "date": "2026-11-14",
-  "material_score": 0,
-  "material_archive": false,
-  "news_considered": 18,
-  "new_articles": 13,
-  "source_brands": 8,
+  "date": "2026-11-15",
+  "material_score": 4,
+  "material_archive": true,
+  "news_considered": 12,
+  "new_articles": 5,
+  "source_brands": 3,
   "fetch_errors": [],
   "operational_intelligence_used": true,
-  "editor_engine": "rules",
-  "editor_assistant_status": "gemini-http-503",
+  "editor_engine": "gemini",
+  "editor_assistant_status": "partial-fallback",
   "editorial_trace": {
     "validator_version": 10,
-    "factual_packet_sha256": "37e4a0420583d9d544fbba8d2991e34d4de2169a4dffc6876913e9a9064ed85a",
-    "provider": "rules",
-    "status": "gemini-http-503",
+    "factual_packet_sha256": "bd8e416e3f9367c4caa181fb00a6c2e80db22dd3048282a14badc1c9e50a13e3",
+    "provider": "gemini",
+    "status": "partial-fallback",
     "attempts": [
+      {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite"
+      },
       {
         "provider": "gemini",
         "model": "gemini-3.5-flash-lite"
       }
     ],
-    "factual_packet_hash": "37e4a0420583d9d544fbba8d2991e34d4de2169a4dffc6876913e9a9064ed85a",
+    "validation_diagnostics": {
+      "language": "es",
+      "reason": "unseen-entity",
+      "value": "guardia revolucionaria islámica"
+    },
+    "field_fallbacks": [
+      "es.sections.0.paragraph",
+      "en.sections.0.paragraph"
+    ],
+    "full_output_validated": true,
+    "initial_field_fallbacks": [
+      "es.sections.0.paragraph",
+      "en.sections.0.paragraph"
+    ],
+    "initial_validation_diagnostics": {
+      "language": "es",
+      "reason": "unseen-entity",
+      "value": "guardia revolucionaria islámica"
+    },
+    "style_revision": {
+      "attempted": true,
+      "adopted": false,
+      "initial_quality": {
+        "es": {
+          "word_count": 438,
+          "template_similarity": 0.742,
+          "repeated_sentence_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "flags": [
+            "repeated_sentence_across_fields"
+          ],
+          "style_penalty": 5,
+          "blocking_flags": [
+            "repeated_sentence_across_fields"
+          ],
+          "style_checks_passed": false,
+          "human_editorial_assessment_required": true
+        },
+        "en": {
+          "word_count": 360,
+          "template_similarity": 0.741,
+          "repeated_sentence_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "flags": [
+            "repeated_sentence_across_fields"
+          ],
+          "style_penalty": 5,
+          "blocking_flags": [
+            "repeated_sentence_across_fields"
+          ],
+          "style_checks_passed": false,
+          "human_editorial_assessment_required": true
+        }
+      },
+      "candidate_quality": {
+        "es": {
+          "word_count": 438,
+          "template_similarity": 0.742,
+          "repeated_sentence_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "flags": [
+            "repeated_sentence_across_fields"
+          ],
+          "style_penalty": 5,
+          "blocking_flags": [
+            "repeated_sentence_across_fields"
+          ],
+          "style_checks_passed": false,
+          "human_editorial_assessment_required": true
+        },
+        "en": {
+          "word_count": 376,
+          "template_similarity": 0.621,
+          "repeated_sentence_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "flags": [
+            "repeated_sentence_across_fields"
+          ],
+          "style_penalty": 5,
+          "blocking_flags": [
+            "repeated_sentence_across_fields"
+          ],
+          "style_checks_passed": false,
+          "human_editorial_assessment_required": true
+        }
+      },
+      "valid_against_original_packet": true,
+      "same_factual_packet": true
+    },
+    "factual_packet_hash": "bd8e416e3f9367c4caa181fb00a6c2e80db22dd3048282a14badc1c9e50a13e3",
     "event_ids": [
       "evt_9e699c6699332da2",
-      "evt_51d4a232a3d73434",
-      "evt_603c0b04e87313ca",
-      "evt_e42eaa42d56701eb",
+      "evt_87d3913fb527b6ca",
       "evt_5fdcb828fbe2f2ad",
+      "evt_603c0b04e87313ca",
       "evt_fcc19b731d967235",
       "evt_3ced840ff7ca4d9c",
       "evt_f2f0ae52f7003860",
@@ -39,19 +171,24 @@
       "evt_6d88e5e9db506e50",
       "evt_e0d073888c2fecdd",
       "evt_838c2b3fc477029e",
-      "evt_4e95ce1da0fedc0c",
       "evt_6a5adb34bf719854",
       "evt_12674b014cf134a4",
       "evt_f7b53227b42bc428",
       "evt_e4286a0ae8d00a05",
-      "evt_ca36871050664bbd"
+      "evt_ca36871050664bbd",
+      "evt_9a36612f83f66216",
+      "evt_37aac34cb9f991f6"
     ],
     "source_ids": [
       "aljazeera",
+      "bbc",
       "bloomberg",
+      "cnbc",
       "guardian",
       "lloyds_list",
+      "national_security_journal",
       "reuters",
+      "sunday_guardian",
       "tradewinds",
       "unknown"
     ],
@@ -59,42 +196,60 @@
       "CONFIRMED_MULTI_SOURCE": 4,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 5,
-      "SINGLE_SOURCE": 35,
+      "DECLARATION_ONLY": 4,
+      "SINGLE_SOURCE": 32,
       "UNCONFIRMED": 26,
-      "TOTAL": 70
+      "TOTAL": 66
     },
-    "timestamp": "2026-11-14T12:32:34Z",
+    "timestamp": "2026-11-15T12:58:41Z",
     "fallback_used": true,
     "editorial_quality": {
       "es": {
-        "word_count": 422,
-        "template_similarity": 1.0,
-        "repeated_sentence_pairs": [],
-        "flags": [
-          "near_identical_to_local_template",
-          "unchanged_deck"
+        "word_count": 438,
+        "template_similarity": 0.742,
+        "repeated_sentence_pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
         ],
-        "style_penalty": 6,
+        "flags": [
+          "repeated_sentence_across_fields"
+        ],
+        "style_penalty": 5,
         "blocking_flags": [
-          "near_identical_to_local_template",
-          "unchanged_deck"
+          "repeated_sentence_across_fields"
         ],
         "style_checks_passed": false,
         "human_editorial_assessment_required": true
       },
       "en": {
-        "word_count": 354,
-        "template_similarity": 1.0,
-        "repeated_sentence_pairs": [],
-        "flags": [
-          "near_identical_to_local_template",
-          "unchanged_deck"
+        "word_count": 360,
+        "template_similarity": 0.741,
+        "repeated_sentence_pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
         ],
-        "style_penalty": 6,
+        "flags": [
+          "repeated_sentence_across_fields"
+        ],
+        "style_penalty": 5,
         "blocking_flags": [
-          "near_identical_to_local_template",
-          "unchanged_deck"
+          "repeated_sentence_across_fields"
         ],
         "style_checks_passed": false,
         "human_editorial_assessment_required": true
