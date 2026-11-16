@@ -1,27 +1,23 @@
 {
   "version": 11,
-  "generated_at": "2026-11-15T12:58:41Z",
+  "generated_at": "2026-11-16T14:02:00Z",
   "ok": true,
-  "date": "2026-11-15",
-  "material_score": 4,
+  "date": "2026-11-16",
+  "material_score": 7,
   "material_archive": true,
-  "news_considered": 12,
-  "new_articles": 5,
-  "source_brands": 3,
+  "news_considered": 17,
+  "new_articles": 15,
+  "source_brands": 9,
   "fetch_errors": [],
   "operational_intelligence_used": true,
   "editor_engine": "gemini",
   "editor_assistant_status": "partial-fallback",
   "editorial_trace": {
     "validator_version": 10,
-    "factual_packet_sha256": "bd8e416e3f9367c4caa181fb00a6c2e80db22dd3048282a14badc1c9e50a13e3",
+    "factual_packet_sha256": "0752dc779e451baf9ad9bdf0e69da04a6223595ec479d133526af82f3e399bf7",
     "provider": "gemini",
     "status": "partial-fallback",
     "attempts": [
-      {
-        "provider": "gemini",
-        "model": "gemini-3.5-flash-lite"
-      },
       {
         "provider": "gemini",
         "model": "gemini-3.5-flash-lite"
@@ -29,141 +25,30 @@
     ],
     "validation_diagnostics": {
       "language": "es",
-      "reason": "unseen-entity",
-      "value": "guardia revolucionaria islámica"
+      "reason": "section-headline-grounding"
     },
     "field_fallbacks": [
       "es.sections.0.paragraph",
-      "en.sections.0.paragraph"
+      "es.sections.1.paragraph",
+      "es.sections.2.paragraph",
+      "en.sections.0.paragraph",
+      "en.sections.2.paragraph"
     ],
     "full_output_validated": true,
-    "initial_field_fallbacks": [
-      "es.sections.0.paragraph",
-      "en.sections.0.paragraph"
-    ],
-    "initial_validation_diagnostics": {
-      "language": "es",
-      "reason": "unseen-entity",
-      "value": "guardia revolucionaria islámica"
-    },
-    "style_revision": {
-      "attempted": true,
-      "adopted": false,
-      "initial_quality": {
-        "es": {
-          "word_count": 438,
-          "template_similarity": 0.742,
-          "repeated_sentence_pairs": [
-            [
-              0,
-              1
-            ],
-            [
-              0,
-              1
-            ],
-            [
-              0,
-              2
-            ]
-          ],
-          "flags": [
-            "repeated_sentence_across_fields"
-          ],
-          "style_penalty": 5,
-          "blocking_flags": [
-            "repeated_sentence_across_fields"
-          ],
-          "style_checks_passed": false,
-          "human_editorial_assessment_required": true
-        },
-        "en": {
-          "word_count": 360,
-          "template_similarity": 0.741,
-          "repeated_sentence_pairs": [
-            [
-              0,
-              1
-            ],
-            [
-              0,
-              2
-            ]
-          ],
-          "flags": [
-            "repeated_sentence_across_fields"
-          ],
-          "style_penalty": 5,
-          "blocking_flags": [
-            "repeated_sentence_across_fields"
-          ],
-          "style_checks_passed": false,
-          "human_editorial_assessment_required": true
-        }
-      },
-      "candidate_quality": {
-        "es": {
-          "word_count": 438,
-          "template_similarity": 0.742,
-          "repeated_sentence_pairs": [
-            [
-              0,
-              1
-            ],
-            [
-              0,
-              1
-            ],
-            [
-              0,
-              2
-            ]
-          ],
-          "flags": [
-            "repeated_sentence_across_fields"
-          ],
-          "style_penalty": 5,
-          "blocking_flags": [
-            "repeated_sentence_across_fields"
-          ],
-          "style_checks_passed": false,
-          "human_editorial_assessment_required": true
-        },
-        "en": {
-          "word_count": 376,
-          "template_similarity": 0.621,
-          "repeated_sentence_pairs": [
-            [
-              0,
-              1
-            ],
-            [
-              0,
-              2
-            ]
-          ],
-          "flags": [
-            "repeated_sentence_across_fields"
-          ],
-          "style_penalty": 5,
-          "blocking_flags": [
-            "repeated_sentence_across_fields"
-          ],
-          "style_checks_passed": false,
-          "human_editorial_assessment_required": true
-        }
-      },
-      "valid_against_original_packet": true,
-      "same_factual_packet": true
-    },
-    "factual_packet_hash": "bd8e416e3f9367c4caa181fb00a6c2e80db22dd3048282a14badc1c9e50a13e3",
+    "factual_packet_hash": "0752dc779e451baf9ad9bdf0e69da04a6223595ec479d133526af82f3e399bf7",
     "event_ids": [
       "evt_9e699c6699332da2",
-      "evt_87d3913fb527b6ca",
+      "evt_f0c30f313e346012",
+      "evt_07f3de65ef4e7930",
+      "evt_3ced840ff7ca4d9c",
+      "evt_12674b014cf134a4",
+      "evt_921a30b438f9a74d",
+      "evt_2b05b6f057558ea8",
+      "evt_7647fcd295bc0921",
       "evt_5fdcb828fbe2f2ad",
       "evt_603c0b04e87313ca",
       "evt_fcc19b731d967235",
-      "evt_3ced840ff7ca4d9c",
+      "evt_351c97537d5fb3b8",
       "evt_f2f0ae52f7003860",
       "evt_699b972f0a10678c",
       "evt_d778f5a5094db6d5",
@@ -171,13 +56,7 @@
       "evt_6d88e5e9db506e50",
       "evt_e0d073888c2fecdd",
       "evt_838c2b3fc477029e",
-      "evt_6a5adb34bf719854",
-      "evt_12674b014cf134a4",
-      "evt_f7b53227b42bc428",
-      "evt_e4286a0ae8d00a05",
-      "evt_ca36871050664bbd",
-      "evt_9a36612f83f66216",
-      "evt_37aac34cb9f991f6"
+      "evt_6a5adb34bf719854"
     ],
     "source_ids": [
       "aljazeera",
@@ -186,72 +65,40 @@
       "cnbc",
       "guardian",
       "lloyds_list",
-      "national_security_journal",
       "reuters",
-      "sunday_guardian",
       "tradewinds",
       "unknown"
     ],
     "verification_summary": {
-      "CONFIRMED_MULTI_SOURCE": 4,
+      "CONFIRMED_MULTI_SOURCE": 3,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 4,
-      "SINGLE_SOURCE": 32,
-      "UNCONFIRMED": 26,
+      "SINGLE_SOURCE": 37,
+      "UNCONFIRMED": 22,
       "TOTAL": 66
     },
-    "timestamp": "2026-11-15T12:58:41Z",
+    "timestamp": "2026-11-16T14:02:00Z",
     "fallback_used": true,
     "editorial_quality": {
       "es": {
-        "word_count": 438,
-        "template_similarity": 0.742,
-        "repeated_sentence_pairs": [
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            2
-          ]
-        ],
-        "flags": [
-          "repeated_sentence_across_fields"
-        ],
-        "style_penalty": 5,
-        "blocking_flags": [
-          "repeated_sentence_across_fields"
-        ],
-        "style_checks_passed": false,
+        "word_count": 386,
+        "template_similarity": 0.893,
+        "repeated_sentence_pairs": [],
+        "flags": [],
+        "style_penalty": 0,
+        "blocking_flags": [],
+        "style_checks_passed": true,
         "human_editorial_assessment_required": true
       },
       "en": {
-        "word_count": 360,
-        "template_similarity": 0.741,
-        "repeated_sentence_pairs": [
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            2
-          ]
-        ],
-        "flags": [
-          "repeated_sentence_across_fields"
-        ],
-        "style_penalty": 5,
-        "blocking_flags": [
-          "repeated_sentence_across_fields"
-        ],
-        "style_checks_passed": false,
+        "word_count": 321,
+        "template_similarity": 0.775,
+        "repeated_sentence_pairs": [],
+        "flags": [],
+        "style_penalty": 0,
+        "blocking_flags": [],
+        "style_checks_passed": true,
         "human_editorial_assessment_required": true
       }
     }
