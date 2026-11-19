@@ -109,6 +109,14 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(result["checked_at"], self.a["generated_at"])
         self.assertTrue(result["stale"])
 
+    def test_brief_detects_v7_substate_changes_hidden_by_the_legacy_label(self):
+        first={"canonical_assessment":assessment("OPEN_RESTRICTED"),"operational_status":"OPEN_RESTRICTED","confidence":"MEDIA"}
+        second={**first,"canonical_assessment":assessment("OPEN_SEVERELY_RESTRICTED")}
+        self.assertNotEqual(brief.brief_key(first),brief.brief_key(second))
+        second={**first,"canonical_assessment":copy.deepcopy(first["canonical_assessment"])}
+        second["canonical_assessment"]["dimensions"]["risk"]="EXTREME"
+        self.assertNotEqual(brief.brief_key(first),brief.brief_key(second))
+
     def test_frozen_brief_is_bilingual_safe_and_not_indexable(self):
         record = {"date": "2026-11-19", "generated_at": self.a["generated_at"], "source_checked_at": self.a["generated_at"],
                   "operational_label_es": "<closed>", "operational_label_en": "<closed>", "evidence": [
