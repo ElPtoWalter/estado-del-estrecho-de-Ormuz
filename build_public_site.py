@@ -886,19 +886,31 @@ def repair_public_navigation(document: str, filename: str) -> str:
 
 def sanitize_html(document: str, filename: str) -> str:
     lang = lang_for(filename, document)
+    brand_count = 0
     def name_brand_link(match):
+        nonlocal brand_count
         anchor = match[0]
         opening = anchor[:anchor.index(">")+1]
         classes = re.search(r'class=["\x27]([^"\x27]+)', opening)
         if classes and "brand" in classes[1].split():
             inner = anchor[len(opening):-4]
-            inner = re.sub(r"<svg\b.*?</svg>", "", inner, flags=re.S|re.I)
-            visible = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", inner))).strip() or "Estrecho Ormuz"
-            label = html.escape(visible + (" — Inicio" if lang == "es" else " — Home"), quote=True)
             existing = re.search(r'aria-label=["\x27]([^"\x27]*)["\x27]', opening)
-            if existing and existing[1].startswith("Estrecho Ormuz"):
-                return opening[:existing.start()] + 'aria-label="' + label + '"' + opening[existing.end():] + anchor[len(opening):]
-            if not re.search(r'aria-label(?:ledby)?=', opening):
+            if re.search(r'aria-labelledby=', opening) or (existing and not existing[1].lower().startswith("estrecho ormuz")):
+                return anchor
+            if existing:
+                opening = opening[:existing.start()] + opening[existing.end():]
+            copy = re.search(r'<span\b[^>]*class=["\x27][^"\x27]*\bbrand-copy\b[^"\x27]*["\x27][^>]*>',inner)
+            if copy:
+                brand_count += 1
+                label_id = "brand-readable-" + str(brand_count)
+                id_attr = re.search(r'\bid=["\x27]([^"\x27]+)',copy[0])
+                if id_attr:
+                    label_id = id_attr[1]
+                else:
+                    inner = inner[:copy.start()] + copy[0][:-1] + ' id="' + label_id + '">' + inner[copy.end():]
+                return opening[:-1] + ' aria-labelledby="' + label_id + '">' + inner + "</a>"
+            else:
+                label = "Estrecho Ormuz — Inicio" if lang == "es" else "Estrecho Ormuz — Home"
                 return opening[:-1] + ' aria-label="' + label + '">' + anchor[len(opening):]
         return anchor
     document = re.sub(r"<a\b[^>]*>.*?</a>", name_brand_link, document, flags=re.S)
