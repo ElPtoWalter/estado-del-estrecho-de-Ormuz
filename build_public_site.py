@@ -887,18 +887,21 @@ def repair_public_navigation(document: str, filename: str) -> str:
 def sanitize_html(document: str, filename: str) -> str:
     lang = lang_for(filename, document)
     def name_brand_link(match):
-        opening = match[0]
+        anchor = match[0]
+        opening = anchor[:anchor.index(">")+1]
         classes = re.search(r'class=["\x27]([^"\x27]+)', opening)
         if classes and "brand" in classes[1].split():
-            label = ("Estrecho Ormuz — Inteligencia marítima y energética — Inicio" if lang == "es"
-                     else "Estrecho Ormuz — Maritime &amp; energy intelligence — Home")
+            inner = anchor[len(opening):-4]
+            inner = re.sub(r"<svg\b.*?</svg>", "", inner, flags=re.S|re.I)
+            visible = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", inner))).strip() or "Estrecho Ormuz"
+            label = html.escape(visible + (" — Inicio" if lang == "es" else " — Home"), quote=True)
             existing = re.search(r'aria-label=["\x27]([^"\x27]*)["\x27]', opening)
             if existing and existing[1].startswith("Estrecho Ormuz"):
-                return opening[:existing.start()] + 'aria-label="' + label + '"' + opening[existing.end():]
+                return opening[:existing.start()] + 'aria-label="' + label + '"' + opening[existing.end():] + anchor[len(opening):]
             if not re.search(r'aria-label(?:ledby)?=', opening):
-                return opening[:-1] + ' aria-label="' + label + '">'
-        return opening
-    document = re.sub(r"<a\b[^>]*>", name_brand_link, document)
+                return opening[:-1] + ' aria-label="' + label + '">' + anchor[len(opening):]
+        return anchor
+    document = re.sub(r"<a\b[^>]*>.*?</a>", name_brand_link, document, flags=re.S)
     document = prerender(document, filename)
     document = strip_private_scripts(document)
     document = remove_private_links(document)
