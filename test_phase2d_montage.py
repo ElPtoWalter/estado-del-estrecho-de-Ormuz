@@ -162,6 +162,16 @@ class MontageTests(unittest.TestCase):
         self.assertIn("actions: read", text)
         self.assertNotIn("  schedule:", text)
         self.assertNotIn("  push:", text)
+
+    def test_pr_ci_runs_full_local_integration_and_manual_real_audio_keeps_hash_guards(self):
+        text=(montage.REPO_ROOT/".github/workflows/phase2d-montage-ci.yml").read_text(encoding="utf-8")
+        self.assertIn("assert tests.HAS_PILLOW and tests.HAS_TOOLS",text)
+        self.assertIn("python -m unittest discover -v",text)
+        self.assertEqual(text.count("if: github.event_name == 'workflow_dispatch'"),3)
+        self.assertIn('[[ "$EXPECTED_AUDIO_SHA256" =~ ^[a-f0-9]{64}$ ]]',text)
+        self.assertIn('--expected-audio-sha256 "$EXPECTED_WAV_SHA256"',text)
+        self.assertNotIn("36980491324",text)
+        self.assertNotIn("continue-on-error",text)
         self.assertNotIn("contents: write", text)
         self.assertNotIn("secrets.GEMINI", text)
         self.assertNotIn("pilot_phase2b_voice.py", text)

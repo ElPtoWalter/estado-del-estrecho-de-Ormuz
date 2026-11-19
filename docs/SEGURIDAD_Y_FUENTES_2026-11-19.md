@@ -12,6 +12,7 @@ Propuesta dependiente de la reparación P0. No cambia clasificación, datos oper
 - El configurador de inserción limita idioma y tema a valores conocidos; el código copiable usa textContent.
 - Se mantienen mapas externos bajo acción del lector. No se añade analítica, CMP ni formulario de captación.
 - Se contrastó el TAR del último despliegue con la construcción: upload-pages-artifact v5 excluía por defecto .well-known/security.txt. Se habilita su inclusión tras una lista exacta de ocultos autorizados; cualquier otro oculto o enlace simbólico bloquea la auditoría. La CI comprueba los nombres y bytes del TAR de Pages sin desplegar. El contacto ya existe en la fuente y no se modifica.
+- La CI adicional de montaje dependía de un artefacto de voz caducado. Las PR ejecutan la integración completa ya existente con fixture sintética, FFmpeg real y controles de audio, caché y corrupción; se exige que las herramientas estén disponibles. La revalidación de voz real se conserva para workflow_dispatch, con run/artefacto explícitos del mismo repositorio y SHA256 obligatorio. No se presenta la fixture sintética como voz Gemini validada, ni se genera TTS o aprobación humana nueva.
 
 ## Trazabilidad editorial
 
