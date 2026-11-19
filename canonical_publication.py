@@ -105,6 +105,8 @@ def validate(root, *, require_fresh=False, now=None):
     a = canonical(root)
     brief = read(Path(root) / "daily-brief.json", {})
     errors = []
+    from editorial_evidence_audit import confidence_errors
+    errors.extend(confidence_errors(a))
     if brief.get("assessment_id") != assessment_id(a):
         errors.append("Daily brief does not match the canonical assessment")
     if brief.get("source_checked_at") != (a.get("verified_at") or a.get("generated_at")):
