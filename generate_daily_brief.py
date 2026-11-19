@@ -12,6 +12,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
+from canonical_publication import assessment_id, age_hours, material_key, MAX_AGE_HOURS
 
 ROOT = Path(os.getenv("ORMUZ_ROOT", Path(__file__).resolve().parent))
 try:
@@ -93,9 +94,18 @@ def risk_lists(data: dict[str, Any], evidence: list[dict[str, Any]]) -> tuple[li
     watch_en=["Official maritime notices and independent operational confirmations.","Completed vessel tracks and actual continuity of crossings, not isolated AIS points.","Changes in restrictions, insurance, escorts, ports and crew availability."]
     return risks_es,risks_en,watch_es,watch_en
 
+def brief_key(item: dict[str, Any]) -> tuple:
+    assessment = item.get("canonical_assessment")
+    if not isinstance(assessment, dict) or not assessment.get("state"):
+        assessment = {"state": item.get("operational_status") or item.get("status"),
+                      "confidence": item.get("confidence"), "dimensions": {}}
+    return material_key(assessment)
+
+
 def material_hash(brief: dict[str, Any]) -> str:
     material = {key:brief[key] for key in ("date","status","operational_status","confidence","verification_ok","stale","summary_es")}
     material["evidence"]=[(x.get("source_url"),x.get("signal"),x.get("title")) for x in brief["evidence"]]
+    material["canonical_key"] = brief_key(brief)
     return hashlib.sha256(json.dumps(material,ensure_ascii=False,sort_keys=True).encode()).hexdigest()[:16]
 
 def trim_post(text: str, limit: int=260) -> str:
@@ -155,7 +165,14 @@ def apply_operational_intelligence(data: dict[str, Any]) -> dict[str, Any]:
     output["summary_es"] = oi.get("summary_es") or output.get("summary_es")
     output["summary_en"] = oi.get("summary_en") or output.get("summary_en")
     output["confidence"] = oi.get("confidence") or output.get("confidence")
-    output["checked_at"] = oi.get("generated_at") or output.get("checked_at")
+    output["checked_at"] = oi.get("verified_at") or oi.get("generated_at") or output.get("checked_at")
+    output["canonical_assessment"] = {key: oi.get(key) for key in ("state", "family", "confidence", "generated_at", "dimensions")}
+    output["assessment_id"] = assessment_id(oi)
+    output["evidence"] = [{"title": e.get("title"), "source_name": e.get("source"),
+                           "source_url": e.get("url"), "published_at": e.get("published_at"),
+                           "signal": e.get("kind"), "official": int(e.get("tier") or 0) >= 5}
+                          for e in oi.get("evidence", []) if isinstance(e, dict)]
+    output["stale"] = bool(data.get("stale")) or (age_hours(output["checked_at"]) or 0) > MAX_AGE_HOURS
     return output
 
 def main() -> int:
@@ -173,16 +190,16 @@ def main() -> int:
     state_es,state_en,op_es,op_en=display_labels(status)
     evidence=dedupe_evidence(status.get("evidence",[]))
     risks_es,risks_en,watch_es,watch_en=risk_lists(status,evidence)
-    current_key=f"{status.get('status')}|{status.get('operational_status')}|{status.get('confidence')}"
-    previous_key=f"{previous.get('status')}|{previous.get('operational_status')}|{previous.get('confidence')}" if previous else ""
+    current_key=brief_key(status)
+    previous_key=brief_key(previous) if previous else None
     if not previous:
         change_es="Primera línea base del parte diario; no implica por sí sola una novedad publicable."
         change_en="First daily-brief baseline; this does not by itself represent a publishable change."
         publish=False
     elif current_key!=previous_key:
-        change_es=f"El indicador cambia de «{previous.get('operational_label_es','—')}» a «{op_es}»."
-        change_en=f"The indicator changes from “{previous.get('operational_label_en','—')}” to “{op_en}”."
-        publish=True
+        change_es=f"Comparación con el parte fechado el {previous.get('date','—')}: «{previous.get('operational_label_es','—')}» frente a «{op_es}», con sus respectivos niveles de confianza. Estos registros no permiten fechar el cambio marítimo."
+        change_en=f"Compared with the brief dated {previous.get('date','—')}: “{previous.get('operational_label_en','—')}” versus “{op_en}”, each with its own confidence level. These records cannot date a maritime change."
+        publish=bool(previous.get("date") == (now.astimezone(MADRID).date() - timedelta(days=1)).isoformat())
     else:
         change_es="Sin cambio material en la clasificación desde el parte anterior."
         change_en="No material change in classification since the previous brief."
@@ -190,7 +207,8 @@ def main() -> int:
     confidence_es={"ALTA":"Alta","MEDIA":"Media","BAJA":"Baja"}.get(status.get("confidence"),"Baja")
     confidence_en={"ALTA":"High","MEDIA":"Medium","BAJA":"Low"}.get(status.get("confidence"),"Low")
     brief={
-      "schema_version":1,"date":local_date,"generated_at":generated_at,"source_checked_at":status.get("checked_at"),
+      "schema_version":2,"date":local_date,"generated_at":generated_at,"source_checked_at":status.get("checked_at"),
+      "assessment_id":status.get("assessment_id"),"canonical_assessment":status.get("canonical_assessment"),
       "status":status.get("status","INCIERTO"),"status_label_es":state_es,"status_label_en":state_en,
       "operational_status":status.get("operational_status",""),"operational_label_es":op_es,"operational_label_en":op_en,
       "confidence":status.get("confidence","BAJA"),"confidence_label":{"es":confidence_es,"en":confidence_en},
@@ -202,10 +220,10 @@ def main() -> int:
     }
     brief["material_hash"]=material_hash(brief)
     existing=load_json("daily-brief.json",{})
-    if isinstance(existing,dict) and existing.get("material_hash")==brief["material_hash"]:
+    if isinstance(existing,dict) and existing.get("material_hash")==brief["material_hash"] and existing.get("assessment_id")==brief.get("assessment_id"):
         brief["generated_at"]=existing.get("generated_at",generated_at)
     archive=[item for item in archive if item.get("date")!=local_date]
-    archive.insert(0,brief);archive=archive[:MAX_ARCHIVE_DAYS]
+    archive.insert(0,brief)  # Never discard historical records to repair freshness.
     es_url=f"{BASE_URL}/parte-diario.html?utm_source=x&utm_medium=social&utm_campaign=parte_diario&utm_content=es"
     en_url=f"{BASE_URL}/en-daily-brief.html?utm_source=x&utm_medium=social&utm_campaign=daily_brief&utm_content=en"
     es_text=trim_post(f"PARTE DIARIO — ESTRECHO DE ORMUZ\n\n{op_es}\nConfianza: {confidence_es}.\n\n{brief['summary_es']}")
@@ -218,9 +236,53 @@ def main() -> int:
     dump_json(ROOT/"daily-brief-archive.json",archive)
     dump_json(ROOT/"social-drafts.json",social)
     dump_json(ROOT/"briefs"/f"{local_date}.json",brief)
+    # Historical feeds link only to an actual dated page. JSON remains internal.
+    for lang, folder in (("es", "briefs"), ("en", "briefs-en")):
+        stable_write(ROOT/folder/f"{local_date}.html", render_frozen(brief, lang))
     stable_write(ROOT/"daily-brief-feed.xml",build_feed(archive,brief["generated_at"]))
+    stable_write(ROOT/"daily-brief-feed-en.xml", build_feed_en(archive, brief["generated_at"]))
     print(f"Parte diario listo: {local_date} · publicar={publish}")
     return 0
+
+
+def render_frozen(brief, lang):
+    es = lang == "es"
+    folder, alternate = ("briefs", "briefs-en") if es else ("briefs-en", "briefs")
+    day = brief["date"]
+    title = ("Parte diario" if es else "Daily brief") + " · " + day
+    label = html.escape(brief.get("operational_label_" + lang) or "")
+    summary = html.escape(brief.get("summary_" + lang) or "")
+    sources = "".join('<li><a href="' + html.escape(x.get("source_url", ""), quote=True) + '" rel="noopener noreferrer">' +
+                      html.escape(x.get("title", "")) + "</a> · " + html.escape(x.get("published_at", "")) + "</li>"
+                      for x in brief.get("evidence", []) if str(x.get("source_url", "")).startswith("https://"))
+    return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} | Estrecho Ormuz</title>
+<meta name="robots" content="noindex,follow"><meta name="publisher-ads" content="disabled">
+<link rel="canonical" href="{BASE_URL}/{folder}/{day}.html">
+<link rel="alternate" hreflang="{lang}" href="{BASE_URL}/{folder}/{day}.html">
+<link rel="alternate" hreflang="{'en' if es else 'es'}" href="{BASE_URL}/{alternate}/{day}.html">
+<link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/professional-v9.css">
+</head><body><header class="site-header"><a href="/{'index.html' if es else 'en.html'}">Estrecho Ormuz</a></header>
+<main class="container"><h1>{title}</h1><p>{'Instantánea automatizada, sin revisión humana individual.' if es else 'Automated snapshot; no individual human review.'}</p>
+<h2>{label}</h2><p>{summary}</p>
+<p>{'Confianza' if es else 'Confidence'}: {html.escape(brief.get("confidence_label", {}).get(lang, ""))}</p>
+<p>{'Datos comprobados' if es else 'Source check'}: <time>{html.escape(brief.get("source_checked_at") or "")}</time></p>
+<p>{'Documento generado' if es else 'Document generated'}: <time>{html.escape(brief["generated_at"])}</time></p>
+<h2>{'Fuentes fechadas' if es else 'Dated sources'}</h2><ul>{sources}</ul>
+<p>{'Registro del monitor; no es un recuento de buques ni una medición AIS.' if es else 'Monitor record; neither a vessel count nor an AIS measurement.'}</p>
+<a href="/{'parte-diario.html' if es else 'en-daily-brief.html'}">{'Parte actual' if es else 'Latest brief'}</a>
+<a href="/{'metodo-inteligencia-operativa.html' if es else 'en-operational-intelligence-method.html'}">{'Metodología' if es else 'Methodology'}</a>
+</main></body></html>\n'''
+
+
+def build_feed_en(items, updated):
+    # Only the explicitly generated paired resources qualify for the English feed.
+    valid = [x for x in items if (ROOT / "briefs-en" / (str(x.get("date")) + ".html")).is_file()]
+    translated = [{**x, "operational_label_es": x.get("operational_label_en"), "summary_es": x.get("summary_en")} for x in valid]
+    return (build_feed(translated, updated).replace("/briefs/", "/briefs-en/")
+            .replace("daily-brief-feed.xml", "daily-brief-feed-en.xml")
+            .replace("parte-diario.html", "en-daily-brief.html")
+            .replace("Parte diario ·", "Daily brief ·"))
 
 if __name__=="__main__":
     raise SystemExit(main())

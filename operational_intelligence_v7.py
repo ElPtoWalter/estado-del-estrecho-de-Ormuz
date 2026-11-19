@@ -512,7 +512,7 @@ def assess(signals: list[Signal], now: datetime, legacy: dict[str, Any] | None =
         if len(top) >= 8: break
     dims = {"passage": passage, "traffic": traffic, "access": access, "risk": risk, "legal": legal}
     return {
-        "version": VERSION, "generated_at": iso_z(now), "state": state,
+        "version": VERSION, "generated_at": iso_z(now), "verified_at": iso_z(now), "state": state,
         "family": meta["family"], "label_es": meta["label_es"], "label_en": meta["label_en"],
         "operational_label_es": meta["operational_es"], "operational_label_en": meta["operational_en"],
         "confidence": confidence, "summary_es": summary_es, "summary_en": summary_en,
@@ -531,9 +531,11 @@ def assess(signals: list[Signal], now: datetime, legacy: dict[str, Any] | None =
 
 def merge_previous_if_needed(assessment: dict[str, Any], previous: dict[str, Any], now: datetime) -> dict[str, Any]:
     if assessment.get("state") != "UNVERIFIED" or not isinstance(previous, dict): return assessment
-    generated = parse_dt(previous.get("generated_at"))
+    generated = parse_dt(previous.get("verified_at") or previous.get("carried_from_at") or previous.get("generated_at"))
     if previous.get("state") in {"OPEN_NORMAL", "OPEN_RESTRICTED", "OPEN_SEVERELY_RESTRICTED"} and generated > now - timedelta(hours=12):
         carried = dict(previous); carried["generated_at"] = iso_z(now); carried["confidence"] = "BAJA"; carried["carried_forward"] = True
+        carried["verified_at"] = iso_z(generated)
+        carried["carried_from_at"] = iso_z(generated)
         carried["summary_es"] = "No ha llegado una nueva prueba operativa suficiente en este ciclo. Se conserva durante un máximo de 12 horas el último diagnóstico operativo confirmado."
         carried["summary_en"] = "No new sufficient operational proof arrived in this cycle. The latest confirmed operational assessment is carried for up to 12 hours."
         return carried
@@ -595,7 +597,7 @@ def update_home(root: Path, filename: str, lang: str, a: dict[str, Any]) -> None
 
 
 def update_status_files(root: Path, a: dict[str, Any]) -> None:
-    for filename in ("status.json","daily-brief.json"):
+    for filename in ("status.json",):
         path = root / filename
         if not path.exists(): continue
         data = load_json(path, {})
@@ -617,11 +619,12 @@ def update_status_files(root: Path, a: dict[str, Any]) -> None:
 def update_history(root: Path, a: dict[str, Any]) -> None:
     path = root / "operational-intelligence-history.json"; hist = load_json(path, [])
     if not isinstance(hist, list): hist=[]
-    key=(a.get("state"),a.get("dimensions",{}).get("traffic"),a.get("dimensions",{}).get("access"),a.get("dimensions",{}).get("risk"))
+    from canonical_publication import material_key
+    key=material_key(a)
     prev=None
     if hist:
-        p=hist[0]; prev=(p.get("state"),p.get("dimensions",{}).get("traffic"),p.get("dimensions",{}).get("access"),p.get("dimensions",{}).get("risk"))
-    if key!=prev: hist.insert(0,a); write_json(path,hist[:365])
+        p=hist[0]; prev=material_key(p)
+    if key!=prev: hist.insert(0,a); write_json(path,hist)
 
 
 def build_event_store(root: Path, signals: list[Signal], generated_at: str) -> dict[str, Any]:
@@ -675,6 +678,8 @@ def run(root: Path | str | None = None, *, offline: bool=False) -> dict[str, Any
         "model_note_es":"La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
         "model_note_en":"The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."}
     write_json(root_path/"operational-intelligence.json",a); update_status_files(root_path,a); update_history(root_path,a); update_home(root_path,"index.html","es",a); update_home(root_path,"en.html","en",a)
+    from canonical_notifications import enqueue
+    enqueue(root_path, previous if isinstance(previous, dict) else {}, a)
     return a
 
 

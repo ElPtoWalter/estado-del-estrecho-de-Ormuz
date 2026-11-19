@@ -21,11 +21,11 @@
   document.querySelectorAll("[data-snapshot-at]").forEach(note => {
     if (!note.dataset.snapshotAt) return;
     const at = Date.parse(note.dataset.snapshotAt);
-    if (Number.isFinite(at) && Date.now() - at > 6 * 3600000) {
+    if (Number.isFinite(at) && Date.now() - at > 3 * 3600000) {
       note.classList.toggle("is-stale", true);
       note.textContent = es
-        ? "La última comprobación tiene más de 6 horas. Esta instantánea puede estar desactualizada; consulta las fuentes y su fecha."
-        : "The last check is over 6 hours old. This snapshot may be outdated; check the sources and their dates.";
+        ? "La última comprobación tiene más de 3 horas. Esta instantánea puede estar desactualizada; consulta las fuentes y su fecha."
+        : "The last check is over 3 hours old. This snapshot may be outdated; check the sources and their dates.";
     }
   });
 

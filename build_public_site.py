@@ -9,9 +9,11 @@ import json
 import re
 import shutil
 import sys
+import os
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
-from publication_quality import apply_policy, ads_authorized
+from publication_quality import apply_policy, ads_authorized, HISTORY_NO_ADS, ENERGY_NO_ADS, SPAIN_NO_ADS
 from adsense_checks import check_artifact
 from generate_daily_journal import home_teaser_html
 from monitor_report import build_reports
@@ -466,10 +468,15 @@ def render_home_surface(document: str, assessment: dict[str, Any], lang: str) ->
     ) + '</dl>'
     document = re.sub(r'<dl class="observatory-dimensions">.*?</dl>', '', document, flags=re.S)
     document = document.replace('<p class="status-advisory"', dimensions + '<p class="status-advisory"', 1)
-    checked = assessment.get("generated_at") or ""
+    checked = assessment.get("verified_at") or assessment.get("generated_at") or ""
     freshness = ("Instantánea fechada; consulta la hora de comprobación. No es un recuento AIS en tiempo real."
                  if es else "Dated snapshot; check the verification time. This is not a live AIS count.")
     note = f'<p class="observatory-freshness" data-snapshot-at="{esc(checked, "")}">{freshness}</p>'
+    from canonical_publication import age_hours, MAX_AGE_HOURS
+    if (age_hours(checked) or 0) > MAX_AGE_HOURS:
+        warning = ("Comprobación con más de 3 horas de antigüedad; esta instantánea puede estar desactualizada. No es un recuento AIS en tiempo real." if es
+                   else "Verification is over 3 hours old; this snapshot may be outdated. This is not a live AIS count.")
+        note = f'<p class="observatory-freshness is-stale" role="status" data-snapshot-at="{esc(checked, "")}">{warning}</p>'
     document = re.sub(r'<p class="observatory-freshness"[^>]*>.*?</p>', '', document, flags=re.S)
     document = document.replace('<div class="evidence-section">', note + '<div class="evidence-section">', 1)
     latest = load_json("journal-latest.json", {})
@@ -490,6 +497,20 @@ def prerender(document: str, filename: str) -> str:
     lang = lang_for(filename, document)
     status = load_json("status.json", {})
     history = load_json("history.json", [])
+    legacy_history = history
+    v7_history = load_json("operational-intelligence-history.json", [])
+    if isinstance(v7_history, list) and v7_history:
+        from canonical_publication import assessment_id
+        history = [{**a, "id": "v7-" + assessment_id(a), "at": a.get("generated_at"),
+                    "status": "ABIERTO" if a.get("family") == "OPEN" else "CERRADO" if a.get("family") == "CLOSED" else "INCIERTO",
+                    "operational_label_es": a.get("label_es"), "operational_label_en": a.get("label_en")}
+                   for a in v7_history if isinstance(a, dict) and a.get("state")]
+        current = status.get("operational_intelligence") or {}
+        from canonical_publication import material_key
+        if current.get("state") and (not history or material_key(history[0]) != material_key(current)):
+            history.insert(0, {**current, "id": "v7-" + assessment_id(current), "at": current.get("generated_at"),
+                               "status": "ABIERTO" if current.get("family") == "OPEN" else "CERRADO" if current.get("family") == "CLOSED" else "INCIERTO",
+                               "operational_label_es": current.get("label_es"), "operational_label_en": current.get("label_en")})
     brief = load_json("daily-brief.json", {})
     if not isinstance(status, dict):
         status = {}
@@ -505,7 +526,7 @@ def prerender(document: str, filename: str) -> str:
         if lang == "es"
         else {"ALTA": "High", "MEDIA": "Medium", "BAJA": "Low"}.get(confidence, confidence)
     )
-    generated = assessment.get("generated_at") or status.get("checked_at")
+    generated = assessment.get("verified_at") or assessment.get("generated_at") or status.get("checked_at")
     latest = assessment.get("latest_confirmed_transit_at")
 
     for element_id, value in (
@@ -523,7 +544,14 @@ def prerender(document: str, filename: str) -> str:
     document = dedupe_operational_evidence(document, status, lang)
     document = replace_element(document, "evidenceArchive", render_evidence(status, lang, 20))
     document = replace_element(document, "recentHistory", render_history(history, lang, 3))
-    document = replace_element(document, "historyTimeline", render_history(history, lang, 50))
+    timeline = render_history(history, lang, 50)
+    if v7_history and isinstance(legacy_history, list) and legacy_history:
+        # Preserve previously published fragment links; these records are explicitly historical.
+        title = ("Registros históricos del motor anterior" if lang == "es" else "Historical records from the earlier engine")
+        note = ("Diagnósticos de su fecha, con un método distinto. No representan la evaluación actual V7." if lang == "es" else
+                "Dated diagnostics using a different method. They do not represent the current V7 assessment.")
+        timeline += '<details class="legacy-history"><summary>' + title + '</summary><p>' + note + '</p>' + render_history(legacy_history, lang, len(legacy_history)) + '</details>'
+    document = replace_element(document, "historyTimeline", timeline)
     document = render_archive(document, status, lang)
 
     diagnostics = status.get("diagnostics") or {}
@@ -858,6 +886,35 @@ def repair_public_navigation(document: str, filename: str) -> str:
 
 def sanitize_html(document: str, filename: str) -> str:
     lang = lang_for(filename, document)
+    brand_count = 0
+    def name_brand_link(match):
+        nonlocal brand_count
+        anchor = match[0]
+        opening = anchor[:anchor.index(">")+1]
+        classes = re.search(r'class=["\x27]([^"\x27]+)', opening)
+        if classes and "brand" in classes[1].split():
+            inner = anchor[len(opening):-4]
+            existing = re.search(r'aria-label=["\x27]([^"\x27]*)["\x27]', opening)
+            if re.search(r'aria-labelledby=', opening) or (existing and not existing[1].lower().startswith("estrecho ormuz")):
+                return anchor
+            if existing:
+                opening = opening[:existing.start()] + opening[existing.end():]
+            copy = re.search(r'<span\b[^>]*class=["\x27][^"\x27]*\bbrand-copy\b[^"\x27]*["\x27][^>]*>',inner)
+            if copy:
+                brand_count += 1
+                label_id = "brand-readable-" + str(brand_count)
+                id_attr = re.search(r'\bid=["\x27]([^"\x27]+)',copy[0])
+                if id_attr:
+                    label_id = id_attr[1]
+                else:
+                    inner = inner[:copy.start()] + copy[0][:-1] + ' id="' + label_id + '">' + inner[copy.end():]
+                return opening[:-1] + ' aria-labelledby="' + label_id + '">' + inner + "</a>"
+            else:
+                label = "Estrecho Ormuz — Inicio" if lang == "es" else "Estrecho Ormuz — Home"
+                return opening[:-1] + ' aria-label="' + label + '">' + anchor[len(opening):]
+        return anchor
+    if filename not in HISTORY_NO_ADS | ENERGY_NO_ADS | SPAIN_NO_ADS:
+        document = re.sub(r"<a\b[^>]*>.*?</a>", name_brand_link, document, flags=re.S)
     document = prerender(document, filename)
     document = strip_private_scripts(document)
     document = remove_private_links(document)
@@ -997,6 +1054,17 @@ HISTORY_PUBLIC_CSV = frozenset(
 )
 ENERGY_PUBLIC_CSV = frozenset({'assets/research/energy-flows-20261025/energy-series.csv'})
 SPAIN_DRAFT_CSV = frozenset(f'assets/research/spain-europe-20261025/{name}.csv' for name in ('source-inputs','calculations'))
+PUBLIC_ROOT_ASSETS = frozenset({
+    "adsense-legal.css", "authority-v6.css", "diario-v8.css", "growth-v4.css", "operational-v7.css",
+    "own-projects.css", "professional-v9.css", "styles.css", "v11.css",
+    "embed.js", "own-projects.js", "privacy-controls.js", "public-ui.js", "public-ui.min.js",
+    "public-widget.min.js", "radar-fix.js", "radar-map.js",
+    "feed.xml", "daily-brief-feed.xml", "daily-brief-feed-en.xml", "diario-feed.xml", "diary-feed.xml",
+    "sitemap.xml", "publication-health.xml",
+    "assets/research/energy-flows-20261025/energy-editorial.css",
+    "assets/research/monitor-history-20261024/history-editorial.css",
+    "assets/research/spain-europe-20261025/spain-editorial.css",
+})
 
 
 def copy_asset(path: Path) -> bool:
@@ -1009,6 +1077,8 @@ def copy_asset(path: Path) -> bool:
     if private_name(path) or path.name.startswith("."):
         return False
     suffix = path.suffix.lower()
+    if suffix in {".js", ".css", ".xml"} and rel.as_posix() not in PUBLIC_ROOT_ASSETS:
+        return False
     if suffix == ".txt":
         return path.name in {"ads.txt", "8ee87f80641eba7927c66d271c9380a5.txt"}
     if suffix == ".js" and javascript_is_private(path):
@@ -1022,7 +1092,7 @@ def public_html_path(path: Path) -> bool:
         return False
     return (not any(part.startswith('.') for part in path.parts)
             and (len(path.parts) == 1 or
-                 (len(path.parts) == 2 and path.parts[0] in {"diario", "diary", "briefs"})))
+                 (len(path.parts) == 2 and path.parts[0] in {"diario", "diary", "briefs", "briefs-en"})))
 
 def write_sitemap(root: Path | None = None) -> None:
     root = root if root is not None else OUT
@@ -1050,9 +1120,13 @@ def audit_public_build(root: Path | None = None) -> None:
     )
 
     for path in root.rglob("*"):
+        rel = path.relative_to(root).as_posix()
+        if path.is_symlink():
+            errors.append(f"public symlink is forbidden: {rel}")
+        if any(part.startswith(".") for part in path.relative_to(root).parts) and rel not in {".well-known", ".well-known/security.txt"}:
+            errors.append(f"unapproved hidden path: {rel}")
         if not path.is_file():
             continue
-        rel = path.relative_to(root).as_posix()
         if path.suffix.lower() == ".csv" and rel != "monitor-records.csv" and rel not in HISTORY_PUBLIC_CSV | ENERGY_PUBLIC_CSV | SPAIN_DRAFT_CSV:
             errors.append(f"unapproved public CSV: {rel}")
         if private_name(path):
@@ -1061,6 +1135,8 @@ def audit_public_build(root: Path | None = None) -> None:
         if path.suffix.lower() == ".js" and javascript_is_private(path):
             errors.append(f"private javascript leaked: {rel}")
             continue
+        if path.suffix.lower() in {".js", ".css", ".xml"} and rel not in PUBLIC_ROOT_ASSETS:
+            errors.append(f"unapproved executable, style or XML asset: {rel}")
         if path.suffix.lower() in {".html", ".js", ".css", ".xml", ".txt"}:
             body = path.read_text(encoding="utf-8", errors="ignore")
             for token in forbidden_tokens:
@@ -1121,7 +1197,7 @@ def main() -> int:
             continue
         shutil.copy2(path, OUT / path.name)
 
-    for dirname in ("diario", "diary", "briefs", "images", "assets"):
+    for dirname in ("diario", "diary", "briefs", "briefs-en", "images", "assets"):
         source_dir = ROOT / dirname
         if not source_dir.exists():
             continue
@@ -1156,6 +1232,19 @@ def main() -> int:
     publish_spain(OUT, reviews)
     from seo_surface import publish as publish_seo, audit as audit_seo
     publish_seo(OUT)
+    from home_layout import publish as publish_home_layout
+    publish_home_layout(OUT)
+    from canonical_publication import health_xml
+    from canonical_publication import canonical, assessment_id
+    current_assessment = assessment_id(canonical(ROOT))
+    for name in ("index.html", "en.html", "parte-diario.html", "en-daily-brief.html", "historial.html", "en-history.html"):
+        page = OUT / name
+        text = page.read_text(encoding="utf-8")
+        text = text.replace("</head>", f'<meta name="ormuz-assessment" content="{current_assessment}"></head>', 1)
+        page.write_text(text, encoding="utf-8")
+    commit = os.environ.get("PUBLICATION_COMMIT") or subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    (OUT / "publication-health.xml").write_text(health_xml(ROOT, commit), encoding="utf-8")
     write_sitemap()
     audit_public_build()
     audit_history(OUT)

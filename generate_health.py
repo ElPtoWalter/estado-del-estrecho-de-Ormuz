@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Genera health.json público, mínimo y sin secretos."""
+"""Internal diagnostics. Only publication-health.xml is selected for public monitoring."""
 from __future__ import annotations
 
 import argparse
 import xml.etree.ElementTree as ET
+from canonical_publication import age_hours, MAX_AGE_HOURS
 from pathlib import Path
 from typing import Any
 
@@ -39,11 +40,12 @@ def main() -> int:
         operational = load_json(root / "operational-intelligence.json", {})
     if not isinstance(operational, dict):
         operational = {}
+    verification_age = age_hours(operational.get("verified_at") or operational.get("generated_at"))
     events = load_json(root / "events.json", {})
     if not isinstance(events, dict):
         events = {}
     source_state = (
-        "STALE" if status.get("stale")
+        "STALE" if status.get("stale") or verification_age is None or verification_age > MAX_AGE_HOURS
         else "DEGRADED" if not status.get("verification_ok")
         else "HEALTHY"
     )
@@ -71,6 +73,8 @@ def main() -> int:
             "event_count": events.get("event_count", 0),
             "verification_summary": events.get("verification_summary", {}),
             "canonical_engine": "operational-intelligence-v7",
+            "canonical_age_hours": verification_age,
+            "max_age_hours": MAX_AGE_HOURS,
         },
         "operational_assessment": {
             "state": operational.get("state"),

@@ -42,6 +42,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
+from canonical_publication import assessment_id, age_hours, MAX_AGE_HOURS
 
 try:
     MADRID = ZoneInfo("Europe/Madrid")
@@ -545,6 +546,7 @@ def state_fingerprint(
         "legacy_confidence": status.get("confidence"),
         "v7_state": operational.get("state") if operational else None,
         "v7_confidence": operational.get("confidence") if operational else None,
+        "generated_at": (operational.get("verified_at") or operational.get("generated_at")) if operational else None,
         "dimensions": operational.get("dimensions") if operational else None,
         "events": compact_events,
         "event_ids": [event["event_id"] for event in compact_events],
@@ -1180,11 +1182,11 @@ def render_page(
     )
 
     dim_labels = dimensions(operational, lang)
-    checked_at = status.get('checked_at') or operational.get('generated_at') or ''
+    checked_at = operational.get('verified_at') or operational.get('generated_at') or status.get('checked_at') or ''
     stale_note = ''
-    if checked_at and (local_dt - parse_date(checked_at)).total_seconds() > 6 * 3600:
-        stale_note = ('La comprobación tiene más de seis horas; esta edición no describe tráfico en directo.'
-                      if lang == 'es' else 'The check is over six hours old; this edition does not describe live traffic.')
+    if checked_at and (local_dt - parse_date(checked_at)).total_seconds() > MAX_AGE_HOURS * 3600:
+        stale_note = ('La comprobación tiene más de tres horas; esta edición no describe tráfico en directo.'
+                      if lang == 'es' else 'The check is over three hours old; this edition does not describe live traffic.')
     metric_names = {
         "es": {"passage": "Paso físico", "traffic": "Tráfico", "access": "Acceso", "risk": "Riesgo"},
         "en": {"passage": "Physical passage", "traffic": "Traffic", "access": "Access", "risk": "Risk"},
@@ -1412,6 +1414,15 @@ def patch_home_teaser(path: Path, lang: str, edition: dict[str, Any]) -> None:
     stable_write(path, text)
 
 
+def record_journal_check(root: Path, now: datetime, outcome: str) -> None:
+    """Record a real generator check without redating or rewriting an edition."""
+    latest = load_json(root / "journal-latest.json", {})
+    dump_json(root / "journal-check.json", {
+        "checked_at": iso_z(now), "outcome": outcome,
+        "edition_date": latest.get("date"),
+    })
+
+
 def scheduled_allowed(root: Path, local_now: datetime) -> bool:
     state = load_json(root / "journal-state.json", {})
     last_date = state.get("last_date") if isinstance(state, dict) else None
@@ -1434,6 +1445,9 @@ def main() -> int:
     now = utc_now()
     local_now = now.astimezone(MADRID)
     if args.scheduled and not args.force and not scheduled_allowed(root, local_now):
+        state = load_json(root / "journal-state.json", {})
+        outcome = "edition_already_exists" if state.get("last_date") == local_now.date().isoformat() else "not_due"
+        record_journal_check(root, now, outcome)
         print(f"Diario V{EDITORIAL_VERSION}: ejecución omitida por horario/idempotencia ({local_now.isoformat()}).")
         return 0
 
@@ -1530,6 +1544,8 @@ def main() -> int:
         "schema_version": 1,
         "date": date_iso,
         "generated_at": generated_at,
+        "source_checked_at": operational.get("verified_at") or operational.get("generated_at"),
+        "assessment_id": assessment_id(operational),
         "title_es": title_es,
         "title_en": title_en,
         "summary_es": summary_es,
@@ -1638,6 +1654,7 @@ def main() -> int:
         "editorial_trace": editorial_trace,
     })
 
+    record_journal_check(root, now, "published")
     print(
         f"El Diario de Ormuz V{EDITORIAL_VERSION} listo: {date_iso} · score={score} · "
         f"archivo={'sí' if material else 'no'} · noticias={len(news)} · nuevas={len(new_items)} · "

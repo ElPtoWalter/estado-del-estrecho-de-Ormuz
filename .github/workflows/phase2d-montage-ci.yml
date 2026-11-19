@@ -11,6 +11,19 @@ on:
       - ".github/workflows/phase2d-montage-ci.yml"
       - ".github/workflows/pilot-phase2d-montage.yml"
   workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Run del artefacto real que se revalidará, del mismo repositorio
+        required: true
+        type: string
+      source_artifact:
+        description: Nombre exacto de un artefacto real todavía disponible
+        required: true
+        type: string
+      expected_audio_sha256:
+        description: SHA256 esperado del audio real; no se genera nueva voz
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -25,8 +38,8 @@ jobs:
       GEMINI_API_KEY: ""
       OPENROUTER_API_KEY: ""
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: "3.12"
       - name: Preparar herramientas locales de montaje
@@ -36,27 +49,37 @@ jobs:
           python -m pip install -r requirements-montage.txt
       - name: Compilar y ejecutar todas las regresiones
         run: |
+          python - <<'PY'
+          import test_phase2d_montage as tests
+          assert tests.HAS_PILLOW and tests.HAS_TOOLS, "The full local FFmpeg integration must run in this job"
+          print("Synthetic fixture integration: real encoding, exact audio comparison, cache and corruption guards; no TTS.")
+          PY
           python -m compileall -q phase2_montage.py test_phase2d_montage.py
           python -m unittest discover -v
       - name: Interfaz pública sin cambios
         run: node --test test_public_ui.cjs
       - name: Descargar solo un artefacto de voz ya existente
+        if: github.event_name == 'workflow_dispatch'
         env:
           GH_TOKEN: ${{ github.token }}
-          SOURCE_RUN_ID: '36980491324'
-          SOURCE_ARTIFACT: phase2b-gemini-ormuz-5
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          SOURCE_ARTIFACT: ${{ inputs.source_artifact }}
+          EXPECTED_AUDIO_SHA256: ${{ inputs.expected_audio_sha256 }}
         run: |
           set -euo pipefail
           [[ "$SOURCE_RUN_ID" =~ ^[0-9]+$ ]]
           [[ "$SOURCE_ARTIFACT" =~ ^[a-zA-Z0-9_.-]+$ ]]
+          [[ "$EXPECTED_AUDIO_SHA256" =~ ^[a-f0-9]{64}$ ]]
           gh run download "$SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" --name "$SOURCE_ARTIFACT" --dir "$RUNNER_TEMP/phase2d-source"
       - name: Revalidar audio y generar preview interna sin TTS
+        if: github.event_name == 'workflow_dispatch'
         env:
-          EXPECTED_WAV_SHA256: 0f65d86951e4f855ad5f2a032fa2d582268b9bf18d7be5b5a34356892cf6d259
+          EXPECTED_WAV_SHA256: ${{ inputs.expected_audio_sha256 }}
         run: |
           python phase2_montage.py --site "$SITE" --input-dir "$RUNNER_TEMP/phase2d-source" --output-dir "$RUNNER_TEMP/phase2d-preview" --expected-audio-sha256 "$EXPECTED_WAV_SHA256"
       - name: Entregar preview temporal con subtítulos y comprobaciones
-        uses: actions/upload-artifact@v7
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: phase2d-montage-ormuz-${{ github.run_id }}
           path: ${{ runner.temp }}/phase2d-preview/

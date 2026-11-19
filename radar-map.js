@@ -5,14 +5,14 @@
   const copy = english
     ? {
         loading: "Loading the AIS radar inside this page…",
-        loaded: "AIS radar loaded. You can zoom, pan and inspect vessels on the map.",
+        inserted: "External viewer inserted. If the map is missing or shows an error, use the alternative MarineTraffic link.",
         failed: "The embedded map could not be loaded. Use the alternative MarineTraffic link.",
         retry: "Try loading the radar again",
         title: "Live AIS map of the Strait of Hormuz"
       }
     : {
         loading: "Cargando el radar AIS dentro de la página…",
-        loaded: "Radar AIS cargado. Puedes ampliar, mover y consultar los barcos en el mapa.",
+        inserted: "Visor externo insertado. Si no aparece el mapa o muestra un error, utiliza el enlace alternativo de MarineTraffic.",
         failed: "No se pudo cargar el mapa integrado. Utiliza el enlace alternativo de MarineTraffic.",
         retry: "Intentar cargar el radar de nuevo",
         title: "Mapa AIS en directo del estrecho de Ormuz"
@@ -30,7 +30,7 @@
     if (
       !container ||
       container.dataset.aisLoading === "true" ||
-      container.dataset.aisLoaded === "true"
+      container.dataset.aisInserted === "true"
     ) {
       return;
     }
@@ -58,7 +58,12 @@
     script.src = "https://www.myshiptracking.com/js/widgetApi.js";
     script.async = true;
 
+    let settled = false;
+    let timeout;
     const fail = () => {
+      if (settled) return;
+      settled = true;
+      window.clearTimeout(timeout);
       container.dataset.aisLoading = "false";
       button.disabled = false;
       button.textContent = copy.retry;
@@ -70,6 +75,7 @@
     script.addEventListener(
       "load",
       () => {
+        if (settled) return;
         const frame = container.querySelector("iframe");
         if (!frame) {
           fail();
@@ -82,21 +88,22 @@
         frame.loading = "eager";
         frame.referrerPolicy = "strict-origin-when-cross-origin";
 
-        const reveal = () => {
-          if (container.dataset.aisLoaded === "true") return;
-          container.dataset.aisLoading = "false";
-          container.dataset.aisLoaded = "true";
-          if (placeholder) placeholder.hidden = true;
-          if (toolbar) toolbar.hidden = false;
-          if (status) status.textContent = copy.loaded;
-        };
-
-        frame.addEventListener("load", reveal, { once: true });
-        window.setTimeout(reveal, 1600);
+        settled = true;
+        window.clearTimeout(timeout);
+        container.dataset.aisLoading = "false";
+        container.dataset.aisInserted = "true";
+        button.disabled = false;
+        button.textContent = copy.retry;
+        if (placeholder) placeholder.hidden = true;
+        if (toolbar) toolbar.hidden = false;
+        // A cross-origin iframe load event also fires for error pages (including HTTP 500).
+        // Insertion is observable; supplier availability and AIS coverage are not verified here.
+        if (status) status.textContent = copy.inserted;
       },
       { once: true }
     );
 
+    timeout = window.setTimeout(fail, 15000);
     container.insertBefore(script, toolbar || null);
   });
 })();
