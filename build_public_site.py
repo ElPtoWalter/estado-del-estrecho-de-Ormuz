@@ -889,9 +889,14 @@ def sanitize_html(document: str, filename: str) -> str:
     def name_brand_link(match):
         opening = match[0]
         classes = re.search(r'class=["\x27]([^"\x27]+)', opening)
-        if classes and "brand" in classes[1].split() and not re.search(r'aria-label(?:ledby)?=', opening):
-            label = "Estrecho Ormuz · inicio" if lang == "es" else "Estrecho Ormuz · home"
-            return opening[:-1] + ' aria-label="' + label + '">'
+        if classes and "brand" in classes[1].split():
+            label = ("Estrecho Ormuz — Inteligencia marítima y energética — Inicio" if lang == "es"
+                     else "Estrecho Ormuz — Maritime &amp; energy intelligence — Home")
+            existing = re.search(r'aria-label=["\x27]([^"\x27]*)["\x27]', opening)
+            if existing and existing[1].startswith("Estrecho Ormuz"):
+                return opening[:existing.start()] + 'aria-label="' + label + '"' + opening[existing.end():]
+            if not re.search(r'aria-label(?:ledby)?=', opening):
+                return opening[:-1] + ' aria-label="' + label + '">'
         return opening
     document = re.sub(r"<a\b[^>]*>", name_brand_link, document)
     document = prerender(document, filename)

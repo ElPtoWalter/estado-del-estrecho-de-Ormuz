@@ -8,7 +8,7 @@ class HomeLayoutTests(unittest.TestCase):
     def test_logo_links_have_an_accessible_name_without_replacing_existing_labels(self):
         doc='<html lang="en"><body><a class="brand brand-v4" href="/en.html"><svg aria-hidden="true"></svg></a><a class="brand" aria-label="Existing" href="/">x</a></body></html>'
         result=public.sanitize_html(doc,"en.html")
-        self.assertIn('aria-label="Estrecho Ormuz · home"',result)
+        self.assertIn('aria-label="Estrecho Ormuz — Maritime &amp; energy intelligence — Home"',result)
         self.assertIn('aria-label="Existing"',result)
     def baseline(self,name):
         doc=public.sanitize_html((public.ROOT/name).read_text(encoding="utf-8"),name)
