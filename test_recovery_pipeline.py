@@ -42,6 +42,13 @@ class RecoveryTests(unittest.TestCase):
     def save(self, name, obj):
         (self.root / name).write_text(json.dumps(obj), encoding="utf-8")
 
+    def response(self, commit):
+        def fetch(url):
+            if url.endswith("publication-health.xml"):
+                return cp.health_xml(self.root, commit)
+            return '<html><head><meta name="ormuz-assessment" content="' + cp.assessment_id(cp.canonical(self.root)) + '"></head></html>'
+        return fetch
+
     def test_legacy_disagreement_does_not_change_public_canonical(self):
         self.assertEqual(cp.canonical(self.root)["state"], "OPEN_RESTRICTED")
         self.assertFalse(cp.validate(self.root, require_fresh=True, now=NOW))
@@ -150,7 +157,7 @@ class RecoveryTests(unittest.TestCase):
             if channel == "ntfy" and attempts[channel] <= 3:
                 raise OSError("secret URL should never enter ledger")
         with patch.object(cn, "configured_channels", return_value={"telegram": ("x",""), "ntfy":("y","")}):
-            args = dict(enabled=True, fetcher=lambda url: cp.health_xml(self.root,"abc"), sender=sender, sleep=lambda _:None)
+            args = dict(enabled=True, fetcher=self.response("abc"), sender=sender, sleep=lambda _:None)
             self.assertTrue(cn.deliver(self.root,"abc",**args)["errors"])
             self.assertFalse(cn.deliver(self.root,"abc",**args)["errors"])
             self.assertEqual(attempts, {"telegram": 1, "ntfy": 4})
@@ -162,10 +169,17 @@ class RecoveryTests(unittest.TestCase):
         cn.enqueue(self.root, self.a, assessment("CLOSED_CONFIRMED", hour=10))
         calls = []
         with patch.object(cn, "configured_channels", return_value={"telegram":("x","")}):
-            report = cn.deliver(self.root,"abc",enabled=True,fetcher=lambda _:cp.health_xml(self.root,"abc"),
+            report = cn.deliver(self.root,"abc",enabled=True,fetcher=self.response("abc"),
                                 sender=lambda *args:calls.append(args))
         self.assertFalse(calls)
         self.assertFalse(report["errors"])
+
+    def test_fresh_manifest_with_stale_html_cannot_authorize_delivery(self):
+        response=self.response("abc")
+        def stale(url):
+            return "<html>old cached HTML</html>" if url.endswith("en.html") else response(url)
+        with self.assertRaises(ValueError):
+            cn.verify_release(stale,self.a,"abc")
 
     def test_staging_contract_rejects_code_and_private_accidental_outputs(self):
         for name in ("status.json","daily-brief.json","daily-brief-archive.json","briefs/2026-11-19.html",

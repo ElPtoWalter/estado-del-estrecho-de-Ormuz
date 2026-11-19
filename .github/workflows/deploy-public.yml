@@ -100,10 +100,10 @@ jobs:
           python - <<'PY'
           import os, time
           from canonical_publication import canonical
-          from canonical_notifications import fetch_public, verify_public
+          from canonical_notifications import fetch_public, verify_release
           for attempt in range(6):
               try:
-                  verify_public(fetch_public("https://estrechoormuz.com/publication-health.xml"), canonical("."), os.environ["EXPECTED_COMMIT"])
+                  verify_release(fetch_public, canonical("."), os.environ["EXPECTED_COMMIT"])
                   break
               except Exception:
                   if attempt == 5: raise

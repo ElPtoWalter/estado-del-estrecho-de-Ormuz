@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import time
 import urllib.request
 import urllib.parse
@@ -53,6 +54,19 @@ def verify_public(body, current, expected_commit):
     return doc
 
 
+def verify_release(fetcher, current, expected_commit):
+    doc = verify_public(fetcher("https://estrechoormuz.com/publication-health.xml"), current, expected_commit)
+    expected = assessment_id(current)
+    # Check the actual HTML too: a fresh health endpoint alone does not prove all cached pages changed.
+    for name in ("index.html", "en.html", "parte-diario.html", "en-daily-brief.html", "historial.html", "en-history.html"):
+        body = fetcher("https://estrechoormuz.com/" + name)
+        text = body.decode("utf-8") if isinstance(body, bytes) else body
+        match = re.search(r'<meta\s+name="ormuz-assessment"\s+content="([a-f0-9]+)"', text)
+        if not match or match[1] != expected:
+            raise ValueError("Public HTML has not reached the canonical assessment: " + name)
+    return doc
+
+
 def configured_channels():
     result = {}
     token, chat = os.getenv("TELEGRAM_BOT_TOKEN", ""), os.getenv("TELEGRAM_CHAT_ID", "")
@@ -88,7 +102,7 @@ def deliver(root, expected_commit, *, enabled=False, fetcher=fetch_public, sende
     report = {"enabled": enabled, "queued": len(queue), "channels": [], "errors": []}
     if not enabled:
         return report
-    verify_public(fetcher("https://estrechoormuz.com/publication-health.xml"), current, expected_commit)
+    verify_release(fetcher, current, expected_commit)
     channels = configured_channels()
     report["channels"] = sorted(channels)
     if not channels:
