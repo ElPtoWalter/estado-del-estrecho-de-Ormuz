@@ -355,6 +355,9 @@ def normalize_article(raw: dict[str, Any], registry: SourceRegistry) -> dict[str
         "url": url,
         "published_at": published_at,
         "observed_at": normalize_text(raw.get("observed_at")),
+        "event_at": (iso_z(parse_datetime(raw.get("event_at") or raw.get("occurred_at")))
+                     if parse_datetime(raw.get("event_at") or raw.get("occurred_at")).year > 1970 else None),
+        "correction_notice": normalize_text(raw.get("correction_notice")) or None,
         "source_id": source.source_id,
         "source_name": source.canonical_name,
         "source_domain": source.domain,
@@ -587,6 +590,22 @@ def aggregate_events(
         used_event_ids.add(event_id)
         if prior and event_id == prior[0] and prior[1]:
             first_seen = min((first_seen, prior[1]), key=parse_datetime)
+        prior_event = next((e for e in previous_list if isinstance(e, dict) and e.get("event_id") == event_id), {})
+        revisions = list(prior_event.get("article_revisions") or [])
+        prior_articles = {canonical_url(x.get("url")): x for x in prior_event.get("articles", []) if isinstance(x, dict)}
+        revision_fields = ("title", "description", "signal", "published_at", "event_at", "correction_notice")
+        for member in members:
+            old = prior_articles.get(member.get("url"))
+            if not old:
+                continue
+            before = {k: old.get(k) for k in revision_fields}
+            after = {k: member.get(k) for k in revision_fields}
+            if before != after:
+                change_id = hashlib.sha256(json.dumps([member["url"],before,after],sort_keys=True,ensure_ascii=False).encode()).hexdigest()[:20]
+                if not any(x.get("id") == change_id for x in revisions):
+                    revisions.append({"id":change_id,"url":member["url"],"detected_at":generated_at,
+                                      "kind":"SOURCE_DECLARED_CORRECTION" if member.get("correction_notice") else "CONTENT_UPDATE",
+                                      "before":before,"after":after,"human_review_recorded":False})
         verification = _verification(members)
         classification = _event_classification(members)
         operational_impact = _operational_impact(members, verification)
@@ -606,6 +625,7 @@ def aggregate_events(
             "sources": sources,
             "source_ids": [item["source_id"] for item in sources],
             "articles": members,
+            "article_revisions": revisions,
             "importance": _importance(members, verification, operational_impact),
             "operational_impact": operational_impact,
             "operational_eligible": verification in {"CONFIRMED_PRIMARY", "CONFIRMED_MULTI_SOURCE"} and operational_impact == "MATERIAL",

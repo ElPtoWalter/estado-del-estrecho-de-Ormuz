@@ -87,6 +87,9 @@ jobs:
           python refresh_publication.py
           python canonical_publication.py --require-fresh
 
+      - name: Auditar relevancia y trazabilidad sin reclasificar
+        run: python editorial_evidence_audit.py --output "${{ runner.temp }}/evidence-audit.json"
+
       - name: Regenerar sitemap desde todos los HTML públicos
         run: python build_sitemap.py --root .
 
@@ -109,6 +112,7 @@ jobs:
             "${{ runner.temp }}/validation-report.json" \
             "${{ runner.temp }}/editorial-review.json" \
             "${{ runner.temp }}/ormuz-change.json" \
+            "${{ runner.temp }}/evidence-audit.json" \
             status.json health.json events.json operational-intelligence.json sitemap.xml; do
             [ ! -f "$file" ] || cp "$file" "${{ runner.temp }}/ormuz-diagnostics/"
           done

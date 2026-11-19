@@ -5,8 +5,22 @@ import build_public_site as public
 from editorial_evidence_audit import evidence_record
 from editorial_evidence_audit import confidence_errors
 from straitwatch_core import SourceRegistry
+from straitwatch_core import aggregate_events
 
 class SecurityRecoveryTests(unittest.TestCase):
+    def test_article_update_retains_previous_text_without_inventing_a_correction(self):
+        registry=SourceRegistry.from_path(Path(__file__).parent/"source-registry.json")
+        old={"title":"Tanker crosses Hormuz","source_name":"Reuters","source_url":"https://reuters.com/a",
+             "published_at":"2026-11-19T01:00:00Z","signal":"TRANSIT_CONFIRMED"}
+        first=aggregate_events([old],registry,generated_at="2026-11-19T02:00:00Z")
+        changed={**old,"title":"Tanker crosses Hormuz under restrictions","event_at":"2026-11-18T23:00:00Z"}
+        second=aggregate_events([changed],registry,first["events"],generated_at="2026-11-19T03:00:00Z")
+        revision=second["events"][0]["article_revisions"][0]
+        self.assertEqual(revision["before"]["title"],old["title"])
+        self.assertEqual(revision["kind"],"CONTENT_UPDATE")
+        self.assertFalse(revision["human_review_recorded"])
+        third=aggregate_events([changed],registry,second["events"],generated_at="2026-11-19T04:00:00Z")
+        self.assertEqual(third["events"][0]["article_revisions"],second["events"][0]["article_revisions"])
     def test_actions_are_pinned_to_full_commits(self):
         for path in (Path(__file__).parent/".github/workflows").glob("*.yml"):
             for action in re.findall(r"uses:\s+([^\s#]+)",path.read_text(encoding="utf-8")):
