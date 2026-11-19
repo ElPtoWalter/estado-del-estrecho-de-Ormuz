@@ -6,8 +6,8 @@
   if (!form || !frame || !code) return;
   const update = () => {
     const data = new FormData(form);
-    const selectedLang = data.get('lang');
-    const theme = data.get('theme');
+    const selectedLang = data.get('lang') === 'en' ? 'en' : 'es';
+    const theme = data.get('theme') === 'light' ? 'light' : 'dark';
     const compact = data.get('compact') === '1' ? '1' : '0';
     const height = compact === '1' ? 175 : 260;
     const path = selectedLang === 'en' ? 'en-widget.html' : 'widget.html';

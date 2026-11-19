@@ -13,7 +13,7 @@ on:
       - "video-rules.json"
       - ".github/workflows/**.yml"
   pull_request:
-    branches: [main, "codex/recovery-*"]
+    branches: [main, codex/recovery-*]
     paths:
       - "**.py"
       - ".github/workflows/**.yml"
@@ -112,8 +112,8 @@ jobs:
       GEMINI_API_KEY: ""
       OPENROUTER_API_KEY: ""
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: "3.12"
       - name: Compilar
@@ -131,7 +131,10 @@ jobs:
       - name: Pruebas de interfaz pública
         run: node --test test_public_ui.cjs test_own_projects.cjs
       - name: Construir y comprobar publicación sin anuncios
+        env:
+          PUBLICATION_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
+          python canonical_publication.py
           python build_public_site.py
           python check_public_links.py _site
           python adsense_checks.py --root _site
@@ -149,7 +152,7 @@ jobs:
           python publisher_preparation.py --check
           python indexation_audit.py --public-root _site --output "${{ runner.temp }}/indexation-offline"
       - name: Conservar candidato público comprobado sin desplegar
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: candidato-publico-${{ github.event.pull_request.head.sha || github.sha }}
           path: _site/
@@ -157,7 +160,7 @@ jobs:
           retention-days: 7
           if-no-files-found: error
       - name: Conservar evidencia de integridad separada del sitio
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: auditoria-energia-${{ github.event.pull_request.head.sha || github.sha }}
           path: drafts/energy-flows-20261025/release-build-audit.json

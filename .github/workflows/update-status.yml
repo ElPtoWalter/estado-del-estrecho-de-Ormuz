@@ -20,12 +20,12 @@ jobs:
 
     steps:
       - name: Descargar repositorio completo
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           fetch-depth: 0
 
       - name: Configurar Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: "3.12"
 
@@ -87,6 +87,9 @@ jobs:
           python refresh_publication.py
           python canonical_publication.py --require-fresh
 
+      - name: Auditar relevancia y trazabilidad sin reclasificar
+        run: python editorial_evidence_audit.py --output "${{ runner.temp }}/evidence-audit.json"
+
       - name: Regenerar sitemap desde todos los HTML públicos
         run: python build_sitemap.py --root .
 
@@ -109,6 +112,7 @@ jobs:
             "${{ runner.temp }}/validation-report.json" \
             "${{ runner.temp }}/editorial-review.json" \
             "${{ runner.temp }}/ormuz-change.json" \
+            "${{ runner.temp }}/evidence-audit.json" \
             status.json health.json events.json operational-intelligence.json sitemap.xml; do
             [ ! -f "$file" ] || cp "$file" "${{ runner.temp }}/ormuz-diagnostics/"
           done
@@ -116,7 +120,7 @@ jobs:
 
       - name: Subir diagnóstico de la ejecución
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: diagnostico-ormuz-${{ github.run_number }}
           path: ${{ runner.temp }}/ormuz-diagnostics

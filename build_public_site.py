@@ -1038,6 +1038,17 @@ HISTORY_PUBLIC_CSV = frozenset(
 )
 ENERGY_PUBLIC_CSV = frozenset({'assets/research/energy-flows-20261025/energy-series.csv'})
 SPAIN_DRAFT_CSV = frozenset(f'assets/research/spain-europe-20261025/{name}.csv' for name in ('source-inputs','calculations'))
+PUBLIC_ROOT_ASSETS = frozenset({
+    "adsense-legal.css", "authority-v6.css", "diario-v8.css", "growth-v4.css", "operational-v7.css",
+    "own-projects.css", "professional-v9.css", "styles.css", "v11.css",
+    "embed.js", "own-projects.js", "privacy-controls.js", "public-ui.js", "public-ui.min.js",
+    "public-widget.min.js", "radar-fix.js", "radar-map.js",
+    "feed.xml", "daily-brief-feed.xml", "daily-brief-feed-en.xml", "diario-feed.xml", "diary-feed.xml",
+    "sitemap.xml", "publication-health.xml",
+    "assets/research/energy-flows-20261025/energy-editorial.css",
+    "assets/research/monitor-history-20261024/history-editorial.css",
+    "assets/research/spain-europe-20261025/spain-editorial.css",
+})
 
 
 def copy_asset(path: Path) -> bool:
@@ -1050,6 +1061,8 @@ def copy_asset(path: Path) -> bool:
     if private_name(path) or path.name.startswith("."):
         return False
     suffix = path.suffix.lower()
+    if suffix in {".js", ".css", ".xml"} and rel.as_posix() not in PUBLIC_ROOT_ASSETS:
+        return False
     if suffix == ".txt":
         return path.name in {"ads.txt", "8ee87f80641eba7927c66d271c9380a5.txt"}
     if suffix == ".js" and javascript_is_private(path):
@@ -1102,6 +1115,8 @@ def audit_public_build(root: Path | None = None) -> None:
         if path.suffix.lower() == ".js" and javascript_is_private(path):
             errors.append(f"private javascript leaked: {rel}")
             continue
+        if path.suffix.lower() in {".js", ".css", ".xml"} and rel not in PUBLIC_ROOT_ASSETS:
+            errors.append(f"unapproved executable, style or XML asset: {rel}")
         if path.suffix.lower() in {".html", ".js", ".css", ".xml", ".txt"}:
             body = path.read_text(encoding="utf-8", errors="ignore")
             for token in forbidden_tokens:
