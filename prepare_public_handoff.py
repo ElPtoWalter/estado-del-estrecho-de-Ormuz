@@ -19,6 +19,18 @@ jobs:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false
+      - name: Verify the public-only manifest
+        run: |
+          python3 - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          root = Path("public")
+          expected = json.loads(Path(".github/publication-manifest.json").read_text())
+          actual = {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+                    for p in root.rglob("*") if p.is_file()}
+          assert actual == expected, "Public files differ from the audited handoff"
+          assert not any(p.is_symlink() for p in root.rglob("*"))
+          PY
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
           path: public
@@ -52,6 +64,7 @@ def prepare(source, destination):
     workflow.write_text(WORKFLOW, encoding="utf-8")
     manifest = {p.relative_to(source).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                 for p in source.rglob("*") if p.is_file()}
+    (destination / ".github/publication-manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
     # Evidence stays alongside the new repository, never in the deploy directory.
     destination.with_suffix(".manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
     return len(manifest)

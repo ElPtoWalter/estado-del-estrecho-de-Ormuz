@@ -13,7 +13,7 @@ class SecurityRecoveryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)
             for name in ("index.html","en.html"):
-                (root/name).write_text('<html><head></head><body>Public</body></html>',encoding="utf-8")
+                (root/name).write_text('<html><head><meta name="google-adsense-account" content="ca-pub-1713078636060241"></head><body>Public</body></html>',encoding="utf-8")
             (root/"robots.txt").write_text("User-agent: *\nAllow: /\n",encoding="utf-8")
             (root/"sitemap.xml").write_text('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"/>',encoding="utf-8")
             (root/"ads.txt").write_bytes((Path(__file__).parent/"ads.txt").read_bytes())
