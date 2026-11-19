@@ -12,7 +12,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
-from canonical_publication import assessment_id, age_hours, MAX_AGE_HOURS
+from canonical_publication import assessment_id, age_hours, material_key, MAX_AGE_HOURS
 
 ROOT = Path(os.getenv("ORMUZ_ROOT", Path(__file__).resolve().parent))
 try:
@@ -94,9 +94,18 @@ def risk_lists(data: dict[str, Any], evidence: list[dict[str, Any]]) -> tuple[li
     watch_en=["Official maritime notices and independent operational confirmations.","Completed vessel tracks and actual continuity of crossings, not isolated AIS points.","Changes in restrictions, insurance, escorts, ports and crew availability."]
     return risks_es,risks_en,watch_es,watch_en
 
+def brief_key(item: dict[str, Any]) -> tuple:
+    assessment = item.get("canonical_assessment")
+    if not isinstance(assessment, dict) or not assessment.get("state"):
+        assessment = {"state": item.get("operational_status") or item.get("status"),
+                      "confidence": item.get("confidence"), "dimensions": {}}
+    return material_key(assessment)
+
+
 def material_hash(brief: dict[str, Any]) -> str:
     material = {key:brief[key] for key in ("date","status","operational_status","confidence","verification_ok","stale","summary_es")}
     material["evidence"]=[(x.get("source_url"),x.get("signal"),x.get("title")) for x in brief["evidence"]]
+    material["canonical_key"] = brief_key(brief)
     return hashlib.sha256(json.dumps(material,ensure_ascii=False,sort_keys=True).encode()).hexdigest()[:16]
 
 def trim_post(text: str, limit: int=260) -> str:
@@ -181,8 +190,8 @@ def main() -> int:
     state_es,state_en,op_es,op_en=display_labels(status)
     evidence=dedupe_evidence(status.get("evidence",[]))
     risks_es,risks_en,watch_es,watch_en=risk_lists(status,evidence)
-    current_key=f"{status.get('status')}|{status.get('operational_status')}|{status.get('confidence')}"
-    previous_key=f"{previous.get('status')}|{previous.get('operational_status')}|{previous.get('confidence')}" if previous else ""
+    current_key=brief_key(status)
+    previous_key=brief_key(previous) if previous else None
     if not previous:
         change_es="Primera línea base del parte diario; no implica por sí sola una novedad publicable."
         change_en="First daily-brief baseline; this does not by itself represent a publishable change."
