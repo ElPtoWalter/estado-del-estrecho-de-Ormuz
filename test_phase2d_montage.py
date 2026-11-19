@@ -154,7 +154,7 @@ class MontageTests(unittest.TestCase):
     def test_manual_workflow_has_no_generation_keys_or_schedule(self):
         for name in ("pilot-phase2d-montage.yml", "phase2d-montage-ci.yml"):
             workflow = (montage.REPO_ROOT / ".github/workflows" / name).read_text(encoding="utf-8")
-            self.assertIn("\n    steps:\n      - uses: actions/checkout@v6\n", workflow)
+            self.assertIn("\n    steps:\n      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6\n", workflow)
             self.assertNotIn('\n      OPENROUTER_API_KEY: ""\n      - uses:', workflow)
         text = (montage.REPO_ROOT / ".github/workflows/pilot-phase2d-montage.yml").read_text(encoding="utf-8")
         self.assertIn("workflow_dispatch:", text)
