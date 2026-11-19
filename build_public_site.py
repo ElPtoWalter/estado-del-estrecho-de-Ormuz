@@ -9,6 +9,8 @@ import json
 import re
 import shutil
 import sys
+import os
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 from publication_quality import apply_policy, ads_authorized
@@ -466,10 +468,15 @@ def render_home_surface(document: str, assessment: dict[str, Any], lang: str) ->
     ) + '</dl>'
     document = re.sub(r'<dl class="observatory-dimensions">.*?</dl>', '', document, flags=re.S)
     document = document.replace('<p class="status-advisory"', dimensions + '<p class="status-advisory"', 1)
-    checked = assessment.get("generated_at") or ""
+    checked = assessment.get("verified_at") or assessment.get("generated_at") or ""
     freshness = ("Instantánea fechada; consulta la hora de comprobación. No es un recuento AIS en tiempo real."
                  if es else "Dated snapshot; check the verification time. This is not a live AIS count.")
     note = f'<p class="observatory-freshness" data-snapshot-at="{esc(checked, "")}">{freshness}</p>'
+    from canonical_publication import age_hours, MAX_AGE_HOURS
+    if (age_hours(checked) or 0) > MAX_AGE_HOURS:
+        warning = ("Comprobación con más de 3 horas de antigüedad; esta instantánea puede estar desactualizada. No es un recuento AIS en tiempo real." if es
+                   else "Verification is over 3 hours old; this snapshot may be outdated. This is not a live AIS count.")
+        note = f'<p class="observatory-freshness is-stale" role="status" data-snapshot-at="{esc(checked, "")}">{warning}</p>'
     document = re.sub(r'<p class="observatory-freshness"[^>]*>.*?</p>', '', document, flags=re.S)
     document = document.replace('<div class="evidence-section">', note + '<div class="evidence-section">', 1)
     latest = load_json("journal-latest.json", {})
@@ -490,6 +497,20 @@ def prerender(document: str, filename: str) -> str:
     lang = lang_for(filename, document)
     status = load_json("status.json", {})
     history = load_json("history.json", [])
+    legacy_history = history
+    v7_history = load_json("operational-intelligence-history.json", [])
+    if isinstance(v7_history, list) and v7_history:
+        from canonical_publication import assessment_id
+        history = [{**a, "id": "v7-" + assessment_id(a), "at": a.get("generated_at"),
+                    "status": "ABIERTO" if a.get("family") == "OPEN" else "CERRADO" if a.get("family") == "CLOSED" else "INCIERTO",
+                    "operational_label_es": a.get("label_es"), "operational_label_en": a.get("label_en")}
+                   for a in v7_history if isinstance(a, dict) and a.get("state")]
+        current = status.get("operational_intelligence") or {}
+        from canonical_publication import material_key
+        if current.get("state") and (not history or material_key(history[0]) != material_key(current)):
+            history.insert(0, {**current, "id": "v7-" + assessment_id(current), "at": current.get("generated_at"),
+                               "status": "ABIERTO" if current.get("family") == "OPEN" else "CERRADO" if current.get("family") == "CLOSED" else "INCIERTO",
+                               "operational_label_es": current.get("label_es"), "operational_label_en": current.get("label_en")})
     brief = load_json("daily-brief.json", {})
     if not isinstance(status, dict):
         status = {}
@@ -505,7 +526,7 @@ def prerender(document: str, filename: str) -> str:
         if lang == "es"
         else {"ALTA": "High", "MEDIA": "Medium", "BAJA": "Low"}.get(confidence, confidence)
     )
-    generated = assessment.get("generated_at") or status.get("checked_at")
+    generated = assessment.get("verified_at") or assessment.get("generated_at") or status.get("checked_at")
     latest = assessment.get("latest_confirmed_transit_at")
 
     for element_id, value in (
@@ -523,7 +544,14 @@ def prerender(document: str, filename: str) -> str:
     document = dedupe_operational_evidence(document, status, lang)
     document = replace_element(document, "evidenceArchive", render_evidence(status, lang, 20))
     document = replace_element(document, "recentHistory", render_history(history, lang, 3))
-    document = replace_element(document, "historyTimeline", render_history(history, lang, 50))
+    timeline = render_history(history, lang, 50)
+    if v7_history and isinstance(legacy_history, list) and legacy_history:
+        # Preserve previously published fragment links; these records are explicitly historical.
+        title = ("Registros históricos del motor anterior" if lang == "es" else "Historical records from the earlier engine")
+        note = ("Diagnósticos de su fecha, con un método distinto. No representan la evaluación actual V7." if lang == "es" else
+                "Dated diagnostics using a different method. They do not represent the current V7 assessment.")
+        timeline += '<details class="legacy-history"><summary>' + title + '</summary><p>' + note + '</p>' + render_history(legacy_history, lang, len(legacy_history)) + '</details>'
+    document = replace_element(document, "historyTimeline", timeline)
     document = render_archive(document, status, lang)
 
     diagnostics = status.get("diagnostics") or {}
@@ -1022,7 +1050,7 @@ def public_html_path(path: Path) -> bool:
         return False
     return (not any(part.startswith('.') for part in path.parts)
             and (len(path.parts) == 1 or
-                 (len(path.parts) == 2 and path.parts[0] in {"diario", "diary", "briefs"})))
+                 (len(path.parts) == 2 and path.parts[0] in {"diario", "diary", "briefs", "briefs-en"})))
 
 def write_sitemap(root: Path | None = None) -> None:
     root = root if root is not None else OUT
@@ -1121,7 +1149,7 @@ def main() -> int:
             continue
         shutil.copy2(path, OUT / path.name)
 
-    for dirname in ("diario", "diary", "briefs", "images", "assets"):
+    for dirname in ("diario", "diary", "briefs", "briefs-en", "images", "assets"):
         source_dir = ROOT / dirname
         if not source_dir.exists():
             continue
@@ -1156,6 +1184,10 @@ def main() -> int:
     publish_spain(OUT, reviews)
     from seo_surface import publish as publish_seo, audit as audit_seo
     publish_seo(OUT)
+    from canonical_publication import health_xml
+    commit = os.environ.get("PUBLICATION_COMMIT") or subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    (OUT / "publication-health.xml").write_text(health_xml(ROOT, commit), encoding="utf-8")
     write_sitemap()
     audit_public_build()
     audit_history(OUT)

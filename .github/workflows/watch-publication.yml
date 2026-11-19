@@ -1,0 +1,29 @@
+name: Vigilar frescura de publicación
+on:
+  schedule:
+    - cron: "13,43 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: publication-watchdog
+  cancel-in-progress: false
+jobs:
+  watch:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Verificar edad real, parte y edición por HTTP
+        run: python watch_publication.py --report watchdog-report.json
+      - name: Conservar diagnóstico sin publicarlo en Pages
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: watchdog-${{ github.run_id }}
+          path: watchdog-report.json
+          retention-days: 14

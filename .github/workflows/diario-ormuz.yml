@@ -38,7 +38,7 @@ jobs:
         run: python -m py_compile generate_daily_journal.py free_editorial_ai.py straitwatch_core.py
 
       - name: Preparar parte breve estructurado
-        run: python generate_daily_brief.py
+        run: python refresh_publication.py
 
       - name: Redactar edición de la mañana
         env:
@@ -68,24 +68,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add \
-            diario.html \
-            en-diary.html \
-            diario \
-            diary \
-            journal-data \
-            journal-latest.json \
-            journal-archive.json \
-            journal-state.json \
-            journal-health.json \
-            journal-social-draft.json \
-            events.json \
-            diario-feed.xml \
-            diary-feed.xml \
-            index.html \
-            en.html \
-            sitemap.xml \
-            robots.txt
+          python commit_generated.py journal
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No hay cambios editoriales que guardar."

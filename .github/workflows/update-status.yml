@@ -82,6 +82,11 @@ jobs:
       - name: Generar verdad canónica V7, eventos y verificación
         run: python operational_intelligence_v7.py
 
+      - name: Sincronizar parte y RSS con la evaluación canónica
+        run: |
+          python refresh_publication.py
+          python canonical_publication.py --require-fresh
+
       - name: Regenerar sitemap desde todos los HTML públicos
         run: python build_sitemap.py --root .
 
@@ -134,22 +139,10 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
+          python commit_generated.py monitor
           git commit -m "Actualizar estado, evidencias y publicación de Ormuz"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
-      - name: IndexNow y avisos opcionales
-        if: steps.commit.outputs.changed == 'true'
-        continue-on-error: true
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          NTFY_TOPIC_URL: ${{ secrets.NTFY_TOPIC_URL }}
-          CHANGE_FILE: ${{ runner.temp }}/ormuz-change.json
-        run: |
-          if [ -s "$CHANGE_FILE" ] && [ -f notify_services.py ]; then
-            python notify_services.py "$CHANGE_FILE"
-          else
-            echo "No hay cambio editorial notificable o falta notify_services.py."
-          fi
+      # Canonical notifications are delivered by deploy-public only after HTTP proof.
+      # No search-engine submissions are performed by the recovery pipeline.

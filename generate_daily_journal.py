@@ -42,6 +42,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
+from canonical_publication import assessment_id, age_hours, MAX_AGE_HOURS
 
 try:
     MADRID = ZoneInfo("Europe/Madrid")
@@ -545,6 +546,7 @@ def state_fingerprint(
         "legacy_confidence": status.get("confidence"),
         "v7_state": operational.get("state") if operational else None,
         "v7_confidence": operational.get("confidence") if operational else None,
+        "generated_at": (operational.get("verified_at") or operational.get("generated_at")) if operational else None,
         "dimensions": operational.get("dimensions") if operational else None,
         "events": compact_events,
         "event_ids": [event["event_id"] for event in compact_events],
@@ -1180,11 +1182,11 @@ def render_page(
     )
 
     dim_labels = dimensions(operational, lang)
-    checked_at = status.get('checked_at') or operational.get('generated_at') or ''
+    checked_at = operational.get('verified_at') or operational.get('generated_at') or status.get('checked_at') or ''
     stale_note = ''
-    if checked_at and (local_dt - parse_date(checked_at)).total_seconds() > 6 * 3600:
-        stale_note = ('La comprobación tiene más de seis horas; esta edición no describe tráfico en directo.'
-                      if lang == 'es' else 'The check is over six hours old; this edition does not describe live traffic.')
+    if checked_at and (local_dt - parse_date(checked_at)).total_seconds() > MAX_AGE_HOURS * 3600:
+        stale_note = ('La comprobación tiene más de tres horas; esta edición no describe tráfico en directo.'
+                      if lang == 'es' else 'The check is over three hours old; this edition does not describe live traffic.')
     metric_names = {
         "es": {"passage": "Paso físico", "traffic": "Tráfico", "access": "Acceso", "risk": "Riesgo"},
         "en": {"passage": "Physical passage", "traffic": "Traffic", "access": "Access", "risk": "Risk"},
@@ -1530,6 +1532,8 @@ def main() -> int:
         "schema_version": 1,
         "date": date_iso,
         "generated_at": generated_at,
+        "source_checked_at": operational.get("verified_at") or operational.get("generated_at"),
+        "assessment_id": assessment_id(operational),
         "title_es": title_es,
         "title_en": title_en,
         "summary_es": summary_es,

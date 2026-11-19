@@ -147,6 +147,14 @@ def main() -> int:
         print("Uso: notify_services.py <change.json>", file=sys.stderr)
         return 2
     change = load_json(Path(sys.argv[1]))
+    # This compatibility entry point must never publish a legacy-engine transition.
+    # Canonical delivery uses canonical_notifications.py after release verification.
+    if change.get("engine") != "operational-intelligence-v7":
+        print("Legacy change-file is diagnostic only. Use the post-deploy V7 outbox.", file=sys.stderr)
+        return 2
+    print("Direct delivery is disabled. Use canonical_notifications.py with publication proof.", file=sys.stderr)
+    return 2
+    # Kept below for compatibility imports; no direct legacy delivery is reachable.
     if not change.get("meaningful_change"):
         print("No hay cambio significativo; no se envían alertas ni IndexNow.")
         return 0
