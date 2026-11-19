@@ -108,11 +108,13 @@ def deliver(root, expected_commit, *, enabled=False, fetcher=fetch_public, sende
     if not channels:
         report["errors"].append("No delivery channels configured")
         return report
+    matching = [event for event in queue if material_key(event["after"]) == material_key(current)]
+    latest_visible = max(matching, key=lambda event: timestamp(event["at"]))["id"] if matching else None
     for event in queue:
         row = ledger.setdefault(event["id"], {"at": event["at"], "channels": {}})
-        if material_key(event["after"]) != material_key(current):
+        if event["id"] != latest_visible:
             row["superseded_by"] = assessment_id(current)
-            continue  # Never announce an obsolete state after a newer deployment.
+            continue  # Coalesce multiple unpublished transitions, including returns to the same state.
         if timestamp(event["at"]) > timestamp(current["generated_at"]):
             raise ValueError("Outbox event is newer than the public assessment")
         after, before = event["after"], event["before"]
