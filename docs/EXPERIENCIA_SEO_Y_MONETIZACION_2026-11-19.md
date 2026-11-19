@@ -71,4 +71,6 @@ Secuencia comercial propuesta, sin activar nada:
 
 ## Despliegue y reversión
 
-Revisar las comparativas y la CI del commit exacto, después de P0 y P1. Publicar solo con autorización. Tras la publicación autorizada, repetir HTTP, identidad del artefacto, tamaños móviles y recursos sellados. Para revertir la presentación basta revertir esta PR, manteniendo las reparaciones de actualización/seguridad y los históricos nuevos; no restaurar archivos operativos antiguos.
+La PR #30 se presenta contra main como candidato integral: contiene P0, P1 y los cambios de presentación. Las PR #28 y #29 conservan los diffs por prioridad para revisión. Revisar las comparativas y los cuatro checks del commit exacto; publicar solo con autorización. Tras la publicación autorizada, repetir HTTP, identidad del artefacto, tamaños móviles y recursos sellados.
+
+Para revertir únicamente la presentación, preparar una PR que revierta sus cambios específicos, conservando P0, P1 y todos los históricos nuevos. No revertir íntegramente la PR #30 para una incidencia solo visual: también retiraría las reparaciones de actualización y seguridad. Si se requiere volver al artefacto previo completo, utilizar la copia verificada del último despliegue mediante una acción expresamente autorizada y mantener separados los datos operativos nuevos; no restaurar archivos operativos antiguos ni forzar main.
