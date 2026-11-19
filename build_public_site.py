@@ -1185,6 +1185,13 @@ def main() -> int:
     from seo_surface import publish as publish_seo, audit as audit_seo
     publish_seo(OUT)
     from canonical_publication import health_xml
+    from canonical_publication import canonical, assessment_id
+    current_assessment = assessment_id(canonical(ROOT))
+    for name in ("index.html", "en.html", "parte-diario.html", "en-daily-brief.html", "historial.html", "en-history.html"):
+        page = OUT / name
+        text = page.read_text(encoding="utf-8")
+        text = text.replace("</head>", f'<meta name="ormuz-assessment" content="{current_assessment}"></head>', 1)
+        page.write_text(text, encoding="utf-8")
     commit = os.environ.get("PUBLICATION_COMMIT") or subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     (OUT / "publication-health.xml").write_text(health_xml(ROOT, commit), encoding="utf-8")
