@@ -886,6 +886,14 @@ def repair_public_navigation(document: str, filename: str) -> str:
 
 def sanitize_html(document: str, filename: str) -> str:
     lang = lang_for(filename, document)
+    def name_brand_link(match):
+        opening = match[0]
+        classes = re.search(r'class=["\x27]([^"\x27]+)', opening)
+        if classes and "brand" in classes[1].split() and not re.search(r'aria-label(?:ledby)?=', opening):
+            label = "Estrecho Ormuz · inicio" if lang == "es" else "Estrecho Ormuz · home"
+            return opening[:-1] + ' aria-label="' + label + '">'
+        return opening
+    document = re.sub(r"<a\b[^>]*>", name_brand_link, document)
     document = prerender(document, filename)
     document = strip_private_scripts(document)
     document = remove_private_links(document)
@@ -1184,6 +1192,8 @@ def main() -> int:
     publish_spain(OUT, reviews)
     from seo_surface import publish as publish_seo, audit as audit_seo
     publish_seo(OUT)
+    from home_layout import publish as publish_home_layout
+    publish_home_layout(OUT)
     from canonical_publication import health_xml
     commit = os.environ.get("PUBLICATION_COMMIT") or subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
