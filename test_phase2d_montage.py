@@ -162,6 +162,10 @@ class MontageTests(unittest.TestCase):
         self.assertIn("actions: read", text)
         self.assertNotIn("  schedule:", text)
         self.assertNotIn("  push:", text)
+        self.assertNotIn("contents: write", text)
+        self.assertNotIn("secrets.GEMINI", text)
+        self.assertNotIn("pilot_phase2b_voice.py", text)
+        self.assertIn("expected-audio-sha256", text)
 
     def test_pr_ci_runs_full_local_integration_and_manual_real_audio_keeps_hash_guards(self):
         text=(montage.REPO_ROOT/".github/workflows/phase2d-montage-ci.yml").read_text(encoding="utf-8")
