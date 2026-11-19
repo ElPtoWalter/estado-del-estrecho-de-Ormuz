@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
   "date": "2026-11-19",
-  "generated_at": "2026-11-19T19:47:54Z",
-  "source_checked_at": "2026-11-19T12:02:46Z",
-  "assessment_id": "db522602a21f907d0519652b",
+  "generated_at": "2026-11-19T21:46:28Z",
+  "source_checked_at": "2026-11-19T20:55:11Z",
+  "assessment_id": "17e571aa6d9565ab971dbc95",
   "canonical_assessment": {
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "confidence": "MEDIA",
-    "generated_at": "2026-11-19T12:02:46Z",
+    "generated_at": "2026-11-19T20:55:11Z",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
@@ -29,19 +29,17 @@
     "en": "Medium"
   },
   "verification_ok": true,
-  "stale": true,
+  "stale": false,
   "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
   "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "change_es": "Comparación con el parte fechado el 2026-09-29: «ABIERTO · TRÁNSITO MUY RESTRINGIDO» frente a «ABIERTO · TRÁNSITO MUY RESTRINGIDO», con sus respectivos niveles de confianza. Estos registros no permiten fechar el cambio marítimo.",
   "change_en": "Compared with the brief dated 2026-09-29: “OPEN · SEVERELY RESTRICTED TRANSIT” versus “OPEN · SEVERELY RESTRICTED TRANSIT”, each with its own confidence level. These records cannot date a maritime change.",
   "risks_es": [
     "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
-    "Los datos están marcados como desactualizados y no deben utilizarse como confirmación operativa.",
     "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
   ],
   "risks_en": [
     "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
-    "Data are marked as stale and should not be used as operational confirmation.",
     "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
   ],
   "watchlist_es": [
@@ -57,18 +55,26 @@
   "evidence": [
     {
       "signal": "RISK_SEVERE",
-      "title": "Previous Ukraine port calls could expose ships to drone attacks in Black Sea - TradeWinds News",
-      "source_name": "TradeWinds",
-      "source_url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQSXppM2dNSzhndkZqUnI4TTJNN0RIYlN5SXdZWWFBSHR5TEEtMURKTVFLVW82cHQyaU9nZ3RjcGM2Y01jY0Z5dG1vSm5qMW9YOGozNDlhWDdrcXkzaXJOMm9HLWF5UUI5SUJjM21sczZjNFdWVmM2V21DeHh1QXItYkxqeUIyeVU3QmVqYVVLb0Y0bjUwVVdJVmNtYjlKU1VCR21MNjJsdVNlY2xWN2dNTWpval9vbFBVMVk4RUQ4Q09VLWxDWVhmWm13",
-      "published_at": "2026-11-19T04:29:15Z",
+      "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+      "source_name": "Lloyd's List",
+      "source_url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+      "published_at": "2026-11-19T20:55:11Z",
       "official": false
     },
     {
       "signal": "RISK_SEVERE",
-      "title": "Oil prices rise as Middle East shipping attacks counter supply surplus outlook - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOMnV0bXBXX1ZzNHpkcHFmanlPQ2FmczM3Z2xCcXRqRjYwTVB6SlFhZ29vbGcyM3V5a3lOMHZ3OXprMDM0ang4RVEwQmhFMTZ2QU1GT2lQN0ZPUXQyZWJ4MHR1S0JQTmE5Y0Z5dkZlemdFU0V6TWFId0pZZlFtbHVzaU1EeVl1S2RiSFdrcE95d1ZqQW9NRWlZUFNHWU9QVHNXRlZiTmEtckdWZEpScFREcVpPQ0x3MDNQeFhiZHJHMUlVQXFRNkE",
-      "published_at": "2026-11-19T02:47:00Z",
+      "title": "Iran Intensifies Hormuz Tanker Attacks Just as Oil Prices Slide - Bloomberg.com",
+      "source_name": "Bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQV0xLbmVSbGZvbm5GVkFJaGNGUzFDLXc3Rkh6b0RwR1BWVHRvV0taRVJIV2Z2NWROX3djNTl0LUdGXzliWm96bXA1VFRfT2ZMNUNPRElqRXp5eF9ObHZZeVFvOVROY3NwSlNBUV8xUzM2U091bnY5d1J0LUlSUmZlMjhTU05fTzFjQmg1eVg2SjBIV0tkQzRVSGVjX3BrSVJlYXJVMlZFTXkyZUFHQWZKa3NPQUM",
+      "published_at": "2026-11-19T13:28:59Z",
+      "official": false
+    },
+    {
+      "signal": "RISK_SEVERE",
+      "title": "Previous Ukraine port calls could expose ships to drone attacks in Black Sea - TradeWinds News",
+      "source_name": "TradeWinds",
+      "source_url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQSXppM2dNSzhndkZqUnI4TTJNN0RIYlN5SXdZWWFBSHR5TEEtMURKTVFLVW82cHQyaU9nZ3RjcGM2Y01jY0Z5dG1vSm5qMW9YOGozNDlhWDdrcXkzaXJOMm9HLWF5UUI5SUJjM21sczZjNFdWVmM2V21DeHh1QXItYkxqeUIyeVU3QmVqYVVLb0Y0bjUwVVdJVmNtYjlKU1VCR21MNjJsdVNlY2xWN2dNTWpval9vbFBVMVk4RUQ4Q09VLWxDWVhmWm13",
+      "published_at": "2026-11-19T04:29:15Z",
       "official": false
     },
     {
@@ -86,17 +92,9 @@
       "source_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNYmtEcDhmRXdLTUZPbVE4cmJpRTJJa3dKOElyZUxpWmF3d25Pem41eDhqYXBNMkdoV2hlUE1WdWZrMWJKQlNabkZfTVJvaGpuWHRzY3VELXRfZ0x2VVFtMWd1VzFPWE5iaFhrNEU4WHh0NTFCRDVxX2xTLWxQV2ZPeUlad2IzQjZYRXZUUFBjY2NrUDJMUjNISllSMEZZYTdkMlllSUNZMDQzRWtvUHpLTHBVZjhGS2ZuaDN4bHJLRQ",
       "published_at": "2026-11-18T23:40:37Z",
       "official": false
-    },
-    {
-      "signal": "ACCESS_RESTRICTED",
-      "title": "US tightens Iran blockade with curbs on oil transfers at sea, advisory shows - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNS21BSEJXWHdIUGpZcWRtZm0tT084cTd5WFpvbFZUeE9wdHkyelI4Y2pFamp5YmY3S09BRm9zMWQ3VE5NcHVnSGZNM20yZ3B5NE1mXzZ4VVg3NUZ5RTVuQ2owQzE4MkxpaTBIcEhCNng4MDE1ZnpyTUVOMUVHVFdzcm14Mkl2TlNGZmNuVFQ1NFMwdGFOT1JSTEFURDNOQ005cWVaUG5ybmtyNWQyTW1QMG82SHhGQXNmb3VMTUtB",
-      "published_at": "2026-11-18T19:32:18Z",
-      "official": false
     }
   ],
   "last_valid_confirmation": null,
   "publish_recommended": false,
-  "material_hash": "00ea3c6a18185205"
+  "material_hash": "a5ca07a0a936d43b"
 }
