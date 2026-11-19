@@ -11,6 +11,7 @@ Propuesta dependiente de la reparación P0. No cambia clasificación, datos oper
 - La construcción permite ahora únicamente los JS, CSS y XML declarados. Un nuevo archivo con esas extensiones no se publica accidentalmente por aparecer en la raíz.
 - El configurador de inserción limita idioma y tema a valores conocidos; el código copiable usa textContent.
 - Se mantienen mapas externos bajo acción del lector. No se añade analítica, CMP ni formulario de captación.
+- Se contrastó el TAR del último despliegue con la construcción: upload-pages-artifact v5 excluía por defecto .well-known/security.txt. Se habilita su inclusión tras una lista exacta de ocultos autorizados; cualquier otro oculto o enlace simbólico bloquea la auditoría. La CI comprueba los nombres y bytes del TAR de Pages sin desplegar. El contacto ya existe en la fuente y no se modifica.
 
 ## Trazabilidad editorial
 

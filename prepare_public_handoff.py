@@ -22,6 +22,7 @@ jobs:
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
           path: public
+          include-hidden-files: true
   deploy:
     needs: build
     runs-on: ubuntu-latest

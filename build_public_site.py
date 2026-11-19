@@ -1091,9 +1091,13 @@ def audit_public_build(root: Path | None = None) -> None:
     )
 
     for path in root.rglob("*"):
+        rel = path.relative_to(root).as_posix()
+        if path.is_symlink():
+            errors.append(f"public symlink is forbidden: {rel}")
+        if any(part.startswith(".") for part in path.relative_to(root).parts) and rel not in {".well-known", ".well-known/security.txt"}:
+            errors.append(f"unapproved hidden path: {rel}")
         if not path.is_file():
             continue
-        rel = path.relative_to(root).as_posix()
         if path.suffix.lower() == ".csv" and rel != "monitor-records.csv" and rel not in HISTORY_PUBLIC_CSV | ENERGY_PUBLIC_CSV | SPAIN_DRAFT_CSV:
             errors.append(f"unapproved public CSV: {rel}")
         if private_name(path):
