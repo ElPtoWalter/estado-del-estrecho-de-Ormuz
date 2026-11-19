@@ -1,5 +1,6 @@
 from pathlib import Path
 import re
+import tempfile,contextlib,io
 import unittest
 import build_public_site as public
 from editorial_evidence_audit import evidence_record
@@ -8,6 +9,22 @@ from straitwatch_core import SourceRegistry
 from straitwatch_core import aggregate_events
 
 class SecurityRecoveryTests(unittest.TestCase):
+    def test_hidden_public_contact_is_allowed_but_accidental_dotfiles_block_the_build(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            for name in ("index.html","en.html"):
+                (root/name).write_text('<html><head></head><body>Public</body></html>',encoding="utf-8")
+            (root/"robots.txt").write_text("User-agent: *\nAllow: /\n",encoding="utf-8")
+            (root/"sitemap.xml").write_text('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"/>',encoding="utf-8")
+            (root/"ads.txt").write_bytes((Path(__file__).parent/"ads.txt").read_bytes())
+            (root/".well-known").mkdir()
+            (root/".well-known/security.txt").write_text("Contact: mailto:contacto@estrechoormuz.com\n",encoding="utf-8")
+            public.audit_public_build(root)
+            (root/".env").write_text("TEST_SENTINEL=not-a-credential\n",encoding="utf-8")
+            captured=io.StringIO()
+            with contextlib.redirect_stderr(captured),self.assertRaises(SystemExit):
+                public.audit_public_build(root)
+            self.assertIn("unapproved hidden path: .env",captured.getvalue())
     def test_article_update_retains_previous_text_without_inventing_a_correction(self):
         registry=SourceRegistry.from_path(Path(__file__).parent/"source-registry.json")
         old={"title":"Tanker crosses Hormuz","source_name":"Reuters","source_url":"https://reuters.com/a",
