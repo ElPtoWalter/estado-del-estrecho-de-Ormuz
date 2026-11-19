@@ -129,7 +129,7 @@ jobs:
           python -m unittest discover -v
           python -m unittest discover -s tests -v
       - name: Pruebas de interfaz pública
-        run: node --test test_public_ui.cjs test_own_projects.cjs
+        run: node --test test_public_ui.cjs test_own_projects.cjs test_radar.cjs
       - name: Construir y comprobar publicación sin anuncios
         env:
           PUBLICATION_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}

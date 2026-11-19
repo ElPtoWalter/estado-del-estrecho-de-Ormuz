@@ -25,6 +25,12 @@ Buenas prácticas y SEO automatizado: 100 en los cuatro ensayos. El resultado no
 
 No son Core Web Vitals de usuarios reales ni una estimación de INP. No se confunde TBT de laboratorio con INP. La consulta pública de PageSpeed respondió HTTP 429; no se inventa una evaluación CrUX ni se atribuye el rechazo a una cuota de la cuenta del titular.
 
+### Radar: incidencia adicional confirmada
+
+En una prueba real, el script de MyShipTracking respondió 200, su visor redirigió y el documento final respondió 500. La interfaz anterior anunciaba «Radar AIS cargado» igualmente. Se sustituye esa afirmación por la inserción observable del visor y una alternativa visible de MarineTraffic. El evento load de un iframe externo no acredita su disponibilidad ni cobertura. Un límite de 15 segundos evita dejar indefinidamente esperando un script que no responde; los errores y la falta de iframe permiten reintentar.
+
+Seis pruebas JavaScript cubren carga voluntaria, duplicados, inserción sin afirmar disponibilidad, error, falta de iframe, espera agotada y equivalencia inglesa. El fallo externo no se declara resuelto; no se extraen recuentos AIS ni se modifica la clasificación del monitor.
+
 Referencia: [Web Vitals y diferencia entre campo y laboratorio](https://web.dev/articles/vitals), [Lighthouse oficial](https://github.com/GoogleChrome/lighthouse).
 
 ## SEO e indexación
