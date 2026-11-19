@@ -3,6 +3,8 @@ name: Publicar superficie segura
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - notification-delivery.json
 
   workflow_dispatch:
 
@@ -20,7 +22,9 @@ permissions:
 
 concurrency:
   group: secure-pages-deploy
-  cancel-in-progress: true
+  # Serialize build, deploy and delivery together. A later deployment must not
+  # cancel a sender after provider acceptance but before receipt persistence.
+  cancel-in-progress: false
 
 jobs:
   build:

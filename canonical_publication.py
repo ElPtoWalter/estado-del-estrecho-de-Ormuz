@@ -82,6 +82,7 @@ def health_xml(root, commit=""):
     a = canonical(root)
     brief = read(root / "daily-brief.json", {})
     journal = read(root / "journal-latest.json", {})
+    journal_check = read(root / "journal-check.json", {})
     doc = ET.Element("publication", version="1", engine=ENGINE)
     values = {"assessment_id": assessment_id(a), "source_commit": commit,
               "state": a.get("state"), "confidence": a.get("confidence"),
@@ -92,6 +93,8 @@ def health_xml(root, commit=""):
               "brief_source_checked_at": brief.get("source_checked_at"),
               "brief_assessment_id": brief.get("assessment_id"),
               "journal_edition_at": journal.get("generated_at"),
+              "journal_checked_at": journal_check.get("checked_at"),
+              "journal_check_outcome": journal_check.get("outcome"),
               "journal_source_checked_at": journal.get("source_checked_at") or (journal.get("fingerprint") or {}).get("generated_at"),
               "max_age_hours": MAX_AGE_HOURS}
     for key, value in values.items():

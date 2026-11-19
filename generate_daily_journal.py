@@ -1414,6 +1414,15 @@ def patch_home_teaser(path: Path, lang: str, edition: dict[str, Any]) -> None:
     stable_write(path, text)
 
 
+def record_journal_check(root: Path, now: datetime, outcome: str) -> None:
+    """Record a real generator check without redating or rewriting an edition."""
+    latest = load_json(root / "journal-latest.json", {})
+    dump_json(root / "journal-check.json", {
+        "checked_at": iso_z(now), "outcome": outcome,
+        "edition_date": latest.get("date"),
+    })
+
+
 def scheduled_allowed(root: Path, local_now: datetime) -> bool:
     state = load_json(root / "journal-state.json", {})
     last_date = state.get("last_date") if isinstance(state, dict) else None
@@ -1436,6 +1445,9 @@ def main() -> int:
     now = utc_now()
     local_now = now.astimezone(MADRID)
     if args.scheduled and not args.force and not scheduled_allowed(root, local_now):
+        state = load_json(root / "journal-state.json", {})
+        outcome = "edition_already_exists" if state.get("last_date") == local_now.date().isoformat() else "not_due"
+        record_journal_check(root, now, outcome)
         print(f"Diario V{EDITORIAL_VERSION}: ejecución omitida por horario/idempotencia ({local_now.isoformat()}).")
         return 0
 
@@ -1642,6 +1654,7 @@ def main() -> int:
         "editorial_trace": editorial_trace,
     })
 
+    record_journal_check(root, now, "published")
     print(
         f"El Diario de Ormuz V{EDITORIAL_VERSION} listo: {date_iso} · score={score} · "
         f"archivo={'sí' if material else 'no'} · noticias={len(news)} · nuevas={len(new_items)} · "

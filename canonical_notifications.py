@@ -64,6 +64,9 @@ def verify_release(fetcher, current, expected_commit):
         match = re.search(r'<meta\s+name="ormuz-assessment"\s+content="([a-f0-9]+)"', text)
         if not match or match[1] != expected:
             raise ValueError("Public HTML has not reached the canonical assessment: " + name)
+    # Bracket the HTML reads: do not accept a manifest from an earlier release
+    # followed by pages from a different deployment.
+    verify_public(fetcher("https://estrechoormuz.com/publication-health.xml"), current, expected_commit)
     return doc
 
 
@@ -93,7 +96,8 @@ def send(channel, settings, text):
                 raise ValueError("ntfy did not acknowledge delivery")
 
 
-def deliver(root, expected_commit, *, enabled=False, fetcher=fetch_public, sender=send, sleep=time.sleep):
+def deliver(root, expected_commit, *, enabled=False, fetcher=fetch_public, sender=send, sleep=time.sleep,
+            revision_check=None):
     root = Path(root)
     queue = read(root / "notification-outbox.json", []) or []
     ledger = read(root / "notification-delivery.json", {}) or {}
@@ -102,6 +106,8 @@ def deliver(root, expected_commit, *, enabled=False, fetcher=fetch_public, sende
     report = {"enabled": enabled, "queued": len(queue), "channels": [], "errors": []}
     if not enabled:
         return report
+    if revision_check:
+        revision_check()
     verify_release(fetcher, current, expected_commit)
     channels = configured_channels()
     report["channels"] = sorted(channels)
@@ -129,6 +135,12 @@ def deliver(root, expected_commit, *, enabled=False, fetcher=fetch_public, sende
             # Ambiguous transport outcomes cannot provide exactly-once delivery.
             # Stable IDs and per-channel acknowledgements suppress confirmed duplicates.
             for attempt in range(3):
+                # Re-prove publication and branch before EVERY channel/attempt,
+                # including retries after a provider error. The workflow also
+                # serializes deploy+delivery and never cancels an active sender.
+                if revision_check:
+                    revision_check()
+                verify_release(fetcher, current, expected_commit)
                 state["attempts"] += 1
                 try:
                     sender(channel, settings, text)
@@ -152,7 +164,9 @@ def main():
     parser.add_argument("--commit", required=True)
     parser.add_argument("--send", action="store_true")
     args = parser.parse_args()
-    report = deliver(args.root, args.commit, enabled=args.send)
+    from notification_repository import revision_guard
+    report = deliver(args.root, args.commit, enabled=args.send,
+                     revision_check=lambda: revision_guard(args.root, args.commit))
     print(json.dumps(report, ensure_ascii=False))
     return int(bool(report["errors"]))
 
