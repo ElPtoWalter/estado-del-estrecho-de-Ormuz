@@ -174,6 +174,24 @@ class RecoveryTests(unittest.TestCase):
         self.assertFalse(calls)
         self.assertFalse(report["errors"])
 
+    def test_repeated_state_before_deploy_only_announces_latest_transition(self):
+        old_open=assessment("OPEN_RESTRICTED",hour=7)
+        closed=assessment("CLOSED_CONFIRMED",hour=8)
+        reopened=assessment("OPEN_RESTRICTED",hour=9)
+        closed_again=assessment("CLOSED_CONFIRMED",hour=10)
+        first=cn.enqueue(self.root,old_open,closed)
+        cn.enqueue(self.root,closed,reopened)
+        last=cn.enqueue(self.root,reopened,closed_again)
+        self.save("operational-intelligence.json",closed_again)
+        self.save("status.json",{"operational_intelligence":closed_again})
+        self.save("daily-brief.json",{"assessment_id":cp.assessment_id(closed_again),"source_checked_at":closed_again["generated_at"]})
+        calls=[]
+        with patch.object(cn,"configured_channels",return_value={"telegram":("x","")}):
+            result=cn.deliver(self.root,"abc",enabled=True,fetcher=self.response("abc"),
+                              sender=lambda channel,settings,text:calls.append(text))
+        self.assertFalse(result["errors"]);self.assertEqual(len(calls),1)
+        self.assertIn(last["id"],calls[0]);self.assertNotIn(first["id"],calls[0])
+
     def test_fresh_manifest_with_stale_html_cannot_authorize_delivery(self):
         response=self.response("abc")
         def stale(url):
