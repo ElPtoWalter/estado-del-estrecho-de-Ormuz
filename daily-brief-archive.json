@@ -2,20 +2,20 @@
   {
     "schema_version": 2,
     "date": "2026-11-19",
-    "generated_at": "2026-11-19T11:20:57Z",
-    "source_checked_at": "2026-11-19T02:45:10Z",
-    "assessment_id": "69d05f885660cb848821f8ed",
+    "generated_at": "2026-11-19T12:07:52Z",
+    "source_checked_at": "2026-11-19T12:02:46Z",
+    "assessment_id": "db522602a21f907d0519652b",
     "canonical_assessment": {
       "state": "OPEN_SEVERELY_RESTRICTED",
       "family": "OPEN",
-      "confidence": "ALTA",
-      "generated_at": "2026-11-19T02:45:10Z",
+      "confidence": "MEDIA",
+      "generated_at": "2026-11-19T12:02:46Z",
       "dimensions": {
         "passage": "PASSAGE_CONFIRMED",
         "traffic": "REDUCED",
         "access": "SELECTIVE",
         "risk": "EXTREME",
-        "legal": "DISPUTED"
+        "legal": "CLOSURE_CLAIMED"
       }
     },
     "status": "ABIERTO",
@@ -24,25 +24,23 @@
     "operational_status": "OPEN_RESTRICTED",
     "operational_label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "operational_label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
-    "confidence": "ALTA",
+    "confidence": "MEDIA",
     "confidence_label": {
-      "es": "Alta",
-      "en": "High"
+      "es": "Media",
+      "en": "Medium"
     },
     "verification_ok": true,
-    "stale": true,
+    "stale": false,
     "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
     "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
-    "change_es": "Comparación con el parte fechado el 2026-09-29: «ABIERTO · TRÁNSITO MUY RESTRINGIDO» frente a «ABIERTO · TRÁNSITO MUY RESTRINGIDO», con sus respectivos niveles de confianza. Estos registros no permiten fechar el cambio marítimo.",
-    "change_en": "Compared with the brief dated 2026-09-29: “OPEN · SEVERELY RESTRICTED TRANSIT” versus “OPEN · SEVERELY RESTRICTED TRANSIT”, each with its own confidence level. These records cannot date a maritime change.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
     "risks_es": [
       "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
-      "Los datos están marcados como desactualizados y no deben utilizarse como confirmación operativa.",
       "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
     ],
     "risks_en": [
       "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
-      "Data are marked as stale and should not be used as operational confirmation.",
       "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
     ],
     "watchlist_es": [
@@ -57,8 +55,24 @@
     ],
     "evidence": [
       {
+        "signal": "RISK_SEVERE",
+        "title": "Previous Ukraine port calls could expose ships to drone attacks in Black Sea - TradeWinds News",
+        "source_name": "TradeWinds",
+        "source_url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQSXppM2dNSzhndkZqUnI4TTJNN0RIYlN5SXdZWWFBSHR5TEEtMURKTVFLVW82cHQyaU9nZ3RjcGM2Y01jY0Z5dG1vSm5qMW9YOGozNDlhWDdrcXkzaXJOMm9HLWF5UUI5SUJjM21sczZjNFdWVmM2V21DeHh1QXItYkxqeUIyeVU3QmVqYVVLb0Y0bjUwVVdJVmNtYjlKU1VCR21MNjJsdVNlY2xWN2dNTWpval9vbFBVMVk4RUQ4Q09VLWxDWVhmWm13",
+        "published_at": "2026-11-19T04:29:15Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_SEVERE",
+        "title": "Oil prices rise as Middle East shipping attacks counter supply surplus outlook - Reuters",
+        "source_name": "Reuters",
+        "source_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOMnV0bXBXX1ZzNHpkcHFmanlPQ2FmczM3Z2xCcXRqRjYwTVB6SlFhZ29vbGcyM3V5a3lOMHZ3OXprMDM0ang4RVEwQmhFMTZ2QU1GT2lQN0ZPUXQyZWJ4MHR1S0JQTmE5Y0Z5dkZlemdFU0V6TWFId0pZZlFtbHVzaU1EeVl1S2RiSFdrcE95d1ZqQW9NRWlZUFNHWU9QVHNXRlZiTmEtckdWZEpScFREcVpPQ0x3MDNQeFhiZHJHMUlVQXFRNkE",
+        "published_at": "2026-11-19T02:47:00Z",
+        "official": false
+      },
+      {
         "signal": "TRAFFIC_REDUCED",
-        "title": "LNG Exports Through Hormuz Appear to Slow After More Attacks - Bloomberg",
+        "title": "LNG Exports Through Hormuz Appear to Slow After More Attacks - Bloomberg.com",
         "source_name": "Bloomberg",
         "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZVVmUlp0SE1pVzk3dDlYdnczRllkU2lJWXpxc1VNUGFDLV9WSGxGSUFJSlQ5ZnhEcTgtN0RFdlBQak4zYnM1dG9MRVFzNk1oZTBQR3k3NVdSX2xQX3V6SDJEQnFDUWZScGtYaGtZUXh5RDVRQjBrTjdsS0tFcVpuVVBnQlVrRDItX0xiWlNHb1hpSEJtbFdxV0FhaS1vMkw2R2hqN3Q2ZkxTaWtrbFd2UQ",
         "published_at": "2026-11-19T01:23:00Z",
@@ -79,27 +93,11 @@
         "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNS21BSEJXWHdIUGpZcWRtZm0tT084cTd5WFpvbFZUeE9wdHkyelI4Y2pFamp5YmY3S09BRm9zMWQ3VE5NcHVnSGZNM20yZ3B5NE1mXzZ4VVg3NUZ5RTVuQ2owQzE4MkxpaTBIcEhCNng4MDE1ZnpyTUVOMUVHVFdzcm14Mkl2TlNGZmNuVFQ1NFMwdGFOT1JSTEFURDNOQ005cWVaUG5ybmtyNWQyTW1QMG82SHhGQXNmb3VMTUtB",
         "published_at": "2026-11-18T19:32:18Z",
         "official": false
-      },
-      {
-        "signal": "RISK_SEVERE",
-        "title": "Saudi-backed forces launch a major attack on Houthi rebels in Yemen, and other Mideast news - Baltimore Sun",
-        "source_name": "Baltimore Sun",
-        "source_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNFNwNEZvbEpWMWVNZzNDa0ZMallzTTdGSmFHYlV0Q3pubXlkVk5BY3luVXdoOXQzNjI5U0UxLTh1VHQzNjMwbE1vWnBRZHl6RWpCNFpYX2NUM0hHc1pVdEZveVpRdWpwQk5zbU1sWTRsS2FxTEEyUTFOS1RVeXBidkUtd2xjakNLX1Q4aGlGQVdyZw",
-        "published_at": "2026-11-18T14:18:17Z",
-        "official": true
-      },
-      {
-        "signal": "RISK_SEVERE",
-        "title": "Adnoc tanker struck a second time in Strait of Hormuz - TradeWinds News",
-        "source_name": "TradeWinds",
-        "source_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNTVluSkFDZVFlVmk4aU9hRG9va1hfZFFTSWpzYTZ6OXNBUVRSMEZvS3hKcktERXo1bFV4eXRWV2ZTeDJQQ05obnMwVGoxcUI1RkFhcGFpaWFhV2VCeHFUZGdEYjlRcm11dF9TZ2JablRkZVRXenhKQlRqbnZvTzRINkswV09RallfZVM4NFNmZ2JrRmhlOFljYWVZcFcwdGdvc2ktZWRrYw",
-        "published_at": "2026-11-18T11:59:53Z",
-        "official": false
       }
     ],
     "last_valid_confirmation": null,
     "publish_recommended": false,
-    "material_hash": "c6f47353d1f5b4b0"
+    "material_hash": "27fe8dbe84ed64e1"
   },
   {
     "schema_version": 1,
