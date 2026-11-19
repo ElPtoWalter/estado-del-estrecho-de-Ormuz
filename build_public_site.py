@@ -13,7 +13,7 @@ import os
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
-from publication_quality import apply_policy, ads_authorized
+from publication_quality import apply_policy, ads_authorized, HISTORY_NO_ADS, ENERGY_NO_ADS, SPAIN_NO_ADS
 from adsense_checks import check_artifact
 from generate_daily_journal import home_teaser_html
 from monitor_report import build_reports
@@ -913,7 +913,8 @@ def sanitize_html(document: str, filename: str) -> str:
                 label = "Estrecho Ormuz — Inicio" if lang == "es" else "Estrecho Ormuz — Home"
                 return opening[:-1] + ' aria-label="' + label + '">' + anchor[len(opening):]
         return anchor
-    document = re.sub(r"<a\b[^>]*>.*?</a>", name_brand_link, document, flags=re.S)
+    if filename not in HISTORY_NO_ADS | ENERGY_NO_ADS | SPAIN_NO_ADS:
+        document = re.sub(r"<a\b[^>]*>.*?</a>", name_brand_link, document, flags=re.S)
     document = prerender(document, filename)
     document = strip_private_scripts(document)
     document = remove_private_links(document)

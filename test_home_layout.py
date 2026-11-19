@@ -35,6 +35,10 @@ class HomeLayoutTests(unittest.TestCase):
         for name in ("historiales-monitor-ormuz.html","en-hormuz-closure-passage-flows.html",
                      "espana-europa-ormuz-dos-porcentajes.html"):
             self.assertEqual(transform("approved bytes",name),"approved bytes")
+            doc='<html lang="es"><body><a class="brand" aria-label="Estrecho Ormuz — Inicio" href="/"><span class="brand-copy">Estrecho Ormuz</span></a></body></html>'
+            rendered=public.sanitize_html(doc,name)
+            self.assertNotIn("brand-readable-",rendered)
+            self.assertIn('aria-label="Estrecho Ormuz — Inicio"',rendered)
 
 if __name__=="__main__":
     unittest.main()
