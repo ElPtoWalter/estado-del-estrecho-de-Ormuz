@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from canonical_publication import ENGINE, MAX_AGE_HOURS, age_hours
-from canonical_notifications import fetch_public
+from canonical_notifications import fetch_public, verify_release_id
 
 
 def diagnose(body, *, now=None, max_age_hours=MAX_AGE_HOURS):
@@ -25,6 +25,9 @@ def diagnose(body, *, now=None, max_age_hours=MAX_AGE_HOURS):
         errors.append("Public monitor and daily brief do not share an assessment")
     if not doc.findtext("source_commit"):
         errors.append("Missing deployed revision")
+    monitor_age = age_hours(doc.findtext("verified_at"), now)
+    brief_age = age_hours(doc.findtext("brief_source_checked_at"), now)
+    same = bool(doc.findtext("assessment_id")) and doc.findtext("assessment_id") == doc.findtext("brief_assessment_id")
     # An old edition is not evidence of a failed technical job. Only an actual
     # generator heartbeat can establish when the newsroom last checked.
     edition_age = age_hours(doc.findtext("journal_edition_at"), now)
@@ -45,7 +48,13 @@ def diagnose(body, *, now=None, max_age_hours=MAX_AGE_HOURS):
         if doc.findtext("journal_check_outcome") not in {"published", "edition_already_exists", "not_due"}:
             newsroom_status = "stale_or_invalid"
             errors.append("Unknown newsroom check outcome")
-    return {"errors": errors, "warnings": warnings, "newsroom": {
+    return {"errors": errors, "warnings": warnings, "components": {
+        "v7": "fresh" if monitor_age is not None and -0.1 <= monitor_age <= max_age_hours else "stale_or_invalid",
+        "brief": "desynchronized" if not same else "fresh" if brief_age is not None and -0.1 <= brief_age <= max_age_hours else "stale_or_invalid",
+        "updater_process": "requires_workflow_evidence_not_inferred_from_timestamp",
+        "publication": "contract_only_html_not_checked",
+        "radar": "external_provider_not_probed_not_a_monitor_freshness_signal",
+    }, "newsroom": {
         "technical_status": newsroom_status,
         "check_outcome": doc.findtext("journal_check_outcome") or None,
         "edition_age_hours": edition_age,
@@ -66,9 +75,19 @@ def main():
     try:
         body = args.fixture.read_bytes() if args.fixture else fetch_public(args.url)
         result = diagnose(body, max_age_hours=args.max_age_hours)
+        if not args.fixture:
+            doc = ET.fromstring(body)
+            try:
+                verify_release_id(fetch_public, doc.findtext("assessment_id"), doc.findtext("source_commit"),
+                                  args.url.rsplit("/", 1)[0])
+                result.setdefault("components", {})["publication"] = "xml_and_six_html_verified"
+            except Exception as exc:
+                result["errors"].append("Publication HTML/contract verification failed: " + type(exc).__name__)
+                result.setdefault("components", {})["publication"] = "failed"
     except Exception as exc:
         result = {"errors": ["Publication unreachable or invalid: " + type(exc).__name__], "warnings": []}
-    report = {"checked_at": datetime.now(timezone.utc).isoformat(), **result, "ok": not result["errors"]}
+    report = {"checked_at": datetime.now(timezone.utc).isoformat(), "scope": "published_snapshot_not_all_services",
+              **result, "ok": not result["errors"]}
     if args.report:
         args.report.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report))

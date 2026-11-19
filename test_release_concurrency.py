@@ -118,6 +118,34 @@ class ReleaseRaceTests(unittest.TestCase):
         result = watch.diagnose(cp.health_xml(self.root, "built"), now=NOW)
         self.assertFalse(result["errors"])
         self.assertTrue(any("unknown" in w for w in result["warnings"]))
+        self.assertEqual(result["components"]["v7"], "fresh")
+        self.assertIn("requires_workflow_evidence", result["components"]["updater_process"])
+        self.assertIn("not_probed", result["components"]["radar"])
+
+    def test_watchdog_fresh_xml_cannot_hide_stale_public_html(self):
+        body = cp.health_xml(self.root, "built")
+        diagnose = watch.diagnose
+        def fetch(url):
+            return '<html>old</html>' if url.endswith("en.html") else self.fetch(url)
+        report_path = self.root/"watch-report.json"
+        with patch.object(sys, "argv", ["watch_publication.py", "--report", str(report_path)]), \
+             patch.object(watch, "fetch_public", side_effect=fetch), \
+             patch.object(watch, "diagnose", side_effect=lambda value, **kw: diagnose(value, now=NOW, **kw)):
+            self.assertEqual(watch.main(), 1)
+        result = json.loads(report_path.read_text())
+        self.assertEqual(result["components"]["publication"], "failed")
+        self.assertFalse(result["ok"])
+
+    def test_watchdog_verifies_real_html_protocol_without_treating_it_as_process_or_radar_health(self):
+        diagnose = watch.diagnose
+        report_path = self.root/"watch-report.json"
+        with patch.object(sys, "argv", ["watch_publication.py", "--report", str(report_path)]), \
+             patch.object(watch, "fetch_public", side_effect=self.fetch), \
+             patch.object(watch, "diagnose", side_effect=lambda value, **kw: diagnose(value, now=NOW, **kw)):
+            self.assertEqual(watch.main(), 0)
+        result = json.loads(report_path.read_text())
+        self.assertEqual(result["components"]["publication"], "xml_and_six_html_verified")
+        self.assertEqual(result["scope"], "published_snapshot_not_all_services")
 
     def test_scheduled_idempotence_records_real_check_without_rewriting_edition(self):
         (self.root/"journal-state.json").write_text(json.dumps({"last_date": "2026-11-19"}))
@@ -197,6 +225,12 @@ class ReleaseWorkflowTests(unittest.TestCase):
         self.assertIn("group: ormuz-content-update", text)
         self.assertIn("CANONICAL_NOTIFICATIONS_ENABLED == 'true'", text)
         self.assertIn("ref: ${{ needs.build.outputs.revision }}", text)
+
+    def test_serialized_writers_checkout_latest_main_when_job_actually_starts(self):
+        workflows = Path(__file__).parent/".github/workflows"
+        for name in ("update-status.yml", "diario-ormuz.yml"):
+            text = (workflows/name).read_text()
+            self.assertIn("ref: main\n          fetch-depth: 0", text)
 
 
 if __name__ == "__main__":

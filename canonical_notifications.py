@@ -42,31 +42,38 @@ def fetch_public(url):
 
 
 def verify_public(body, current, expected_commit):
+    return verify_public_id(body, assessment_id(current), expected_commit)
+
+
+def verify_public_id(body, expected_id, expected_commit):
     doc = ET.fromstring(body)
     if doc.tag != "publication" or doc.get("engine") != ENGINE:
         raise ValueError("Unexpected public contract")
     if not expected_commit or doc.findtext("source_commit") != expected_commit:
         raise ValueError("Deployed commit differs from the built commit")
-    if doc.findtext("assessment_id") != assessment_id(current):
+    if not expected_id or doc.findtext("assessment_id") != expected_id:
         raise ValueError("Deployed V7 assessment differs from the local snapshot")
-    if doc.findtext("brief_assessment_id") != assessment_id(current):
+    if doc.findtext("brief_assessment_id") != expected_id:
         raise ValueError("Published brief is not aligned with V7")
     return doc
 
 
 def verify_release(fetcher, current, expected_commit):
-    doc = verify_public(fetcher("https://estrechoormuz.com/publication-health.xml"), current, expected_commit)
-    expected = assessment_id(current)
+    return verify_release_id(fetcher, assessment_id(current), expected_commit)
+
+
+def verify_release_id(fetcher, expected, expected_commit, base_url="https://estrechoormuz.com"):
+    doc = verify_public_id(fetcher(base_url + "/publication-health.xml"), expected, expected_commit)
     # Check the actual HTML too: a fresh health endpoint alone does not prove all cached pages changed.
     for name in ("index.html", "en.html", "parte-diario.html", "en-daily-brief.html", "historial.html", "en-history.html"):
-        body = fetcher("https://estrechoormuz.com/" + name)
+        body = fetcher(base_url + "/" + name)
         text = body.decode("utf-8") if isinstance(body, bytes) else body
         match = re.search(r'<meta\s+name="ormuz-assessment"\s+content="([a-f0-9]+)"', text)
         if not match or match[1] != expected:
             raise ValueError("Public HTML has not reached the canonical assessment: " + name)
     # Bracket the HTML reads: do not accept a manifest from an earlier release
     # followed by pages from a different deployment.
-    verify_public(fetcher("https://estrechoormuz.com/publication-health.xml"), current, expected_commit)
+    verify_public_id(fetcher(base_url + "/publication-health.xml"), expected, expected_commit)
     return doc
 
 
