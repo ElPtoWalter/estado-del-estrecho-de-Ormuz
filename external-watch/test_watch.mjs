@@ -78,7 +78,7 @@ test('journal technical heartbeat failure differs from absent edition', () => {
 test('probe brackets six actual HTML pages with two manifests', async () => {
   const h=harness(); const report=await probe(h.fetcher,NOW);
   assert.equal(report.publication,'xml_and_six_html_verified'); assert.equal(h.calls.length,8);
-  assert.ok(h.calls.every(r => r.method === undefined && r.redirect === 'error'));
+  assert.ok(h.calls.every(r => r.method === undefined && r.redirect === 'manual'));
 });
 test('partial HTML or changing release fails proof', async () => {
   let count=0;
@@ -333,4 +333,51 @@ test('token expiry uses its receipt time, not an older publication-probe timesta
   const h=harness({env:{RECOVERY_ENABLED:'true'}}), original=h.core.fetcher;
   h.core.fetcher=(url,init)=>{if(String(url).endsWith('/access_tokens'))h.advance(2);return original(url,init);};
   assert.equal((await h.core.tick()).recovery.status,'accepted_not_execution_proof');
+});
+
+test('Workers-compatible manual redirects reject every 3xx without following Location', async () => {
+  for (const status of [301, 302, 303, 307, 308]) {
+    const calls=[];
+    const fetcher=async(url,init)=>{
+      calls.push({url,init});
+      if(init.redirect==='error')throw new TypeError('Unsupported redirect error mode in Workers');
+      assert.equal(init.redirect,'manual');
+      return new Response(null,{status,headers:{Location:'https://untrusted.example/elsewhere'}});
+    };
+    await assert.rejects(probe(fetcher,NOW),/http_failure/);
+    assert.equal(calls.length,1);
+    assert.equal(calls[0].url,BASE+'/publication-health.xml');
+    assert.equal(calls[0].init.headers.Authorization,undefined);
+  }
+});
+test('GitHub manual redirects fail closed without forwarding credentials', async () => {
+  for (const status of [301,302,303,307,308]) {
+    const calls=[];
+    const gh=new GitHub({},async(url,init)=>{
+      calls.push({url,init});assert.equal(init.redirect,'manual');
+      return new Response(null,{status,headers:{Location:'https://untrusted.example/token'}});
+    });
+    await assert.rejects(gh.request('/fixed','test-only-token'),new RegExp('github_http_'+status));
+    assert.equal(calls.length,1);assert.equal(calls[0].url,'https://api.github.com/fixed');
+  }
+});
+
+test('receiver manual redirects never acknowledge or blindly repeat an incident', async () => {
+  for (const status of [301,302,303,307,308]) {
+    const h=harness({age:181,env:{ALERTS_ENABLED:'true',ALERT_HOST:'ops.example.org',ALERT_WEBHOOK_URL:'https://ops.example.org/incident',ALERT_WEBHOOK_TOKEN:'x'.repeat(40)}});
+    const underlying=h.core.fetcher,calls=[];
+    h.core.fetcher=async(url,init={})=>{
+      if(String(url).startsWith('https://ops.example.org/incident')) {
+        calls.push({url,init});assert.equal(init.redirect,'manual');
+        return new Response(null,{status,headers:{Location:'https://untrusted.example/incident'}});
+      }
+      return underlying(url,init);
+    };
+    await h.core.tick();h.advance(15);
+    assert.equal((await h.core.tick()).alert.status,'delivery_unconfirmed_no_resend');h.advance(15);
+    assert.equal((await h.core.tick()).alert.status,'delivery_unconfirmed_no_resend');
+    assert.equal(calls.filter(c=>c.init.method==='POST').length,1);
+    assert.equal(calls.filter(c=>!c.init.method).length,1);
+    assert.ok(calls.every(c=>String(c.url).startsWith('https://ops.example.org/incident')));
+  }
 });
