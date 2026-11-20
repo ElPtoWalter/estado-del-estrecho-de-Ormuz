@@ -46,15 +46,16 @@ export async function textResponse(response, limit) {
 }
 
 export async function probe(fetcher, now) {
+  const clock = typeof now === 'function' ? now : () => now;
   const get = async path => textResponse(await fetcher(BASE + '/' + path, {
     redirect: 'error', signal: AbortSignal.timeout(15000), headers: {'Cache-Control': 'no-cache', 'User-Agent': 'Ormuz-IndependentWatch/1'},
   }), path.endsWith('.xml') ? 16000 : 200000);
-  const first = parse(await get('publication-health.xml'), now);
+  const first = parse(await get('publication-health.xml'), clock());
   for (const page of PAGES) {
     const html = await get(page);
     if (!html.includes(`<meta name="ormuz-assessment" content="${first.id}"`)) throw Error('html_not_aligned');
   }
-  const last = parse(await get('publication-health.xml'), now);
+  const last = parse(await get('publication-health.xml'), clock());
   if (first.id !== last.id || first.commit !== last.commit || first.verified !== last.verified) throw Error('deployment_changed_during_probe');
   return {...last, publication: 'xml_and_six_html_verified', updater_process: 'requires_actions_evidence', radar: 'external_provider_not_probed'};
 }

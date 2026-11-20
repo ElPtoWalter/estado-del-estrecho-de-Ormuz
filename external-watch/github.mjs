@@ -17,28 +17,38 @@ export async function jwt(appId, pem, now) {
 }
 
 export class GitHub {
-  constructor(env, fetcher, now) {Object.assign(this, {env, fetcher, now});}
+  constructor(env, fetcher, now = Date.now, beforeWrite = async () => {}) {
+    Object.assign(this, {env, fetcher, beforeWrite});
+    this.clock=typeof now==='function'?now:()=>now;
+  }
   async request(path, token, method = 'GET', body) {
+    if (method === 'POST') await this.beforeWrite();
     const response = await this.fetcher(API + path, {method, redirect: 'error', signal: AbortSignal.timeout(15000),
       headers: {Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'Ormuz-IndependentWatch/1', 'Content-Type': 'application/json'},
       ...(body === undefined ? {} : {body: JSON.stringify(body)})});
     if (response.status === 204) return null;
     if (!response.ok) throw Error('github_http_' + response.status);
-    return JSON.parse(await textResponse(response, 1500000));
+    return JSON.parse(await textResponse(response, 4000000));
   }
   async withToken(operation) {
     if (!/^\d+$/.test(this.env.GITHUB_INSTALLATION_ID || '')) throw Error('app_configuration_missing');
-    const auth = await jwt(this.env.GITHUB_APP_ID, this.env.GITHUB_APP_PRIVATE_KEY, this.now);
+    const auth = await jwt(this.env.GITHUB_APP_ID, this.env.GITHUB_APP_PRIVATE_KEY, this.clock());
     const grant = await this.request(`/app/installations/${this.env.GITHUB_INSTALLATION_ID}/access_tokens`, auth, 'POST', {
       repository_ids: [REPO_ID], permissions: {actions: 'write'},
     });
+    const receivedAt=this.clock();
     try {
-      if (!grant.token || grant.permissions?.actions !== 'write' || Object.keys(grant.permissions || {}).some(x => !['actions','metadata'].includes(x)) ||
+      if (typeof grant.token !== 'string' || !grant.token || grant.permissions?.actions !== 'write' ||
+          (grant.permissions.metadata && grant.permissions.metadata !== 'read') || Object.keys(grant.permissions || {}).some(x => !['actions','metadata'].includes(x)) ||
           grant.repositories?.length !== 1 || grant.repositories[0].id !== REPO_ID ||
-          !Number.isFinite(Date.parse(grant.expires_at)) || Date.parse(grant.expires_at) <= this.now || Date.parse(grant.expires_at) - this.now > 65*60000) throw Error('installation_scope_invalid');
+          !Number.isFinite(Date.parse(grant.expires_at)) || Date.parse(grant.expires_at) <= receivedAt || Date.parse(grant.expires_at) - receivedAt > 60*60000) throw Error('installation_scope_invalid');
       return await operation(grant.token);
     } finally {
-      if (grant.token) await this.request('/installation/token', grant.token, 'DELETE');
+      // Cleanup is required even after losing the coordinator lease.
+      if (grant.token) {
+        try {await this.request('/installation/token', grant.token, 'DELETE');}
+        catch {throw Error('installation_token_revocation_failed');}
+      }
     }
   }
   async inspect(token) {
@@ -52,8 +62,8 @@ export class GitHub {
     }
     const data = await this.request(`/repos/${REPO}/actions/workflows/${WORKFLOW}/runs?branch=main&per_page=100`, token);
     if (!Array.isArray(data.workflow_runs)) throw Error('run_response_invalid');
-    const recentSuccess = data.workflow_runs.some(r => r.conclusion === 'success' && this.now - Date.parse(r.updated_at) < 50*60000);
-    return {active, recentSuccess, runs: data.workflow_runs};
+    // A successful workflow may be a no-op. Never use its completion as V7 proof.
+    return {active, runs: data.workflow_runs};
   }
   async dispatch(token, request) {
     await this.request(`/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`, token, 'POST', {

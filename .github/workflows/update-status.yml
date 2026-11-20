@@ -161,10 +161,16 @@ jobs:
         if: steps.recovery.outputs.should_run == 'true'
         id: commit
         shell: bash
+        env:
+          TRIGGER_EVENT: ${{ github.event_name }}
+          RECOVERY_REQUEST_ID: ${{ inputs.recovery_request_id }}
         run: |
           set -euo pipefail
           find . -type d -name __pycache__ -prune -exec rm -rf {} +
           find . -type f -name '*.pyc' -delete
+
+          # Only after all pipeline validations; never from a journal/health refresh.
+          python recovery_preflight.py --stamp
 
           if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -178,6 +184,27 @@ jobs:
           git commit -m "Actualizar estado, evidencias y publicación de Ormuz"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Exportar recibo sin impedir publicar un commit ya persistido
+        id: trace_export
+        if: steps.commit.outputs.changed == 'true'
+        continue-on-error: true
+        run: python recovery_preflight.py --export-result "${{ runner.temp }}/monitor-run-receipt.json"
+
+      - name: Conservar trazabilidad del run al commit persistido
+        id: trace_artifact
+        if: steps.trace_export.outcome == 'success'
+        continue-on-error: true
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: monitor-run-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/monitor-run-receipt.json
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Señalar un recibo auxiliar no exportado
+        if: always() && (steps.trace_export.outcome == 'failure' || steps.trace_artifact.outcome == 'failure')
+        run: echo "::warning::Trace artifact unavailable; verify the monitor receipt in the persisted commit. Pages must still publish."
 
       # Canonical notifications are delivered by deploy-public only after HTTP proof.
       # No search-engine submissions are performed by the recovery pipeline.

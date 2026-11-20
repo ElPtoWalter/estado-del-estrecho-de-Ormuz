@@ -30,7 +30,6 @@ jobs:
   build:
     outputs:
       revision: ${{ steps.revision.outputs.sha }}
-      publish: ${{ steps.needed.outputs.publish }}
     if: >-
       github.ref == 'refs/heads/main' &&
       (github.event_name != 'workflow_run' ||
@@ -52,21 +51,13 @@ jobs:
         id: revision
         run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      - name: Evitar republicar una revisión ya comprobada por HTTP
-        id: needed
-        env:
-          TRIGGER_EVENT: ${{ github.event_name }}
-        run: python publication_needed.py
-
       - name: Construir superficie pública
-        if: steps.needed.outputs.publish == 'true'
         run: |
           python canonical_publication.py
           python build_public_site.py
           python check_public_links.py _site
 
       - name: Comprobar que no se publica código ni datos internos
-        if: steps.needed.outputs.publish == 'true'
         run: |
           test ! -e _site/status.json
           test ! -e _site/history.json
@@ -79,11 +70,9 @@ jobs:
           test ! -e _site/_redirects
 
       - name: Preparar GitHub Pages
-        if: steps.needed.outputs.publish == 'true'
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
 
       - name: Subir artefacto público
-        if: steps.needed.outputs.publish == 'true'
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
           path: _site
@@ -91,7 +80,6 @@ jobs:
 
   deploy:
     needs: build
-    if: needs.build.outputs.publish == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

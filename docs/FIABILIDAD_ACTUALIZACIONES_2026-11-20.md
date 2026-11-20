@@ -2,7 +2,12 @@
 
 Estado: preparación para revisión. No se ha creado ni activado un servicio externo,
 una GitHub App, credenciales o un canal de avisos. No se ha fusionado esta rama.
-Base inspeccionada: `9644fb064bff502765457dde4f3eeae478724442`.
+Base del primer candidato: `9644fb064bff502765457dde4f3eeae478724442`.
+La revisión final sincronizó primero con `86a529ca17b0539035749bafefa773c5d2e866e6`
+y después con `ee2f44d1c4350bce907e544c4f4c0a39dfb2cc30`.
+Los recuentos siguientes conservan su ventana histórica; no son una consulta del
+estado actual ni prueba de la cadencia posterior. El cierre y las correcciones
+del candidato `ea05260b` están en [CIERRE_PR31_2026-11-20.md](CIERRE_PR31_2026-11-20.md).
 
 ## Diagnóstico comprobado
 
@@ -97,27 +102,34 @@ paginación en ausencia de ejecuciones. Mantener el detalle fuera del repositori
 3. Avisos técnicos privados opcionales: dos fallos separados ≥14 min; con cadencia
    de 15 min prevista, detección inicial hasta 15 min después del umbral y aviso
    aproximadamente hasta 30 min después. Esto es un diseño, **no un SLA medido**.
-   Destino HTTPS autorizado, bearer secreto, clave de idempotencia por incidente;
+   Destino HTTPS autorizado, bearer secreto, clave de idempotencia por incidente,
+   acuse JSON con el ID correcto y consulta GET de recibo tras respuesta ambigua;
    un envío ambiguo no se repite a ciegas. No se envían notificaciones públicas
    ni avisos automáticos de recuperación. La resolución queda en el estado.
 4. Recuperación opcional mediante GitHub App y `workflow_dispatch` fijo a main.
    Desde 75 min sin verificación V7, contrato válido y publicación coherente.
    Si el contrato es inaccesible/incoherente se avisa; no se hace un dispatch ciego.
 5. Lease persistente de 10 min contra solapamientos externos. Si existe un job de
-   actualización, diario o Pages activo, o una actualización correcta <50 min,
-   espera. Registra el intento **antes** del POST y correlaciona el UUID con el
+   actualización, diario o Pages activo, espera. Un run correcto puede ser un
+   no-op: no se usa su fecha como prueba de actualización. Registra el intento
+   **antes** del POST y correlaciona el UUID con el
    `run-name`. HTTP 204 no equivale a ejecución, verificación ni publicación.
 6. Solo un run terminal comprobado admite reintento: ≥90 min entre intentos,
    máximo tres para la misma verificación. Falta de confirmación, historial
    truncado o respuesta ambigua => espera/revisión; nunca reenvío ciego.
-7. `recovery_preflight.py`: dentro del bloqueo compartido y tras checkout del
-   main actual, compara la verificación esperada y el heartbeat técnico. Si otro
-   actualizador ha terminado hace <50 min, omite trabajo; si el estado cambió,
-   omite la recuperación externa. El cron nativo aplica también la deduplicación.
-   Una ejecución manual explícita sin inputs de recuperación conserva su función.
-8. Pages omite una republicación redundante solo con commit exacto, V7 y seis HTML
-   ya comprobados públicamente. Si falla la prueba, publica normalmente. El
-   dispatch manual de Pages siempre conserva la capacidad de reparar otros assets.
+7. `recovery_preflight.py`: dentro del bloqueo compartido y tras checkout del main
+   actual, compara V7 y un recibo específico del monitor. Solo coalesce un trigger
+   antiguo si otro run posterior de ese workflow ya validó el mismo V7 hace <50 min.
+   Un trigger nativo nuevo se ejecuta; `health.json` nunca decide su omisión. La
+   recuperación externa puede omitir una comprobación que un monitor validado
+   ya cubrió; una ejecución manual explícita sin inputs conserva su función.
+8. Se retira `publication_needed.py` y su gate: seis HTML y un manifiesto no
+   prueban la integridad de todo el sitio. Pages reconstruye en push, dispatch y
+   workflow_run elegibles, incluso para reparar otros recursos del mismo commit.
+9. La salud incluye los errores de recuperación y recibos de aviso pendientes.
+   Un lease vencido impide nuevos efectos del writer antiguo. El recibo privado
+   del actualizador enlaza run, UUID, evaluación y commit persistido, sin renovar
+   artificialmente verified_at ni entrar en Pages.
 
 ## Límites y seguridad real
 

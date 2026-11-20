@@ -7,7 +7,7 @@ COMMON = {"daily-brief.json", "daily-brief-archive.json", "daily-brief-feed.xml"
           "social-drafts.json", "feed.xml", "index.html", "en.html", "sitemap.xml", "robots.txt", "health.json"}
 MONITOR = COMMON | {"status.json", "history.json", "events.json", "operational-intelligence.json",
                     "operational-intelligence-history.json", "historial.html", "en-history.html",
-                    "evidencias.html", "en-evidence.html", "notification-outbox.json"}
+                    "evidencias.html", "en-evidence.html", "notification-outbox.json", "monitor-update-receipt.json"}
 JOURNAL = COMMON | {"diario.html", "en-diary.html", "events.json", "journal-latest.json", "journal-archive.json", "journal-check.json",
                     "journal-state.json", "journal-health.json", "journal-social-draft.json", "diario-feed.xml", "diary-feed.xml"}
 
