@@ -1,0 +1,24 @@
+# Template only. No account, deployment, secrets or active service created.
+name = "ormuz-independent-watch"
+main = "cloudflare-entry.mjs"
+compatibility_date = "2026-11-20"
+workers_dev = true
+
+[triggers]
+crons = ["7,22,37,52 * * * *"]
+
+[vars]
+CHECKS_ENABLED = "false"
+ALERTS_ENABLED = "false"
+RECOVERY_ENABLED = "false"
+GITHUB_APP_ID = ""
+GITHUB_INSTALLATION_ID = ""
+ALERT_HOST = ""
+
+[[durable_objects.bindings]]
+name = "COORDINATOR"
+class_name = "OrmuzCoordinator"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["OrmuzCoordinator"]
