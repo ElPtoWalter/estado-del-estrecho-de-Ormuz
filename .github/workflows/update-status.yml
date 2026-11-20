@@ -1,9 +1,19 @@
 name: Actualizar estado de Ormuz
+run-name: ${{ inputs.recovery_request_id && format('Recuperación externa {0}', inputs.recovery_request_id) || 'Actualizar estado de Ormuz' }}
 
 on:
   schedule:
     - cron: "37 * * * *"
   workflow_dispatch:
+    inputs:
+      recovery_request_id:
+        description: "External recovery correlation UUID (empty for a manual update)"
+        required: false
+        type: string
+      recovery_expected_verified_at:
+        description: "Public V7 verified_at observed by the external coordinator"
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -30,7 +40,16 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Evitar recuperación duplicada dentro del bloqueo de escritura
+        id: recovery
+        env:
+          TRIGGER_EVENT: ${{ github.event_name }}
+          RECOVERY_REQUEST_ID: ${{ inputs.recovery_request_id }}
+          RECOVERY_EXPECTED: ${{ inputs.recovery_expected_verified_at }}
+        run: python recovery_preflight.py
+
       - name: Comprobar sintaxis de herramientas críticas
+        if: steps.recovery.outputs.should_run == 'true'
         run: |
           python -m py_compile \
             update_status.py \
@@ -46,6 +65,7 @@ jobs:
             remote_smoke_test.py
 
       - name: Conservar línea base anterior
+        if: steps.recovery.outputs.should_run == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -55,11 +75,13 @@ jobs:
           [ ! -f sitemap.xml ] || cp sitemap.xml "${{ runner.temp }}/sitemap-before.xml"
 
       - name: Comprobar fuentes y actualizar datos
+        if: steps.recovery.outputs.should_run == 'true'
         env:
           CHANGE_FILE: ${{ runner.temp }}/ormuz-change.json
         run: python update_status.py
 
       - name: Conservar evidencias y preparar portadas
+        if: steps.recovery.outputs.should_run == 'true'
         run: |
           if [ -f postprocess_evidence.py ]; then
             python postprocess_evidence.py
@@ -68,6 +90,7 @@ jobs:
           fi
 
       - name: Aplicar cortafuegos editorial
+        if: steps.recovery.outputs.should_run == 'true'
         id: editorial
         env:
           CHANGE_FILE: ${{ runner.temp }}/ormuz-change.json
@@ -81,30 +104,36 @@ jobs:
             --rollback-unsafe
 
       - name: Generar verdad canónica V7, eventos y verificación
+        if: steps.recovery.outputs.should_run == 'true'
         run: python operational_intelligence_v7.py
 
       - name: Sincronizar parte y RSS con la evaluación canónica
+        if: steps.recovery.outputs.should_run == 'true'
         run: |
           python refresh_publication.py
           python canonical_publication.py --require-fresh
 
       - name: Auditar relevancia y trazabilidad sin reclasificar
+        if: steps.recovery.outputs.should_run == 'true'
         run: python editorial_evidence_audit.py --output "${{ runner.temp }}/evidence-audit.json"
 
       - name: Regenerar sitemap desde todos los HTML públicos
+        if: steps.recovery.outputs.should_run == 'true'
         run: python build_sitemap.py --root .
 
       - name: Generar estado técnico público
+        if: steps.recovery.outputs.should_run == 'true'
         run: python generate_health.py --root .
 
       - name: Validar toda la salida antes del commit
+        if: steps.recovery.outputs.should_run == 'true'
         run: |
           python validate_site.py \
             --root . \
             --report "${{ runner.temp }}/validation-report.json"
 
       - name: Preparar diagnóstico descargable
-        if: always()
+        if: always() && steps.recovery.outputs.should_run == 'true'
         shell: bash
         run: |
           set -u
@@ -120,7 +149,7 @@ jobs:
           git status --short > "${{ runner.temp }}/ormuz-diagnostics/git-status.txt" || true
 
       - name: Subir diagnóstico de la ejecución
-        if: always()
+        if: always() && steps.recovery.outputs.should_run == 'true'
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: diagnostico-ormuz-${{ github.run_number }}
@@ -129,12 +158,19 @@ jobs:
           retention-days: 14
 
       - name: Guardar cambios validados
+        if: steps.recovery.outputs.should_run == 'true'
         id: commit
         shell: bash
+        env:
+          TRIGGER_EVENT: ${{ github.event_name }}
+          RECOVERY_REQUEST_ID: ${{ inputs.recovery_request_id }}
         run: |
           set -euo pipefail
           find . -type d -name __pycache__ -prune -exec rm -rf {} +
           find . -type f -name '*.pyc' -delete
+
+          # Only after all pipeline validations; never from a journal/health refresh.
+          python recovery_preflight.py --stamp
 
           if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -148,6 +184,27 @@ jobs:
           git commit -m "Actualizar estado, evidencias y publicación de Ormuz"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Exportar recibo sin impedir publicar un commit ya persistido
+        id: trace_export
+        if: steps.commit.outputs.changed == 'true'
+        continue-on-error: true
+        run: python recovery_preflight.py --export-result "${{ runner.temp }}/monitor-run-receipt.json"
+
+      - name: Conservar trazabilidad del run al commit persistido
+        id: trace_artifact
+        if: steps.trace_export.outcome == 'success'
+        continue-on-error: true
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: monitor-run-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/monitor-run-receipt.json
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Señalar un recibo auxiliar no exportado
+        if: always() && (steps.trace_export.outcome == 'failure' || steps.trace_artifact.outcome == 'failure')
+        run: echo "::warning::Trace artifact unavailable; verify the monitor receipt in the persisted commit. Pages must still publish."
 
       # Canonical notifications are delivered by deploy-public only after HTTP proof.
       # No search-engine submissions are performed by the recovery pipeline.
