@@ -48,7 +48,7 @@ export async function textResponse(response, limit) {
 export async function probe(fetcher, now) {
   const clock = typeof now === 'function' ? now : () => now;
   const get = async path => textResponse(await fetcher(BASE + '/' + path, {
-    redirect: 'error', signal: AbortSignal.timeout(15000), headers: {'Cache-Control': 'no-cache', 'User-Agent': 'Ormuz-IndependentWatch/1'},
+    redirect: 'manual', signal: AbortSignal.timeout(15000), headers: {'Cache-Control': 'no-cache', 'User-Agent': 'Ormuz-IndependentWatch/1'},
   }), path.endsWith('.xml') ? 16000 : 200000);
   const first = parse(await get('publication-health.xml'), clock());
   for (const page of PAGES) {

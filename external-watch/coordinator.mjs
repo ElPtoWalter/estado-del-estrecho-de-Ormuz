@@ -162,7 +162,7 @@ export class Coordinator {
       // Reconcile a receiver receipt; never blindly repeat an ambiguous POST.
       url.searchParams.set('incident_id',incident.id);
       try {
-        const response = await this.fetcher(url.href,{redirect:'error',signal:AbortSignal.timeout(15000),headers});
+        const response = await this.fetcher(url.href,{redirect:'manual',signal:AbortSignal.timeout(15000),headers});
         if (await this.acknowledged(response,incident.id)) {
           await this.guarded(owner, tx => tx.put('incident',{...incident,acknowledged:true}));
           return result('receiver_acknowledged',[],{...details,receiver_acknowledged:true});
@@ -173,7 +173,7 @@ export class Coordinator {
     await this.guarded(owner, tx => tx.put('incident',{...incident,attempted:true}));
     await this.guarded(owner,async()=>{});
     try {
-      const response = await this.fetcher(url.href,{method:'POST',redirect:'error',signal:AbortSignal.timeout(15000),
+      const response = await this.fetcher(url.href,{method:'POST',redirect:'manual',signal:AbortSignal.timeout(15000),
         headers:{...headers,'Idempotency-Key':incident.id},
         body:JSON.stringify({id:incident.id,type:'ormuz_technical_incident',checked_at:report.checked_at,errors:report.errors,verified_at:report.verified || null})});
       const accepted = await this.acknowledged(response,incident.id);

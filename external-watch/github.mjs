@@ -23,7 +23,7 @@ export class GitHub {
   }
   async request(path, token, method = 'GET', body) {
     if (method === 'POST') await this.beforeWrite();
-    const response = await this.fetcher(API + path, {method, redirect: 'error', signal: AbortSignal.timeout(15000),
+    const response = await this.fetcher(API + path, {method, redirect: 'manual', signal: AbortSignal.timeout(15000),
       headers: {Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'Ormuz-IndependentWatch/1', 'Content-Type': 'application/json'},
       ...(body === undefined ? {} : {body: JSON.stringify(body)})});
     if (response.status === 204) return null;
