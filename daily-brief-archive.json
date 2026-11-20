@@ -2,20 +2,20 @@
   {
     "schema_version": 2,
     "date": "2026-11-20",
-    "generated_at": "2026-11-20T15:46:16Z",
-    "source_checked_at": "2026-11-20T12:10:30Z",
-    "assessment_id": "6ff7b820dd8fabecff7f669e",
+    "generated_at": "2026-11-20T18:45:20Z",
+    "source_checked_at": "2026-11-20T18:45:13Z",
+    "assessment_id": "d03de9785d79a565f8dec819",
     "canonical_assessment": {
       "state": "OPEN_SEVERELY_RESTRICTED",
       "family": "OPEN",
       "confidence": "MEDIA",
-      "generated_at": "2026-11-20T12:10:30Z",
+      "generated_at": "2026-11-20T18:45:13Z",
       "dimensions": {
         "passage": "PASSAGE_CONFIRMED",
         "traffic": "REDUCED",
         "access": "SELECTIVE",
         "risk": "EXTREME",
-        "legal": "CLOSURE_CLAIMED"
+        "legal": "DISPUTED"
       }
     },
     "status": "ABIERTO",
@@ -30,19 +30,17 @@
       "en": "Medium"
     },
     "verification_ok": true,
-    "stale": true,
+    "stale": false,
     "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
     "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
     "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
     "change_en": "No material change in classification since the previous brief.",
     "risks_es": [
       "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
-      "Los datos están marcados como desactualizados y no deben utilizarse como confirmación operativa.",
       "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
     ],
     "risks_en": [
       "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
-      "Data are marked as stale and should not be used as operational confirmation.",
       "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
     ],
     "watchlist_es": [
@@ -61,15 +59,23 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source_name": "Lloyd's List",
         "source_url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-11-20T12:10:30Z",
+        "published_at": "2026-11-20T18:45:13Z",
         "official": false
       },
       {
-        "signal": "ACCESS_RESTRICTED",
-        "title": "Iran eyes first tanker export since US imposed blockade in July - TradeWinds News",
-        "source_name": "TradeWinds",
-        "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPeUlBSkNwdG91UGF3T3lpUkZCLV91VHBZVjZRa0YzMk1pTzZQSGhvRm9xMXBKR2U1bVJXWWUzQ3QwSG40NDdyQTdyTllIenlTaXczQktaSkdYc3ZhbzRrY0JWTEpiWVJBZEtoNWkzYm12cTNiUkhFY3Vnb0RsUlpaQnUwWDFBRTFTY3UxOWVKNnYwNTdrM2FFNkxtSmIzTUdaVWo3SGhVRmhRelRtTjFDTmpjZHg",
-        "published_at": "2026-11-20T08:48:45Z",
+        "signal": "TRAFFIC_PRESENT",
+        "title": "Non-Iranian ships continue to embrace Tehran’s Hormuz passage system - Lloyd's List",
+        "source_name": "Lloyd's List",
+        "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNWZ1Mkl2M2FKSFFpVVB2NWZaX3pLZUY5ZjVDUGJPc25VMGtzSlpVS0RsT0xFSjB5MjQ4OU9LWEJ5cU5LNXF3V1BlR2M2V1o3XzlGVzRpVGlTWE1hZkNydC05TTR1LXE4NzBnX1F1a2I0anpzaklRRG9fTUdmS3RzSXYxbGRQSkxHa2NUZ25Mc0tMalduSzJZUlF5Um9YdzM1aEZNZEZFUW9rMzVDQ2oxcTBpWQ",
+        "published_at": "2026-11-20T16:50:44Z",
+        "official": false
+      },
+      {
+        "signal": "TRAFFIC_REDUCED",
+        "title": "Oil prices set for third straight weekly decline on strong Middle East export flows - Reuters",
+        "source_name": "Reuters",
+        "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPb3pQREZDSHE2RmNHdDdGdExDUXhYeWljc2VualVoQ09oQV90WnFQQlZkYW1rWnl5ODJ6N2haaVBDVUY4VmFvRmtLSlZKbU5kR1lHNklrUUR3X3JGc181OHZCUHpXalZFUllBZXVEczJPUUdZZUt1MmpsTEN0MkJGSDNCVHhoa25pZFBSb1lldS1US0VJNVNBWWN1U2VwQmd0WmlQR1RKWmgyS2lyUDVfNHdWeWhzaFhmZ1E",
+        "published_at": "2026-11-20T02:00:00Z",
         "official": false
       },
       {
@@ -81,25 +87,17 @@
         "official": false
       },
       {
-        "signal": "RISK_SEVERE",
-        "title": "Iran Intensifies Hormuz Tanker Attacks Just as Oil Prices Slide - Bloomberg.com",
-        "source_name": "Bloomberg",
-        "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQV0xLbmVSbGZvbm5GVkFJaGNGUzFDLXc3Rkh6b0RwR1BWVHRvV0taRVJIV2Z2NWROX3djNTl0LUdGXzliWm96bXA1VFRfT2ZMNUNPRElqRXp5eF9ObHZZeVFvOVROY3NwSlNBUV8xUzM2U091bnY5d1J0LUlSUmZlMjhTU05fTzFjQmg1eVg2SjBIV0tkQzRVSGVjX3BrSVJlYXJVMlZFTXkyZUFHQWZKa3NPQUM",
-        "published_at": "2026-11-19T13:28:59Z",
-        "official": false
-      },
-      {
-        "signal": "RISK_SEVERE",
-        "title": "Tanker hit in Hormuz attack and Iran launches strikes on Gulf states - TradeWinds News",
-        "source_name": "TradeWinds",
-        "source_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNYmtEcDhmRXdLTUZPbVE4cmJpRTJJa3dKOElyZUxpWmF3d25Pem41eDhqYXBNMkdoV2hlUE1WdWZrMWJKQlNabkZfTVJvaGpuWHRzY3VELXRfZ0x2VVFtMWd1VzFPWE5iaFhrNEU4WHh0NTFCRDVxX2xTLWxQV2ZPeUlad2IzQjZYRXZUUFBjY2NrUDJMUjNISllSMEZZYTdkMlllSUNZMDQzRWtvUHpLTHBVZjhGS2ZuaDN4bHJLRQ",
-        "published_at": "2026-11-18T23:40:37Z",
+        "signal": "ACCESS_RESTRICTED",
+        "title": "US tightens Iran blockade with curbs on oil transfers at sea, advisory shows - Reuters",
+        "source_name": "Reuters",
+        "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNS21BSEJXWHdIUGpZcWRtZm0tT084cTd5WFpvbFZUeE9wdHkyelI4Y2pFamp5YmY3S09BRm9zMWQ3VE5NcHVnSGZNM20yZ3B5NE1mXzZ4VVg3NUZ5RTVuQ2owQzE4MkxpaTBIcEhCNng4MDE1ZnpyTUVOMUVHVFdzcm14Mkl2TlNGZmNuVFQ1NFMwdGFOT1JSTEFURDNOQ005cWVaUG5ybmtyNWQyTW1QMG82SHhGQXNmb3VMTUtB",
+        "published_at": "2026-11-18T19:32:18Z",
         "official": false
       }
     ],
     "last_valid_confirmation": null,
     "publish_recommended": false,
-    "material_hash": "81ed8b16ce2aafd3"
+    "material_hash": "91bf7f4043a8486d"
   },
   {
     "schema_version": 2,
