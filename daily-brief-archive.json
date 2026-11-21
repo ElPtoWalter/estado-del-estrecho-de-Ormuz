@@ -2,14 +2,14 @@
   {
     "schema_version": 2,
     "date": "2026-11-21",
-    "generated_at": "2026-11-21T13:44:06Z",
-    "source_checked_at": "2026-11-21T08:42:54Z",
-    "assessment_id": "a895ecb44071ea311a91fdaf",
+    "generated_at": "2026-11-21T16:55:23Z",
+    "source_checked_at": "2026-11-21T16:55:17Z",
+    "assessment_id": "645e6986ada575ee492ba451",
     "canonical_assessment": {
       "state": "OPEN_SEVERELY_RESTRICTED",
       "family": "OPEN",
       "confidence": "MEDIA",
-      "generated_at": "2026-11-21T08:42:54Z",
+      "generated_at": "2026-11-21T16:55:17Z",
       "dimensions": {
         "passage": "PASSAGE_CONFIRMED",
         "traffic": "REDUCED",
@@ -30,19 +30,17 @@
       "en": "Medium"
     },
     "verification_ok": true,
-    "stale": true,
+    "stale": false,
     "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
     "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
     "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
     "change_en": "No material change in classification since the previous brief.",
     "risks_es": [
       "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
-      "Los datos están marcados como desactualizados y no deben utilizarse como confirmación operativa.",
       "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
     ],
     "risks_en": [
       "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
-      "Data are marked as stale and should not be used as operational confirmation.",
       "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
     ],
     "watchlist_es": [
@@ -61,23 +59,31 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source_name": "Lloyd's List",
         "source_url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-11-21T08:42:54Z",
+        "published_at": "2026-11-21T16:55:17Z",
         "official": false
       },
       {
-        "signal": "TRAFFIC_REDUCED",
-        "title": "Fire ignites on tanker in Hormuz strike as transits decline - TradeWinds News",
+        "signal": "TRANSIT_CONFIRMED",
+        "title": "Iran strikes two tankers in an hour while transiting Strait of Hormuz - TradeWinds News",
         "source_name": "TradeWinds",
-        "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQT1h4bWRiNzc0cjhleXVibVVxdzZxV3ZRTTZPa0JFdW1wQjVlQUZfcmVfTmVSQmFqUE5ObDQtMnh2OUtCNm90NlZlVnNpc3A4YXczcm9Zc1VmTXZITkx5X2J5dF94UUlxa3MtdkF5aERDSnpMNENKU093SzNtZ2VOQjBnbE5NaG5DQThnVnhBbFVZejMxWGg0SGxWSUppcDNBVTZhVjF0OXc4M2p6bDRCS0lsVQ",
-        "published_at": "2026-11-20T22:45:56Z",
+        "source_url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMldqZEpCTTE3WmswLXJpU3g2Umpic3lOODJKOFNxV0FfdHVpNTNMTFN2NU9TRmViOVpFLWREWm9OLVNUNnQ5VW9wMEVhclNmUFFnZ2RuRUJidmdqWkYzV29lUUZFTWMwU0xXY1pxX0phTUt6d0dVMVUzR1EyMzl1ZEVzSGdJNGJ2ck9DbDM2QzUtS1prV2NPNTlTTUNxbUt3SDdSS3IxdjZxZ3lkY0xZb1hjSTQ1d3laNVBMeA",
+        "published_at": "2026-11-21T14:08:42Z",
         "official": false
       },
       {
-        "signal": "TRAFFIC_PRESENT",
-        "title": "Non-Iranian ships continue to embrace Tehran’s Hormuz passage system - Lloyd's List",
-        "source_name": "Lloyd's List",
-        "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNWZ1Mkl2M2FKSFFpVVB2NWZaX3pLZUY5ZjVDUGJPc25VMGtzSlpVS0RsT0xFSjB5MjQ4OU9LWEJ5cU5LNXF3V1BlR2M2V1o3XzlGVzRpVGlTWE1hZkNydC05TTR1LXE4NzBnX1F1a2I0anpzaklRRG9fTUdmS3RzSXYxbGRQSkxHa2NUZ25Mc0tMalduSzJZUlF5Um9YdzM1aEZNZEZFUW9rMzVDQ2oxcTBpWQ",
-        "published_at": "2026-11-20T16:50:44Z",
+        "signal": "RISK_SEVERE",
+        "title": "Two tanker attack incidents reported near Oman's Khasab, UKMTO says - CNBC",
+        "source_name": "CNBC",
+        "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQb2o5YWI3QUp1R2trSUFzQVV6MVVmcUItN1VBSXhXWk13bHhRdWdGcmVqdjJ3S2F3WkN4WXpzYTR6TEVlSUNGS1RueGduYVgtTXlQS1JXVjRpSkotVHJLWjFvbVJqY3J0aWE0bjM4cDRsaS04b3NMY3pyZWMwZnpBd0I5dmpPYUVEYkJkRlJiRi1EbXMwYzRBX21lU3dUUdIBngFBVV95cUxQb2o5YWI3QUp1R2trSUFzQVV6MVVmcUItN1VBSXhXWk13bHhRdWdGcmVqdjJ3S2F3WkN4WXpzYTR6TEVlSUNGS1RueGduYVgtTXlQS1JXVjRpSkotVHJLWjFvbVJqY3J0aWE0bjM4cDRsaS04b3NMY3pyZWMwZnpBd0I5dmpPYUVEYkJkRlJiRi1EbXMwYzRBX21lU3dUUQ",
+        "published_at": "2026-11-21T11:15:25Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_SEVERE",
+        "title": "UK maritime agency reports two tanker attacks near Oman; Iran says vessel hit mine east of Hormuz - CNBC",
+        "source_name": "CNBC",
+        "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQUmFyQWpXTk9nTzJGUDgtdW5qMm1CZU9VWTZiTWZjUEhuSWRfd3Etc18zc09KR0JfbGQ1emx3ZHpuY1d6WFctZVREZDlnTDd3LThMcndkejR6S3pUdVp2eFpMRFZyUU0zQ2lSMDU2Q2dsVzEwUGl4b3lHejk1MGoyOU81dmVIdDdwSVpBcnRGQ1IxLUV5T3kxZ9IBngFBVV95cUxQb2o5YWI3QUp1R2trSUFzQVV6MVVmcUItN1VBSXhXWk13bHhRdWdGcmVqdjJ3S2F3WkN4WXpzYTR6TEVlSUNGS1RueGduYVgtTXlQS1JXVjRpSkotVHJLWjFvbVJqY3J0aWE0bjM4cDRsaS04b3NMY3pyZWMwZnpBd0I5dmpPYUVEYkJkRlJiRi1EbXMwYzRBX21lU3dUUQ",
+        "published_at": "2026-11-21T11:15:25Z",
         "official": false
       },
       {
@@ -87,19 +93,11 @@
         "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYkFweUZ4VV9LNzY2SWw1enNNTy1YdFhFSllaSk1HekQ0b1hlV0tuWm5PdGlsZWtxYm5ETHVqZ3J4aDZ5OU9USGRYX0dtak1YTFNQWHM5M01TakVINXZPa2JnV0pDZmhic1o1Zk42MjRCTjJYYUxGYkpTdXRHQnkyTnNRX0JJZkFQRVJMR00wU1hvZmF0aXVUMUlaOFEwOENkZG5NSg",
         "published_at": "2026-11-19T17:22:26Z",
         "official": false
-      },
-      {
-        "signal": "RISK_SEVERE",
-        "title": "Iran Intensifies Hormuz Tanker Attacks Just as Oil Prices Slide - Bloomberg.com",
-        "source_name": "Bloomberg",
-        "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQV0xLbmVSbGZvbm5GVkFJaGNGUzFDLXc3Rkh6b0RwR1BWVHRvV0taRVJIV2Z2NWROX3djNTl0LUdGXzliWm96bXA1VFRfT2ZMNUNPRElqRXp5eF9ObHZZeVFvOVROY3NwSlNBUV8xUzM2U091bnY5d1J0LUlSUmZlMjhTU05fTzFjQmg1eVg2SjBIV0tkQzRVSGVjX3BrSVJlYXJVMlZFTXkyZUFHQWZKa3NPQUM",
-        "published_at": "2026-11-19T13:28:59Z",
-        "official": false
       }
     ],
     "last_valid_confirmation": null,
     "publish_recommended": false,
-    "material_hash": "2e2ee3611c7a04b8"
+    "material_hash": "be8ca003c38924d9"
   },
   {
     "schema_version": 2,
