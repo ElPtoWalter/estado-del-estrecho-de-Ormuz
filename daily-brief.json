@@ -1,20 +1,20 @@
 {
   "schema_version": 2,
-  "date": "2026-11-20",
-  "generated_at": "2026-11-20T22:42:47Z",
-  "source_checked_at": "2026-11-20T18:45:13Z",
-  "assessment_id": "d03de9785d79a565f8dec819",
+  "date": "2026-11-21",
+  "generated_at": "2026-11-21T00:55:55Z",
+  "source_checked_at": "2026-11-21T00:55:47Z",
+  "assessment_id": "abd30397fd0ae617cb7e86e8",
   "canonical_assessment": {
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "confidence": "MEDIA",
-    "generated_at": "2026-11-20T18:45:13Z",
+    "generated_at": "2026-11-21T00:55:47Z",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "DISPUTED"
+      "legal": "CLOSURE_CLAIMED"
     }
   },
   "status": "ABIERTO",
@@ -29,19 +29,17 @@
     "en": "Medium"
   },
   "verification_ok": true,
-  "stale": true,
+  "stale": false,
   "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
   "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
   "change_en": "No material change in classification since the previous brief.",
   "risks_es": [
     "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
-    "Los datos están marcados como desactualizados y no deben utilizarse como confirmación operativa.",
     "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
   ],
   "risks_en": [
     "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
-    "Data are marked as stale and should not be used as operational confirmation.",
     "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
   ],
   "watchlist_es": [
@@ -60,7 +58,7 @@
       "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
       "source_name": "Lloyd's List",
       "source_url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-      "published_at": "2026-11-20T18:45:13Z",
+      "published_at": "2026-11-21T00:55:47Z",
       "official": false
     },
     {
@@ -72,19 +70,19 @@
       "official": false
     },
     {
-      "signal": "TRAFFIC_REDUCED",
-      "title": "Oil prices set for third straight weekly decline on strong Middle East export flows - Reuters",
-      "source_name": "Reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPb3pQREZDSHE2RmNHdDdGdExDUXhYeWljc2VualVoQ09oQV90WnFQQlZkYW1rWnl5ODJ6N2haaVBDVUY4VmFvRmtLSlZKbU5kR1lHNklrUUR3X3JGc181OHZCUHpXalZFUllBZXVEczJPUUdZZUt1MmpsTEN0MkJGSDNCVHhoa25pZFBSb1lldS1US0VJNVNBWWN1U2VwQmd0WmlQR1RKWmgyS2lyUDVfNHdWeWhzaFhmZ1E",
-      "published_at": "2026-11-20T02:00:00Z",
-      "official": false
-    },
-    {
       "signal": "ACCESS_RESTRICTED",
       "title": "India loosens ship age restrictions as Hormuz tanker crunch bites - Lloyd's List",
       "source_name": "Lloyd's List",
       "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYkFweUZ4VV9LNzY2SWw1enNNTy1YdFhFSllaSk1HekQ0b1hlV0tuWm5PdGlsZWtxYm5ETHVqZ3J4aDZ5OU9USGRYX0dtak1YTFNQWHM5M01TakVINXZPa2JnV0pDZmhic1o1Zk42MjRCTjJYYUxGYkpTdXRHQnkyTnNRX0JJZkFQRVJMR00wU1hvZmF0aXVUMUlaOFEwOENkZG5NSg",
       "published_at": "2026-11-19T17:22:26Z",
+      "official": false
+    },
+    {
+      "signal": "RISK_SEVERE",
+      "title": "Iran Intensifies Hormuz Tanker Attacks Just as Oil Prices Slide - Bloomberg.com",
+      "source_name": "Bloomberg",
+      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQV0xLbmVSbGZvbm5GVkFJaGNGUzFDLXc3Rkh6b0RwR1BWVHRvV0taRVJIV2Z2NWROX3djNTl0LUdGXzliWm96bXA1VFRfT2ZMNUNPRElqRXp5eF9ObHZZeVFvOVROY3NwSlNBUV8xUzM2U091bnY5d1J0LUlSUmZlMjhTU05fTzFjQmg1eVg2SjBIV0tkQzRVSGVjX3BrSVJlYXJVMlZFTXkyZUFHQWZKa3NPQUM",
+      "published_at": "2026-11-19T13:28:59Z",
       "official": false
     },
     {
@@ -98,5 +96,5 @@
   ],
   "last_valid_confirmation": null,
   "publish_recommended": false,
-  "material_hash": "ff1192444f4c1e43"
+  "material_hash": "b67da5c4eb30c005"
 }

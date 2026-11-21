@@ -1,6 +1,106 @@
 [
   {
     "schema_version": 2,
+    "date": "2026-11-21",
+    "generated_at": "2026-11-21T00:55:55Z",
+    "source_checked_at": "2026-11-21T00:55:47Z",
+    "assessment_id": "abd30397fd0ae617cb7e86e8",
+    "canonical_assessment": {
+      "state": "OPEN_SEVERELY_RESTRICTED",
+      "family": "OPEN",
+      "confidence": "MEDIA",
+      "generated_at": "2026-11-21T00:55:47Z",
+      "dimensions": {
+        "passage": "PASSAGE_CONFIRMED",
+        "traffic": "REDUCED",
+        "access": "SELECTIVE",
+        "risk": "EXTREME",
+        "legal": "CLOSURE_CLAIMED"
+      }
+    },
+    "status": "ABIERTO",
+    "status_label_es": "ABIERTO CON RESTRICCIONES",
+    "status_label_en": "OPEN WITH RESTRICTIONS",
+    "operational_status": "OPEN_RESTRICTED",
+    "operational_label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
+    "operational_label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
+    "confidence": "MEDIA",
+    "confidence_label": {
+      "es": "Media",
+      "en": "Medium"
+    },
+    "verification_ok": true,
+    "stale": false,
+    "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
+    "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
+    "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
+    "change_en": "No material change in classification since the previous brief.",
+    "risks_es": [
+      "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
+      "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
+    ],
+    "risks_en": [
+      "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
+      "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
+    ],
+    "watchlist_es": [
+      "Avisos marítimos oficiales y confirmaciones operativas independientes.",
+      "Trayectorias completas de buques y continuidad real de los cruces, no puntos AIS aislados.",
+      "Cambios en restricciones, seguros, escoltas, puertos y disponibilidad de tripulaciones."
+    ],
+    "watchlist_en": [
+      "Official maritime notices and independent operational confirmations.",
+      "Completed vessel tracks and actual continuity of crossings, not isolated AIS points.",
+      "Changes in restrictions, insurance, escorts, ports and crew availability."
+    ],
+    "evidence": [
+      {
+        "signal": "RISK_SEVERE",
+        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+        "source_name": "Lloyd's List",
+        "source_url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+        "published_at": "2026-11-21T00:55:47Z",
+        "official": false
+      },
+      {
+        "signal": "TRAFFIC_PRESENT",
+        "title": "Non-Iranian ships continue to embrace Tehran’s Hormuz passage system - Lloyd's List",
+        "source_name": "Lloyd's List",
+        "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNWZ1Mkl2M2FKSFFpVVB2NWZaX3pLZUY5ZjVDUGJPc25VMGtzSlpVS0RsT0xFSjB5MjQ4OU9LWEJ5cU5LNXF3V1BlR2M2V1o3XzlGVzRpVGlTWE1hZkNydC05TTR1LXE4NzBnX1F1a2I0anpzaklRRG9fTUdmS3RzSXYxbGRQSkxHa2NUZ25Mc0tMalduSzJZUlF5Um9YdzM1aEZNZEZFUW9rMzVDQ2oxcTBpWQ",
+        "published_at": "2026-11-20T16:50:44Z",
+        "official": false
+      },
+      {
+        "signal": "ACCESS_RESTRICTED",
+        "title": "India loosens ship age restrictions as Hormuz tanker crunch bites - Lloyd's List",
+        "source_name": "Lloyd's List",
+        "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYkFweUZ4VV9LNzY2SWw1enNNTy1YdFhFSllaSk1HekQ0b1hlV0tuWm5PdGlsZWtxYm5ETHVqZ3J4aDZ5OU9USGRYX0dtak1YTFNQWHM5M01TakVINXZPa2JnV0pDZmhic1o1Zk42MjRCTjJYYUxGYkpTdXRHQnkyTnNRX0JJZkFQRVJMR00wU1hvZmF0aXVUMUlaOFEwOENkZG5NSg",
+        "published_at": "2026-11-19T17:22:26Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_SEVERE",
+        "title": "Iran Intensifies Hormuz Tanker Attacks Just as Oil Prices Slide - Bloomberg.com",
+        "source_name": "Bloomberg",
+        "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQV0xLbmVSbGZvbm5GVkFJaGNGUzFDLXc3Rkh6b0RwR1BWVHRvV0taRVJIV2Z2NWROX3djNTl0LUdGXzliWm96bXA1VFRfT2ZMNUNPRElqRXp5eF9ObHZZeVFvOVROY3NwSlNBUV8xUzM2U091bnY5d1J0LUlSUmZlMjhTU05fTzFjQmg1eVg2SjBIV0tkQzRVSGVjX3BrSVJlYXJVMlZFTXkyZUFHQWZKa3NPQUM",
+        "published_at": "2026-11-19T13:28:59Z",
+        "official": false
+      },
+      {
+        "signal": "ACCESS_RESTRICTED",
+        "title": "US tightens Iran blockade with curbs on oil transfers at sea, advisory shows - Reuters",
+        "source_name": "Reuters",
+        "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNS21BSEJXWHdIUGpZcWRtZm0tT084cTd5WFpvbFZUeE9wdHkyelI4Y2pFamp5YmY3S09BRm9zMWQ3VE5NcHVnSGZNM20yZ3B5NE1mXzZ4VVg3NUZ5RTVuQ2owQzE4MkxpaTBIcEhCNng4MDE1ZnpyTUVOMUVHVFdzcm14Mkl2TlNGZmNuVFQ1NFMwdGFOT1JSTEFURDNOQ005cWVaUG5ybmtyNWQyTW1QMG82SHhGQXNmb3VMTUtB",
+        "published_at": "2026-11-18T19:32:18Z",
+        "official": false
+      }
+    ],
+    "last_valid_confirmation": null,
+    "publish_recommended": false,
+    "material_hash": "b67da5c4eb30c005"
+  },
+  {
+    "schema_version": 2,
     "date": "2026-11-20",
     "generated_at": "2026-11-20T22:42:47Z",
     "source_checked_at": "2026-11-20T18:45:13Z",
