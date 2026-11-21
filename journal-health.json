@@ -1,62 +1,51 @@
 {
   "version": 11,
-  "generated_at": "2026-11-20T12:13:02Z",
+  "generated_at": "2026-11-21T13:44:06Z",
   "ok": true,
-  "date": "2026-11-20",
-  "material_score": 3,
+  "date": "2026-11-21",
+  "material_score": 0,
   "material_archive": false,
-  "news_considered": 27,
-  "new_articles": 17,
-  "source_brands": 8,
+  "news_considered": 11,
+  "new_articles": 8,
+  "source_brands": 5,
   "fetch_errors": [],
   "operational_intelligence_used": true,
   "editor_engine": "gemini",
-  "editor_assistant_status": "partial-fallback",
+  "editor_assistant_status": "ok",
   "editorial_trace": {
     "validator_version": 10,
-    "factual_packet_sha256": "438792baadb83285b53fb829d0d4edabaa3cdd3bc723c2ff0d2b45f78764df4e",
+    "factual_packet_sha256": "606c2933d2d9b7914b4856feceaf6836f6eacfce5da130aed90a82ce17b5761e",
     "provider": "gemini",
-    "status": "partial-fallback",
+    "status": "ok",
     "attempts": [
       {
         "provider": "gemini",
         "model": "gemini-3.5-flash-lite"
       }
     ],
-    "validation_diagnostics": {
-      "language": "es",
-      "reason": "section-headline-grounding"
-    },
-    "field_fallbacks": [
-      "es.sections.0.paragraph",
-      "es.sections.1.paragraph",
-      "en.meaning.1",
-      "en.sections.0.paragraph",
-      "en.sections.1.paragraph"
-    ],
     "full_output_validated": true,
-    "factual_packet_hash": "438792baadb83285b53fb829d0d4edabaa3cdd3bc723c2ff0d2b45f78764df4e",
+    "factual_packet_hash": "606c2933d2d9b7914b4856feceaf6836f6eacfce5da130aed90a82ce17b5761e",
     "event_ids": [
       "evt_9d88a7ca46fdb9eb",
-      "evt_db5de382870ede52",
-      "evt_33b819a5662d4326",
+      "evt_8228e4c26b4cd362",
+      "evt_b7a8c423fd09e5a0",
+      "evt_0ec561b9348da713",
+      "evt_75da27c2a3805d4d",
       "evt_77afbfe2fa70416e",
+      "evt_e9a8cc22de6cdf42",
+      "evt_33b819a5662d4326",
+      "evt_1973f717f671f6e9",
       "evt_0abdc244813397db",
-      "evt_d461d087f9cb0c2f",
-      "evt_f22ced4dc8f32b22",
+      "evt_6a6462c48a779bf7",
       "evt_1229c7798fe64daa",
       "evt_2fcfeaaa981b0298",
       "evt_38ae9f796dcbb8d0",
       "evt_b6f916aade9a24f7",
-      "evt_e9a8cc22de6cdf42",
       "evt_a22d7ea5998a4f9a",
-      "evt_0ec561b9348da713",
       "evt_35b49c5b08a819a4",
       "evt_7de8bee492aaaca1",
       "evt_d2e06db81e545ddf",
-      "evt_32ce5375c5fc7c50",
-      "evt_e7baaac13a5e4af0",
-      "evt_a0b02e20a0f581ab"
+      "evt_60257e953c67e24a"
     ],
     "source_ids": [
       "aljazeera",
@@ -64,9 +53,8 @@
       "bloomberg",
       "cnbc",
       "euronews",
-      "ft",
-      "guardian",
       "lloyds_list",
+      "marinelink",
       "reuters",
       "sunday_guardian",
       "tradewinds",
@@ -76,17 +64,17 @@
       "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
-      "DECLARATION_ONLY": 3,
-      "SINGLE_SOURCE": 34,
-      "UNCONFIRMED": 31,
-      "TOTAL": 73
+      "DECLARATION_ONLY": 4,
+      "SINGLE_SOURCE": 33,
+      "UNCONFIRMED": 36,
+      "TOTAL": 78
     },
-    "timestamp": "2026-11-20T12:13:02Z",
-    "fallback_used": true,
+    "timestamp": "2026-11-21T13:44:06Z",
+    "fallback_used": false,
     "editorial_quality": {
       "es": {
-        "word_count": 409,
-        "template_similarity": 0.836,
+        "word_count": 334,
+        "template_similarity": 0.744,
         "repeated_sentence_pairs": [],
         "flags": [],
         "style_penalty": 0,
@@ -95,11 +83,13 @@
         "human_editorial_assessment_required": true
       },
       "en": {
-        "word_count": 343,
-        "template_similarity": 0.839,
+        "word_count": 273,
+        "template_similarity": 0.742,
         "repeated_sentence_pairs": [],
-        "flags": [],
-        "style_penalty": 0,
+        "flags": [
+          "thin_narrative"
+        ],
+        "style_penalty": 1,
         "blocking_flags": [],
         "style_checks_passed": true,
         "human_editorial_assessment_required": true
