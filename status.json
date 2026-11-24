@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "MEDIA",
-  "checked_at": "2026-11-23T20:28:51Z",
-  "last_success_at": "2026-11-23T20:28:51Z",
+  "checked_at": "2026-11-24T04:55:33Z",
+  "last_success_at": "2026-11-24T04:55:33Z",
   "last_change_at": "2026-10-18T17:29:40Z",
   "verification_ok": true,
   "stale": false,
@@ -23,7 +23,7 @@
       "published_at": "2026-11-22T15:13:28Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-23T20:28:51Z"
+      "observed_at": "2026-11-24T04:55:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -34,7 +34,7 @@
       "published_at": "2026-11-22T11:49:36Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-23T20:28:51Z"
+      "observed_at": "2026-11-24T04:55:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -45,18 +45,18 @@
       "published_at": "2026-11-22T02:28:14Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-23T20:28:51Z"
+      "observed_at": "2026-11-24T04:55:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Iran attacks US bases in Bahrain as its tankers get ready to break the US blockade",
+      "title": "Iran launches attacks in Bahrain, Hormuz and moves against US blockade - Euronews.com",
       "source_name": "Euronews",
       "source_id": "euronews",
-      "source_url": "https://euronews.com/2026/11/21/iran-attacks-us-bases-in-bahrain-as-its-tankers-get-ready-to-break-the-us-blockade",
+      "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQWUJYOUdFdXlpMHE3RUhFVzFQTENEc2pUcEJ5WDZuckZlQjN1bF9aX055VUZUelpSSGVwT2dHLXFVQmR2Yk9IYUxPU1d0MlJhS2lWRDlWaTRleFZkeXlHTExaVTNTamZ0Y216QTJEVXpEYkdfN2pGN0xYSXZ5Y01Yb05FRE1qOVpXMW1yUWgtcEt2RVBzRURyOHJhRnZWcjNDbmh4aWI5RWE1ZDFVQW5UaTAwZFhmOVp0TEE",
       "published_at": "2026-11-21T21:32:51Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-23T20:28:51Z"
+      "observed_at": "2026-11-24T04:55:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -67,32 +67,33 @@
       "published_at": "2026-11-21T11:15:25Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-23T20:28:51Z"
+      "observed_at": "2026-11-24T04:55:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Tanker catches fire after projectile strike near Strait of Hormuz, UKMTO says - Reuters",
-      "source_name": "Reuters",
-      "source_id": "reuters",
-      "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPUFlEbXRhcG1QdzdPMU5DZTludFpwQllURVktV0I4cC1pX2g4V1k1dEhTWFVibXk4Wm9IUWFNYjZLRTlCZHBnM044cGo3amFOdTQ2SWdZWkVBUG9LaERYQ3pUQTdvd1loNVlxN0VPTUJTS29tcWsxWlIydFcxRGp4N2xlTUUyMDk1Y1VfLTVfXzYxZGZnVVFEUWpxaW05bS1MTlNQRGZpYUMwQ2xMY3MyMDRFUm1PM1JjaXc",
-      "published_at": "2026-11-20T17:05:12Z",
+      "title": "Fire ignites on tanker in Hormuz strike as transits decline - TradeWinds News",
+      "source_name": "TradeWinds",
+      "source_id": "tradewinds",
+      "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQT1h4bWRiNzc0cjhleXVibVVxdzZxV3ZRTTZPa0JFdW1wQjVlQUZfcmVfTmVSQmFqUE5ObDQtMnh2OUtCNm90NlZlVnNpc3A4YXczcm9Zc1VmTXZITkx5X2J5dF94UUlxa3MtdkF5aERDSnpMNENKU093SzNtZ2VOQjBnbE5NaG5DQThnVnhBbFVZejMxWGg0SGxWSUppcDNBVTZhVjF0OXc4M2p6bDRCS0lsVQ",
+      "published_at": "2026-11-20T22:45:56Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-23T20:28:51Z"
+      "observed_at": "2026-11-24T04:55:33Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 9.66
+      "risk": 8.26
     },
     "independent_sources": {
       "open": 0,
@@ -100,8 +101,8 @@
       "declared": 0,
       "risk": 6
     },
-    "articles_considered": 21,
-    "signals_considered": 8,
+    "articles_considered": 19,
+    "signals_considered": 6,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -137,7 +138,7 @@
       "published_at": "2026-11-22T15:13:28Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-23T20:28:51Z"
+      "observed_at": "2026-11-24T04:55:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -148,7 +149,7 @@
       "published_at": "2026-11-22T11:49:36Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-23T20:28:51Z"
+      "observed_at": "2026-11-24T04:55:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -159,7 +160,7 @@
       "published_at": "2026-11-22T02:28:14Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-23T20:28:51Z"
+      "observed_at": "2026-11-24T04:55:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -174,6 +175,17 @@
     },
     {
       "signal": "RISK_RESTRICTION",
+      "title": "Iran launches attacks in Bahrain, Hormuz and moves against US blockade - Euronews.com",
+      "source_name": "Euronews",
+      "source_id": "euronews",
+      "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQWUJYOUdFdXlpMHE3RUhFVzFQTENEc2pUcEJ5WDZuckZlQjN1bF9aX055VUZUelpSSGVwT2dHLXFVQmR2Yk9IYUxPU1d0MlJhS2lWRDlWaTRleFZkeXlHTExaVTNTamZ0Y216QTJEVXpEYkdfN2pGN0xYSXZ5Y01Yb05FRE1qOVpXMW1yUWgtcEt2RVBzRURyOHJhRnZWcjNDbmh4aWI5RWE1ZDFVQW5UaTAwZFhmOVp0TEE",
+      "published_at": "2026-11-21T21:32:51Z",
+      "tier": 2,
+      "official": false,
+      "observed_at": "2026-11-24T04:55:33Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
       "title": "Iran attacks US bases in Bahrain as its tankers get ready to break the US blockade",
       "source_name": "Euronews",
       "source_id": "euronews",
@@ -182,17 +194,6 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-11-23T20:28:51Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Iran launches attacks in Bahrain, Hormuz and moves against US blockade - Euronews",
-      "source_name": "Euronews",
-      "source_id": "euronews",
-      "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQWUJYOUdFdXlpMHE3RUhFVzFQTENEc2pUcEJ5WDZuckZlQjN1bF9aX055VUZUelpSSGVwT2dHLXFVQmR2Yk9IYUxPU1d0MlJhS2lWRDlWaTRleFZkeXlHTExaVTNTamZ0Y216QTJEVXpEYkdfN2pGN0xYSXZ5Y01Yb05FRE1qOVpXMW1yUWgtcEt2RVBzRURyOHJhRnZWcjNDbmh4aWI5RWE1ZDFVQW5UaTAwZFhmOVp0TEE",
-      "published_at": "2026-11-21T21:32:51Z",
-      "tier": 2,
-      "official": false,
-      "observed_at": "2026-11-23T08:03:37Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -214,7 +215,7 @@
       "published_at": "2026-11-21T11:15:25Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-23T20:28:51Z"
+      "observed_at": "2026-11-24T04:55:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -237,6 +238,17 @@
       "tier": 2,
       "official": false,
       "observed_at": "2026-11-22T10:11:34Z"
+    },
+    {
+      "signal": "RISK_RESTRICTION",
+      "title": "Fire ignites on tanker in Hormuz strike as transits decline - TradeWinds News",
+      "source_name": "TradeWinds",
+      "source_id": "tradewinds",
+      "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQT1h4bWRiNzc0cjhleXVibVVxdzZxV3ZRTTZPa0JFdW1wQjVlQUZfcmVfTmVSQmFqUE5ObDQtMnh2OUtCNm90NlZlVnNpc3A4YXczcm9Zc1VmTXZITkx5X2J5dF94UUlxa3MtdkF5aERDSnpMNENKU093SzNtZ2VOQjBnbE5NaG5DQThnVnhBbFVZejMxWGg0SGxWSUppcDNBVTZhVjF0OXc4M2p6bDRCS0lsVQ",
+      "published_at": "2026-11-20T22:45:56Z",
+      "tier": 4,
+      "official": false,
+      "observed_at": "2026-11-24T04:55:33Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -765,24 +777,13 @@
       "tier": 4,
       "official": false,
       "observed_at": "2026-11-12T03:17:14Z"
-    },
-    {
-      "signal": "RISK_RESTRICTION",
-      "title": "Tanker and container ship attacked in Strait of Hormuz, says UKMTO - TradeWinds News",
-      "source_name": "TradeWinds",
-      "source_id": "tradewinds",
-      "source_url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPMU9Ka3VFdkxwNVc5YXdQei1oS1BzdG5GY1VJaE1IX3V4WDlwczVIakZ1dV83MGIzQXdRVU40cUVJRGE2NzI1VXpGQmNCZUJURDVOU0duZ2dWN0tHaEJwUlFZQkJYTUF1b1dqdHFSdnZiWG5uWGlVOW9RNDV0ZktNM0lQYzY4ZHBQSXgzT0ZvWFJoZkdkWUF6TWxiVlhpQmtUdGdkdDRzbjRQYU9LWXRiYms0U3Z5dU1zUUxIcllYSnlucnVTQkxqMUtSWmx4S0ZjUEo0",
-      "published_at": "2026-11-11T21:09:19Z",
-      "tier": 4,
-      "official": false,
-      "observed_at": "2026-11-15T17:21:40Z"
     }
   ],
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-11-23T20:29:10Z",
-    "verified_at": "2026-11-23T20:29:10Z",
+    "generated_at": "2026-11-24T04:56:16Z",
+    "verified_at": "2026-11-24T04:56:16Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -816,24 +817,41 @@
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 5.384,
+      "passage": 6.164,
       "closure": 0,
-      "traffic_reduction": 5.64,
-      "access_restriction": 28.0,
-      "risk": 73.9
+      "traffic_reduction": 11.836,
+      "access_restriction": 38.972,
+      "risk": 89.756
     },
     "source_counts": {
       "passage": 4,
       "closure": 0,
       "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-11-21T09:50:00Z",
+    "latest_confirmed_transit_at": "2026-11-23T22:23:40Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
       "confidence": "MEDIA"
     },
     "evidence": [
+      {
+        "kind": "RISK_ELEVATED",
+        "title": "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMDQ4RU9qMFd6TWl0WkFDUGVsdk5Gb3Q1dURMcjcwbGxUV3ItdjhZUGdQUTBZOVUyZEZlRzdmSEtjM3EwQTNUam1nRVZNdXFRbmNfeHhpUnNVQjNPbjNyOGtSZHVnNEZmbnpJdC1VdVA5X25rWndhMnZqemNGVWdVU1Y5OE8ybExyT2xLelF6dnZsNkM0OU55b1dKc1NuNF9sWkVGSGZJaUNxLXc4eEdGZTl3LUtFTDFuUUE",
+        "published_at": "2026-11-24T02:56:00Z",
+        "tier": 4,
+        "weight": 4.0,
+        "provider": "Google News RSS",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 4.0,
+        "kind_label_es": "Riesgo elevado",
+        "kind_label_en": "Elevated risk"
+      },
       {
         "kind": "ACCESS_RESTRICTED",
         "title": "Iran says it will use all its tools to confront US naval blockade - Reuters",
@@ -890,7 +908,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-11-23T20:29:10Z",
+        "published_at": "2026-11-24T04:56:16Z",
         "tier": 4,
         "weight": 3.0,
         "provider": "Lloyd's List hot topic",
@@ -907,7 +925,7 @@
         "title": "Lloyd's List Hormuz crisis monitor reports routing/access constraints",
         "source": "Lloyd's List",
         "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-11-23T20:29:10Z",
+        "published_at": "2026-11-24T04:56:16Z",
         "tier": 4,
         "weight": 2.6,
         "provider": "Lloyd's List hot topic",
@@ -927,7 +945,7 @@
         "published_at": "2026-11-20T17:05:12Z",
         "tier": 4,
         "weight": 4.0,
-        "provider": "legacy-engine",
+        "provider": "Google News RSS",
         "details": "",
         "traffic_ratio": null,
         "traffic_count": null,
@@ -952,63 +970,46 @@
         "effective_weight": 2.4,
         "kind_label_es": "Acceso restringido",
         "kind_label_en": "Restricted access"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN",
-        "source": "CNN",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPazIzNmZVck5Udmx0UjFsVV9LQjJsSDhlUm95QjhZalplRUNIa1QyNXh0Z0lPYXVEblBmOWpWN3p3b0pXWXhyZko4cmlzSl92b19UbjNqS3NZUHJwWFZiZnZiRWJHSTVKMjBkNGFmdWJWcGpBcEJfSzROU0VjZHEyVXdOWWFkb2gxN1FaZ0N3",
-        "published_at": "2026-11-22T15:13:28Z",
-        "tier": 2,
-        "weight": 2.5,
-        "provider": "legacy-engine",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 2.25,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_9bf19bdbb58d32e4",
+      "evt_9b31dcd453c00779",
       "evt_ab58dcaeba49b2f4",
+      "evt_bb3679f0667dfc34",
+      "evt_3ed6a1095a605036",
       "evt_f66b77daebfa280d",
-      "evt_f2ff700e78e76698",
+      "evt_2ea8dba85356d95a",
+      "evt_3b23c15a036de904",
+      "evt_29c435963e28c368",
+      "evt_d39d49ed6f466b4f",
+      "evt_a16bcace97cef72b",
+      "evt_06c768ca7e4be2a9",
+      "evt_a26b8029a6ee29bb",
       "evt_7b73f5e039859378",
       "evt_f81d2d92eae2fc2f",
-      "evt_8cd2d19dd611e92e",
       "evt_33b819a5662d4326",
+      "evt_f2ff700e78e76698",
+      "evt_c24b99782fe9a5a7",
       "evt_a8eb089b582e7d51",
-      "evt_29c435963e28c368",
-      "evt_27211cc87651454c",
-      "evt_4f2639c33dc28f94",
-      "evt_a0b25fd64edabec6",
-      "evt_dafe227cf2c59401",
-      "evt_0178c31f16675292",
-      "evt_911b5e0939e1bd08",
-      "evt_50cbd724e7b96d64",
-      "evt_e5323f12d09c306f",
-      "evt_06c768ca7e4be2a9",
-      "evt_2c490a13323f8bb3"
+      "evt_4f2639c33dc28f94"
     ],
     "verification_summary": {
-      "CONFIRMED_MULTI_SOURCE": 4,
+      "CONFIRMED_MULTI_SOURCE": 5,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 2,
-      "SINGLE_SOURCE": 36,
-      "UNCONFIRMED": 38,
-      "TOTAL": 80
+      "SINGLE_SOURCE": 35,
+      "UNCONFIRMED": 35,
+      "TOTAL": 77
     },
     "diagnostics": {
-      "signals_considered": 104,
+      "signals_considered": 132,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 80,
-      "article_count_after_deduplication": 145,
+      "event_count": 77,
+      "article_count_after_deduplication": 169,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -1020,6 +1021,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-11-23T20:29:10Z"
+    "generated_at": "2026-11-24T04:56:16Z"
   }
 }
