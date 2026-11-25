@@ -2,14 +2,14 @@
   {
     "schema_version": 2,
     "date": "2026-11-25",
-    "generated_at": "2026-11-25T00:54:26Z",
-    "source_checked_at": "2026-11-24T16:14:54Z",
-    "assessment_id": "f00890f08906c4cd43ab55e2",
+    "generated_at": "2026-11-25T01:00:45Z",
+    "source_checked_at": "2026-11-25T01:00:40Z",
+    "assessment_id": "98168523735e30de612d5c01",
     "canonical_assessment": {
       "state": "OPEN_SEVERELY_RESTRICTED",
       "family": "OPEN",
       "confidence": "MEDIA",
-      "generated_at": "2026-11-24T16:14:54Z",
+      "generated_at": "2026-11-25T01:00:40Z",
       "dimensions": {
         "passage": "PASSAGE_CONFIRMED",
         "traffic": "REDUCED",
@@ -30,19 +30,17 @@
       "en": "Medium"
     },
     "verification_ok": true,
-    "stale": true,
+    "stale": false,
     "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
     "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
     "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
     "change_en": "No material change in classification since the previous brief.",
     "risks_es": [
       "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
-      "Los datos están marcados como desactualizados y no deben utilizarse como confirmación operativa.",
       "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
     ],
     "risks_en": [
       "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
-      "Data are marked as stale and should not be used as operational confirmation.",
       "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
     ],
     "watchlist_es": [
@@ -58,18 +56,34 @@
     "evidence": [
       {
         "signal": "RISK_SEVERE",
-        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
-        "source_name": "Lloyd's List",
-        "source_url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
-        "published_at": "2026-11-24T16:14:54Z",
+        "title": "Oil Edges Lower as Expanding Supply Vies With Hormuz Attacks - Bloomberg.com",
+        "source_name": "Bloomberg",
+        "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOenJ4V3FnWU1IVG94dUxRcE1YeTd1Y0Y0U1RWdkg4b1QwS2pPbFNhLUtmdGhwcE5XZWhnVXgzNVo2RkE2azdqdU53cW5KdDNVdWR3Z2JKc1RHX0Z2OWl0YjJsN3ZUTk9UbXhLNzR1Q19wOHVzVi00QmVxbUVWbVpJTk5rZldoalJRbW1hNmh2dnhqR216UlRpUTZDV1RZQQ",
+        "published_at": "2026-11-24T23:56:13Z",
         "official": false
       },
       {
-        "signal": "ACCESS_RESTRICTED",
-        "title": "Trump threatens blockade-running Iranian ships amid reports of ‘fake line-breaker’ - TradeWinds News",
+        "signal": "RISK_SEVERE",
+        "title": "LNG carrier damaged in Strait of Hormuz attack heads for the auction block - TradeWinds News",
         "source_name": "TradeWinds",
-        "source_url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPY1dROVRvcERXT05BY3lTZXowUjFrdmlKV3dFUkRXV0ZqbmNudFNpSGNOeHM4X21RWUV0U2FYSzBESzNMNDA1LUNKOTd1OUVmWmxNdTBVWVl0cUVmVXA1LXRPUEtTLTVjVy14a2hwWk13cHpKWTAwZDREZlI3dVgyQ1NCLUN2NlJNZFVUU3hNRExOMlJZT1ZYQ3p2bVhURjE1VDMyMlk3QlpwSWwxSFFGU01uWm5kSEd6WDhuTXU2N3JVQUk2LWlRazRlOWY",
-        "published_at": "2026-11-24T14:10:41Z",
+        "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNWURYT2tzSWh4dFpIbFNHVG1GUEtUZmhCMEF5Ml9nQ0xGVW5yQWJNaVVKRWpmb1ZxRy0ydWx3T0RMalFjOF9tTWFwbVRNU3VrMnl2SmdESklUVkRkc3VaeEZuWEU2VXhiSnpIN3J1QWl3c2c5akczZ01ZTHJneVpscldyMFBpOU5pQXJyaGZUeW9sTTNBYURGcXRJdmFWc1dINGlQZFc4cGE2Nm0tUUktQms3RXQyTG1oaE01RTd3",
+        "published_at": "2026-11-24T18:14:08Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_SEVERE",
+        "title": "Sinokor tankers hit by Iranian attacks linked to dozens of Hormuz transits - TradeWinds News",
+        "source_name": "TradeWinds",
+        "source_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOa3JmWV9WeGRkQVU3T3ZMUG1QQS1QRUZlQlFWS3dMSWVIMElPYk9vUEJhT3hIWEpxbC1lUVNvNDI3ZU41UFRYcm5QcmxHYk4tUE9rOHppTmZVVXV6dWxVWWd1LWVHLWRoRnNOLUFvY0RwdE9EanRUMS1RdWs5NUFibnI1YXJqTllISHlUWkpieU41U0IwSFAycloyOUl2V3ItVTI1d2QtTEhJVDFHYUZ0V0tDMjl2RGI1ZFpOQnQxYkdkeXc",
+        "published_at": "2026-11-24T17:01:18Z",
+        "official": false
+      },
+      {
+        "signal": "RISK_SEVERE",
+        "title": "Iran attacks 64 ships in eight weeks as multiple vessels are hit in same incident - TradeWinds News",
+        "source_name": "TradeWinds",
+        "source_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOS3FLNnR0VWNDY1JPT1psOXplUDVGblA5ZlBaSzU4SW80VW9NQ19qdTBfQUNjOHdaaTFQcVA0cGlQYkJ5ZFdHX01YY2RYWXhGdXBsMWlOd1F0UU9YbU5pTU1GXzdzaFRsY09YN0g5YkVvMktHNV9GRGllMTd6eEJaUHZGQ2FhZmMwZlZUV3NnWS1IYnZDMFI0QUpManp5cFUxWUNyaWNTdnFVbUk5dmZyXzJRbVM5eGtlY0VwWGs3YlQ1RV9DY0E",
+        "published_at": "2026-11-24T13:43:11Z",
         "official": false
       },
       {
@@ -79,27 +93,11 @@
         "source_url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNeTBOTS02SC15X2tOb0laREdQWkxBV0JLTjRnbkhVbkZ6N2U2d1dKeTNyaUQ3WHNoa2hwbUNJRFM4clRaWHUwVjRXdktpNzhJVHZZVVk3aUpSRTcyZDdobm5mWDlMcGhlU296OUtZRFBFMzFqenBqdW9fMW5IWXMxQnQzeUxMQS1QQ2V5bXBaRHNXN1RBUWdiZUNMNzBiLVFTYlhQYUxXRm9kaV9NUkc1Rm1hOGc5ZS1HYmwyUGhyMVRMQ2FWWU5xVk55ajZ5MFg5",
         "published_at": "2026-11-24T13:41:15Z",
         "official": false
-      },
-      {
-        "signal": "RISK_SEVERE",
-        "title": "KOTC crew says state operator dropped death compensation pledge as Hormuz attacks mount - Lloyd's List",
-        "source_name": "Lloyd's List",
-        "source_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNQkZhUVNEc0FNSUVPZk9IeUhSYURrSG50TlZET0JYenRsUWcwbjhiVUV4NXl3RUpsQllqX1BfdU51bDZTNzJ5RjZnbkxHSWkwRmtWVFJXLTZXSl90eDRhYjdINGkxNi1MV2t0ZzNHbEJSVFlhT2lOWndOY3VvMmFiYXZnRDBUN1IwZWFCNW95Nk5lX0ZYMVk2c19lXzBUOVNhVW5BYzBfOU15czdsc0dqOWhxY2x4bV9lb1J6dnQxWlNxZw",
-        "published_at": "2026-11-24T09:48:34Z",
-        "official": false
-      },
-      {
-        "signal": "RISK_ELEVATED",
-        "title": "Oil rebounds from three-month lows on Hormuz threat - Reuters",
-        "source_name": "Reuters",
-        "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMDQ4RU9qMFd6TWl0WkFDUGVsdk5Gb3Q1dURMcjcwbGxUV3ItdjhZUGdQUTBZOVUyZEZlRzdmSEtjM3EwQTNUam1nRVZNdXFRbmNfeHhpUnNVQjNPbjNyOGtSZHVnNEZmbnpJdC1VdVA5X25rWndhMnZqemNGVWdVU1Y5OE8ybExyT2xLelF6dnZsNkM0OU55b1dKc1NuNF9sWkVGSGZJaUNxLXc4eEdGZTl3LUtFTDFuUUE",
-        "published_at": "2026-11-24T02:56:00Z",
-        "official": false
       }
     ],
     "last_valid_confirmation": null,
     "publish_recommended": false,
-    "material_hash": "34f2bb3f04e86eec"
+    "material_hash": "1b156805cdb31b1c"
   },
   {
     "schema_version": 2,
