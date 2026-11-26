@@ -1,107 +1,102 @@
 {
   "version": 11,
-  "generated_at": "2026-11-25T16:09:53Z",
+  "generated_at": "2026-11-26T15:50:12Z",
   "ok": true,
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "material_score": 4,
   "material_archive": true,
-  "news_considered": 20,
-  "new_articles": 15,
+  "news_considered": 13,
+  "new_articles": 10,
   "source_brands": 5,
   "fetch_errors": [],
   "operational_intelligence_used": true,
-  "editor_engine": "rules",
-  "editor_assistant_status": "gemini-http-503",
+  "editor_engine": "gemini",
+  "editor_assistant_status": "partial-fallback",
   "editorial_trace": {
     "validator_version": 10,
-    "factual_packet_sha256": "01e171103bf45b1ad1e7289038f1e90c15720379478b458e0579467e607291c1",
-    "provider": "rules",
-    "status": "gemini-http-503",
+    "factual_packet_sha256": "571dfac0e3f81f025cf33c048e76f518e47e2fccc19a02b8926868b2f3016298",
+    "provider": "gemini",
+    "status": "partial-fallback",
     "attempts": [
       {
         "provider": "gemini",
         "model": "gemini-3.5-flash-lite"
       }
     ],
-    "factual_packet_hash": "01e171103bf45b1ad1e7289038f1e90c15720379478b458e0579467e607291c1",
+    "validation_diagnostics": {
+      "language": "es",
+      "reason": "unseen-entity",
+      "value": "guardia revolucionaria islámica de irán"
+    },
+    "field_fallbacks": [
+      "es.sections.0.paragraph",
+      "en.sections.0.paragraph"
+    ],
+    "full_output_validated": true,
+    "factual_packet_hash": "571dfac0e3f81f025cf33c048e76f518e47e2fccc19a02b8926868b2f3016298",
     "event_ids": [
       "evt_2708fe5eb7696110",
       "evt_ee0b4cf430fcf0aa",
-      "evt_80b1a54ce0039ce5",
-      "evt_2784243f4b6383d0",
-      "evt_8076d3fc2c8eea13",
-      "evt_7dea20e0b826a7e0",
-      "evt_d67510be7d2dd9e1",
-      "evt_de11aff09e66c242",
-      "evt_d5078acf533d2cbd",
-      "evt_952119252d1fe712",
       "evt_2b335383bc16dbb4",
+      "evt_3e66d6b5e06ef1bc",
+      "evt_212f86fd639bfd92",
+      "evt_33b819a5662d4326",
+      "evt_8a3d4a382f7f7e7f",
+      "evt_4a173fdb6c860889",
+      "evt_79ee96b80d4919b1",
+      "evt_8076d3fc2c8eea13",
+      "evt_a54a0d8489868907",
+      "evt_d67510be7d2dd9e1",
+      "evt_d5078acf533d2cbd",
+      "evt_b02a1e41bc2e8893",
+      "evt_952119252d1fe712",
       "evt_4f2639c33dc28f94",
       "evt_2c490a13323f8bb3",
       "evt_ae0a67d4124466df",
-      "evt_1f12acc252079329",
-      "evt_785146c5cee78e6a",
-      "evt_9d57d4bc2b181fe1",
-      "evt_17cd4e228ae5be69",
-      "evt_8235ab6dd936b507",
-      "evt_a16bcace97cef72b"
+      "evt_d2a84b275ee283cc",
+      "evt_9d57d4bc2b181fe1"
     ],
     "source_ids": [
       "aljazeera",
-      "bbc",
       "bloomberg",
       "cnbc",
       "cnn",
-      "euronews",
       "lloyds_list",
       "marinelink",
       "reuters",
-      "sunday_guardian",
       "tradewinds",
       "unknown"
     ],
     "verification_summary": {
-      "CONFIRMED_MULTI_SOURCE": 5,
+      "CONFIRMED_MULTI_SOURCE": 4,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 2,
-      "SINGLE_SOURCE": 32,
-      "UNCONFIRMED": 29,
-      "TOTAL": 68
+      "SINGLE_SOURCE": 33,
+      "UNCONFIRMED": 27,
+      "TOTAL": 66
     },
-    "timestamp": "2026-11-25T16:09:53Z",
+    "timestamp": "2026-11-26T15:50:12Z",
     "fallback_used": true,
     "editorial_quality": {
       "es": {
-        "word_count": 421,
-        "template_similarity": 1.0,
+        "word_count": 380,
+        "template_similarity": 0.781,
         "repeated_sentence_pairs": [],
-        "flags": [
-          "near_identical_to_local_template",
-          "unchanged_deck"
-        ],
-        "style_penalty": 6,
-        "blocking_flags": [
-          "near_identical_to_local_template",
-          "unchanged_deck"
-        ],
-        "style_checks_passed": false,
+        "flags": [],
+        "style_penalty": 0,
+        "blocking_flags": [],
+        "style_checks_passed": true,
         "human_editorial_assessment_required": true
       },
       "en": {
-        "word_count": 353,
-        "template_similarity": 1.0,
+        "word_count": 307,
+        "template_similarity": 0.783,
         "repeated_sentence_pairs": [],
-        "flags": [
-          "near_identical_to_local_template",
-          "unchanged_deck"
-        ],
-        "style_penalty": 6,
-        "blocking_flags": [
-          "near_identical_to_local_template",
-          "unchanged_deck"
-        ],
-        "style_checks_passed": false,
+        "flags": [],
+        "style_penalty": 0,
+        "blocking_flags": [],
+        "style_checks_passed": true,
         "human_editorial_assessment_required": true
       }
     }
