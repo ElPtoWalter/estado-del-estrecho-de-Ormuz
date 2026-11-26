@@ -5,8 +5,8 @@
   "operational_label_es": "Riesgo elevado, estado no confirmado",
   "operational_label_en": "High risk, status unconfirmed",
   "confidence": "ALTA",
-  "checked_at": "2026-11-26T13:02:54Z",
-  "last_success_at": "2026-11-26T13:02:54Z",
+  "checked_at": "2026-11-26T22:31:15Z",
+  "last_success_at": "2026-11-26T22:31:15Z",
   "last_change_at": "2026-10-18T17:29:40Z",
   "verification_ok": true,
   "stale": false,
@@ -23,18 +23,18 @@
       "published_at": "2026-11-26T12:06:18Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-26T13:02:54Z"
+      "observed_at": "2026-11-26T22:31:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Hormuz Tanker Traffic Rises This Month Even as Attacks Increase - Bloomberg.com",
+      "title": "Hormuz Tanker Traffic Rises This Month Even as Attacks Increase - Bloomberg",
       "source_name": "Bloomberg",
       "source_id": "bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQck13clVLM3Z3YkFxWGJyYmZYQTllN3AzR3lBZzlQNm00R2RQckxMczVRRXUwU3hlWEVsNzd0dTBYQVVPNU1lWkl3WDFYNk96MEsydHBtYk4tLUNwOVJtVWJtSzZtaTdoWGxla240NjFJRWNublpNRXY3eE43Nkt4dG5xa01kSnBQbk5CSmo3NkhGYVpidGt1UW5ZNnBfNjZzbFZSa0Qyal82SHdtcUJCTjAxTWI",
       "published_at": "2026-11-26T07:59:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-11-26T13:02:54Z"
+      "observed_at": "2026-11-26T22:31:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -45,7 +45,7 @@
       "published_at": "2026-11-26T04:46:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-26T13:02:54Z"
+      "observed_at": "2026-11-26T22:31:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -56,7 +56,7 @@
       "published_at": "2026-11-25T08:01:15Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-26T13:02:54Z"
+      "observed_at": "2026-11-26T22:31:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -67,7 +67,7 @@
       "published_at": "2026-11-24T18:56:16Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-26T13:02:54Z"
+      "observed_at": "2026-11-26T22:31:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -78,30 +78,31 @@
       "published_at": "2026-11-24T13:46:20Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-26T13:02:54Z"
+      "observed_at": "2026-11-26T22:31:15Z"
     }
   ],
   "diagnostics": {
     "providers_ok": [
       "Official maritime web search",
-      "GDELT",
       "Google News RSS"
     ],
-    "providers_failed": [],
+    "providers_failed": [
+      "GDELT: HTTPError: HTTP Error 429: Too Many Requests"
+    ],
     "scores": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 15.595
+      "risk": 13.24
     },
     "independent_sources": {
       "open": 0,
       "closed": 0,
       "declared": 0,
-      "risk": 7
+      "risk": 6
     },
-    "articles_considered": 27,
-    "signals_considered": 12,
+    "articles_considered": 19,
+    "signals_considered": 10,
     "current_cycle_evidence": 6,
     "evidence_display_mode": "current",
     "evidence_archive_size": 60,
@@ -126,18 +127,18 @@
       "published_at": "2026-11-26T12:06:18Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-26T13:02:54Z"
+      "observed_at": "2026-11-26T22:31:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
-      "title": "Hormuz Tanker Traffic Rises This Month Even as Attacks Increase - Bloomberg.com",
+      "title": "Hormuz Tanker Traffic Rises This Month Even as Attacks Increase - Bloomberg",
       "source_name": "Bloomberg",
       "source_id": "bloomberg",
       "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQck13clVLM3Z3YkFxWGJyYmZYQTllN3AzR3lBZzlQNm00R2RQckxMczVRRXUwU3hlWEVsNzd0dTBYQVVPNU1lWkl3WDFYNk96MEsydHBtYk4tLUNwOVJtVWJtSzZtaTdoWGxla240NjFJRWNublpNRXY3eE43Nkt4dG5xa01kSnBQbk5CSmo3NkhGYVpidGt1UW5ZNnBfNjZzbFZSa0Qyal82SHdtcUJCTjAxTWI",
       "published_at": "2026-11-26T07:59:00Z",
       "tier": 3,
       "official": false,
-      "observed_at": "2026-11-26T13:02:54Z"
+      "observed_at": "2026-11-26T22:31:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -148,7 +149,7 @@
       "published_at": "2026-11-26T04:46:00Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-26T13:02:54Z"
+      "observed_at": "2026-11-26T22:31:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -192,7 +193,7 @@
       "published_at": "2026-11-25T08:01:15Z",
       "tier": 4,
       "official": false,
-      "observed_at": "2026-11-26T13:02:54Z"
+      "observed_at": "2026-11-26T22:31:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -203,7 +204,7 @@
       "published_at": "2026-11-24T18:56:16Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-26T13:02:54Z"
+      "observed_at": "2026-11-26T22:31:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -236,7 +237,7 @@
       "published_at": "2026-11-24T13:46:20Z",
       "tier": 2,
       "official": false,
-      "observed_at": "2026-11-26T13:02:54Z"
+      "observed_at": "2026-11-26T22:31:15Z"
     },
     {
       "signal": "RISK_RESTRICTION",
@@ -781,8 +782,8 @@
   "legacy_engine_role": "internal_diagnostic",
   "operational_intelligence": {
     "version": 7,
-    "generated_at": "2026-11-26T13:03:42Z",
-    "verified_at": "2026-11-26T13:03:42Z",
+    "generated_at": "2026-11-26T22:32:30Z",
+    "verified_at": "2026-11-26T22:32:30Z",
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
@@ -797,37 +798,37 @@
       "traffic": "REDUCED",
       "access": "SELECTIVE",
       "risk": "EXTREME",
-      "legal": "DISPUTED"
+      "legal": "CLOSURE_CLAIMED"
     },
     "dimension_labels_es": {
       "passage": "Confirmado",
       "traffic": "Reducido",
       "access": "Selectivo / condicionado",
       "risk": "Extremo",
-      "legal": "Régimen disputado"
+      "legal": "Cierre declarado por una parte"
     },
     "dimension_labels_en": {
       "passage": "Confirmed",
       "traffic": "Reduced",
       "access": "Selective / conditional",
       "risk": "Extreme",
-      "legal": "Disputed regime"
+      "legal": "Closure claimed by one party"
     },
     "traffic_ratio_estimate": null,
     "traffic_snapshot": null,
     "scores": {
-      "passage": 6.365,
+      "passage": 10.4,
       "closure": 0,
-      "traffic_reduction": 1.9,
-      "access_restriction": 17.932,
-      "risk": 128.3
+      "traffic_reduction": 0.9,
+      "access_restriction": 11.44,
+      "risk": 104.436
     },
     "source_counts": {
-      "passage": 5,
+      "passage": 7,
       "closure": 0,
       "primary_sources": 3
     },
-    "latest_confirmed_transit_at": "2026-11-26T11:50:00Z",
+    "latest_confirmed_transit_at": "2026-11-26T16:49:54Z",
     "legacy_engine": {
       "status": "INCIERTO",
       "operational_status": "HIGH_RISK_UNCONFIRMED",
@@ -852,11 +853,11 @@
         "kind_label_en": "Severe risk"
       },
       {
-        "kind": "ACCESS_RESTRICTED",
-        "title": "Iran blacklists 26 tugs as Tehran officials vow to break US Hormuz blockade - Lloyd's List",
-        "source": "Lloyd's List",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZ1FSRWZIc2lwUm5XcHFWdG5qNzJvSjk5YkZsNFBhZExnUVY0ZVlmSklvSV9pd3Z1em8wcWFTalpSWHRDaXRMajhjMnNiWnVPUHdtaVBLOGFMNDBsTzF5TEMwbFZLV0dKdFNGTVFSTFdydDR0VWZjQTY4Y1lQemdFYWlGdXNpUVo0MUUzZnR5TlUyNmVMX0dnOVJ5R3ZlWm1WaDRlaGlpeTFhVi0tUXdZUkhB",
-        "published_at": "2026-11-25T10:43:24Z",
+        "kind": "RISK_SEVERE",
+        "title": "Brent settles higher as mine strikes, refinery attack stoke Middle East supply concerns - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPWHpfX3p2RFoxU2l0SGZVbVdSejdGYkc0NFpERWlxVEtab0pQbGd1NUtqQ3c0cXprdWItUF9fRmVVVElET3BNbklnbElwaC1UZ0xoNnd4dE9Wb2dFVDFGN2JyQ3YyUVhfTWxsNGFWNFNURG5kX1pMdVBtb2QyLXFMaXZPM0ZPdGdud1hWdHFuTEpNQXBtdUh6RmpWcW1jelhTU0JHdmp3dWphb0hB",
+        "published_at": "2026-11-26T03:08:00Z",
         "tier": 4,
         "weight": 4.0,
         "provider": "Google News RSS",
@@ -864,9 +865,9 @@
         "traffic_ratio": null,
         "traffic_count": null,
         "traffic_average": null,
-        "effective_weight": 3.6,
-        "kind_label_es": "Acceso restringido",
-        "kind_label_en": "Restricted access"
+        "effective_weight": 4.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       },
       {
         "kind": "ACCESS_RESTRICTED",
@@ -938,24 +939,7 @@
       },
       {
         "kind": "RISK_SEVERE",
-        "title": "LNG carrier damaged in Strait of Hormuz attack heads for the auction block - TradeWinds News",
-        "source": "TradeWinds",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNWURYT2tzSWh4dFpIbFNHVG1GUEtUZmhCMEF5Ml9nQ0xGVW5yQWJNaVVKRWpmb1ZxRy0ydWx3T0RMalFjOF9tTWFwbVRNU3VrMnl2SmdESklUVkRkc3VaeEZuWEU2VXhiSnpIN3J1QWl3c2c5akczZ01ZTHJneVpscldyMFBpOU5pQXJyaGZUeW9sTTNBYURGcXRJdmFWc1dINGlQZFc4cGE2Nm0tUUktQms3RXQyTG1oaE01RTd3",
-        "published_at": "2026-11-24T18:14:08Z",
-        "tier": 4,
-        "weight": 3.8,
-        "provider": "Google News RSS",
-        "details": "",
-        "traffic_ratio": null,
-        "traffic_count": null,
-        "traffic_average": null,
-        "effective_weight": 3.42,
-        "kind_label_es": "Riesgo severo",
-        "kind_label_en": "Severe risk"
-      },
-      {
-        "kind": "RISK_SEVERE",
-        "title": "Hormuz Tanker Traffic Rises This Month Even as Attacks Increase - Bloomberg.com",
+        "title": "Hormuz Tanker Traffic Rises This Month Even as Attacks Increase - Bloomberg",
         "source": "Bloomberg",
         "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQck13clVLM3Z3YkFxWGJyYmZYQTllN3AzR3lBZzlQNm00R2RQckxMczVRRXUwU3hlWEVsNzd0dTBYQVVPNU1lWkl3WDFYNk96MEsydHBtYk4tLUNwOVJtVWJtSzZtaTdoWGxla240NjFJRWNublpNRXY3eE43Nkt4dG5xa01kSnBQbk5CSmo3NkhGYVpidGt1UW5ZNnBfNjZzbFZSa0Qyal82SHdtcUJCTjAxTWI",
         "published_at": "2026-11-26T07:59:00Z",
@@ -969,46 +953,63 @@
         "effective_weight": 3.2,
         "kind_label_es": "Riesgo severo",
         "kind_label_en": "Severe risk"
+      },
+      {
+        "kind": "RISK_SEVERE",
+        "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+        "source": "Lloyd's List",
+        "url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+        "published_at": "2026-11-26T22:32:30Z",
+        "tier": 4,
+        "weight": 3.0,
+        "provider": "Lloyd's List hot topic",
+        "details": "",
+        "traffic_ratio": null,
+        "traffic_count": null,
+        "traffic_average": null,
+        "effective_weight": 3.0,
+        "kind_label_es": "Riesgo severo",
+        "kind_label_en": "Severe risk"
       }
     ],
     "event_ids": [
       "evt_2708fe5eb7696110",
-      "evt_9ea5bd34267fedd7",
+      "evt_70c85cd9bce57550",
+      "evt_18cf885a8db95ad7",
       "evt_ee0b4cf430fcf0aa",
+      "evt_9b1210ba36e755e1",
+      "evt_554b0141056e5b01",
+      "evt_a54a0d8489868907",
+      "evt_7d7ea754dd742c12",
       "evt_5f511d5602087a1d",
       "evt_f0ea88fc98b33276",
       "evt_2b335383bc16dbb4",
+      "evt_20adb9522666acb8",
       "evt_3a57281d694ccc43",
-      "evt_a8eb089b582e7d51",
+      "evt_8e1209368647b032",
       "evt_f163e60a330bc1ce",
-      "evt_be3023cfd4f13c73",
-      "evt_3e66d6b5e06ef1bc",
-      "evt_88805a1509e1663a",
-      "evt_056ab3545f1ce6ac",
-      "evt_652774124e0dadce",
-      "evt_212f86fd639bfd92",
+      "evt_9ea5bd34267fedd7",
       "evt_33b819a5662d4326",
-      "evt_2a2e773ca40531c2",
-      "evt_8a3d4a382f7f7e7f",
-      "evt_a30d74bcf5124737",
-      "evt_4a173fdb6c860889"
+      "evt_3e66d6b5e06ef1bc",
+      "evt_652774124e0dadce",
+      "evt_212f86fd639bfd92"
     ],
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 4,
       "CONFIRMED_PRIMARY": 0,
       "CONFLICTING": 0,
       "DECLARATION_ONLY": 2,
-      "SINGLE_SOURCE": 33,
-      "UNCONFIRMED": 27,
-      "TOTAL": 66
+      "SINGLE_SOURCE": 31,
+      "UNCONFIRMED": 32,
+      "TOTAL": 69
     },
     "diagnostics": {
-      "signals_considered": 137,
+      "signals_considered": 111,
       "provider_errors": [],
       "offline": false,
       "baseline_vessels_per_day": 138.0,
-      "event_count": 66,
-      "article_count_after_deduplication": 178,
+      "event_count": 69,
+      "article_count_after_deduplication": 156,
       "model_note_es": "La clasificación pública prioriza pruebas de tránsito real. Una declaración política de cierre no invalida un tránsito comercial confirmado.",
       "model_note_en": "The public assessment prioritises evidence of actual transit. A political closure declaration does not override confirmed commercial passage."
     }
@@ -1020,6 +1021,6 @@
     "label_es": "ABIERTO · TRÁNSITO MUY RESTRINGIDO",
     "label_en": "OPEN · SEVERELY RESTRICTED TRANSIT",
     "confidence": "MEDIA",
-    "generated_at": "2026-11-26T13:03:42Z"
+    "generated_at": "2026-11-26T22:32:30Z"
   }
 }
