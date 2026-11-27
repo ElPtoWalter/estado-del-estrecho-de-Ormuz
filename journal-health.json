@@ -1,12 +1,12 @@
 {
   "version": 11,
-  "generated_at": "2026-11-26T15:50:12Z",
+  "generated_at": "2026-11-27T15:38:46Z",
   "ok": true,
-  "date": "2026-11-26",
-  "material_score": 4,
-  "material_archive": true,
-  "news_considered": 13,
-  "new_articles": 10,
+  "date": "2026-11-27",
+  "material_score": 0,
+  "material_archive": false,
+  "news_considered": 16,
+  "new_articles": 11,
   "source_brands": 5,
   "fetch_errors": [],
   "operational_intelligence_used": true,
@@ -14,10 +14,14 @@
   "editor_assistant_status": "partial-fallback",
   "editorial_trace": {
     "validator_version": 10,
-    "factual_packet_sha256": "571dfac0e3f81f025cf33c048e76f518e47e2fccc19a02b8926868b2f3016298",
+    "factual_packet_sha256": "b1c702236e827ed3945575a66d37cc7f62afa3044ede142c951512a0c1b26204",
     "provider": "gemini",
     "status": "partial-fallback",
     "attempts": [
+      {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite"
+      },
       {
         "provider": "gemini",
         "model": "gemini-3.5-flash-lite"
@@ -25,42 +29,109 @@
     ],
     "validation_diagnostics": {
       "language": "es",
-      "reason": "unseen-entity",
-      "value": "guardia revolucionaria islámica de irán"
+      "reason": "section-headline-grounding"
     },
     "field_fallbacks": [
       "es.sections.0.paragraph",
-      "en.sections.0.paragraph"
+      "en.sections.0.paragraph",
+      "en.sections.2.paragraph"
     ],
     "full_output_validated": true,
-    "factual_packet_hash": "571dfac0e3f81f025cf33c048e76f518e47e2fccc19a02b8926868b2f3016298",
+    "initial_field_fallbacks": [
+      "es.meaning.0",
+      "es.meaning.1",
+      "es.sections.0.paragraph",
+      "es.sections.1.paragraph",
+      "en.sections.0.paragraph",
+      "en.sections.1.paragraph",
+      "en.sections.2.paragraph"
+    ],
+    "initial_validation_diagnostics": {
+      "language": "es",
+      "reason": "unseen-entity",
+      "value": "guardia revolucionaria de irán"
+    },
+    "style_revision": {
+      "attempted": true,
+      "adopted": true,
+      "initial_quality": {
+        "es": {
+          "word_count": 424,
+          "template_similarity": 0.823,
+          "repeated_sentence_pairs": [],
+          "flags": [],
+          "style_penalty": 0,
+          "blocking_flags": [],
+          "style_checks_passed": true,
+          "human_editorial_assessment_required": true
+        },
+        "en": {
+          "word_count": 341,
+          "template_similarity": 0.931,
+          "repeated_sentence_pairs": [],
+          "flags": [
+            "near_identical_to_local_template"
+          ],
+          "style_penalty": 3,
+          "blocking_flags": [
+            "near_identical_to_local_template"
+          ],
+          "style_checks_passed": false,
+          "human_editorial_assessment_required": true
+        }
+      },
+      "candidate_quality": {
+        "es": {
+          "word_count": 424,
+          "template_similarity": 0.823,
+          "repeated_sentence_pairs": [],
+          "flags": [],
+          "style_penalty": 0,
+          "blocking_flags": [],
+          "style_checks_passed": true,
+          "human_editorial_assessment_required": true
+        },
+        "en": {
+          "word_count": 303,
+          "template_similarity": 0.811,
+          "repeated_sentence_pairs": [],
+          "flags": [],
+          "style_penalty": 0,
+          "blocking_flags": [],
+          "style_checks_passed": true,
+          "human_editorial_assessment_required": true
+        }
+      },
+      "valid_against_original_packet": true,
+      "same_factual_packet": true
+    },
+    "factual_packet_hash": "b1c702236e827ed3945575a66d37cc7f62afa3044ede142c951512a0c1b26204",
     "event_ids": [
       "evt_2708fe5eb7696110",
-      "evt_ee0b4cf430fcf0aa",
+      "evt_ec8593d8bd197523",
+      "evt_f0f611b9e308e358",
+      "evt_2d2d49ceb82fd0e4",
+      "evt_70c85cd9bce57550",
       "evt_2b335383bc16dbb4",
+      "evt_b43ebebc332ac5d4",
       "evt_3e66d6b5e06ef1bc",
-      "evt_212f86fd639bfd92",
-      "evt_33b819a5662d4326",
-      "evt_8a3d4a382f7f7e7f",
+      "evt_9ea5bd34267fedd7",
+      "evt_cf01b6436d5fa0db",
+      "evt_1c206a3cda12f9fb",
       "evt_4a173fdb6c860889",
       "evt_79ee96b80d4919b1",
+      "evt_33b819a5662d4326",
       "evt_8076d3fc2c8eea13",
       "evt_a54a0d8489868907",
+      "evt_63fd3bbec0b6f3a9",
       "evt_d67510be7d2dd9e1",
       "evt_d5078acf533d2cbd",
-      "evt_b02a1e41bc2e8893",
-      "evt_952119252d1fe712",
-      "evt_4f2639c33dc28f94",
-      "evt_2c490a13323f8bb3",
-      "evt_ae0a67d4124466df",
-      "evt_d2a84b275ee283cc",
-      "evt_9d57d4bc2b181fe1"
+      "evt_952119252d1fe712"
     ],
     "source_ids": [
       "aljazeera",
       "bloomberg",
       "cnbc",
-      "cnn",
       "lloyds_list",
       "marinelink",
       "reuters",
@@ -70,18 +141,18 @@
     "verification_summary": {
       "CONFIRMED_MULTI_SOURCE": 4,
       "CONFIRMED_PRIMARY": 0,
-      "CONFLICTING": 0,
+      "CONFLICTING": 1,
       "DECLARATION_ONLY": 2,
-      "SINGLE_SOURCE": 33,
-      "UNCONFIRMED": 27,
-      "TOTAL": 66
+      "SINGLE_SOURCE": 36,
+      "UNCONFIRMED": 35,
+      "TOTAL": 78
     },
-    "timestamp": "2026-11-26T15:50:12Z",
+    "timestamp": "2026-11-27T15:38:46Z",
     "fallback_used": true,
     "editorial_quality": {
       "es": {
-        "word_count": 380,
-        "template_similarity": 0.781,
+        "word_count": 424,
+        "template_similarity": 0.823,
         "repeated_sentence_pairs": [],
         "flags": [],
         "style_penalty": 0,
@@ -90,8 +161,8 @@
         "human_editorial_assessment_required": true
       },
       "en": {
-        "word_count": 307,
-        "template_similarity": 0.783,
+        "word_count": 303,
+        "template_similarity": 0.811,
         "repeated_sentence_pairs": [],
         "flags": [],
         "style_penalty": 0,
