@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
   "date": "2026-11-27",
-  "generated_at": "2026-11-27T21:27:22Z",
-  "source_checked_at": "2026-11-27T14:12:31Z",
-  "assessment_id": "437d92807cf104fdb5600338",
+  "generated_at": "2026-11-27T22:53:09Z",
+  "source_checked_at": "2026-11-27T22:53:00Z",
+  "assessment_id": "6acbb52796aff583cba59717",
   "canonical_assessment": {
     "state": "OPEN_SEVERELY_RESTRICTED",
     "family": "OPEN",
     "confidence": "MEDIA",
-    "generated_at": "2026-11-27T14:12:31Z",
+    "generated_at": "2026-11-27T22:53:00Z",
     "dimensions": {
       "passage": "PASSAGE_CONFIRMED",
       "traffic": "REDUCED",
@@ -29,19 +29,17 @@
     "en": "Medium"
   },
   "verification_ok": true,
-  "stale": true,
+  "stale": false,
   "summary_es": "Hay tránsitos comerciales confirmados a través del estrecho, pero el flujo está muy por debajo de la normalidad y las condiciones de seguridad y acceso siguen siendo severas. No está físicamente cerrado: está operativo de forma muy limitada.",
   "summary_en": "Commercial transits through the strait are confirmed, but flows remain far below normal and security/access conditions are severe. It is not physically closed; it is operating on a highly constrained basis.",
   "change_es": "Sin cambio material en la clasificación desde el parte anterior.",
   "change_en": "No material change in classification since the previous brief.",
   "risks_es": [
     "El tránsito se considera operativo, pero persisten restricciones, incidentes o fricción relevantes.",
-    "Los datos están marcados como desactualizados y no deben utilizarse como confirmación operativa.",
     "El ciclo contiene 5 evidencias destacadas; la cantidad no sustituye la independencia ni la calidad."
   ],
   "risks_en": [
     "Transit is considered operational, but relevant restrictions, incidents or friction remain.",
-    "Data are marked as stale and should not be used as operational confirmation.",
     "The cycle contains 5 highlighted evidence items; quantity does not replace independence or quality."
   ],
   "watchlist_es": [
@@ -57,10 +55,18 @@
   "evidence": [
     {
       "signal": "RISK_SEVERE",
-      "title": "Adnoc finds body of seafarer missing after Strait of Hormuz attack - TradeWinds News",
+      "title": "Lloyd's List Hormuz crisis monitor reports severe/extreme shipping risk",
+      "source_name": "Lloyd's List",
+      "source_url": "https://lloydslist.com/hot-topics/strait-of-hormuz-crisis",
+      "published_at": "2026-11-27T22:53:00Z",
+      "official": false
+    },
+    {
+      "signal": "ACCESS_RESTRICTED",
+      "title": "Russia strikes two Greek grain ships running blockade of Ukraine's ports - TradeWinds News",
       "source_name": "TradeWinds",
-      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNksxdUFRYnJMQU1HUVJLemRCRHNQNlE5bnhXODlVTlF1UEZkdTVTX2F1Yjg2OEViZzR6Y0NuUlpGdW0yV2JOTnNtRHo4c2J3cGR4akI3REp6VGlUTnlUMzNmZlhCR2xUM0RvRm9XUnRkVll0VUxOQlRQMnc5UVVVU1hqMy1qS1pPS2ZJV1V6cDZqWGRxMVdpWEd3aS01TmdkSWYxVzVqTHBvTkdoeTUtZThn",
-      "published_at": "2026-11-27T01:44:45Z",
+      "source_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNSTVqNlFsUjlkUjJFZHdIa0ZPbG5wMWZHT21jeml3VGtMOXEzdGdFUUZyaEVadWxaOFI3S2FwVVYwUktrVTlDYm9ZRjFfU0ZoLUo3M0p5elB2bmRvTDZYQ0RtVVBuSHcwa0M0WFY0c2FTdWlOcjkzbGt5ZVA4eXVMUjNwUHdHUWJzempzMWFpeG9tNFI0M1RSRmoxTWJSRWtpM2c4SjB5dENvYmJXeFRxNGlDUGdkUm95YjhzUmh4VzNvZWNN",
+      "published_at": "2026-11-27T09:32:20Z",
       "official": false
     },
     {
@@ -69,14 +75,6 @@
       "source_name": "Reuters",
       "source_url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOcHNnYmJXdWlaS3JfaTRfQUhza0lkR0lSNjhWNVJoY1Mxd3VSVVZyOHV0R0xZbHl2TS1FX2VROGg0bmg1dHFUbG9ZckxfT2lSaFotSmNFczlabFRHWjZZUEYycHA3S0tXN0p4cHFvbjUyam9IcDBwYkFBSTJfbFZwLTVickFLaFU0bTYxeHI3eHVGTmQyV3ozMTQzWm4tWGduQi00RHJoclptRnlsQjJqdTdMTU9yX2w0OXRmanYtUndOZmtaSy1JdmRuRzg",
       "published_at": "2026-11-26T12:06:18Z",
-      "official": false
-    },
-    {
-      "signal": "RISK_SEVERE",
-      "title": "MEG crude loading recovery falters as regional attacks intensify - Lloyd's List",
-      "source_name": "Lloyd's List",
-      "source_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNaFZGMzZtNjBIdl9wNkNScFFaLVd0emZyYnk1R1dCUEdPV3I5SWF2TElwWkJmVS0tbHpWRnZBWFpjWjN1VERzbERzV3E1QU9lUWJDcGtrVjRzWmxaZ3QzQVZqYVI3NDlmYllNQzlpVzBJNjBxeHoyVnVEczNfNEpaaXQyNEVYYkszZ19NSG9hNmlnTEZvNVZJR2tQbF9LNDJKMVNJ",
-      "published_at": "2026-11-26T10:38:47Z",
       "official": false
     },
     {
@@ -98,5 +96,5 @@
   ],
   "last_valid_confirmation": null,
   "publish_recommended": false,
-  "material_hash": "7921bd4d23783611"
+  "material_hash": "7df2ab9dc0a2be5f"
 }
